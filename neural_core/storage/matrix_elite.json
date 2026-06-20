@@ -1,0 +1,13 @@
+{
+    "status_sistema": "Operacional",
+    "versao_core": "2026.1.18",
+    "metricas": {
+        "requisicoes": 1420,
+        "tempo_resposta_ms": 12.4,
+        "erros_detectados": 0
+    },
+    "tags": [
+        "producao",
+        "alta_performance"
+    ]
+}

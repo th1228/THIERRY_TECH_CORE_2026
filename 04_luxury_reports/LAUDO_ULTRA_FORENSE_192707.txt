@@ -1,0 +1,3 @@
+--- LAUDO TECNICO GENIO BIOIDENTICO ---
+Cliente: Gabriela Silva de Alencar
+Dados: {'olhos': 'Inclinacao lateral de 4.2 graus com abertura simetrica estavel', 'pescoço': 'Angulo cervical estruturado com excelente sustentacao', 'colo': 'Alinhamento clavicular simetrico ao plano mandibular'}

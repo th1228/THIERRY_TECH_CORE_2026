@@ -1,0 +1,59 @@
+c:\Users\thelr\AppData\Local\Packages\5319275A.WhatsAppDesktop_cv1g1gvanyjgm\LocalState\sessions\48EEDFE812AD1CE29288ACE5F7F8315C2AEEC895\transfers\2026-19\WhatsApp Image 2026-05-08 at 01.09.45.jpegimport cv2
+import face_recognition
+import numpy as np
+
+# --- 1. CARREGAMENTO DA IDENTIDADE MASTER ---
+print("SISTEMA: INICIANDO LEITURA BIOMETRICA...")
+try:
+    # Carrega sua foto (certifique-se que o nome na pasta é thierry_master.jpg)
+    imagem_thierry = face_recognition.load_image_file("thierry_master.jpg")
+    encoding_master = face_recognition.face_encodings(imagem_thierry)[0]
+    reconhecimento_ativo = True
+    print("SISTEMA: CHAVE BIOMETRICA CARREGADA COM SUCESSO.")
+except Exception as e:
+    print("ERRO: Nao foi possivel carregar thierry_master.jpg")
+    reconhecimento_ativo = False
+
+# Cores TTC Global
+DOURADO_LUXO = (0, 215, 255) 
+BRANCO = (255, 255, 255)
+VERMELHO_ALERTA = (0, 0, 255)
+
+cap = cv2.VideoCapture(0)
+
+while cap.isOpened():
+    success, frame = cap.read()
+    if not success: break
+    
+    status_msg = "ANALISANDO IDENTIDADE..."
+    cor_interface = BRANCO
+
+    if reconhecimento_ativo:
+        # Localiza rostos na camera
+        face_locations = face_recognition.face_locations(frame)
+        face_encodings = face_recognition.face_encodings(frame, face_locations)
+
+        for encoding in face_encodings:
+            # Compara com a sua foto master
+            matches = face_recognition.compare_faces([encoding_master], encoding, tolerance=0.5)
+            
+            if True in matches:
+                status_msg = "OPERADOR THIERRY AUTENTICADO"
+                cor_interface = DOURADO_LUXO
+            else:
+                status_msg = "ACESSO RESTRITO - VISITANTE"
+                cor_interface = VERMELHO_ALERTA
+
+    # --- INTERFACE VISUAL DE SEGURANCA ---
+    # Barra de Status Superior
+    cv2.rectangle(frame, (0, 0), (frame.shape[1], 50), (0,0,0), -1)
+    cv2.putText(frame, status_msg, (30, 35), cv2.FONT_HERSHEY_SIMPLEX, 0.7, cor_interface, 2)
+    
+    # Moldura Central de Foco
+    cv2.rectangle(frame, (150, 100), (490, 380), cor_interface, 1)
+
+    cv2.imshow('TTC GLOBAL - SECURITY ACCESS', frame)
+    if cv2.waitKey(5) & 0xFF == ord('q'): break
+
+cap.release()
+cv2.destroyAllWindows()8

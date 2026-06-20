@@ -1,0 +1,12 @@
+TTC GLOBAL SYSTEM - ANALISE DE SIMETRIA FACIAL
+=============================================
+SOBRANCELHA_ESQ          : 23.09 px
+OLHO_ESQ                 : 30.81 px
+MANDIBULA_ESQ            : 13.45 px
+ASA_NARIZ_ESQ            : 23.71 px
+CANTO_BOCA_ESQ           : 34.48 px
+SOBRANCELHA_DIR          : 16.12 px
+OLHO_DIR                 : 24.52 px
+MANDIBULA_DIR            : 7.81 px
+ASA_NARIZ_DIR            : 18.44 px
+CANTO_BOCA_DIR           : 25.61 px

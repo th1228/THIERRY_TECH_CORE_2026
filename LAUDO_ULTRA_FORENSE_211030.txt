@@ -1,0 +1,13 @@
+==================================================
+          SISTEMA TTC GLOBAL - LAUDO FORENSE       
+==================================================
+DATA DO EXAME: 15/05/2026
+HORARIO DE CAPTURA: 21:10:30
+--------------------------------------------------
+METRICAS DA ESTRUTURA MANDIBULAR:
+Comprimento Ramo Direito: 88.29 px
+Comprimento Ramo Esquerdo: 90.05 px
+Indice de Simetria Mandibular: 98.04%
+--------------------------------------------------
+DIAGNOSTICO HARMONICO: Excelente Harmonia Estrutural
+==================================================

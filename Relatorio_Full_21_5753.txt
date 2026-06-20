@@ -1,0 +1,28 @@
+  ============== TTC GLOBAL - LAUDO TECNICO LUXO ==============
+PROTOCOLO: 5753 | PLANO: MONACO
+
+1. Proj. Glabela: 3.5230
+2. Proj. Zigo Esq: -15.7982
+3. Proj. Zigo Dir: -6.0667
+4. Proj. Queixo (Z): -3.5011
+5. Ponte Nasal: -0.8444
+6. Dist. Interocular: 94.34px
+7. Largura Nasal: 43.26px
+8. Labio Superior: 10.59px
+9. Labio Inferior: 12.27px
+10. Largura Bucal: 54.08px
+11. Area Papada: 6.56px
+12. Prof. Sulco Naso: 2.0642
+13. Bolsa Olhos: 3.6817
+14. Altura Face: 480px
+15. Largura Face: 640px
+16. Assimetria Zigo: 9.7315
+
+[DECISÕES DE INTERVENÇÃO]
+17. Glabela: Relaxamento imediato
+18. Mandibula: Estável
+19. Colageno Estimado: BAIXO (Baseado na profundidade do sulco)
+20. Gordura Submentoniana: MÍNIMA
+21. Aspecto do Olhar: Fadigado (Bolsas Detectadas)
+
+============== FINAL DO RELATÓRIO 2026 ==============
