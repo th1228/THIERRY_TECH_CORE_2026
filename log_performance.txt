@@ -1,0 +1,9 @@
+2026-06-14 23:24 | Fadiga_Percebida: 3/10
+2026-06-14 23:24 | Fadiga_Percebida: 3/10
+2026-06-14 23:25 | Fadiga_Percebida: 4/10
+2026-06-14 23:28 | Fadiga_Percebida: 7/10
+2026-06-14 23:30 | Fadiga_Percebida: 3/10
+2026-06-14 23:34 | Fadiga_Percebida: 3/10
+2026-06-14 23:40 | Fadiga:3 | Assimetria:0 | Densidade:10 | Hidratacao:5
+2026-06-15 23:19 | Fadiga:3 | Assimetria:3 | Densidade:10 | Hidratacao:5
+2026-06-16 00:25 | Fadiga:5 | Assimetria:0 | Densidade:9 | Hidratacao:3

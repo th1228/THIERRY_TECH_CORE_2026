@@ -1,15 +1,5 @@
-.env
+database_sql/
+*.db
+*.sqbpro
 __pycache__/
-*.pyc
-
-# Arquivos de log e relatórios (que você não quer no cofre)
-*.txt
-*.log
-
-# Prints e imagens de teste que o sistema gera
-*.png
-*.jpg
-*.jpeg
-
-# Pastas de debug (se você não quer que o Git salve isso)
-storage/
+.vscode/

@@ -1,0 +1,12 @@
+{
+    "registro_principal": {
+        "dados": {
+            "espectral": "verde",
+            "ambiente": "ok",
+            "vitalidade": "98",
+            "densidade": "ok"
+        },
+        "protocolo": "Protocolo_Padrao",
+        "nivel": "Alta"
+    }
+}

@@ -1,0 +1,8 @@
+LAUDO TTC GLOBAL: TG
+Data/Hora: 17/06/2026 22:47
+Local: São Luís, MA
+Status Ambiental: Estável
+Osteometria: Validada (Fadiga:5 | Densidade:9)
+Perícia Neuro: Simetria:2 | Hidratação:4
+Responsável: Nuno
+Especialidade: Engenharia da Alma | Bioarquitetura Neural | Fenotipagem Comportamental

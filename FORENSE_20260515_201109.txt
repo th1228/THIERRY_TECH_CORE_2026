@@ -1,4 +1,0 @@
-ID DO LAUDO: FORENSE_20260515_201109
-Paciente: Jose
-Largura Zigomática: 131.2 mm
-Angulo Goniaco: 124.5 deg

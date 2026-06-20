@@ -1,7 +1,0 @@
-ID DO LAUDO: FORENSE_20260515_201321
-Paciente: Jose
-Largura Zigomática: 131.2 mm
-Altura Maxilar Total: 145.1 mm
-Ângulo Goníaco: 124.5 deg
-Projeção do Mento: 0.3 deg
-Índice de Simetria: 98.7%
