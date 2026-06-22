@@ -1,7 +1,0 @@
-09/06/2026 22:38 | Cliente: thierry | Arquivo: Arquivos_TTC\thierry\Laudo_2026-06-09_22-38.pdf
-09/06/2026 22:40 | Cliente: th | Arquivo: Arquivos_TTC\th\Laudo_2026-06-09_22-40.pdf
-09/06/2026 22:42 | Cliente: thierry | Arquivo: Arquivos_TTC\thierry\TTC_thierry_20260609.pdf
-09/06/2026 22:45 | Cliente: th | Arquivo: Arquivos_TTC\th\TTC_th_20260609.pdf
-14/06/2026 20:24 | Cliente: tg | Arquivo: Arquivos_TTC\tg\TTC_tg_20260614.pdf
-14/06/2026 20:26 | Cliente: Cliente_TTC_Scan | Arquivo: Arquivos_TTC\Cliente_TTC_Scan\TTC_Cliente_TTC_Scan_20260614.pdf
-14/06/2026 20:31 | Cliente: Cliente_TTC_Scan | Arquivo: Arquivos_TTC\Cliente_TTC_Scan\TTC_Cliente_TTC_Scan_20260614.pdf

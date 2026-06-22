@@ -14,6 +14,23 @@ if raiz_projeto not in sys.path:
 
 import motor_dados 
 
+# --- BANCO DE DADOS DE ÓLEOS (ADICIONAL) ---
+BD_OLEOS = {
+    "01": {"nome": "Lavanda + Sândalo", "foco": "Estabilização Emocional", "hex": "#8A2BE2"},
+    "02": {"nome": "Gerânio + Olíbano", "foco": "Regeneração Celular", "hex": "#FFD700"},
+    "03": {"nome": "Alecrim + Hortelã", "foco": "Foco Cognitivo", "hex": "#00FF00"},
+    "04": {"nome": "Bergamota + Ylang", "foco": "Elevação de Humor", "hex": "#FF8C00"},
+    "05": {"nome": "Melaleuca + Capim", "foco": "Purificação", "hex": "#00FFFF"},
+    "06": {"nome": "Laranja + Litsea", "foco": "Aroma da Felicidade", "hex": "#FFD700"},
+    "07": {"nome": "Cedro + Vetiver", "foco": "Silêncio Profundo", "hex": "#2F4F4F"}
+}
+
+def obter_prescricao_oleo(dados):
+    if dados['fadiga'] > 7: return BD_OLEOS["07"]
+    if dados['hidratacao'] < 4: return BD_OLEOS["02"]
+    if dados['assimetria'] > 5: return BD_OLEOS["01"]
+    return BD_OLEOS["06"]
+
 try: 
     locale.setlocale(locale.LC_TIME, 'pt_BR.UTF-8')
 except: 
@@ -51,7 +68,6 @@ def gerar_pdf_final(linhas, nome_cliente):
     c = canvas.Canvas(arquivo, pagesize=A4)
     w, h = A4
     
-    # Marca d'água
     c.saveState()
     c.setFillAlpha(0.12)
     c.setFillColor(HexColor("#D4AF37"))
@@ -61,7 +77,6 @@ def gerar_pdf_final(linhas, nome_cliente):
     c.drawCentredString(0, 0, "THIERRY TECH")
     c.restoreState()
     
-    # Conteúdo principal
     c.setFillColor(HexColor("#000000"))
     c.setFont("Courier", 5.2)
     y = h - 30
@@ -69,14 +84,12 @@ def gerar_pdf_final(linhas, nome_cliente):
         c.drawString(20, y, linha)
         y -= 9
         
-    # --- RODAPÉ COM ASSINATURA DE AUTORIDADE ---
     c.setLineWidth(0.5)
     c.line(20, 50, w - 20, 50)
     c.setFont("Helvetica-Bold", 7)
     c.drawString(20, 40, "FOUNDER: THIÊRRY | ESTRATEGISTA E ARQUITECT EM FENOTIPAGEM GENOMIC E NEURO COMPORTAMENTAL")
     c.drawString(20, 32, "BIOGEMIO - Bioarquitetura Neural e Comportamental")
     c.setFont("Helvetica-Oblique", 6)
-    # Incluindo data e hora exatas com segundos
     c.drawRightString(w - 20, 40, f"Gerado em: {datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
     c.drawRightString(w - 20, 32, "Propriedade Intelectual Privada - Uso Restrito")
     
@@ -87,6 +100,8 @@ def gerar_relatorio_definitivo():
     dados = ler_dados_biometricos()
     laudo_psi = ler_laudo_psiquico()
     formato, cortes, paleta = obter_recomendacao_visagismo()
+    prescricao = obter_prescricao_oleo(dados) # <-- ADICIONAL DE ÓLEOS
+    
     nome_cliente = motor_dados.ler("cliente_nome") or "CLIENTE THIERRY"
     hoje = datetime.datetime.now()
     
@@ -97,6 +112,7 @@ def gerar_relatorio_definitivo():
         "ENGENHARIA DA ALMA | BIOARQUITETURA NEURAL E FENOTIPAGEM COMPORTAMENTAL",
         "=======================================================================================================",
         f"CLIENTE: {nome_cliente} | DATA: {hoje.strftime('%d/%m/%Y')}",
+        f"PRESCRICAO OLEO: {prescricao['nome']} | FOCO: {prescricao['foco']}", # <-- INJETADO AQUI
         f"Biometria: Fadiga:{dados['fadiga']} | Assimetria:{dados['assimetria']} | Hidrat:{dados['hidratacao']}",
         f"Laudo Psíquico: {laudo_psi.get('temperamento')} | Lado: {laudo_psi.get('lado')} | Status: {laudo_psi.get('emocional')}",
         f"Estrutura: {formato} | Paleta: {', '.join(paleta)}",
@@ -127,8 +143,4 @@ def gerar_relatorio_definitivo():
     gerar_pdf_final(linhas, nome_cliente)
 
 if __name__ == "__main__":
-    gerar_relatorio_definitivo()
-    # Adicione isso ao final do seu arquivo gerador_relatorio_definitivo.py
-def construir_pdf(dados):
-    # Esta função faz a ponte para a função real que você já tem pronta
     gerar_relatorio_definitivo()

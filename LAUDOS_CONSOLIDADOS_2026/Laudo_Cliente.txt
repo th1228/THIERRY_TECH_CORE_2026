@@ -1,5 +1,0 @@
-
---- ATENDIMENTO TTC GLOBAL ---
-Cliente: Cliente | Idade Real: 0
-Projeção: +5 anos | Idade Biológica: 5
-Parecer: Protocolo de Preservação: Foco em hidratação profunda e proteção solar ativa.

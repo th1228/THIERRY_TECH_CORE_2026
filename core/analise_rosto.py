@@ -1,97 +1,82 @@
-# -*- coding: utf-8 -*-
 import cv2
 import mediapipe as mp
-import numpy as np
-import winsound
-import warnings
 import time
-import serial  # Certifique-se de ter instalado: pip install pyserial
+import winsound
+import numpy as np
 
-# Configuração Segura do Motor
-motor = None
-motor_conectado = False
-try:
-    motor = serial.Serial('COM3', 9600, timeout=1)
-    motor_conectado = True
-    print("Motor conectado na porta COM3.")
-except:
-    print("Motor não detectado. O programa continuará funcionando normalmente.")
-
-# Bloqueia avisos
-warnings.filterwarnings("ignore", category=UserWarning, module="google.protobuf")
-
+# Configuração da Malha
 mp_face_mesh = mp.solutions.face_mesh
 face_mesh = mp_face_mesh.FaceMesh(refine_landmarks=True, min_detection_confidence=0.5)
 
-def desenhar_scanner_denso(frame, lm):
-    h, w, _ = frame.shape
-    pos_y = int((cv2.getTickCount() / cv2.getTickFrequency() * 150) % h)
-    
-    for landmark in lm.landmark:
-        x, y = int(landmark.x * w), int(landmark.y * h)
-        
-        # Área de detecção do scanner
-        if abs(y - pos_y) < 25:
-            cv2.circle(frame, (x, y), 4, (255, 255, 0), -1)
-        else:
-            cv2.circle(frame, (x, y), 2, (100, 50, 0), -1)
+def main():
+    camera = cv2.VideoCapture(0)
+    estado = "INICIAR"
+    inicio_timer = 0
+    scan_y = 0 
 
-def gerar_flash(frame):
-    return np.full(frame.shape, 255, dtype=np.uint8)
-
-def rodar_scanner():
-    cap = cv2.VideoCapture(0)
-    flash_ativo = False
-    flash_tempo_inicio = 0
-    flash_duracao = 0.05 
-
-    while cap.isOpened():
-        ret, frame = cap.read()
+    while True:
+        ret, frame = camera.read()
         if not ret: break
-        frame = cv2.flip(frame, 1)
-        
-        # Filtro de cor azulado
-        frame[:, :, 0] = np.clip(frame[:, :, 0] + 60, 0, 255)
-        
-        results = face_mesh.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-        if results.multi_face_landmarks:
-            for lm in results.multi_face_landmarks:
-                desenhar_scanner_denso(frame, lm)
-                
-        # Lógica do flash na tela
-        if flash_ativo:
-            if (time.time() - flash_tempo_inicio) < flash_duracao:
-                frame = gerar_flash(frame)
-            else:
-                flash_ativo = False
 
-        cv2.imshow("TTC CORE - SCANNER DENSO", frame)
+        # --- EFEITO: SCANNER DINÂMICO ---
+        # scan_y é a linha invisível que desce
+        scan_y = (scan_y + 8) % frame.shape[0]
         
-        key = cv2.waitKey(1) & 0xFF
+        # Processamento Facial
+        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        results = face_mesh.process(rgb_frame)
+
+        if results.multi_face_landmarks:
+            for face_landmarks in results.multi_face_landmarks:
+                for lm in face_landmarks.landmark:
+                    h, w, _ = frame.shape
+                    cx, cy = int(lm.x * w), int(lm.y * h)
+                    
+                    # Distância do ponto atual para a linha do scanner
+                    dist = abs(cy - scan_y)
+                    
+                    # Lógica de brilho/tamanho: quanto mais perto da linha, maior o ponto
+                    # Se estiver a menos de 50 pixels da linha, o ponto cresce
+                    if dist < 50:
+                        size = int(4 - (dist / 15)) # O ponto varia de tamanho
+                        color = (255, 255, 255) # Branco no centro do feixe
+                    else:
+                        size = 1
+                        color = (255, 255, 0) # Ciano padrão
+                        
+                    cv2.circle(frame, (cx, cy), size, color, -1)
+
+        # Interface Pequena (mantida conforme pedido)
+        cv2.putText(frame, f"STATUS: {estado}", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0), 1)
+
+        # Máquina de Estados (lógica de captura mantida)
+        if estado == "INICIAR":
+            cv2.putText(frame, "PRESSIONE 'I' PARA INICIAR", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
+            if cv2.waitKey(1) & 0xFF == ord('i'):
+                estado = "RESPIRAÇÃO"
+                inicio_timer = time.time()
         
-        # Tecla 's' para salvar, bipar, flash e acionar motor
-        if key == ord('s'):
-            winsound.Beep(1200, 300)      # Bipe
-            flash_ativo = True            # Ativa flash visual
-            flash_tempo_inicio = time.time()
-            
-            # Salva o frame
-            cv2.imwrite("scan_final_denso.jpg", frame)
-            
-            # Comando para o motor
-            if motor_conectado:
-                motor.write(b'1')
-            print("Captura salva e comando enviado ao motor.")
-            
-        elif key == ord('q'): 
-            break
-            
-    cap.release()
+        elif estado == "RESPIRAÇÃO":
+            tempo = int(time.time() - inicio_timer)
+            cv2.putText(frame, f"ANALISANDO: {tempo}s", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
+            if tempo >= 10: estado = "ESPERA"
+
+        elif estado == "ESPERA":
+            cv2.putText(frame, "OK! PRESSIONE 'S' PARA CAPTURAR", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+            if cv2.waitKey(1) & 0xFF == ord('s'):
+                # Flash
+                flash = np.ones(frame.shape, dtype=np.uint8) * 255
+                cv2.imshow("THIERRY BIOGEMIO DIGITAL", flash)
+                winsound.Beep(1500, 200)
+                cv2.waitKey(200)
+                cv2.imwrite("resultado_biometria.jpg", frame)
+                estado = "FIM"
+
+        cv2.imshow("THIERRY BIOGEMIO DIGITAL", frame)
+        if cv2.waitKey(1) & 0xFF == ord('q'): break
+
+    camera.release()
     cv2.destroyAllWindows()
-    if motor_conectado: motor.close()
 
 if __name__ == "__main__":
-    try:
-        rodar_scanner()
-    except Exception as e:
-        print(f"Erro ao rodar o scanner: {e}")
+    main()
