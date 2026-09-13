@@ -1,0 +1,41 @@
+{
+  "sbom_version": "1.0",
+  "generator": "Sovereign Enterprise Auditor",
+  "timestamp": "2026-09-13T11:41:00Z",
+  "project_name": "THIERRY_TECH_CORE_2026",
+  "components": [
+    {
+      "name": "mediapipe",
+      "version": "0.10.14",
+      "type": "library",
+      "license": "Apache-2.0",
+      "vulnerability_status": "CLEAN"
+    },
+    {
+      "name": "customtkinter",
+      "version": "5.2.2",
+      "type": "library",
+      "license": "MIT",
+      "vulnerability_status": "CLEAN"
+    },
+    {
+      "name": "opencv-python",
+      "version": "4.9.0.80",
+      "type": "library",
+      "license": "Apache-2.0",
+      "vulnerability_status": "CLEAN"
+    },
+    {
+      "name": "protobuf",
+      "version": "4.25.3",
+      "type": "library",
+      "license": "BSD-3-Clause",
+      "vulnerability_status": "CLEAN"
+    }
+  ],
+  "compliance_summary": {
+    "total_dependencies": 4,
+    "critical_vulnerabilities": 0,
+    "audit_status": "PASSED"
+  }
+}

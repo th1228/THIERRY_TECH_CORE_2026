@@ -3,3 +3,13 @@ database_sql/
 *.sqbpro
 __pycache__/
 .vscode/
+
+# Segurança e Credenciais
+.env
+*.env
+secrets.json
+credentials.json
+
+# Logs e Dados Locais de Auditoria Temporários
+*.log
+audit/dossie_audit_history.json

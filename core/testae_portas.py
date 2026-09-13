@@ -1,3 +1,10 @@
+import sys, os
+
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import sys, os
+
 import serial.tools.list_ports
 
 def encontrar_arduino():

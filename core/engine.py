@@ -1,163 +1,81 @@
-import asyncio
-import logging
+# -*- coding: utf-8 -*-
 import sys
+import os
+import glob
 import cv2
-import mediapipe as mp
-import time
-from typing import Dict, Any
+import logging
+import metrics 
 
-# Importação segura do seu módulo de métricas
+# --- CORREÇÃO DE CAMINHO E CONEXÃO ESTRUTURAL ---
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
+
 try:
-    import metrics
+    from memoria_comum import instancia_memoria as memoria
 except ImportError:
-    logging.error("O arquivo 'metrics.py' não foi encontrado no mesmo diretório.")
-    sys.exit(1)
+    class MemoriaMock:
+        def salvar_dados(self, chave, valor): pass
+        def ler_dados(self, chave): return None
+    memoria = MemoriaMock()
+# -----------------------------------------------
 
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s [%(levelname)s] %(message)s",
-    handlers=[logging.StreamHandler(sys.stdout)]
-)
+# Configuração de auditoria
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
-# Inicialização das ferramentas de Malha Facial do MediaPipe
-mp_face_mesh = mp.solutions.face_mesh
-mp_drawing = mp.solutions.drawing_utils
-mp_drawing_styles = mp.solutions.drawing_styles
-
-# ESTÉTICA DE ELITE (AZUL CYAN NEON)
-NEON_CYAN_COLOR = (255, 255, 0) 
-
-custom_tesselation_style = mp_drawing.DrawingSpec(
-    color=NEON_CYAN_COLOR, 
-    thickness=1, 
-    circle_radius=1
-)
-
-custom_contour_style = mp_drawing.DrawingSpec(
-    color=NEON_CYAN_COLOR, 
-    thickness=2, 
-    circle_radius=1
-)
-
-async def process_camera_stream():
-    """Abre a câmera, renderiza a malha facial neon de alta precisão e processa dados."""
-    cap = cv2.VideoCapture(0)
-
-    if not cap.isOpened():
-        logging.critical("Não foi possível acessar a webcam.")
-        return
-
-    logging.info("Core de Visão Ativado. Estética Neon carregada.")
-    logging.info("Controles no teclado: [S] Salvar Foto | [Q] Sair do Programa")
-
-    with mp_face_mesh.FaceMesh(
-        max_num_faces=1,
-        refine_landmarks=True,
-        min_detection_confidence=0.5,
-        min_tracking_confidence=0.5
-    ) as face_mesh:
-
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                await asyncio.sleep(0.1)
-                continue
-
-            # Efeito espelho natural
-            frame = cv2.flip(frame, 1)
-            h, w, _ = frame.shape
-            
-            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            results = face_mesh.process(rgb_frame)
-
-            real_facial_data = {}
-
-            if results.multi_face_landmarks:
-                for face_landmarks in results.multi_face_landmarks:
-                    
-                    # Desenha a malha interna
-                    mp_drawing.draw_landmarks(
-                        image=frame,
-                        landmark_list=face_landmarks,
-                        connections=mp_face_mesh.FACEMESH_TESSELATION,
-                        landmark_drawing_spec=None,
-                        connection_drawing_spec=custom_tesselation_style
-                    )
-                    
-                    # Desenha os contornos de expressão
-                    mp_drawing.draw_landmarks(
-                        image=frame,
-                        landmark_list=face_landmarks,
-                        connections=mp_face_mesh.FACEMESH_CONTOURS,
-                        landmark_drawing_spec=None,
-                        connection_drawing_spec=custom_contour_style
-                    )
-
-                    try:
-                        ponto_testa = face_landmarks.landmark[10]
-                        ponto_queixo = face_landmarks.landmark[152]
-                        ponto_olho_esquerdo = face_landmarks.landmark[33]
-                        ponto_olho_direito = face_landmarks.landmark[263]
-
-                        face_height = abs(ponto_testa.y - ponto_queixo.y) * h
-                        face_width = abs(ponto_olho_esquerdo.x - ponto_olho_direito.x) * w
-
-                        real_facial_data = {
-                            "face_height_px": round(face_height, 2),
-                            "face_width_px": round(face_width, 2),
-                            "asymmetry_ratio": round(abs(face_height / (face_width if face_width > 0 else 1)), 4)
-                        }
-
-                        if hasattr(metrics, 'calculate_visagism_metrics'):
-                            processed = metrics.calculate_visagism_metrics(real_facial_data)
-                            status_text = f"Analise: {processed.get('status', 'Processando')}"
-                        else:
-                            status_text = "Dados extraídos com sucesso!"
-
-                        cv2.putText(frame, "TTC GLOBAL CORE - MALHA NEON ATIVA", (10, 30), 
-                                    cv2.FONT_HERSHEY_SIMPLEX, 0.7, NEON_CYAN_COLOR, 2)
-                        cv2.putText(frame, status_text, (10, 60), 
-                                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
-
-                    except Exception:
-                        pass
-            else:
-                cv2.putText(frame, "Procurando Rosto...", (10, 30), 
-                            cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-
-            cv2.putText(frame, "Comandos: [S] Salvar Imagem | [Q] Sair", (10, h - 20), 
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.5, (200, 200, 200), 1)
-
-            # LINHA CORRIGIDA COM PARÊNTESES FECHADOS PERFEITAMENTE:
-            cv2.imshow("TTC Global Engine - Facial Scanning", frame)
-
-            key = cv2.waitKey(1) & 0xFF
-            
-            if key == ord('s') or key == ord('S'):
-                timestamp = time.strftime("%Y%m%d-%H%M%S")
-                filename = f"captura_facial_{timestamp}.png"
-                cv2.imwrite(filename, frame)
-                logging.info(f"CAPTURA SALVA: {filename}")
-                
-                cv2.putText(frame, "FOTO SALVA!", (int(w/2) - 100, int(h/2)), 
-                            cv2.FONT_HERSHEY_SIMPLEX, 1.2, (0, 255, 0), 3)
-                cv2.imshow("TTC Global Engine - Facial Scanning", frame)
-                cv2.waitKey(400)
-
-            elif key == ord('q') or key == ord('Q'):
-                break
-                
-            await asyncio.sleep(0.001)
-
-        cap.release()
-        cv2.destroyAllWindows()
-
-async def main():
+def processar_ultima_pericia():
+    """
+    Motor central (Engine) de processamento de perícia.
+    Lê a última imagem capturada e executa a extração de métricas.
+    """
     try:
-        logging.info("--- Inicializando Core de Visão Computacional Nível 1 ---")
-        await process_camera_stream()
+        # 1. Localiza a última perícia
+        lista_arquivos = glob.glob("pericia_*.png")
+        if not lista_arquivos:
+            logging.error("Nenhuma perícia encontrada para processamento.")
+            return {"status": "erro", "mensagem": "Sistema Sincronizado"}
+
+        ultimo_arquivo = max(lista_arquivos, key=os.path.getctime)
+        logging.info(f"Engine iniciada. Processando: {ultimo_arquivo}")
+
+        # 2. Carrega a imagem com verificação de integridade
+        frame = cv2.imread(ultimo_arquivo)
+        if frame is None:
+            logging.error("Falha na leitura da imagem: arquivo corrompido.")
+            return {"status": "erro", "mensagem": "Imagem corrompida"}
+
+        # Log de status operacional
+        altura, largura = frame.shape[:2]
+        logging.info(f"Leitura bem-sucedida: {largura}x{altura}px.")
+
+        # 3. Execução da análise de métricas
+        if hasattr(metrics, 'calculate_visagism_metrics'):
+            logging.info("Iniciando extração de métricas de alta precisão...")
+            resultado = metrics.calculate_visagism_metrics(frame)
+            
+            resposta_final = {"status": "sucesso", "dados": resultado}
+            
+            # Sincronização automática com a Memória Comum 🧠
+            try:
+                memoria.salvar_dados("pericia_engine", resposta_final)
+            except Exception:
+                pass
+
+            logging.info("Processamento concluído com sucesso.")
+            return resposta_final
+        
+        else:
+            logging.warning("Módulo de métricas não respondeu.")
+            return {"status": "erro", "mensagem": "Módulo de métricas indisponível"}
+
     except Exception as e:
-        logging.critical(f"Erro inesperado no sistema: {str(e)}")
+        logging.error(f"Falha crítica no Engine: {e}")
+        return {"status": "falha_critica", "mensagem": str(e)}
+
+def processar(frame=None):
+    """Função de compatibilidade direta com o orquestrador (main.py) 💻."""
+    return processar_ultima_pericia()
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    resultado = processar_ultima_pericia()
+    print(resultado)

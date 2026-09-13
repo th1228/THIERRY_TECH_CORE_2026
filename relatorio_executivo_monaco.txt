@@ -1,0 +1,41 @@
+
+======================================================================
+         TCC GLOBAL - MONACO PLAN CORE (DOSSIÊ EXECUTIVO)
+======================================================================
+[METADADOS DO SISTEMA]
+- Empresa: None
+- Cliente / Paciente: None
+- Data / Hora: None
+- Estilista / Visagista: None
+- Médico Responsável: None
+
+----------------------------------------------------------------------
+1. TRICOLOGIA AVANÇADA E ESTÉTICA CAPILAR
+----------------------------------------------------------------------
+- Setor: Tricologia Avançada e Estética Capilar
+- Hidratação Facial e Couro Cabeludo: 79.3% retenção
+- Reflectância da Pele: 30.1%
+- Densidade Capilar: 214 fios/cm²
+- Alerta Clínico: Densidade capilar estável (214 fios/cm²). Manutenção preventiva.
+- Formato de Rosto: Quadrado / Mandíbula e Topo Largos
+
+----------------------------------------------------------------------
+2. MEDICINA REGENERATIVA E PREDITIVA
+----------------------------------------------------------------------
+- Taxa de Regeneração Diária: 82.2%
+- Estresse Cutâneo / Inflamação: 22.04% (Tensão Reativa Moderada)
+- Oximetria Tecidual: 97.4%
+- Durabilidade Toxina Botulínica: 113 dias
+
+[PREDIÇÕES DE LONGO PRAZO]
+- Risco de Paralisia Facial (5 / 10 / 15 anos): 2.93% / 4.4% / 6.15%
+- Inflamação Sistêmica (5 / 10 / 15 anos): 8.4% / 11.2% / 14.5%
+
+----------------------------------------------------------------------
+3. NEUROPERFORMANCE E COMPORTAMENTO
+----------------------------------------------------------------------
+- Lado Dominante: Direito
+- Estilo de Decisão: Criativo e Sensorial
+- Cromoterapia Indicada: Verde / Nude
+- Frequência Sonora: 528Hz (Calma)
+======================================================================

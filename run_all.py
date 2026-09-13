@@ -1,16 +1,52 @@
-import os
+# -*- coding: utf-8 -*-
 import sys
+import os
 
-# Corrige a localização da pasta raiz automaticamente
-# O __file__ é o caminho deste arquivo run_all.py
+# Configuração de caminhos para encontrar os módulos
 raiz = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(raiz)
+sys.path.append(os.path.join(raiz, 'core'))
 
-# O resto da sua lista de módulos continua igual:
-modulos = [
-    "core/neuro_gravidade_preditor.py",
-    "core/biogemio_test.py",
-    "core/motor_dados.py",
-    "core/modulo_psiquico.py",
-    "core/monaco/monaco_integrador.py",
-    "core/gerador_relatorio_definitivo.py"
-]
+# Importa os módulos principais
+from security import blindagem
+from auditoria_profunda import auditar_imports
+
+def menu_principal():
+    while True:
+        print("\n--- PAINEL DE CONTROLE THIERRY TECH CORE 2026 ---")
+        print("1. Iniciar Scanner Biométrico (Protegido)")
+        print("2. Ativar Blindagem Manual")
+        print("3. Executar Auditoria Profunda")
+        print("4. Sair")
+        
+        escolha = input("Escolha uma opção: ")
+        
+        try:
+            if escolha == "1":
+                print("\n[SISTEMA] Preparando captura...")
+                # A blindagem já ativa todos os outros módulos (Portaria, Detector, Honeypot)
+                frame_seguro = blindagem.rodar("FRAME_CAPTURA_BIOMETRICA")
+                
+                from core.scanner import ScannerCamera
+                ScannerCamera().processar(frame_seguro)
+                
+            elif escolha == "2":
+                # Ativa manualmente todas as camadas de segurança
+                blindagem.ativar_protecao()
+                
+            elif escolha == "3":
+                # Executa a sua auditoria de imports
+                auditar_imports()
+                
+            elif escolha == "4":
+                print("Encerrando sistema... Até logo!")
+                break
+                
+            else:
+                print("Opção inválida, tente novamente.")
+                
+        except Exception as e:
+            print(f"\n[ERRO DURANTE EXECUÇÃO]: {e}")
+
+if __name__ == "__main__":
+    menu_principal()

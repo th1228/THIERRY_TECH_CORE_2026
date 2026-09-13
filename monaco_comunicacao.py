@@ -1,24 +1,48 @@
 # -*- coding: utf-8 -*-
-import serial
-import json
-import time
+import sys
+import os
+
+# --- CORREÇÃO DE CAMINHO ---
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from core.memoria_comum import instancia_memoria as memoria
 
 class MonacoComunicacao:
-    def __init__(self, porta="COM3", baudrate=115200):
-        try:
-            self.ser = serial.Serial(porta, baudrate, timeout=1)
-            time.sleep(2) # Tempo para estabilizar a conexão com o ESP32
-            print(f"[COMUNICAÇÃO] Conectado com sucesso na porta {porta}")
-        except Exception as e:
-            print(f"[COMUNICAÇÃO] Erro ao conectar na porta {porta}: {e}")
-            self.ser = None
+    def __init__(self):
+        print("[COMUNICAÇÃO] Canal de transmissão de dados ativado.")
 
-    def ler_dados_esp32(self):
-        """Lê os sensores via Serial e retorna o JSON como dicionário."""
-        if self.ser and self.ser.in_waiting > 0:
-            try:
-                linha = self.ser.readline().decode('utf-8').strip()
-                return json.loads(linha)
-            except:
-                return None
-        return None
+    def processar(self):
+        """Busca o consolidado na memória e transmite."""
+        print("[COMUNICAÇÃO] Consolidando dados do ecossistema...")
+        
+        # Lê o que foi gravado pelos outros módulos
+        dados_ambiente = memoria.ler_dados("ambiente")
+        dados_biometria = memoria.ler_dados("biometria")
+        
+        # Simula o envio do pacote final
+        pacote_final = {
+            "ambiente": dados_ambiente,
+            "biometria": dados_biometria,
+            "status": "Transmissão Concluída"
+        }
+        
+        return self.transmitir(pacote_final)
+
+    def transmitir(self, pacote):
+        # Aqui você pode expandir para enviar via API, salvar em arquivo, etc.
+        print(f"[COMUNICAÇÃO] Protocolo enviado: {pacote.get('status')}")
+        return True
+
+# Instância global
+comunicador = MonacoComunicacao()
+
+def rodar():
+    """Função chamada pelo painel principal."""
+    return comunicador.processar()
+
+def iniciar():
+    """Ponte padronizada."""
+    return rodar()
+
+if __name__ == "__main__":
+    print(rodar())

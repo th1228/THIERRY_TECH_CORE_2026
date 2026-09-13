@@ -1,38 +1,61 @@
 # -*- coding: utf-8 -*-
-from monaco_nucleo_acesso import MonacoNucleoAcesso
-from monaco_integrador import MonacoIntegrador
+import sys
+import os
+
+# --- CORREÇÃO DE CAMINHO ---
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from core.memoria_comum import instancia_memoria as memoria
+from core.neuro_protocolos import motor_prescricao
 
 class MonacoPlan:
-    def __init__(self, cliente, local):
-        # 1. Instancia o Núcleo de Acesso (Segurança)
-        self.nucleo = MonacoNucleoAcesso(cliente, local)
-        # 2. Instancia o Motor (Processamento Core)
-        self.motor = MonacoIntegrador()
-        self.cliente = cliente
+    def __init__(self):
+        self.memoria = memoria 
+        print("[MÔNACO PLAN] Motor estratégico de alto valor ativado.")
 
-    def rodar_protocolo_completo(self):
-        """O fluxo definitivo: Segurança -> Processamento -> Laudo."""
+    def processar(self):
+        print("[MÔNACO PLAN] Executando análise de escalabilidade global...")
+        return self.executar_estrategia()
+
+    def executar_estrategia(self):
+        print("[MÔNACO PLAN] Processando diretrizes de Supremacy Network...")
         
-        # A. Validação de Elite (Portal)
-        if not self.nucleo.iniciar_portal():
-            print("[ERRO] Falha de segurança. Acesso negado.")
-            return
-
-        # B. Execução do Motor de Biometria
-        print(f"\n[MÔNACO PLAN] Executando motores de alta performance para {self.cliente}...")
-        dados_processados = self.motor.rodar_loop_real()
+        # 1. Recuperação do dossiê unificado (Integrador)
+        dados_integrados = self.memoria.ler_dados("integrador")
         
-        # C. Síntese do Laudo Final (PDF Exclusivo)
-        print("[MÔNACO PLAN] Gerando Laudo Definitivo...")
-        self.emitir_pdf_monaco(dados_processados)
-        print("[MÔNACO PLAN] Protocolo concluído com sucesso.")
+        # 2. Prescrição Baseada em dados reais (Fluxo capturado pelo sistema)
+        # Usamos 0.5 como base caso o sistema ainda esteja calibrando
+        fluxo_val = 0.5 
+        prescricao = motor_prescricao.gerar_prescricao(fluxo_val)
+        
+        # 3. MATRIZ DE EXECUÇÃO (16 DIAS - Ajustada para a data atual)
+        cronograma_16_dias = [
+            {"DATA": "20/07", "TRATAMENTO": "Alinhamento", "DECISÃO": "Neurogênese"},
+            {"DATA": "21/07", "TRATAMENTO": "Detox", "DECISÃO": "Sincronia"},
+            {"DATA": "22/07", "TRATAMENTO": "Nutrição", "DECISÃO": "Fluxo"},
+            {"DATA": "23/07", "TRATAMENTO": "Hidratação", "DECISÃO": "Revitalização"},
+            {"DATA": "24/07", "TRATAMENTO": "Reconstrução", "DECISÃO": "Otimização"},
+            {"DATA": "25/07", "TRATAMENTO": "Detox", "DECISÃO": "Supremacia"},
+            {"DATA": "26/07", "TRATAMENTO": "Nutrição", "DECISÃO": "Foco"},
+            {"DATA": "27/07", "TRATAMENTO": "Hidratação", "DECISÃO": "Amplitude"},
+            {"DATA": "28/07", "TRATAMENTO": "Reconstrução", "DECISÃO": "Integração"},
+            {"DATA": "29/07", "TRATAMENTO": "Detox", "DECISÃO": "Ajuste"},
+            {"DATA": "30/07", "TRATAMENTO": "Nutrição", "DECISÃO": "Perfil"},
+            {"DATA": "31/07", "TRATAMENTO": "Hidratação", "DECISÃO": "Potência"},
+            {"DATA": "01/08", "TRATAMENTO": "Reconstrução", "DECISÃO": "Eficiência"},
+            {"DATA": "02/08", "TRATAMENTO": "Finalização", "DECISÃO": "Consolidação"},
+            {"DATA": "03/08", "TRATAMENTO": "Manutenção", "DECISÃO": "Estabilidade"},
+            {"DATA": "04/08", "TRATAMENTO": "Protocolo Final", "DECISÃO": "Nova Coroa"}
+        ]
+        
+        # 4. Registro na Memória Comum para o Mônaco Comunicação gerar o Laudo
+        self.memoria.salvar_dados("prognostico", cronograma_16_dias)
+        self.memoria.salvar_dados("protocolo_clinico", prescricao)
+        
+        print(f"[MÔNACO PLAN] Protocolo Regenerativo Ativado: {prescricao.get('fase', 'Padrão')}")
+        return True
 
-    def emitir_pdf_monaco(self, dados):
-        """Gera o laudo com a identidade visual soberana."""
-        # Aqui você insere a lógica de exportação (ReportLab)
-        print(f"--- [PDF] Laudo emitido para {self.cliente} ---")
-
-if __name__ == "__main__":
-    # Início da ignição oficial do sistema
-    sistema = MonacoPlan(cliente="Thierry Elite", local="Unidade 01")
-    sistema.rodar_protocolo_completo()
+# --- PONTE DE INTEGRAÇÃO ---
+def iniciar():
+    plano = MonacoPlan()
+    return plano.processar()

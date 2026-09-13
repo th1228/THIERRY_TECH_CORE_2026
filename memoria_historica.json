@@ -1,12 +1,1950 @@
 {
-    "registro_principal": {
-        "dados": {
-            "espectral": "verde",
-            "ambiente": "ok",
-            "vitalidade": "98",
-            "densidade": "ok"
+    "registros": [
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "08/07/2026 00:57:40",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
         },
-        "protocolo": "Protocolo_Padrao",
-        "nivel": "Alta"
-    }
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 13:57:49",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 14:00:07",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 14:02:25",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 14:02:55",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 14:07:08",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 14:19:55",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 18:37:26",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 18:40:53",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 18:43:33",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 18:44:11",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 18:47:56",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 18:48:19",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "13/07/2026 18:49:19",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 20:36:39",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 20:52:10",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 21:47:00",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 21:52:25",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 21:53:50",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 22:16:19",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 22:17:35",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 22:28:31",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 22:38:16",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "14/07/2026 23:30:49",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 00:04:21",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 00:42:13",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 00:43:48",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 00:48:15",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 00:52:38",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 01:00:47",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 01:03:53",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 01:06:39",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 01:06:47",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 01:08:03",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 21:54:46",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 23:04:40",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 23:19:50",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 23:31:51",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "15/07/2026 23:58:00",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 00:03:30",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 00:06:17",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 00:35:19",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 20:25:00",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 20:39:06",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 21:17:51",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 21:43:06",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 21:43:39",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 21:47:00",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 21:54:48",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 22:45:34",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 23:47:12",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 23:50:48",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "16/07/2026 23:59:19",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 00:03:29",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 22:41:46",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 22:52:53",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:13:01",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:15:08",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:23:31",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:25:45",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:42:03",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:46:56",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:53:11",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "17/07/2026 23:55:41",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 00:47:02",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 00:48:56",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 00:49:15",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 00:52:33",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 00:56:03",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 00:59:41",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 01:03:00",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 01:05:35",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "18/07/2026 01:09:57",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 08:29:16",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 08:34:35",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 08:39:11",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 08:44:24",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 08:47:36",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 08:57:10",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:01:47",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:04:26",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:13:54",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:15:36",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:31:21",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:44:06",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:48:20",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:50:58",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:52:55",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:54:27",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:55:06",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 09:59:02",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 10:18:20",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 10:30:27",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 10:42:38",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 11:31:43",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 11:36:19",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 11:37:23",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 11:51:24",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 12:07:28",
+            "dados": "Diagnóstico visual de Usuário Thierry",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 12:33:41",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 13:00:53",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 13:08:37",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 13:20:29",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:11:00",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:13:40",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:16:01",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:18:42",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:19:14",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:29:16",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:31:30",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:33:37",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:39:36",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:42:48",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:48:49",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:49:45",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:51:33",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:53:43",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:55:47",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 14:58:09",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 15:11:40",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 15:12:26",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 17:17:35",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 17:22:19",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 17:24:56",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 17:25:49",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 17:26:48",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 17:29:01",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 17:30:45",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 19:32:25",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 19:35:14",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 19:37:25",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 19:39:41",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "20/07/2026 19:42:48",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "21/07/2026 23:22:20",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "22/07/2026 20:15:09",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "22/07/2026 20:18:41",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "22/07/2026 20:21:19",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "22/07/2026 20:25:31",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 06:54:24",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:10:11",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:11:07",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:13:27",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:15:14",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:24:14",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:44:05",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:44:35",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 19:58:32",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 20:06:25",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 20:08:46",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 20:13:07",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 20:13:31",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 20:21:51",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:13:12",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:16:32",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:20:50",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:21:55",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:27:59",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:30:53",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:45:54",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:53:15",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:55:50",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 22:56:40",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:11:55",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:13:19",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:15:54",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:18:28",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:23:53",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:29:40",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:35:11",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:38:16",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:42:36",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:45:00",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:50:55",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "23/07/2026 23:55:29",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:00:57",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:03:33",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:08:54",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:18:10",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:21:16",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:23:11",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:29:42",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:40:41",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:44:05",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 00:50:14",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:00:23",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:04:35",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:08:59",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:16:36",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:31:15",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:34:03",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:36:33",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:39:31",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "24/07/2026 01:46:37",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "25/07/2026 21:18:07",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "25/07/2026 21:19:11",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "26/07/2026 08:11:31",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "26/07/2026 08:12:02",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "26/07/2026 08:20:01",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:25:30",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:28:29",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:32:57",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:35:10",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:36:20",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:36:32",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:40:59",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:44:22",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:45:11",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:47:06",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:47:32",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 10:50:40",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 11:51:00",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 11:52:02",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Usuário Thierry",
+            "timestamp": "27/07/2026 11:58:50",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 22:50:56",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 22:51:00",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 22:54:33",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 22:57:42",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 23:03:43",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 23:13:12",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 23:17:50",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 23:22:01",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 23:22:01",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 23:23:56",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "27/08/2026 23:39:40",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 00:01:17",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 00:01:17",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 00:23:03",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 00:31:51",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 00:47:37",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 00:55:17",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 07:18:32",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 07:36:56",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 07:48:33",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 22:39:56",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 22:39:56",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 22:49:36",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 22:49:36",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 23:05:25",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 23:18:34",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 23:32:18",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 23:33:08",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 23:46:29",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "28/08/2026 23:58:32",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:03:53",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:03:53",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:08:31",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:12:34",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:16:09",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:20:23",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:25:58",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:35:40",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:39:39",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:42:00",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:46:12",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:50:13",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 00:59:23",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 01:05:36",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "29/08/2026 07:22:29",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "30/08/2026 08:58:43",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "30/08/2026 08:58:43",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "30/08/2026 09:17:00",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "30/08/2026 09:44:44",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "30/08/2026 09:53:55",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "30/08/2026 10:18:36",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "04/09/2026 00:38:06",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "04/09/2026 22:51:46",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "04/09/2026 23:29:38",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "04/09/2026 23:36:30",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "04/09/2026 23:54:46",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 14:58:46",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 15:03:42",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 15:05:05",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 15:16:41",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 15:36:28",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 15:38:31",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 15:44:28",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 15:54:25",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        },
+        {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 16:14:29",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        }
+    ]
 }

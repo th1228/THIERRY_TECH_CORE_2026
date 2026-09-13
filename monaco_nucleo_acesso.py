@@ -1,37 +1,53 @@
 # -*- coding: utf-8 -*-
+import sys
+import os
+
+# --- CORREÇÃO DE CAMINHO ---
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from core.memoria_comum import instancia_memoria as memoria
 
 class MonacoNucleoAcesso:
-    def __init__(self, cliente_nome, local):
-        self.cliente = cliente_nome
-        self.local = local
+    def __init__(self):
+        print("[NÚCLEO_ACESSO] Motor de auditoria e acesso ativado.")
 
-    def validar_registro(self, protocolo, extra=None):
-        """
-        Método ajustado para aceitar 3 argumentos conforme exigido pelo 
-        sistema e evitar o TypeError.
-        """
-        print(f"\n[NÚCLEO] Validando protocolo: {protocolo}...")
-        # Lógica de validação do registro do sistema
-        return True
-
-    def iniciar_portal(self):
-        """Portal de Entrada Oficial: Mônaco Plan"""
-        print("\n" + "="*70)
-        print("    SEJA BEM-VINDO AO SUPRASSUMO MÔNACO PLAN | THIERRY ELITE    ")
-        print("="*70)
-        print(f"  > LOCAL DA OPERAÇÃO VINCULADO: {self.local}")
-        print("-"*70)
-        print("  ATENÇÃO: POR QUESTÃO DE ALTA SEGURANÇA, ESTE SISTEMA")
-        print("  É VALIDADO EXCLUSIVAMENTE PARA USO NESTE AMBIENTE VINCULADO.")
-        print("  A REMOÇÃO DESTE DISPOSITIVO DO DOMÍNIO TERRITORIAL")
-        print("  RESULTARÁ NO BLOQUEIO IMEDIATO DO ACESSO.")
-        print("-"*70)
+    def processar(self):
+        """Busca o consolidado final do Integrador e realiza a auditoria."""
+        print("[NÚCLEO_ACESSO] Consolidando resultados do sistema...")
         
-        confirmacao = input("  DIGITE SUA SENHA ID-CONVITE PARA VALIDAR O LOCAL: ").strip().upper()
+        # O Núcleo Acesso agora busca o resultado final do Integrador
+        dados = memoria.ler_dados("integrador")
         
-        if confirmacao == "CONFIRMO":
-            print("\n[MÔNACO PLAN] SEGURANÇA VALIDADA. ACESSO AUTORIZADO.")
-            return True
+        if dados:
+            return self.integrar_resultados(dados)
         else:
-            print("\n[ERRO] CHAVE ID-CONVITE INVÁLIDA OU AMBIENTE NÃO RECONHECIDO.")
+            print("[NÚCLEO_ACESSO] Erro: Nenhum dado do Integrador disponível.")
             return False
+
+    def integrar_resultados(self, dados):
+        """Unificação, Auditoria e Registro Permanente."""
+        try:
+            # Caminho de log mantido conforme sua estrutura
+            log_caminho = "storage/backup_auditoria.txt"
+            os.makedirs(os.path.dirname(log_caminho), exist_ok=True)
+            
+            # Formatação do log
+            acao = "Intervenção de Auditoria Concluída"
+            with open(log_caminho, "a", encoding="utf-8") as f:
+                f.write(f"Consolidação Realizada: {acao} | Fase: {dados.get('fase_protocolo', 'N/A')}\n")
+            
+            print(f"[NÚCLEO_ACESSO] Auditoria concluída. Registro salvo em {log_caminho}")
+            return True
+            
+        except Exception as e:
+            print(f"[NÚCLEO_ACESSO] Falha crítica na auditoria: {e}")
+            return False
+
+# Instância única
+nucleo_acesso = MonacoNucleoAcesso()
+
+def rodar():
+    return nucleo_acesso.processar()
+
+def iniciar():
+    return rodar()

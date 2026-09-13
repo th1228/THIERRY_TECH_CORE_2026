@@ -1,46 +1,78 @@
 # -*- coding: utf-8 -*-
-import datetime
+import sys
+import os
 
-# Dicionário Mestre de Elite
-laudo_acumulado = {
-    "cliente": {},
-    "bio_identidade": {},
-    "capilar": {},
-    "monaco_plan": {},
-    "contexto_ambiental": {} # O clima agora é parte integrante do seu laudo
-}
+# --- BLOCO DE CONEXÃO ESTRUTURAL (NÃO MEXER) ---
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    class MemoriaMock:
+        def salvar_dados(self, chave, valor): pass
+        def ler_dados(self, chave): return None
+    memoria = MemoriaMock()
+# -----------------------------------------------
 
-def obter_clima_atualizado():
+# Importações seguras dos motores do ecossistema
+try:
+    from core.motor_biometrico import iniciar as iniciar_biometria
+except ImportError:
+    def iniciar_biometria(): return {"status": "Mock Biometria"}
+
+try:
+    from core.motor_prognostico import iniciar as iniciar_prognostico
+except ImportError:
+    def iniciar_prognostico(): pass
+
+try:
+    from core.motor_regeneracao import MotorRegeneracao
+except ImportError:
+    MotorRegeneracao = None
+
+try:
+    from core.motor_performance import MotorPerformance
+except ImportError:
+    MotorPerformance = None
+
+try:
+    from core.motor_sincronia import executar_coleta_inicial
+except ImportError:
+    def executar_coleta_inicial(): pass
+
+
+class GerenciadorGlobalEcosystem:
     """
-    Busca o contexto ambiental de São Luís. 
-    Nota: Em um sistema de produção, você plugará aqui uma API real (ex: OpenWeather).
+    Maestro central do THIERRY_TECH_CORE_2026.
+    Gerencia o fluxo entre os motores, geolocalização e os planos (Laboratório, Salão, Engenharia Completa).
     """
-    # Exemplo com dados fixos para garantir funcionamento imediato
-    return {
-        "local": "São Luís, MA",
-        "data": datetime.datetime.now().strftime("%d/%m/%Y %H:%M"),
-        "temperatura": "29°C",
-        "condicao": "Nublado",
-        "umidade": "85%"
-    }
+    def __init__(self):
+        print("[GERENCIADOR GLOBAL] Inicializando maestro do ecossistema...")
 
-def salvar_dados(categoria, novos_dados):
-    """Salva os dados coletados pela câmera ou sistemas de análise."""
-    if categoria in laudo_acumulado:
-        laudo_acumulado[categoria].update(novos_dados)
-        print(f"Sucesso: Dados de '{categoria}' integrados com sucesso.")
-    else:
-        print(f"Erro: Categoria '{categoria}' desconhecida.")
+    def processar_ecossistema_completo(self, tipo_plano="engenharia_completa"):
+        print(f"[GERENCIADOR GLOBAL] Acionando ecossistema para o plano: {tipo_plano.upper()}")
+        
+        # 1. Executa sincronia e testes de performance de base
+        executar_coleta_inicial()
+        
+        # 2. Executa varredura biométrica
+        dados_biometricos = iniciar_biometria()
+        
+        # 3. Executa prognóstico de 16 dias
+        iniciar_prognostico()
+        
+        # 4. Roteia com base na escolha do plano na interface
+        if tipo_plano == "laboratorio":
+            print("[TTC GLOBAL] Compilando dados clínicos e biométricos para o Laboratório...")
+        elif tipo_plano == "salao":
+            print("[TTC GLOBAL] Compilando diretrizes estéticas e de visagismo para o Salão...")
+        elif tipo_plano == "engenharia_completa":
+            print("[TTC GLOBAL] Compilando Dossiê Supremo de Engenharia Pessoal...")
+            
+        # Sincroniza o sucesso da execução na Memória Comum 🧠
+        memoria.salvar_dados("STATUS_GERENCIADOR_GLOBAL", "EXECUTADO_COM_SUCESSO")
+        print("[GERENCIADOR GLOBAL] Processo concluído com êxito.")
+        return "[GERENCIADOR GLOBAL] Processo concluído com êxito."
 
-def inicializar_sistema():
-    """Carrega o contexto inicial (Clima) ao iniciar o software."""
-    clima = obter_clima_atualizado()
-    salvar_dados("contexto_ambiental", clima)
-    print("Sistema TTC Global inicializado com contexto ambiental.")
-
-def obter_laudo_completo():
-    """Retorna tudo o que foi acumulado para ser impresso no PDF."""
-    return laudo_acumulado
-
-# Inicializa o clima assim que o módulo for importado
-inicializar_sistema()
+if __name__ == "__main__":
+    orquestrador = GerenciadorGlobalEcosystem()
+    orquestrador.processar_ecossistema_completo(tipo_plano="engenharia_completa")

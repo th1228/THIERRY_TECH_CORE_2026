@@ -1,78 +1,82 @@
 # -*- coding: utf-8 -*-
-import cv2
-import mediapipe as mp
-import numpy as np
 import sys
 import os
+import cv2
+import numpy as np
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import motor_dados
+# --- CORREÇÃO DE CAMINHO E CONEXÃO ESTRUTURAL ---
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
 
-# Variáveis globais de controle
-congelado = False
-dados_fixos = {"d": 0, "o": 0, "a": 0, "m": 0, "s": 0, "iq": 0}
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    class MemoriaMock:
+        def salvar_dados(self, chave, valor): pass
+        def registrar(self, chave, valor): pass
+        def ler_dados(self, chave): return None
+    memoria = MemoriaMock()
+# -----------------------------------------------
 
-mp_face_mesh = mp.solutions.face_mesh
-face_mesh = mp_face_mesh.FaceMesh(refine_landmarks=True, min_detection_confidence=0.5)
+def calcular_vitalidade_completa(hidrofobia, espessura, dermatite_risco, tipo_reflexo):
+    peso_reflexo = {"BRILHOSO": 10, "TRANSLUCIDO": 5, "OPACO": 2}
+    score = (hidrofobia * 0.3) + (espessura * 0.2) + (peso_reflexo[tipo_reflexo] * 0.3) + (10 if dermatite_risco == "BAIXA" else 3) * 0.2
+    return round(max(1, min(10, score / 10)), 1)
 
-def extrair_metricas_fixas(roi):
+def processar(frame=None):
+    if frame is None: 
+        return frame
+    
+    # Área de análise centralizada
+    roi = frame[50:200, 200:400] 
     gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
-    d = np.sum(cv2.Canny(gray, 50, 150) > 0) / 10
-    o = np.mean(gray)
-    a = 100 - (np.std(roi) * 0.4)
-    m = d * 0.8
-    s = max(0, 100 - int(np.std(gray) * 0.8))
-    iq = int(np.std(gray) * 0.8)
-    return d, o, a, m, s, iq
-
-def desenhar_micromalha(frame, lm):
-    global congelado, dados_fixos
-    h, w, _ = frame.shape
-    cx, cy = int(lm.landmark[1].x * w), int(lm.landmark[1].y * h)
-    y_queixo, y_testa = int(lm.landmark[152].y * h), int(lm.landmark[10].y * h)
-    cor_ciano = (255, 255, 0)
     
-    # Desenho da Micromalha
-    for i in range(-40, 41): 
-        x_pos = cx + (i * 3)
-        cv2.line(frame, (x_pos, y_queixo), (x_pos, y_testa - 50), cor_ciano, 1, cv2.LINE_AA)
-    for i in range(15):
-        raio = 40 + (i * 8)
-        cv2.ellipse(frame, (cx, cy), (raio, raio + 10), 0, 180, 360, cor_ciano, 1, cv2.LINE_AA)
-
-    if not congelado:
-        roi = frame[y_testa-50:y_testa+50, cx-50:cx+50]
-        if roi.size > 0:
-            d, o, a, m, s, iq = extrair_metricas_fixas(roi)
-            dados_fixos = {"d": d, "o": o, "a": a, "m": m, "s": s, "iq": iq}
+    # 1. Análise de Densidade (Fios por cm²)
+    edges = cv2.Canny(gray, 50, 150)
+    contagem_fios = cv2.countNonZero(edges)
+    densidade_fios = contagem_fios / 100  # Estimativa de fios/cm² na área
+    espessura_media = np.mean(edges) / 10.0 
     
-    # Painel com "IDADE FIO"
-    cv2.rectangle(frame, (10, 380), (320, 480), (0, 0, 0), -1)
-    cv2.putText(frame, f"DENS: {dados_fixos['d']:.1f} | MASSA: {dados_fixos['m']:.1f} | AGUA: {dados_fixos['a']:.1f}%", (20, 400), 0, 0.35, (255,255,255), 1)
-    cv2.putText(frame, f"OLEO: {dados_fixos['o']:.1f} | SAUDE: {dados_fixos['s']:.1f}% | IDADE FIO: {dados_fixos['iq']:.0f} anos", (20, 425), 0, 0.35, (255,255,255), 1)
-    status = "CONGELADO" if congelado else "CALCULANDO..."
-    cv2.putText(frame, f"[ESPAC O] {status} | [S] SALVAR", (20, 455), 0, 0.4, cor_ciano, 1)
-
-def capturar_analise():
-    global congelado
-    cap = cv2.VideoCapture(0)
-    while cap.isOpened():
-        ret, frame = cap.read()
-        if not ret: break
-        frame = cv2.flip(frame, 1)
-        results = face_mesh.process(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-        if results.multi_face_landmarks:
-            for lm in results.multi_face_landmarks:
-                desenhar_micromalha(frame, lm)
-        cv2.imshow("Bioarquitetura Capilar - Laudo Tecnico", frame)
-        key = cv2.waitKey(1) & 0xFF
-        if key == 32: congelado = not congelado
-        elif key == ord('s'):
-            motor_dados.salvar("diagnostico_final", dados_fixos)
-            print("Diagnostico salvo com sucesso.")
-        elif key == ord('q'): break
-    cap.release()
-    cv2.destroyAllWindows()
+    # 2. Detecção de Alopecia (Áreas Lisas)
+    media_brilho = np.mean(gray)
+    risco_alopecia = "ALERTA: POSSÍVEL ALOPECIA" if (densidade_fios < 5 and media_brilho > 150) else "SAUDÁVEL"
+    
+    # Classificação de Reflexo
+    if media_brilho > 180: tipo_reflexo = "BRILHOSO"
+    elif media_brilho > 100: tipo_reflexo = "TRANSLUCIDO"
+    else: tipo_reflexo = "OPACO"
+    
+    nivel_hidrofobia = media_brilho / 25.5
+    tendencia_dermatite = "BAIXA" if np.std(gray) > 30 else "ALTA"
+    
+    vitalidade = calcular_vitalidade_completa(nivel_hidrofobia, espessura_media, tendencia_dermatite, tipo_reflexo)
+    
+    dados_cabelo = {
+        "VITALIDADE_SCORE": vitalidade,
+        "DENSIDADE_CM2": round(densidade_fios, 1),
+        "RISCO_ALOPECIA": risco_alopecia,
+        "REFLEXO": tipo_reflexo,
+        "SAUDE_COURO": tendencia_dermatite
+    }
+    
+    # Gravação segura no sistema de memória 🧠
+    try:
+        if hasattr(memoria, 'salvar_dados'):
+            memoria.salvar_dados("CABELO_DIAGNOSTICO", dados_cabelo)
+        elif hasattr(memoria, 'registrar'):
+            memoria.registrar("CABELO_DIAGNOSTICO", dados_cabelo)
+    except Exception:
+        pass
+    
+    # Feedback Visual High-End
+    cor_alerta = (0, 0, 255) if risco_alopecia != "SAUDÁVEL" else (0, 255, 0)
+    
+    cv2.putText(frame, f"VITALIDADE: {vitalidade}/10", (50, 80), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (255, 255, 255), 2)
+    cv2.putText(frame, f"DENSIDADE: {dados_cabelo['DENSIDADE_CM2']} fios/cm2", (50, 110), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 1)
+    cv2.putText(frame, f"STATUS: {risco_alopecia}", (50, 140), cv2.FONT_HERSHEY_SIMPLEX, 0.6, cor_alerta, 2)
+    
+    return frame
 
 if __name__ == "__main__":
-    capturar_analise()
+    print("Módulo analise_cabelo integrado com sucesso.")

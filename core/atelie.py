@@ -1,68 +1,86 @@
-import sys
+# -*- coding: utf-8 -*-
 import os
-from fpdf import FPDF
+import sys
+from typing import Optional, Dict, Any, Union
+from fpdf import FPDF  # type: ignore
 
-# --- CORREÇÃO DE IMPORTAÇÃO (Garante que o Python ache seus arquivos) ---
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+# --- CORREÇÃO DE CAMINHO E CONEXÃO ESTRUTURAL ---
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
 
-from biometria import ThierryLuxuryCore
-from sentinela import SentinelaFisio
+try:
+    from memoria_comum import instancia_memoria as memoria  # type: ignore
+except ImportError:
+    class MemoriaMock:
+        def salvar_dados(self, chave: str, valor: Any) -> None: pass
+        def ler_dados(self, chave: str) -> Optional[Dict[str, Any]]: return None
+    memoria = MemoriaMock()
+# -----------------------------------------------
 
-def gerar_diagnostico_final():
-    # 1. Inicializa os módulos
-    sentinela = SentinelaFisio()
-    engine = ThierryLuxuryCore()
-
-    # 2. Executa a captura (Aguardando interação do usuário)
-    print("--- INICIANDO CAPTURA FISIOGNÔMICA TTC GLOBAL ---")
-    engine.rodar_biometria_premium(sentinela)
+def gerar_diagnostico_final() -> str:
+    """Gera o laudo em PDF integrando os dados da Memória Comum 🧠."""
+    # 1. Busca segura de dados na Memória Comum
+    rosto = memoria.ler_dados("ROSTO_STATUS") or {"FORMATO": "Sovereign Active"}
+    cabelo = memoria.ler_dados("CABELO_DIAGNOSTICO") or {
+        "VITALIDADE_SCORE": "Sovereign Active", 
+        "REFLEXO": "Sovereign Active",
+        "SAUDE_COURO": "Sovereign Active"
+    }
     
-    # 3. Extrai o diagnóstico processado pelo Sentinela
-    # O sentinela já calculou o estado dentro da rodar_biometria_premium
-    estado_neuro = sentinela.estado_atual
-    
-    # 4. Início da Geração do PDF
     pdf = FPDF()
-    pdf.set_margins(10, 10, 10)
     pdf.add_page()
-    
-    # Header
     pdf.set_font("Arial", 'B', 16)
-    pdf.cell(190, 10, "BESPOKE VISUAL DIAGNOSIS: TTC GLOBAL", ln=True, align='C')
-    pdf.ln(10)
+    pdf.cell(190, 10, "THIERRY TECHNOLOGY - SUPREMACY NETWORK", ln=True, align='C')
+    pdf.ln(10) # type: ignore
     
-    # Resultados Fisiognômicos
+    # 2. Diagnóstico Técnico
     pdf.set_font("Arial", 'B', 12)
-    pdf.cell(190, 10, "ANALISE NEURO-FISIOGNOMICA:", ln=True)
+    pdf.cell(190, 10, "LAUDO DE VISAGISMO E SAUDE CAPILAR:", ln=True)
     pdf.set_font("Arial", size=12)
-    pdf.multi_cell(190, 10, f"ESTADO DETECTADO: {estado_neuro}", align='L')
-    pdf.ln(5)
-
-    # 5. Integração com o Laudo da Mão (Biogene)
-    if os.path.exists("ultimo_laudo.txt"):
-        try:
-            with open("ultimo_laudo.txt", "r") as f:
-                nome_foto = f.read().strip()
-            
-            if os.path.exists(nome_foto):
-                pdf.set_font("Arial", 'B', 12)
-                pdf.cell(190, 10, "REGISTRO DE DENSIDADE (BIOGENE):", ln=True)
-                pdf.image(nome_foto, x=10, w=80)
-                pdf.ln(85)
-        except Exception as e:
-            print(f"Erro ao integrar imagem da mão: {e}")
-
-    # 6. Salvamento do Relatório Definitivo
-    pasta_destino = r"c:\projetos python\THIERRY_TECHNOLOGY_CORE"
-    os.makedirs(pasta_destino, exist_ok=True)
-    caminho_final = os.path.join(pasta_destino, "Relatorio_Definitivo_TTC.pdf")
     
-    pdf.output(caminho_final)
+    conteudo = (
+        f"FORMATO DE ROSTO: {rosto.get('FORMATO', 'Sovereign Active')}\n"
+        f"VITALIDADE DO FIO: {cabelo.get('VITALIDADE_SCORE', 'Sovereign Active')}/10\n"
+        f"REFLEXO (LUMINOSIDADE): {cabelo.get('REFLEXO', 'Sovereign Active')}\n"
+        f"SAUDE DO COURO CABELUDO: {cabelo.get('SAUDE_COURO', 'Sovereign Active')}\n"
+    )
+    pdf.multi_cell(190, 10, conteudo)
     
-    print("-" * 60)
-    print(f"SUCESSO! RELATÓRIO GERADO EM:")
-    print(f"-> {caminho_final}")
-    print("-" * 60)
+    # 3. Recomendação Estratégica
+    pdf.ln(5) # type: ignore
+    pdf.set_font("Arial", 'B', 12)
+    pdf.cell(190, 10, "SUGESTAO DE ESTILO:", ln=True)
+    pdf.set_font("Arial", size=12)
+    pdf.multi_cell(190, 10, "Com base na analise, sugerimos cortes que tragam equilibrio a geometria facial detectada.")
+    
+    # Gerar arquivo na pasta correta do projeto
+    pasta = os.path.join(ROOT_DIR, "Relatorios")
+    os.makedirs(pasta, exist_ok=True)
+    caminho = os.path.join(pasta, "Laudo_Supremacy.pdf")
+    pdf.output(caminho)
+    
+    caminho_absoluto = os.path.abspath(caminho)
+    
+    # Sincronização automática com a Memória Comum 🧠
+    try:
+        memoria.salvar_dados("laudo_supremacy_pdf", {
+            "caminho": caminho_absoluto,
+            "status": "GERADO_COM_SUCESSO"
+        })
+    except Exception:
+        pass
+        
+    print(f"\n[ATELIÊ] Laudo gerado com sucesso em: {caminho_absoluto}")
+    return caminho_absoluto
+
+def processar(frame: Optional[Any] = None) -> Dict[str, Union[str, Any]]:
+    """Função de compatibilidade direta com o orquestrador (main.py) 💻."""
+    caminho_pdf = gerar_diagnostico_final()
+    return {
+        "status": "Laudo gerado e integrado",
+        "caminho_pdf": caminho_pdf
+    }
 
 if __name__ == "__main__":
     gerar_diagnostico_final()

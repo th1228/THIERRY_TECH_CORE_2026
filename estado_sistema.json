@@ -1,0 +1,640 @@
+{
+    "osteometria_diagnostico_total": {
+        "status": "sucesso",
+        "timestamp": 1786331662.6057205,
+        "biometria_avancada": {
+            "camadas_teciduais": {
+                "gordura_profunda_mm": 2.1,
+                "gordura_superficial_mm": 3.4,
+                "derme_epiderme_mm": 1.2,
+                "distancia_total_osso_pele_mm": 6.7
+            },
+            "estrutura_ossea_apoio": {
+                "reabsorcao_maxilar_index": 0.85,
+                "integridade_zigomatica": "Estável",
+                "score_sustentacao_ossea": 85.2
+            },
+            "envelhecimento_dinamico": {
+                "grau_ptose_diagonal": 15.0,
+                "perda_colageno_estimada_porcentagem": 22.0,
+                "nivel_descolamento_tecido": "Estágio Inicial / Leve",
+                "risco_ptose_severa": "Baixo"
+            },
+            "saude_ligamentar": {
+                "status_ancoragem_malar": "Preservada",
+                "status_ancoragem_mandibular": "Leve relaxamento"
+            }
+        },
+        "indices_esteticos_finais": {
+            "proporcao_aurea": 1.618,
+            "simetria_global": 96.2
+        }
+    },
+    "perfil_ativo": "salao",
+    "camera_status": "desligada",
+    "TESTE_SEGURANCA": {
+        "CLIENTE": "THIERRY",
+        "STATUS": "MASTER_LICENSE_ACTIVE"
+    },
+    "CLIENTE": "THIERRY",
+    "status_inputsanitizer": "OK_INTEGRADO_0",
+    "status_noncecache": "OK_INTEGRADO_1",
+    "status_sessionmanager": "OK_INTEGRADO_2",
+    "status_cryptoengine": "OK_INTEGRADO_3",
+    "status_dbmanager": "OK_INTEGRADO_4",
+    "status_memoriacomum": "OK_INTEGRADO_5",
+    "status_logseguro": "OK_INTEGRADO_6",
+    "estado_atual": "payload_teste_padrao_internacional",
+    "operador_ativo": "THIERRY",
+    "ultimo_dossie_salao": {
+        "status": "sucesso",
+        "cabecalho_institucional": {
+            "instituicao": "Thierry Technology Concept Global",
+            "titulo_do_dossie": "Dossiê Setorial - Módulo SALAO",
+            "autoridade_tecnologica": "Thierry Concept Global"
+        },
+        "foco_analise": "Tricologia, Densidade Capilar e Visagismo Avançado",
+        "resultados_tecnicos": {
+            "foco": "Tricologia, Densidade Capilar e Visagismo Avançado",
+            "dados": {
+                "HAIR_DENS_L": 142,
+                "HYDR_CAP_L": 0.93,
+                "ALOPEC_AL_L": 0.12
+            }
+        },
+        "timestamp": "2026-08-23 17:05:55",
+        "modulo_selecionado": "salao",
+        "idioma": "pt"
+    },
+    "ultimo_estado_geral": {
+        "status": "sucesso",
+        "cabecalho_institucional": {
+            "instituicao": "Thierry Technology Concept Global",
+            "titulo_do_dossie": "Dossiê Setorial - Módulo SALAO",
+            "autoridade_tecnologica": "Thierry Concept Global"
+        },
+        "foco_analise": "Tricologia, Densidade Capilar e Visagismo Avançado",
+        "resultados_tecnicos": {
+            "foco": "Tricologia, Densidade Capilar e Visagismo Avançado",
+            "dados": {
+                "HAIR_DENS_L": 142,
+                "HYDR_CAP_L": 0.93,
+                "ALOPEC_AL_L": 0.12
+            }
+        },
+        "timestamp": "2026-08-23 17:05:55",
+        "modulo_selecionado": "salao",
+        "idioma": "pt"
+    },
+    "ultimo_dossie_clinica": {
+        "status": "sucesso",
+        "cabecalho_institucional": {
+            "instituicao": "Thierry Technology Concept Global",
+            "titulo_do_dossie": "Dossiê Setorial - Módulo CLINICA",
+            "autoridade_tecnologica": "Thierry Concept Global"
+        },
+        "foco_analise": "Dermatologia Biofísica, Glicação e Expossoma",
+        "resultados_tecnicos": {
+            "foco": "Dermatologia Biofísica, Glicação e Expossoma",
+            "dados": {
+                "SKIN_REFL_L": 0.76,
+                "OXIM_MICRO_L": 0.94,
+                "NEURO_RESP_L": 0.92,
+                "DERM_HYDR_L": 0.91
+            }
+        },
+        "timestamp": "2026-08-22 07:09:58",
+        "modulo_selecionado": "clinica",
+        "idioma": "pt"
+    },
+    "ultimo_dossie_forense": {
+        "status": "sucesso",
+        "cabecalho_institucional": {
+            "instituicao": "Thierry Technology Concept Global",
+            "titulo_do_dossie": "Dossiê Setorial - Módulo FORENSE",
+            "autoridade_tecnologica": "Thierry Concept Global"
+        },
+        "foco_analise": "Clínica + Verificação Osteométrica e Vetorial Profunda",
+        "resultados_tecnicos": {
+            "foco": "Clínica + Verificação Osteométrica e Vetorial Profunda",
+            "dados": {
+                "SKIN_REFL_L": 0.76,
+                "OXIM_MICRO_L": 0.94,
+                "NEURO_RESP_L": 0.92,
+                "DERM_HYDR_L": 0.91,
+                "POST_STAB_L": 0.85,
+                "FACIAL_SM_L": 0.92,
+                "EYE_FAT_L": 0.34,
+                "CART_STR_L": 0.94,
+                "MAND_PROP_L": 0.96
+            }
+        },
+        "timestamp": "2026-08-22 07:10:14",
+        "modulo_selecionado": "forense",
+        "idioma": "pt"
+    },
+    "ultimo_dossie_monaco": {
+        "status": "sucesso",
+        "cabecalho_institucional": {
+            "instituicao": "Thierry Technology Concept Global",
+            "titulo_do_dossie": "Dossiê Setorial - Módulo MONACO",
+            "autoridade_tecnologica": "Thierry Concept Global"
+        },
+        "foco_analise": "Plano Master - Bio-harmonia Suprema e Longevidade Global",
+        "resultados_tecnicos": {
+            "foco": "Plano Master - Bio-harmonia Suprema e Longevidade Global",
+            "dados_esquerda": {
+                "HAIR_DENS_L": 142,
+                "HYDR_CAP_L": 0.93,
+                "ALOPEC_AL_L": 0.12,
+                "VISAG_SYM_L": 0.95,
+                "CELL_REG_L": 0.88,
+                "SKIN_REFL_L": 0.76,
+                "OXIM_MICRO_L": 0.94,
+                "NEURO_RESP_L": 0.92,
+                "DERM_HYDR_L": 0.91,
+                "POST_STAB_L": 0.85,
+                "FACIAL_SM_L": 0.92,
+                "EYE_FAT_L": 0.34,
+                "CART_STR_L": 0.94,
+                "MAND_PROP_L": 0.96
+            },
+            "dados_direita": {
+                "HAIR_DENS_R": 145,
+                "HYDR_CAP_R": 34.5,
+                "ALOPEC_AL_R": 0.1,
+                "VISAG_SYM_R": 31.5,
+                "CELL_REG_R": 22.8,
+                "SKIN_REFL_R": 74.2,
+                "OXIM_MICRO_R": 13.9,
+                "NEURO_RESP_R": 20.0,
+                "DERM_HYDR_R": 37.3,
+                "POST_STAB_R": 88.1,
+                "FACIAL_SM_R": 40.2,
+                "EYE_FAT_R": 38.9,
+                "CART_STR_R": 35.0,
+                "MAND_PROP_R": 33.4
+            }
+        },
+        "timestamp": "2026-08-22 07:11:04",
+        "modulo_selecionado": "monaco",
+        "idioma": "pt"
+    },
+    "FPN_ATUAL": 0.99,
+    "PROGNOSTICO_16_DIAS": [
+        {
+            "DATA": "27/08",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "Absolute Rep Molecular",
+            "PENTEADO_CORTE": "Curto Masculino",
+            "DECISÃO_ESTRATÉGICA": "Estratégica",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Gerânio",
+            "MASSAGEM": "Shiatsu",
+            "TOM_VOZ": "Alto",
+            "FREQUÊNCIA_MUSICAL": "528Hz",
+            "LONGEVIDADE_BOTULÍNICA": "Manutenção",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "28/08",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "Davines",
+            "PENTEADO_CORTE": "Curto Feminino",
+            "DECISÃO_ESTRATÉGICA": "Assertiva",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Olíbano",
+            "MASSAGEM": "Infomfacial",
+            "TOM_VOZ": "Médio",
+            "FREQUÊNCIA_MUSICAL": "432Hz",
+            "LONGEVIDADE_BOTULÍNICA": "Absorção Ativa",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "29/08",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "Kerastase",
+            "PENTEADO_CORTE": "Médio Masculino",
+            "DECISÃO_ESTRATÉGICA": "Metódica",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Lavanda",
+            "MASSAGEM": "Drenagem",
+            "TOM_VOZ": "Baixo",
+            "FREQUÊNCIA_MUSICAL": "Lo-fi",
+            "LONGEVIDADE_BOTULÍNICA": "Reforço Osteométrico",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "30/08",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "Joico",
+            "PENTEADO_CORTE": "Médio Feminino",
+            "DECISÃO_ESTRATÉGICA": "Estratégica",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Hortelã",
+            "MASSAGEM": "Ayurvédica",
+            "TOM_VOZ": "Alto",
+            "FREQUÊNCIA_MUSICAL": "Binaural",
+            "LONGEVIDADE_BOTULÍNICA": "Estabilização",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "31/08",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "Senscience",
+            "PENTEADO_CORTE": "Longo",
+            "DECISÃO_ESTRATÉGICA": "Assertiva",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Capim-Limão",
+            "MASSAGEM": "Shiatsu",
+            "TOM_VOZ": "Médio",
+            "FREQUÊNCIA_MUSICAL": "Ambient",
+            "LONGEVIDADE_BOTULÍNICA": "Manutenção",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "01/09",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "CPR",
+            "PENTEADO_CORTE": "Infantil",
+            "DECISÃO_ESTRATÉGICA": "Metódica",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Gerânio",
+            "MASSAGEM": "Infomfacial",
+            "TOM_VOZ": "Baixo",
+            "FREQUÊNCIA_MUSICAL": "528Hz",
+            "LONGEVIDADE_BOTULÍNICA": "Absorção Ativa",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "02/09",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "Nutri Wella",
+            "PENTEADO_CORTE": "Afro",
+            "DECISÃO_ESTRATÉGICA": "Estratégica",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Olíbano",
+            "MASSAGEM": "Drenagem",
+            "TOM_VOZ": "Alto",
+            "FREQUÊNCIA_MUSICAL": "432Hz",
+            "LONGEVIDADE_BOTULÍNICA": "Reforço Osteométrico",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "03/09",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "Absolute Rep Molecular",
+            "PENTEADO_CORTE": "Ondulado",
+            "DECISÃO_ESTRATÉGICA": "Assertiva",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Lavanda",
+            "MASSAGEM": "Ayurvédica",
+            "TOM_VOZ": "Médio",
+            "FREQUÊNCIA_MUSICAL": "Lo-fi",
+            "LONGEVIDADE_BOTULÍNICA": "Estabilização",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "04/09",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "Davines",
+            "PENTEADO_CORTE": "Liso",
+            "DECISÃO_ESTRATÉGICA": "Metódica",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Hortelã",
+            "MASSAGEM": "Shiatsu",
+            "TOM_VOZ": "Baixo",
+            "FREQUÊNCIA_MUSICAL": "Binaural",
+            "LONGEVIDADE_BOTULÍNICA": "Manutenção",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "05/09",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "Kerastase",
+            "PENTEADO_CORTE": "Caucasiano",
+            "DECISÃO_ESTRATÉGICA": "Estratégica",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Capim-Limão",
+            "MASSAGEM": "Infomfacial",
+            "TOM_VOZ": "Alto",
+            "FREQUÊNCIA_MUSICAL": "Ambient",
+            "LONGEVIDADE_BOTULÍNICA": "Absorção Ativa",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "06/09",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "Joico",
+            "PENTEADO_CORTE": "Curto Masculino",
+            "DECISÃO_ESTRATÉGICA": "Assertiva",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Gerânio",
+            "MASSAGEM": "Drenagem",
+            "TOM_VOZ": "Médio",
+            "FREQUÊNCIA_MUSICAL": "528Hz",
+            "LONGEVIDADE_BOTULÍNICA": "Reforço Osteométrico",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "07/09",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "Senscience",
+            "PENTEADO_CORTE": "Curto Feminino",
+            "DECISÃO_ESTRATÉGICA": "Metódica",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Olíbano",
+            "MASSAGEM": "Ayurvédica",
+            "TOM_VOZ": "Baixo",
+            "FREQUÊNCIA_MUSICAL": "432Hz",
+            "LONGEVIDADE_BOTULÍNICA": "Estabilização",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "08/09",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "CPR",
+            "PENTEADO_CORTE": "Médio Masculino",
+            "DECISÃO_ESTRATÉGICA": "Estratégica",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Lavanda",
+            "MASSAGEM": "Shiatsu",
+            "TOM_VOZ": "Alto",
+            "FREQUÊNCIA_MUSICAL": "Lo-fi",
+            "LONGEVIDADE_BOTULÍNICA": "Manutenção",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "09/09",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "Nutri Wella",
+            "PENTEADO_CORTE": "Médio Feminino",
+            "DECISÃO_ESTRATÉGICA": "Assertiva",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Hortelã",
+            "MASSAGEM": "Infomfacial",
+            "TOM_VOZ": "Médio",
+            "FREQUÊNCIA_MUSICAL": "Binaural",
+            "LONGEVIDADE_BOTULÍNICA": "Absorção Ativa",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "10/09",
+            "CLIMA": "Seco",
+            "NECESSIDADE_HIDRATAÇÃO": "Intensiva",
+            "TRATAMENTO_CAPILAR": "Absolute Rep Molecular",
+            "PENTEADO_CORTE": "Longo",
+            "DECISÃO_ESTRATÉGICA": "Metódica",
+            "LADO_ESCUTA": "Direito",
+            "ÓLEO_TERAPIA": "Capim-Limão",
+            "MASSAGEM": "Drenagem",
+            "TOM_VOZ": "Baixo",
+            "FREQUÊNCIA_MUSICAL": "Ambient",
+            "LONGEVIDADE_BOTULÍNICA": "Reforço Osteométrico",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        },
+        {
+            "DATA": "11/09",
+            "CLIMA": "Úmido",
+            "NECESSIDADE_HIDRATAÇÃO": "Equilíbrio",
+            "TRATAMENTO_CAPILAR": "Davines",
+            "PENTEADO_CORTE": "Infantil",
+            "DECISÃO_ESTRATÉGICA": "Estratégica",
+            "LADO_ESCUTA": "Esquerdo",
+            "ÓLEO_TERAPIA": "Gerânio",
+            "MASSAGEM": "Ayurvédica",
+            "TOM_VOZ": "Alto",
+            "FREQUÊNCIA_MUSICAL": "528Hz",
+            "LONGEVIDADE_BOTULÍNICA": "Estabilização",
+            "STATUS_NEURONAL": "Barreira Ativa"
+        }
+    ],
+    "STATUS_AUTO_CARREGAMENTO": {
+        "total_integrados": 122,
+        "status": "ativo"
+    },
+    "contexto_geografico": "KR",
+    "motor_biometrico": {
+        "usuario": "THIERRY",
+        "refletancia_pele": 49.1,
+        "tipo_rosto": "TRIANGULAR",
+        "status": "AUTENTICADO",
+        "timestamp": 1787876162.8167143
+    },
+    "ambiente": {
+        "regiao": "São Luís, BR",
+        "clima": "31.1°C - Nuvens dispersas",
+        "data": "segunda-feira, 07 de setembro de 2026",
+        "hora": "16:14:19"
+    },
+    "neuroprotocolo_ativo": {
+        "fase": "Janela Ápice de Neurogenese",
+        "intervencao": "Protocolo Senolítico (Fisetina 500mg / Quercetina 500mg)",
+        "estimulo": "Jejum intermitente estratégico (16h) + Meditação Guiada Delta",
+        "objetivo": "Apoptose seletiva de células senescentes e ativação de BDNF."
+    },
+    "prognostico": [
+        {
+            "DATA": "20/07",
+            "TRATAMENTO": "Alinhamento",
+            "DECISÃO": "Neurogênese"
+        },
+        {
+            "DATA": "21/07",
+            "TRATAMENTO": "Detox",
+            "DECISÃO": "Sincronia"
+        },
+        {
+            "DATA": "22/07",
+            "TRATAMENTO": "Nutrição",
+            "DECISÃO": "Fluxo"
+        },
+        {
+            "DATA": "23/07",
+            "TRATAMENTO": "Hidratação",
+            "DECISÃO": "Revitalização"
+        },
+        {
+            "DATA": "24/07",
+            "TRATAMENTO": "Reconstrução",
+            "DECISÃO": "Otimização"
+        },
+        {
+            "DATA": "25/07",
+            "TRATAMENTO": "Detox",
+            "DECISÃO": "Supremacia"
+        },
+        {
+            "DATA": "26/07",
+            "TRATAMENTO": "Nutrição",
+            "DECISÃO": "Foco"
+        },
+        {
+            "DATA": "27/07",
+            "TRATAMENTO": "Hidratação",
+            "DECISÃO": "Amplitude"
+        },
+        {
+            "DATA": "28/07",
+            "TRATAMENTO": "Reconstrução",
+            "DECISÃO": "Integração"
+        },
+        {
+            "DATA": "29/07",
+            "TRATAMENTO": "Detox",
+            "DECISÃO": "Ajuste"
+        },
+        {
+            "DATA": "30/07",
+            "TRATAMENTO": "Nutrição",
+            "DECISÃO": "Perfil"
+        },
+        {
+            "DATA": "31/07",
+            "TRATAMENTO": "Hidratação",
+            "DECISÃO": "Potência"
+        },
+        {
+            "DATA": "01/08",
+            "TRATAMENTO": "Reconstrução",
+            "DECISÃO": "Eficiência"
+        },
+        {
+            "DATA": "02/08",
+            "TRATAMENTO": "Finalização",
+            "DECISÃO": "Consolidação"
+        },
+        {
+            "DATA": "03/08",
+            "TRATAMENTO": "Manutenção",
+            "DECISÃO": "Estabilidade"
+        },
+        {
+            "DATA": "04/08",
+            "TRATAMENTO": "Protocolo Final",
+            "DECISÃO": "Nova Coroa"
+        }
+    ],
+    "protocolo_clinico": {
+        "fase": "Janela Ápice de Neurogenese",
+        "intervencao": "Protocolo Senolítico (Fisetina 500mg / Quercetina 500mg)",
+        "estimulo": "Jejum intermitente estratégico (16h) + Meditação Guiada Delta",
+        "objetivo": "Apoptose seletiva de células senescentes e ativação de BDNF."
+    },
+    "consciencia": {
+        "status": "captura_realizada",
+        "ultimo_registro": {
+            "cliente": "Cliente Padrão",
+            "timestamp": "07/09/2026 16:14:29",
+            "dados": "Diagnóstico visual capturado via sistema central",
+            "protocolo": "CAPTURA_VIVA_2026",
+            "nivel": "AVANCADO"
+        }
+    },
+    "eminencia": {
+        "status": "analise_concluida",
+        "nivel": "ULTRA-HIGH-NET-WORTH",
+        "score_autoridade": 98,
+        "harmonia_visagismo": "ALTA"
+    },
+    "BIOMETRIA": {
+        "CLIENTE": "Thierry",
+        "SCANNER_OSTEOMETRIA": "{'status': 'ativo', 'metrica_vfc': 49.1, 'usuario': 'THIERRY'}",
+        "STATUS_SISTEMA": "Fase 2: Regeneração (Autólogos/Exossomos)"
+    },
+    "integrador": {
+        "BIOMETRIA": {
+            "CLIENTE": "Thierry",
+            "SCANNER_OSTEOMETRIA": "{'status': 'ativo', 'metrica_vfc': 49.1, 'usuario': 'THIERRY'}",
+            "STATUS_SISTEMA": "Fase 2: Regeneração (Autólogos/Exossomos)"
+        },
+        "ambiente": {
+            "regiao": "São Luís, BR",
+            "clima": "31.1°C - Nuvens dispersas",
+            "data": "segunda-feira, 07 de setembro de 2026",
+            "hora": "16:14:19"
+        },
+        "consciencia": {
+            "status": "captura_realizada",
+            "ultimo_registro": {
+                "cliente": "Cliente Padrão",
+                "timestamp": "07/09/2026 15:54:25",
+                "dados": "Diagnóstico visual capturado via sistema central",
+                "protocolo": "CAPTURA_VIVA_2026",
+                "nivel": "AVANCADO"
+            }
+        },
+        "eminencia": {
+            "status": "analise_concluida",
+            "nivel": "ULTRA-HIGH-NET-WORTH",
+            "score_autoridade": 98,
+            "harmonia_visagismo": "ALTA"
+        },
+        "fase_protocolo": "Fase 2: Regeneração (Autólogos/Exossomos)"
+    },
+    "biogemeo_dossie_ativo": {
+        "status": "sucesso",
+        "cabecalho_institucional": {
+            "instituicao": "Thierry Technology Concept Global",
+            "titulo_do_dossie": "Dossiê Setorial - Módulo MONACO",
+            "autoridade_tecnologica": "Thierry Concept Global"
+        },
+        "foco_analise": "Câmera Mônaco - Protocolo Supremo de Bio-Harmonia e Longevidade Global",
+        "resultados_tecnicos": {
+            "foco": "Câmera Mônaco - Protocolo Supremo de Bio-Harmonia e Longevidade Global",
+            "dados_esquerda": {
+                "HAIR_DENS_L": 142,
+                "HYDR_CAP_L": 0.93,
+                "ALOPEC_AL_L": 0.12,
+                "VISAG_SYM_L": 0.95,
+                "CELL_REG_L": 0.88,
+                "SKIN_REFL_L": 0.76,
+                "OXIM_MICRO_L": 0.94,
+                "NEURO_RESP_L": 0.92,
+                "DERM_HYDR_L": 0.91,
+                "POST_STAB_L": 0.85,
+                "FACIAL_SM_L": 0.92,
+                "EYE_FAT_L": 0.34,
+                "CART_STR_L": 0.94,
+                "MAND_PROP_L": 0.96
+            },
+            "dados_direita": {
+                "HAIR_DENS_R": 145,
+                "HYDR_CAP_R": 34.5,
+                "ALOPEC_AL_R": 0.1,
+                "VISAG_SYM_R": 31.5,
+                "CELL_REG_R": 22.8,
+                "SKIN_REFL_R": 74.2,
+                "OXIM_MICRO_R": 13.9,
+                "NEURO_RESP_R": 20.0,
+                "DERM_HYDR_R": 37.3,
+                "POST_STAB_R": 88.1,
+                "FACIAL_SM_R": 40.2,
+                "EYE_FAT_R": 38.9,
+                "CART_STR_R": 35.0,
+                "MAND_PROP_R": 33.4
+            }
+        },
+        "timestamp": "2026-08-31 20:31:24",
+        "modulo_selecionado": "monaco",
+        "idioma": "pt"
+    },
+    "laudo_supremacy_pdf": {
+        "caminho": "c:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026\\Relatorios\\Laudo_Supremacy.pdf",
+        "status": "GERADO_COM_SUCESSO"
+    }
+}

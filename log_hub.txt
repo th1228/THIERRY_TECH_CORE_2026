@@ -1,0 +1,8 @@
+2026-07-08 00:13:29 | ANALISE_CABELO | {'status': 'CAPTURA_REALIZADA', 'cliente': 'Thierry'}
+2026-07-08 23:07:59 | BIOGEMIO_SCAN | {'Paciente': 'Paciente_Padrao', 'Morfologia': 'Oval', 'Engenharia_Da_Alma': 'PROTOCOLO REGENERAÇÃO GOLD', 'Status': 'VALIDADO'}
+2026-07-10 05:41:08 | BIOGEMIO_SCAN | {'Paciente': 'Teste_Joao', 'Morfologia': 'Oval', 'Engenharia_Da_Alma': 'PROTOCOLO REGENERAÇÃO GOLD', 'Status': 'VALIDADO'}
+2026-07-11 06:27:46 | BIOGEMIO_SCAN | {'Paciente': 'Paciente_Padrao', 'Morfologia': 'Oval', 'Engenharia_Da_Alma': 'PROTOCOLO REGENERAÇÃO GOLD', 'Status': 'VALIDADO'}
+2026-07-11 06:38:49 | BIOGEMIO_SCAN | {'Paciente': 'Paciente_Padrao', 'Morfologia': 'Oval', 'Engenharia_Da_Alma': 'PROTOCOLO REGENERAÇÃO GOLD', 'Status': 'VALIDADO'}
+2026-07-11 06:39:43 | BIOGEMIO_SCAN | {'Paciente': 'Teste_Joao', 'Morfologia': 'Oval', 'Engenharia_Da_Alma': 'PROTOCOLO REGENERAÇÃO GOLD', 'Status': 'VALIDADO'}
+2026-07-11 06:47:10 | BIOGEMIO_SCAN | {'Paciente': 'Paciente_Padrao', 'Morfologia': 'Oval', 'Engenharia_Da_Alma': 'PROTOCOLO REGENERAÇÃO GOLD', 'Status': 'VALIDADO'}
+2026-07-12 15:51:09 | BIOGEMIO_SCAN | {'Paciente': 'Paciente_Padrao', 'Morfologia': 'Oval', 'Engenharia_Da_Alma': 'PROTOCOLO REGENERAÇÃO GOLD', 'Status': 'VALIDADO'}

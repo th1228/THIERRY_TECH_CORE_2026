@@ -1,0 +1,53 @@
+[
+    {
+        "timestamp": "2026-09-10 07:47:17",
+        "operador": "Thiêrry (TCC SOBERANO)",
+        "organizacao": "TTC Global Corp",
+        "modulo_alvo": "security.audit_ledger",
+        "operacao": "Varredura de Integridade Sênior",
+        "status_execucao": "SUCESSO",
+        "metricas_biometricas_ou_financeiras": {
+            "frequencia_vetorial": "1.818 Hz",
+            "niveis_governanca": "100%"
+        },
+        "detalhes_contexto": {
+            "jurisdicao": "Monaco & Brasil",
+            "tier": "Tier-1"
+        },
+        "hash_integridade_sha256": "3b0e96b57835036f03246f35442037a468520e80759073c43a171eb32751d251"
+    },
+    {
+        "timestamp": "2026-09-10 07:47:24",
+        "operador": "Thiêrry (TCC SOBERANO)",
+        "organizacao": "TTC Global Corp",
+        "modulo_alvo": "security.audit_ledger",
+        "operacao": "Varredura de Integridade Sênior",
+        "status_execucao": "SUCESSO",
+        "metricas_biometricas_ou_financeiras": {
+            "frequencia_vetorial": "1.818 Hz",
+            "niveis_governanca": "100%"
+        },
+        "detalhes_contexto": {
+            "jurisdicao": "Monaco & Brasil",
+            "tier": "Tier-1"
+        },
+        "hash_integridade_sha256": "a260764203d13416b32d50614ca49f6f146c4d36f9e8dcaedb6697e0d8d07198"
+    },
+    {
+        "timestamp": "2026-09-10 07:50:17",
+        "operador": "Thiêrry (TCC SOBERANO)",
+        "organizacao": "TTC Global Corp",
+        "modulo_alvo": "security.audit_ledger",
+        "operacao": "Varredura de Integridade Sênior & Espelho",
+        "status_execucao": "SUCESSO",
+        "metricas_biometricas_ou_financeiras": {
+            "frequencia_vetorial": "1.818 Hz",
+            "niveis_governanca": "100%"
+        },
+        "detalhes_contexto": {
+            "jurisdicao": "Monaco & Brasil",
+            "tier": "Tier-1"
+        },
+        "hash_integridade_sha256": "22bf043998cacd42b44283e66d2229c142e529829d6df1f818f525d84d942df6"
+    }
+]

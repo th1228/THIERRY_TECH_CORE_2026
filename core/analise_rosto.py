@@ -1,82 +1,79 @@
+# -*- coding: utf-8 -*-
+import sys
+import os
 import cv2
 import mediapipe as mp
-import time
-import winsound
 import numpy as np
 
-# Configuração da Malha
-mp_face_mesh = mp.solutions.face_mesh
-face_mesh = mp_face_mesh.FaceMesh(refine_landmarks=True, min_detection_confidence=0.5)
+# --- CORREÇÃO DE CAMINHO E CONEXÃO ESTRUTURAL ---
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if ROOT_DIR not in sys.path:
+    sys.path.append(ROOT_DIR)
 
-def main():
-    camera = cv2.VideoCapture(0)
-    estado = "INICIAR"
-    inicio_timer = 0
-    scan_y = 0 
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    class MemoriaMock:
+        def salvar_dados(self, chave, valor): pass
+        def registrar(self, chave, valor): pass
+        def ler_dados(self, chave): return None
+    memoria = MemoriaMock()
+# -----------------------------------------------
 
-    while True:
-        ret, frame = camera.read()
-        if not ret: break
+mp_face = mp.solutions.face_mesh
+face_mesh = mp_face.FaceMesh(refine_landmarks=True, min_detection_confidence=0.7)
+mp_drawing = mp.solutions.drawing_utils
 
-        # --- EFEITO: SCANNER DINÂMICO ---
-        # scan_y é a linha invisível que desce
-        scan_y = (scan_y + 8) % frame.shape[0]
+# Visual: Azul Ciano Neon (Pontos apenas, sem malha)
+cyan_spec = mp_drawing.DrawingSpec(color=(255, 255, 0), thickness=1, circle_radius=1)
+
+def classificar_formato(lm):
+    # Largura (pontas da mandíbula/têmpora) e Altura (topo ao queixo)
+    largura = abs(lm[234].x - lm[454].x)
+    altura = abs(lm[10].y - lm[152].y)
+    proporcao = altura / (largura + 1e-6)
+    
+    if proporcao < 1.1: return "QUADRADO"
+    if proporcao < 1.25: return "QUADRADO"
+    if proporcao > 1.5: return "ALONGADO"
+    return "OVAL"
+
+def processar(frame=None):
+    """Função de compatibilidade direta com o orquestrador (main.py) 💻."""
+    if frame is None:
+        return {"status": "Frame não fornecido"}
+
+    rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    results = face_mesh.process(rgb)
+    
+    if results.multi_face_landmarks:
+        for face_landmarks in results.multi_face_landmarks:
+            # DESENHA APENAS OS PONTOS (Sem conexões/malha)
+            mp_drawing.draw_landmarks(
+                image=frame,
+                landmark_list=face_landmarks,
+                connections=None,  
+                landmark_drawing_spec=cyan_spec)
+
+        lm = results.multi_face_landmarks[0].landmark
+        formato = classificar_formato(lm)
+        proporcao_val = round(abs(lm[10].y - lm[152].y) / abs(lm[234].x - lm[454].x), 2)
         
-        # Processamento Facial
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        results = face_mesh.process(rgb_frame)
-
-        if results.multi_face_landmarks:
-            for face_landmarks in results.multi_face_landmarks:
-                for lm in face_landmarks.landmark:
-                    h, w, _ = frame.shape
-                    cx, cy = int(lm.x * w), int(lm.y * h)
-                    
-                    # Distância do ponto atual para a linha do scanner
-                    dist = abs(cy - scan_y)
-                    
-                    # Lógica de brilho/tamanho: quanto mais perto da linha, maior o ponto
-                    # Se estiver a menos de 50 pixels da linha, o ponto cresce
-                    if dist < 50:
-                        size = int(4 - (dist / 15)) # O ponto varia de tamanho
-                        color = (255, 255, 255) # Branco no centro do feixe
-                    else:
-                        size = 1
-                        color = (255, 255, 0) # Ciano padrão
-                        
-                    cv2.circle(frame, (cx, cy), size, color, -1)
-
-        # Interface Pequena (mantida conforme pedido)
-        cv2.putText(frame, f"STATUS: {estado}", (20, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 0), 1)
-
-        # Máquina de Estados (lógica de captura mantida)
-        if estado == "INICIAR":
-            cv2.putText(frame, "PRESSIONE 'I' PARA INICIAR", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 255), 1)
-            if cv2.waitKey(1) & 0xFF == ord('i'):
-                estado = "RESPIRAÇÃO"
-                inicio_timer = time.time()
+        status_rosto = {"FORMATO": formato, "PROPORCAO": proporcao_val}
         
-        elif estado == "RESPIRAÇÃO":
-            tempo = int(time.time() - inicio_timer)
-            cv2.putText(frame, f"ANALISANDO: {tempo}s", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
-            if tempo >= 10: estado = "ESPERA"
+        # Sincronização segura com a Memória Comum 🧠
+        try:
+            if hasattr(memoria, 'salvar_dados'):
+                memoria.salvar_dados("ROSTO_STATUS", status_rosto)
+            elif hasattr(memoria, 'registrar'):
+                memoria.registrar("ROSTO_STATUS", status_rosto)
+        except Exception:
+            pass
+        
+        # Texto Neon Ciano 👁️
+        cv2.putText(frame, f"TIPO: {formato}", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)
 
-        elif estado == "ESPERA":
-            cv2.putText(frame, "OK! PRESSIONE 'S' PARA CAPTURAR", (20, 50), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
-            if cv2.waitKey(1) & 0xFF == ord('s'):
-                # Flash
-                flash = np.ones(frame.shape, dtype=np.uint8) * 255
-                cv2.imshow("THIERRY BIOGEMIO DIGITAL", flash)
-                winsound.Beep(1500, 200)
-                cv2.waitKey(200)
-                cv2.imwrite("resultado_biometria.jpg", frame)
-                estado = "FIM"
-
-        cv2.imshow("THIERRY BIOGEMIO DIGITAL", frame)
-        if cv2.waitKey(1) & 0xFF == ord('q'): break
-
-    camera.release()
-    cv2.destroyAllWindows()
+    return frame
 
 if __name__ == "__main__":
-    main()
+    print("Módulo analise_rosto inicializado com sucesso.")

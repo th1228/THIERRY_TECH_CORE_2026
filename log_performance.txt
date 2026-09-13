@@ -1,9 +1,3 @@
-2026-06-14 23:24 | Fadiga_Percebida: 3/10
-2026-06-14 23:24 | Fadiga_Percebida: 3/10
-2026-06-14 23:25 | Fadiga_Percebida: 4/10
-2026-06-14 23:28 | Fadiga_Percebida: 7/10
-2026-06-14 23:30 | Fadiga_Percebida: 3/10
-2026-06-14 23:34 | Fadiga_Percebida: 3/10
-2026-06-14 23:40 | Fadiga:3 | Assimetria:0 | Densidade:10 | Hidratacao:5
-2026-06-15 23:19 | Fadiga:3 | Assimetria:3 | Densidade:10 | Hidratacao:5
-2026-06-16 00:25 | Fadiga:5 | Assimetria:0 | Densidade:9 | Hidratacao:3
+Timestamp: Tue Jul  7 23:49:38 2026 | Media: 5.4762ms | Pico: 6.0304ms
+Sat Jul 18 00:15:50 2026 | Motor: TESTE_UNITARIO | Media: 10.5384ms | Pico: 10.8573ms
+Sat Jul 18 00:24:31 2026 | Motor: TESTE_UNITARIO | Media: 10.5499ms | Pico: 10.9493ms
