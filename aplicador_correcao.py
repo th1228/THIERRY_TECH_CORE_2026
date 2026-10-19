@@ -27,7 +27,7 @@ def aplicar_correcao_definitiva():
                     else:
                         print(f"[OK] Já integrado: {file}")
                         
-                except Exception as e:
+                except (OSError, UnicodeError) as e:
                     print(f"[ERRO] Falha ao processar {file}: {e}")
 
 if __name__ == "__main__":

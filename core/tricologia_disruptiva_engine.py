@@ -1,3 +1,18 @@
+
+# --- PONTE DE MEMÓRIA AUTOMÁTICA (THIERRY TECH) ---
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    try:
+        from core.memoria_comum import instancia_memoria as memoria
+    except ImportError:
+        class MemoriaMock:
+            def salvar_dados(self, chave, valor): pass
+            def registrar(self, chave, valor): pass
+            def ler_dados(self, chave): return None
+        memoria = MemoriaMock()
+# ---------------------------------------------------
+
 # -*- coding: utf-8 -*-
 """
 Módulo: Tricologia Disruptiva Engine (Dinâmico, Preditivo e Climático)
@@ -9,8 +24,26 @@ Autor: Thierry Technology Concept Global
 import datetime
 import numpy as np
 
+
+# --- DICIONÁRIO DE SUPORTE BILÍGUE AUTOMÁTICO (APEX GATE) ---
+DICIONARIO_IDIOMAS = {
+    "PT": {
+        "FUNDAMENTACAO": "FUNDAMENTAÇÃO ESTRATÉGICA E ANÁLISE DE LIDERANÇA FACIAL",
+        "CLÁUSULA": "CLÁUSULA PRIMEIRA: DA ESCASSEZ MUNDIAL DE 10 VAGAS",
+        "DEPRECIAÇÃO": "ANÁLISE DE DEPRECIAÇÃO E VALUATION DO CAPITAL DE IMAGEM",
+        "ENGENHARIA": "ENGENHARIA DE VALUATION E RETORNO DE BLINDAGEM ATIVA",
+    },
+    "EN": {
+        "FUNDAMENTACAO": "STRATEGIC FOUNDATION AND FACIAL LEADERSHIP ANALYSIS",
+        "CLÁUSULA": "FIRST CLAUSE: WORLDWIDE SCARCITY OF 10 EXCLUSIVE SLOTS",
+        "DEPRECIAÇÃO": "DEPRECIATION ANALYSIS AND IMAGE CAPITAL VALUATION",
+        "ENGENHARIA": "VALUATION ENGINEERING AND ACTIVE SHIELDING RETURN",
+    }
+}
+
+
 class TricologiaDisruptivaEngine:
-    def __init__(self, cliente_nome, frame_capturado_rgb=None, densidade_fios_estimada=130.0, miniaturizacao_pct=22.5, umidade_ar_pct=85.0, temp_externa_c=32.0):
+    def __init__(self, cliente_nome, frame_capturado_rgb=None, densidade_fios_estimada=130.0, miniaturizacao_pct=22.5, umidade_ar_pct=85.0, temp_externa_c=32.0, lang: str = "PT"):
         self.cliente_nome = cliente_nome
         self.densidade_fios = float(densidade_fios_estimada)
         self.miniaturizacao = float(miniaturizacao_pct)

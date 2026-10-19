@@ -5,12 +5,14 @@ import ctypes
 import threading
 import traceback
 import importlib.util
+import tkinter as tk
 import core.memoria_comum as memoria_comum
 
 # --- FILTRO DE SEGURANÇA (SILENCIA O ERRO 0.0) ---
 try:
     ctypes.windll.shcore.SetProcessDpiAwareness(2)
-except: pass
+except (AttributeError, OSError):
+    pass
 
 import customtkinter as ctk
 
@@ -31,7 +33,7 @@ def carregar_modulo_por_caminho(caminho_relativo, nome_modulo):
                 modulo = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(modulo)
                 return modulo
-        except Exception as e:
+        except (ImportError, SyntaxError, AttributeError, OSError) as e:
             print(f"Erro crítico ao carregar {caminho_relativo}: {e}")
     else:
         print(f"Arquivo não encontrado: {caminho_completo}")
@@ -82,7 +84,7 @@ class App(ctk.CTk):
             try:
                 self.textbox_log.insert("end", f"> {mensagem}\n")
                 self.textbox_log.see("end")
-            except Exception:
+            except (RuntimeError, AttributeError, tk.TclError):
                 pass
             print(mensagem)
         self.after(0, _inserir)
@@ -280,9 +282,9 @@ class App(ctk.CTk):
                         f.write(html_content)
                         
                     self.log(f"OK: dossie_oficial.html gerado com sucesso em core/pdfs_finais/!")
-                except Exception as err:
+                except (OSError, UnicodeEncodeError) as err:
                     self.log(f"Erro ao compilar Pitch Soberano: {err}")
-        except Exception as e:
+        except (AttributeError, ImportError, OSError, RuntimeError, ValueError, KeyError, TypeError) as e:
             detalhe_erro = traceback.format_exc()
             print("--- ERRO CAPTURADO ---")
             print(detalhe_erro)

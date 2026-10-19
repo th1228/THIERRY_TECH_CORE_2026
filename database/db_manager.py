@@ -21,6 +21,6 @@ class DBManager:
             
             # Se encontrar o scanner e ele estiver marcado como '1' (liberado)
             return resultado is not None and resultado[0] == 1
-        except Exception as e:
+        except sqlite3.Error as e:
             print(f"[DB] Erro ao consultar permissões: {e}")
             return False

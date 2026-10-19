@@ -1,3 +1,17 @@
+# --- PONTE DE MEMÓRIA AUTOMÁTICA (THIERRY TECH) ---
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    try:
+        from core.memoria_comum import instancia_memoria as memoria
+    except ImportError:
+        class MemoriaMock:
+            def salvar_dados(self, chave, valor): pass
+            def registrar(self, chave, valor): pass
+            def ler_dados(self, chave): return None
+        memoria = MemoriaMock()
+# ---------------------------------------------------
+
 import time
 import sys
 import os
@@ -16,7 +30,7 @@ def simular_ataque():
             # Tenta realizar a requisição usando o método estático do seu RateLimiting
             RateLimiting.verificar_vazao(identificador="teste_ataque")
             print(f"Requisição {i}: PERMITIDA ✅")
-        except Exception as e:
+        except (PermissionError, RuntimeError, ConnectionRefusedError) as e:
             print(f"Requisição {i}: BLOQUEADA PELO RATE LIMITER ❌ ({e})")
         
         # Intervalo curto entre as requisições para estourar o limite

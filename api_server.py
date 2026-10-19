@@ -1,14 +1,14 @@
 import os
 import sys
+from pathlib import Path
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # -*- coding: utf-8 -*-
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import stripe
-import os
-import sys
 
 # Configuração da chave Stripe oficial do ecossistema
 stripe.api_key = (
@@ -39,6 +39,23 @@ def home():
       "protocolo": "MONACO SECURE GATEWAY",
       "geodefense": "ACTIVE",
   }
+
+
+@app.get("/dossie", response_class=HTMLResponse)
+def exibir_dossie():
+  """Renderiza o painel do dossiê global a partir da pasta templates."""
+  try:
+    caminho_html = (
+        Path(__file__).resolve().parent
+        / "templates"
+        / "dossie_global.html"
+    )
+    with open(caminho_html, "r", encoding="utf-8") as f:
+      return f.read()
+  except Exception as e:
+    raise HTTPException(
+        status_code=404, detail=f"Dossiê global não encontrado: {str(e)}"
+    )
 
 
 @app.post("/api/v1/checkout/criar-sessao")

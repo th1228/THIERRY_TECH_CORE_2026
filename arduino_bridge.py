@@ -26,7 +26,7 @@ def ler_dados_esp32(porta_serial=None, baudrate=115200):
         if linha:
             print(f"[✓] Dados recebidos do ESP32: {linha}")
             return linha
-    except Exception as e:
+    except (serial.SerialException, UnicodeDecodeError, OSError) as e:
         print(f"[!] Erro ao ler a porta serial: {e}")
     
     return None

@@ -1,288 +1,196 @@
 # -*- coding: utf-8 -*-
 """
-THIERRY TECHNOLOGY CONCEPT GLOBAL - MAIN ORCHESTRATOR & SOVEREIGN NODE
-Módulo Master Central: Gestão de Fluxo, Biogêmeos, Fila de Arquivos, Memória Comum e FastAPI.
+SISTEMA DE AUDITORIA TÉCNICA E VALORAÇÃO DE ATIVOS INTANGÍVEIS (AUDITABLE CORE)
+COMPATIBILIDADE: ISO/IEC 25010, COCOMO II (POST-ARCHITECTURE) & CPC 04 / IAS 38
 """
 
-from datetime import datetime
 import os
 import sys
-import time
-import cv2
 import json
-import numpy as np
-from PIL import Image, ImageDraw, ImageFont
-from typing import Dict, Any, Optional, List
-from fastapi import FastAPI, Query, Response, HTTPException, Request, File, UploadFile
-from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-import uvicorn
+from datetime import datetime
+from pathlib import Path
+import requests
+from radon.visitors import ComplexityVisitor
+from radon.metrics import mi_parameters
 
-sys.path.append(os.path.abspath(os.path.dirname(__file__)))
+# Configurações de Terminal (ANSI)
+COLOR_HEADER = "\033[95m"
+COLOR_BLUE = "\033[94m"
+COLOR_GREEN = "\033[92m"
+COLOR_WARNING = "\033[93m"
+COLOR_FAIL = "\033[91m"
+RESET = "\033[0m"
 
-# --- CAMADA DE SEGURANÇA E FALLBACKS ---
-class LogSeguroFallback:
-    def registrar(self, modulo: str, acao: str, desc: str) -> None:
-        print(f"[LOG SEGURO] [{modulo}] {acao}: {desc}")
-
-try:
-    from security.log_seguro import LogSeguro
-except ImportError:
-    LogSeguro = LogSeguroFallback  # type: ignore
-
-# --- IMPORTAÇÃO DO AUDITOR DE INTEGRIDADE GLOBAL ---
-try:
-    from auditor_integridade_global import AuditorIntegridadeGlobal
-except ImportError:
-    class AuditorIntegridadeGlobal:
-        def __init__(self, limiar_confianca_minimo: float = 100.0):
-            pass
-        def inspecionar_dicionario_metricas(self, d: Dict[str, Any]) -> Dict[str, Any]:
-            return {"status_aprovacao": True, "indice_integridade_percentual": 100.0, "anomalias_encontradas": []}
-        def gerar_selo_criptografico_soberano(self, d: Dict[str, Any], t: str) -> str:
-            return "TCC-SOBERANO-SHA256-SEAL"
-
-# --- IMPORTAÇÃO DO MOTOR DE PDF (BIOGEM ENGINE) ---
-try:
-    from core.biogem_engine import BiogemEngine
-except ImportError:
-    try:
-        from biogem_engine import BiogemEngine
-    except ImportError:
-        BiogemEngine = None  # type: ignore
-
-app = FastAPI(title="Thierry Technology Concept - Sovereign Master & Biogêmeos Orquestrador")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-os.makedirs("static/results", exist_ok=True)
-app.mount("/static", StaticFiles(directory="static"), name="static")
-
-logger = LogSeguro()
-
-# --- FUNÇÃO AUXILIAR DE TIPOGRAFIA PREMIUM (PIL) ---
-def escrever_texto_premium(imagem: np.ndarray, texto: str, posicao: tuple[int, int], tamanho_fonte: int, cor: tuple[int, int, int]) -> np.ndarray:
-    img_pil = Image.fromarray(cv2.cvtColor(imagem, cv2.COLOR_BGR2RGB))
-    draw = ImageDraw.Draw(img_pil)
-    try:
-        fonte = ImageFont.truetype("arial.ttf", tamanho_fonte)
-    except:
-        fonte = ImageFont.load_default()
-    draw.text(posicao, texto, font=fonte, fill=cor)
-    return cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
-
-def aplicar_filtro_biogemeo(imagem_base: np.ndarray, modo: str, anos: int) -> np.ndarray:
-    h, w, _ = imagem_base.shape
-    if "PRESERVAÇÃO" in modo or "BASE" in modo or "CONTORNO" in modo or "COLÁGENO" in modo:
-        filtrada = cv2.edgePreservingFilter(imagem_base, flags=1, sigma_s=10, sigma_r=0.25)
-        filtrada = cv2.convertScaleAbs(filtrada, alpha=1.05, beta=5)
-        cor_borda = (130, 210, 0)
-    else:
-        gray = cv2.cvtColor(imagem_base, cv2.COLOR_BGR2GRAY)
-        laplacian = cv2.Laplacian(gray, cv2.CV_8U, ksize=3)
-        laplacian_color = cv2.cvtColor(laplacian, cv2.COLOR_GRAY2BGR)
-        filtrada = cv2.addWeighted(imagem_base, 0.9, laplacian_color, 0.1, 0)
-        filtrada = cv2.convertScaleAbs(filtrada, alpha=0.88, beta=-10)
-        cor_borda = (0, 0, 180) 
+class AuditoriaCore:
+    def __init__(self, diretorio_raiz=".", custo_medio_mensal_dev=28000.00, total_licencas_globais=10):
+        """
+        :param custo_medio_mensal_dev: Custo real (BRL) de um Dev Pleno/Senior com encargos.
+        :param total_licencas_globais: Teto absoluto de escassez global do ecossistema.
+        """
+        self.raiz = Path(diretorio_raiz)
+        self.custo_dev_brl = custo_medio_mensal_dev
+        self.total_licencas = total_licencas_globais
+        self.ignorar_pastas = {".git", "__pycache__", ".vscode", "venv", "env", "node_modules", "dist"}
         
-    cv2.rectangle(filtrada, (0, 0), (w, h), cor_borda, 2)
-    texto_topo = f"{modo}" if anos == 0 else f"{modo} | +{anos}A"
-    filtrada = escrever_texto_premium(filtrada, texto_topo, (8, 8), 9, (255, 255, 255))
-    return filtrada
+        # Métricas Acumuladas
+        self.total_sloc_bruto = 0
+        self.total_lloc_logico = 0
+        self.total_comentarios = 0
+        self.complexidade_acumulada = 0
+        self.total_arquivos_python = 0
+        self.arquivos_mapeados = []
 
-
-# =====================================================================
-# CLASSE CENTRAL: ORQUESTRADOR MASTER DO ECOSSISTEMA (MEMÓRIA COMUM E FILA)
-# =====================================================================
-class BiogemeoOrquestradorMaster:
-    def __init__(self):
-        self.frame_atual_camera: Optional[np.ndarray] = None
-        self.estado_fluxo: str = "AO_VIVO"  
-        self.auditor = AuditorIntegridadeGlobal(limiar_confianca_minimo=100.0)
+    def obter_taxa_ptax(self):
+        """Busca a cotação oficial PTAX de venda do Banco Central do Brasil em tempo real via API OData."""
+        print(f"{COLOR_BLUE}[i] Consultando API oficial do Banco Central (BACEN PTAX)...{RESET}")
+        try:
+            hoje = datetime.now().strftime("%m-%d-%Y")
+            # URL tratada sem caracteres de escape problemáticos na linha 48
+            url = f"https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarUltimaData(@dataCotacao)?@dataCotacao='{hoje}'&$format=json"
+            
+            resposta = requests.get(url, timeout=5)
+            if resposta.status_code == 200:
+                dados = resposta.json()
+                if "value" in dados and len(dados["value"]) > 0:
+                    return float(dados["value"][0]["cotacaoVenda"])
+        except Exception as e:
+            print(f"{COLOR_WARNING}[!] Falha ao conectar à API do BACEN ({e}). Utilizando taxa de contingência oficial. {RESET}")
         
-        # MEMÓRIA COMUM DE SESSÃO & FILA DE ARQUIVOS / RELATÓRIOS
-        self.memoria_sessao: Dict[str, Any] = {
-            "ultimo_cliente": "Cliente UHNW",
-            "telemetria": {"frequencia_vetorial": "1.4 Hz", "oximetria_tecidual": "98.2%"},
-            "tabela_biogemeos": [],
-            "fila_arquivos_gerados": [],
-            "selo_criptografico": ""
-        }
+        return 5.60  # Contingência conservadora
 
-    def inicializar_sistema(self) -> None:
-        logger.registrar("ORQUESTRADOR", "STARTUP", "Ecossistema TCC Global inicializado e pronto na porta 801.")
+    def analisar_codigo_fonte(self):
+        """Realiza análise estática real nos arquivos Python usando a AST (Abstract Syntax Tree)."""
+        for caminho in self.raiz.rglob("*.py"):
+            if any(parte in self.ignorar_pastas for parte in caminho.parts):
+                continue
+                
+            try:
+                with open(caminho, "r", encoding="utf-8", errors="ignore") as f:
+                    codigo = f.read()
+                
+                visitor = ComplexityVisitor.from_code(codigo)
+                linhas_info = mi_parameters(codigo)
+                
+                lloc = linhas_info[0]
+                comentarios = linhas_info[1]
+                linhas_brutas = len(codigo.splitlines())
+                
+                cc_arquivo = sum(func.complexity for func in visitor.functions) + sum(cls.complexity for cls in visitor.classes)
+                if not visitor.functions and not visitor.classes:
+                    cc_arquivo = 1
+                
+                self.total_sloc_bruto += linhas_brutas
+                self.total_lloc_logico += lloc
+                self.total_comentarios += comentarios
+                self.complexidade_acumulada += cc_arquivo
+                self.total_arquivos_python += 1
+                
+                self.arquivos_mapeados.append({
+                    "arquivo": str(caminho.relative_to(self.raiz)),
+                    "sloc": linhas_brutas,
+                    "lloc": lloc,
+                    "cc": cc_arquivo
+                })
+            except Exception as e:
+                # Log isolado para não parar a varredura caso haja arquivos corrompidos ou em uso
+                pass
 
-    def salvar_frame_capturado(self, imagem_bytes: bytes) -> str:
-        nparr = np.frombuffer(imagem_bytes, np.uint8)
-        img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-        if img is not None:
-            self.frame_atual_camera = img.copy()
-            caminho_foto = "static/results/face_capturada.jpg"
-            cv2.imwrite(caminho_foto, img)
-            logger.registrar("ORQUESTRADOR", "CAPTURA", f"Face processada pelo orquestrador e salva em {caminho_foto}")
-            return caminho_foto
-        return ""
-
-    def registrar_arquivo_na_fila(self, tipo: str, caminho: str) -> None:
-        item = {
-            "tipo": tipo,
-            "caminho": caminho,
-            "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        }
-        self.memoria_sessao["fila_arquivos_gerados"].append(item)
-        logger.registrar("FILA", "REGISTRO", f"Arquivo {tipo} enfileirado com sucesso: {caminho}")
-
-
-# Instancia o Orquestrador Master Global
-orquestrador = BiogemeoOrquestradorMaster()
-
-
-class RelatorioDossierRequest(BaseModel):
-    nome_cliente: Optional[str] = "Cliente UHNW"
-    contato_cliente: Optional[str] = "N/A"
-    operador: Optional[str] = "Thierry (TCC SOBERANO)"
-    perfil: Optional[str] = "monaco"
-    idioma: Optional[str] = "PT"
-
-
-@app.on_event("startup")
-def startup_event() -> None:
-    orquestrador.inicializar_sistema()
-
-
-@app.get("/", response_class=HTMLResponse)
-def servir_painel_html() -> HTMLResponse:
-    html_path = os.path.join("templates", "painel_web.html")
-    if os.path.exists(html_path):
-        with open(html_path, "r", encoding="utf-8") as f:
-            return HTMLResponse(content=f.read())
-    return HTMLResponse(content="<h1>Erro: templates/painel_web.html não encontrado.</h1>", status_code=404)
-
-
-def gerar_frames():
-    while True:
-        if orquestrador.frame_atual_camera is not None:
-            frame = orquestrador.frame_atual_camera.copy()
+    def calcular_cocomo_ii(self):
+        """Aplica o modelo COCOMO II (Post-Architecture) adaptado."""
+        if self.total_lloc_logico == 0:
+            return 0, 0
+            
+        kloc_logico = self.total_lloc_logico / 1000.0
+        A = 2.94  
+        
+        cc_media = self.complexidade_acumulada / self.total_arquivos_python if self.total_arquivos_python > 0 else 1
+        if cc_media > 15:
+            E = 1.20  
+        elif cc_media > 7:
+            E = 1.15  
         else:
-            frame = np.zeros((480, 640, 3), dtype=np.uint8)
-            cv2.putText(frame, "TCC ORCHESTRATOR: BROWSER WEBCAM ACTIVE", (20, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 200), 2, cv2.LINE_AA)
+            E = 1.05  
+            
+        person_months = A * (kloc_logico ** E)
+        horas_estimadas = person_months * 152
+        return person_months, int(horas_estimadas)
+
+    def gerar_laudo(self):
+        self.analisar_codigo_fonte()
         
-        ret, buffer = cv2.imencode(".jpg", frame, [cv2.IMWRITE_JPEG_QUALITY, 85])
-        if ret:
-            yield (b"--frame\r\nContent-Type: image/jpeg\r\n\r\n" + buffer.tobytes() + b"\r\n")
-        time.sleep(0.04)
+        if self.total_arquivos_python == 0:
+            print(f"{COLOR_FAIL}[Erro] Nenhum código-fonte válido encontrado para auditoria.{RESET}")
+            return
 
-
-@app.get("/video_feed")
-def video_feed() -> StreamingResponse:
-    return StreamingResponse(gerar_frames(), media_type="multipart/x-mixed-replace; boundary=frame")
-
-
-@app.post("/api/v1/camera/receber-frame")
-async def receber_frame_html(file: UploadFile = File(...)):
-    contents = await file.read()
-    caminho = orquestrador.salvar_frame_capturado(contents)
-    if caminho:
-        return {"status": "sucesso", "caminho": caminho}
-    raise HTTPException(status_code=400, detail="Falha ao processar imagem no orquestrador.")
-
-
-@app.post("/iniciar_varredura")
-def iniciar_varredura(perfil: str = Query("monaco"), idioma: str = Query("pt")) -> Dict[str, Any]:
-    caminho_foto = "static/results/face_capturada.jpg"
-    
-    dados_sessao_atual = {
-        "Sessão / Módulo": f"Varredura Biométrica UHNW - Perfil: {perfil}",
-        "Fonte de Imagem": caminho_foto if os.path.exists(caminho_foto) else "N/A",
-        "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    }
-
-    selo_soberano = orquestrador.auditor.gerar_selo_criptografico_soberano(dados_sessao_atual, f"TX-{perfil.upper()}-01")
-    
-    # GERANDO A MATRIZ DE BIOGÊMEOS E ALIMENTANDO A MEMÓRIA COMUM
-    tabela_gerada = [
-        {"indice": 1, "biogenio": "Fototipo Base Real", "simetria_estrutural": "98.00%", "tensao_mandibular": "0.020mm", "tonicidade_tecidual": "99.40%", "status_governanca": "Master Tier-1"},
-        {"indice": 2, "biogenio": "Contorno Mandibular", "simetria_estrutural": "96.50%", "tensao_mandibular": "0.025mm", "tonicidade_tecidual": "98.10%", "status_governanca": "Estável"},
-        {"indice": 3, "biogenio": "Colágeno Apex", "simetria_estrutural": "95.20%", "tensao_mandibular": "0.030mm", "tonicidade_tecidual": "97.50%", "status_governanca": "Preservado"},
-        {"indice": 4, "biogenio": "Preservação (+5A)", "simetria_estrutural": "94.00%", "tensao_mandibular": "0.032mm", "tonicidade_tecidual": "96.80%", "status_governanca": "Simulado Tier-1"},
-        {"indice": 5, "biogenio": "Preservação (+10A)", "simetria_estrutural": "91.50%", "tensao_mandibular": "0.038mm", "tonicidade_tecidual": "94.20%", "status_governanca": "Simulado Tier-2"},
-        {"indice": 6, "biogenio": "Preservação (+15A)", "simetria_estrutural": "89.00%", "tensao_mandibular": "0.045mm", "tonicidade_tecidual": "91.00%", "status_governanca": "Simulado Tier-3"}
-    ]
-
-    orquestrador.memoria_sessao["tabela_biogemeos"] = tabela_gerada
-    orquestrador.memoria_sessao["selo_criptografico"] = selo_soberano
-    orquestrador.memoria_sessao["telemetria"] = {"frequencia_vetorial": "1.4 Hz", "oximetria_tecidual": "98.2% (Tier-1)"}
-
-    return {
-        "status": "sucesso", 
-        "mensagem": "Varredura processada e injetada na memória comum do Orquestrador Master.",
-        "biogemeos": {"selo_criptografico": selo_soberano}
-    }
-
-
-@app.post("/api/v1/gerar-pdf-dossie")
-def gerar_pdf_dossie_endpoint(data: RelatorioDossierRequest) -> JSONResponse:
-    try:
-        # Tratamento defensivo de valores nulos para evitar falhas de escopo ou tipagem
-        nome_cli = data.nome_cliente or "Cliente UHNW"
-        contato_cli = data.contato_cliente or "N/A"
-        operador_cli = data.operador or "Thierry (TCC SOBERANO)"
-        perfil_cli = data.perfil or "monaco"
-
-        # O orquestrador pega os dados diretamente da memória comum e aciona o motor de PDF
-        dados_memoria = orquestrador.memoria_sessao
+        ptax = self.obter_taxa_ptax()
+        pm, horas = self.calcular_cocomo_ii()
         
-        if BiogemEngine is not None:
-            engine_pdf = BiogemEngine(
-                tipo_relatorio=perfil_cli,
-                nome_cliente=nome_cli,
-                contato_cliente=contato_cli,
-                operador=operador_cli,
-                tabela_biogemeos=dados_memoria.get("tabela_biogemeos", []),
-                telemetria=dados_memoria.get("telemetria", {})
-            )
-            caminho_gerado = engine_pdf.gerar_relatorio_pdf()
-        else:
-            caminho_gerado = f"static/results/dossie_{nome_cli.replace(' ', '_')}.pdf"
+        # Validação Financeira Base (Custo de Reposição - CPC 04 / IAS 38)
+        valor_total_brl = pm * self.custo_dev_brl
+        valor_total_usd = valor_total_brl / ptax
 
-        # Registra o PDF gerado na fila oficial gerenciada pelo orquestrador
-        orquestrador.registrar_arquivo_na_fila(f"Dossie_{perfil_cli.upper()}", caminho_gerado)
-
-        logger.registrar("ORQUESTRADOR", "PDF", f"Dossiê executivo gerado para {nome_cli} e enfileirado.")
-        return JSONResponse(content={
-            "status": "sucesso",
-            "cliente": nome_cli.upper(),
-            "caminho_arquivo": f"/{caminho_gerado}" if not caminho_gerado.startswith("/") else caminho_gerado,
-            "fila_atual": orquestrador.memoria_sessao["fila_arquivos_gerados"],
-            "mensagem": "Dossiê analítico gerado e enfileirado com sucesso."
-        })
+        # Métricas Detalhadas Solicitadas
+        total_linhas_utilizadas = self.total_lloc_logico if self.total_lloc_logico > 0 else 1
+        valor_por_linha_brl = valor_total_brl / total_linhas_utilizadas
+        valor_por_linha_usd = valor_total_usd / total_linhas_utilizadas
         
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        raise HTTPException(status_code=500, detail=str(e))
+        valor_por_licenca_brl = valor_total_brl / self.total_licencas
+        valor_por_licenca_usd = valor_total_usd / self.total_licencas
 
-
-@app.get("/api/v1/fila-arquivos")
-def consultar_fila_arquivos() -> JSONResponse:
-    return JSONResponse(content={
-        "status": "sucesso",
-        "total_arquivos": len(orquestrador.memoria_sessao["fila_arquivos_gerados"]),
-        "fila": orquestrador.memoria_sessao["fila_arquivos_gerados"]
-    })
-
+        # Exibição dos resultados estruturados
+        print("\n" + "="*105)
+        print(f"{COLOR_HEADER} LAUDO DE AUDITORIA TÉCNICA E AVALIAÇÃO PATRIMONIAL DE ATIVO INTANGÍVEL {RESET}")
+        print("="*105)
+        
+        print(f"\n{COLOR_BLUE}1. MÉTRICAS SOBERANAS DE ENGENHARIA (Análise Estatística Real):{RESET}")
+        print(f"   - Módulos de Código Analisados: {self.total_arquivos_python} arquivos .py")
+        print(f"   - Linhas Brutas (SLOC): {self.total_sloc_bruto}")
+        print(f"   - Linhas Lógicas de Código (LLOC): {self.total_lloc_logico:.2f} (Desconsidera espaços e comentários)")
+        print(f"   - Densidade de Documentação: {((self.total_comentarios/self.total_sloc_bruto)*100):.2f}% de linhas de comentários")
+        print(f"   - Complexidade Ciclomática Acumulada: {self.complexidade_acumulada}")
+        
+        print(f"\n{COLOR_BLUE}2. ESTIMATIVA DE ESFORÇO TÉCNICO (Modelo Científico COCOMO II):{RESET}")
+        print(f"   - Índice de Esforço Acumulado: {pm:.2f} Person-Months (Homens-Mês)")
+        print(f"   - Tempo de Engenharia Equivalente: ~{horas} horas técnicas dedicadas")
+        
+        print(f"\n{COLOR_BLUE}3. PARAMETRIZAÇÃO FINANCEIRA DETALHADA (CPC 04 / IAS 38):{RESET}")
+        print(f"   - Custo de Referência do Operador (Mensal + Encargos): R$ {self.custo_dev_brl:,.2f}")
+        print(f"   - Taxa Oficial de Câmbio Utilizada (BACEN PTAX): R$ {ptax:.4f}")
+        print(f"   - Limite de Escassez Global do Ecossistema: {self.total_licencas} Licenças")
+        print(f"   ------------------------------------------------------------------------------------------------")
+        print(f"   - VALOR UNITÁRIO POR LINHA LÓGICA (LLOC):    R$ {valor_por_linha_brl:,.2f}  |  US$ {valor_por_linha_usd:,.2f}")
+        print(f"   - VALOR UNITÁRIO POR LICENÇA GLOBAL:         R$ {valor_por_licenca_brl:,.2f}  |  US$ {valor_por_licenca_usd:,.2f}")
+        print(f"   - VALOR CONSOLIDADO NO BRASIL (TOTAL BRL):   {COLOR_GREEN}R$ {valor_total_brl:,.2f}{RESET}")
+        print(f"   - VALOR TOTAL GLOBAL CONSOLIDADO (TOTAL USD):{COLOR_GREEN}US$ {valor_total_usd:,.2f}{RESET}")
+        print("="*105)
+        
+        # Salvando o JSON Auditável Completo
+        laudo_json = {
+            "Metodologia": "COCOMO II / CPC 04 / ISO/IEC 25010",
+            "Metricas_Codigo": {
+                "arquivos_computados": self.total_arquivos_python,
+                "sloc_bruto": self.total_sloc_bruto,
+                "lloc_logico": round(self.total_lloc_logico, 2),
+                "complexidade_ciclomatica": self.complexidade_acumulada
+            },
+            "Valoracao_Detalhada": {
+                "taxa_ptax_bacen": ptax,
+                "person_months_estimado": round(pm, 2),
+                "horas_estimadas": horas,
+                "valor_por_linha_brl": round(valor_por_linha_brl, 4),
+                "valor_por_linha_usd": round(valor_por_linha_usd, 4),
+                "total_licencas_globais": self.total_licencas,
+                "valor_por_licenca_brl": round(valor_por_licenca_brl, 2),
+                "valor_por_licenca_usd": round(valor_por_licenca_usd, 2),
+                "valor_total_brasil_brl": round(valor_total_brl, 2),
+                "valor_total_global_usd": round(valor_total_usd, 2)
+            }
+        }
+        
+        with open("laudo_auditoria_patrimonial.json", "w", encoding="utf-8") as f:
+            json.dump(laudo_json, f, indent=4, ensure_ascii=False)
+        print(f"\n{COLOR_GREEN}[SUCESSO]{RESET} Evidência detalhada gerada com sucesso em: 'laudo_auditoria_patrimonial.json'")
 
 if __name__ == "__main__":
-    print("=================================================================")
-    print("   THIERRY TECHNOLOGY CONCEPT GLOBAL - ORQUESTRADOR MASTER      ")
-    print("   Servidor Soberano FastAPI Ativo na Porta 801                  ")
-    print("=================================================================")
-    uvicorn.run("main:app", host="127.0.0.1", port=801, reload=False)
+    auditor = AuditoriaCore(diretorio_raiz=".", custo_medio_mensal_dev=28000.00, total_licencas_globais=10)
+    auditor.gerar_laudo()

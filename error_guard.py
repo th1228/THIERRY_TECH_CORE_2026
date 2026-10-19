@@ -29,7 +29,7 @@ class PlatformErrorGuard:
                 return dados
         except json.JSONDecodeError as e:
             self.erros_encontrados.append(f"JSON ERROR em {caminho_arquivo}: Sintaxe inválida -> {e}")
-        except Exception as e:
+        except (OSError, UnicodeDecodeError) as e:
             self.erros_encontrados.append(f"ERROR ao ler {caminho_arquivo} -> {e}")
         return None
 

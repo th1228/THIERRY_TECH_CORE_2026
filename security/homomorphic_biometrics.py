@@ -8,7 +8,7 @@ from .log_seguro import LogSeguro
 
 logger = LogSeguro()
 
-class HomomorphicBiometricEngine:
+class HomomorphicBiometrics:
     """
     Motor de Criptografia Homomórfica para Vetores Biométricos.
     Permite calcular a similaridade de vetores sem nunca descriptografá-los na RAM.

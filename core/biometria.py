@@ -17,7 +17,7 @@ except ImportError:
     memoria = MemoriaMock()
 
 class DigitalTwin:
-    def __init__(self, largura_testa, largura_macas, largura_mandibula, altura_rosto, genero, clima="tropical"):
+    def __init__(self, largura_testa, largura_macas, largura_mandibula, altura_rosto, genero, clima="tropical", lang: str = "PT"):
         self.genero = genero.lower()
         self.clima = clima.lower()
         self.testa = largura_testa

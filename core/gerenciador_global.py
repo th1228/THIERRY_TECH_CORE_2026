@@ -45,7 +45,7 @@ class GerenciadorGlobalEcosystem:
     Maestro central do THIERRY_TECH_CORE_2026.
     Gerencia o fluxo entre os motores, geolocalização e os planos (Laboratório, Salão, Engenharia Completa).
     """
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         print("[GERENCIADOR GLOBAL] Inicializando maestro do ecossistema...")
 
     def processar_ecossistema_completo(self, tipo_plano="engenharia_completa"):

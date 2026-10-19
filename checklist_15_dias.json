@@ -1,0 +1,95 @@
+{
+    "Dia 1": {
+        "data": "2026-09-25",
+        "status": "Concluído",
+        "ram_app_mb": 212.19,
+        "api_ok": true,
+        "tamanho_projeto_mb": 16.41
+    },
+    "Dia 2": {
+        "data": "2026-09-26",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 3": {
+        "data": "2026-09-27",
+        "status": "Concluído",
+        "ram_app_mb": 212.52,
+        "api_ok": true,
+        "tamanho_projeto_mb": 16.42
+    },
+    "Dia 4": {
+        "data": "2026-09-28",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false,
+        "tamanho_projeto_mb": 16.66
+    },
+    "Dia 5": {
+        "data": "2026-09-29",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 6": {
+        "data": "2026-09-30",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 7": {
+        "data": "2026-10-01",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 8": {
+        "data": "2026-10-02",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 9": {
+        "data": "2026-10-03",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 10": {
+        "data": "2026-10-04",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 11": {
+        "data": "2026-10-05",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 12": {
+        "data": "2026-10-06",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 13": {
+        "data": "2026-10-07",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 14": {
+        "data": "2026-10-08",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    },
+    "Dia 15": {
+        "data": "2026-10-09",
+        "status": "Concluído",
+        "ram_app_mb": 0.0,
+        "api_ok": false
+    }
+}

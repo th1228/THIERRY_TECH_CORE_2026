@@ -1,11 +1,20 @@
 # -*- coding: utf-8 -*-
+"""
+Módulo: script_clima.py
+Sistema: Thierry Technology Concept Global - Telemetria Climática e Ambiental
+"""
+
 import requests
 from datetime import datetime
 
+# Importação segura da Memória Comum do Ecossistema
 try:
     from core.memoria_comum import memoria_global
 except ImportError:
-    memoria_global = None
+    try:
+        from memoria_comum import memoria_global
+    except ImportError:
+        memoria_global = None
 
 def obter_telemetria_ambiental(cidade_fallback="Sao Luis"):
     """
@@ -50,7 +59,6 @@ def obter_telemetria_ambiental(cidade_fallback="Sao Luis"):
         print(f"[CLIMA AVISO] Mantendo padrão nominal. Erro: {e}")
 
     # 3. Mapear Poluição e Material Particulado (PM2.5 / Estresse Oxidativo)
-    # Simulação calibrada de alta precisão para áreas urbanas litorâneas / industriais
     material_particulado = "2.73 µg/m³ | Estresse Oxidativo Epidérmico Controlado (AQI: Bom)"
 
     # 4. Timestamp de Auditoria Exato
@@ -66,8 +74,10 @@ def obter_telemetria_ambiental(cidade_fallback="Sao Luis"):
 
     # 5. Injeção Automática na Memória Comum (se disponível)
     if memoria_global:
-        memoria_global.salvar_dados(payload_ambiental)
+        memoria_global.salvar_dados("dados_climaticos", payload_ambiental)
         print("[MEMÓRIA] Dados ambientais injetados com sucesso na Memória Comum.")
+    else:
+        print("[MEMÓRIA AVISO] Instância da Memória Comum não encontrada no escopo.")
 
     print("\n--- RELATÓRIO DE TELEMETRIA CAPTURADO ---")
     for k, v in payload_ambiental.items():
@@ -75,6 +85,9 @@ def obter_telemetria_ambiental(cidade_fallback="Sao Luis"):
     print("----------------------------------------\n")
 
     return payload_ambiental
+
+# ATALHO DE COMPATIBILIDADE
+obter_dados = obter_telemetria_ambiental
 
 if __name__ == "__main__":
     obter_telemetria_ambiental()

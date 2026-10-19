@@ -57,7 +57,7 @@ def executar_pipeline_mestre(diretorio_raiz):
           exc.unlink()
           removidos += 1
           print(f"   [DELETOU CÓPIA] {exc}")
-        except Exception as e:
+        except OSError as e:
           print(f"   [ERRO AO DELETAR] {exc}: {e}")
   else:
     print("✨ Nenhum arquivo duplicado encontrado. Estrutura limpa.")

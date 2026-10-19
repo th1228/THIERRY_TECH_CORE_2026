@@ -12,11 +12,11 @@ sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 # 2. Tenta importar o BiogemEngine
 BiogemEngine = None
 try:
-    from core.biogem_engine import BiogemEngine
+    from c2_sovereign_intelligence import BiogemEngine
     print("[OK] BiogemEngine importado com sucesso de 'core.biogem_engine'.")
 except ImportError:
     try:
-        from biogem_engine import BiogemEngine
+        from c2_sovereign_intelligence import BiogemEngine
         print("[OK] BiogemEngine importado com sucesso da raiz.")
     except ImportError:
         print("[AVISO] BiogemEngine não encontrado como módulo separado. O script usará o gerador interno de teste.")

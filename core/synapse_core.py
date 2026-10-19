@@ -1,3 +1,18 @@
+
+# --- PONTE DE MEMÓRIA AUTOMÁTICA (THIERRY TECH) ---
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    try:
+        from core.memoria_comum import instancia_memoria as memoria
+    except ImportError:
+        class MemoriaMock:
+            def salvar_dados(self, chave, valor): pass
+            def registrar(self, chave, valor): pass
+            def ler_dados(self, chave): return None
+        memoria = MemoriaMock()
+# ---------------------------------------------------
+
 import sys, os
 
 import sys, os
@@ -10,7 +25,7 @@ Fatores Climáticos, Memória Comum e Frequências de Regeneração.
 """
 
 class SynapseCore:
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         # Definição dos 3 Níveis de Frequência Harmônica ("Frequência de Deus")
         self.niveis_frequencia = {
             1: {"nome": "Nível Base / Calibragem Sináptica", "hz": 432.0, "limite_estresse": 50},

@@ -1,105 +1,113 @@
-import sys, os
-
 # -*- coding: utf-8 -*-
 """
-TTC GLOBAL - MÓDULO DE PRECIFICAÇÃO E COTAS GLOBAIS
-Localização: core/precificacao_motor.py
+SISTEMA DE INVENTÁRIO TÉCNICO E PARECER PATRIMONIAL - THIERRY TECH CORE (2026)
+ABORDAGEM HÍBRIDA REGULATÓRIA: CUSTO DE REPOSIÇÃO (CPC 04 / IAS 38) + MAPA DE SUBSISTEMAS CRÍTICOS
 """
 
-class GerenciadorCotasGlobais:
-    def __init__(self, valor_base_referencia=50000.00, cotacao_euro=5.83):
-        self.cotas = []
-        self.cotacao_euro = cotacao_euro
+import os
+import json
+from pathlib import Path
+
+class AuditoriaPatrimonialEstrategica:
+    def __init__(self, diretorio_raiz=".", custo_mensal_engenharia=30000.00):
+        """
+        :param custo_mensal_engenharia: Custo real comprovável em folha/balancete (BRL)
+        de uma célula de desenvolvimento proporcional ao tamanho do projeto.
+        """
+        self.raiz = Path(diretorio_raiz)
+        self.custo_base_brl = custo_mensal_engenharia
+        self.ignorar_pastas = {".git", "__pycache__", "node_modules", "venv", "env"}
         
-        # Bloco Nacional: 3 Vagas exclusivas (Brasil) - Valores ajustados temporariamente
-        valores_nacionais = [5000.00, 10000.00, 15000.00]
-        for i, val in enumerate(valores_nacionais, start=1):
-            self.cotas.append({
-                "id": f"BR-0{i}", 
-                "mercado": f"Brasil (Nacional - Tier {i})", 
-                "valor_brl": val, 
-                "moeda": "R$",
-                "status": "Disponível"
-            })
-        
-        # Bloco Internacional: Vagas Globais de Hiper-Luxo (Demais mercados)
-        valor_intl_eur = 250000.00
-        valor_intl_brl = valor_intl_eur * self.cotacao_euro
-        for i in range(4, 8):
-            self.cotas.append({
-                "id": f"INT-0{i}", 
-                "mercado": "Internacional (Global High-End)", 
-                "valor_brl": valor_intl_brl, 
-                "moeda": "R$",
-                "status": "Disponível"
-            })
-            
-        # Estados Unidos (Cota 08): 30x o valor base
-        valor_usa = valor_base_referencia * 30
-        self.cotas.append({
-            "id": "INT-08",
-            "mercado": "Estados Unidos (USA Plan)",
-            "valor_brl": valor_usa,
-            "moeda": "R$",
-            "status": "Disponível / Master USA"
-        })
-
-        # Emirados Árabes / Oriente Médio (Cota 09): 40x o valor base
-        valor_uae = valor_base_referencia * 40
-        self.cotas.append({
-            "id": "INT-09",
-            "mercado": "Emirados Árabes / Oriente Médio (Dubai Plan)",
-            "valor_brl": valor_uae,
-            "moeda": "R$",
-            "status": "Disponível / Master UAE"
-        })
-
-        # Mônaco (Cota 10): 50x o valor base
-        valor_monaco = valor_base_referencia * 50
-        self.cotas.append({
-            "id": "INT-10",
-            "mercado": "Mônaco (O Ápice Global Absoluto)",
-            "valor_brl": valor_monaco,
-            "moeda": "R$",
-            "status": "Disponível / Exclusivo Master"
-        })
-
-    def obter_dados_cotas(self):
-        """Retorna a lista completa de cotas para exibição na interface gráfica."""
-        return self.cotas
-
-    def obter_cota_por_pais(self, sigla):
-        """Busca a cota correspondente com base na sigla do país (BR, US, MC)."""
-        if not sigla:
-            sigla = "BR"
-            
-        sigla = str(sigla).upper()
-        mapeamento_ids = {
-            "BR": "BR-01",
-            "US": "INT-08",
-            "MC": "INT-10"
+        # Inventário Técnico por Camada de Código
+        self.inventario = {
+            ".py": {"nome": "Backend / Motores Core", "linhas_logicas": 0, "arquivos": 0},
+            ".html": {"nome": "Interfaces de Controle / UI", "linhas_logicas": 0, "arquivos": 0},
+            ".js": {"nome": "Lógica de Interface / Scripts", "linhas_logicas": 0, "arquivos": 0},
+            ".json": {"nome": "Matrizes de Configuração / Países", "linhas_logicas": 0, "arquivos": 0}
         }
-        id_alvo = mapeamento_ids.get(sigla, "BR-01")
         
-        for cota in self.cotas:
-            if cota["id"] == id_alvo:
-                return {
-                    "valor": int(cota["valor_brl"] * 100), 
-                    "moeda": cota["moeda"],
-                    "mercado": cota["mercado"]
-                }
+        # Subsistemas Estratégicos Identificados (Mapeamento Qualitativo para Due Diligence)
+        self.subsistemas_criticos = [
+            "C2 Sovereign (Orquestração Autônoma & Descentralizada)",
+            "Motor Biométrico & Espectrofotometria (Processamento Local em Memória RAM)",
+            "Motor de Tricologia Computacional (Diagnóstico de Padrões)",
+            "Motor de Carta Internacional (Validação Transfronteiriça)",
+            "Engenharia Financeira / Yield (Otimização de Retorno)",
+            "Mônaco Modelagem Preditiva (Simulação de Cenários)",
+            "Geodefense / Restrição Territorial (Cercamento Digital Ativo)"
+        ]
+
+    def executar_inventario(self):
+        """Varre o projeto mensurando o tamanho físico real do ativo de software."""
+        for caminho in self.raiz.rglob("*"):
+            if any(parte in self.ignorar_pastas for parte in caminho.parts) or not caminho.is_file():
+                continue
                 
-        return {
-            "valor": 50000000, 
-            "moeda": "R$",
-            "mercado": "Padrão de Segurança"
-        }
+            ext = caminho.suffix.lower()
+            if ext in self.inventario:
+                try:
+                    with open(caminho, "r", encoding="utf-8", errors="ignore") as f:
+                        linhas_efetivas = [l for l in f.readlines() if l.strip()]
+                        
+                    self.inventario[ext]["arquivos"] += 1
+                    self.inventario[ext]["linhas_logicas"] += len(linhas_efetivas)
+                except Exception:
+                    continue
+
+    def calcular_esforço_cocomo_ii(self):
+        """Aplica o COCOMO II de forma agregada para sistemas integrados de alta complexidade."""
+        lloc_total = sum(dados["linhas_logicas"] for dados in self.inventario.values())
+        if lloc_total == 0:
+            return 0, 0
+            
+        kloc_logico = lloc_total / 1000.0
+        A = 2.94
+        E = 1.12  # Expoente ponderado para sistemas modulares de alta complexidade
+        
+        person_months = A * (kloc_logico ** E)
+        horas_estimadas = person_months * 152
+        
+        return person_months, int(horas_estimadas)
+
+    def gerar_laudo_definitivo(self):
+        self.executar_inventario()
+        pm, horas = self.calcular_esforço_cocomo_ii()
+        
+        # Valoração estritamente baseada no Custo Histórico/Reposição (CPC 04 / IAS 38)
+        valor_ativo_brl = pm * self.custo_base_brl
+        
+        lloc_total = sum(dados["linhas_logicas"] for dados in self.inventario.values())
+        arquivos_totais = sum(dados["arquivos"] for dados in self.inventario.values())
+
+        print("=" * 105)
+        print(" LAUDO DE INVENTÁRIO TÉCNICO E VALORAÇÃO PATRIMONIAL - THIERRY TECH CORE")
+        print(" BASE NORMATIVA: CPC 04 / IAS 38 (CUSTO DE REPOSIÇÃO) + ARQUITETURA DE ESCASSEZ MÔNACO")
+        print("=" * 105)
+        
+        print(f"\n[+] 1. COMPOSIÇÃO ESTRUTURAL DO ATIVO (Mapeamento Físico de Código):")
+        for ext, dados in self.inventario.items():
+            print(f"    - [{ext}] {dados['nome']:<35}: {dados['arquivos']:<4} arqs | {dados['linhas_logicas']:<6} LLOC")
+            
+        print(f"\n[+] 2. SUBSISTEMAS ESTRATÉGICOS INTEGRADOS (Segurança & Geodefense):")
+        for sub in self.subsistemas_criticos:
+            print(f"    - [Protegido/Ativo] {sub}")
+        print(f"    - Modelo de Escassez Global          : Teto absoluto de 10 licenças operacionais (2 nós por licença).")
+
+        print(f"\n[+] 3. MÉTRICAS DE ESFORÇO DE ENGENHARIA (COCOMO II):")
+        print(f"    - Volumetria Agregada do Ecossistema : {lloc_total} Linhas Lógicas de Código (LLOC)")
+        print(f"    - Total de Módulos Analisados        : {arquivos_totais} arquivos estruturais")
+        print(f"    - Estimativa de Esforço Científico   : {pm:.2f} Homens-Mês (~{horas} horas técnicas dedicadas)")
+
+        print(f"\n[+] 4. PARECER FINANCEIRO E PATRIMONIAL AUDITÁVEL:")
+        print(f"    - Premissa de Custo Interno (Folha + Encargos)  : R$ {self.custo_base_brl:,.2f} / mês")
+        print(f"    - Rastreabilidade de Mercado                     : Baseado em índices salariais de engenharia sênior")
+        print(f"    - VALOR PATRIMONIAL CAPITALIZÁVEL DO ATIVO (BRL) : R$ {valor_ativo_brl:,.2f}")
+        print("=" * 105)
+        print("[AVISO CONTÁBIL E ESTRATÉGICO] O valor financeiro reflete estritamente o custo de fabricação")
+        print("técnica do ativo (Princípio da Prudência - CPC 04). Os subsistemas de segurança (Geodefense),")
+        print("os motores proprietários e o modelo restrito de 10 licenças globais integram a blindagem")
+        print("estrutural e o diferencial competitivo intangível do ecossistema.")
 
 if __name__ == "__main__":
-    motor = GerenciadorCotasGlobais()
-    print("=" * 60)
-    print("TTC GLOBAL — VALIDAÇÃO DE COTAS EM FILA")
-    print("=" * 60)
-    for cota in motor.obter_dados_cotas():
-        print(f"[{cota['id']}] {cota['mercado']} ---> {cota['moeda']} {cota['valor_brl']:,.2f}")
-    print("=" * 60)
+    auditor = AuditoriaPatrimonialEstrategica(diretorio_raiz=".", custo_mensal_engenharia=32000.00)
+    auditor.gerar_laudo_definitivo()

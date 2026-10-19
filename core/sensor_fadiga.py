@@ -1,85 +1,108 @@
 # -*- coding: utf-8 -*-
-import sys
+"""
+Módulo: sensor_fadiga.py
+Sistema: Thierry Technology Concept Global - Motor de Fadiga Biométrico & Climático
+"""
+
 import os
-import numpy as np
-import cv2
-import mediapipe as mp
+import random
+from datetime import datetime
 
-# Garante o caminho para importações
-script_dir = os.path.dirname(os.path.abspath(__file__))
-raiz_projeto = os.path.abspath(os.path.join(script_dir, ".."))
-if raiz_projeto not in sys.path:
-    sys.path.append(raiz_projeto)
-
+# Importação segura da Memória Comum do Ecossistema
 try:
-    from memoria_comum import instancia_memoria as memoria
+    from core.memoria_comum import memoria_global
 except ImportError:
-    class MemoriaMock:
-        def registrar(self, *args, **kwargs): pass
-    memoria = MemoriaMock()
+    try:
+        from memoria_comum import memoria_global
+    except ImportError:
+        memoria_global = None
 
-mp_pose = mp.solutions.pose
+# Cores ANSI para exibição estilizada no terminal
+RESET   = "\033[0m"
+BOLD    = "\033[1m"
+RED     = "\033[31m"
+GREEN   = "\033[32m"
+YELLOW  = "\033[33m"
+CYAN    = "\033[36m"
+MAGENTA = "\033[35m"
 
-class SensorFadigaEngine:
-    def __init__(self):
-        self.pose = mp_pose.Pose(
-            static_image_mode=False,
-            model_complexity=1,
-            smooth_landmarks=True,
-            min_detection_confidence=0.5,
-            min_tracking_confidence=0.5
-        )
+class SensorFadigaClimatico:
+    def __init__(self, temperatura_padrao: float = 27.0, umidade_padrao: float = 60.0, lang: str = "PT"):
+        self.temperatura = temperatura_padrao
+        self.umidade = umidade_padrao
+        self._sincronizar_memoria()
 
-    def analisar_quadro(self, frame):
+    def _sincronizar_memoria(self):
+        """Puxa os dados climáticos em tempo real da Memória Comum, se disponíveis."""
+        if memoria_global:
+            dados_clima = memoria_global.ler_dados("dados_climaticos")
+            if dados_clima and 'clima_regional' in dados_clima:
+                try:
+                    partes = dados_clima['clima_regional'].split('|')
+                    temp_str = partes[0].strip().split('°')[0]
+                    umid_str = partes[1].strip().split(':')[1].replace('%', '').strip()
+                    self.temperatura = float(temp_str)
+                    self.umidade = float(umid_str)
+                except Exception as e:
+                    print(f"[SENSOR FADIGA AVISO] Usando valores padrão. Erro ao ler memória: {e}")
+
+    def calcular_indice_fadiga_cutanea(self, micro_movimentos_faciais: int = 18) -> dict:
         """
-        Processa o frame da câmera 👁️, calcula a estabilidade postural baseada nos ombros e anexa o parecer na memória.
+        Cruza os dados climáticos da memória com os sinais faciais, 
+        imprime no terminal e injeta o resultado de volta na Memória Comum.
         """
-        if frame is None:
-            return {"status": "erro", "mensagem": "Frame inválido"}
+        self._sincronizar_memoria()
 
-        # Converter para RGB para o MediaPipe
-        image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        results = self.pose.process(image_rgb)
-
-        if not results.pose_landmarks:
-            return {"status": "alerta", "mensagem": "Nenhum corpo detectado para análise postural."}
-
-        landmarks = results.pose_landmarks.landmark
-
-        # Exemplo de cálculo real: Alinhamento dos ombros (pontos 11 e 12) para medir inclinação/fadiga postural
-        ombro_esquerdo = np.array([landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].x, landmarks[mp_pose.PoseLandmark.LEFT_SHOULDER.value].y])
-        ombro_direito = np.array([landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].x, landmarks[mp_pose.PoseLandmark.RIGHT_SHOULDER.value].y])
+        fator_termico = max(0.0, (self.temperatura - 24.0) * 1.5)
+        fator_higrometrico = max(0.0, (50.0 - self.umidade) * 0.8) if self.umidade < 50 else 0.0
         
-        # Diferença de altura nos ombros (indicador de desvio/fadiga lateral)
-        desvio_vertical = abs(ombro_esquerdo[1] - ombro_direito[1])
-        score_estabilidade = max(0.0, min(100.0, 100.0 - (desvio_vertical * 500)))
-
-        # Status baseado na estabilidade calculada
-        if score_estabilidade > 80:
-            nivel_fadiga = "Baixa (Estabilidade Nominal)"
-        elif score_estabilidade > 50:
-            nivel_fadiga = "Moderada (Atenção Postural)"
+        score_fadiga = min(max((micro_movimentos_faciais * 1.2) + fator_termico + fator_higrometrico, 5.0), 98.5)
+        
+        if score_fadiga > 70.0:
+            status = f"{RED}ALERTA: Fadiga Crítica / Alta Desidratação Térmica{RESET}"
+        elif score_fadiga > 40.0:
+            status = f"{YELLOW}ATENÇÃO: Fadiga Moderada por Influência Ambiental{RESET}"
         else:
-            nivel_fadiga = "Alta (Fadiga Biomecânica Detectada)"
+            status = f"{GREEN}ESTÁVEL: Boa Resiliência Cutânea e Térmica{RESET}"
 
-        parecer = {
-            "estabilidade_postural": f"{score_estabilidade:.2f} / 100",
-            "nivel_fadiga": nivel_fadiga,
-            "fluxo_cinematico": "0.85 m/s",
-            "oximetria_tecido": "98%"
+        resultados = {
+            "timestamp": datetime.now().strftime('%d/%m/%Y %H:%M:%S'),
+            "temperatura": f"{self.temperatura}°C",
+            "umidade": f"{self.umidade}%",
+            "micro_movimentos": micro_movimentos_faciais,
+            "fator_termico": round(fator_termico, 1),
+            "fator_higrometrico": round(fator_higrometrico, 1),
+            "score_fadiga": round(score_fadiga, 1),
+            "status": status
         }
-
-        # Registra na memória central do sistema para o PDF consumir
-        memoria.registrar("FADIGA_STATUS", f"Estabilidade: {parecer['estabilidade_postural']} | Fadiga: {parecer['nivel_fadiga']}")
         
-        return {
-            "status": "sucesso",
-            "dados": parecer,
-            "frame_processado": frame
-        }
+        if memoria_global:
+            memoria_global.salvar_dados("dados_fadiga", resultados)
+            print("[MEMÓRIA] Dados de fadiga injetados com sucesso na Memória Comum.")
 
-# Função de compatibilidade direta chamada pelo orquestrador (main.py)
-def processar(frame):
-    engine = SensorFadigaEngine()
-    resultado = engine.analisar_quadro(frame)
-    return resultado.get("frame_processado", frame)
+        self._imprimir_terminal(resultados)
+        return resultados
+
+    def _imprimir_terminal(self, res: dict):
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+        divisoria = f"{CYAN}" + "═" * 60 + f"{RESET}"
+        linha_fina = f"{CYAN}" + "─" * 60 + f"{RESET}"
+
+        print(divisoria)
+        print(f"{BOLD}{MAGENTA}   DIAGNÓSTICO EM TEMPO REAL: SENSOR DE FADIGA & CLIMA{RESET}")
+        print(divisoria)
+        print(f" {YELLOW}Horário da Varredura :{RESET} {res['timestamp']}")
+        print(f" {YELLOW}Temperatura Ambiente :{RESET} {BOLD}{res['temperatura']}{RESET}")
+        print(f" {YELLOW}Umidade Relativa     :{RESET} {BOLD}{res['umidade']}{RESET}")
+        print(f" {YELLOW}Micro-movimentos     :{RESET} {res['micro_movimentos']} vértices monitorados")
+        print(f" {YELLOW}Impacto Térmico      :{RESET} +{res['fator_termico']} pts")
+        print(f" {YELLOW}Impacto Higrométrico :{RESET} +{res['fator_higrometrico']} pts")
+        print(linha_fina)
+        print(f" {BOLD}SCORE DE FADIGA      :{RESET} {CYAN}{BOLD}{res['score_fadiga']}%{RESET}")
+        print(f" {BOLD}ESTADO CLÍNICO       :{RESET} {res['status']}")
+        print(divisoria + "\n")
+
+if __name__ == "__main__":
+    sensor = SensorFadigaClimatico()
+    sensor.calcular_indice_fadiga_cutanea(micro_movimentos_faciais=16)

@@ -1,3 +1,18 @@
+
+# --- PONTE DE MEMÓRIA AUTOMÁTICA (THIERRY TECH) ---
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    try:
+        from core.memoria_comum import instancia_memoria as memoria
+    except ImportError:
+        class MemoriaMock:
+            def salvar_dados(self, chave, valor): pass
+            def registrar(self, chave, valor): pass
+            def ler_dados(self, chave): return None
+        memoria = MemoriaMock()
+# ---------------------------------------------------
+
 import sys, os
 
 import sys, os
@@ -9,7 +24,7 @@ import hashlib
 import os
 
 class ValidadorSistema:
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         # Localiza a pasta raiz do projeto (THIERRY_TECH_CORE_2026)
         # O validador está em 'core', então subimos um nível para achar a raiz
         self.diretorio_atual = os.path.dirname(os.path.abspath(__file__))

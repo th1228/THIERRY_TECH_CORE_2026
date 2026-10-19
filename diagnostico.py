@@ -1,42 +1,46 @@
 # -*- coding: utf-8 -*-
-import importlib.util
-import os
-import sys
+"""
+Script de Diagnóstico - TCC Global
+Simula o envio dos 5 tipos de relatórios para o backend FastAPI e verifica o retorno.
+"""
 
-# Adiciona a pasta atual ao caminho do sistema para garantir que ele ache os módulos
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+import requests
 
-def diagnosticar():
-    print("--- INICIANDO DIAGNÓSTICO DO MÔNACO ---")
+URL = "http://127.0.0.1:801/gerar-pdf"
+tipos_para_testar = [
+    "biogem_core", 
+    "estetica_roi", 
+    "visagismo_tricologia", 
+    "carta", 
+    "modelagem"
+]
+
+print("=" * 60)
+print(" INICIANDO DIAGNÓSTICO DE RETORNO DO PAINEL HTML")
+print("=" * 60)
+
+for tipo in tipos_para_testar:
+    dados_form = {
+        "tipo": tipo,
+        "cliente": "Titular Teste",
+        "empresa": "TTC Global Corp",
+        "email": "teste@tccglobal.com",
+        "operador": "Thierry (Diagnóstico)"
+    }
     
-    # 1. Testar se o arquivo do script_clima existe e pode ser importado
     try:
-        import core.script_clima as clima
-        print("OK: core.script_clima carregado.")
-        # Testar se a função rodar existe
-        if hasattr(clima, 'rodar'):
-            print("OK: Função 'rodar' encontrada em script_clima.")
+        resposta = requests.post(URL, data=dados_form, timeout=5)
+        content_disp = resposta.headers.get("content-disposition", "")
+        
+        if resposta.status_code == 200:
+            print(f" [ENVIADO: {tipo.upper()}] -> Status 200 OK | Arquivo retornado: {content_disp}")
         else:
-            print("ERRO: Função 'rodar' NÃO encontrada em script_clima.")
-    except Exception as e:
-        print(f"ERRO: Não foi possível importar core.script_clima: {e}")
+            print(f" [FALHA: {tipo.upper()}] -> Status {resposta.status_code} | Erro: {resposta.text}")
+            
+    except requests.exceptions.ConnectionError:
+        print(" [ERRO CRÍTICO] O servidor FastAPI NÃO está rodando na porta 801. Certifique-se de que o main.py está ativo.")
+        break
 
-    # 2. Testar se o monaco_plan existe e pode ser importado
-    try:
-        import monaco_plan
-        print("OK: monaco_plan carregado.")
-    except Exception as e:
-        print(f"ERRO: Não foi possível importar monaco_plan: {e}")
-
-    # 3. Testar a Memória
-    try:
-        import core.memoria_comum as mem
-        if hasattr(mem, 'instancia_memoria'):
-            print("OK: memoria_comum carregada e 'instancia_memoria' encontrada.")
-        else:
-            print("ERRO: memoria_comum carregada, mas 'instancia_memoria' NÃO encontrada.")
-    except Exception as e:
-        print(f"ERRO: Não foi possível importar core.memoria_comum: {e}")
-
-if __name__ == "__main__":
-    diagnosticar()
+print("=" * 60)
+print(" DIAGNÓSTICO FINALIZADO.")
+print("=" * 60)

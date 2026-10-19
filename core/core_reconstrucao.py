@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+Módulo: core_reconstrucao.py
+Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
+Versão: 2.0.1 - Importações Resilientes e Sincronização Segura
+"""
+
 import sys
 import os
 import logging
@@ -20,22 +26,55 @@ except ImportError:
 # Configuração de Log para capturar onde o erro acontece
 logging.basicConfig(level=logging.INFO)
 
+# Importações blindadas e resilientes para evitar falhas de caminho estático
+biometria = None
+diagnostico_ante_gravidade_neural = None
+neuro_gravidade = None
+
 try:
-    import core.biometria as biometria
-    import core.diagnostico_ante_gravidade_neural as diagnostico_ante_gravidade_neural
-    import core.neuro_gravidade_preditor as neuro_gravidade_preditor
-except ImportError as e:
-    logging.error(f"Erro de importação: {e}")
+    import biometria
+except ImportError:
+    try:
+        from core import biometria
+    except ImportError:
+        logging.warning("Módulo biometria não encontrado diretamente.")
+
+try:
+    import diagnostico_ante_gravidade_neural
+except ImportError:
+    try:
+        from core import diagnostico_ante_gravidade_neural
+    except ImportError:
+        logging.warning("Módulo diagnostico_ante_gravidade_neural não encontrado diretamente.")
+
+try:
+    import neuro_gravidade
+except ImportError:
+    try:
+        from core import neuro_gravidade
+    except ImportError:
+        logging.warning("Módulo neuro_gravidade não encontrado diretamente.")
 
 def executar_reconstrucao_total():
     """
     Motor de consolidação com verificação de integridade e sincronização global.
     """
     try:
+        bio_dados = biometria.obter_dados() if biometria and hasattr(biometria, 'obter_dados') else "Modulo indisponivel"
+        diag_dados = diagnostico_ante_gravidade_neural.obter_dados() if diagnostico_ante_gravidade_neural and hasattr(diagnostico_ante_gravidade_neural, 'obter_dados') else "Modulo indisponivel"
+        
+        # Compatibilidade com o motor de neurogravidade atualizado
+        if neuro_gravidade and hasattr(neuro_gravidade, 'processar'):
+            neuro_dados = neuro_gravidade.processar()
+        elif neuro_gravidade and hasattr(neuro_gravidade, 'obter_dados'):
+            neuro_dados = neuro_gravidade.obter_dados()
+        else:
+            neuro_dados = "Modulo indisponivel"
+
         dados_consolidado = {
-            "biometria": biometria.obter_dados() if 'biometria' in globals() and hasattr(biometria, 'obter_dados') else "Modulo indisponivel",
-            "diagnostico": diagnostico_ante_gravidade_neural.obter_dados() if 'diagnostico_ante_gravidade_neural' in globals() and hasattr(diagnostico_ante_gravidade_neural, 'obter_dados') else "Modulo indisponivel",
-            "neuro": neuro_gravidade_preditor.obter_dados() if 'neuro_gravidade_preditor' in globals() and hasattr(neuro_gravidade_preditor, 'obter_dados') else "Modulo indisponivel",
+            "biometria": bio_dados,
+            "diagnostico": diag_dados,
+            "neuro": neuro_dados,
             "status_orquestracao": "Processamento concluído com sucesso"
         }
         

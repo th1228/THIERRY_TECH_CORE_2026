@@ -26,7 +26,7 @@ def salvar_analise(id_cliente, metrics):
         ))
         conn.commit()
         print("Dados inseridos com sucesso!")
-    except Exception as e:
+    except (sqlite3.Error, KeyError, TypeError) as e:
         print(f"Erro ao salvar: {e}")
     finally:
         conn.close()

@@ -18,6 +18,22 @@ except ImportError:
         def salvar_dados(self, chave, valor): pass
         def ler_dados(self, chave): return None
     memoria = MemoriaMock()
+
+# --- DICIONÁRIO DE SUPORTE BILÍGUE AUTOMÁTICO (APEX GATE) ---
+DICIONARIO_IDIOMAS = {
+    "PT": {
+        "FUNDAMENTACAO": "FUNDAMENTAÇÃO ESTRATÉGICA E ANÁLISE DE LIDERANÇA FACIAL",
+        "CLÁUSULA": "CLÁUSULA PRIMEIRA: DA ESCASSEZ MUNDIAL DE 10 VAGAS",
+        "DEPRECIAÇÃO": "ANÁLISE DE DEPRECIAÇÃO E VALUATION DO CAPITAL DE IMAGEM",
+        "ENGENHARIA": "ENGENHARIA DE VALUATION E RETORNO DE BLINDAGEM ATIVA",
+    },
+    "EN": {
+        "FUNDAMENTACAO": "STRATEGIC FOUNDATION AND FACIAL LEADERSHIP ANALYSIS",
+        "CLÁUSULA": "FIRST CLAUSE: WORLDWIDE SCARCITY OF 10 EXCLUSIVE SLOTS",
+        "DEPRECIAÇÃO": "DEPRECIATION ANALYSIS AND IMAGE CAPITAL VALUATION",
+        "ENGENHARIA": "VALUATION ENGINEERING AND ACTIVE SHIELDING RETURN",
+    }
+}
 # -----------------------------------------------
 
 # Configuração de auditoria

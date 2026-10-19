@@ -16,7 +16,7 @@ except ImportError:
 # -----------------------------------------------
 
 class MotorOlharLimbico:
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         self.ativo = False
         self.mp_face_mesh = mp.solutions.face_mesh
         self.face_mesh = self.mp_face_mesh.FaceMesh(

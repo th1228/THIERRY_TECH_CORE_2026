@@ -1,10 +1,20 @@
 # -*- coding: utf-8 -*-
+"""
+Módulo: memoria_comum.py
+Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
+Versão: 1.3.0 - Thread-Safe State Manager & Shared Memory Bridge
+"""
+
 import threading
 import json
 import os
 
 class MemoriaComum:
-    def __init__(self, arquivo_estado="estado_sistema.json"):
+    """
+    Gerenciador Central de Estado e Fila de Tarefas com Thread-Safety.
+    Atua como o Hub Único de Leitura/Escrita para todos os motores do ecossistema.
+    """
+    def __init__(self, arquivo_estado="estado_sistema.json", lang: str = "PT"):
         self.arquivo_estado = arquivo_estado
         self.lock = threading.Lock()
         
@@ -30,38 +40,55 @@ class MemoriaComum:
             return None
 
     def salvar_dados(self, chave, valor):
-        """Salva dados no estado compartilhado com segurança."""
+        """Salva dados no estado compartilhado com segurança de thread."""
         with self.lock:
             self.dados[chave] = valor
             self._salvar_estado()
 
     def obter_dados(self, chave):
-        """Busca dados salvos na memória comum."""
+        """Busca dados salvos na memória comum pelo identificador de chave."""
         with self.lock:
             return self.dados.get(chave)
 
     def ler_dados(self, chave=None):
-        """Método de compatibilidade para atender motores que chamam ler_dados."""
+        """
+        Método universal de compatibilidade para atender motores legados 
+        ou chamadas diretas que passam ou não uma chave.
+        """
         with self.lock:
             if chave:
                 return self.dados.get(chave)
             return self.dados
 
+    def exportar_estado_completo(self):
+        """
+        ✨ NOVO: Retorna uma cópia completa de todo o dicionário de estado.
+        Ideal para o Orquestrador, LLM e Gerador de PDF extraírem todas as métricas de uma só vez.
+        """
+        with self.lock:
+            return dict(self.dados)
+
     def _salvar_estado(self):
-        with open(self.arquivo_estado, "w", encoding="utf-8") as f:
-            json.dump(self.dados, f, indent=4, ensure_ascii=False)
+        """Persiste o dicionário de dados em disco como JSON (executado dentro do lock)."""
+        try:
+            with open(self.arquivo_estado, "w", encoding="utf-8") as f:
+                json.dump(self.dados, f, indent=4, ensure_ascii=False)
+        except Exception as e:
+            print(f"[ERRO MEMÓRIA] Falha ao persistir estado em disco: {e}")
 
     def _carregar_estado(self):
+        """Carrega o estado existente do disco para a memória volátil."""
         if os.path.exists(self.arquivo_estado):
             try:
                 with open(self.arquivo_estado, "r", encoding="utf-8") as f:
                     self.dados = json.load(f)
-            except:
+            except Exception as e:
+                print(f"[AVISO MEMÓRIA] Não foi possível ler {self.arquivo_estado}: {e}. Inicializando estado vazio.")
                 self.dados = {}
 
-# --- APELIDOS DE COMPATIBILIDADE ---
+# --- APELIDOS E INSTÂNCIAS DE COMPATIBILIDADE ---
 MemoriaComumEcossistema = MemoriaComum
 
-# Instância global unificada para todo o sistema importar
+# Instâncias globais para exportação e sincronização no ecossistema
 instancia_memoria = MemoriaComum()
 memoria_global = instancia_memoria

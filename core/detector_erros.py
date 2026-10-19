@@ -19,7 +19,7 @@ except ImportError:
 # -----------------------------------------------
 
 class DetectorErrosTTC:
-    def __init__(self, nome_arquivo_log="ttc_diagnostico_erros.log"):
+    def __init__(self, nome_arquivo_log="ttc_diagnostico_erros.log", lang: str = "PT"):
         self.caminho_log = nome_arquivo_log
 
     def registrar_falha(self, modulo, excecao):

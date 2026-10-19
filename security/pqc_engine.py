@@ -1,4 +1,4 @@
-
+# -*- coding: utf-8 -*-
 # =====================================================================
 # ARQUIVO: security/pqc_engine.py
 # =====================================================================
@@ -10,7 +10,7 @@ logger = LogSeguro()
 
 try:
     # Utiliza a biblioteca oficial de criptografia pós-quântica (liboqs / pqcrypto)
-    import pqcrypto.sign.dilithium3 as dilithium
+    import pqcrypto.sign.dilithium3 as dilithium  # type: ignore
     PQC_DISPONIVEL = True
 except ImportError:
     PQC_DISPONIVEL = False
@@ -23,7 +23,9 @@ class PostQuantumEngine:
 
     def __init__(self):
         if not PQC_DISPONIVEL:
-            print("[PQC] AVISO: Biblioteca PQC nativa não encontrada. Operando em modo de simulação de alta segurança.")
+            logger.registrar_evento("AVISO", "Biblioteca PQC nativa não encontrada. Operando em modo de simulação de alta segurança.")
+        else:
+            logger.registrar_evento("INFO", "Motor Pós-Quântico (Dilithium3) inicializado com sucesso.")
 
     def gerar_chaves_post_quanticas(self) -> tuple[bytes, bytes]:
         """Gera um par de chaves público/privado resistente à computação quântica."""
@@ -43,19 +45,19 @@ class PostQuantumEngine:
             else:
                 return os.urandom(2420)
         except Exception as e:
-            logger.registrar("PQC_ENGINE", "ERRO", f"Falha na assinatura pós-quântica: {str(e)}")
+            logger.registrar_evento("ERRO", f"Falha na assinatura pós-quântica: {str(e)}")
             raise RuntimeError(f"Erro crítico na geração de assinatura PQC: {e}")
 
     def verificar_assinatura_pqc(self, chave_publica: bytes, payload: bytes, assinatura: bytes) -> bool:
         """Verifica uma assinatura digital pós-quântica com imunidade a decodificação quântica."""
         try:
             if PQC_DISPONIVEL:
-                # Se a assinatura for válida, o método retorna o payload original
+                # Se a assinatura for válida, o método verifica sem exceções
                 dilithium.verify(chave_publica, payload, assinatura)
-                logger.registrar("PQC_ENGINE", "SUCESSO", "Assinatura pós-quântica verificada com sucesso.")
+                logger.registrar_evento("SUCESSO", "Assinatura pós-quântica verificada com sucesso.")
                 return True
             else:
                 return True
         except Exception as e:
-            logger.registrar("PQC_ENGINE", "ALERTA", f"Falha na verificação PQC (Assinatura Inválida): {str(e)}")
+            logger.registrar_evento("ALERTA", f"Falha na verificação PQC (Assinatura Inválida): {str(e)}")
             return False

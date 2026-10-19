@@ -16,7 +16,7 @@ def analisar_conectividade():
                 # Verifica se o arquivo não está vazio
                 if len(conteudo) == 0:
                     print(f"[!] ARQUIVO: {arquivo} | AVISO: Arquivo vazio")
-        except Exception as e:
+        except (OSError, UnicodeDecodeError) as e:
             print(f"[!] ARQUIVO: {arquivo} | ERRO DE LEITURA: {e}")
             erros += 1
             

@@ -19,7 +19,7 @@ except ImportError:
 # -----------------------------------------------
 
 class MIDIProtocolListener:
-    def __init__(self, callback_atualizacao=None):
+    def __init__(self, callback_atualizacao=None, lang: str = "PT"):
         self.callback = callback_atualizacao
         print("[MIDI_LISTENER] Protocolo de escuta inicializado.")
 

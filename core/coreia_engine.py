@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+"""
+TTC Global Ecosystem - Cory Biotech Engine
+Engine de Inteligência Preditiva & Integração Sistêmica
+"""
+
 import sys
 import os
 import hashlib
@@ -18,16 +23,26 @@ except ImportError:
     memoria = MemoriaMock()
 # -----------------------------------------------
 
-"""
-TTC Global Ecosystem - Cory Biotech Engine
-Engine de Inteligência Preditiva & Integração Sistêmica
-"""
+# --- DICIONÁRIO DE SUPORTE BILÍGUE AUTOMÁTICO (APEX GATE) ---
+DICIONARIO_IDIOMAS = {
+    "PT": {
+        "FUNDAMENTACAO": "FUNDAMENTAÇÃO ESTRATÉGICA E ANÁLISE DE LIDERANÇA FACIAL",
+        "CLÁUSULA": "CLÁUSULA PRIMEIRA: DA ESCASSEZ MUNDIAL DE 10 VAGAS",
+        "DEPRECIAÇÃO": "ANÁLISE DE DEPRECIAÇÃO E VALUATION DO CAPITAL DE IMAGEM",
+        "ENGENHARIA": "ENGENHARIA DE VALUATION E RETORNO DE BLINDAGEM ATIVA",
+    },
+    "EN": {
+        "FUNDAMENTACAO": "STRATEGIC FOUNDATION AND FACIAL LEADERSHIP ANALYSIS",
+        "CLÁUSULA": "FIRST CLAUSE: WORLDWIDE SCARCITY OF 10 EXCLUSIVE SLOTS",
+        "DEPRECIAÇÃO": "DEPRECIATION ANALYSIS AND IMAGE CAPITAL VALUATION",
+        "ENGENHARIA": "VALUATION ENGINEERING AND ACTIVE SHIELDING RETURN",
+    }
+}
 
 class CoryBiotechEngine:
-    def __init__(self, shared_memory=None):
+    def __init__(self, shared_memory=None, lang: str = "PT"):
         self.module_name = "Cory Biotech & Global Pollution Matrix"
         self.security_level = "Tier-1 High-End"
-        # Mantém compatibilidade caso receba um pool externo, mas se conecta por padrão à Memória Comum central 🧠
         self.shared_memory = shared_memory if shared_memory is not None else memoria
 
     def projetar_degenerativo(self, stress_factor):
@@ -47,14 +62,11 @@ class CoryBiotechEngine:
         """
         timestamp = time.time()
         
-        # Cálculo de stress oxidativo
         stress_factor = float(pm25_level) * 1.42
         cellular_risk = "Critical" if stress_factor > 75 else "Controlled"
         
-        # Gera a projeção baseada no stress atual
         projeções_futuras = self.projetar_degenerativo(stress_factor)
         
-        # Assinatura de segurança
         raw_signature = f"{timestamp}-{stress_factor}-{cellular_risk}"
         crypto_hash = hashlib.sha256(raw_signature.encode('utf-8')).hexdigest()
 
@@ -68,7 +80,6 @@ class CoryBiotechEngine:
             "timestamp": timestamp
         }
 
-        # Sincronização robusta com a Memória Comum 🧠
         try:
             if hasattr(self.shared_memory, "salvar_dados"):
                 self.shared_memory.salvar_dados("cory_active_telemetry", payload)

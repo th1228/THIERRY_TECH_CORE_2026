@@ -11,7 +11,7 @@ def executar_sistema():
     try:
         sistema = MonacoIntegrador()
         print(sistema.processar())
-    except Exception as e:
+    except (ConnectionError, TimeoutError, OSError, ValueError, KeyError, RuntimeError) as e:
         print(f"Erro ao iniciar motor: {e}")
     print("--- SISTEMA OPERACIONAL ---")
 

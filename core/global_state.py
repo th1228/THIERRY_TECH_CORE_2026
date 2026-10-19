@@ -9,7 +9,7 @@ if ROOT_DIR not in sys.path:
 # -----------------------------------------------
 
 class MemoriaTTC:
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         self._dados = {}
         print("[MEMÓRIA TTC] Instância global de estado iniciada com sucesso.")
 

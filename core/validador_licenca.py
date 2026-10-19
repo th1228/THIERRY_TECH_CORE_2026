@@ -1,3 +1,18 @@
+
+# --- PONTE DE MEMÓRIA AUTOMÁTICA (THIERRY TECH) ---
+try:
+    from memoria_comum import instancia_memoria as memoria
+except ImportError:
+    try:
+        from core.memoria_comum import instancia_memoria as memoria
+    except ImportError:
+        class MemoriaMock:
+            def salvar_dados(self, chave, valor): pass
+            def registrar(self, chave, valor): pass
+            def ler_dados(self, chave): return None
+        memoria = MemoriaMock()
+# ---------------------------------------------------
+
 import hashlib
 import os
 import platform
@@ -14,7 +29,7 @@ Localização: core/validador_licenca.py
 
 class ValidadorLocal:
 
-  def __init__(self):
+  def __init__(self, lang: str = "PT"):
     self.diretorio_base = os.getcwd()
 
   def varrer_servidor_local(self):

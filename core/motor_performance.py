@@ -17,7 +17,7 @@ except ImportError:
 # -----------------------------------------------
 
 class MotorPerformance:
-    def __init__(self, log_file="log_performance.txt"):
+    def __init__(self, log_file="log_performance.txt", lang: str = "PT"):
         self.log_file = log_file
 
     def medir_latencia(self, nome_motor, funcao_alvo, iteracoes=50):

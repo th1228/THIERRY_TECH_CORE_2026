@@ -25,7 +25,7 @@ except ImportError:
     serial = None
 
 class GerenciadorHardwareBiometrico:
-    def __init__(self, porta="COM3", baudrate=9600):
+    def __init__(self, porta="COM3", baudrate=9600, lang: str = "PT"):
         self.porta = porta
         self.baudrate = baudrate
         self.conexao_ativa = False

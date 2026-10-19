@@ -8,7 +8,7 @@ import time
 from core.banco_dados import salvar_cliente
 
 class ProcessadorInteligente:
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         self.historico = []
         self.memoria = None
         self.perimetro_seguranca = 100.0  # KM

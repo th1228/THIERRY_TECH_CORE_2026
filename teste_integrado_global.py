@@ -41,7 +41,7 @@ def executar_teste_integrado_global(ciclos=5):
       )
       sucessos += 1
 
-    except Exception as e:
+    except (OSError, RuntimeError) as e:
       print(f" [FALHA] Erro detectado no Ciclo {i}: {str(e)}")
       falhas += 1
 

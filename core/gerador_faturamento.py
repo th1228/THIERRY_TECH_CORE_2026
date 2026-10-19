@@ -27,7 +27,7 @@ from core.precificacao_motor import GerenciadorCotasGlobais
 from core.gerenciador_geografico import gerente_geo
 
 class GeradorFaturamento:
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         self.output_dir = "output"
         if not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir)

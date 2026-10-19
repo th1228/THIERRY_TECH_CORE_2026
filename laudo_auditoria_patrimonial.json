@@ -1,0 +1,23 @@
+{
+    "Metodologia": "COCOMO II / CPC 04 / ISO/IEC 25010",
+    "Metricas_Codigo": {
+        "arquivos_computados": 264,
+        "sloc_bruto": 24473,
+        "lloc_logico": 55660.94,
+        "complexidade_ciclomatica": 2025
+    },
+    "Valoracao_Detalhada": {
+        "taxa_ptax_dolar": 5.6,
+        "cotacao_euro": 5.83,
+        "person_months_estimado": 299.04,
+        "horas_estimadas": 45454,
+        "custo_tecnico_desenvolvimento_brl": 8373141.8,
+        "valor_unitario_licenca_eur": 800000.0,
+        "valor_unitario_licenca_brl": 4664000.0,
+        "valor_unitario_licenca_usd": 832857.14,
+        "total_licencas_globais": 10,
+        "valor_total_ global_eur": 8000000.0,
+        "valor_total_global_brl": 46640000.0,
+        "valor_total_global_usd": 8328571.43
+    }
+}

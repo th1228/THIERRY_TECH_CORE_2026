@@ -22,7 +22,7 @@ class DiagnosticoSeguranca:
     Este script valida se o ambiente está íntegro antes da inicialização do sistema.
     """
     
-    def __init__(self):
+    def __init__(self, lang: str = "PT"):
         self.diretorio_raiz = ROOT_DIR
         self.arquivos_criticos = ["run_all.py", "core"]
         

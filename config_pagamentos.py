@@ -1,20 +1,34 @@
-# Central de Links de Pagamento - TTC Global
-# Mapeamento oficial sincronizado com os valores do painel Stripe
+# config_pagamentos.py
 
-PAYMENT_LINKS = {
-    # Nacionais
-    "licenca_tatica_nacional": "https://buy.stripe.com/5kQ3cv0qSc9OenOckzeZ200",     # R$ 50.000,00
-    "licenca_estrategica_nacional": "https://buy.stripe.com/28E28r5Lc1va0wYckzeZ201",  # R$ 100.000,00
-    "licenca_anual_nacional": "https://buy.stripe.com/eVq6oHflMc9ObbCckzeZ202",         # R$ 150.000,00
-    "licenca_soberana_nacional": "https://buy.stripe.com/28E6oH6Pg6Pu5Ri3O3eZ204",     # R$ 200.000,00
+STRIPE_PRODUCTS = {
+    # Licenciamento Global / USD (Américas, Oriente Médio, Ásia e Global)
+    "LICENCA_MONACO_USD": {
+        "name": "LICENÇA TCCGLOBAL - MONACO SUPREMACY",
+        "price": 999999.00,
+        "currency": "usd",
+        "interval": "year",
+        "payment_link": "https://buy.stripe.com/dRm7sLc9A8XCbbCckzeZ20b",
+        "active": True
+    },
     
-    # Internacionais / Elite (R$ 999.999,00)
-    "licenca_monaco_supremacy": "https://buy.stripe.com/eVq4gz7Tkgq44Ne2JZeZ205",      # R$ 999.999,00
-    "licenca_premium_eua": "https://buy.stripe.com/4gM7sL8Xofm01B2fwLeZ206",           # R$ 999.999,00
-    "licenca_global_estrategica": "https://buy.stripe.com/3cI6oHehIfm05Ri98neZ207",    # R$ 999.999,00
-    "licenca_premio_emirados_eau": "https://buy.stripe.com/9B64gz7Tka1G6Vm4S7eZ208"    # R$ 999.999,00
+    # Licenciamento Europa / Zona Euro (EUR)
+    "LICENCA_MONACO_EUR": {
+        "name": "LICENÇA MONACO EUR",
+        "price": 999999.00,
+        "currency": "eur",
+        "interval": "year",
+        "payment_link": "https://buy.stripe.com/dRmaEX4H80r64Ne1FVeZ20c",
+        "active": True
+    }
 }
 
-def get_link(key):
-    """Retorna o link de pagamento correspondente à chave especificada."""
-    return PAYMENT_LINKS.get(key)
+def obter_link_pagamento(regiao="global"):
+    """
+    Retorna o link de pagamento e o produto Stripe correspondente 
+    com base na região do cliente (ex: 'europe' ou 'global').
+    """
+    if regiao.lower() in ["europe", "europa", "eur"]:
+        return STRIPE_PRODUCTS["LICENCA_MONACO_EUR"]
+    
+    # Padrão global / Oriente Médio / Américas em USD
+    return STRIPE_PRODUCTS["LICENCA_MONACO_USD"]

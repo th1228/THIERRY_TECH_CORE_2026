@@ -18,7 +18,7 @@ except ImportError:
 # -----------------------------------------------
 
 class GerenciadorGeografico:
-    def __init__(self, pasta_config='config/paises'):
+    def __init__(self, pasta_config='config/paises', lang: str = "PT"):
         self.pasta_config = pasta_config
         self.configuracao_ativa = None
 
