@@ -3,50 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thierry Sovereign Concept • Monaco Tier-1 Audit Terminal</title>
+    <title>Thierry Technology Concept Global • Monaco Tier-1 Audit Terminal</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-carbon: #010204;
-            --panel-yacht-dark: rgba(7, 9, 13, 0.88);
-            --gold-champagne: #D4AF37;
-            --gold-gradient: linear-gradient(135deg, #C5A059, #F3E5AB, #C5A059, #9A7B43);
-            --border-sovereign: rgba(197, 160, 89, 0.38);
-            --cyan-tech-glow: #00d2ff;
-            --green-secure: #10b981;
-            --purple-orbit: #a855f7;
+            --bg-carbon: #07090E;
+            --panel-yacht-dark: #0e131f;
+            --accent-clinical: #3B5E66;
+            --border-sovereign: #1e293b;
+            --cyan-tech-glow: #00f3ff;
+            --green-secure: #059669;
+            --purple-orbit: #6b21a8;
             --red-alert: #ef4444;
-            --text-primary: #F8FAFC;
-            --text-secondary: #94A3B8;
-            --ring-intensity: 1.2;
-            --ring-color: rgba(255, 245, 215, 0.85);
-            --backlit-champagne-glow: 0 0 25px rgba(212, 175, 55, 0.14), inset 0 0 15px rgba(212, 175, 55, 0.08);
-            --backlit-hover-glow: 0 0 40px rgba(212, 175, 55, 0.28), inset 0 0 22px rgba(212, 175, 55, 0.15);
-            --btn-glass-bg: linear-gradient(135deg, rgba(197, 160, 89, 0.08), rgba(255, 255, 255, 0.02));
+            --text-primary: #ffffff;
+            --text-secondary: #94a3b8;
+            --backlit-clinical-glow: 0 0 25px rgba(0, 243, 255, 0.08), inset 0 0 15px rgba(0, 243, 255, 0.03);
+            --backlit-hover-glow: 0 0 35px rgba(0, 243, 255, 0.2), inset 0 0 20px rgba(0, 243, 255, 0.08);
+            --btn-glass-bg: rgba(15, 23, 42, 0.9);
         }
 
+        /* MODO CLARO LIMPO, PROFISSIONAL E COM ALTA LEGIBILIDADE EM MODAIS */
         body.light-theme {
-            --bg-carbon: #f1f4f9;
-            --panel-yacht-dark: rgba(255, 255, 255, 0.95);
-            --gold-champagne: #9c7b16;
-            --gold-gradient: linear-gradient(135deg, #8a6a12, #c5a059, #8a6a12, #654d0a);
-            --border-sovereign: rgba(156, 123, 22, 0.4);
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
-            --backlit-champagne-glow: 0 10px 30px rgba(156, 123, 22, 0.12), inset 0 0 15px rgba(156, 123, 22, 0.04);
-            --backlit-hover-glow: 0 15px 35px rgba(156, 123, 22, 0.22), inset 0 0 20px rgba(156, 123, 22, 0.08);
-            --btn-glass-bg: linear-gradient(135deg, rgba(156, 123, 22, 0.06), rgba(255, 255, 255, 0.8));
-            background-image: radial-gradient(circle at 50% 0%, rgba(156, 123, 22, 0.08) 0%, transparent 70%);
+            --bg-carbon: #F9F8F6;
+            --panel-yacht-dark: #ffffff;
+            --accent-clinical: #3B5E66;
+            --border-sovereign: #EAE8E5;
+            --text-primary: #1A1A1A;
+            --text-secondary: #4A5568;
+            --backlit-clinical-glow: 0 10px 30px rgba(59, 94, 102, 0.06), inset 0 0 15px rgba(59, 94, 102, 0.02);
+            --backlit-hover-glow: 0 15px 35px rgba(59, 94, 102, 0.12), inset 0 0 20px rgba(59, 94, 102, 0.04);
+            --btn-glass-bg: #ffffff;
+            background-color: var(--bg-carbon) !important;
+            color: var(--text-primary) !important;
+        }
+
+        /* Correção de contraste e vida em modais no modo claro */
+        body.light-theme .modal-overlay.active-modal h1, 
+        body.light-theme .modal-overlay.active-modal h2, 
+        body.light-theme .modal-overlay.active-modal strong {
+            color: #1A1A1A !important;
+        }
+
+        body.light-theme .modal-overlay.active-modal p, 
+        body.light-theme .modal-overlay.active-modal span, 
+        body.light-theme .modal-overlay.active-modal label, 
+        body.light-theme .modal-overlay.active-modal div, 
+        body.light-theme .modal-overlay.active-modal li {
+            color: #4A5568 !important;
+        }
+
+        body.light-theme .modal-overlay.active-modal button,
+        body.light-theme .modal-overlay.active-modal .elite-menu-btn,
+        body.light-theme .modal-overlay.active-modal .lang-btn {
+            background-color: #ffffff !important;
+            border: 1px solid #d1d5db !important;
+            color: #374151 !important;
+            border-radius: 10px !important;
+            padding: 10px 16px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02) !important;
+        }
+
+        body.light-theme .modal-overlay.active-modal button:hover,
+        body.light-theme .modal-overlay.active-modal .elite-menu-btn:hover,
+        body.light-theme .modal-overlay.active-modal .lang-btn:hover {
+            border-color: #3B5E66 !important;
+            background-color: #f8fafc !important;
+            color: #3B5E66 !important;
+            transform: translateY(-1px);
         }
 
         ::-webkit-scrollbar { width: 4px; height: 4px; }
-        ::-webkit-scrollbar-track { background: rgba(1, 2, 4, 0.8); border-radius: 2px; }
-        ::-webkit-scrollbar-thumb { background: var(--gold-champagne); border-radius: 2px; box-shadow: 0 0 8px var(--gold-champagne); }
+        ::-webkit-scrollbar-track { background: var(--bg-carbon); border-radius: 2px; }
+        ::-webkit-scrollbar-thumb { background: var(--accent-clinical); border-radius: 2px; box-shadow: 0 0 8px var(--accent-clinical); }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; }
 
+        /* MARGEM DE SEGURANÇA EXTERNA (SAFE ZONE) */
         body {
             background-color: var(--bg-carbon);
             color: var(--text-primary);
@@ -54,312 +88,430 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 12px 15px;
-            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+            padding: 20px 28px;
+        }
+
+        /* ================================================================= */
+        /* REGRAS PARA O MODO ESCURO (BIO-LUMINESCÊNCIA & CONFORTO) */
+        /* ================================================================= */
+        body:not(.light-theme) h1, 
+        body:not(.light-theme) h2, 
+        body:not(.light-theme) h3,
+        body:not(.light-theme) h4,
+        body:not(.light-theme) .brand-title-elite,
+        body:not(.light-theme) strong {
+            color: #ffffff !important;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 4px rgba(0,0,0, 0.9);
+        }
+
+        body:not(.light-theme) p, 
+        body:not(.light-theme) span, 
+        body:not(.light-theme) label,
+        body:not(.light-theme) div,
+        body:not(.light-theme) li {
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        body:not(.light-theme) .luxury-sidebar {
+            background-color: var(--panel-yacht-dark) !important;
+            border: 1px solid var(--border-sovereign) !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            padding: 18px;
+            gap: 12px;
+        }
+
+        body:not(.light-theme) .lang-btn, 
+        body:not(.light-theme) .elite-menu-btn,
+        body:not(.light-theme) button,
+        body:not(.light-theme) .btn-action {
+            background: rgba(15, 23, 42, 0.95) !important;
+            border: 1px solid rgba(0, 243, 255, 0.3) !important;
+            color: #ffffff !important;
+            border-radius: 10px !important;
+            padding: 8px 12px;
+            backdrop-filter: blur(12px);
+            font-size: 10px;
+        }
+
+        body:not(.light-theme) .lang-btn:hover, 
+        body:not(.light-theme) .elite-menu-btn:hover,
+        body:not(.light-theme) button:hover {
+            border-color: #00f3ff !important;
+            background: rgba(0, 243, 255, 0.12) !important;
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.3), inset 0 0 12px rgba(0, 243, 255, 0.15) !important;
+            transform: translateY(-2px);
+        }
+
+        /* ================================================================= */
+        /* REGRAS PARA O MODO CLARO (LIMPO E EQUILIBRADO) */
+        /* ================================================================= */
+        body.light-theme .luxury-sidebar {
+            background-color: #ffffff !important;
+            border: 1px solid var(--border-sovereign) !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            padding: 18px;
+        }
+
+        body.light-theme .lang-btn, 
+        body.light-theme .elite-menu-btn,
+        body.light-theme button {
+            background: #ffffff !important;
+            border: 1px solid #d1d5db !important;
+            color: #374151 !important;
+            border-radius: 10px !important;
+            padding: 8px 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+            font-size: 10px;
+        }
+
+        body.light-theme .lang-btn:hover, 
+        body.light-theme .elite-menu-btn:hover,
+        body.light-theme button:hover {
+            border-color: var(--accent-clinical) !important;
+            background: #f8fafc !important;
+            color: var(--accent-clinical) !important;
+            transform: translateY(-1px);
+        }
+
+        .client-input-field {
+            background: var(--btn-glass-bg);
+            border: 1px solid var(--border-sovereign);
+            color: var(--text-primary);
+            padding: 8px 12px;
+            border-radius: 10px;
+            font-size: 10px;
+            width: 100%;
+            outline: none;
+            backdrop-filter: blur(12px);
+            transition: all 0.3s ease;
+            margin: 8px 0;
+        }
+        .client-input-field:focus {
+            border-color: var(--accent-clinical);
+            box-shadow: var(--backlit-hover-glow);
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 8px;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-            gap: 10px;
+            padding: 8px 6px;
+            border-bottom: 1px solid var(--border-sovereign);
+            margin-bottom: 18px;
+            flex-wrap: nowrap;
+            gap: 15px;
+            background: transparent;
+            z-index: 100;
+            position: relative;
         }
 
-        .brand-title-elite { font-family: 'Cinzel', serif; font-size: 14px; letter-spacing: 2.5px; }
-        .brand-title-elite span.highlight-gold {
-            background: var(--gold-gradient);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: 700;
+        .brand-title-elite { 
+            font-size: 12px; 
+            font-weight: 700; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            color: var(--text-primary);
+            white-space: nowrap;
         }
+        .brand-title-elite span.highlight-clinical { color: var(--accent-clinical); font-weight: 700; }
 
-        .system-meta-nodes { text-align: right; font-size: 11px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-        .lang-selector { display: inline-flex; gap: 6px; }
-        
-        .lang-btn {
-            background: var(--btn-glass-bg);
-            border: 1px solid var(--border-sovereign);
-            color: var(--text-secondary);
-            padding: 4px 10px;
-            border-radius: 6px;
-            cursor: pointer;
+        /* ================================================================= */
+        /* CONTAINER DE AJUSTES RETRÁTEIS E CASCATA HORIZONTAL */
+        /* ================================================================= */
+        .system-meta-nodes { 
+            display: flex; 
+            align-items: center; 
+            gap: 8px; 
+            flex-wrap: nowrap;
             font-size: 10px;
-            font-weight: 600;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15), inset 0 1px 1px rgba(255,255,255,0.05);
-        }
-        .lang-btn:hover {
-            border-color: var(--gold-champagne);
-            color: var(--gold-champagne);
-            box-shadow: var(--backlit-hover-glow);
-            transform: translateY(-1px);
-        }
-        .lang-btn.active-lang {
-            border-color: var(--gold-champagne);
-            color: var(--gold-champagne);
-            background: rgba(197, 160, 89, 0.12);
-            box-shadow: var(--backlit-champagne-glow);
         }
 
-        .ring-light-controls-bar {
-            display: flex;
+        .cinematic-cascade-container {
+            display: none; 
             align-items: center;
-            gap: 8px;
-            background: var(--btn-glass-bg);
-            border: 1px solid var(--border-sovereign);
-            padding: 3px 10px;
-            border-radius: 8px;
-            font-size: 10px;
-            height: 30px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .ring-light-controls-bar label { color: var(--gold-champagne); font-weight: 600; }
-        .ring-light-controls-bar input[type="range"] {
-            width: 65px;
-            accent-color: var(--gold-champagne);
-            cursor: pointer;
-            height: 4px;
+            gap: 6px;
+            flex-wrap: nowrap;
+            opacity: 0;
+            transform: translateX(-15px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
 
-        .dashboard-grid-master { display: grid; grid-template-columns: 310px 1fr 340px; gap: 16px; flex: 1; height: calc(100vh - 65px); }
-
-        .luxury-sidebar {
-            background: var(--panel-yacht-dark);
-            border: 1px solid var(--border-sovereign);
-            border-radius: 16px;
-            padding: 16px;
+        .cinematic-cascade-container.active-cascade {
             display: flex;
-            flex-direction: column;
-            backdrop-filter: blur(35px);
-            box-shadow: var(--backlit-champagne-glow), 0 25px 50px rgba(0,0,0,0.85);
-            overflow-y: auto;
+            opacity: 1;
+            transform: translateX(0);
         }
+
+        @keyframes cascadeSlideHorizontal {
+            0% {
+                opacity: 0;
+                transform: translateX(-25px) scale(0.95);
+                filter: blur(3px);
+            }
+            60% {
+                opacity: 0.8;
+                transform: translateX(4px) scale(1.01);
+                filter: blur(0.5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes lightningGlowSweep {
+            0% { box-shadow: 0 0 0px rgba(0, 243, 255, 0); border-color: var(--border-sovereign); }
+            30% { box-shadow: 0 0 20px rgba(0, 243, 255, 0.6), inset 0 0 10px rgba(0, 243, 255, 0.3); border-color: var(--cyan-tech-glow, #3B5E66); }
+            60% { box-shadow: 0 0 25px rgba(212, 175, 55, 0.7), inset 0 0 12px rgba(212, 175, 55, 0.4); border-color: #d4af37; }
+            100% { box-shadow: 0 0 8px rgba(59, 94, 102, 0.15); border-color: var(--border-sovereign); }
+        }
+
+        .cascade-item {
+            opacity: 0;
+            animation: cascadeSlideHorizontal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            white-space: nowrap;
+            padding: 6px 10px;
+            font-size: 9.5px;
+        }
+
+        .cascade-item:nth-child(1) { animation-delay: 0.1s; }
+        .cascade-item:nth-child(2) { animation-delay: 0.2s; }
+        .cascade-item:nth-child(3) { animation-delay: 0.3s; }
+        .cascade-item:nth-child(4) { animation-delay: 0.4s; }
+        .cascade-item:nth-child(5) { animation-delay: 0.5s; }
+        .cascade-item:nth-child(6) { animation-delay: 0.6s; }
+
+        .lightning-sweep-active {
+            animation: lightningGlowSweep 2s ease-in-out forwards !important;
+        }
+
+        /* BOTÃO DA MÃO (AJUSTES) */
+        .hand-trigger-btn {
+            background: linear-gradient(135deg, var(--accent-clinical), #1e293b);
+            color: #fff !important;
+            border: 1px solid var(--cyan-tech-glow);
+            border-radius: 10px;
+            padding: 7px 12px;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        .hand-trigger-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+
+        .lang-selector { display: inline-flex; gap: 4px; }
+
+        .ring-light-popup, .color-palette-popup {
+            position: fixed; top: 65px; background: var(--panel-yacht-dark);
+            border: 1px solid var(--border-sovereign); border-radius: 12px; padding: 14px 18px;
+            box-shadow: var(--backlit-clinical-glow), 0 20px 40px rgba(0,0,0,0.3); display: none; flex-direction: column; gap: 10px; z-index: 99999;
+            backdrop-filter: blur(25px); color: var(--text-primary);
+        }
+        .ring-light-popup { right: 280px; }
+        .color-palette-popup { right: 150px; width: 240px; }
+        .ring-light-popup.active-popup, .color-palette-popup.active-popup { display: flex; }
+
+        .palette-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+        .palette-swatch { width: 32px; height: 32px; border-radius: 6px; cursor: pointer; border: 2px solid transparent; transition: transform 0.2s; }
+        .palette-swatch:hover { transform: scale(1.15); border-color: #fff; }
+
+        .dashboard-grid-master { display: grid; grid-template-columns: 310px 1fr 340px; gap: 20px; flex: 1; height: calc(100vh - 90px); }
 
         .category-header {
-            font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 2px; color: var(--gold-champagne);
-            margin-bottom: 12px; border-bottom: 1px solid rgba(197, 160, 89, 0.18); padding-bottom: 4px; text-transform: uppercase;
+            font-size: 10px; letter-spacing: 1.5px; color: var(--accent-clinical);
+            margin-bottom: 8px; border-bottom: 1px solid var(--border-sovereign); padding-bottom: 6px; text-transform: uppercase; font-weight: 700;
         }
 
-        .sub-tag-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-secondary); margin: 10px 0 6px 0; }
-
-        .elite-menu-btn {
-            background: var(--btn-glass-bg);
-            border: 1px solid var(--border-sovereign);
-            color: var(--text-secondary);
-            padding: 11px 14px;
-            border-radius: 10px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: left;
-            cursor: pointer;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2), inset 0 1px 1px rgba(255,255,255,0.06);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        .sovereign-log-terminal {
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            overflow: hidden !important;
+            resize: none !important;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-family: monospace;
+            font-size: 10px;
+            line-height: 1.5;
+            color: var(--accent-clinical);
+            flex: 1;
+            min-height: 120px;
+            max-height: 180px;
         }
-        .elite-menu-btn:hover {
-            border-color: var(--gold-champagne);
-            background: rgba(197, 160, 89, 0.12);
-            color: var(--text-primary);
-            box-shadow: var(--backlit-hover-glow);
-            transform: translateY(-2px);
-        }
-        .elite-menu-btn.active-item {
-            border-color: var(--gold-champagne);
-            background: rgba(197, 160, 89, 0.18);
-            color: var(--text-primary);
-            box-shadow: var(--backlit-hover-glow), inset 0 0 12px rgba(212, 175, 55, 0.25);
-            transform: translateY(-1px);
-        }
-
-        .center-stage-container { display: flex; flex-direction: column; gap: 16px; }
-        .viewport-central-master {
-            flex: 1; background: #000; border: 1px solid var(--border-sovereign); border-radius: 16px;
-            position: relative; overflow: hidden; box-shadow: var(--backlit-champagne-glow), 0 0 60px rgba(0, 210, 255, 0.08);
-        }
-
-        .stage-pane { width: 100%; height: 100%; display: none; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.4s ease-in-out; }
-        .stage-pane.active-pane { display: block; opacity: 1; }
-
-        .camera-hud-layout { display: flex; flex-direction: column; padding: 12px; height: 100%; background: #010204; position: relative; }
-        .camera-viewport-wrapper { border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; position: relative; overflow: hidden; background: #000; flex: 1; }
-        
-        #webcam-feed-main { 
-            width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); position: absolute; top: 0; left: 0; z-index: 1; 
-            filter: contrast(1.08) saturate(1.08) brightness(calc(1.1 + var(--ring-intensity) * 0.25));
-        }
-        #overlay-canvas-3d { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
-        
-        .radar-hud-circle {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px;
-            border: 1px dashed rgba(0, 210, 255, 0.35); border-radius: 50%; z-index: 3; pointer-events: none; animation: rotateRadar 20s linear infinite;
-        }
-
-        @keyframes rotateRadar { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
-
-        .viewport-central-master::after {
-            content: ''; position: absolute; inset: 0; border-radius: 16px; pointer-events: none;
-            box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.2); z-index: 5;
-        }
-        .viewport-central-master.reading-active::after {
-            box-shadow: inset 0 0 50px rgba(0, 210, 255, 0.45), inset 0 0 100px rgba(212, 175, 55, 0.3), 0 0 35px rgba(0, 210, 255, 0.35);
-            animation: ledPulseGlow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes ledPulseGlow {
-            0% { box-shadow: inset 0 0 40px rgba(0, 210, 255, 0.35), inset 0 0 80px rgba(212, 175, 55, 0.2); }
-            100% { box-shadow: inset 0 0 70px rgba(0, 210, 255, 0.65), inset 0 0 120px rgba(212, 175, 55, 0.4); }
-        }
-
-        .viewport-central-master.ring-light-active::before {
-            content: ''; position: absolute; inset: 0; border-radius: 16px; pointer-events: none; z-index: 4;
-            box-shadow: inset 0 0 calc(30px + var(--ring-intensity) * 70px) calc(6px + var(--ring-intensity) * 20px) var(--ring-color);
-            background: radial-gradient(circle at center, transparent 40%, var(--ring-color) 100%);
-            opacity: calc(0.3 + var(--ring-intensity) * 0.5);
-            mix-blend-mode: screen;
-        }
-
-        #biogens-flying-ticker {
-            position: absolute; bottom: 25px; left: 0; width: 100%; height: 55px; background: rgba(3, 5, 8, 0.88);
-            border-top: 1px solid var(--gold-champagne); border-bottom: 1px solid var(--gold-champagne);
-            z-index: 10; display: none; overflow: hidden; align-items: center; backdrop-filter: blur(10px);
-        }
-        #biogens-flying-ticker.active-ticker { display: flex; }
-        .ticker-track { display: flex; gap: 15px; position: absolute; white-space: nowrap; animation: tickerSlide 7.5s linear forwards; }
-        @keyframes tickerSlide { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
-        .ticker-item { width: 75px; height: 45px; border: 1px solid var(--gold-champagne); border-radius: 6px; overflow: hidden; background: #000; flex-shrink: 0; position: relative; }
-        .ticker-item canvas { width: 100%; height: 100%; object-fit: cover; }
-
-        .biogen-imperial-grid { display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(2, 1fr); gap: 12px; padding: 16px; height: calc(100% - 60px); background: #030406; overflow-y: auto; }
-        .biogen-cell {
-            background: radial-gradient(circle at center, rgba(16, 24, 36, 0.6) 0%, rgba(6, 8, 12, 0.98) 100%);
-            border: 1px solid var(--border-sovereign); border-radius: 12px; position: relative; display: flex; justify-content: center; align-items: center; overflow: hidden;
-            box-shadow: var(--backlit-champagne-glow); transition: all 0.3s ease; cursor: pointer; min-height: 130px;
-        }
-        .biogen-cell:hover, .biogen-cell.active-biogen { border-color: var(--gold-champagne); box-shadow: var(--backlit-hover-glow); transform: scale(1.02); }
-        .biogen-cell canvas { width: 100%; height: 100%; object-fit: cover; }
-
-        .biogen-status-indicator {
-            position: absolute; top: 8px; right: 8px; display: flex; align-items: center; gap: 5px; background: rgba(2, 3, 5, 0.88);
-            padding: 3px 8px; border-radius: 12px; font-size: 8px; font-family: monospace; border: 1px solid rgba(255,255,255,0.1); z-index: 5; color: #fff;
-        }
-        .status-dot { width: 6px; height: 6px; border-radius: 50%; box-shadow: 0 0 8px currentColor; }
-        .biogen-cell-label {
-            position: absolute; bottom: 6px; left: 6px; font-size: 8px; background: rgba(2, 3, 5, 0.94);
-            padding: 3px 8px; border-radius: 4px; border-left: 2px solid var(--gold-champagne); z-index: 5; color: #E2E8F0;
-        }
-
-        .flow-action-strip-bottom { height: 60px; background: rgba(10,12,16,0.95); border-top: 1px solid rgba(197,160,89,0.2); display: flex; justify-content: space-between; align-items: center; padding: 0 15px; }
-        
-        .btn-proceed-flow { 
-            background: var(--gold-gradient); color: #000; border: none; padding: 11px 35px; font-weight: 700; font-size: 11px; text-transform: uppercase; border-radius: 8px; cursor: pointer; 
-            box-shadow: 0 4px 20px rgba(197,160,89,0.3);
-        }
-        .btn-proceed-flow:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(197,160,89,0.45); }
-
-        .btn-back-flow { 
-            background: var(--btn-glass-bg); border: 1px solid var(--border-sovereign); color: var(--gold-champagne); padding: 10px 20px; font-weight: 600; font-size: 10px; text-transform: uppercase; border-radius: 8px; cursor: pointer; 
-            backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-        .btn-back-flow:hover { background: rgba(197, 160, 89, 0.1); border-color: var(--gold-champagne); transform: translateY(-1px); box-shadow: var(--backlit-hover-glow); }
-
-        .confrontation-elite-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 18px; height: calc(100% - 50px); background: #030406; }
-        .confrontation-box {
-            background: rgba(8, 10, 15, 0.96); border: 1px solid var(--border-sovereign); border-radius: 14px; padding: 18px;
-            display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--backlit-champagne-glow); opacity: 0; transform: translateY(25px); transition: all 0.7s ease;
-        }
-        .confrontation-box.show-pillar { opacity: 1; transform: translateY(0); }
-        .confrontation-frame-target { flex: 1; background: #010204; border-radius: 10px; display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative; margin: 12px 0; }
-        
-        .governance-explanation-panel {
-            background: rgba(197, 160, 89, 0.04); border: 1px dashed var(--border-sovereign); padding: 12px; border-radius: 8px; font-size: 11px; line-height: 1.5; color: var(--text-secondary); max-height: 90px; overflow-y: auto;
-        }
-
-        .luxury-telemetry-bar { background: var(--panel-yacht-dark); border: 1px solid var(--border-sovereign); border-radius: 12px; padding: 14px; display: flex; justify-content: space-around; align-items: center; position: relative; box-shadow: var(--backlit-champagne-glow); }
-        .telemetry-node { text-align: center; transition: all 0.5s ease; }
-        .telemetry-node-label { font-size: 9px; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; }
-        .telemetry-node-val { font-size: 14px; font-weight: 600; transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.4s ease; }
-        .telemetry-node-val.magnetic-locked { color: var(--green-secure); transform: scale(1.15); text-shadow: 0 0 12px rgba(16, 185, 129, 0.6); }
-
-        .client-input-field { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(197, 160, 89, 0.3); color: var(--text-primary); padding: 10px 12px; border-radius: 8px; font-size: 11px; width: 100%; margin-top: 5px; margin-bottom: 10px; outline: none; }
-        
-        .btn-master-trigger {
-            background: var(--gold-gradient); color: #000; border: 1px solid rgba(255, 255, 255, 0.4); padding: 13px 16px; font-weight: 700; font-size: 11px; text-transform: uppercase;
-            border-radius: 10px; cursor: pointer; margin-top: 12px; width: 100%; backdrop-filter: blur(15px);
-            box-shadow: 0 8px 25px rgba(197, 160, 89, 0.3), inset 0 2px 3px rgba(255, 255, 255, 0.5), inset 0 -2px 3px rgba(0, 0, 0, 0.3);
-            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none; display: inline-block; text-align: center; letter-spacing: 0.8px;
-        }
-        .btn-master-trigger:hover {
-            transform: translateY(-3px) scale(1.01);
-            box-shadow: 0 12px 35px rgba(197, 160, 89, 0.45), inset 0 2px 4px rgba(255, 255, 255, 0.7), 0 0 20px rgba(212, 175, 55, 0.4);
-            border-color: #fff;
-        }
-
-        .btn-master-trigger.locked-report { opacity: 0.45; filter: grayscale(80%); cursor: not-allowed; pointer-events: none; box-shadow: none; }
-        .btn-master-trigger.unlocked-report { opacity: 1; filter: none; cursor: pointer; animation: reportPulseButton 2.5s infinite; }
-        @keyframes reportPulseButton {
-            0% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.35), inset 0 2px 3px rgba(255,255,255,0.4); }
-            50% { box-shadow: 0 0 30px rgba(16, 185, 129, 0.75), inset 0 2px 4px rgba(255,255,255,0.7); }
-            100% { box-shadow: 0 0 15px rgba(16, 185, 129, 0.35), inset 0 2px 3px rgba(255,255,255,0.4); }
-        }
-
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(1, 2, 4, 0.88); backdrop-filter: blur(12px);
-            z-index: 9999; display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;
-        }
-        .modal-overlay.active-modal { display: flex; opacity: 1; }
-        .modal-drawer {
-            background: var(--panel-yacht-dark); border: 1px solid var(--border-sovereign); border-radius: 18px; width: 680px; max-width: 90%;
-            max-height: 85vh; padding: 25px; box-shadow: var(--backlit-champagne-glow), 0 30px 60px rgba(0,0,0,0.9); display: flex; flex-direction: column; gap: 15px; overflow-y: auto;
-        }
-        .modal-header-elite { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(197, 160, 89, 0.22); padding-bottom: 10px; font-family: 'Cinzel', serif; font-size: 12px; color: var(--gold-champagne); }
-        .modal-close-btn { background: var(--btn-glass-bg); border: 1px solid var(--border-sovereign); color: var(--text-secondary); width: 28px; height: 28px; border-radius: 50%; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
-        .modal-close-btn:hover { color: var(--gold-champagne); border-color: var(--gold-champagne); box-shadow: var(--backlit-hover-glow); }
-        
-        .pdf-fullscreen-modal {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(1, 2, 4, 0.95); backdrop-filter: blur(15px);
-            z-index: 10000; display: none; flex-direction: column; padding: 20px;
-        }
-        .pdf-fullscreen-modal.active-modal { display: flex; }
     </style>
+    <link rel="stylesheet" href="sovereign-elite.css">
 </head>
-<body>
+<body class="light-theme">
     <header>
         <div class="brand-title-elite" id="header-brand-title">
-            THIÉBRY TECHNOLOGY CONCEPT GLOBAL 
-            <span id="header-subtitle">• CORE • SOVEREIGN PRIVACY TERMINAL</span>
-            <span id="header-dynamic-company" style="color: var(--gold-champagne); margin-left: 10px; font-weight: 600;">[TCC Global Corp]</span>
-        </div>
-
-        <div class="ring-light-controls-bar">
-            <span style="color:var(--gold-champagne);" id="lbl-ring-title">💡 RING LIGHT:</span>
-            <button id="btn-toggle-ring" class="lang-btn" onclick="toggleRingLight()" style="border-color: #ffeb3b; color: #ffeb3b; padding: 2px 8px;">LIGAR</button>
-            <label for="ringIntensityRange" id="lbl-ring-intensity">Intensidade:</label>
-            <input type="range" id="ringIntensityRange" min="0.1" max="2.5" step="0.1" value="1.2" oninput="updateRingIntensity(this.value)">
-            <label for="ringTempSelect" id="lbl-ring-temp">Cor:</label>
-            <select id="ringTempSelect" onchange="updateRingColor(this.value)" style="background:var(--btn-glass-bg); color:var(--text-primary); border:1px solid var(--border-sovereign); border-radius:4px; font-size:9px; padding:2px;">
-                <option value="gold" data-i18n="opt-gold">Dourado Quente</option>
-                <option value="neutral" data-i18n="opt-neutral">Branco Neutro</option>
-                <option value="studio" data-i18n="opt-studio">Estúdio Frio</option>
-            </select>
+            THIERRY TECHNOLOGY CONCEPT GLOBAL 
+            <span id="header-subtitle" class="highlight-clinical">• SOVEREIGN PRIVACY TERMINAL v5.3</span>
+            <span id="header-dynamic-company" style="color: var(--accent-clinical); margin-left: 10px; font-weight: 600;">[TCC Global Corp]</span>
         </div>
 
         <div class="system-meta-nodes">
-            <button id="btn-toggle-camera" class="lang-btn active-lang" onclick="toggleCameraPower()" style="padding: 5px 12px; font-size: 10px;">CAM: BLOQUEADA</button>
-            <button id="btn-toggle-theme" class="lang-btn" onclick="toggleThemeMode()" style="padding: 5px 12px; font-size: 10px; border-color: var(--gold-champagne); color: var(--gold-champagne);">☀️/🌙 MODO</button>
-            <div class="lang-selector">
-                <button id="btn-pt" class="lang-btn active-lang" onclick="changeSystemLanguage('PT')">PT</button>
-                <button id="btn-en" class="lang-btn" onclick="changeSystemLanguage('EN')">EN</button>
+            <!-- BOTÃO DA MÃO (AJUSTES RETRÁTEIS) -->
+            <button class="hand-trigger-btn" onclick="toggleRetractableSettings()" title="Expandir/Recolher Ajustes">
+                🖐️ <span id="txt-hand-btn">AJUSTES</span>
+            </button>
+
+            <!-- CONTAINER DOS BOTÕES COM ANIMAÇÃO EM CASCATA HORIZONTAL -->
+            <div id="retractable-controls-box" class="cinematic-cascade-container">
+                <button id="btn-toggle-camera" class="lang-btn cascade-item" onclick="toggleCameraPowerSafe()" title="Ligar/Desligar Câmera">
+                    📷 <span id="txt-cam-state">CAM: BLOQUEADA</span>
+                </button>
+
+                <button id="btn-toggle-ring-main" class="lang-btn cascade-item" onclick="toggleRingLightPopup()" title="Ajustes da Ring Light">
+                    💡 <span data-i18n="lbl-ring-title">RING LIGHT</span>
+                </button>
+
+                <button id="btn-toggle-theme" class="lang-btn cascade-item" onclick="toggleThemeModeSafe()" title="Alternar Modo Diurno / Noturno">
+                    <span id="theme-icon">☀️</span> <span data-i18n="lbl-mode-title">MODO</span>
+                </button>
+
+                <button class="lang-btn cascade-item" onclick="toggleColorPalettePopup()" title="Paleta de Cores Internacionais">
+                    🎨 <span data-i18n="lbl-palette-title">PALETA</span>
+                </button>
+
+                <button class="lang-btn cascade-item" id="btn-sovereign-clock" title="Horário Soberano Global">
+                    🕒 <span id="txt-clock-display">11:27 PM</span>
+                </button>
+
+                <div class="lang-selector cascade-item">
+                    <button id="btn-pt" class="lang-btn active-lang" onclick="changeSystemLanguage('PT')">PT</button>
+                    <button id="btn-en" class="lang-btn" onclick="changeSystemLanguage('EN')">EN</button>
+                </div>
             </div>
-            <span id="txt-audit-link">AUDIT LINK:</span> <span style="color: var(--gold-champagne);">SECURE_PORT_801</span>
+
+            <span id="txt-audit-link" style="white-space: nowrap; margin-left: 6px;">AUDIT:</span> 
+            <span style="color: var(--accent-clinical); font-weight: 600; white-space: nowrap;">SECURE_PORT_801</span>
         </div>
-    </header><div class="dashboard-grid-master">
+    </header>
+
+    <div id="ring-light-popup-box" class="ring-light-popup">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--accent-clinical); font-weight: 700;">
+            <span data-i18n="ring-popup-hdr">CONTROLE DE RING LIGHT</span>
+            <button onclick="toggleRingLightPopup()" style="background:none; border:none; color:var(--text-primary); cursor:pointer; font-size:12px;">✕</button>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 10px;">
+            <button id="btn-toggle-ring" class="lang-btn" onclick="toggleRingLight()" style="padding: 3px 8px; font-size:9px;" data-i18n="ring-toggle-btn">LIGAR/DESLIGAR</button>
+            <label for="ringIntensityRange" data-i18n="ring-intensity-lbl">Intensidade:</label>
+            <input type="range" id="ringIntensityRange" min="0.1" max="2.5" step="0.1" value="1.2" oninput="updateRingIntensity(this.value)" style="width: 70px; accent-color: var(--accent-clinical); cursor: pointer;">
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 10px;">
+            <label for="ringTempSelect" data-i18n="ring-temp-lbl">Temperatura:</label>
+            <select id="ringTempSelect" class="client-input-field" onchange="updateRingColor(this.value)" style="padding:3px; font-size:9px; margin:0; flex:1;">
+                <option value="gold" data-i18n="opt-gold">Branco Quente (Gold)</option>
+                <option value="neutral" data-i18n="opt-neutral">Branco Neutro</option>
+                <option value="studio" data-i18n="opt-studio">Estúdio Clínico</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="color-palette-popup-box" class="color-palette-popup">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: var(--accent-clinical); font-weight: 700;">
+            <span data-i18n="palette-popup-hdr">PALETA DE CORES UHNW</span>
+            <button onclick="toggleColorPalettePopup()" style="background:none; border:none; color:var(--text-primary); cursor:pointer; font-size:12px;">✕</button>
+        </div>
+        <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="palette-sub-lbl">Selecione o padrão clínico internacional:</div>
+        <div class="palette-grid">
+            <div class="palette-swatch" style="background: #3B5E66;" onclick="applyClinicalPalette('#3B5E66')" title="Verde Sálvia Cirúrgico"></div>
+            <div class="palette-swatch" style="background: #0284c7;" onclick="applyClinicalPalette('#0284c7')" title="Azul Mônaco Tech"></div>
+            <div class="palette-swatch" style="background: #059669;" onclick="applyClinicalPalette('#059669')" title="Verde Seguro Vascular"></div>
+            <div class="palette-swatch" style="background: #6b21a8;" onclick="applyClinicalPalette('#6b21a8')" title="Roxo Órbita UHNW"></div>
+            <div class="palette-swatch" style="background: #d97706;" onclick="applyClinicalPalette('#d97706')" title="Ouro Titanum Apex"></div>
+        </div>
+        <div style="margin-top: 4px;">
+            <label style="font-size: 9px; color: var(--text-secondary);" data-i18n="palette-custom-lbl">Cor Customizada:</label>
+            <input type="color" id="customColorPicker" value="#3B5E66" onchange="applyClinicalPalette(this.value)" style="width: 100%; height: 26px; border: 1px solid var(--border-sovereign); border-radius: 6px; background: none; cursor: pointer; padding: 0;">
+        </div>
+    </div>
+
+    <script>
+        function playClinicalChimeSafe() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1760, audioCtx.currentTime + 0.15);
+                
+                gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.25);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.25);
+            } catch (e) {}
+        }
+
+        // Lógica de recolher / expandir os controles com o botão da mão
+        let isControlsExpanded = false;
+        function toggleRetractableSettings() {
+            playClinicalChimeSafe();
+            const box = document.getElementById('retractable-controls-box');
+            if (!box) return;
+            isControlsExpanded = !isControlsExpanded;
+            if (isControlsExpanded) {
+                box.classList.add('active-cascade');
+                setTimeout(() => {
+                    box.classList.add('lightning-sweep-active');
+                    setTimeout(() => {
+                        box.classList.remove('lightning-sweep-active');
+                    }, 2000);
+                }, 100);
+            } else {
+                box.classList.remove('active-cascade');
+            }
+        }
+
+        // Relógio em tempo real
+        window.addEventListener('DOMContentLoaded', () => {
+            setInterval(() => {
+                const now = new Date();
+                const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                const clockEl = document.getElementById('txt-clock-display');
+                if (clockEl) clockEl.textContent = timeString;
+            }, 1000);
+        });
+
+        function toggleCameraPowerSafe() {
+            playClinicalChimeSafe();
+            if (typeof toggleCameraPower === 'function') {
+                toggleCameraPower();
+            }
+        }
+
+        function toggleThemeModeSafe() {
+            playClinicalChimeSafe();
+            if (typeof toggleThemeMode === 'function') {
+                toggleThemeMode();
+            } else {
+                document.body.classList.toggle("light-theme");
+                const isLight = document.body.classList.contains("light-theme");
+                const icon = document.getElementById("theme-icon");
+                if (icon) icon.innerText = isLight ? "☀️" : "🌙";
+            }
+        }
+    </script>
+</body>
+</html><div class="dashboard-grid-master">
         <aside class="luxury-sidebar">
             <div class="category-header" id="cat-morph-analysis" data-i18n="cat-sync-compliance">Sync Global Compliance</div>
             <div class="sub-tag-label" id="lbl-profiles" data-i18n="lbl-pillars">Pilares de Arquitetura Sênior</div>
@@ -372,121 +524,568 @@
             <div class="category-header" style="margin-top: 20px;" id="cat-regen" data-i18n="cat-regen">Regenerative & Structural</div>
             <div class="sub-tag-label" id="lbl-posture-metrics" data-i18n="lbl-posture">Métricas de Postura de Comando</div>
             <div style="display: flex; flex-direction: column; gap: 6px; font-size: 11px; color: var(--text-secondary); margin-bottom: 10px;">
-                <div style="display:flex; justify-content:space-between;"><span id="metric-lbl-mandible" data-i18n="metric-mandible">Retração Mandibular</span><span style="color:var(--gold-champagne)">0.02mm</span></div>
+                <div style="display:flex; justify-content:space-between;"><span id="metric-lbl-mandible" data-i18n="metric-mandible">Retração Mandibular</span><span style="color:var(--accent-clinical)">0.02mm</span></div>
                 <div style="display:flex; justify-content:space-between;"><span id="metric-lbl-tonicity" data-i18n="metric-tonicity">Tonicidade Média</span><span style="color:var(--green-secure)">99.4%</span></div>
             </div>
 
-            <div class="category-header" style="margin-top: 10px;" data-i18n="cat-kernel-logs">Kernel Logs</div>
-            <div class="sovereign-log-terminal" id="terminal-logs" style="background:#010102; border:1px solid rgba(197,160,89,0.2); border-radius:8px; padding:10px; font-family:monospace; font-size:10px; color:var(--gold-champagne); flex:1; overflow-y:auto; min-height: 120px; max-height:180px;">
-                [SYSTEM] Kernel ativo e sincronizado.<br>[SECURE] BiogemEngine pronto para varredura.<br>[READY] Aguardando acionamento biométrico UHNW...
-            </div>
-        </aside>
-
-        <main class="center-stage-container">
-            <div class="viewport-central-master" id="viewportCentralMasterBox">
-                <!-- Estágio 1: Câmera e Radar Principal -->
-                <div id="pane-stage-1" class="stage-pane active-pane">
-                    <div class="camera-hud-layout">
-                        <div class="camera-viewport-wrapper">
-                            <video id="webcam-feed-main" autoplay playsinline muted></video>
-                            <canvas id="overlay-canvas-3d"></canvas>
-                            <div class="radar-hud-circle"></div>
-                        </div>
-                        <div id="biogens-flying-ticker">
-                            <div class="ticker-track" id="tickerTrackContainer"></div>
-                        </div>
-                    </div>
+            <div class="category-header" style="margin-top: 10px;">Telemetria & Neuromarketing</div>
+            <div style="display: flex; flex-direction: column; gap: 6px; font-size: 10px; margin-top: 6px;">
+                <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 6px 8px; border-radius: 6px;">
+                    <span style="color: var(--text-secondary); display: block; font-size: 9px;">ÍNDICE DE RETENÇÃO EXECUTIVA (IRE)</span>
+                    <span style="color: var(--text-primary); font-weight: 700; font-size: 11px;">99.8% — Zona de Excelência UHNW</span>
                 </div>
-
-                <!-- Estágio 2: Grade de Biogêmeos Digitais -->
-                <div id="pane-stage-2" class="stage-pane">
-                    <div class="biogen-imperial-grid">
-                        <div class="biogen-cell" onclick="selectBiogen(1, '01. Fototipo Base Real')"><canvas id="biogen-cv-1"></canvas><div class="biogen-status-indicator"><span class="status-dot" style="background: var(--gold-champagne);"></span>Base</div><span class="biogen-cell-label">01. Base Real</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(2, '02. Correção de Contorno')"><canvas id="biogen-cv-2"></canvas><div class="biogen-status-indicator"><span class="status-dot" style="background: var(--gold-champagne);"></span>Base</div><span class="biogen-cell-label">02. Contorno</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(3, '03. Ativação Colágeno Apex')"><canvas id="biogen-cv-3"></canvas><div class="biogen-status-indicator"><span class="status-dot" style="background: var(--gold-champagne);"></span>Base</div><span class="biogen-cell-label">03. Colágeno Apex</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(4, '04. Progressão +5 Anos')"><canvas id="biogen-cv-4"></canvas><div class="biogen-status-indicator" style="color: var(--red-alert);"><span class="status-dot" style="background: var(--red-alert);"></span>Degradação</div><span class="biogen-cell-label">04. +5 Anos</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(5, '05. Progressão +10 Anos')"><canvas id="biogen-cv-5"></canvas><div class="biogen-status-indicator" style="color: var(--red-alert);"><span class="status-dot" style="background: var(--red-alert);"></span>Degradação</div><span class="biogen-cell-label">05. +10 Anos</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(6, '06. Progressão +15 Anos')"><canvas id="biogen-cv-6"></canvas><div class="biogen-status-indicator" style="color: var(--red-alert);"><span class="status-dot" style="background: var(--red-alert);"></span>Degradação</div><span class="biogen-cell-label">06. +15 Anos</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(7, '07. Perfil Liderança')"><canvas id="biogen-cv-7"></canvas><div class="biogen-status-indicator"><span class="status-dot" style="background: var(--gold-champagne);"></span>Otimizado</div><span class="biogen-cell-label">07. Liderança</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(8, '08. Perfil Vitalidade')"><canvas id="biogen-cv-8"></canvas><div class="biogen-status-indicator"><span class="status-dot" style="background: var(--gold-champagne);"></span>Otimizado</div><span class="biogen-cell-label">08. Vitalidade</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(9, '09. Perfil Poder Soberano')"><canvas id="biogen-cv-9"></canvas><div class="biogen-status-indicator" style="color: var(--green-secure);"><span class="status-dot" style="background: var(--green-secure);"></span>Estabilizado</div><span class="biogen-cell-label">09. Poder Soberano</span></div>
-                        <div class="biogen-cell" onclick="selectBiogen(10, '10. Perfil Autonomia')"><canvas id="biogen-cv-10"></canvas><div class="biogen-status-indicator" style="color: var(--green-secure);"><span class="status-dot" style="background: var(--green-secure);"></span>Estabilizado</div><span class="biogen-cell-label">10. Autonomia</span></div>
-                    </div>
-                    <div class="flow-action-strip-bottom">
-                        <button class="btn-back-flow" onclick="switchStage(1)" data-i18n="btn-back-term">← Voltar ao Terminal</button>
-                        <button class="btn-proceed-flow" onclick="switchStage(3)" data-i18n="btn-adv-conf">Avançar para Confronto & Governança ➔</button>
-                    </div>
+                <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 6px 8px; border-radius: 6px;">
+                    <span style="color: var(--text-secondary); display: block; font-size: 9px;">FATOR DE ATIVAÇÃO QUÂNTICA (FAQ)</span>
+                    <span style="color: var(--green-secure); font-weight: 700; font-size: 11px;">1,618 Hz — Frequência Áurea Ativa</span>
                 </div>
-
-                <!-- Estágio 3: Confronto e Governança -->
-                <div id="pane-stage-3" class="stage-pane">
-                    <div class="confrontation-elite-grid">
-                        <div id="pillar-box-1" class="confrontation-box">
-                            <div style="font-family:'Cinzel',serif; font-size:11px; color:var(--gold-champagne);" data-i18n="ref-base">BASE DE REFERÊNCIA (-10 ANOS NATURAL)</div>
-                            <div class="confrontation-frame-target"><canvas id="selected-confrontation-canvas" style="width:100%; height:100%; object-fit:cover;"></canvas></div>
-                            <div style="font-size:10px; color:var(--text-secondary); text-align:center;" data-i18n="ref-base-desc">Projeção cronológica natural sob rastreamento soberano.</div>
-                        </div>
-
-                        <div id="pillar-box-2" class="confrontation-box">
-                            <div style="font-family:'Cinzel',serif; font-size:11px; color:var(--gold-champagne);" data-i18n="ref-proj">PERFIL LIDERANÇA E COMANDO SOBERANO (PROJEÇÃO)</div>
-                            <div class="confrontation-frame-target"><canvas id="comparison-confrontation-canvas" style="width:100%; height:100%; object-fit:cover;"></canvas></div>
-                            <div class="governance-explanation-panel" id="governance-text-box" data-i18n="ref-proj-desc">Projeção otimizada com efeito de tração vertical e eixos de comando rejuvenescidos.</div>
-                        </div>
-                    </div>
-                    <div class="flow-action-strip-bottom" style="height: 50px;">
-                        <button class="btn-back-flow" onclick="switchStage(2)" data-i18n="btn-back-biogem">← Voltar aos Biogêmeos Digitais</button>
-                    </div>
+                <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 6px 8px; border-radius: 6px;">
+                    <span style="color: var(--text-secondary); display: block; font-size: 9px;">BLINDAGEM DE INTEGRIDADE BIOLÓGICA</span>
+                    <span style="color: var(--accent-clinical); font-weight: 700; font-size: 11px;">100% Tier-1 — Mônaco Validada</span>
                 </div>
             </div>
+        </aside><main class="center-stage-container">
+    <style>
+        .center-stage-container { display: flex; flex-direction: column; gap: 16px; height: 100%; box-sizing: border-box; }
+        .viewport-central-master {
+            flex: 1; background: var(--panel-yacht-dark); border: 1px solid var(--border-sovereign); border-radius: 16px;
+            position: relative; overflow: hidden; box-shadow: var(--backlit-clinical-glow), 0 0 60px rgba(59, 94, 102, 0.08);
+        }
+        .stage-pane { width: 100%; height: 100%; display: none; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 0.4s ease-in-out; }
+        .stage-pane.active-pane { display: block; opacity: 1; }
+        .camera-hud-layout { display: flex; flex-direction: column; padding: 12px; height: 100%; background: var(--panel-yacht-dark); position: relative; }
+        .camera-viewport-wrapper { border: 1px solid var(--border-sovereign); border-radius: 12px; position: relative; overflow: hidden; background: var(--bg-carbon); flex: 1; }
+        #webcam-feed-main { 
+            width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); position: absolute; top: 0; left: 0; z-index: 1; 
+            filter: contrast(1.05) saturate(1.05) brightness(calc(1.1 + var(--ring-intensity) * 0.25));
+        }
+        #overlay-canvas-3d { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+        .radar-hud-circle {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 200px; height: 200px;
+            border: 1px dashed rgba(59, 94, 102, 0.45); border-radius: 50%; z-index: 3; pointer-events: none; animation: rotateRadar 20s linear infinite;
+        }
+        @keyframes rotateRadar { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+        .viewport-central-master::after {
+            content: ''; position: absolute; inset: 0; border-radius: 16px; pointer-events: none;
+            box-shadow: inset 0 0 0 1px rgba(59, 94, 102, 0.25); z-index: 5;
+        }
+        
+        /* TICKER CONTIDO ESTRITAMENTE DENTRO DA ÁREA DA CÂMERA */
+        #biogens-flying-ticker {
+            position: absolute; bottom: 15px; left: 15px; right: 15px; height: 50px; background: rgba(3, 5, 8, 0.88);
+            border-top: 1px solid var(--accent-clinical); border-bottom: 1px solid var(--accent-clinical);
+            z-index: 10; display: none; overflow: hidden; align-items: center; backdrop-filter: blur(10px);
+            border-radius: 8px;
+        }
+        #biogens-flying-ticker.active-ticker { display: flex; }
+        .ticker-track { display: flex; gap: 12px; position: absolute; white-space: nowrap; animation: tickerSlide 7.5s linear forwards; }
+        @keyframes tickerSlide { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+        .ticker-item { width: 68px; height: 40px; border: 1px solid var(--accent-clinical); border-radius: 6px; overflow: hidden; background: #000; flex-shrink: 0; position: relative; }
+        .ticker-item canvas { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* GRADE IMPERIAL DE BIOGÊMEOS COM ALINHAMENTO MILIMÉTRICO RIGOROSO E FIXO */
+        .biogen-imperial-grid { 
+            display: grid; 
+            grid-template-columns: repeat(5, 1fr); 
+            grid-template-rows: repeat(2, minmax(0, 1fr)); 
+            gap: 12px; 
+            padding: 16px; 
+            height: calc(100% - 60px); 
+            background: var(--panel-yacht-dark); 
+            overflow: hidden; 
+            box-sizing: border-box; 
+        }
+        
+        .grid-cell {
+            background: var(--panel-yacht-surface, var(--btn-glass-bg));
+            border: 1px solid var(--glass-border, var(--border-sovereign));
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 10px;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.01), 0 4px 20px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+        }
 
-            <div class="luxury-telemetry-bar">
-                <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-freq" data-i18n="tel-freq">Frequência Vetorial</div><div class="telemetry-node-val" id="telemetry-freq">1.4 Hz</div></div>
-                <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-oxi" data-i18n="tel-oxi">Oximetria Tecidual</div><div class="telemetry-node-val" id="telemetry-oxi">98.2%</div></div>
-                <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-gov" data-i18n="tel-gov">Nível de Governança</div><div class="telemetry-node-val" id="telemetry-gov">100% Tier-1</div></div>
-                <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-nodes" data-i18n="tel-nodes">Pontos de Controle</div><div class="telemetry-node-val" id="telemetry-nodes-val">64 Nós</div></div>
+        /* CORREÇÃO DO MODO ESCURO */
+        body.dark-mode .grid-cell, .dark-theme .grid-cell, [data-theme="dark"] .grid-cell {
+            background: rgba(10, 15, 22, 0.92);
+            border-color: rgba(59, 94, 102, 0.5);
+            box-shadow: inset 0 0 20px rgba(2, 132, 199, 0.08), 0 0 20px rgba(2, 132, 199, 0.1);
+        }
+
+        .grid-cell:hover { transform: translateY(-2px) scale(1.01); }
+
+        /* STATUS BADGE DENTRO DA FOTO (CANTO SUPERIOR DIREITO INTERNO) */
+        .status-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 7.5px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: bold;
+            z-index: 5;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(8px);
+        }
+        .safe .status-badge { background: rgba(57, 255, 20, 0.2); color: var(--status-green, #39ff14); border: 1px solid rgba(57, 255, 20, 0.4); }
+        .alert .status-badge { background: rgba(255, 49, 49, 0.2); color: var(--status-red, #ff3131); border: 1px solid rgba(255, 49, 49, 0.4); }
+        .gold .status-badge { background: rgba(212, 175, 55, 0.2); color: var(--accent-gold, #d4af37); border: 1px solid rgba(212, 175, 55, 0.4); }
+
+        /* TÍTULO LIMPO SEM INTERFERÊNCIA */
+        .cell-title {
+            font-size: 8.5px;
+            font-family: monospace;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            z-index: 2;
+            line-height: 1.2;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            padding-right: 4px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* MOLDURA DA FOTO COM MOLDURA PRETA INTERNA E VIDRO JATEADO PULSANTE */
+        .cell-photo-placeholder {
+            width: 100%;
+            flex: 1;
+            min-height: 0;
+            background: #020408;
+            border: 1px solid rgba(59, 94, 102, 0.3);
+            margin: 4px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 0 4px #020408, inset 0 2px 8px rgba(0,0,0,0.9);
+            transition: all 0.35s ease;
+        }
+
+        /* ANIMAÇÕES DE EPICENTRO EM VIDRO JATEADO NAS MOLDURAS */
+        .safe .cell-photo-placeholder {
+            border-color: rgba(57, 255, 20, 0.4);
+            box-shadow: inset 0 0 0 4px #020408, inset 0 0 14px rgba(57, 255, 20, 0.18), 0 0 18px rgba(57, 255, 20, 0.22);
+            animation: vidroJateadoVerde 3.5s infinite ease-in-out;
+        }
+        .alert .cell-photo-placeholder {
+            border-color: rgba(255, 49, 49, 0.4);
+            box-shadow: inset 0 0 0 4px #020408, inset 0 0 14px rgba(255, 49, 49, 0.18), 0 0 18px rgba(255, 49, 49, 0.22);
+            animation: vidroJateadoVermelho 2.5s infinite ease-in-out;
+        }
+        .gold .cell-photo-placeholder {
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: inset 0 0 0 4px #020408, inset 0 0 14px rgba(212, 175, 55, 0.18), 0 0 18px rgba(212, 175, 55, 0.22);
+            animation: vidroJateadoDourado 3s infinite ease-in-out;
+        }
+
+        @keyframes vidroJateadoVerde {
+            0%, 100% { 
+                border-color: rgba(57, 255, 20, 0.25); 
+                box-shadow: inset 0 0 0 4px #020408, inset 0 0 8px rgba(57, 255, 20, 0.1), 0 0 10px rgba(57, 255, 20, 0.12); 
+            }
+            50% { 
+                border-color: rgba(57, 255, 20, 0.85); 
+                box-shadow: inset 0 0 0 4px #020408, inset 0 0 22px rgba(57, 255, 20, 0.35), 0 0 30px rgba(57, 255, 20, 0.45); 
+            }
+        }
+
+        @keyframes vidroJateadoVermelho {
+            0%, 100% { 
+                border-color: rgba(255, 49, 49, 0.25); 
+                box-shadow: inset 0 0 0 4px #020408, inset 0 0 8px rgba(255, 49, 49, 0.1), 0 0 10px rgba(255, 49, 49, 0.12); 
+            }
+            50% { 
+                border-color: rgba(255, 49, 49, 0.85); 
+                box-shadow: inset 0 0 0 4px #020408, inset 0 0 22px rgba(255, 49, 49, 0.35), 0 0 30px rgba(255, 49, 49, 0.45); 
+            }
+        }
+
+        @keyframes vidroJateadoDourado {
+            0%, 100% { 
+                border-color: rgba(212, 175, 55, 0.25); 
+                box-shadow: inset 0 0 0 4px #020408, inset 0 0 8px rgba(212, 175, 55, 0.1), 0 0 10px rgba(212, 175, 55, 0.12); 
+            }
+            50% { 
+                border-color: rgba(212, 175, 55, 0.85); 
+                box-shadow: inset 0 0 0 4px #020408, inset 0 0 22px rgba(212, 175, 55, 0.35), 0 0 30px rgba(212, 175, 55, 0.45); 
+            }
+        }
+
+        .cell-photo-placeholder canvas {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        .flow-action-strip-bottom { height: 60px; background: var(--panel-yacht-dark); border-top: 1px solid var(--border-sovereign); display: flex; justify-content: space-between; align-items: center; padding: 0 15px; }
+        .btn-proceed-flow { 
+            background: var(--accent-clinical); color: #fff; border: none; padding: 11px 35px; font-weight: 700; font-size: 11px; text-transform: uppercase; border-radius: 8px; cursor: pointer; 
+            box-shadow: 0 4px 20px rgba(59, 94, 102, 0.3);
+        }
+        .btn-proceed-flow:hover { transform: translateY(-2px); box-shadow: 0 6px 25px rgba(59, 94, 102, 0.45); }
+        .btn-back-flow { 
+            background: var(--btn-glass-bg); border: 1px solid var(--border-sovereign); color: var(--accent-clinical); padding: 10px 20px; font-weight: 600; font-size: 10px; text-transform: uppercase; border-radius: 8px; cursor: pointer; 
+            backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .btn-back-flow:hover { background: rgba(59, 94, 102, 0.1); border-color: var(--accent-clinical); transform: translateY(-1px); box-shadow: var(--backlit-hover-glow); }
+        
+        .confrontation-elite-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 18px; height: calc(100% - 50px); background: var(--panel-yacht-dark); box-sizing: border-box; }
+        .confrontation-box {
+            background: var(--panel-yacht-dark); border: 1px solid var(--border-sovereign); border-radius: 14px; padding: 18px;
+            display: flex; flex-direction: column; justify-content: space-between; box-shadow: var(--backlit-clinical-glow); opacity: 0; transform: translateY(25px); transition: all 0.7s ease;
+        }
+        .confrontation-box.show-pillar { opacity: 1; transform: translateY(0); }
+        
+        /* MOLDURA DE CONFRONTO COM JATO DOURADO ILUMINADO NAS BORDAS */
+        .confrontation-frame-target { 
+            flex: 1; 
+            background: #020408; 
+            border: 2px solid #d4af37; 
+            border-radius: 10px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden; 
+            position: relative; 
+            margin: 12px 0; 
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5), inset 0 0 25px rgba(212, 175, 55, 0.35);
+            animation: jatoDouradoPulse 3s infinite ease-in-out;
+        }
+
+        @keyframes jatoDouradoPulse {
+            0%, 100% {
+                border-color: rgba(212, 175, 55, 0.8);
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.25);
+            }
+            50% {
+                border-color: #ffe57f;
+                box-shadow: 0 0 45px rgba(255, 215, 0, 0.85), inset 0 0 35px rgba(255, 215, 0, 0.5);
+            }
+        }
+
+        .governance-explanation-panel {
+            background: var(--btn-glass-bg); border: 1px dashed var(--border-sovereign); padding: 12px; border-radius: 8px; font-size: 11px; line-height: 1.5; color: var(--text-secondary); max-height: 90px; overflow-y: auto;
+        }
+        
+        /* MODAL DE FOCO RESTAURADO */
+        .biogen-focus-modal {
+            position: fixed; inset: 0; background: rgba(1, 2, 4, 0.92); backdrop-filter: blur(15px);
+            z-index: 10000; display: none; justify-content: center; align-items: center; padding: 20px;
+        }
+        .biogen-focus-modal.active-modal { display: flex; }
+        .biogen-focus-drawer {
+            background: var(--panel-yacht-dark); border: 1px solid var(--border-sovereign); border-radius: 18px;
+            width: 700px; max-width: 95vw; height: 80vh; padding: 20px; display: flex; flex-direction: column; gap: 12px;
+            box-shadow: var(--backlit-clinical-glow), 0 30px 60px rgba(0,0,0,0.9);
+        }
+
+        .luxury-telemetry-bar { background: var(--panel-yacht-dark); border: 1px solid var(--border-sovereign); border-radius: 12px; padding: 14px; display: flex; justify-content: space-around; align-items: center; position: relative; box-shadow: var(--backlit-clinical-glow); }
+        .telemetry-node { text-align: center; transition: all 0.5s ease; }
+        .telemetry-node-label { font-size: 9px; text-transform: uppercase; color: var(--text-secondary); letter-spacing: 1px; }
+        .telemetry-node-val { font-size: 14px; font-weight: 600; transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.4s ease; }
+        .telemetry-node-val.magnetic-locked { color: var(--green-secure) !important; transform: scale(1.15); text-shadow: 0 0 12px rgba(5, 150, 105, 0.4); }
+    </style>
+    
+    <div class="viewport-central-master" id="viewportCentralMasterBox">
+        <!-- ESTÁGIO 1 -->
+        <div id="pane-stage-1" class="stage-pane active-pane">
+            <div class="camera-hud-layout">
+                <div class="camera-viewport-wrapper">
+                    <video id="webcam-feed-main" autoplay playsinline muted></video>
+                    <canvas id="overlay-canvas-3d"></canvas>
+                    <div class="radar-hud-circle"></div>
+                    <!-- TICKER CONTIDO ESTRITAMENTE DENTRO DA ÁREA DA CÂMERA -->
+                    <div id="biogens-flying-ticker">
+                        <div class="ticker-track" id="tickerTrackContainer"></div>
+                    </div>
+                </div>
             </div>
-        </main>
+        </div>
 
-        <aside class="luxury-sidebar">
+        <!-- ESTÁGIO 2 (Grade Imperial com Status Interno e Acabamento Perfeito) -->
+        <div id="pane-stage-2" class="stage-pane">
+            <div class="biogen-imperial-grid" id="biogen-grid-container">
+                <!-- Preenchido via script JavaScript -->
+            </div>
+            <div class="flow-action-strip-bottom">
+                <button class="btn-back-flow" onclick="switchStage(1); playClinicalChimeSafe();" data-i18n="btn-back-term">← Voltar ao Terminal</button>
+                <button class="btn-proceed-flow" onclick="switchStage(3); playClinicalChimeSafe();" data-i18n="btn-adv-conf">Avançar para Confronto & Governança ➔</button>
+            </div>
+        </div>
+
+        <!-- ESTÁGIO 3 (Área de Confronto com Jato Dourado nas Fotos) -->
+        <div id="pane-stage-3" class="stage-pane">
+            <div class="confrontation-elite-grid">
+                <div id="pillar-box-1" class="confrontation-box show-pillar">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="font-size:11px; color:var(--accent-clinical); font-weight:700;" data-i18n="ref-base">BASE DE REFERÊNCIA (-10 ANOS NATURAL)</div>
+                        <div style="display:flex; gap:4px;">
+                            <button class="lang-btn" onclick="toggleGiroCanvas('selected-confrontation-canvas'); playClinicalChimeSafe();" style="font-size:8px; padding:2px 6px;">🔄 Giro 3D</button>
+                            <button class="lang-btn" onclick="alterarVelocidadeGiro('selected-confrontation-canvas', 0.3); playClinicalChimeSafe();" style="font-size:8px; padding:2px 4px;">⚡+</button>
+                        </div>
+                    </div>
+                    <div class="confrontation-frame-target"><canvas id="selected-confrontation-canvas" style="width:100%; height:100%; object-fit:cover;"></canvas></div>
+                    <div style="font-size:10px; color:var(--text-secondary); text-align:center;" data-i18n="ref-base-desc">Projeção cronológica natural sob rastreamento soberano. (Arraste com o mouse / Scroll zoom)</div>
+                </div>
+
+                <div id="pillar-box-2" class="confrontation-box show-pillar">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <div style="font-size:11px; color:var(--accent-clinical); font-weight:700;" data-i18n="ref-proj">PERFIL LIDERANÇA E COMANDO SOBERANO (PROJEÇÃO)</div>
+                        <div style="display:flex; gap:4px;">
+                            <button class="lang-btn" onclick="toggleGiroCanvas('comparison-confrontation-canvas'); playClinicalChimeSafe();" style="font-size:8px; padding:2px 6px;">🔄 Giro 3D</button>
+                            <button class="lang-btn" onclick="alterarVelocidadeGiro('comparison-confrontation-canvas', 0.3); playClinicalChimeSafe();" style="font-size:8px; padding:2px 4px;">⚡+</button>
+                        </div>
+                    </div>
+                    <div class="confrontation-frame-target"><canvas id="comparison-confrontation-canvas" style="width:100%; height:100%; object-fit:cover;"></canvas></div>
+                    <div class="governance-explanation-panel" id="governance-text-box" data-i18n="ref-proj-desc">Projeção otimizada com efeito de tração vertical e eixos de comando rejuvenescidos. (Arraste com o mouse / Scroll zoom)</div>
+                </div>
+            </div>
+            <div class="flow-action-strip-bottom" style="height: 50px;">
+                <button class="btn-back-flow" onclick="switchStage(2); playClinicalChimeSafe();" data-i18n="btn-back-biogem">← Voltar aos Biogêmeos Digitais</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE FOCO RESTAURADO -->
+    <div id="biogen-focus-modal" class="biogen-focus-modal">
+        <div class="biogen-focus-drawer">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-sovereign); padding-bottom: 8px;">
+                <div>
+                    <span id="biogen-focus-title" style="font-size: 11px; color: var(--accent-clinical); font-weight: 700;">DESTAQUE 3D • ANÁLISE ESTEREOFOTOGRAMÉTRICA</span>
+                    <div style="font-size: 8px; color: var(--green-secure); font-family: monospace;">[HIPAA Compliant | GDPR Medical Encrypted | DICOM Ready]</div>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <button onclick="toggleGiroCanvas('biogen-focus-canvas'); playClinicalChimeSafe();" class="lang-btn" style="font-size: 9px; padding: 3px 8px;">🔄 Giro 3D</button>
+                    <button onclick="closeBiogenFocusModal(); playClinicalChimeSafe();" class="lang-btn" style="font-size: 9px; padding: 3px 8px;">✕ Fechar</button>
+                </div>
+            </div>
+            <div style="flex: 1; background: var(--bg-carbon); border-radius: 10px; display: flex; justify-content: center; align-items: center; position: relative; overflow: hidden;">
+                <canvas id="biogen-focus-canvas" style="width: 100%; height: 100%; object-fit: cover;"></canvas>
+                <div style="position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.85); border: 1px solid var(--border-sovereign); padding: 8px 12px; border-radius: 6px; font-family: monospace; font-size: 9px; color: var(--accent-clinical); pointer-events: none; line-height: 1.4;">
+                    📍 MESH_64N: <span style="color:var(--green-secure);">SINCRONIZADO</span><br>
+                    ⚡ DEFORMAÇÃO VISCOELÁSTICA: <span style="color:#fff;">99.4%</span><br>
+                    ⚠️ ZONA DE RISCO VASCULAR: <span style="color:var(--red-alert);">DETECTADA (-0.28mm)</span>
+                </div>
+            </div>
+            <div class="governance-explanation-panel" id="biogen-focus-desc">
+                <b>Análise Dinâmica de Deformação Viscoelástica Dérmica:</b> Projeção tridimensional otimizada com mapeamento de tensão tecidual e pontos de ancoragem sob a Governança Mônaco.
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE TELEMETRIA -->
+    <div class="luxury-telemetry-bar">
+        <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-freq" data-i18n="tel-freq">Frequência Vetorial</div><div class="telemetry-node-val magnetic-locked" id="telemetry-freq">1.4 Hz</div></div>
+        <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-oxi" data-i18n="tel-oxi">Oximetria Tecidual</div><div class="telemetry-node-val magnetic-locked" id="telemetry-oxi">98.2%</div></div>
+        <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-gov" data-i18n="tel-gov">Nível de Governança</div><div class="telemetry-node-val magnetic-locked" id="telemetry-gov">100% Tier-1</div></div>
+        <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-nodes" data-i18n="tel-nodes">Pontos de Controle</div><div class="telemetry-node-val magnetic-locked" id="telemetry-nodes-val">64 Nós</div></div>
+    </div>
+
+    <script>
+        function playClinicalChimeSafe() {
+            try {
+                const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(880, audioCtx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(1760, audioCtx.currentTime + 0.12);
+                
+                gain.gain.setValueAtTime(0.03, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.2);
+                
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.2);
+            } catch (e) {}
+        }
+
+        const cellData = [
+            { id: 1, title: "01. Fototipo Base", type: "safe", badge: "Aprovado", mesh: "MESH_64N_v1" },
+            { id: 2, title: "02. Correção de Contorno", type: "safe", badge: "Normal", mesh: "MESH_64N_v2" },
+            { id: 3, title: "03. Colágeno Apex", type: "safe", badge: "Estável", mesh: "MESH_64N_VOL" },
+            { id: 4, title: "04. Progressão +5 Anos", type: "alert", badge: "Critico", mesh: "MESH_64N_AGE" },
+            { id: 5, title: "05. Progressão +10 Anos", type: "alert", badge: "Alerta Risco", mesh: "MESH_64N_AGE" },
+            { id: 6, title: "06. Progressão +15 Anos", type: "alert", badge: "Zona Crítica", mesh: "MESH_64N_AGE" },
+            { id: 7, title: "07. Perfil Liderança", type: "gold", badge: "Otimizado", mesh: "MESH_64N_OPT" },
+            { id: 8, title: "08. Perfil Vitalidade", type: "gold", badge: "Imperial", mesh: "MESH_64N_HIGH" },
+            { id: 9, title: "09. Poder Soberano", type: "gold", badge: "Máximo", mesh: "MESH_64N_FINAL" },
+            { id: 10, title: "10. Perfil Autonomia", type: "safe", badge: "Estável", mesh: "MESH_64N_LIP" },
+        ];
+
+        function renderGrid() {
+            const container = document.getElementById("biogen-grid-container");
+            if (!container) return;
+            container.innerHTML = cellData.map(cell => `
+                <div class="grid-cell ${cell.type}" onclick="openBiogenFocusModal(${cell.id}, '${cell.title}'); playClinicalChimeSafe();" onmouseenter="playClinicalChimeSafe()">
+                    <div class="cell-title">${cell.title}</div>
+                    
+                    <div class="cell-photo-placeholder">
+                        <div class="status-badge">${cell.badge}</div>
+                        <canvas id="biogen-cv-${cell.id}"></canvas>
+                    </div>
+                    
+                    <div style="font-size: 8px; color: var(--text-secondary); display:flex; justify-content:space-between; width:100%; font-family:monospace;">
+                        <span>ID: 00${cell.id}_SYS</span>
+                        <span>${cell.mesh}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function openBiogenFocusModal(id, title) {
+            const modal = document.getElementById('biogen-focus-modal');
+            const titleEl = document.getElementById('biogen-focus-title');
+            if (modal) modal.classList.add('active-modal');
+            if (titleEl) titleEl.textContent = `DESTAQUE 3D • ${title.toUpperCase()} • ANÁLISE ESTEREOFOTOGRAMÉTRICA`;
+        }
+
+        function closeBiogenFocusModal() {
+            const modal = document.getElementById('biogen-focus-modal');
+            if (modal) modal.classList.remove('active-modal');
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderGrid();
+        });
+    </script>
+</main><script>
+        function openBiogenFocusModal(biogenId, titleText) {
+            const modal = document.getElementById('biogen-focus-modal');
+            const titleElem = document.getElementById('biogen-focus-title');
+            if (titleElem) titleElem.textContent = `DESTAQUE 3D • ${titleText}`;
+            if (modal) modal.classList.add('active-modal');
+            
+            if (typeof renderizarCanvas3DModal === 'function') {
+                renderizarCanvas3DModal('biogen-focus-canvas', biogenId);
+            }
+
+            if (typeof logKernelMessage === 'function') {
+                logKernelMessage(`[AUDIT_LOG] Biogêmeo #${biogenId} carregado sob padrões HIPAA/DICOM com sucesso.`);
+            }
+        }
+
+        function closeBiogenFocusModal() {
+            const modal = document.getElementById('biogen-focus-modal');
+            if (modal) modal.classList.remove('active-modal');
+        }
+    </script>
+
+    <aside class="luxury-sidebar">
+            <style>
+                .luxury-sidebar .btn-master-trigger {
+                    background: var(--btn-glass-bg) !important;
+                    border: 1px solid var(--border-sovereign) !important;
+                    color: var(--text-secondary) !important;
+                    padding: 11px 14px;
+                    border-radius: 10px;
+                    font-size: 11px;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    text-align: left;
+                    cursor: pointer;
+                    backdrop-filter: blur(12px);
+                    box-shadow: none;
+                    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+                    margin-top: 8px;
+                    width: 100%;
+                    display: block;
+                }
+                .luxury-sidebar .btn-master-trigger:hover {
+                    border-color: var(--accent-clinical) !important;
+                    background: rgba(59, 94, 102, 0.1) !important;
+                    color: var(--text-primary) !important;
+                    box-shadow: var(--backlit-hover-glow);
+                    transform: translateY(-2px);
+                }
+                .luxury-sidebar .btn-master-trigger.locked-report { 
+                    opacity: 0.45; filter: grayscale(80%); cursor: not-allowed; pointer-events: none; box-shadow: none; 
+                }
+                .luxury-sidebar .btn-master-trigger.unlocked-report { 
+                    opacity: 1; filter: none; cursor: pointer; border-color: var(--green-secure) !important; color: var(--green-secure) !important; 
+                    animation: reportPulseButton 2.5s infinite; 
+                }
+            </style>
+
             <div class="category-header" id="cat-gateway" data-i18n="cat-gateway">Gateway do Cliente UHNW</div>
             
-            <button class="btn-master-trigger" onclick="openApexProtocolModal()" style="background: linear-gradient(135deg, #C5A059, #F3E5AB, #9A7B43); color: #010204; font-weight: 700; letter-spacing: 1.2px; margin-top: 4px; margin-bottom: 12px; box-shadow: var(--backlit-champagne-glow);" data-i18n="btn-apex-protocol">
+            <button class="btn-master-trigger" onclick="openApexProtocolModal()" style="font-weight: 700; letter-spacing: 1.2px; margin-top: 4px; margin-bottom: 12px; text-align: center;" data-i18n="btn-apex-protocol">
                 🛡️ APEX PROTOCOL [CONTEXTO UHNW]
             </button>
 
             <input type="hidden" id="client-name-input" value="THIÉBRY RODRIGUES">
-            <input type="hidden" id="client-company-input" value="TTC Global Corp">
+            <input type="hidden" id="client-company-input" value="Thierry Technology Concept Global">
             <input type="hidden" id="client-email-input" value="theiry10rd@gmail.com">
             <input type="hidden" id="client-phone-input" value="+55 (98) 99999-9999">
             <input type="hidden" id="client-market-segment" value="Tecnologia & Visagismo Trilionário">
             <input type="hidden" id="client-horizon-years" value="10">
 
-            <div style="background: rgba(197, 160, 89, 0.05); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px; margin: 10px 0; display: flex; align-items: flex-start; gap: 8px;">
-                <input type="checkbox" id="biometric-consent-checkbox" style="margin-top: 2px; accent-color: var(--gold-champagne); cursor: pointer;" onchange="verificarConsentimentoBiometrico()">
+            <div style="background: rgba(59, 94, 102, 0.05); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px; margin: 10px 0; display: flex; align-items: flex-start; gap: 8px;">
+                <input type="checkbox" id="biometric-consent-checkbox" style="margin-top: 2px; accent-color: var(--accent-clinical); cursor: pointer;" onchange="verificarConsentimentoBiometrico()">
                 <label for="biometric-consent-checkbox" style="font-size: 10px; color: var(--text-primary); line-height: 1.4; cursor: pointer;" data-i18n="consent-text">
                     Aceito os Termos de Conformidade e autorizo a auditoria e varredura de telemetria biométrica sob o Padrão Mônaco.
                 </label>
             </div>
 
             <button class="btn-master-trigger" onclick="startCinematicScan()" data-i18n="btn-exec-scan">[+] Executar Varredura & Captura Real</button>
-            <button class="btn-master-trigger" onclick="openWealthFilterModal()" style="background: linear-gradient(135deg, #00d2ff, #3a7bd5); color: #000;" data-i18n="btn-geo-filter">[+] UHNW GEO FILTER</button>
-            <button class="btn-master-trigger" onclick="openAdminPanelModal()" style="background: linear-gradient(135deg, #a855f7, #6366f1); color: #fff;" data-i18n="btn-admin-panel">[⚙️] PAINEL DE ADMINISTRAÇÃO</button>
-            <button class="btn-master-trigger locked-report" id="btn-open-stripe-modal" onclick="openStripeModal()" data-i18n="btn-stripe-lic">Comprar Licença Stripe 💳 [AGUARDANDO]</button>
-            <button class="btn-master-trigger locked-report" id="btn-open-pdf-modal" onclick="openPdfModal()" data-i18n="btn-gen-pdf">Gerar Relatórios PDF & Painel 🖨️ [AGUARDANDO]</button>
+            <button class="btn-master-trigger" onclick="abrirComandoDeVozModal()" data-i18n="btn-voice-cmd">🎙️ COMANDO DE VOZ CLÍNICO</button>
+            <button class="btn-master-trigger" onclick="abrirVideoDemonstracaoModal()" data-i18n="btn-demo-video">🎬 VÍDEO DE DEMONSTRAÇÃO (MAIN)</button>
+            <button class="btn-master-trigger" onclick="openWealthFilterModal()" data-i18n="btn-geo-filter">[+] UHNW GEO FILTER</button>
+            <button class="btn-master-trigger" onclick="openAdminPanelModal()" data-i18n="btn-admin-panel">[⚙️] PAINEL DE ADMINISTRAÇÃO</button>
+            <button class="btn-master-trigger locked-report" id="btn-open-stripe-modal" onclick="openStripeModal()" data-i18n="btn-stripe-lic">Comprar Licença Stripe 💳</button>
+            <button class="btn-master-trigger locked-report" id="btn-open-pdf-modal" onclick="openPdfModal()" data-i18n="btn-gen-pdf">Gerar Relatórios PDF</button>
         </aside>
-    </div>
-
-    <!-- MODAL DO APEX PROTOCOL -->
-    <div class="modal-overlay" id="apex-protocol-modal">
+    </div><div class="modal-overlay" id="apex-protocol-modal">
+        <style>
+            .modal-overlay {
+                position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(7, 9, 13, 0.9); backdrop-filter: blur(12px);
+                z-index: 9999; display: none; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;
+            }
+            .modal-overlay.active-modal { display: flex; opacity: 1; }
+            .modal-drawer {
+                background: var(--panel-yacht-dark); border: 1px solid var(--border-sovereign); border-radius: 18px; width: 680px; max-width: 90%;
+                max-height: 85vh; padding: 25px; box-shadow: var(--backlit-clinical-glow), 0 30px 60px rgba(0,0,0,0.8); display: flex; flex-direction: column; gap: 15px; overflow-y: auto;
+            }
+            .modal-header-elite { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-sovereign); padding-bottom: 10px; font-size: 11px; color: var(--accent-clinical); font-weight: 700; text-transform: uppercase; }
+            .modal-close-btn { background: var(--btn-glass-bg); border: 1px solid var(--border-sovereign); color: var(--text-secondary); width: 28px; height: 28px; border-radius: 50%; font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+            .modal-close-btn:hover { color: var(--accent-clinical); border-color: var(--accent-clinical); box-shadow: var(--backlit-hover-glow); }
+            .pdf-fullscreen-modal {
+                position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(7, 9, 13, 0.95); backdrop-filter: blur(15px);
+                z-index: 10000; display: none; flex-direction: column; padding: 20px;
+            }
+            .pdf-fullscreen-modal.active-modal { display: flex; }
+        </style>
         <div class="modal-drawer" style="width: 740px;">
             <div class="modal-header-elite">
                 <span>APEX PROTOCOL • TERMO SOBERANO & INGESTÃO UHNW</span>
                 <button class="modal-close-btn" onclick="closeApexProtocolModal()">✕</button>
             </div>
-            <div style="font-size: 10px; color: var(--gold-champagne); font-family: 'Cinzel', serif;">
-                LEITURA OBRIGATÓRIA (ROLE ATÉ O FINAL PARA LIBERAR O ACEITE DO CONTRATO)
+            <div style="font-size: 10px; color: var(--accent-clinical); font-weight: 700;" data-i18n="apex-sub-ready">
+                CONTRATO SOBERANO PRONTO PARA ACEITE IMEDIATO
             </div>
-            <div id="apex-contract-scroll-box" onscroll="verificarFimLeituraApexContrato(this)" style="background: rgba(0,0,0,0.6); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 12px; max-height: 200px; overflow-y: auto; font-family: 'Courier New', monospace; font-size: 10px; line-height: 1.5; color: #e5e5e5; white-space: pre-wrap;">
+            <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 12px; max-height: 160px; overflow-y: auto; font-family: monospace; font-size: 10px; line-height: 1.5; color: #e5e5e5; white-space: pre-wrap;">
 THIERRY TECHNOLOGY CONCEPT GLOBAL
 TERMO DE COMPLIANCE E CONTRATO DE LICENCIAMENTO SOBERANO
 
@@ -496,20 +1095,73 @@ O usuário autoriza expressamente a varredura e o rastreamento vetorial tridimen
 Cláusula Segunda (Zero-Retention Cloud)
 Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em servidores externos não criptografados.
 
-[ROLE ESTA BARRA ATÉ O FINAL PARA HABILITAR O BOTÃO DE CONCORDÂNCIA E SEGUIR PARA O CADASTRO DE CREDENCIAIS]</div>
-            <div style="background: rgba(197, 160, 89, 0.05); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
-                <input type="checkbox" id="apex-contract-checkbox" disabled style="width: 16px; height: 16px; accent-color: var(--gold-champagne); cursor: not-allowed;">
-                <label for="apex-contract-checkbox" style="font-size: 10px; color: var(--text-secondary); cursor: not-allowed;">
+[TERMO INTEGRALMENTE DISPONIBILIZADO PARA ASSINATURA E INGESTÃO DE CREDENCIAIS UHNW]</div>
+            <div style="background: rgba(59, 94, 102, 0.05); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px; display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="apex-contract-checkbox" checked style="width: 16px; height: 16px; accent-color: var(--accent-clinical); cursor: pointer;">
+                <label for="apex-contract-checkbox" style="font-size: 10px; color: var(--text-secondary); cursor: pointer;" data-i18n="apex-agree-lbl">
                     Li e concordo com os Termos Soberanos de Licenciamento Global.
                 </label>
             </div>
-            <button class="btn-master-trigger locked-report" id="btn-proceed-to-credentials" onclick="avancarParaDadosApex()" style="margin-top: 5px;">
+            <button class="btn-master-trigger unlocked-report" id="btn-proceed-to-credentials" onclick="avancarParaDadosApex()" style="margin-top: 5px;" data-i18n="apex-btn-proceed">
                 Prosseguir para Credenciais Executivas ➔
             </button>
         </div>
     </div>
 
-    <!-- MODAL DE CREDENCIAIS EXECUTIVAS APEX -->
+    <div class="modal-overlay" id="voice-command-modal">
+        <div class="modal-drawer" style="width: 820px; max-height: 85vh; background: var(--panel-yacht-dark); border: 1.5px solid var(--accent-clinical); box-shadow: var(--backlit-clinical-glow), 0 30px 60px rgba(0,0,0,0.8); padding: 22px; border-radius: 16px; display: flex; flex-direction: column; gap: 15px;">
+            <div class="modal-header-elite" style="border-bottom: 1px solid var(--border-sovereign); padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 11px; color: var(--accent-clinical); letter-spacing: 1.5px; font-weight: bold;" data-i18n="voice-modal-title">
+                    CZ COGNITIVE VOICE & SANDBOX • MODO EXECUTIVO
+                </span>
+                <button class="modal-close-btn" onclick="fecharComandoDeVozModal()" style="font-size: 14px; background: rgba(59, 94, 102, 0.15); border: 1px solid var(--accent-clinical); color: #fff; width: 28px; height: 28px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;">✕</button>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="lang-btn active-lang" style="flex: 1; padding: 8px; font-size: 10px; border-color: var(--accent-clinical); color: var(--accent-clinical);">
+                    🎙️ Biometria & Voz Ativa (Modo Silencioso Passivo)
+                </button>
+                <button class="lang-btn" style="flex: 1; padding: 8px; font-size: 10px;">
+                    🛡️ Apex Protocol UHNW
+                </button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+                <div style="font-size: 9px; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-secondary);" data-i18n="voice-modal-desc">
+                    NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
+                </div>
+                <div style="background: #000; border: 1px solid var(--border-sovereign); border-radius: 10px; padding: 14px; min-height: 130px; max-height: 180px; overflow-y: auto; font-family: monospace; font-size: 11px; color: var(--green-secure); line-height: 1.6;" id="voice-transcription-output">
+                    [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(59, 94, 102, 0.05); padding: 8px 12px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <span style="width: 10px; height: 10px; background: var(--green-secure); border-radius: 50%; box-shadow: 0 0 10px var(--green-secure); animation: pulse 1.5s infinite;"></span>
+                    <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
+                </div>
+                <button class="lang-btn" onclick="reiniciarEscutaVoz()" style="font-size: 9px; padding: 4px 10px;">🔄 Reiniciar Escuta</button>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 5px;">
+                <button class="btn-master-trigger" style="margin: 0; background: var(--btn-glass-bg); border: 1px solid var(--border-sovereign); color: var(--accent-clinical); font-size: 10px; padding: 12px;" onclick="simularDisparoVoz()">
+                    [>] APLICAR PROTOCOLO MÔNACO
+                </button>
+                <button class="btn-master-trigger unlocked-report" style="margin: 0; background: var(--green-secure); color: #000; font-weight: bold; font-size: 10px; padding: 12px;" onclick="fecharComandoDeVozModal()">
+                    CONFIRMAR, ASSINAR E EXECUTAR CONDUTA
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="video-demo-modal">
+        <div class="modal-drawer" style="width: 780px; margin: auto; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+            <div class="modal-header-elite">
+                <span data-i18n="video-modal-title">🎬 VÍDEO DE DEMONSTRAÇÃO (MAIN) • TCC GLOBAL</span>
+                <button class="modal-close-btn" onclick="fecharVideoDemonstracaoModal()">✕</button>
+            </div>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid var(--border-sovereign); background: #000;">
+                <iframe id="main-demo-iframe" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
     <div class="modal-overlay" id="apex-credentials-modal">
         <div class="modal-drawer" style="width: 700px;">
             <div class="modal-header-elite">
@@ -519,21 +1171,21 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 5px;">
                 <div>
                     <div class="sub-tag-label">Nome Completo do CEO / Alvo (`ceo_name`)</div>
-                    <input type="text" class="client-input-field" id="modal-ceo-name" value="THIÉBRY RODRIGUES" style="margin:0;">
+                    <input type="text" class="client-input-field" id="modal-ceo-name" value="THIÉBRY RODRIGUES">
                 </div>
                 <div>
                     <div class="sub-tag-label">Holding ou Corporação (`company_name`)</div>
-                    <input type="text" class="client-input-field" id="modal-company-name" value="TTC Global Corp" style="margin:0;" oninput="updateHeaderCompany(this.value)">
+                    <input type="text" class="client-input-field" id="modal-company-name" value="TTC Global Corp" oninput="updateHeaderCompany(this.value)">
                 </div>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                 <div>
                     <div class="sub-tag-label">Segmento de Mercado (`market_segment`)</div>
-                    <input type="text" class="client-input-field" id="modal-market-segment" value="Visagismo & Trilionários Tech" style="margin:0;">
+                    <input type="text" class="client-input-field" id="modal-market-segment" value="Visagismo & Trilionários Tech">
                 </div>
                 <div>
                     <div class="sub-tag-label">Horizonte de Projeção (`horizon_years`)</div>
-                    <select id="modal-horizon-years" class="client-input-field" style="margin:0;">
+                    <select id="modal-horizon-years" class="client-input-field">
                         <option value="5">5 Anos (Curto Prazo)</option>
                         <option value="10" selected>10 Anos (Padrão Sênior)</option>
                         <option value="15">15 Anos (Longo Prazo Global)</option>
@@ -543,11 +1195,11 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                 <div>
                     <div class="sub-tag-label">E-mail Corporativo</div>
-                    <input type="email" class="client-input-field" id="modal-email-input" value="theiry10rd@gmail.com" style="margin:0;">
+                    <input type="email" class="client-input-field" id="modal-email-input" value="theiry10rd@gmail.com">
                 </div>
                 <div>
                     <div class="sub-tag-label">Telefone Executivo</div>
-                    <input type="text" class="client-input-field" id="modal-phone-input" value="+55 (98) 99999-9999" style="margin:0;">
+                    <input type="text" class="client-input-field" id="modal-phone-input" value="+55 (98) 99999-9999">
                 </div>
             </div>
             <button class="btn-master-trigger unlocked-report" onclick="salvarEAtivarApexProtocol()" style="margin-top: 10px;">
@@ -556,39 +1208,6 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         </div>
     </div>
 
-    <!-- MODAL DO PAINEL DE ADMINISTRAÇÃO GLOBAL -->
-    <div class="modal-overlay" id="admin-panel-modal">
-        <div class="modal-drawer" style="width: 760px;">
-            <div class="modal-header-elite">
-                <span>PAINEL DE ADMINISTRAÇÃO GLOBAL • TCC SOVEREIGN KERNEL</span>
-                <button class="modal-close-btn" onclick="closeAdminPanelModal()">✕</button>
-            </div>
-            <div id="admin-auth-screen" style="display: flex; flex-direction: column; gap: 12px; padding: 10px 0;">
-                <div style="font-size: 11px; color: var(--text-secondary);">Insira a senha master do sistema:</div>
-                <input type="password" id="admin-master-pwd" class="client-input-field" placeholder="Digite a senha master (ex: 124577)">
-                <button class="btn-master-trigger" style="margin:0;" onclick="authenticateAdminSystem()">Autenticar Acesso Master</button>
-            </div>
-            <div id="admin-dashboard-screen" style="display: none; flex-direction: column; gap: 14px; padding-top: 5px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(16, 185, 129, 0.08); padding: 10px; border-radius: 8px; border: 1px solid var(--green-secure);">
-                    <span style="font-size: 11px; color: var(--green-secure); font-weight: bold;">✔ ACESSO MASTER AUTORIZADO (NÍVEL TIER-1)</span>
-                    <button class="lang-btn" onclick="lockAdminSystem()" style="border-color: var(--red-alert); color: var(--red-alert);">Bloquear Sessão</button>
-                </div>
-                <div style="font-family: 'Cinzel', serif; font-size: 10px; color: var(--gold-champagne); letter-spacing: 1px;">GERENCIAMENTO DE EMPRESAS & LICENÇAS</div>
-                <div style="display: flex; flex-direction: column; gap: 8px;">
-                    <div style="display: flex; gap: 10px;">
-                        <input type="text" id="admin-target-company" class="client-input-field" placeholder="Nome da Empresa" style="margin:0; flex:1;">
-                        <select id="admin-target-status" class="client-input-field" style="margin:0; width: 140px;">
-                            <option value="ATIVO">Status: ATIVO</option>
-                            <option value="BLOQUEADO">Status: BLOQUEADO</option>
-                        </select>
-                    </div>
-                    <button class="btn-master-trigger" style="margin-top: 5px;" onclick="updateCompanyLicenseStatus()">Salvar Licença e Período</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL DO UHNW GEO FILTER -->
     <div class="modal-overlay" id="geo-filter-modal">
         <div class="modal-drawer" style="width: 760px; max-height: 85vh;">
             <div class="modal-header-elite">
@@ -599,103 +1218,102 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 Ative ou desative abaixo as jurisdições soberanas e enclaves UHNW para isolamento de segurança:
             </div>
             <div style="max-height: 380px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding-right: 6px;" id="geo-countries-scroll-container">
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇦🇪 AE.json — Emirados Árabes Unidos (Dubai / Abu Dhabi)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇧🇷 BR.json — Brasil (São Luís / Matriz Global)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇨🇭 CH.json — Suíça (Zurique / Genebra)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇩🇪 DE.json — Alemanha (Frankfurt / Munique)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('DE', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('DE', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇫🇷 FR.json — França (Paris / Mônaco Border)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('FR', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('FR', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇰🇷 KR.json — Coreia do Sul (Seul)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('KR', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('KR', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇲🇨 MC.json — Mônaco (Monte Carlo - Tier-1 Sovereign)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('MC', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('MC', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇶🇦 QA.json — Catar (Doha)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('QA', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('QA', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇸🇬 SG.json — Singapura</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('SG', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('SG', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇬🇧 UK.json — Reino Unido (Londres / Mayfair)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('UK', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('UK', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇺🇸 US-AS.json — Estados Unidos (Alaska Sovereign)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-AS', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-AS', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇺🇸 US-AT.json — Estados Unidos (Atlanta Hub)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-AT', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-AT', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇺🇸 US-BH.json — Estados Unidos (Beverly Hills UHNW)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-BH', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-BH', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇺🇸 US-HB.json — Estados Unidos (New York / Harbor)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-HB', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-HB', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇺🇸 US-PB.json — Estados Unidos (Palm Beach)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-PB', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-PB', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇺🇸 US-RH.json — Estados Unidos (Reno / High-Tech)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-RH', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US-RH', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
-                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
+                <label style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
                     <span>🇺🇸 US.json — Estados Unidos (Federal Core)</span>
-                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US', this.checked)" style="accent-color: var(--gold-champagne);">
+                    <input type="checkbox" checked onchange="toggleCountryJurisdiction('US', this.checked)" style="accent-color: var(--accent-clinical);">
                 </label>
             </div>
             <button class="btn-master-trigger" style="margin-top: 10px;" onclick="closeGeoFilterModal()">Aplicar Filtro Geográfico</button>
         </div>
     </div>
 
-    <!-- MODAL DE LICENCIAMENTO STRIPE (ATUALIZADO COM USD E EUR) -->
     <div class="modal-overlay" id="stripe-licensing-modal">
         <div class="modal-drawer" style="width: 740px;">
             <div class="modal-header-elite">
                 <span>CENTRAL DE LICENCIAMENTO STRIPE • TCC GLOBAL</span>
                 <button class="modal-close-btn" onclick="closeStripeModal()">✕</button>
             </div>
-            <div style="font-family: 'Cinzel', serif; font-size: 10px; color: var(--gold-champagne); letter-spacing: 1px;">LICENÇAS DE ALTO PADRÃO UHNW (TETO ANUAL MÁXIMO)</div>
+            <div style="font-size: 10px; color: var(--accent-clinical); letter-spacing: 1px; font-weight: 700;">LICENÇAS DE ALTO PADRÃO UHNW (TETO ANUAL MÁXIMO)</div>
             <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.04); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.04); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
                     <div>
                         <div style="font-weight: bold; font-size: 11px;">Licença Global Estratégica (US$ 999.999,00 / ano)</div>
                         <div style="font-size: 9px; color: var(--text-secondary);">Mercado Américas, Oriente Médio e Expansão Global.</div>
                     </div>
                     <button class="btn-master-trigger" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarStripe('global_estrategica')">ADQUIRIR ESTRATÉGICA (USD)</button>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.04); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.04); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
                     <div>
                         <div style="font-weight: bold; font-size: 11px;">Monaco Supremacy License (€ 999.999,00 / ano)</div>
                         <div style="font-size: 9px; color: var(--text-secondary);">Padrão ouro internacional UHNW Europa & Mônaco.</div>
                     </div>
                     <button class="btn-master-trigger" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarStripe('monaco_supremacy')">ADQUIRIR MONACO (EUR)</button>
                 </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.04); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.04); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
                     <div>
                         <div style="font-weight: bold; font-size: 11px;">US Premium License (US$ 999.999,00 / ano)</div>
                         <div style="font-size: 9px; color: var(--text-secondary);">Homologação integral para os Estados Unidos.</div>
@@ -703,44 +1321,97 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                     <button class="btn-master-trigger" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarStripe('us_premium')">ADQUIRIR US PREMIUM (USD)</button>
                 </div>
             </div>
-            <button class="btn-master-trigger" style="margin-top: 10px; background: transparent; border: 1px solid var(--border-sovereign); color: var(--gold-champagne);" onclick="closeStripeModal()">
+            <button class="btn-master-trigger" style="margin-top: 10px; background: transparent; border: 1px solid var(--border-sovereign); color: var(--accent-clinical);" onclick="closeStripeModal()">
                 ← Voltar ao Terminal Principal
             </button>
         </div>
-    </div><!-- CENTRAL DE RELATÓRIOS PDF & VISUALIZADOR SOBERANO -->
-    <div class="modal-overlay" id="pdf-report-modal">
+    </div>
+
+    <div class="modal-overlay" id="admin-panel-modal">
+        <div class="modal-drawer" style="width: 650px;">
+            <div class="modal-header-elite">
+                <span>[⚙️] PAINEL DE ADMINISTRAÇÃO • GATEKEEPER TCC</span>
+                <button class="modal-close-btn" onclick="closeAdminPanelModal()">✕</button>
+            </div>
+            
+            <div id="admin-auth-screen" style="display: flex; flex-direction: column; gap: 12px; padding: 10px 0;">
+                <div style="font-size: 11px; color: var(--text-secondary);">
+                    Insira a credencial mestre para bypass imediato de segurança Tier-1 ou validação por data soberana:
+                </div>
+                <div>
+                    <div class="sub-tag-label">Senha de Acesso Mestre (`master_password`)</div>
+                    <input type="password" class="client-input-field" id="admin-master-pwd" placeholder="Digite a chave secreta...">
+                </div>
+                <div>
+                    <div class="sub-tag-label">Data de Liberação Sênior (`bypass_date`)</div>
+                    <input type="date" class="client-input-field" id="admin-bypass-date" value="2030-12-31">
+                </div>
+                <button class="btn-master-trigger" onclick="authenticateAdminSystem()" style="margin-top: 5px;">
+                    🔓 Autenticar & Liberar Acesso Total
+                </button>
+            </div>
+
+            <div id="admin-dashboard-screen" style="display: none; flex-direction: column; gap: 12px; padding: 10px 0;">
+                <div style="font-size: 11px; color: var(--green-secure); font-weight: bold; background: rgba(5, 150, 105, 0.1); border: 1px solid rgba(5, 150, 105, 0.3); padding: 10px; border-radius: 8px;">
+                    ✔ SISTEMA DESBLOQUEADO COM SUCESSO • MODO MASTER ATIVO (BYPASS STRIPE ATIVO)
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div>
+                        <div class="sub-tag-label">Validade da Licença Global</div>
+                        <input type="date" class="client-input-field" id="admin-expiry-date" value="2030-12-31">
+                    </div>
+                    <div>
+                        <div class="sub-tag-label">Status do Gatekeeper</div>
+                        <select id="admin-system-lock-state" class="client-input-field">
+                            <option value="unlocked">Totalmente Liberado (UHNW Bypass)</option>
+                            <option value="locked">Bloqueado por Conformidade</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="sub-tag-label">Identidade do Administrador / Licenciado</div>
+                    <input type="text" class="client-input-field" id="admin-identity-override" value="THIÉBRY RODRIGUES (TCC Global)">
+                </div>
+                <div style="display: flex; gap: 10px; margin-top: 10px;">
+                    <button class="btn-master-trigger" onclick="updateCompanyLicenseStatus()" style="margin:0; flex:1;">
+                        Salvar & Aplicar Regras Mestre
+                    </button>
+                    <button class="btn-master-trigger" onclick="lockAdminSystem()" style="margin:0; background: var(--red-alert); color:#fff; width: 140px; border:none;">
+                        🔒 Bloquear Sistema
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div><div class="modal-overlay" id="pdf-report-modal">
         <div class="modal-drawer" style="width: 860px; max-height: 92vh;">
             <div class="modal-header-elite">
                 <span data-i18n="modal-pdf-title">CENTRAL DE RELATÓRIOS PDF & VISUALIZADOR SOBERANO • TCC GLOBAL</span>
                 <button class="modal-close-btn" onclick="closePdfModal()">✕</button>
             </div>
             <div style="display: flex; flex-direction: column; gap: 10px; padding-top: 5px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(197,160,89,0.06); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px;">
-                    <span style="font-size: 10px; color: var(--gold-champagne); font-weight: bold;" data-i18n="lbl-pdf-lang">IDIOMA DOS RELATÓRIOS PDF:</span>
+                <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(59,94,102,0.06); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px;">
+                    <span style="font-size: 10px; color: var(--accent-clinical); font-weight: bold;" data-i18n="lbl-pdf-lang">IDIOMA DOS RELATÓRIOS PDF:</span>
                     <div class="lang-selector">
                         <button id="btn-pdf-pt" class="lang-btn active-lang" onclick="setPdfLanguage('PT')">PT (Português)</button>
                         <button id="btn-pdf-en" class="lang-btn" onclick="setPdfLanguage('EN')">EN (English)</button>
                     </div>
                 </div>
-                <div style="font-family: 'Cinzel', serif; font-size: 10px; color: var(--gold-champagne); letter-spacing: 1px;">Canal de Destino para Envio Direto (E-mail Profissional):</div>
+                <div style="font-size: 10px; color: var(--accent-clinical); letter-spacing: 1px; font-weight: 700;">Canal de Destino para Envio Direto (E-mail Profissional):</div>
                 <div>
-                    <input type="email" id="dispatch-email-target" class="client-input-field" value="theiry10rd@gmail.com" style="margin:0;">
+                    <input type="email" id="dispatch-email-target" class="client-input-field" value="theiry10rd@gmail.com">
                 </div>
-                <div style="font-family: 'Cinzel', serif; font-size: 10px; color: var(--gold-champagne); letter-spacing: 1px; margin-top: 2px;">Dossiês Oficiais & Termo Soberano (6 Botões Integrados):</div>
+                <div style="font-size: 10px; color: var(--accent-clinical); letter-spacing: 1px; margin-top: 2px; font-weight: 700;">Dossiês Oficiais & Termo Soberano (6 Botões Integrados):</div>
 
-                <!-- GRADE DE 6 DOSSIÊS -->
                 <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-                    <!-- 0. Termo Soberano -->
-                    <div style="background: rgba(197,160,89,0.05); border: 1px solid var(--gold-champagne); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="font-weight: bold; font-size: 10px; color: var(--gold-champagne);">0. Termo Soberano</div>
+                    <div style="background: rgba(59,94,102,0.05); border: 1px solid var(--accent-clinical); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <div style="font-weight: bold; font-size: 10px; color: var(--accent-clinical);">0. Termo Soberano</div>
                         <div style="display: flex; gap: 4px; margin-top: 6px;">
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1;" onclick="visualizarDossiêEmbutido('contrato_soberano')">👁️ Ver</button>
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1; background:var(--cyan-tech-glow); color:#000;" onclick="expandirDossiêTelaCheia('contrato_soberano')">⤢ Expandir</button>
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1; background:var(--green-secure); color:#000;" onclick="gerarEExibirRelatorioPDF('contrato_soberano')">📥 Baixar</button>
                         </div>
                     </div>
-                    <!-- 1. Biogêmeos Core -->
-                    <div style="background: rgba(197,160,89,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="background: rgba(59,94,102,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="font-weight: bold; font-size: 10px; color: var(--text-primary);">1. Biogêmeos Core</div>
                         <div style="display: flex; gap: 4px; margin-top: 6px;">
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1;" onclick="visualizarDossiêEmbutido('biogem_core')">👁️ Ver</button>
@@ -748,8 +1419,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1; background:var(--green-secure); color:#000;" onclick="gerarEExibirRelatorioPDF('biogem_core')">📥 Baixar</button>
                         </div>
                     </div>
-                    <!-- 2. Retorno Financeiro -->
-                    <div style="background: rgba(197,160,89,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="background: rgba(59,94,102,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="font-weight: bold; font-size: 10px; color: var(--text-primary);">2. Retorno Financeiro</div>
                         <div style="display: flex; gap: 4px; margin-top: 6px;">
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1;" onclick="visualizarDossiêEmbutido('estetica_roi')">👁️ Ver</button>
@@ -757,8 +1427,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1; background:var(--green-secure); color:#000;" onclick="gerarEExibirRelatorioPDF('estetica_roi')">📥 Baixar</button>
                         </div>
                     </div>
-                    <!-- 3. Tricologia & Visagismo -->
-                    <div style="background: rgba(197,160,89,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="background: rgba(59,94,102,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="font-weight: bold; font-size: 10px; color: var(--text-primary);">3. Tricologia & Visagismo</div>
                         <div style="display: flex; gap: 4px; margin-top: 6px;">
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1;" onclick="visualizarDossiêEmbutido('visagismo_tricologia')">👁️ Ver</button>
@@ -766,8 +1435,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1; background:var(--green-secure); color:#000;" onclick="gerarEExibirRelatorioPDF('visagismo_tricologia')">📥 Baixar</button>
                         </div>
                     </div>
-                    <!-- 4. Carta UHNW -->
-                    <div style="background: rgba(197,160,89,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="background: rgba(59,94,102,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="font-weight: bold; font-size: 10px; color: var(--text-primary);">4. Carta UHNW</div>
                         <div style="display: flex; gap: 4px; margin-top: 6px;">
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1;" onclick="visualizarDossiêEmbutido('carta')">👁️ Ver</button>
@@ -775,8 +1443,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1; background:var(--green-secure); color:#000;" onclick="gerarEExibirRelatorioPDF('carta')">📥 Baixar</button>
                         </div>
                     </div>
-                    <!-- 5. Modelagem Avançada -->
-                    <div style="background: rgba(197,160,89,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="background: rgba(59,94,102,0.03); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: space-between;">
                         <div style="font-weight: bold; font-size: 10px; color: var(--text-primary);">5. Modelagem Avançada</div>
                         <div style="display: flex; gap: 4px; margin-top: 6px;">
                             <button class="btn-master-trigger" style="margin:0; padding:5px; font-size:8px; flex:1;" onclick="visualizarDossiêEmbutido('modelagem')">👁️ Ver</button>
@@ -786,47 +1453,99 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                     </div>
                 </div>
 
-                <!-- LEITOR EMBUTIDO NA TELA -->
-                <div id="embedded-viewer-container" style="margin-top: 10px; background: #010204; border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px; display: none; flex-direction: column; gap: 8px;">
+                <div id="embedded-viewer-container" style="margin-top: 10px; background: #000; border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 10px; display: none; flex-direction: column; gap: 8px; max-height: 75vh; overflow-y: auto;">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span id="embedded-viewer-title" style="font-size: 10px; color: var(--gold-champagne); font-weight: bold;">VISUALIZADOR SOBERANO</span>
+                        <span id="embedded-viewer-title" style="font-size: 10px; color: var(--accent-clinical); font-weight: bold;">VISUALIZADOR SOBERANO</span>
                         <div style="display: flex; gap: 6px;">
                             <button class="lang-btn" onclick="expandirAtualDoEmbutido()" style="font-size: 8px; padding: 2px 8px; border-color: var(--cyan-tech-glow); color: var(--cyan-tech-glow);">⤢ Tela Cheia</button>
-                            <button class="lang-btn" onclick="fecharVisualizadorEmbutido()" style="font-size: 8px; padding: 2px 6px;">Fechar ✕</button>
+                            <button class="lang-btn" onclick="fecharVisualizadorEmbutido()" style="font-size: 8px; padding: 2px 6px; color: #fff; background: rgba(59,94,102,0.15); border: 1px solid var(--accent-clinical);">Fechar ✕</button>
                         </div>
                     </div>
-                    <iframe id="pdf-embedded-frame" style="width: 100%; height: 260px; background: #fff; border-radius: 6px; border: none;"></iframe>
+                    <iframe id="pdf-embedded-frame" style="width: 100%; height: 480px; border-radius: 6px; border: none; background: #fff; filter: contrast(1.2) saturate(1.1);"></iframe>
                     <div style="display: flex; gap: 8px; justify-content: flex-end;">
                         <button class="btn-master-trigger" style="margin:0; padding:6px 12px; font-size:9px; width:auto; background:var(--green-secure); color:#000;" onclick="baixarDocumentoAtualEmbutido()">📥 Baixar PDF</button>
-                        <button class="btn-master-trigger" style="margin:0; padding:6px 12px; font-size:9px; width:auto; background:var(--gold-gradient); color:#000;" onclick="enviarDocumentoPorEmail()">✉️ Enviar para E-mail</button>
+                        <button class="btn-master-trigger" style="margin:0; padding:6px 12px; font-size:9px; width:auto; background:var(--accent-clinical); color:#fff;" onclick="enviarDocumentoPorEmail()">✉️ Enviar para E-mail</button>
                     </div>
                 </div>
 
-                <button class="btn-master-trigger" style="margin-top: 5px; background: transparent; border: 1px solid var(--border-sovereign); color: var(--gold-champagne);" onclick="closePdfModal()">
+                <button class="btn-master-trigger" style="margin-top: 5px; background: var(--accent-clinical); border: 1px solid var(--accent-clinical); color: #fff !important; font-weight: bold;" onclick="closePdfModal()">
                     ← Voltar ao Terminal Principal
                 </button>
             </div>
         </div>
     </div>
 
-    <!-- MODAL DE TELA CHEIA (FULLSCREEN PDF) -->
     <div class="pdf-fullscreen-modal" id="pdf-fullscreen-viewer">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; background: var(--panel-yacht-dark); padding: 12px 20px; border-radius: 10px; border: 1px solid var(--border-sovereign);">
             <div style="display: flex; align-items: center; gap: 15px;">
-                <button class="btn-master-trigger" style="margin:0; padding:8px 16px; font-size:10px; width:auto; background:var(--btn-glass-bg); border:1px solid var(--gold-champagne); color:var(--gold-champagne);" onclick="fecharFullscreenPDF()">
+                <button class="btn-master-trigger" style="margin:0; padding:8px 16px; font-size:10px; width:auto; background:var(--accent-clinical); border:1px solid var(--accent-clinical); color:#fff !important; font-weight:bold;" onclick="fecharFullscreenPDF()">
                     ⬅ Voltar ao Painel
                 </button>
-                <span id="fullscreen-pdf-title" style="font-family:'Cinzel',serif; font-size:13px; color:var(--gold-champagne); font-weight:bold;">TCC GLOBAL • VISUALIZADOR TELA CHEIA</span>
+                <span id="fullscreen-pdf-title" style="font-size:12px; color:var(--accent-clinical); font-weight:bold; text-transform:uppercase;">TCC GLOBAL • VISUALIZADOR TELA CHEIA</span>
             </div>
-            <button class="modal-close-btn" onclick="fecharFullscreenPDF()">✕</button>
+            <button class="modal-close-btn" onclick="fecharFullscreenPDF()" style="color: #fff; background: rgba(59,94,102,0.15); border: 1px solid var(--accent-clinical); width: 30px; height: 30px; border-radius: 50%; cursor: pointer;">✕</button>
         </div>
         <div style="flex: 1; background: #000; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-sovereign);">
-            <iframe id="pdf-fullscreen-frame" style="width: 100%; height: 100%; border: none; background: #fff;"></iframe>
+            <iframe id="pdf-fullscreen-frame" style="width: 100%; height: 100%; border: none; background: #fff; filter: contrast(1.2) saturate(1.1);"></iframe>
         </div>
     </div>
 
-    <!-- SCRIPT DE ORQUESTRAÇÃO COMPLETO -->
-    <script>
+    <div class="modal-overlay" id="biogen-detail-modal">
+        <div class="modal-drawer" style="width: 920px; max-height: 90vh; background: var(--panel-yacht-dark); border: 1.5px solid var(--accent-clinical); box-shadow: var(--backlit-clinical-glow); padding: 22px; border-radius: 14px;">
+            <div class="modal-header-elite" style="border-bottom: 1px solid var(--border-sovereign); padding-bottom: 12px; margin-bottom: 15px; display:flex; justify-content:space-between; align-items:center;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="display:inline-block; width:10px; height:10px; background:var(--cyan-tech-glow); border-radius:50%; box-shadow:0 0 10px var(--cyan-tech-glow);"></span>
+                    <span id="biogen-modal-title" style="font-size:14px; color:var(--accent-clinical); font-weight:bold; letter-spacing:1px;" data-i18n="modal-diag-title">
+                        DIAGNÓSTICO BIOGÊNICO & PROSPECÇÃO MÉDICO-FINANCEIRA
+                    </span>
+                </div>
+                <button class="modal-close-btn" onclick="closeBiogenDetailModal()" style="font-size:14px; background:rgba(59,94,102,0.15); border:1px solid var(--accent-clinical); color:#fff; width:30px; height:30px; border-radius:50%; cursor:pointer; font-weight:bold;">✕</button>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 320px 1fr; gap: 20px; align-items: stretch;">
+                <div style="position: relative; border: 2px solid var(--accent-clinical); border-radius: 12px; overflow: hidden; background: #000; height: 320px; box-shadow: 0 0 20px rgba(59, 94, 102, 0.2);">
+                    <canvas id="biogen-modal-canvas" style="width:100%; height:100%; object-fit:cover;"></canvas>
+                    <div style="position: absolute; bottom: 8px; left: 8px; right: 8px; background: rgba(7,9,13,0.9); border: 1px solid var(--border-sovereign); padding: 6px 10px; border-radius: 6px; text-align: center;">
+                        <span id="biogen-modal-tag" style="font-size: 11px; font-weight: bold; color: var(--cyan-tech-glow); letter-spacing: 1px;" data-i18n="lbl-recept-field">ANÁLISE DE CAMPO RECEPTIVO</span>
+                    </div>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 12px; justify-content: space-between;">
+                    <div style="background: var(--btn-glass-bg); border: 1px solid var(--border-sovereign); border-radius: 10px; padding: 14px;">
+                        <div style="font-size: 11px; color: var(--accent-clinical); font-weight: bold; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lbl-struct-diag">
+                            🔍 DIAGNÓSTICO ESTRUTURAL & AVALIAÇÃO DA PELE
+                        </div>
+                        <div id="biogen-modal-description" style="font-size: 13.5px; color: var(--text-primary); line-height: 1.6;">
+                            Carregando parâmetros biométricos...
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(2, 132, 199, 0.05); border: 1px solid var(--cyan-tech-glow); border-radius: 10px; padding: 14px;">
+                        <div style="font-size: 11px; color: var(--cyan-tech-glow); font-weight: bold; letter-spacing: 1px; margin-bottom: 6px;" data-i18n="lbl-clin-cond">
+                            🩺 CONDUTA CLÍNICA SUGERIDA & RECONSTRUÇÃO VETORIAL
+                        </div>
+                        <div id="biogen-modal-prospect" style="font-size: 13px; color: var(--text-primary); line-height: 1.5;">
+                            Aguardando seleção...
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(5, 150, 105, 0.06); border: 1px solid var(--green-secure); border-radius: 10px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 11px; color: var(--green-secure); font-weight: bold;" data-i18n="lbl-bio-preserv">PRESERVAÇÃO DO CAPITAL BIOLÓGICO:</span>
+                        <span id="biogen-modal-roi" style="font-size: 13px; color: var(--text-primary); font-weight: bold;">+92.4% Retorno em Estabilidade de Liderança</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 12px; margin-top: 18px;">
+                <button class="btn-master-trigger" style="margin:0; flex:1; height:45px; font-size:12px; font-weight:bold; border:1px solid var(--border-sovereign); background:var(--btn-glass-bg); color:var(--text-primary); cursor:pointer;" onclick="closeBiogenDetailModal()" data-i18n="btn-close-read">
+                    ✕ Fechar Leitura
+                </button>
+                <button class="btn-master-trigger" style="margin:0; flex:1.5; height:45px; font-size:12px; font-weight:bold; background:var(--accent-clinical); color:#fff; cursor:pointer;" onclick="closeBiogenDetailModal(); switchStage(3);" data-i18n="btn-go-3d">
+                    🔄 Ir para Confronto 3D Interativo ➔
+                </button>
+            </div>
+        </div>
+    </div><script>
         let currentLang = 'PT';
         let pdfLang = 'PT';
         let cameraActive = false;
@@ -837,8 +1556,155 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         let activeBiogenIndex = 0;
         let scanCompletedFlag = false;
         let isDarkTheme = true;
-        let apexContratoLidoAteOFim = false;
         let documentoAtualAtivo = 'biogem_core';
+        let recognitionObj = null;
+
+        const biogenDescriptions = {
+            PT: [
+                {
+                    name: "01. Fototipo Base Real",
+                    status: "BASE ESTÁVEL (AGORA)",
+                    desc: "<b>CONDIÇÃO ATUAL DA PELE:</b> Manto hidrolipídico conservado com refletância de 65%. Densidade de colágeno preservada sem evidência de elastose solar acentuada.<br/><b>ÁREAS EM OBSERVAÇÃO:</b> Região peri-orbital com micro-linhas de fadiga funcional.",
+                    prospect: "<b>RECOMENDAÇÃO CLÍNICA:</b> Manutenção com fotoproteção fotônica e sérum antioxidante de alta permeabilidade.<br/><b>EFICIÊNCIA:</b> Preserva 100% da integridade tissular atual.",
+                    roi: "+98% Estabilidade Dérmica"
+                },
+                {
+                    name: "02. Correção de Contorno",
+                    status: "REFORÇO MANDIBULAR",
+                    desc: "<b>CONDIÇÃO ATUAL DA PELE:</b> Início de frouxidão do ligamento retentor mandibulocutâneo com perda de definição do ângulo da mandíbula.<br/><b>ÁREA CAÓTICA:</b> Terço inferior com leve acúmulo submentoniano e perda de tração vertical.",
+                    prospect: "<b>RECOMENDAÇÃO CLÍNICA:</b> Preenchimento estrutural com hidroxiapatita de cálcio nos pontos de ancoragem da mandíbula (0.8mL/lado) e toxina em bandas platismais.<br/><b>EFEITO:</b> Reestruturação imediata do arco de autoridade.",
+                    roi: "Ancoragem Imediata"
+                },
+                {
+                    name: "03. Ativação Colágeno Apex",
+                    status: "PICO BIOESTIMULADOR",
+                    desc: "<b>CONDIÇÃO ATUAL DA PELE:</b> Resposta mitocondrial otimizada. Tecido preparado para pico de neo-colagênese induzida por radiação LED 830nm.<br/><b>ÁREA BENEFICIADA:</b> Triângulo da juventude e coxins malares superiores.",
+                    prospect: "<b>RECOMENDAÇÃO CLÍNICA:</b> Aplicação de PLLA (Ácido Poli-L-Lático) + Fotobiomodulação agendada para o Dia Ápice Circadiano.<br/><b>DURABILIDADE:</b> 18 a 24 meses de tração biológica.",
+                    roi: "+18 Meses de Firmeza"
+                },
+                {
+                    name: "04. Progressão +5 Anos",
+                    status: "DEGRADAÇÃO LEVE (+5 ANOS)",
+                    desc: "<b>PROJEÇÃO DE ENVELHECIMENTO:</b> Ptose gravitacional inicial de 0.28mm nos coxins de gordura malares e aprofundamento do sulco nasogeniano.<br/><b>ÁREA CRÍTICA/CAÓTICA:</b> Desidratação intercelular e perda de 8% do volume temporal.",
+                    prospect: "<b>INTERVENÇÃO DE ALTA PERFORMANCE:</b> Protocolo de Bioestimulação Vetorial com micro-mapeamento laser para barrar a queda tecidual antes da fixação da ruga.",
+                    roi: "Mitigação de 85% da Queda"
+                },
+                {
+                    name: "05. Progressão +10 Anos",
+                    status: "DEGRADAÇÃO MODERADA (+10 ANOS)",
+                    desc: "<b>PROJEÇÃO DE ENVELHECIMENTO:</b> Reabsorção óssea severa da maxila e migração inferior dos compartimentos de gordura. Descolamento de +0.58mm.<br/><b>ÁREA CRÍTICA/CAÓTICA:</b> Apagamento completo da linha da mandíbula (Jowls visíveis).",
+                    prospect: "<b>INTERVENÇÃO DE ALTA PERFORMANCE:</b> Reestruturação Miófacia profunda com Fios de Tração Pultrusados + Reposição Volumétrica Mióseo-Anatômica.",
+                    roi: "Recuperação do Valuation Executivo"
+                },
+                {
+                    name: "06. Progressão +15 Anos",
+                    status: "DEGRADAÇÃO SEVERA (+15 ANOS)",
+                    desc: "<b>PROJEÇÃO DE ENVELHECIMENTO:</b> Perda estrutural do SMAS com sobra cutânea de terço inferior, ptose palpebral e retração mandibular severa.<br/><b>ÁREA CRÍTICA/CAÓTICA:</b> Colapso dos eixos de comando e fadiga visual expressiva.",
+                    prospect: "<b>INTERVENÇÃO NECESSÁRIA:</b> Lifting Miófacial de Plano Profundo (Deep Plane) associado a Enxertia de Células-Tronco Autólogas.<br/><b>IMPACTO:</b> Reversão cronológica de até 12 anos.",
+                    roi: "Reversão Biológica Histórica"
+                },
+                {
+                    name: "07. Perfil Liderança",
+                    status: "COMANDO SOBERANO (OTIMIZADO)",
+                    desc: "<b>PROJEÇÃO OTIMIZADA:</b> Eixos faciais projetados no vetor de autoridade executiva. Elevação do canto sobrancelhar e alinhamento do plano frontal.<br/><b>ESTADO TISSULAR:</b> Tonicidade máxima sem rigidez de expressão.",
+                    prospect: "<b>PLANO DE MANUTENÇÃO:</b> Toxina Micro-dosada no terço superior + Laser de Picossegundos para homogeneidade do tom cutâneo.<br/><b>RESULTADO:</b> Sem sinais de estresse em negociações UHNW.",
+                    roi: "Soberania Visual Ativa"
+                },
+                {
+                    name: "08. Perfil Vitalidade",
+                    status: "OXIGENAÇÃO MÁXIMA",
+                    desc: "<b>PROJEÇÃO OTIMIZADA:</b> Perfusão sanguínea microvascular elevada (Oximetria 99.9%). Eliminação total de olheiras e sombras de fadiga.<br/><b>ESTADO TISSULAR:</b> Dermofluidez e brilho natural ativados.",
+                    prospect: "<b>PLANO DE MANUTENÇÃO:</b> Mesoterapia com Polinucleotídeos (PDRN) e Niacinamina em matriz Hialurônica não-reticulada.<br/><b>RESULTADO:</b> Aparência revigorada instantânea.",
+                    roi: "Pele Hidratada em 99%"
+                },
+                {
+                    name: "09. Perfil Poder Soberano",
+                    status: "PROPORÇÃO ÁUREA PHI (1.618)",
+                    desc: "<b>PROJEÇÃO OTIMIZADA:</b> Calibração milimétrica dos ângulos de Visagismo (115° a 120°). Harmonização entre trichion, gnáthio e pontos zigomáticos.<br/><b>ESTADO TISSULAR:</b> Geometria facial imponente.",
+                    prospect: "<b>PLANO DE MANUTENÇÃO:</b> Preenchimento de Alta Viscosidade nos pontos Phi estratégicos para consolidação do perfil de poder.",
+                    roi: "Simetria Áurea Perfeita"
+                },
+                {
+                    name: "10. Perfil Autonomia",
+                    status: "AUTONOMIA BIOLÓGICA BLINDADA",
+                    desc: "<b>PROJEÇÃO OTIMIZADA:</b> Manto lipídico reforçado com resistência a picos de cortisol e variações climáticas bruscas.<br/><b>ESTADO TISSULAR:</b> Barreira de proteção cutânea 100% blindada.",
+                    prospect: "<b>PLANO DE MANUTENÇÃO:</b> Terapia Celular Regenerativa exossômica para imunidade dérmica estendida por longo prazo.",
+                    roi: "Blindagem Celular Total"
+                }
+            ],
+            EN: [
+                {
+                    name: "01. Real Base Phototype",
+                    status: "STABLE BASE (NOW)",
+                    desc: "<b>CURRENT SKIN CONDITION:</b> Hydrolipidic mantle preserved with 65% reflectance. Preserved collagen density with no sign of marked solar elastosis.<br/><b>AREAS UNDER OBSERVATION:</b> Peri-orbital region with micro-lines of functional fatigue.",
+                    prospect: "<b>CLINICAL RECOMMENDATION:</b> Maintenance with photonic photoprotection and high-permeability antioxidant serum.<br/><b>EFFICIENCY:</b> Preserves 100% of current tissue integrity.",
+                    roi: "+98% Dermal Stability"
+                },
+                {
+                    name: "02. Contour Correction",
+                    status: "MANDIBULAR REINFORCEMENT",
+                    desc: "<b>CURRENT SKIN CONDITION:</b> Initial laxity of the mandibulocutaneous retaining ligament with loss of jawline definition.<br/><b>CHAOTIC AREA:</b> Lower third with slight submental accumulation and loss of vertical traction.",
+                    prospect: "<b>CLINICAL RECOMMENDATION:</b> Structural filling with calcium hydroxyapatite at mandibular anchoring points (0.8mL/side) and toxin in platysmal bands.<br/><b>EFFECT:</b> Immediate restructuring of the authority arch.",
+                    roi: "Immediate Anchorage"
+                },
+                {
+                    name: "03. Apex Collagen Activation",
+                    status: "BIOSTIMULATOR PEAK",
+                    desc: "<b>CURRENT SKIN CONDITION:</b> Optimized mitochondrial response. Tissue prepared for peak neocollagenesis induced by 830nm LED radiation.<br/><b>BENEFITED AREA:</b> Triangle of youth and upper malar fat pads.",
+                    prospect: "<b>CLINICAL RECOMMENDATION:</b> Application of PLLA (Poly-L-Lactic Acid) + Photobiomodulation scheduled for Circadian Apex Day.<br/><b>DURABILITY:</b> 18 to 24 months of biological traction.",
+                    roi: "+18 Months of Firmness"
+                },
+                {
+                    name: "04. +5 Years Progression",
+                    status: "MILD DEGRADATION (+5 YEARS)",
+                    desc: "<b>AGING PROJECTION:</b> Initial gravitational ptosis of 0.28mm in malar fat pads and deepening of the nasolabial fold.<br/><b>CRITICAL/CHAOTIC AREA:</b> Intercellular dehydration and 8% loss of temporal volume.",
+                    prospect: "<b>HIGH-PERFORMANCE INTERVENTION:</b> Vector Biostimulation Protocol with laser micro-mapping to halt tissue sagging before wrinkle fixation.",
+                    roi: "85% Sagging Mitigation"
+                },
+                {
+                    name: "05. +10 Years Progression",
+                    status: "MODERATE DEGRADATION (+10 YEARS)",
+                    desc: "<b>AGING PROJECTION:</b> Severe maxillary bone resorption and inferior migration of fat compartments. Displacement of +0.58mm.<br/><b>CRITICAL/CHAOTIC AREA:</b> Complete erasure of the jawline (Visible jowls).",
+                    prospect: "<b>HIGH-PERFORMANCE INTERVENTION:</b> Deep myofascial restructuring with pultruded traction threads + myoseo-anatomical volumetric replacement.",
+                    roi: "Executive Valuation Recovery"
+                },
+                {
+                    name: "06. +15 Years Progression",
+                    status: "SEVERE DEGRADATION (+15 YEARS)",
+                    desc: "<b>AGING PROJECTION:</b> Structural loss of SMAS with lower third skin excess, palpebral ptosis, and severe mandibular retraction.<br/><b>CRITICAL/CHAOTIC AREA:</b> Collapse of command axes and expressive visual fatigue.",
+                    prospect: "<b>NECESSARY INTERVENTION:</b> Deep Plane Myofacial Facelift associated with Autologous Stem Cell Grafting.<br/><b>IMPACT:</b> Historic biological reversal of up to 12 years.",
+                    roi: "Historic Biological Reversal"
+                },
+                {
+                    name: "07. Leadership Profile",
+                    status: "SOVEREIGN COMMAND (OPTIMIZED)",
+                    desc: "<b>OPTIMIZED PROJECTION:</b> Facial axes projected in the vector of executive authority. Eyebrow tail elevation and frontal plane alignment.<br/><b>TISSUE STATE:</b> Maximum tonicity without expression stiffness.",
+                    prospect: "<b>MAINTENANCE PLAN:</b> Micro-dosed toxin in the upper third + Picosecond laser for skin tone homogeneity.<br/><b>RESULT:</b> No signs of stress in UHNW negotiations.",
+                    roi: "Active Visual Sovereignty"
+                },
+                {
+                    name: "08. Vitality Profile",
+                    status: "MAXIMUM OXYGENATION",
+                    desc: "<b>OPTIMIZED PROJECTION:</b> Elevated microvascular blood perfusion (99.9% Oximetry). Total elimination of dark circles and fatigue shadows.<br/><b>TISSUE STATE:</b> Dermofluidity and natural glow activated.",
+                    prospect: "<b>MAINTENANCE PLAN:</b> Mesotherapy with Polynucleotides (PDRN) and Niacinamide in non-crosslinked Hyaluronic matrix.<br/><b>RESULT:</b> Instant rejuvenated appearance.",
+                    roi: "99% Hydrated Skin"
+                },
+                {
+                    name: "09. Sovereign Power Profile",
+                    status: "GOLDEN RATIO PHI (1.618)",
+                    desc: "<b>OPTIMIZED PROJECTION:</b> Millimeter calibration of Visagism angles (115° to 120°). Harmonization between trichion, gnathion, and zygomatic points.<br/><b>TISSUE STATE:</b> Imposing facial geometry.",
+                    prospect: "<b>MAINTENANCE PLAN:</b> High-Viscosity filling at strategic Phi points to consolidate the power profile.",
+                    roi: "Perfect Golden Symmetry"
+                },
+                {
+                    name: "10. Autonomy Profile",
+                    status: "SHIELDED BIOLOGICAL AUTONOMY",
+                    desc: "<b>OPTIMIZED PROJECTION:</b> Reinforced lipid mantle with resistance to cortisol spikes and sudden weather variations.<br/><b>TISSUE STATE:</b> 100% shielded skin barrier protection.",
+                    prospect: "<b>MAINTENANCE PLAN:</b> Exosomal Regenerative Cellular Therapy for long-term extended dermal immunity.",
+                    roi: "Total Cellular Shielding"
+                }
+            ]
+        };
 
         const translations = {
             PT: {
@@ -853,7 +1719,6 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 "lbl-posture": "Métricas de Postura de Comando",
                 "metric-mandible": "Retração Mandibular",
                 "metric-tonicity": "Tonicidade Média",
-                "cat-creds": "High-Tier Credentials",
                 "tel-freq": "Frequência Vetorial",
                 "tel-oxi": "Oximetria Tecidual",
                 "tel-gov": "Nível de Governança",
@@ -862,21 +1727,48 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 "btn-apex-protocol": "🛡️ APEX PROTOCOL [CONTEXTO UHNW]",
                 "consent-text": "Aceito os Termos de Conformidade e autorizo a auditoria e varredura de telemetria biométrica sob o Padrão Mônaco.",
                 "btn-exec-scan": "[+] Executar Varredura & Captura Real",
+                "btn-voice-cmd": "🎙️ COMANDO DE VOZ CLÍNICO",
+                "btn-demo-video": "🎬 VÍDEO DE DEMONSTRAÇÃO (MAIN)",
                 "btn-geo-filter": "[+] UHNW GEO FILTER",
                 "btn-admin-panel": "[⚙️] PAINEL DE ADMINISTRAÇÃO",
-                "btn-stripe-lic": "Comprar Licença Stripe 💳 [AGUARDANDO]",
-                "btn-gen-pdf": "Gerar Relatórios PDF & Painel 🖨️ [AGUARDANDO]",
+                "btn-stripe-lic": "Comprar Licença Stripe 💳",
+                "btn-gen-pdf": "Gerar Relatórios PDF",
                 "cat-kernel-logs": "Kernel Logs",
                 "ref-base": "BASE DE REFERÊNCIA (-10 ANOS NATURAL)",
-                "ref-base-desc": "Projeção cronológica natural sob rastreamento soberano.",
+                "ref-base-desc": "Projeção cronológica natural sob rastreamento soberano com calibração de eixos.",
                 "ref-proj": "PERFIL LIDERANÇA E COMANDO SOBERANO (PROJEÇÃO)",
                 "ref-proj-desc": "Projeção otimizada com efeito de tração vertical e eixos de comando rejuvenescidos.",
                 "btn-back-term": "← Voltar ao Terminal",
                 "btn-adv-conf": "Avançar para Confronto & Governança ➔",
                 "btn-back-biogem": "← Voltar aos Biogêmeos Digitais",
                 "modal-pdf-title": "CENTRAL DE RELATÓRIOS PDF • TCC GLOBAL COMPLIANCE",
-                "modal-pdf-subtitle": "Canal de Destino para Envio Direto (E-mail Profissional):",
-                "lbl-pdf-lang": "IDIOMA DOS RELATÓRIOS PDF:"
+                "lbl-pdf-lang": "IDIOMA DOS RELATÓRIOS PDF:",
+                "modal-diag-title": "DIAGNÓSTICO BIOGÊNICO & PROSPECÇÃO MÉDICO-FINANCEIRA",
+                "lbl-recept-field": "ANÁLISE DE CAMPO RECEPTIVO",
+                "lbl-struct-diag": "🔍 DIAGNÓSTICO ESTRUTURAL & AVALIAÇÃO DA PELE",
+                "lbl-clin-cond": "🩺 CONDUTA CLÍNICA SUGERIDA & RECONSTRUÇÃO VETORIAL",
+                "lbl-bio-preserv": "PRESERVAÇÃO DO CAPITAL BIOLÓGICO:",
+                "btn-close-read": "✕ Fechar Leitura",
+                "btn-go-3d": "🔄 Ir para Confronto 3D Interativo ➔",
+                "apex-sub-ready": "CONTRATO SOBERANO PRONTO PARA ACEITE IMEDIATO",
+                "apex-agree-lbl": "Li e concordo com os Termos Soberanos de Licenciamento Global.",
+                "apex-btn-proceed": "Prosseguir para Credenciais Executivas ➔",
+                "voice-modal-title": "CZ COGNITIVE VOICE & SANDBOX • MODO EXECUTIVO",
+                "voice-modal-desc": "NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)",
+                "video-modal-title": "🎬 VÍDEO DE DEMONSTRAÇÃO (MAIN) • TCC GLOBAL",
+                "lbl-ring-title": "RING LIGHT",
+                "lbl-mode-title": "MODO",
+                "lbl-palette-title": "PALETA",
+                "ring-popup-hdr": "CONTROLE DE RING LIGHT",
+                "ring-toggle-btn": "LIGAR/DESLIGAR",
+                "ring-intensity-lbl": "Intensidade:",
+                "ring-temp-lbl": "Temperatura:",
+                "opt-gold": "Branco Quente (Gold)",
+                "opt-neutral": "Branco Neutro",
+                "opt-studio": "Estúdio Clínico",
+                "palette-popup-hdr": "PALETA DE CORES UHNW",
+                "palette-sub-lbl": "Selecione o padrão clínico internacional:",
+                "palette-custom-lbl": "Cor Customizada:"
             },
             EN: {
                 camBtn: "CAM: BLOCKED",
@@ -890,7 +1782,6 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 "lbl-posture": "Command Posture Metrics",
                 "metric-mandible": "Mandibular Retraction",
                 "metric-tonicity": "Average Tonicity",
-                "cat-creds": "High-Tier Credentials",
                 "tel-freq": "Vector Frequency",
                 "tel-oxi": "Tissue Oximetry",
                 "tel-gov": "Governance Level",
@@ -899,23 +1790,70 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 "btn-apex-protocol": "🛡️ APEX PROTOCOL [UHNW CONTEXT]",
                 "consent-text": "I accept the Compliance Terms and authorize biometric telemetry audit and scanning under Monaco Standards.",
                 "btn-exec-scan": "[+] Execute Real Scan & Capture",
+                "btn-voice-cmd": "🎙️ CLINICAL VOICE COMMAND",
+                "btn-demo-video": "🎬 DEMO VIDEO (MAIN)",
                 "btn-geo-filter": "[+] UHNW GEO FILTER",
                 "btn-admin-panel": "[⚙️] ADMIN PANEL",
-                "btn-stripe-lic": "Purchase Stripe License 💳 [WAITING]",
-                "btn-gen-pdf": "Generate PDF Reports & Panel 🖨️ [WAITING]",
+                "btn-stripe-lic": "Purchase Stripe License 💳",
+                "btn-gen-pdf": "Generate PDF Reports",
                 "cat-kernel-logs": "Kernel Logs",
                 "ref-base": "REFERENCE BASE (-10 YEARS NATURAL)",
-                "ref-base-desc": "Natural chronological projection under sovereign tracking.",
+                "ref-base-desc": "Natural chronological projection under sovereign tracking with light calibration.",
                 "ref-proj": "SOVEREIGN COMMAND LEADERSHIP PROFILE (PROJECTION)",
                 "ref-proj-desc": "Optimized projection with vertical traction effect and rejuvenated command axes.",
                 "btn-back-term": "← Back to Terminal",
                 "btn-adv-conf": "Advance to Confrontation & Governance ➔",
                 "btn-back-biogem": "← Back to Digital Biogems",
                 "modal-pdf-title": "PDF REPORT CENTRAL • TCC GLOBAL COMPLIANCE",
-                "modal-pdf-subtitle": "Destination Channel for Direct Dispatch (Professional Email):",
-                "lbl-pdf-lang": "PDF REPORT LANGUAGE:"
+                "lbl-pdf-lang": "PDF REPORT LANGUAGE:",
+                "modal-diag-title": "BIOGENIC DIAGNOSTIC & MEDICAL-FINANCIAL PROSPECT",
+                "lbl-recept-field": "RECEPTIVE FIELD ANALYSIS",
+                "lbl-struct-diag": "🔍 STRUCTURAL DIAGNOSIS & SKIN EVALUATION",
+                "lbl-clin-cond": "🩺 SUGGESTED CLINICAL CONDUCT & VECTOR RECONSTRUCTION",
+                "lbl-bio-preserv": "BIOLOGICAL CAPITAL PRESERVATION:",
+                "btn-close-read": "✕ Close Reading",
+                "btn-go-3d": "🔄 Go to Interactive 3D Confrontation ➔",
+                "apex-sub-ready": "SOVEREIGN CONTRACT READY FOR IMMEDIATE ACCEPTANCE",
+                "apex-agree-lbl": "I have read and agree to the Global Sovereign Licensing Terms.",
+                "apex-btn-proceed": "Proceed to Executive Credentials ➔",
+                "voice-modal-title": "CZ COGNITIVE VOICE & SANDBOX • EXECUTIVE MODE",
+                "voice-modal-desc": "CLINICAL NOTE / REAL-TIME CONDUCT (MEDICAL REVIEW)",
+                "video-modal-title": "🎬 DEMO VIDEO (MAIN) • TCC GLOBAL",
+                "lbl-ring-title": "RING LIGHT",
+                "lbl-mode-title": "MODE",
+                "lbl-palette-title": "PALETTE",
+                "ring-popup-hdr": "RING LIGHT CONTROL",
+                "ring-toggle-btn": "ON/OFF",
+                "ring-intensity-lbl": "Intensity:",
+                "ring-temp-lbl": "Temperature:",
+                "opt-gold": "Warm White (Gold)",
+                "opt-neutral": "Neutral White",
+                "opt-studio": "Clinical Studio",
+                "palette-popup-hdr": "UHNW COLOR PALETTE",
+                "palette-sub-lbl": "Select international clinical standard:",
+                "palette-custom-lbl": "Custom Color:"
             }
         };
+
+        function typeWriterLog(fullText, speed = 12) {
+            const term = document.getElementById('terminal-logs');
+            if(!term) return;
+            const timeStr = new Date().toLocaleTimeString();
+            const linePrefix = `<br>[${timeStr}] `;
+            term.innerHTML += linePrefix;
+            let i = 0;
+            function typeChar() {
+                if (i < fullText.length) {
+                    term.innerHTML += fullText.charAt(i);
+                    i++;
+                    term.scrollTop = term.scrollHeight;
+                    setTimeout(typeChar, speed);
+                }
+            }
+            typeChar();
+        }
+
+        function logKernelMessage(msg) { typeWriterLog(msg); }
 
         function salvarEstadoNoNavegador() {
             const checkboxes = document.querySelectorAll('#geo-countries-scroll-container input[type="checkbox"]');
@@ -944,16 +1882,10 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             } catch(e) { console.error(e); }
         }
 
-        window.addEventListener('DOMContentLoaded', () => { carregarEstadoDoNavegador(); });
-
-        function logKernelMessage(msg) {
-            const term = document.getElementById('terminal-logs');
-            if(term) {
-                const timeStr = new Date().toLocaleTimeString();
-                term.innerHTML += `<br>[${timeStr}] ${msg}`;
-                term.scrollTop = term.scrollHeight;
-            }
-        }
+        window.addEventListener('DOMContentLoaded', () => { 
+            carregarEstadoDoNavegador(); 
+            initInteractive3DConfrontationCards();
+        });
 
         function changeSystemLanguage(lang) {
             currentLang = lang;
@@ -965,6 +1897,11 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             });
             if (!consentimentoBiometricoAtivo) { document.getElementById('btn-toggle-camera').innerText = translations[lang].camBtn; }
             document.getElementById('txt-audit-link').innerText = translations[lang].auditLink;
+            
+            const modalEl = document.getElementById('biogen-detail-modal');
+            if (modalEl && modalEl.classList.contains('active-modal')) {
+                selectBiogenDirect(activeBiogenIndex);
+            }
             logKernelMessage(`[SYSTEM] Idioma alterado para: ${lang}`);
         }
 
@@ -972,34 +1909,134 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             pdfLang = lang;
             document.getElementById('btn-pdf-pt').classList.toggle('active-lang', lang === 'PT');
             document.getElementById('btn-pdf-en').classList.toggle('active-lang', lang === 'EN');
-            logKernelMessage(`[PDF] Idioma de compilação definido para: ${lang}`);
+            logKernelMessage(`[PDF] Idioma definido para: ${lang}`);
         }
 
-        function openApexProtocolModal() {
-            document.getElementById('apex-protocol-modal').classList.add('active-modal');
-            apexContratoLidoAteOFim = false;
-            const cb = document.getElementById('apex-contract-checkbox');
-            cb.checked = false; cb.disabled = true;
-            document.getElementById('btn-proceed-to-credentials').classList.add('locked-report');
+        function toggleRingLightPopup() {
+            const box = document.getElementById('ring-light-popup-box');
+            box.classList.toggle('active-popup');
+            document.getElementById('color-palette-popup-box').classList.remove('active-popup');
         }
+
+        function toggleColorPalettePopup() {
+            const box = document.getElementById('color-palette-popup-box');
+            box.classList.toggle('active-popup');
+            document.getElementById('ring-light-popup-box').classList.remove('active-popup');
+        }
+
+        function applyClinicalPalette(colorHex) {
+            document.documentElement.style.setProperty('--accent-clinical', colorHex);
+            logKernelMessage(`[PALETTE] Cor clínica aplicada: ${colorHex}`);
+        }
+
+        function openApexProtocolModal() { document.getElementById('apex-protocol-modal').classList.add('active-modal'); }
         function closeApexProtocolModal() { document.getElementById('apex-protocol-modal').classList.remove('active-modal'); }
         function openApexCredentialsModal() { document.getElementById('apex-credentials-modal').classList.add('active-modal'); }
         function closeApexCredentialsModal() { document.getElementById('apex-credentials-modal').classList.remove('active-modal'); }
 
-        function verificarFimLeituraApexContrato(element) {
-            if (apexContratoLidoAteOFim) return;
-            if (element.scrollTop + element.clientHeight >= element.scrollHeight - 5) {
-                apexContratoLidoAteOFim = true;
-                const cb = document.getElementById('apex-contract-checkbox');
-                cb.disabled = false; cb.checked = true;
-                const btnProc = document.getElementById('btn-proceed-to-credentials');
-                btnProc.classList.remove('locked-report');
-                btnProc.classList.add('unlocked-report');
+        function abrirComandoDeVozModal() { 
+            document.getElementById('voice-command-modal').classList.add('active-modal');
+            iniciarReconhecimentoVozReal();
+        }
+
+        function fecharComandoDeVozModal() { 
+            document.getElementById('voice-command-modal').classList.remove('active-modal');
+            if (recognitionObj) {
+                try { recognitionObj.stop(); } catch(e) {}
             }
         }
 
+        function iniciarReconhecimentoVozReal() {
+            const outputEl = document.getElementById('voice-transcription-output');
+            const statusEl = document.getElementById('voice-live-status');
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!SpeechRecognition) {
+                outputEl.innerHTML = "⚠️ Seu navegador não suporta reconhecimento de voz nativo. Use o botão de simulação abaixo.";
+                statusEl.innerText = "[MODO SIMULAÇÃO ATIVO]";
+                return;
+            }
+
+            try {
+                recognitionObj = new SpeechRecognition();
+                recognitionObj.lang = currentLang === 'PT' ? 'pt-BR' : 'en-US';
+                recognitionObj.continuous = true;
+                recognitionObj.interimResults = true;
+
+                recognitionObj.onstart = () => {
+                    statusEl.innerText = "[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]";
+                };
+
+                recognitionObj.onresult = (event) => {
+                    let interimTranscript = '';
+                    let finalTranscript = '';
+
+                    for (let i = event.resultIndex; i < event.results.length; ++i) {
+                        if (event.results[i].isFinal) {
+                            finalTranscript += event.results[i][0].transcript;
+                        } else {
+                            interimTranscript += event.results[i][0].transcript;
+                        }
+                    }
+
+                    if (finalTranscript) {
+                        const capitalizedText = finalTranscript.charAt(0).toUpperCase() + finalTranscript.slice(1);
+                        outputEl.innerHTML += `<br><b style="color:var(--accent-clinical);">[VOZ MÉDICA]:</b> ${capitalizedText}`;
+                        outputEl.scrollTop = outputEl.scrollHeight;
+                        logKernelMessage(`[VOICE RECOGNITION] "${capitalizedText}"`);
+                        
+                        const comando = finalTranscript.toLowerCase();
+                        if (comando.includes('varredura') || comando.includes('scan') || comando.includes('executar')) {
+                            fecharComandoDeVozModal();
+                            startCinematicScan();
+                        } else if (comando.includes('liderança') || comando.includes('leadership')) {
+                            selectArchetypeProfile('lideranca');
+                        } else if (comando.includes('relatório') || comando.includes('pdf')) {
+                            openPdfModal();
+                        }
+                    } else if (interimTranscript) {
+                        const baseText = outputEl.innerHTML.split('<span style="color:var(--text-secondary);">')[0];
+                        outputEl.innerHTML = baseText + `<span style="color:var(--text-secondary);">[Ouvindo: ${interimTranscript}]</span>`;
+                        outputEl.scrollTop = outputEl.scrollHeight;
+                    }
+                };
+
+                recognitionObj.onerror = (event) => {
+                    statusEl.innerText = "[ERRO NO MICROFONE / TENTE NOVAMENTE]";
+                };
+
+                recognitionObj.onend = () => {
+                    statusEl.innerText = "[ESCUTA PAUSADA / CLIQUE EM REINICIAR]";
+                };
+
+                recognitionObj.start();
+            } catch(e) {
+                console.error(e);
+            }
+        }
+
+        function reiniciarEscutaVoz() {
+            if (recognitionObj) {
+                try { recognitionObj.stop(); } catch(e) {}
+            }
+            document.getElementById('voice-transcription-output').innerHTML = "[VOZ SOBERANA]: Escuta reiniciada. Fale sua conduta clínica...";
+            iniciarReconhecimentoVozReal();
+        }
+
+        function simularDisparoVoz() {
+            fecharComandoDeVozModal();
+            logKernelMessage('[VOICE] Comando vocal clínico simulado executado.');
+            startCinematicScan();
+        }
+
+        function abrirVideoDemonstracaoModal() { document.getElementById('video-demo-modal').classList.add('active-modal'); }
+        function fecharVideoDemonstracaoModal() { 
+            document.getElementById('video-demo-modal').classList.remove('active-modal'); 
+            const iframe = document.getElementById('main-demo-iframe');
+            iframe.src = iframe.src;
+        }
+
         function avancarParaDadosApex() {
-            if (!apexContratoLidoAteOFim) { alert("⚠️ Role até o final do termo para prosseguir!"); return; }
             closeApexProtocolModal();
             openApexCredentialsModal();
         }
@@ -1046,27 +2083,27 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         function toggleThemeMode() {
             isDarkTheme = !isDarkTheme;
             document.body.classList.toggle('light-theme', !isDarkTheme);
-            document.getElementById('btn-toggle-theme').innerText = isDarkTheme ? "☀️/🌙 MODO" : "🌙 MODO ESCURO";
+            document.getElementById('theme-icon').innerText = isDarkTheme ? "🌙" : "☀️";
         }
 
         function toggleCameraPower() {
             if (!consentimentoBiometricoAtivo) return;
             cameraActive = !cameraActive;
             if (mediaStreamObj) { mediaStreamObj.getTracks().forEach(track => track.enabled = cameraActive); }
-            document.getElementById('btn-toggle-camera').innerText = cameraActive ? "CAM: LIGADA" : "CAM: DESLIGADA";
+            document.getElementById('txt-cam-state').innerText = cameraActive ? "CAM: LIGADA" : "CAM: DESLIGADA";
         }
 
         function toggleRingLight() {
             ringLightActive = !ringLightActive;
             const viewportMaster = document.getElementById('viewportCentralMasterBox');
             const btnRing = document.getElementById('btn-toggle-ring');
-            if (ringLightActive) { viewportMaster.classList.add('ring-light-active'); btnRing.innerText = "DESLIGAR"; }
-            else { viewportMaster.classList.remove('ring-light-active'); btnRing.innerText = "LIGAR"; }
+            if (ringLightActive) { viewportMaster.classList.add('ring-light-active'); btnRing.style.borderColor = "var(--green-secure)"; }
+            else { viewportMaster.classList.remove('ring-light-active'); btnRing.style.borderColor = "var(--border-sovereign)"; }
         }
 
         function updateRingIntensity(val) { document.documentElement.style.setProperty('--ring-intensity', val); }
         function updateRingColor(temp) {
-            let colorVal = "rgba(255, 245, 215, 0.85)";
+            let colorVal = "rgba(59, 94, 102, 0.5)";
             if(temp === 'neutral') colorVal = "rgba(255, 255, 255, 0.9)";
             if(temp === 'studio') colorVal = "rgba(210, 240, 255, 0.95)";
             document.documentElement.style.setProperty('--ring-color', colorVal);
@@ -1147,13 +2184,8 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             document.getElementById('pdf-fullscreen-frame').src = '';
         }
 
-        function baixarDocumentoAtualEmbutido() {
-            gerarEExibirRelatorioPDF(documentoAtualAtivo);
-        }
-
-        function enviarDocumentoPorEmail() {
-            enviarRelatorioPorCanal(documentoAtualAtivo, 'email');
-        }
+        function baixarDocumentoAtualEmbutido() { gerarEExibirRelatorioPDF(documentoAtualAtivo); }
+        function enviarDocumentoPorEmail() { enviarRelatorioPorCanal(documentoAtualAtivo, 'email'); }
 
         async function gerarEExibirRelatorioPDF(tipoRelatorio) {
             closePdfModal();
@@ -1207,20 +2239,84 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             }
         }
 
-        function selectBiogen(index, labelName) {
-            activeBiogenIndex = index - 1;
+        function renderAdvancedBiogenTelemetry(canvasElement, biogenIndex) {
+            const ctx = canvasElement.getContext('2d');
+            const w = canvasElement.width;
+            const h = canvasElement.height;
+            if (masterCapturedCanvases[biogenIndex]) {
+                ctx.drawImage(masterCapturedCanvases[biogenIndex], 0, 0, w, h);
+            }
+            ctx.save();
+            if (biogenIndex >= 3 && biogenIndex <= 5) {
+                ctx.fillStyle = 'rgba(239, 68, 68, 0.08)';
+                ctx.fillRect(0, 0, w, h);
+                ctx.strokeStyle = 'rgba(239, 68, 68, 0.5)';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(4, 4, w - 8, h - 8);
+            } else if (biogenIndex >= 6) {
+                ctx.fillStyle = 'rgba(5, 150, 105, 0.05)';
+                ctx.fillRect(0, 0, w, h);
+                ctx.strokeStyle = 'var(--accent-clinical)';
+                ctx.lineWidth = 1.2;
+                ctx.strokeRect(4, 4, w - 8, h - 8);
+            } else {
+                ctx.strokeStyle = 'var(--accent-clinical)';
+                ctx.lineWidth = 1;
+                ctx.strokeRect(4, 4, w - 8, h - 8);
+            }
+            ctx.restore();
+        }
+
+        function openBiogenFocusModal(biogenId, titleText) {
+            activeBiogenIndex = biogenId - 1;
             document.querySelectorAll('.biogen-cell').forEach(c => c.classList.remove('active-biogen'));
-            if(event && event.currentTarget) event.currentTarget.classList.add('active-biogen');
+            const targetCell = event && event.currentTarget ? event.currentTarget : document.querySelectorAll('.biogen-cell')[activeBiogenIndex];
+            if(targetCell) targetCell.classList.add('active-biogen');
+
+            selectBiogenDirect(activeBiogenIndex);
+            document.getElementById('biogen-detail-modal').classList.add('active-modal');
+            logKernelMessage(`[BIOGEN VIP] Leitura expandida para o biogêmeo #${biogenId} (${titleText}).`);
             renderSelectedConfrontation(activeBiogenIndex);
         }
 
+        function selectBiogenDirect(idx) {
+            activeBiogenIndex = idx;
+            const langDict = biogenDescriptions[currentLang] || biogenDescriptions.PT;
+            const info = langDict[activeBiogenIndex] || langDict[0];
+            
+            document.getElementById('biogen-modal-title').innerText = `${info.name.toUpperCase()}`;
+            document.getElementById('biogen-modal-tag').innerText = `${info.status}`;
+            document.getElementById('biogen-modal-description').innerHTML = info.desc;
+            document.getElementById('biogen-modal-prospect').innerHTML = info.prospect;
+            document.getElementById('biogen-modal-roi').innerText = info.roi;
+            
+            const mCanvas = document.getElementById('biogen-modal-canvas');
+            if (mCanvas && masterCapturedCanvases[activeBiogenIndex]) {
+                mCanvas.width = masterCapturedCanvases[activeBiogenIndex].width;
+                mCanvas.height = masterCapturedCanvases[activeBiogenIndex].height;
+                const ctx = mCanvas.getContext('2d');
+                ctx.drawImage(masterCapturedCanvases[activeBiogenIndex], 0, 0);
+            }
+        }
+
+        function closeBiogenDetailModal() { document.getElementById('biogen-detail-modal').classList.remove('active-modal'); }
+
         function renderSelectedConfrontation(idx) {
             const targetCanvas = document.getElementById('selected-confrontation-canvas');
-            const sourceRef = masterCapturedCanvases[4] || masterCapturedCanvases[0];
-            if(sourceRef) { targetCanvas.width = sourceRef.width; targetCanvas.height = sourceRef.height; targetCanvas.getContext('2d').drawImage(sourceRef, 0, 0); }
+            const sourceRef = masterCapturedCanvases[0] || masterCapturedCanvases[4];
+            if(sourceRef) { 
+                targetCanvas.width = sourceRef.width; 
+                targetCanvas.height = sourceRef.height; 
+                targetCanvas.getContext('2d').drawImage(sourceRef, 0, 0); 
+            }
+
             const compCanvas = document.getElementById('comparison-confrontation-canvas');
             const sourceComp = masterCapturedCanvases[idx] || masterCapturedCanvases[6];
-            if(sourceComp) { compCanvas.width = sourceComp.width; compCanvas.height = sourceComp.height; compCanvas.getContext('2d').drawImage(sourceComp, 0, 0); }
+            if(sourceComp) { 
+                compCanvas.width = sourceComp.width; 
+                compCanvas.height = sourceComp.height; 
+                compCanvas.getContext('2d').drawImage(sourceComp, 0, 0); 
+            }
         }
 
         function selectArchetypeProfile(profile) {
@@ -1233,21 +2329,91 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         const video = document.getElementById('webcam-feed-main');
         const overlayCanvas = document.getElementById('overlay-canvas-3d');
         const overlayCtx = overlayCanvas.getContext('2d');
+        let beamY = 0;
+        let beamDirection = 3;
 
         function renderMeshOverlay() {
             if (video.readyState === video.HAVE_ENOUGH_DATA) {
-                overlayCanvas.width = video.videoWidth || 640; overlayCanvas.height = video.videoHeight || 480;
+                overlayCanvas.width = video.videoWidth || 640; 
+                overlayCanvas.height = video.videoHeight || 480;
                 overlayCtx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
-                if (scanCompletedFlag) {
-                    overlayCtx.strokeStyle = 'rgba(212, 175, 55, 0.7)';
-                    overlayCtx.lineWidth = 1.8;
-                    overlayCtx.beginPath();
-                    let cx = overlayCanvas.width / 2; let cy = overlayCanvas.height / 2;
-                    overlayCtx.arc(cx, cy - 20, 120, 0, Math.PI * 2);
-                    overlayCtx.stroke();
+                
+                if (cameraActive) {
+                    beamY += beamDirection;
+                    if (beamY > overlayCanvas.height || beamY < 0) beamDirection *= -1;
+                    overlayCtx.save();
+                    let grad = overlayCtx.createLinearGradient(0, beamY - 30, 0, beamY + 30);
+                    grad.addColorStop(0, 'rgba(59, 94, 102, 0)');
+                    grad.addColorStop(0.5, 'rgba(255, 255, 255, 0.28)');
+                    grad.addColorStop(1, 'rgba(59, 94, 102, 0)');
+                    overlayCtx.fillStyle = grad;
+                    overlayCtx.fillRect(0, beamY - 30, overlayCanvas.width, 60);
+                    overlayCtx.restore();
                 }
             }
             requestAnimationFrame(renderMeshOverlay);
+        }
+
+        const estadoGiroCanvas = {
+            'selected-confrontation-canvas': { rodando: false, rotY: 0, rotX: 0, scale: 1.0, velocidade: 0.8, animId: null },
+            'comparison-confrontation-canvas': { rodando: false, rotY: 0, rotX: 0, scale: 1.0, velocidade: 0.8, animId: null }
+        };
+
+        function toggleGiroCanvas(canvasId) {
+            const estado = estadoGiroCanvas[canvasId];
+            const canvas = document.getElementById(canvasId);
+            if (!estado || !canvas) return;
+            estado.rodando = !estado.rodando;
+            if (estado.rodando) {
+                function animarGiro() {
+                    if (!estado.rodando) return;
+                    estado.rotY += estado.velocidade;
+                    canvas.style.transform = `perspective(800px) rotateY(${estado.rotY}deg) rotateX(${estado.rotX}deg) scale(${estado.scale})`;
+                    canvas.style.transition = 'none';
+                    estado.animId = requestAnimationFrame(animarGiro);
+                }
+                animarGiro();
+            } else {
+                cancelAnimationFrame(estado.animId);
+            }
+        }
+
+        function alterarVelocidadeGiro(canvasId, delta) {
+            const estado = estadoGiroCanvas[canvasId];
+            if (!estado) return;
+            estado.velocidade = Math.max(0.2, Math.min(4.0, estado.velocidade + delta));
+        }
+
+        function initInteractive3DConfrontationCards() {
+            const canv1 = document.getElementById('selected-confrontation-canvas');
+            const canv2 = document.getElementById('comparison-confrontation-canvas');
+            [canv1, canv2].forEach(canvas => {
+                if (!canvas) return;
+                let rotX = 0, rotY = 0, scaleVal = 1.0, isDragging = false, startX = 0, startY = 0;
+                canvas.style.cursor = 'grab';
+                canvas.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    scaleVal = e.deltaY < 0 ? Math.min(scaleVal + 0.1, 2.0) : Math.max(scaleVal - 0.1, 0.8);
+                    estadoGiroCanvas[canvas.id].scale = scaleVal;
+                    atualizarTransformacao(canvas, rotX, rotY, scaleVal);
+                }, { passive: false });
+                canvas.addEventListener('mousedown', (e) => { isDragging = true; startX = e.clientX; startY = e.clientY; canvas.style.cursor = 'grabbing'; });
+                window.addEventListener('mouseup', () => { isDragging = false; canvas.style.cursor = 'grab'; });
+                window.addEventListener('mousemove', (e) => {
+                    if (!isDragging) return;
+                    rotY += (e.clientX - startX) * 0.6;
+                    rotX = Math.max(-50, Math.min(50, rotX - (e.clientY - startY) * 0.4));
+                    const estado = estadoGiroCanvas[canvas.id];
+                    estado.rotY = rotY; estado.rotX = rotX;
+                    atualizarTransformacao(canvas, rotX, rotY, estado.scale);
+                    startX = e.clientX; startY = e.clientY;
+                });
+            });
+        }
+
+        function atualizarTransformacao(targetCanvas, rx, ry, s) {
+            targetCanvas.style.transform = `perspective(800px) rotateY(${ry}deg) rotateX(${rx}deg) scale(${s})`;
+            targetCanvas.style.transition = 'none';
         }
 
         function captureBiogensFromWebcam() {
@@ -1298,9 +2464,9 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
 
                 for(let i=1; i<=10; i++) {
                     const gridCanvas = document.getElementById(`biogen-cv-${i}`);
-                    if(gridCanvas && masterCapturedCanvases[i-1]) {
+                    if(gridCanvas) {
                         gridCanvas.width = 210; gridCanvas.height = 140;
-                        gridCanvas.getContext('2d').drawImage(masterCapturedCanvases[i-1], 0, 0);
+                        renderAdvancedBiogenTelemetry(gridCanvas, i - 1);
                     }
                 }
 
@@ -1313,9 +2479,9 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 const stripeBtn = document.getElementById('btn-open-stripe-modal');
                 const reportBtn = document.getElementById('btn-open-pdf-modal');
                 stripeBtn.classList.remove('locked-report'); stripeBtn.classList.add('unlocked-report');
-                stripeBtn.innerText = "Comprar Licença Stripe 💳 [LIBERADO]";
+                stripeBtn.innerText = "Comprar Licença Stripe 💳";
                 reportBtn.classList.remove('locked-report'); reportBtn.classList.add('unlocked-report');
-                reportBtn.innerText = "Gerar Relatórios PDF & Painel 🖨️ [LIBERADO]";
+                reportBtn.innerText = "Gerar Relatórios PDF";
 
                 switchStage(2);
             }, 7000);

@@ -1,0 +1,15 @@
+{
+    "status": "CONCLUIDO",
+    "timestamp": "2026-10-24",
+    "payload_injetado": {
+        "BIOMETRIA": {
+            "CLIENTE": "Thierry",
+            "SCANNER_OSTEOMETRIA": "0",
+            "STATUS_SISTEMA": "Estado Neutro - Monitorando..."
+        },
+        "ambiente": null,
+        "consciencia": null,
+        "eminencia": null,
+        "fase_protocolo": "Estado Neutro - Monitorando..."
+    }
+}

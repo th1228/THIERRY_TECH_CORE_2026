@@ -1,0 +1,38 @@
+/* ============================================================================== */
+/* THIERRY TECHNOLOGY CONCEPT GLOBAL - SOVEREIGN ELITE STYLESHEET (v5.3)          */
+/* Padrão de Interface UHNW / Estética de Elite do Vale do Silício                */
+/* ============================================================================== */
+
+:root {
+    --bg-carbon: #07090E;
+    --panel-yacht-dark: #0e131f;
+    --accent-clinical: #3B5E66;
+    --border-sovereign: #1e293b;
+    --cyan-tech-glow: #00f3ff;
+    --green-secure: #059669;
+    --purple-orbit: #6b21a8;
+    --red-alert: #ef4444;
+    --text-primary: #ffffff;
+    --text-secondary: #94a3b8;
+    --backlit-clinical-glow: 0 0 25px rgba(0, 243, 255, 0.08), inset 0 0 15px rgba(0, 243, 255, 0.03);
+    --backlit-hover-glow: 0 0 35px rgba(0, 243, 255, 0.2), inset 0 0 20px rgba(0, 243, 255, 0.08);
+    --btn-glass-bg: rgba(15, 23, 42, 0.9);
+}
+
+/* Efeito de Glassmorphism Avançado para Painéis e Cartões */
+.luxury-sidebar, .ring-light-popup, .color-palette-popup {
+    background: rgba(14, 19, 31, 0.85) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border: 1px solid rgba(59, 94, 102, 0.3) !important;
+}
+
+/* Micro-transições e polimento de botões de elite */
+button, .lang-btn, .elite-menu-btn {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+button:hover, .lang-btn:hover, .elite-menu-btn:hover {
+    border-color: var(--cyan-tech-glow) !important;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.25) !important;
+}

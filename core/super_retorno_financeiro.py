@@ -1,5 +1,18 @@
 # -*- coding: utf-8 -*-
 """
+===========================================================================
+THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
+MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - PROPRIETARY TECH DIRECTIVE
+===========================================================================
+NOTICE: This software source code and its mathematical algorithms are the 
+intellectual property of Thierry Technology Concept Global. Unauthorized 
+distribution, reverse engineering, or usage without a signed NDA/License 
+agreement is strictly prohibited under international copyright frameworks.
+===========================================================================
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Módulo: super_retorno_financeiro.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
 Versão: 5.8.2 - MONACO EXECUTIVE PLATINUM EDITION (Bilingual PT/EN & Dynamic Client Name)

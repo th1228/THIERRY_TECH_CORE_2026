@@ -1,5 +1,18 @@
 # -*- coding: utf-8 -*-
 """
+===========================================================================
+THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
+MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - PROPRIETARY TECH DIRECTIVE
+===========================================================================
+NOTICE: This software source code and its mathematical algorithms are the 
+intellectual property of Thierry Technology Concept Global. Unauthorized 
+distribution, reverse engineering, or usage without a signed NDA/License 
+agreement is strictly prohibited under international copyright frameworks.
+===========================================================================
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Módulo Mestre: gerador_dossies_master.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
 Descrição: Orquestrador Mestre dinâmico ajustado para aceitar 
@@ -111,7 +124,7 @@ def compilar_dossies_master(
     session_data = telemetria_dinamica or {}
     
     # RESOLUÇÃO DINÂMICA DE NOME: Painel -> Telemetria -> Fallback seguro
-    nome_titular_efetivo = ceo_name or session_data.get('nome_cliente') or session_data.get('nome') or "Cliente UHNW"
+    nome_titular_efetivo = ceo_name or session_data.get('nome_cliente') or session_data.get('nome') or "Genilson Rodrigues"
 
     idioma_limpo = str(lang).upper() if lang and isinstance(lang, str) else "PT"
     timestamp_autentico = datetime.datetime.now().strftime("%d/%m/%Y às %H:%M:%S")
@@ -383,4 +396,5 @@ def compilar_dossies_master(
 
 
 if __name__ == "__main__":
-    compilar_dossies_master(ceo_name="José", lang="PT")
+    # Teste de execução direta utilizando o nome padrão correto
+    compilar_dossies_master(ceo_name="Genilson Rodrigues", lang="PT")

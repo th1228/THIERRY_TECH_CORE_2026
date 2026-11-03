@@ -97,5 +97,21 @@
         },
         "hash_security": "b6658c0be39156252e222b94f563624c23b31b577df1a8440473b300488561b6",
         "timestamp": 1791758442.9883783
+    },
+    "BIOMETRIA": {
+        "CLIENTE": "Thierry",
+        "SCANNER_OSTEOMETRIA": "0",
+        "STATUS_SISTEMA": "Estado Neutro - Monitorando..."
+    },
+    "integrador": {
+        "BIOMETRIA": {
+            "CLIENTE": "Thierry",
+            "SCANNER_OSTEOMETRIA": "0",
+            "STATUS_SISTEMA": "Estado Neutro - Monitorando..."
+        },
+        "ambiente": null,
+        "consciencia": null,
+        "eminencia": null,
+        "fase_protocolo": "Estado Neutro - Monitorando..."
     }
 }

@@ -1,5 +1,18 @@
 # -*- coding: utf-8 -*-
 """
+===========================================================================
+THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
+MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - PROPRIETARY TECH DIRECTIVE
+===========================================================================
+NOTICE: This software source code and its mathematical algorithms are the 
+intellectual property of Thierry Technology Concept Global. Unauthorized 
+distribution, reverse engineering, or usage without a signed NDA/License 
+agreement is strictly prohibited under international copyright frameworks.
+===========================================================================
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Módulo: motor_prognostico.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
 Versão: 1.1.0 - Matriz Preditiva Multidisciplinar de 16 Dias com Linhas Internacionais Asian-Luxury (Tier-1)

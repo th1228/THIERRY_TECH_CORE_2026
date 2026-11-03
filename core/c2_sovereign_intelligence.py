@@ -2,7 +2,7 @@
 """
 Módulo: c2_sovereign_intelligence.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine & Predictive Engine
-Versão: 16.0.0 - Monaco Quantum Platinum & Supreme Ultra-Tricologia Edition (Fundo 100% Branco / Clean)
+Versão: 16.2.1 - Monaco Quantum Platinum & Autonomous Cadence Ledger Edition (Dinâmico)
 """
 
 import os
@@ -41,8 +41,8 @@ except ImportError:
 class C2SovereignIntelligenceEngine:
     def __init__(
         self, 
-        ceo_name: str = "GENILSON RODRIGUES", 
-        company_name: str = "Thierry Technology Concept Global", 
+        ceo_name: Optional[str] = None, 
+        company_name: Optional[str] = None, 
         market_segment: str = "Tecnologia, Inovação e Longevidade Global", 
         horizon_years: int = 15, 
         aum_bilhoes_eur: float = 25.0, 
@@ -50,8 +50,17 @@ class C2SovereignIntelligenceEngine:
         telemetria: Optional[Dict[str, Any]] = None, 
         lang: str = "PT"
     ):
-        self.lider = ceo_name if ceo_name and ceo_name.strip() else "GENILSON RODRIGUES"
-        self.entidade = company_name
+        # CORREÇÃO CRÍTICA: Captura dinâmica estrita, eliminando qualquer amarra hardcoded anterior
+        nome_informado = (ceo_name or "").strip()
+        if not nome_informado or nome_informado.lower() in ["undefined", "null", ""]:
+            nome_informado = "Titular Soberano UHNW"
+        self.lider = nome_informado
+
+        entidade_informada = (company_name or "").strip()
+        if not entidade_informada or entidade_informada.lower() in ["undefined", "null", ""]:
+            entidade_informada = "Thierry Technology Concept Global"
+        self.entidade = entidade_informada
+
         self.segment = market_segment if market_segment and market_segment.strip() else "Tecnologia, Inovação e Longevidade Global"
         self.horizon = int(horizon_years)
         self.aum = aum_bilhoes_eur * 1000.0  
@@ -60,7 +69,7 @@ class C2SovereignIntelligenceEngine:
         self.telemetria_externa = telemetria or {}
         self.lang = lang.upper() if lang else "PT"
         
-        # --- CARREGAMENTO E SINCRO DO HISTÓRICO CLINICO-ESTÉTICO ---
+        # --- CARREGAMENTO E SINCRO AUTÓNOMA DO HISTÓRICO CLINICO-ESTÉTICO ---
         self.dados_preditivos_cliente = self._carregar_historico_json_cliente()
         self._extrair_fatores_biometricos()
 
@@ -78,7 +87,7 @@ class C2SovereignIntelligenceEngine:
         self.timestamp_exec = datetime.datetime.utcnow().strftime("%d/%m/%Y às %H:%M:%S UTC")
 
     def _carregar_historico_json_cliente(self) -> dict:
-        """Lê o banco de dados unificado na raiz e busca o perfil clínico e IEP do cliente."""
+        """Lê o banco de dados unificado e busca o perfil clínico do cliente de forma totalmente dinâmica."""
         caminho_bd = BASE_DIR / "historico_clientes.json"
         if not caminho_bd.exists():
             caminho_bd = Path("historico_clientes.json")
@@ -87,45 +96,96 @@ class C2SovereignIntelligenceEngine:
             try:
                 with open(caminho_bd, "r", encoding="utf-8") as f:
                     banco = json.load(f)
-                    ficha = banco.get(self.lider) or banco.get(self.lider.title()) or banco.get("Genilson Rodrigues")
-                    if ficha:
-                        return ficha
+                    # Busca insensível a maiúsculas/minúsculas para o nome do cliente atual
+                    for chave_banco in banco.keys():
+                        if chave_banco.strip().lower() == self.lider.strip().lower():
+                            return banco[chave_banco]
             except Exception as e:
                 print(f"[AVISO C2 JSON] Erro ao carregar historico_clientes.json: {e}")
                 
+        # Retorna um perfil padrão limpo e isolado se o cliente for novo
         return {
-            "dados_pessoais": {
+            "perfil_soberano": {
                 "perfil_neurologico": {
-                    "sistema_limbico": "Dominância Parassimpática / Regulação Ativa"
+                    "status_dominante": "Dominância Parassimpática / Regulação Ativa"
                 }
             },
-            "atendimentos": [{
-                "id_atendimento": "ATD-20261014-01",
-                "procedimento": "Avaliação Biométrica Inicial e Protocolo Global",
-                "data": "14/10/2026",
-                "metricas_de_entrada": {
-                    "nivel_inflamacao_inicial": "Moderado / Hipertonia Muscular Leve",
-                    "oximetria_tecidual": "98.5%",
-                    "frequencia_vetorial": "1.618 Hz"
-                },
-                "modulo_preditivo_autonomo": {
-                    "indice_eficiencia_preditiva_iep": 92,
-                    "durabilidade_prevista_meses": 6.0
-                }
-            }]
+            "atendimentos": []
         }
 
+    def salvar_atendimento_atual_no_json(self, dados_novos_atendimento: Optional[dict] = None):
+        """Grava e atualiza autonomamente o atendimento atual no cofre JSON do cliente."""
+        caminho_bd = BASE_DIR / "historico_clientes.json"
+        if not caminho_bd.exists():
+            caminho_bd = Path("historico_clientes.json")
+            
+        banco = {}
+        if caminho_bd.exists():
+            try:
+                with open(caminho_bd, "r", encoding="utf-8") as f:
+                    banco = json.load(f)
+            except Exception:
+                banco = {}
+
+        cliente_chave = self.lider
+        # Verifica se já existe uma chave equivalente no banco
+        for chave_banco in banco.keys():
+            if chave_banco.strip().lower() == self.lider.strip().lower():
+                cliente_chave = chave_banco
+                break
+
+        if cliente_chave not in banco:
+            banco[cliente_chave] = {
+                "perfil_soberano": {
+                    "data_nascimento": "N/D",
+                    "perfil_neurologico": {
+                        "status_dominante": "Dominância Parassimpática / Regulação Ativa"
+                    }
+                },
+                "atendimentos": []
+            }
+
+        data_hoje = datetime.datetime.now().strftime("%d/%m/%Y")
+        atendimento_atual = dados_novos_atendimento or {
+            "id_atendimento": f"ATD-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}",
+            "data": data_hoje,
+            "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+            "metricas_de_entrada": {
+                "oximetria_tecidual": f"{self.oximetria}%",
+                "nivel_inflamacao_inicial": self.nivel_inflamacao
+            },
+            "modulo_preditivo_autonomo": {
+                "indice_eficiencia_preditiva_iep": self.iep,
+                "durabilidade_prevista_meses": 6.0
+            }
+        }
+
+        atendimentos_existentes = banco[cliente_chave].get("atendimentos", [])
+        ids_existentes = [a.get("id_atendimento") for a in atendimentos_existentes]
+        
+        if atendimento_atual.get("id_atendimento") not in ids_existentes:
+            atendimentos_existentes.append(atendimento_atual)
+            banco[cliente_chave]["atendimentos"] = atendimentos_existentes
+
+            try:
+                with open(caminho_bd, "w", encoding="utf-8") as f:
+                    json.dump(banco, f, ensure_ascii=False, indent=2)
+                print(f"[C2 LEDGER AUTÓNOMO] Atendimento de {cliente_chave} gravado com sucesso.")
+            except Exception as e:
+                print(f"[ERRO C2 LEDGER] Falha ao atualizar histórico: {e}")
+                
+        self.dados_preditivos_cliente = banco[cliente_chave]
+
     def _extrair_fatores_biometricos(self):
-        """Traduz as métricas do JSON clínico em fatores matemáticos de mitigação do risco C2."""
         try:
-            atendimentos = self.dados_preditivos_cliente.get("atendimentos", [{}])
+            atendimentos = self.dados_preditivos_cliente.get("atendimentos", [])
             atendimento = atendimentos[-1] if atendimentos else {}
             preditivo = atendimento.get("modulo_preditivo_autonomo", {})
             metricas = atendimento.get("metricas_de_entrada", {})
             
             self.iep = float(preditivo.get("indice_eficiencia_preditiva_iep", 75))
             oximetria_raw = metricas.get("oximetria_tecidual", "95.0%")
-            self.oximetria = float(oximetria_raw.replace("%", "").strip())
+            self.oximetria = float(str(oximetria_raw).replace("%", "").strip())
             self.nivel_inflamacao = str(metricas.get("nivel_inflamacao_inicial", "Moderado"))
             
         except Exception:
@@ -134,7 +194,6 @@ class C2SovereignIntelligenceEngine:
             self.nivel_inflamacao = "Moderado"
 
     def _avaliar_aptidao_tratamento_invasivo(self, procedimento_desejado: str = "Bioestimulador de Colágeno / Cirurgia") -> str:
-        """Motor inteligente que avalia inflamação e define o dia ideal ou alerta de restrição/dieta."""
         inflamacao_lower = self.nivel_inflamacao.lower()
         if "moderado" in inflamacao_lower or "alto" in inflamacao_lower or "hipertonia" in inflamacao_lower:
             return (
@@ -152,7 +211,6 @@ class C2SovereignIntelligenceEngine:
             )
 
     def _gerar_parametro_neuro_clinico(self) -> str:
-        """Parâmetro tático sutil para o médico baseado no sistema parassimpático e circadiano."""
         return (
             "<b>Parâmetro Neuro-Circadiano de Atendimento:</b> "
             "Posicionamento Lateral: <b>Direita</b> (Campo visual de conforto) | "
@@ -161,7 +219,6 @@ class C2SovereignIntelligenceEngine:
         )
 
     def _gerar_diagnostico_tricologia_suprema(self) -> str:
-        """Sintetiza o laudo de tricologia clínica e visagismo estrutural de nível supremo."""
         return (
             "<b>01 // Hemodinâmica Escalpada & Hemoperfusão Bulbar:</b><br/>"
             "• Fluxo Sanguíneo Capilar (Q): <b>10.22 RPM</b> (Aporte real de oxigênio dérmico ótimo).<br/>"
@@ -176,16 +233,12 @@ class C2SovereignIntelligenceEngine:
         fator_nao_linear = 1.0 + (0.02 * anos)
         integridade_biologica = max(100.0 - (1.15 * anos * (1.0 + self.ameaca) * fator_nao_linear), 25.0)
         deslocamento_vetorial = 0.16 * anos * (1.0 + self.ameaca) * fator_nao_linear
-        
         ive = min(max((deslocamento_vetorial * 17.5) + ((100.0 - integridade_biologica) * 0.45), 4.0), 99.9)
-        
         wacc_base = 8.5  
         premio_risco_lideranca = (ive / 100.0) * 8.0  
         wacc_degradado = wacc_base + premio_risco_lideranca
-        
         valuation_degradado = self.aum / ((1.0 + (wacc_degradado / 100.0)) ** anos)
         valuation_protegido = self.aum / ((1.0 + (wacc_base / 100.0)) ** anos)
-        
         custo_atrito_mercado = max(valuation_protegido - valuation_degradado, 0.0)
         roi = max(120.0 - (2.8 * anos), 15.0)
 
@@ -203,17 +256,13 @@ class C2SovereignIntelligenceEngine:
         fator_atenuacao_biologica = min(1.0, max(0.3, (100.0 - self.iep) / 50.0))
         bonus_oxigenio = (self.oximetria - 95.0) * 0.2 if self.oximetria > 95.0 else 0.0
         integridade_tratada = min(99.8, 92.0 + (anos * 0.5) + bonus_oxigenio)
-        
         ive_tratado = max(3.5, (15.0 - (anos * 0.6)) * fator_atenuacao_biologica)
         wacc_base = 8.5
         wacc_otimizado = wacc_base + ((ive_tratado / 100.0) * 1.5)
-        
         valuation_protegido = self.aum / ((1.0 + (wacc_base / 100.0)) ** anos)
         valuation_otimizado = self.aum / ((1.0 + (wacc_otimizado / 100.0)) ** anos)
-        
         cenario_ruim = self._calcular_matriz_vulnerabilidade_estado(anos)
         ganho_patrimonial_net = max(0.0, valuation_otimizado - cenario_ruim["valuation_degradado"])
-        
         fator_performance_tratamento = f"+{((valuation_otimizado / cenario_ruim['valuation_degradado'] - 1) * 100):.1f}%"
 
         return {
@@ -288,6 +337,34 @@ class C2SovereignIntelligenceEngine:
         return f"""
         <b>Síntese de Impacto Financeiro e Celular ({self.entidade} | {self.lider}):</b> O Índice de Eficiência Preditiva (IEP {self.iep}) atesta a alta performance biológica, reduzindo o prêmio de risco corporativo e preservando o valuation multibilionário.
         """
+
+    def _gerar_folha_historico_anual(self) -> list:
+        """Gera a folha dedicada no final do PDF listando de forma limpa todos os atendimentos anteriores gravados."""
+        elementos_historico = []
+        atendimentos = self.dados_preditivos_cliente.get("atendimentos", [])
+        
+        estilo_titulo = ParagraphStyle('HistTtl', fontSize=10, leading=13, textColor=colors.HexColor('#0A1128'), fontName="Helvetica-Bold", spaceAfter=6)
+        estilo_texto = ParagraphStyle('HistTxt', fontSize=7.5, leading=11, textColor=colors.HexColor('#1E293B'), fontName="Helvetica", spaceAfter=4)
+        
+        elementos_historico.append(PageBreak())
+        elementos_historico.append(Paragraph("[ ANEXO: EVOLUÇÃO LONGITUDINAL & HISTÓRICO DE CICLOS ANTERIORES ]", estilo_titulo))
+        elementos_historico.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Consolidado Plurianual</b>", estilo_texto))
+        elementos_historico.append(Spacer(1, 6))
+        
+        if len(atendimentos) > 1:
+            elementos_historico.append(Paragraph("<b>Marcos Evolutivos e Comportamento Biométrico Registado:</b>", estilo_texto))
+            for idx, atd in enumerate(atendimentos[:-1], 1):
+                data = atd.get("data", "Sessão Anterior")
+                proc = atd.get("procedimento") or atd.get("procedimento_base", "Avaliação Estética e Sistêmica")
+                ox = atd.get("metricas_de_entrada", {}).get("oximetria_tecidual", "N/D")
+                iep_ant = atd.get("modulo_preditivo_autonomo", {}).get("indice_eficiencia_preditiva_iep", "N/D")
+                
+                texto_atd = f"• <b>[{data}]</b> {proc} | IEP: {iep_ant} | Oximetria: {ox} — <i>Comportamento tecidual estável com resposta positiva ao protocolo global estabelecido.</i>"
+                elementos_historico.append(Paragraph(texto_atd, estilo_texto))
+        else:
+            elementos_historico.append(Paragraph("<b>Registo Histórico Plurianual:</b> O titular possui histórico estruturado em consolidação contínua. Este ciclo estabelece a baseline definitiva para o acompanhamento plurianual do ecossistema.", estilo_texto))
+            
+        return elementos_historico
 
     def processar_dossie_defensivo(self) -> dict:
         horizontes = [5, 10, 15]
@@ -530,10 +607,10 @@ class C2SovereignIntelligenceEngine:
         linhas_historico_tratamentos = []
         if atendimentos_json:
             for idx, atd in enumerate(atendimentos_json, 1):
-                procedimento = atd.get("procedimento") or atd.get("tratamento") or atd.get("id_atendimento", f"Atendimento #{idx}")
-                data_atd = atd.get("data") or atd.get("data_atendimento", "14/10/2026")
+                procedimento = atd.get("procedimento") or atd.get("procedimento_base") or atd.get("id_atendimento", f"Atendimento #{idx}")
+                data_atd = atd.get("data") or atd.get("data_execucao", "14/10/2026")
                 durabilidade = atd.get("durabilidade_prevista_meses") or atd.get("modulo_preditivo_autonomo", {}).get("durabilidade_prevista_meses", "6.0")
-                detalhes = atd.get("metricas_de_entrada", {}).get("nivel_inflamacao_inicial") or atd.get("observacoes", "Moderado / Hipertonia Muscular Leve")
+                detalhes = atd.get("metricas_de_entrada", {}).get("nivel_inflamacao_inicial") or atd.get("metricas_biometricas_entrada", {}).get("nivel_inflamacao_inicial", "Moderado")
                 
                 linhas_historico_tratamentos.append(
                     f"• [{data_atd}] {procedimento} | Durabilidade: {durabilidade} Meses | Nota: {detalhes}"
@@ -542,7 +619,7 @@ class C2SovereignIntelligenceEngine:
         else:
             texto_tratamentos_formatado = "Avaliação Biométrica Inicial e Protocolo Global"
 
-        perfil_neuro = self.dados_preditivos_cliente.get('dados_pessoais', {}).get('perfil_neurologico', {}).get('sistema_limbico', 'Dominância Parassimpática / Regulação Ativa')
+        perfil_neuro = self.dados_preditivos_cliente.get('dados_pessoais', {}).get('perfil_neurologico', {}).get('status_dominante', 'Dominância Parassimpática / Regulação Ativa')
 
         # --- BLOCO I: HISTÓRICO CLÍNICO DETALHADO & PARECER CLÍNICO/PACIENTE ---
         tabela_bloco_i = Table([
@@ -570,7 +647,7 @@ class C2SovereignIntelligenceEngine:
         story.append(tabela_bloco_i)
         story.append(PageBreak())
 
-        # ==================== PÁGINA 4: BLOCOS II, III E IV (ANEXO TÉCNICO AVANÇADO - FUNDO 100% BRANCO) ====================
+        # ==================== PÁGINA 4: BLOCOS II, III E IV ====================
         story.append(Paragraph("[ ANEXO TÉCNICO: TELEMETRIA, DIAGNÓSTICO & PLANOS DE AÇÃO ]", styles['SecSovereign']))
         story.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Auditoria UHNW Mônaco</b>", styles['Normal']))
         story.append(Spacer(1, 4))
@@ -641,6 +718,9 @@ class C2SovereignIntelligenceEngine:
         story.append(Paragraph(f"<b>Checksum de Integridade C2 Quantum:</b> {hashlib.sha256(str(self.pontos_base).encode()).hexdigest()[:32].upper()}", styles['Normal']))
         story.append(Paragraph(f"<b>Timestamp de Autenticação Mônaco:</b> {self.timestamp_exec}", styles['Normal']))
 
+        # --- ADIÇÃO DA FOLHA DEDICADA DE HISTÓRICO PLURIANUAL ---
+        story.extend(self._gerar_folha_historico_anual())
+
         doc.build(story, onFirstPage=_desenhar_elementos_pagina, onLaterPages=_desenhar_elementos_pagina)
 
         if os.path.exists(caminho_grafico_temp):
@@ -653,12 +733,12 @@ class C2SovereignIntelligenceEngine:
 
 
 # =====================================================================
-# FUNÇÃO DE PONTE/COMPATIBILIDADE PARA O PIPELINE MASTER [1/6]
+# FUNÇÃO DE PONTE/COMPATIBILIDADE E ARQUIVAMENTO POR CICLOS PLURIANUAIS
 # =====================================================================
 def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
-    """Função padrão chamada pelo script master de geração para compilar o PDF [1/6]."""
-    nome_lider = dados_paciente.get("nome") or dados_paciente.get("cliente") or "GENILSON RODRIGUES"
-    empresa = dados_paciente.get("empresa") or "Thierry Technology Concept Global"
+    """Função mestre: Grava automaticamente no cofre do cliente, calcula a cadência exata e compila o PDF."""
+    nome_lider = dados_paciente.get("nome") or dados_paciente.get("cliente") or dados_paciente.get("ceo_name") or "Titular Soberano UHNW"
+    empresa = dados_paciente.get("empresa") or dados_paciente.get("company_name") or "Thierry Technology Concept Global"
     
     engine = C2SovereignIntelligenceEngine(
         ceo_name=str(nome_lider),
@@ -666,9 +746,70 @@ def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
         lang=str(dados_paciente.get("idioma", "PT"))
     )
     
-    nome_arquivo = f"01_Dossie_Sovereign_C2_{str(nome_lider).replace(' ', '_')}.pdf"
-    caminho_saida = BASE_DIR.parent / "pdfs_finais" / nome_arquivo
-    caminho_saida.parent.mkdir(parents=True, exist_ok=True)
+    # --- GARANTE RIGOROSAMENTE QUE O NOME SEJA EXATAMENTE O INFORMADO ---
+    engine.lider = str(nome_lider).strip()
+    
+    # --- AUTONOMIA DE REGISTO: SALVA O ATENDIMENTO NO LEDGER DO CLIENTE ---
+    detalhes_atendimento = dados_paciente.get("detalhes_atendimento") or {
+        "id_atendimento": f"ATD-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}",
+        "data": datetime.datetime.now().strftime("%d/%m/%Y"),
+        "procedimento": dados_paciente.get("procedimento", "Avaliação Biométrica e Protocolo Global C2"),
+        "metricas_de_entrada": {
+            "oximetria_tecidual": f"{engine.oximetria}%",
+            "nivel_inflamacao_inicial": engine.nivel_inflamacao
+        },
+        "modulo_preditivo_autonomo": {
+            "indice_eficiencia_preditiva_iep": engine.iep,
+            "durabilidade_prevista_meses": 6.0
+        }
+    }
+    engine.salvar_atendimento_atual_no_json(detalhes_atendimento)
+    
+    # --- CÁLCULO INTELIGENTE DO CICLO TEMPORAL CONTÍNUO ---
+    atendimentos = engine.dados_preditivos_cliente.get("atendimentos", [])
+    dias_decorridos = 0
+    anos_decorridos = 0.1
+    
+    if len(atendimentos) > 1:
+        try:
+            data_primeiro_str = atendimentos[0].get("data") or atendimentos[0].get("data_execucao", "14/10/2026")
+            if "T" in data_primeiro_str:
+                data_primeiro = datetime.datetime.fromisoformat(data_primeiro_str)
+            else:
+                data_primeiro = datetime.datetime.strptime(data_primeiro_str[:10], "%d/%m/%Y")
+            data_atual = datetime.datetime.now()
+            
+            dias_decorridos = (data_atual - data_primeiro).days
+            anos_decorridos = round(dias_decorridos / 365, 1)
+        except Exception:
+            dias_decorridos = 0
+            anos_decorridos = 0.1
+
+    if dias_decorridos <= 7:
+        pasta_ciclo = "01_Semanal"
+    elif dias_decorridos <= 15:
+        pasta_ciclo = "02_Quinzenal"
+    elif dias_decorridos <= 30:
+        pasta_ciclo = "03_Mensal"
+    elif dias_decorridos <= 90:
+        pasta_ciclo = "04_Trimestral"
+    elif dias_decorridos <= 180:
+        pasta_ciclo = "05_Semestral"
+    elif dias_decorridos <= 270:
+        pasta_ciclo = "06_9_Meses"
+    else:
+        ano_inteiro = int(max(1, round(anos_decorridos)))
+        if ano_inteiro <= 15:
+            pasta_ciclo = f"0{ano_inteiro}_Ano" if ano_inteiro == 1 else f"{ano_inteiro:02d}_Anos"
+        else:
+            pasta_ciclo = "15_Anos_Completo"
+
+    pasta_cliente_ciclo = BASE_DIR.parent / "pdfs_finais" / str(nome_lider).replace(" ", "_") / pasta_ciclo
+    pasta_cliente_ciclo.mkdir(parents=True, exist_ok=True)
+    
+    timestamp_arquivo = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    nome_arquivo = f"Dossie_Sovereign_{pasta_ciclo}_{timestamp_arquivo}.pdf"
+    caminho_saida = pasta_cliente_ciclo / nome_arquivo
     
     resultado = engine.gerar_pdf_defensivo_soberano(str(caminho_saida))
     return str(resultado) if resultado else str(caminho_saida)
@@ -677,8 +818,7 @@ def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
 if __name__ == "__main__":
     pasta_finais = os.path.join(ROOT_DIR, "pdfs_finais")
     os.makedirs(pasta_finais, exist_ok=True)
-    caminho_teste = os.path.join(pasta_finais, "01_Dossie_Sovereign_Intelligence.pdf")
     
-    engine = C2SovereignIntelligenceEngine(lang="PT")
-    arquivo_gerado = engine.gerar_pdf_defensivo_soberano(caminho_teste)
-    print(f"Gerador Quantum executado! Salvo em: {arquivo_gerado}")
+    dados_teste = {"nome": "Pedro Henrique", "empresa": "Thierry Technology Concept Global"}
+    arquivo_gerado = gerar_dossie_auditoria(dados_teste)
+    print(f"Gerador Quantum executado com Cadência Autónoma! Arquivado em: {arquivo_gerado}")

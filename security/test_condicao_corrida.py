@@ -1,3 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+===========================================================================
+THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
+MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - PROPRIETARY TECH DIRECTIVE
+===========================================================================
+NOTICE: This software source code and its mathematical algorithms are the 
+intellectual property of Thierry Technology Concept Global. Unauthorized 
+distribution, reverse engineering, or usage without a signed NDA/License 
+agreement is strictly prohibited under international copyright frameworks.
+===========================================================================
+"""
+
 # =====================================================================
 # ARQUIVO: security/test_condicao_corrida.py
 # Teste de Condição de Corrida (Carga Extrema: 200k operações)

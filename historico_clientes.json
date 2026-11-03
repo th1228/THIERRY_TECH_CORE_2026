@@ -1,0 +1,204 @@
+{
+  "Genilson Rodrigues": {
+    "perfil_soberano": {
+      "data_nascimento": "N/D",
+      "perfil_neurologico": {
+        "status_dominante": "Dominância Parassimpática / Regulação Ativa"
+      }
+    },
+    "atendimentos": [
+      {
+        "id_atendimento": "ATD-20261021-235004",
+        "data": "21/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261021-235821",
+        "data": "21/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-191704",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-191738",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-191754",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      }
+    ]
+  },
+  "Pedro Henrique": {
+    "perfil_soberano": {
+      "data_nascimento": "N/D",
+      "perfil_neurologico": {
+        "status_dominante": "Dominância Parassimpática / Regulação Ativa"
+      }
+    },
+    "atendimentos": [
+      {
+        "id_atendimento": "ATD-20261022-221856",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223126",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223134",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223422",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223424",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223426",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223828",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223831",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      },
+      {
+        "id_atendimento": "ATD-20261022-223906",
+        "data": "22/10/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
+      }
+    ]
+  }
+}
