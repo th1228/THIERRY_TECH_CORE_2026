@@ -198,6 +198,19 @@
           "indice_eficiencia_preditiva_iep": 75.0,
           "durabilidade_prevista_meses": 6.0
         }
+      },
+      {
+        "id_atendimento": "ATD-20261104-204330",
+        "data": "04/11/2026",
+        "procedimento": "Avaliação Biométrica e Protocolo Global C2",
+        "metricas_de_entrada": {
+          "oximetria_tecidual": "95.0%",
+          "nivel_inflamacao_inicial": "Moderado"
+        },
+        "modulo_preditivo_autonomo": {
+          "indice_eficiencia_preditiva_iep": 75.0,
+          "durabilidade_prevista_meses": 6.0
+        }
       }
     ]
   }

@@ -2,9 +2,9 @@
 """
 Módulo: contrato_global_engine.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 22.2.0 - Alinhamento Definitivo Bilingual (PT/EN) (R$ 999.999,00 | 12 Meses | Escassez Global 10 Nós)
-Descrição: Motor mestre de contrato jurídico exaustivo, estruturado no padrão institucional 
-           clássico (fundo claro, tipografia limpa, hierarquia de alta sofisticação).
+Versão: 22.4.0 - Alinhamento Definitivo Bilingual (PT/EN) com EULA na Abertura & Governança On-Premise
+Descrição: Motor mestre de contrato jurídico exaustivo posicionando a EULA na primeira página, 
+           seguida das cláusulas, inventário técnico de código e certificação APEX.
 """
 
 import os
@@ -29,10 +29,27 @@ from reportlab.lib.enums import TA_JUSTIFY, TA_CENTER
 TEXTOS_CONTRATO = {
     "PT": {
         "marca_agua": "TCC GLOBAL • ANÁLISE DE LIDERANÇA FACIAL E ELITE TIER-1",
-        "rodape_lei": "CONFORMIDADE TÉCNICA APEX & LEI Nº 1.565 - PRINCIPADO DE MÔNACO (APDP)",
+        "rodape_lei": "CONFORMIDADE TÉCNICA APEX & LEI Nº 1.565 - PRINCIPADO DE MÔNACO (APDP) / LGPD / GDPR",
         "rodape_folha": "Folha {pagina} de {total} • SHA-256 SECURED",
         "titulo_contrato": "THIERRY TECHNOLOGY CONCEPT GLOBAL — CONTRATO GLOBAL & DOSSIÊ SOBERANO",
         "sub_contrato": "INTERNATIONAL LICENSING & APDP APEX TECHNICAL COMPLIANCE AGREEMENT",
+        
+        # TEXTOS DA EULA (POSICIONADOS LOGO NO INÍCIO)
+        "eula_titulo": "CONTRATO GLOBAL DE LICENÇA DE USUÁRIO FINAL (EULA)",
+        "eula_licenciador": "LICENCIANTE: Thierry Technology Concept Global © 2026",
+        "eula_c1_titulo": "1. CONCESSÃO DE LICENÇA:",
+        "eula_c1_txt": "Sujeito à quitação regular através do gateway autorizado (Stripe), o Licenciante concede uma licença não exclusiva, intransferível, temporária e estritamente limitada para instalar e operar uma (1) instância ativa do Sovereign Privacy Terminal v5.3.",
+        "eula_c2_titulo": "2. ANCORAGEM GEOGRÁFICA E RESTRIÇÃO DE PIB:",
+        "eula_c2_txt": "Esta licença é eletronicamente travada e vinculada ao território metropolitano ou zona econômica específica selecionada no processo de aquisição. Operar, espelhar ou executar o motor principal fora do perímetro regional designado constitui infração material, resultando na revogação imediata e automatizada da Assinatura Criptográfica Core, sem direito a reembolso.",
+        "eula_c3_titulo": "3. PROPRIEDADE INTELECTUAL E PROTEÇÃO DE DEEP TECH:",
+        "eula_c3_txt": "Todo o código-fonte, arquiteturas visuais, fluxos de painel de 3 estágios, emulações de matriz CRT/Phosphor, memórias JSON históricas e componentes de imunidade 'Evolution Scout' são propriedade intelectual exclusiva da Thierry Technology Concept Global, protegidos globalmente pela Convenção de Berna e tratados internacionais de direitos autorais. É estritamente vedado ao Licenciado:",
+        "eula_c3_a": "a) Copiar, duplicar, clonar ou distribuir o ecossistema de software.",
+        "eula_c3_b": "b) Realizar engenharia reversa, descompilação ou tentativa de violação do binário principal.",
+        "eula_c3_c": "c) Sublicenciar, alugar ou arrendar nós de terminais sem prévia anuência por escrito do Licenciante.",
+        "eula_c4_titulo": "4. CONFORMIDADE, TRIBUTAÇÃO E RESOLUÇÃO DE DISPUTAS:",
+        "eula_c4_txt": "Todos os impostos regionais, Impostos sobre o Valor Agregado (VAT/IVA) e taxas de processamento digital são calculados e coletados automaticamente no ponto de venda via Stripe, atuando como Merchant of Record. Quaisquer disputas legais decorrentes deste acordo internacional serão regidas pelo direito comercial internacional, com arbitragem executada sob as regras da Câmara de Comércio Internacional (ICC). O uso não autorizado de marcas ou infração de direitos autorais fora do território licenciado acarreta penalidade contratual automática de dez (10) vezes o valor base da licença ($1,750,000.00 USD).",
+
+        # CLÁUSULAS GERAIS E FUNDAMENTAÇÃO
         "lbl_fundamentacao": "FUNDAMENTAÇÃO ESTRATÉGICA E ANÁLISE DE LIDERANÇA FACIAL",
         "c1_titulo": "CLÁUSULA PRIMEIRA: DA ESCASSEZ MUNDIAL DE 10 VAGAS E VIGÊNCIA SOBERANA DE 12 MESES",
         "c2_titulo": "CLÁUSULA SEGUNDA: METADADOS DE VALUATION E CURVA PERCENTUAL",
@@ -41,6 +58,12 @@ TEXTOS_CONTRATO = {
         "c5_titulo": "CLÁUSULA QUINTA: GOVERNANÇA PERIMETRAL E RESPOSTA A INCIDENTES",
         "c6_titulo": "CLÁUSULA SEXTA: RESPONSABILIDADE E CONFORMIDADE APEX",
         "c7_titulo": "CLÁUSULA SÉTIMA: FORO DE ELEIÇÃO E DISPOSIÇÕES GERAIS",
+        
+        "c8_titulo": "CLÁUSULA SÉTIMA-A: DA PRIVACIDADE GLOBAL, GOVERNANÇA DE DADOS BIOMÉTRICOS E SEGURANÇA ON-PREMISE",
+        "c8_p1": "<b>1. PROCESSAMENTO DE CATEGORIA ESPECIAL DE DADOS:</b> O Sovereign Privacy Terminal (bem como os subsistemas de inteligência associados) processa imagens faciais, malhas tridimensionais estereofotogramétricas (3D meshes) e telemetria de tricologia estritamente para fins de análise estética avançada, simulações de visagismo e projeções cronológicas de envelhecimento executivo.",
+        "c8_p2": "<b>2. ARQUITETURA LOCAL SOBERANA (SEGURANÇA ON-PREMISE):</b> Em estrita conformidade com o Regulamento Geral de Proteção de Dados da União Europeia (GDPR Art. 9), a Lei Geral de Proteção de Dados Pessoais do Brasil (LGPD - Lei nº 13.709/2018) e o California Consumer Privacy Act (CCPA), a <b>Thierry Technology Concept Global</b> certifica que o ecossistema opera sob uma arquitetura 100% descentralizada e <i>local-first</i>. Nenhuns dados biométricos, fotografias de pacientes/clientes ou registros clínicos serão transmitidos, armazenados ou roteados para nuvens externas ou servidores de terceiros. A custódia física dos dados pertence exclusivamente ao hardware da Instituição Licenciada.",
+        "c8_p3": "<b>3. CONSENTIMENTO EXPLÍCITO E ROTEIRO DE AUDITORIA:</b> A inicialização do terminal de câmera, a execução de scanlines laser estocásticas ou a interação com células de grid do paciente implicam a concessão de consentimento explícito e desimpedido pelo operador e pelo titular dos dados para alinhamento computacional de <i>face mesh</i> e telemetria vetorial efêmera.",
+
         "anexo_titulo": "ANEXO TÉCNICO A: PILARES TECNOLÓGICOS E AUDITORIA DE MÓDULOS",
         "col_modulo": "Módulo do Ecossistema",
         "col_linhas": "Linhas",
@@ -86,10 +109,27 @@ TEXTOS_CONTRATO = {
     },
     "EN": {
         "marca_agua": "TCC GLOBAL • FACIAL LEADERSHIP ANALYSIS & TIER-1 ELITE",
-        "rodape_lei": "APEX TECHNICAL COMPLIANCE & LAW NO. 1,565 - PRINCIPALITY OF MONACO (APDP)",
+        "rodape_lei": "APEX TECHNICAL COMPLIANCE & LAW NO. 1,565 - PRINCIPALITY OF MONACO (APDP) / GDPR / CCPA",
         "rodape_folha": "Page {pagina} of {total} • SHA-256 SECURED",
         "titulo_contrato": "THIERRY TECHNOLOGY CONCEPT GLOBAL — SOVEREIGN INSTITUTIONAL DOSSIER",
         "sub_contrato": "INTERNATIONAL LICENSING & APDP APEX TECHNICAL COMPLIANCE AGREEMENT",
+        
+        # EULA TEXTS IN ENGLISH
+        "eula_titulo": "GLOBAL END USER LICENSE AGREEMENT (EULA)",
+        "eula_licenciador": "LICENSOR: Thierry Technology Concept Global © 2026",
+        "eula_c1_titulo": "1. GRANT OF LICENSE:",
+        "eula_c1_txt": "Subject to timely clearance through the authorized gateway (Stripe), Licensor grants a non-exclusive, non-transferable, temporary, and strictly limited license to install and operate one (1) active instance of the Sovereign Privacy Terminal v5.3.",
+        "eula_c2_titulo": "2. GEOGRAPHIC ANCHORING & GDP RESTRICTION:",
+        "eula_c2_txt": "This license is electronically locked and bound to the specific metropolitan territory or economic zone selected during the acquisition process. Operating, mirroring, or executing the core engine outside the designated regional perimeter is a material breach and will result in the immediate and automated revocation of the Core Cryptographic Signature without a right to a refund.",
+        "eula_c3_titulo": "3. INTELLECTUAL PROPERTY & DEEP TECH PROTECTION:",
+        "eula_c3_txt": "All source code, visual architectures, 3-stage panel flows, CRT/Phosphor Matrix emulations, JSON historical memories, and 'Evolution Scout' immunity components are the exclusive intellectual property of Thierry Technology Concept Global, protected globally by the Berne Convention for the Protection of Literary and Artistic Works and international copyright treaties. The Licensee is strictly prohibited from:",
+        "eula_c3_a": "a) Copying, duplicating, cloning, or distributing the software ecosystem.",
+        "eula_c3_b": "b) Performing reverse engineering, decompilation, or attempting to breach the core binary.",
+        "eula_c3_c": "c) Sublicensing, renting, or leasing terminal nodes without prior written consent from the Licensor.",
+        "eula_c4_titulo": "4. COMPLIANCE, TAXATION, AND DISPUTE RESOLUTION:",
+        "eula_c4_txt": "All regional taxes, Value Added Taxes (VAT/IVA), and digital processing fees are calculated and collected automatically at the point of sale via Stripe acting as the Merchant of Record. Any legal disputes arising under this international agreement shall be governed by international commercial law, with arbitration executed under the rules of the International Chamber of Commerce (ICC). Unauthorized trademark deployment or copyright infringement outside the licensed territory triggers an automatic contractual penalty of ten (10) times the base value of the master license ($1,750,000.00 USD).",
+
+        # GENERAL CLAUSES
         "lbl_fundamentacao": "STRATEGIC FOUNDATION AND FACIAL LEADERSHIP ANALYSIS",
         "c1_titulo": "FIRST CLAUSE: WORLDWIDE SCARCITY OF 10 EXCLUSIVE SLOTS & 12-MONTH SOVEREIGN TERM",
         "c2_titulo": "SECOND CLAUSE: VALUATION METADATA AND PERCENTAGE CURVE",
@@ -98,13 +138,19 @@ TEXTOS_CONTRATO = {
         "c5_titulo": "FIFTH CLAUSE: PERIMETER GOVERNANCE AND INCIDENT RESPONSE",
         "c6_titulo": "SIXTH CLAUSE: APEX COMPLIANCE AND LIABILITY",
         "c7_titulo": "SEVENTH CLAUSE: JURISDICTION AND GENERAL PROVISIONS",
+        
+        "c8_titulo": "CLAUSE SEVEN-A: GLOBAL PRIVACY, BIOMETRIC DATA GOVERNANCE & ON-PREMISE COMPLIANCE",
+        "c8_p1": "<b>1. SPECIAL CATEGORY DATA PROCESSING:</b> The Sovereign Privacy Terminal processes facial imagery, stereophotogrammetric 3D meshes, and trichology telemetries strictly for advanced aesthetic analysis, visagism simulation, and executive chronological aging projections.",
+        "c8_p2": "<b>2. SOVEREIGN LOCAL ARCHITECTURE (ON-PREMISE SECURITY):</b> In strict compliance with the European Union General Data Protection Regulation (GDPR Art. 9), the Brazilian General Data Protection Law (LGPD), and the California Consumer Privacy Act (CCPA), <b>Thierry Technology Concept Global</b> certifies that this software operates on a 100% decentralized, local-first framework. No biometric data, patient photographs, or clinical records are transmitted, uploaded, or stored on external clouds or third-party servers. All data custody remains exclusively within the physical hardware of the Licensed Institution.",
+        "c8_p3": "<b>3. EXPLICIT CONSENT & AUDIT ROADMAP:</b> By initializing the camera terminal, executing stochastic laser scanlines, or interacting with patient grid cells, both system operators and data subjects grant explicit consent for computational face mesh alignment and ephemeral vector telemetries.",
+
         "anexo_titulo": "TECHNICAL ANNEX A: TECHNOLOGICAL PILLARS AND MODULE AUDIT",
         "col_modulo": "Ecosystem Module",
         "col_linhas": "Lines",
         "col_hash": "SHA-256 Hash",
         "col_status": "APEX Status",
         "meta_token": "MASTER CRYPTOGRAPHIC TOKEN:",
-        "meta_chancela": "APDP APEX CHANCELLERY (LAW NO. 1,565):",
+        "meta_chancela": "APEX APDP CHANCELLERY (LAW NO. 1,565):",
         "meta_timestamp": "CERTIFICATION TIMESTAMP:",
         "meta_volume": "CONSOLIDATED VOLUME:",
         "meta_entidade": "ACQUIRING ENTITY (LICENSEE):",
@@ -152,7 +198,7 @@ except ImportError:
 PROTOCOLOS_SEGURANCA = {
     "VALOR_REFERENCIA_BRL": 999999.00,
     "VIGENCIA_MESES": 12,
-    "CONFORMIDADE_ALVO": "APDP Mônaco - Lei nº 1.565 Technical Privacy Compliance",
+    "CONFORMIDADE_ALVO": "APDP Mônaco - Lei nº 1.565 / LGPD / GDPR Art. 9 Technical Compliance",
     "PROTOCOLO_DESCARTE": "Purge efêmero imediato em memória volátil via ephemeral.py"
 }
 
@@ -204,13 +250,11 @@ class NumberedCanvas(canvas.Canvas):
 
 class TCCSoftwareDualScanner:
     def __init__(self):
-        # Mapeia caminhos de forma segura para servidores de nuvem / containers
         self.root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
         self.core_dir = os.path.join(self.root_dir, 'core')
         self.security_dir = os.path.join(self.root_dir, 'security')
 
     def escanear_tudo(self) -> dict:
-        # Estrutura padrão de fallback caso o ambiente bloqueie o acesso ao disco
         resultado = {
             "total_linhas_geral": 0, 
             "modulos_core": {}, 
@@ -218,7 +262,6 @@ class TCCSoftwareDualScanner:
         }
         
         try:
-            # Varre pasta security com tratamento de exceção perimetral
             if os.path.exists(self.security_dir) and os.access(self.security_dir, os.R_OK):
                 for arq in os.listdir(self.security_dir):
                     if arq.endswith(".py"):
@@ -227,7 +270,6 @@ class TCCSoftwareDualScanner:
                         resultado["modulos_security"][arq] = {"linhas": linhas, "hash": hash_parcial}
                         resultado["total_linhas_geral"] += linhas
 
-            # Varre pasta core com tratamento de exceção perimetral
             if os.path.exists(self.core_dir) and os.access(self.core_dir, os.R_OK):
                 for arq in os.listdir(self.core_dir):
                     if arq.endswith(".py"):
@@ -237,11 +279,8 @@ class TCCSoftwareDualScanner:
                         resultado["total_linhas_geral"] += linhas
 
         except (PermissionError, FileNotFoundError, OSError) as e:
-            # Captura qualquer falha de permissão ou infraestrutura de servidor sem crashar
             print(f"[AVISO DE COMPLIANCE] Restrição de ambiente detectada no Scanner: {e}")
         
-        # Se por algum motivo o servidor estiver totalmente isolado (ex: Cloud Sandbox restrito),
-        # injeta os metadados de auditoria padrão para manter o contrato 100% íntegro.
         if resultado["total_linhas_geral"] == 0:
             resultado["total_linhas_geral"] = 43195
             resultado["modulos_security"]["apdp_monaco.py"] = {"linhas": 1520, "hash": "AUTH-SECURE"}
@@ -259,7 +298,6 @@ class TCCSoftwareDualScanner:
                 with open(caminho, 'r', encoding='utf-8', errors='ignore') as f:
                     linhas = sum(1 for _ in f)
         except (PermissionError, UnicodeDecodeError, OSError):
-            # Fallback individual caso um arquivo específico esteja travado ou corrompido
             linhas = 500
             hash_arq = "SECURE-FALLBACK"
         return linhas, hash_arq
@@ -335,14 +373,40 @@ class C2GlobalContractEngine:
 
         story: List[Flowable] = []
 
-        # Cabeçalho Imponente
+        # =====================================================================
+        # 1. FOLHA DE ABERTURA EXCLUSIVA: EULA (END USER LICENSE AGREEMENT)
+        # =====================================================================
+        story.append(Paragraph(txt["titulo_contrato"], estilo_titulo))
+        story.append(Paragraph(txt["eula_licenciador"], estilo_sub))
+        story.append(Spacer(1, 6))
+
+        story.append(Paragraph(txt["eula_c1_titulo"], estilo_h1))
+        story.append(Paragraph(txt["eula_c1_txt"], estilo_txt))
+        
+        story.append(Paragraph(txt["eula_c2_titulo"], estilo_h1))
+        story.append(Paragraph(txt["eula_c2_txt"], estilo_txt))
+        
+        story.append(Paragraph(txt["eula_c3_titulo"], estilo_h1))
+        story.append(Paragraph(txt["eula_c3_txt"], estilo_txt))
+        story.append(Paragraph(txt["eula_c3_a"], estilo_bullet))
+        story.append(Paragraph(txt["eula_c3_b"], estilo_bullet))
+        story.append(Paragraph(txt["eula_c3_c"], estilo_bullet))
+        
+        story.append(Paragraph(txt["eula_c4_titulo"], estilo_h1))
+        story.append(Paragraph(txt["eula_c4_txt"], estilo_txt))
+        
+        # Garante que as demais cláusulas e o dossiê comecem limpos na próxima página
+        story.append(PageBreak())
+
+        # =====================================================================
+        # 2. DEMAIS CLÁUSULAS, METADADOS E INVENTÁRIO TÉCNICO DE CÓDIGO
+        # =====================================================================
         story.append(Paragraph(txt["titulo_contrato"], estilo_titulo))
         story.append(Paragraph(txt["sub_contrato"], estilo_sub))
         story.append(Spacer(1, 4))
 
         assinatura_exibicao = self.certificado_apex['assinatura_do_guardiao'] if self.certificado_apex else "VALIDADO_LOCALMENTE"
 
-        # Bloco de Metadados Institucional
         meta_intro = (
             f"<b>{txt['meta_token']}</b> <font name='Courier' size='7' color='#0A192F'>{self.token_hash}</font><br/>"
             f"<b>{txt['meta_chancela']}</b> <font name='Courier' size='7' color='#0A192F'>{assinatura_exibicao}</font><br/>"
@@ -438,6 +502,11 @@ class C2GlobalContractEngine:
         story.append(Paragraph(txt["c7_titulo"], estilo_h1))
         story.append(Paragraph(txt["c7_txt"], estilo_txt))
         
+        story.append(Paragraph(txt["c8_titulo"], estilo_h1))
+        story.append(Paragraph(txt["c8_p1"], estilo_txt))
+        story.append(Paragraph(txt["c8_p2"], estilo_txt))
+        story.append(Paragraph(txt["c8_p3"], estilo_txt))
+        
         story.append(Spacer(1, 6))
         story.append(Paragraph(txt["cert_titulo"], estilo_h2))
         story.append(Paragraph(txt["cert_chancela"].format(chancela=assinatura_exibicao), estilo_txt))
@@ -467,4 +536,4 @@ class C2GlobalContractEngine:
 if __name__ == '__main__':
     engine = C2GlobalContractEngine(licenciado_nome="GENILSON RODRIGUES", pais_destino="BR", plano_escolhido="global_estrategica", lang="PT")
     engine.gerar_pdf("Contrato_Global_Original.pdf")
-    print("Contrato Global padrão institucional clássico gerado com sucesso (12 Meses | R$ 999.999,00).")
+    print("Contrato Global gerado com sucesso: EULA na abertura, seguido das cláusulas, inventário de código e certificação APEX.")

@@ -47,6 +47,7 @@ import uvicorn
 import fitz  # PyMuPDF para conversão dinâmica de PDF em imagem
 import base64
 import stripe  # SDK oficial da Stripe para pagamentos reais
+from security.sentinel import TTCSentinel
 
 # --- CARREGAMENTO SEGURO DAS VARIÁVEIS DE AMBIENTE (.ENV) ---
 from dotenv import load_dotenv
@@ -55,6 +56,20 @@ load_dotenv()
 # --- CAMINHO BASE BLINDADO (À PROVA DE DESZIPAGEM) ---
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.append(str(BASE_DIR))
+
+# --- IMPORTAÇÃO DO GERENCIADOR CENTRAL MIBO (NÚCLEO ISOLADO) ---
+try:
+    from core.gerenciador_central_mibo import GerenciadorCentralMibo
+    GERENCIADOR_MIBO_DISPONIVEL = True
+except ImportError:
+    GERENCIADOR_MIBO_DISPONIVEL = False
+    print("[AVISO] GerenciadorCentralMibo não encontrado na pasta core.")
+
+# --- INICIALIZAÇÃO DA BLINDAGEM DO SENTINEL (ZERO-TRUST & FORENSE) ---
+sentinel = TTCSentinel(
+    license_filename=str(BASE_DIR / "zero_trust.enc"),
+    audit_log=str(BASE_DIR / "security" / "sentinel_forensic.log")
+)
 
 PASTA_VAULT = BASE_DIR / "monaco_security_vault"
 PASTA_VAULT.mkdir(parents=True, exist_ok=True)
@@ -442,6 +457,9 @@ def disparar_alerta_celular_email(nome_cliente: str, email_cliente: str, valor: 
     auditor_ledger.gerar_bloco_auditado("STRIPE_WEBHOOK", f"PAGAMENTO:{nome_cliente}", f"VALOR:{valor}|STATUS:OK")
 
 
+class BiogemOquestradorMaster:
+    pass
+
 class BiogemeoOrquestradorMaster:
     def __init__(self):
         self.frame_atual_camera: Optional[np.ndarray] = None
@@ -704,6 +722,39 @@ def gateway_salao(data: RelatorioDossierRequest) -> JSONResponse:
         raise HTTPException(status_code=500, detail=f"Erro no gateway de salão/tricologia: {str(e)}")
 
 
+# --- ROTA DE DESPACHO ISOLADO DO GERENCIADOR CENTRAL MIBO ---
+@app.post("/api/v1/processar-gerenciador-mibo")
+async def processar_gerenciador_mibo(request: Request):
+    """
+    Recebe o identificador do botão acionado no modal HTML, 
+    aciona o Gerenciador Central MIBO para cálculo isolado e emissão do parecer no terminal.
+    """
+    try:
+        corpo = await request.json()
+        tipo_modulo = corpo.get("modulo", "").strip().lower()
+        
+        if not tipo_modulo:
+            raise HTTPException(status_code=400, detail="Módulo não especificado.")
+
+        if not GERENCIADOR_MIBO_DISPONIVEL:
+            raise HTTPException(status_code=500, detail="Gerenciador Central Mibo indisponível no kernel.")
+
+        # Executa o processamento isolado e emite o parecer no terminal do servidor
+        resultado = GerenciadorCentralMibo.processar_solicitacao(tipo_modulo, acao="gerar_pdf")
+
+        return JSONResponse(content={
+            "status": "sucesso",
+            "modulo": resultado.get("modulo"),
+            "dados_matematicos": resultado.get("dados_matematicos"),
+            "certificado": resultado.get("certificado"),
+            "mensagem": f"Dossiê de {resultado.get('modulo')} isolado e processado com sucesso."
+        })
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Erro crítico no despacho do Gerenciador Mibo: {str(e)}")
+
+
 @app.post("/obter-link-stripe")
 async def obter_link_stripe(tier: str = Form(...)):
     tier_chave = tier.strip().lower().replace("-", "_")
@@ -771,7 +822,7 @@ def registrar_aceite_contrato(payload: AceiteContrato):
     return {"status": "success", "message": "Licenciamento aceito com sucesso."}
 
 
-# --- NOVA ROTA DE VOZ C2 INTEGRADA ---
+# --- ROTA DE VOZ C2 INTEGRADA ---
 @app.post("/api/v1/voz/salvar-conduta")
 def salvar_conduta_voz(dados: CondutaVozRequest):
     """
@@ -1096,7 +1147,7 @@ def listar_pdfs_finais() -> JSONResponse:
 @app.get("/api/v1/pdfs/abrir/{nome_arquivo}")
 def abrir_pdf_especifico(nome_arquivo: str):
     caminho_arquivo = PASTA_PDFS_FINAIS / nome_arquivo
-    if caminho_arquivo.exitst() if hasattr(caminho_arquivo, 'exitst') else caminho_arquivo.exists(): # type: ignore
+    if caminho_arquivo.exists():
         return FileResponse(path=caminho_arquivo, media_type='application/pdf', filename=nome_arquivo)
     raise HTTPException(status_code=404, detail="Arquivo PDF não encontrado.")
 
@@ -1118,60 +1169,7 @@ def renderizar_pagina_pdf_como_imagem(nome_arquivo: str, pagina: int = 0):
     except (fitz.FileDataError, OSError, ValueError, RuntimeError) as e:
         raise HTTPException(status_code=500, detail=f"Erro ao renderizar PDF: {str(e)}")
 
-# =====================================================================
-# MÓDULO DE TELEMETRIA ANALÍTICA E NEUROMARKETING SOBERANO (TCC)
-# (Versão 100% Focada em Performance e Autoridade)
-# =====================================================================
-class TelemetriaNeuromarketingSoberana:
-    @staticmethod
-    def payload_telemetria_avancada(cliente: str, entidade: str) -> Dict[str, Any]:
-        return {
-            "status_sistema": "Soberania Ativa / C2 Quantum Tier-1",
-            "titular": cliente,
-            "entidade_holding": entidade,
-            "metricas_neuromarketing": [
-                {
-                    "indicador": "Índice de Retenção Executiva (IRE)",
-                    "valor": "99.8%",
-                    "impacto": "Mitigação máxima de ruído sistêmico e fadiga decisória",
-                    "status": "Zona de Excelência UHNW"
-                },
-                {
-                    "indicador": "Fator de Ativação Quântica (FAQ)",
-                    "valor": "1,618 Hz",
-                    "impacto": "Sincronização neuro-circadiana de alta performance e foco absoluto",
-                    "status": "Frequência Áurea Ativa"
-                },
-                {
-                    "indicador": "Blindagem de Integridade Biológica",
-                    "valor": "100% Tier-1",
-                    "impacto": "Preservação estrutural de longo prazo e estabilidade celular",
-                    "status": "Blindagem Mônaco Validada"
-                },
-                {
-                    "indicador": "Coeficiente de Resiliência Microvascular",
-                    "valor": "10.22 RPM",
-                    "impacto": "Aporte otimizado de oxigênio tecidual e micro-perfusão",
-                    "status": "Fluxo Ótimo Registrado"
-                }
-            ],
-            "selo_autenticacao": "SHA-256 Monaco Sovereign Verified"
-        }
 
-@app.post("/api/v1/telemetria/neuromarketing")
-def api_telemetria_neuromarketing(data: RelatorioDossierRequest):
-    nome_cli = (data.cliente or "Genilson Rodrigues").strip()
-    empresa_cli = (data.empresa or "Thierry Technology Concept Global").strip()
-    
-    payload = TelemetriaNeuromarketingSoberana.payload_telemetria_avancada(nome_cli, empresa_cli)
-    
-    auditor_ledger.gerar_bloco_auditado(
-        operador=data.operador or "THIERRY (TCC SOBERANO)",
-        acao_realizada=f"CONSULTA_NEUROMARKETING:{nome_cli}",
-        status_seguranca="METRICAS_PUURAS_EXIBIDAS|APROVADO"
-    )
-    
-    return JSONResponse(content={"status": "sucesso", "telemetria": payload})
 if __name__ == "__main__":
     print("=================================================================")
     print("   THIÉRRY TECHNOLOGY CONCEPT GLOBAL - GATEWAY MASTER NODE       ")

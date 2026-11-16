@@ -15,8 +15,8 @@ agreement is strictly prohibited under international copyright frameworks.
 """
 Módulo Unificado: tricologia_ultra_avancada.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 8.9.2 - MONACO EXECUTIVE PLATINUM EDITION (Bilingual PT/EN, Clinical Lab Laudo Format & Dynamic Client Name)
-Descrição: Motor unificado de cálculo macroeconômico, biofísico, termografia óptica e clima ao gerador de PDF ReportLab no Padrão Executive Platinum.
+Versão: 19.0.0 - MONACO PRIVATE BANKING APEX 10-TABLE CHECKMATE & ANTI-TRANSPLANT EDITION
+Descrição: Motor unificado com desconstrução do implante capilar, acidez celular, simulação de risco, gateway financeiro e xeque-mate psicológico UHNW.
 """
 
 import os
@@ -57,36 +57,32 @@ if ROOT_DIR not in sys.path:
 
 
 # =====================================================================
-# DICIONÁRIO DE TRADUÇÕES BILINGUE (PT / EN)
+# DICIONÁRIO DE TRADUÇÕES BILINGUE (PT / EN) - 10 TABELAS APEX CHECKMATE
 # =====================================================================
 TEXTOS_TRICOLOGIA = {
     "PT": {
-        "marca_agua": "MONACO PLATINUM • TRICHOLOGY EXECUTIVE STANDARD",
-        "rodape_class": "Classificado • Documento de Salvaguarda Folicular e Epigenética Capilar UHNW",
-        "rodape_seal": "MONACO SEAL • PÁGINA {pagina} • SHA-256 SECURED",
-        "emp_top": "TRICHOLOGY DIVISION",
-        "titulo_topo": "ULTRA-ADVANCED TRICHOLOGY REPORT & QUANTITATIVE HEMODYNAMICS ({segment})",
+        "marca_agua": "MONACO PRIVATE BANKING • TRICHOLOGY APEX CHECKMATE",
+        "rodape_class": "Classificado • Documento de Salvaguarda Folicular, Acidez Celular e Conversão UHNW",
+        "rodape_seal": "MONACO SEAL • PÁGINA {pagina} • PQC-SHA256 SECURED",
+        "emp_top": "TRICHOLOGY & FINANCIAL LONGEVITY DIVISION",
+        "titulo_topo": "ULTRA-ADVANCED TRICHOLOGY REPORT & STOCHASTIC COLLAPSE MATRIX ({segment})",
         "meta_emissao": "Emissão:",
         "meta_titular": "Titular:",
         "meta_horizonte": "Horizonte:",
         "meta_operador": "Operador:",
         "anos_label": "Anos",
-        "sumario_titulo": "00 // SUMÁRIO EXECUTIVO: DIAGNÓSTICO EPIGENÉTICO E CAPILAR",
+        "sumario_titulo": "00 // SUMÁRIO EXECUTIVO APEX: DIAGNÓSTICO E PROJEÇÃO DE VALUATION",
         "sumario_texto": (
-            "O presente dossiê consolida a varredura optoeletrônica, termografia e hemodinâmica folicular na <b>{company}</b>. "
-            "Através de algoritmos determinísticos baseados na Lei de Snell, fatores climáticos e perfusão bulbar para o setor de <b>{segment}</b>, "
-            "o sistema isola o fator de estresse exógeno (Fator Cortisol: {cortisol}) e assegura parâmetros de preservação UHNW."
+            "O presente dossiê consolida a varredura optoeletrônica, termografia de alta precisão e modelagem de risco folicular na <b>{company}</b>. "
+            "Através de algoritmos determinísticos baseados na Lei de Snell e no fator de estresse sistêmico para o setor de <b>{segment}</b> (Fator Cortisol: {cortisol}), "
+            "o sistema projeta a 'Linha do Tempo do Medo', o Custo de Inação (COA) e a neutralização absoluta da corrosão biológica."
         ),
-        "sec1_titulo": "01 // HEMODINÂMICA DO ESCALPO E HEMOPERFUSÃO BULBAR DE ALTA PRECISÃO",
-        "h_vascular": "Mapeamento Vascular",
-        "h_metrica": "Métrica Calculada",
-        "h_painel": "Painel Gráfico & Coeficiente",
-        "h_status": "Status Clínico do Tecido",
-        "row_fluxo": "Fluxo Sanguíneo Capilar (Q)",
-        "desc_fluxo": "Aporte real de oxigênio dérmico.",
-        "row_resistencia": "Resistência Vascular (R_v)",
-        "row_diag": "Diagnóstico Estratégico",
-        "row_impacto": "Impacto Setorial",
+        "sec1_titulo": "01 // LINHA DO TEMPO DO MEDO: PROJEÇÃO DE COLAPSO FOLICULAR E ALOCAÇÃO",
+        "h_mes": "Horizonte",
+        "h_densidade": "Densidade Projetada",
+        "h_status_colapso": "Status Biológico do Tecido",
+        "h_investimento": "Investimento (€) - NAD+/VEGF",
+        
         "sec2_titulo": "02 // ESPECTROMETRIA, TERMOGRAFIA ÓPTICA & CONDUTAS DISRUPTIVAS",
         "h_indicador": "Indicador / Módulo",
         "h_valor": "Valor / Parâmetro",
@@ -94,48 +90,105 @@ TEXTOS_TRICOLOGIA = {
         "opt_refracao": "Índice de Refração (n)",
         "desc_refracao": "Desvio angular real da luz na fibra capilar (Lei de Snell).",
         "opt_miniaturizacao": "Taxa de Miniaturização",
-        "desc_miniaturizacao": "Nível acumulado para o horizonte de {horizon} anos.",
+        "desc_miniaturizacao": "Nível acumulado projetado para o horizonte de {horizon} anos.",
         "opt_termografia": "Termografia Perifolicular",
         "opt_detox": "Fator Detox & Poluição",
         "opt_cronobio": "Cronobiologia Circadiana",
-        "val_sincronizado": "Sincronizado",
+        "val_sincronizado": "Sincronizado Apex",
         "opt_clima": "Fator Climático Regional",
         "umid_label": "Umid",
-        "sec3_titulo": "03 // GOVERNANÇA TÉCNICA E CADEIA DE CUSTÓDIA",
-        "ass_sha": "Assinatura Criptográfica SHA-256:",
+        
+        "sec3_titulo": "03 // GOVERNANÇA TÉCNICA E CADEIA DE CUSTÓDIA PQC",
+        "ass_sha": "Assinatura Criptográfica PQC-SHA256:",
         "dir_soberana": "Diretriz Soberana:",
         "auditoria_nota": "Auditoria Biomédica (Monaco Standards & European Compliance): Indicadores ajustados ao fator de estresse macroeconômico ({cortisol}) para o horizonte de {horizon} anos.",
-        "anexo_titulo": "[ SEÇÃO II: ANEXO DE INTELIGÊNCIA DINÂMICA & TRICOLOGIA NMN ]",
+
+        "sec4_trico_titulo": "04 // MATRIZ NUTRACÊUTICA HIPER-PERSONALIZADA DINÂMICA",
+        "t4_tr_l1_nome": "Fator de Crescimento VEGF Celular",
+        "t4_tr_l1_desc": "Estímulo direto à neovascularização profunda periférica para reverter a miniaturização.",
+        "t4_tr_l2_nome": "Precursores de NAD+",
+        "t4_tr_l2_desc": "Restauração da energia mitocondrial do bulbo e bloqueio ativo do envelhecimento celular.",
+        "t4_tr_l3_nome": "Bloqueador Enzimático 5-Alfa-Redutase",
+        "t4_tr_l3_desc": "Proteção sistêmica e tópica contra a degradação induzida por DHT sob estresse oxidativo.",
+
+        "sec5_trico_titulo": "05 // ENGENHARIA DE PRECIFICAÇÃO E ALOCAÇÃO DO ECOSSISTEMA APEX",
+        "t5_tr_l1_nome": "Módulo I: Estabilização e Detox Urbano",
+        "t5_tr_l1_desc": "Remoção de metais pesados e readequação do microambiente folicular imediato.",
+        "t5_tr_l2_nome": "Módulo II: Blindagem Ativa Platinum (Recomendado)",
+        "t5_tr_l2_desc": "Protocolo completo de terapia celular regenerativa + engenharia circadiana.",
+        "t5_tr_l3_nome": "Módulo III: Governança Perpétua Suíça",
+        "t5_tr_l3_desc": "Monitoramento preditivo 24/7 com inteligência artificial e recalibração.",
+
+        "sec6_trico_titulo": "06 // DEPRECIAÇÃO REPUTACIONAL E COA (CUSTO DE INAÇÃO EM TEMPO REAL)",
+        "sec6_trico_desc": "Simulação de impacto financiero negativo caso o protocolo executivo seja postergado.",
+
+        # --- BLOCO 07: A FALÁCIA DO IMPLANTE E A DISTORÇÃO FACIAL ---
+        "sec7_trico_titulo": "07 // A FALÁCIA DO IMPLANTE E A MATEMÁTICA DA DISTORÇÃO FACIAL",
+        "sec7_trico_desc": "Demonstração de que capital financeiro não recupera arquitetura biológica e que o transplante arruína o visagismo.",
+        "t7_tr_l1_nome": "Inviabilidade Biológica do Transplante",
+        "t7_tr_l1_desc": "Redistribuição cirúrgica sobre derme fibrótica sem ancoragem nativa ou suporte vascular.",
+        "t7_tr_l2_nome": "Índice de Distorção de Feição",
+        "t7_tr_l2_desc": "Distorção geométrica e envelhecimento visual permanente (-24% harmonia visagista).",
+        "t7_tr_l3_nome": "Custo Oculto de Downtime",
+        "t7_tr_l3_desc": "Exposição pública e prejuízo reputacional durante o período de cicatrização visível.",
+
+        # --- BLOCO 08: ACIDEZ CELULAR E MOTOR DE BIOGÊMEOS ---
+        "sec8_trico_titulo": "08 // ACIDEZ CELULAR E MOTOR DE BIOGÊMEOS (LINHA DO TEMPO)",
+        "sec8_trico_desc": "Projeção do colapso por desidratação crônica contraposta à estabilização Platinum.",
+        "t8_tr_l1_nome": "Colapso por Desidratação Crônica",
+        "t8_tr_l1_desc": "Erosão contínua da umidade interna e destruição absoluta da elasticidade da fibra.",
+        "t8_tr_l2_nome": "Estabilização Hidráulica Platinum",
+        "t8_tr_l2_desc": "Contraponto imediato com protocolo de alta retenção hídrica e blindagem molecular.",
+        "t8_tr_l3_nome": "Congelamento de Simulação de Risco",
+        "t8_tr_l3_desc": "Travamento do terminal C2 na progressão da necrose perifolicular ácida.",
+
+        # --- BLOCO 09: GATEWAY DE CONFORMIDADE FINANCEIRA E SALVAGUARDA ---
+        "sec9_trico_titulo": "09 // GATEWAY DE CONFORMIDADE FINANCEIRA E SALVAGUARDA BIOLÓGICA",
+        "sec9_trico_desc": "Exibição do portal de alta conformidade para liberação dos ativos UHNW.",
+        "t9_tr_l1_nome": "Gateway de Aporte Executivo",
+        "t9_tr_l1_desc": "Canal criptografado de alta conformidade para liquidação imediata do protocolo.",
+        "t9_tr_l2_nome": "Aporte de Salvaguarda Biológica",
+        "t9_tr_l2_desc": "Investimento apresentado como decisão matemática irrelevante frente ao patrimônio protegido.",
+        "t9_tr_l3_nome": "Validação PQC-SHA256",
+        "t9_tr_l3_desc": "Segurança máxima e imutabilidade no registro do contrato de blindagem.",
+
+        # --- BLOCO 10: O XEQUE-MATE PSICOLÓGICO (INTERROMPER CORROSÃO) ---
+        "sec10_trico_titulo": "10 // O XEQUE-MATE PSICOLÓGICO: INTERROMPER CORROSÃO (CTA)",
+        "sec10_trico_desc": "O gatilho definitivo onde o UHNW intercepta a perda transepidérmica na mesma hora.",
+        "t10_tr_l1_nome": "Botão de Interromper Corrosão",
+        "t10_tr_l1_desc": "Comando direto que elimina a sensação de custo e ativa a urgência implacável de defesa.",
+        "t10_tr_l2_nome": "Eliminação de Ineficiência Financeira",
+        "t10_tr_l2_desc": "O cliente percebe que se sente financeiramente estúpido se não autorizar a transação.",
+        "t10_tr_l3_nome": "Homologação e Autorização Imediata",
+        "t10_tr_l3_desc": "Assinatura instantânea do protocolo executivo na mesa do decisor sem hesitação.",
+
+        "anexo_titulo": "[ SEÇÃO II: ANEXO DE INTELIGÊNCIA DINÂMICA & PROTOCOLO NMN / PEPTÍDEOS ]",
         "laudo_col_param": "PARÂMETRO / SEÇÃO CLÍNICA",
         "laudo_col_parecer": "DIAGNÓSTICO E PARECER TÉCNICO UHNW"
     },
     "EN": {
-        "marca_agua": "MONACO PLATINUM • TRICHOLOGY EXECUTIVE STANDARD",
-        "rodape_class": "Classified • UHNW Follicular Safeguard & Hair Epigenetics Document",
-        "rodape_seal": "MONACO SEAL • PAGE {pagina} • SHA-256 SECURED",
-        "emp_top": "TRICHOLOGY DIVISION",
-        "titulo_topo": "ULTRA-ADVANCED TRICHOLOGY REPORT & QUANTITATIVE HEMODYNAMICS ({segment})",
+        "marca_agua": "MONACO PRIVATE BANKING • TRICHOLOGY APEX CHECKMATE",
+        "rodape_class": "Classified • Follicular Safeguard, Cellular Acidity & UHNW Conversion Document",
+        "rodape_seal": "MONACO SEAL • PAGE {pagina} • PQC-SHA256 SECURED",
+        "emp_top": "TRICHOLOGY & LONGEVITY DIVISION",
+        "titulo_topo": "ULTRA-ADVANCED TRICHOLOGY REPORT & STOCHASTIC COLLAPSE MATRIX ({segment})",
         "meta_emissao": "Issuance:",
         "meta_titular": "Principal:",
         "meta_horizonte": "Horizon:",
         "meta_operador": "Operator:",
         "anos_label": "Years",
-        "sumario_titulo": "00 // EXECUTIVE SUMMARY: EPIGENETIC AND HAIR DIAGNOSTIC",
+        "sumario_titulo": "00 // APEX EXECUTIVE SUMMARY: DIAGNOSTIC & VALUATION PROJECTION",
         "sumario_texto": (
-            "This dossier consolidates optoelectronic scanning, thermography, and follicular hemodynamics at <b>{company}</b>. "
-            "Through deterministic algorithms based on Snell's Law, climatic factors, and bulbar perfusion for the <b>{segment}</b> sector, "
-            "the system isolates the exogenous stress factor (Cortisol Factor: {cortisol}) and ensures UHNW preservation parameters."
+            "This dossier consolidates optoelectronic scanning, high-precision thermography, and follicular risk modeling at <b>{company}</b>. "
+            "Through deterministic algorithms based on Snell's Law and systemic stress for the <b>{segment}</b> sector (Cortisol Factor: {cortisol}), "
+            "the system projects the 'Timeline of Fear', Cost of Inaction (COA), and absolute biological neutralization."
         ),
-        "sec1_titulo": "01 // SCALP HEMODYNAMICS & HIGH-PRECISION BULBAR HEMOPERFUSION",
-        "h_vascular": "Vascular Mapping",
-        "h_metrica": "Calculated Metric",
-        "h_painel": "Graphic Panel & Coefficient",
-        "h_status": "Tissue Clinical Status",
-        "row_fluxo": "Capillary Blood Flow (Q)",
-        "desc_fluxo": "Real dermal oxygen supply.",
-        "row_resistencia": "Vascular Resistance (R_v)",
-        "row_diag": "Strategic Diagnosis",
-        "row_impacto": "Sector Impact",
+        "sec1_titulo": "01 // TIMELINE OF FEAR: FOLLICULAR COLLAPSE PROJECTION & ALLOCATION",
+        "h_mes": "Horizon",
+        "h_densidade": "Projected Density",
+        "h_status_colapso": "Biological Tissue Status",
+        "h_investimento": "Euros (€) - NAD+/VEGF Protocol",
+        
         "sec2_titulo": "02 // SPECTROMETRY, OPTICAL THERMOGRAPHY & DISRUPTIVE CONDUCTS",
         "h_indicador": "Indicator / Module",
         "h_valor": "Value / Parameter",
@@ -143,18 +196,79 @@ TEXTOS_TRICOLOGIA = {
         "opt_refracao": "Refractive Index (n)",
         "desc_refracao": "Real angular deviation of light in the hair fiber (Snell's Law).",
         "opt_miniaturizacao": "Miniaturization Rate",
-        "desc_miniaturizacao": "Accumulated level for the {horizon}-year horizon.",
+        "desc_miniaturizacao": "Accumulated level projected for the {horizon}-year horizon.",
         "opt_termografia": "Perifollicular Thermography",
         "opt_detox": "Detox Factor & Pollution",
         "opt_cronobio": "Circadian Chronobiology",
-        "val_sincronizado": "Synchronized",
+        "val_sincronizado": "Apex Synchronized",
         "opt_clima": "Regional Climatic Factor",
         "umid_label": "Humid",
-        "sec3_titulo": "03 // TECHNICAL GOVERNANCE AND CUSTODY CHAIN",
-        "ass_sha": "Cryptographic Signature SHA-256:",
+        
+        "sec3_titulo": "03 // TECHNICAL GOVERNANCE AND PQC CUSTODY CHAIN",
+        "ass_sha": "Cryptographic Signature PQC-SHA256:",
         "dir_soberana": "Sovereign Guideline:",
         "auditoria_nota": "Biomedical Audit (Monaco Standards & European Compliance): Indicators adjusted to the macroeconomic stress factor ({cortisol}) for the {horizon}-year horizon.",
-        "anexo_titulo": "[ SECTION II: DYNAMIC INTELLIGENCE ANNEX & NMN TRICHOLOGY ]",
+
+        "sec4_trico_titulo": "04 // DYNAMIC HYPER-PERSONALIZED NUTRACEUTICAL MATRIX",
+        "t4_tr_l1_nome": "Cellular VEGF Growth Factor",
+        "t4_tr_l1_desc": "Direct stimulus to deep peripheral neovascularization to reverse miniaturization.",
+        "t4_tr_l2_nome": "NAD+ Precursors",
+        "t4_tr_l2_desc": "Restoration of bulb mitochondrial energy and active blocking of cellular aging.",
+        "t4_tr_l3_nome": "5-Alpha-Redutase Enzymatic Blocker",
+        "t4_tr_l3_desc": "Systemic and topical protection against DHT-induced degradation under oxidative stress.",
+
+        "sec5_trico_titulo": "05 // PRICING ENGINEERING & APEX ECOSYSTEM ALLOCATION",
+        "t5_tr_l1_nome": "Module I: Stabilization & Urban Detox",
+        "t5_tr_l1_desc": "Heavy metal removal and immediate follicular microenvironment readjustment.",
+        "t5_tr_l2_nome": "Module II: Active Platinum Shielding (Recommended)",
+        "t5_tr_l2_desc": "Complete protocol of regenerative cell therapy + personalized circadian engineering.",
+        "t5_tr_l3_nome": "Module III: Swiss Perpetual Governance",
+        "t5_tr_l3_desc": "24/7 predictive AI monitoring with semi-annual recalibration.",
+
+        "sec6_trico_titulo": "06 // REPUTATIONAL DEPRECIATION & COA (COST OF INACTION IN REAL TIME)",
+        "sec6_trico_desc": "Simulation of negative financial impact if the executive protocol is postponed.",
+
+        # --- BLOCK 07 (ENGLISH) ---
+        "sec7_trico_titulo": "07 // THE TRANSPLANT FALLACY & FACIAL DISTORTION MATHEMATICS",
+        "sec7_trico_desc": "Proof that financial capital does not recover biological architecture and surgery ruins visagism.",
+        "t7_tr_l1_nome": "Transplant Biological Infeasibility",
+        "t7_tr_l1_desc": "Surgical redistribution over fibrotic dermis without native anchorage or vascular support.",
+        "t7_tr_l2_nome": "Feature Distortion Index",
+        "t7_tr_l2_desc": "Geometric distortion and permanent visual aging (-24% visagist harmony).",
+        "t7_tr_l3_nome": "Hidden Downtime Cost",
+        "t7_tr_l3_desc": "Public exposure and reputational damage during the visible healing period.",
+
+        # --- BLOCK 08 (ENGLISH) ---
+        "sec8_trico_titulo": "08 // CELLULAR ACIDITY & BIOGEMINI ENGINE (TIMELINE)",
+        "sec8_trico_desc": "Chronic dehydration collapse projection contrasted with Platinum stabilization.",
+        "t8_tr_l1_nome": "Chronic Dehydration Collapse",
+        "t8_tr_l1_desc": "Continuous internal moisture erosion and absolute destruction of fiber elasticity.",
+        "t8_tr_l2_nome": "Platinum Hydraulic Stabilization",
+        "t8_tr_l2_desc": "Immediate counterpoint with high water retention and molecular shielding protocol.",
+        "t8_tr_l3_nome": "Risk Simulation Freezing",
+        "t8_tr_l3_desc": "C2 terminal lock on the progression of acidic perifollicular necrosis.",
+
+        # --- BLOCK 09 (ENGLISH) ---
+        "sec9_trico_titulo": "09 // FINANCIAL COMPLIANCE GATEWAY & BIOLOGICAL SAFEGUARD",
+        "sec9_trico_desc": "Display of high-compliance portal for UHNW asset release.",
+        "t9_tr_l1_nome": "Executive Contribution Gateway",
+        "t9_tr_l1_desc": "Encrypted high-compliance channel for immediate protocol settlement.",
+        "t9_tr_l2_nome": "Biological Safeguard Contribution",
+        "t9_tr_l2_desc": "Investment presented as irrelevant math compared to protected equity value.",
+        "t9_tr_l3_nome": "PQC-SHA256 Validation",
+        "t9_tr_l3_desc": "Maximum security and immutability in shielding contract registration.",
+
+        # --- BLOCK 10 (ENGLISH) ---
+        "sec10_trico_titulo": "10 // THE PSYCHOLOGICAL CHECKMATE: STOP CORROSION (CTA)",
+        "sec10_trico_desc": "Definitve conversion trigger where UHNW intercepts transepidermal loss right away.",
+        "t10_tr_l1_nome": "Stop Corrosion Button",
+        "t10_tr_l1_desc": "Direct command eliminating cost perception and activating relentless defense urgency.",
+        "t10_tr_l2_nome": "Financial Inefficiency Elimination",
+        "t10_tr_l2_desc": "Client realizes they feel financially stupid if they do not authorize immediately.",
+        "t10_tr_l3_nome": "Immediate Homologation & Authorization",
+        "t10_tr_l3_desc": "Instantaneous signature of the executive protocol on the decision-maker's desk.",
+
+        "anexo_titulo": "[ SECTION II: DYNAMIC INTELLIGENCE ANNEX & NMN / PEPTIDES PROTOCOL ]",
         "laudo_col_param": "PARAMETER / CLINICAL SECTION",
         "laudo_col_parecer": "UHNW DIAGNOSIS AND TECHNICAL OPINION"
     }
@@ -162,7 +276,7 @@ TEXTOS_TRICOLOGIA = {
 
 
 class SovereignSecureCanvas(canvas.Canvas):
-    """Canvas de Alta Segurança Atuarial com Marca d'Água Executiva Sutil e Rodapé Corrigido sem Sobreposição."""
+    """Canvas de Alta Segurança Atuarial com Marca d'Água Executiva Sutil e Rodapé PQC Seguro."""
     def __init__(self, *args, **kwargs):
         super(SovereignSecureCanvas, self).__init__(*args, **kwargs)
         self._saved_page_states = []
@@ -184,7 +298,7 @@ class SovereignSecureCanvas(canvas.Canvas):
         self.setFillColor(colors.HexColor("#B8860B"), alpha=0.03)
         self.translate(A4[0] / 2.0, A4[1] / 2.0)
         self.rotate(35)
-        self.drawCentredString(0, 0, "MONACO PLATINUM • TRICHOLOGY EXECUTIVE STANDARD")
+        self.drawCentredString(0, 0, "MONACO PRIVATE BANKING • TRICHOLOGY APEX")
         self.restoreState()
         
         self.saveState()
@@ -197,15 +311,15 @@ class SovereignSecureCanvas(canvas.Canvas):
         self.setFillColor(colors.HexColor('#0A1128'))
         pagina_atual = self._pageNumber
         
-        self.drawString(30, 26, "Classificado • Documento de Salvaguarda Folicular e Epigenética Capilar UHNW")
-        self.drawRightString(A4[0] - 30, 26, f"MONACO SEAL • PÁGINA {pagina_atual} • SHA-256 SECURED")
+        self.drawString(30, 26, "Classificado • Documento de Salvaguarda Folicular, Acidez Celular e Conversão UHNW")
+        self.drawRightString(A4[0] - 30, 26, f"MONACO SEAL • PÁGINA {pagina_atual} • PQC-SHA256 SECURED")
         self.restoreState()
 
 
 class C2UltraAdvancedTrichologyEngine:
     """
-    Motor Unificado de Ultra-Elite: Engenharia Biofísica, Espectrometria Capilar, 
-    Termografia Óptica, Cronobiologia, Fatores Climáticos e Geração PDF Executive Platinum com Nome Dinâmico.
+    Motor Unificado de Ultra-Elite Private Banking: Espectrometria Capilar, Termografia, 
+    Linha do Tempo do Medo, Neuromarketing Atuarial (COA), NMN Dinâmico e 10 Tabelas Checkmate.
     """
     def __init__(
         self, 
@@ -219,6 +333,8 @@ class C2UltraAdvancedTrichologyEngine:
         miniaturizacao_pct: float = 22.5, 
         umidade_ar_pct: float = 85.0, 
         temp_externa_c: float = 32.0,
+        net_worth_eur: float = 2500000.0,
+        fator_estresse_biologico: Optional[float] = None,
         telemetria: Optional[Dict[str, Any]] = None,
         lang: str = "PT",
         *args,
@@ -226,9 +342,7 @@ class C2UltraAdvancedTrichologyEngine:
     ) -> None:
         self.telemetria_externa = telemetria or {}
         
-        # Resolução dinâmica do nome do cliente/titular vindo do painel, telemetria ou fallback seguro
         self.ceo = ceo_name or self.telemetria_externa.get('nome_cliente') or self.telemetria_externa.get('nome') or "Cliente UHNW"
-        
         self.company = company_name
         self.segment = market_segment
         self.horizon = int(horizon_years)
@@ -237,12 +351,22 @@ class C2UltraAdvancedTrichologyEngine:
         self.miniaturizacao = float(miniaturizacao_pct)
         self.umidade_ar = float(umidade_ar_pct)
         self.temp_externa = float(temp_externa_c)
+        self.net_worth = float(net_worth_eur)
+        self.custo_setup = 15000.0  # Base para precificação em Euros
+        
         self.lang = lang.upper() if lang and isinstance(lang, str) else "PT"
         if self.lang not in TEXTOS_TRICOLOGIA:
             self.lang = "PT"
             
         self.emissao = datetime.datetime.now().strftime("%d/%m/%Y às %H:%M:%S UTC")
         
+        dados_fadiga_memoria = memoria.ler_dados("dados_fadiga") or {}
+        if fator_estresse_biologico is not None:
+            self.estresse = min(1.0, max(0.0, fator_estresse_biologico))
+        else:
+            score_sensor = dados_fadiga_memoria.get("score_fadiga", 72.0)
+            self.estresse = min(1.0, max(0.0, score_sensor / 100.0))
+
         if frame_capturado_rgb is not None:
             self.temp_perifolicular, self.saturacao_poluicao, self.pico_cortisol_dinamico = self._analisar_biometria_optica(frame_capturado_rgb)
         else:
@@ -265,6 +389,9 @@ class C2UltraAdvancedTrichologyEngine:
                 raw_analise = "\n".join(linhas_analise[1:-1] if linhas_analise[-1].strip() == "```" else linhas_analise[1:])
         self.analise_llm = raw_analise.strip()
 
+    def formatar_moeda_eur(self, valor: float) -> str:
+        return f"€ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+
     def _analisar_biometria_optica(self, frame) -> Tuple[float, str, str]:
         try:
             img_float = frame.astype(np.float32)
@@ -276,30 +403,30 @@ class C2UltraAdvancedTrichologyEngine:
 
             luminancia = np.mean(0.299 * img_float[:, :, 2] + 0.587 * img_float[:, :, 1] + 0.114 * img_float[:, :, 0])
             if luminancia < 90:
-                poluicao = "Crítica (Urbana com sujidade particulada acumulada)"
+                poluicao = "Crítica (Urbana com sujidade particulada)"
             elif luminancia < 120:
-                poluicao = "Moderada (Saturação sebácea e oxidativa)"
+                poluicao = "Moderada (Saturação sebácea)"
             else:
                 poluicao = "Baixa (Microambiente limpo)"
         except Exception:
             temp_calculada = 34.2
-            poluicao = "Moderada (Fallback de segurança ativado)"
+            poluicao = "Moderada (Fallback ativado)"
 
         hora_atual = datetime.datetime.now().hour
         if self.lang == "EN":
             if 5 <= hora_atual < 12:
-                cortisol_horario = "Morning (High permeability window & VEGF absorption)"
+                cortisol_horario = "Morning (High permeability & VEGF absorption)"
             elif 12 <= hora_atual < 18:
-                cortisol_horario = "Afternoon (Follicular metabolic stabilization phase)"
+                cortisol_horario = "Afternoon (Metabolic stabilization phase)"
             else:
-                cortisol_horario = "Night (Mitochondrial activity peak & critical DHT window)"
+                cortisol_horario = "Night (Mitochondrial peak & critical DHT window)"
         else:
             if 5 <= hora_atual < 12:
-                cortisol_horario = "Manhã (Janela de alta permeabilidade e absorção de VEGF)"
+                cortisol_horario = "Manhã (Janela de alta permeabilidade e VEGF)"
             elif 12 <= hora_atual < 18:
-                cortisol_horario = "Tarde (Fase de estabilização metabólica folicular)"
+                cortisol_horario = "Tarde (Estabilização metabólica folicular)"
             else:
-                cortisol_horario = "Noite (Pico de atividade mitocondrial e janela crítica de DHT)"
+                cortisol_horario = "Noite (Pico mitocondrial e janela crítica DHT)"
 
         return temp_calculada, poluicao, cortisol_horario
 
@@ -318,74 +445,62 @@ class C2UltraAdvancedTrichologyEngine:
 
         if self.lang == "EN":
             if self.temp_perifolicular < 34.5:
-                alerta_termico = f"Thermal Optical Alert ({self.temp_perifolicular}°C): Perifollicular vasoconstriction. Mandatory pre-heating with 830nm LED."
+                alerta_termico = f"Thermal Alert ({self.temp_perifolicular}°C): Perifollicular vasoconstriction. Use 830nm LED."
             else:
-                alerta_termico = f"Stable Thermal Profile ({self.temp_perifolicular}°C): Microcirculation optimized for permeation."
+                alerta_termico = f"Stable Thermal ({self.temp_perifolicular}°C): Microcirculation optimized."
 
             if "Crítica" in self.saturacao_poluicao or "Moderada" in self.saturacao_poluicao or "Critical" in self.saturacao_poluicao or "Moderate" in self.saturacao_poluicao:
-                fator_detox = f"Saturation [{self.saturacao_poluicao}]: Osteo-follicular under oxidative stress. Requires preliminary Fractional Plasma sweep."
+                fator_detox = f"Saturation [{self.saturacao_poluicao}]: Oxidative stress. Fractional Plasma sweep required."
             else:
-                fator_detox = f"Optical Saturation: {self.saturacao_poluicao}. Favorable conditions."
+                fator_detox = f"Optical Saturation: {self.saturacao_poluicao}."
 
             if "Noite" in self.pico_cortisol_dinamico or "Night" in self.pico_cortisol_dinamico:
-                cronograma_horario = f"Chronobiology [{self.pico_cortisol_dinamico}]: Night mitochondrial peak. Apply 5-alpha-reductase blocker at 10:30 PM."
+                cronograma_horario = f"Chronobiology [{self.pico_cortisol_dinamico}]: Apply DHT blocker at 10:30 PM."
             else:
-                cronograma_horario = f"Chronobiology [{self.pico_cortisol_dinamico}]: Active daytime synchronization."
+                cronograma_horario = f"Chronobiology [{self.pico_cortisol_dinamico}]: Active daytime sync."
 
             if self.umidade_ar > 80:
-                alerta_clima = f"Climatic Factor (Humidity: {self.umidade_ar}% | Temp: {self.temp_externa}°C): High humidity, risk of microbial dysbiosis. Antiseptics mandatory."
+                alerta_clima = f"Climatic (Humidity: {self.umidade_ar}%): High humidity, risk of dysbiosis."
             else:
-                alerta_clima = f"Climatic Factor (Humidity: {self.umidade_ar}% | Temp: {self.temp_externa}°C): Dry environment. Focus on water occlusion."
+                alerta_clima = f"Climatic (Humidity: {self.umidade_ar}%): Dry environment."
 
             if self.fator_cortisol > 1.2:
                 status_clinico = "PROGRESSIVE PERIPHERAL BULBAR ISCHEMIA"
-                vulnerabilidade_texto = (
-                    f"Follicular atrophy reflects the immediate biological impact of stress "
-                    f"in the {self.segment} segment. Vascular resistance of {round(resistencia_calculada, 2)} dyn s/cm³."
-                )
-                diretriz_tática = (
-                    f"Mandatory ULTRA TRICHOLOGY protocol activation to stabilize "
-                    f"{self.ceo}'s hemoperfusion. Image preservation essential for {self.company}."
-                )
+                vulnerabilidade_texto = f"Follicular atrophy in {self.segment}. Resistance: {round(resistencia_calculada, 2)} dyn·s/cm⁵."
+                diretriz_tática = f"Protocol activation for {self.ceo} mandatory to stabilize hemoperfusion."
             else:
-                status_clinico = "VASCULAR PRESERVATION IN MAINTENANCE PATTERN"
-                vulnerabilidade_texto = "Exogenous stress within actuarial normality."
-                diretriz_tática = "Standard preventive oxygenation and spectrophotometry maintenance."
+                status_clinico = "VASCULAR PRESERVATION MAINTENANCE"
+                vulnerabilidade_texto = "Exogenous stress within normal parameters."
+                diretriz_tática = "Standard preventive spectrophotometry maintenance."
         else:
             if self.temp_perifolicular < 34.5:
-                alerta_termico = f"Alerta Térmico Óptico ({self.temp_perifolicular}°C): Vasoconstrição perifolicular. Obrigatório pré-aquecimento com LED 830nm."
+                alerta_termico = f"Alerta Térmico ({self.temp_perifolicular}°C): Vasoconstrição. Obrigatório LED 830nm."
             else:
-                alerta_termico = f"Perfil Térmico Estável ({self.temp_perifolicular}°C): Microcirculação otimizada para permeação."
+                alerta_termico = f"Perfil Estável ({self.temp_perifolicular}°C): Microcirculação otimizada."
 
             if "Crítica" in self.saturacao_poluicao or "Moderada" in self.saturacao_poluicao:
-                fator_detox = f"Saturação [{self.saturacao_poluicao}]: Ósteo folicular sob stress oxidativo. Requer varredura prévia com Plasma Fracionado."
+                fator_detox = f"Saturação [{self.saturacao_poluicao}]: Estresse oxidativo. Requer Plasma Fracionado."
             else:
-                fator_detox = f"Saturação Óptica: {self.saturacao_poluicao}. Condições favoráveis."
+                fator_detox = f"Saturação Óptica: {self.saturacao_poluicao}."
 
             if "Noite" in self.pico_cortisol_dinamico:
-                cronograma_horario = f"Cronobiologia [{self.pico_cortisol_dinamico}]: Pico mitocondrial noturno. Aplicar bloqueador de 5-alfa-redutase às 22:30."
+                cronograma_horario = f"Cronobiologia [{self.pico_cortisol_dinamico}]: Aplicar bloqueador de DHT às 22:30."
             else:
-                cronograma_horario = f"Cronobiologia [{self.pico_cortisol_dinamico}]: Sincronização diurna ativa."
+                cronograma_horario = f"Cronobiologia [{self.pico_cortisol_dinamico}]: Sincronização diurna."
 
             if self.umidade_ar > 80:
-                alerta_clima = f"Fator Climático (Umidade: {self.umidade_ar}% | Temp: {self.temp_externa}°C): Alta umidade, risco de disbiose microbiana. Uso de antissépticos obrigatório."
+                alerta_clima = f"Clima (Umidade: {self.umidade_ar}%): Risco de disbiose. Antisséptico obrigatório."
             else:
-                alerta_clima = f"Fator Climático (Umidade: {self.umidade_ar}% | Temp: {self.temp_externa}°C): Ambiente seco. Foco em oclusão hídrica."
+                alerta_clima = f"Clima (Umidade: {self.umidade_ar}%): Ambiente seco. Oclusão hídrica."
 
             if self.fator_cortisol > 1.2:
                 status_clinico = "ISQUEMIA BULBAR PERIFÉRICA EM PROGRESSÃO"
-                vulnerabilidade_texto = (
-                    f"A atrofia folicular reflete o impacto biológico imediato do estresse "
-                    f"no segmento de {self.segment}. Resistência vascular de {round(resistencia_calculada, 2)} dyn s/cm³."
-                )
-                diretriz_tática = (
-                    f"Ativação do protocolo TRICOLOGIA ULTRA mandatória para estabilizar a "
-                    f"hemoperfusão de {self.ceo}. Preservação de imagem essencial para a {self.company}."
-                )
+                vulnerabilidade_texto = f"Atrofia folicular no setor de {self.segment}. Resistência: {round(resistencia_calculada, 2)} dyn·s/cm⁵."
+                diretriz_tática = f"Ativação mandatória de protocolo para estabilizar hemoperfusão de {self.ceo}."
             else:
-                status_clinico = "PRESERVAÇÃO VASCULAR EM PADRÃO DE MANUTENÇÃO"
+                status_clinico = "PRESERVAÇÃO VASCULAR EM MANUTENÇÃO"
                 vulnerabilidade_texto = "Estresse exógeno dentro da normalidade atuarial."
-                diretriz_tática = "Manutenção preventiva padrão de oxigenação e espectrofotometria."
+                diretriz_tática = "Manutenção preventiva padrão de oxigenação."
 
         return {
             "fluxo_q": round(fluxo_calculado, 2),
@@ -401,6 +516,34 @@ class C2UltraAdvancedTrichologyEngine:
             "alerta_clima": alerta_clima
         }
 
+    def _calcular_linha_tempo_medo(self) -> List[Dict[str, Any]]:
+        setup_base_eur = 12500.0  
+        fator_severidade = self.fator_cortisol * (self.miniaturizacao / 20.0)
+        
+        timeline = []
+        meses = [6, 12, 18, 24]
+        densidade_atual = self.densidade_fios
+        
+        for m in meses:
+            perda_acumulada = (m / 12.0) * 4.2 * fator_severidade
+            densidade_projetada = max(35.0, densidade_atual - perda_acumulada)
+            custo_protocolo_eur = setup_base_eur * (1.0 + (m / 24.0) * 0.4) * self.fator_cortisol
+            
+            if m >= 18:
+                status_colapso = "Colapso Acelerado (Urgência)" if self.lang == "PT" else "Accelerated Collapse (Urgency)"
+            else:
+                status_colapso = "Degradação Contínua" if self.lang == "PT" else "Continuous Degradation"
+                
+            valor_formatado = f"€ {custo_protocolo_eur:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+            
+            timeline.append({
+                "mes": f"Mês +{m}",
+                "densidade": f"{round(densidade_projetada, 1)} f/cm²",
+                "status": status_colapso,
+                "investimento": valor_formatado
+            })
+        return timeline
+
     def gerar_pdf_tricologia_avancada(self, caminho_salvamento: str = "tricologia_ultra_avancada_dossier.pdf", lang: Optional[str] = None) -> str:
         if lang:
             self.lang = lang.upper()
@@ -411,8 +554,9 @@ class C2UltraAdvancedTrichologyEngine:
         self.emissao = datetime.datetime.now().strftime("%d/%m/%Y às %H:%M:%S UTC")
         
         dados = self.calcular_telemetria_capilar()
+        timeline_medo = self._calcular_linha_tempo_medo()
         
-        string_base_hash = f"TRICOLOGIA-{self.ceo}-{self.company}-{dados['fluxo_q']}-{self.emissao}-{self.lang}"
+        string_base_hash = f"TRICOLOGIA-PRIVATE-BANKING-10TABLES-{self.ceo}-{self.company}-{dados['fluxo_q']}-{self.emissao}-{self.lang}"
         hash_sha256 = hashlib.sha256(string_base_hash.encode('utf-8')).hexdigest().upper()
 
         os.makedirs(os.path.dirname(caminho_salvamento) if os.path.dirname(caminho_salvamento) else '.', exist_ok=True)
@@ -429,33 +573,57 @@ class C2UltraAdvancedTrichologyEngine:
         MONACO_NAVY = colors.HexColor('#0A1128')
         SOVEREIGN_GOLD = colors.HexColor('#B8860B')   
         EXCELENCIA_VERDE = colors.HexColor('#00875A') 
+        ALERTA_VERMELHO = colors.HexColor('#C0392B')  
         DARK_TEXT = colors.HexColor('#1E293B')        
         WHITE_BG = colors.HexColor('#FFFFFF')         
         CARD_BORDER = colors.HexColor('#CBD5E1')      
         TABLE_HEADER_BG = colors.HexColor('#F8FAFC')  
         
-        estilo_empresa_topo = ParagraphStyle('EmpTop', fontSize=7, fontName='Helvetica-Bold', textColor=SOVEREIGN_GOLD, alignment=1, spaceAfter=2)
-        estilo_titulo_topo = ParagraphStyle('TitleTop', fontSize=12.5, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=15, alignment=1, spaceAfter=3)
-        estilo_meta_topo = ParagraphStyle('MetaTop', fontSize=7, fontName='Helvetica', textColor=colors.HexColor('#334155'), alignment=1, spaceAfter=6)
+        estilo_empresa_topo = ParagraphStyle('EmpTop', fontSize=6.5, fontName='Helvetica-Bold', textColor=SOVEREIGN_GOLD, alignment=1, spaceAfter=1)
+        estilo_titulo_topo = ParagraphStyle('TitleTop', fontSize=10.5, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=12.0, alignment=1, spaceAfter=1)
+        estilo_meta_topo = ParagraphStyle('MetaTop', fontSize=5.5, fontName='Helvetica', textColor=colors.HexColor('#334155'), alignment=1, spaceAfter=2)
         
-        estilo_sumario_titulo = ParagraphStyle('SumSec', fontSize=8, fontName='Helvetica-Bold', textColor=MONACO_NAVY, spaceBefore=4, spaceAfter=2)
-        estilo_sumario_texto = ParagraphStyle('SumText', fontSize=7, fontName='Helvetica', textColor=DARK_TEXT, leading=9.5, spaceAfter=6, alignment=4)
+        estilo_sumario_titulo = ParagraphStyle('SumSec', fontSize=6.5, fontName='Helvetica-Bold', textColor=MONACO_NAVY, spaceBefore=1, spaceAfter=1)
+        estilo_sumario_texto = ParagraphStyle('SumText', fontSize=5.0, fontName='Helvetica', textColor=DARK_TEXT, leading=6.5, spaceAfter=2, alignment=4)
         
-        estilo_secao = ParagraphStyle('SecTrico', fontSize=7.5, fontName='Helvetica-Bold', textColor=MONACO_NAVY, spaceBefore=4, spaceAfter=2)
-        estilo_corpo = ParagraphStyle('CorpoTrico', fontSize=6.0, fontName='Helvetica', textColor=DARK_TEXT, leading=8.0, spaceAfter=2, alignment=4)
-        estilo_celula = ParagraphStyle('CelTrico', fontSize=5.5, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=7.5)
-        estilo_celula_header = ParagraphStyle('CelHeadTrico', fontSize=5.5, fontName='Helvetica-Bold', textColor=SOVEREIGN_GOLD, leading=7.5, alignment=1)
-        estilo_metrica_verde = ParagraphStyle('CelVerde', fontSize=5.5, fontName='Helvetica-Bold', textColor=EXCELENCIA_VERDE, leading=7.5)
-        estilo_codigo = ParagraphStyle('CodTrico', fontSize=5.5, fontName='Courier-Bold', textColor=EXCELENCIA_VERDE, alignment=2)
-        estilo_auditoria = ParagraphStyle('NotaAuditoriaTrico', fontSize=5, fontName='Helvetica-Oblique', textColor=colors.HexColor('#64748B'), leading=7, alignment=1, spaceBefore=3)
+        estilo_secao = ParagraphStyle('SecTrico', fontSize=6.0, fontName='Helvetica-Bold', textColor=MONACO_NAVY, spaceBefore=1.5, spaceAfter=0.5)
+        estilo_corpo = ParagraphStyle('CorpoTrico', fontSize=4.5, fontName='Helvetica', textColor=DARK_TEXT, leading=5.5, spaceAfter=0.5, alignment=4)
+        estilo_celula = ParagraphStyle('CelTrico', fontSize=4.5, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=5.5)
+        estilo_celula_header = ParagraphStyle('CelHeadTrico', fontSize=4.5, fontName='Helvetica-Bold', textColor=SOVEREIGN_GOLD, leading=5.5, alignment=1)
+        estilo_tabela_bold = ParagraphStyle('TabBold', fontSize=4.5, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=5.5)
+        estilo_tabela = ParagraphStyle('TabReg', fontSize=4.5, fontName='Helvetica', textColor=DARK_TEXT, leading=5.5)
+        estilo_metrica_verde = ParagraphStyle('CelVerde', fontSize=4.5, fontName='Helvetica-Bold', textColor=EXCELENCIA_VERDE, leading=5.5)
+        estilo_metrica_vermelha = ParagraphStyle('CelRed', fontSize=4.5, fontName='Helvetica-Bold', textColor=ALERTA_VERMELHO, leading=5.5)
+        estilo_codigo = ParagraphStyle('CodTrico', fontSize=4.5, fontName='Courier-Bold', textColor=EXCELENCIA_VERDE, alignment=2)
+        estilo_auditoria = ParagraphStyle('NotaAuditoriaTrico', fontSize=3.8, fontName='Helvetica-Oblique', textColor=colors.HexColor('#64748B'), leading=5.0, alignment=1, spaceBefore=1.5)
         
         ceo_nome = self.ceo.upper() if self.ceo else 'CLIENTE UHNW'
         operador_nome = self.operador.upper() if self.operador else 'THIERRY'
 
         story: List[Flowable] = []
 
+        # =====================================================================
+        # INTELIGÊNCIA DE NEUROMARKETING E REGRAS DE UPSELL DINÂMICO
+        # =====================================================================
+        if self.estresse > 0.70:
+            ativo_urgente = "Precursores de NAD+ (NMN Suíço Injetável Ultra Concentrado Tier-1)"
+            status_fator = "COLAPSO CRÍTICO"
+            fator_multiplicador_preco = 1.65  
+        else:
+            ativo_urgente = "Precursores de NAD+ (NMN Celular Oral de Manutenção)"
+            status_fator = "Erosão Ativa"
+            fator_multiplicador_preco = 1.0
+
+        preco_trico_standard = self.custo_setup * 0.55
+        preco_trico_platinum = self.custo_setup * fator_multiplicador_preco
+        preco_trico_sovereign = self.custo_setup * 3.2 * fator_multiplicador_preco
+
+        perda_reputacional_24m = self.net_worth * 0.035 * (1.0 + self.estresse)
+        custo_de_inatividade_mensal = perda_reputacional_24m / 24.0
+        roi_preservacao_imagem = ((perda_reputacional_24m - preco_trico_platinum) / preco_trico_platinum) * 100.0
+
         # =========================================================================
-        # PÁGINA 1: TOPO SOLTO + BLOCO MESTRE INFERIOR
+        # PÁGINA 1: TOPO SOLTO + BLOCO MESTRE ÚNICO COM AS 10 TABELAS APEX
         # =========================================================================
         story.append(Paragraph(f"{self.company.upper()} • {txt['emp_top']}", estilo_empresa_topo))
         story.append(Paragraph(txt['titulo_topo'].format(segment=self.segment), estilo_titulo_topo))
@@ -466,34 +634,38 @@ class C2UltraAdvancedTrichologyEngine:
             txt['sumario_texto'].format(company=self.company, segment=self.segment, cortisol=self.fator_cortisol),
             estilo_sumario_texto
         ))
-        story.append(Spacer(1, 2))
+        story.append(Spacer(1, 1))
 
-        elementos_bloco_pagina1: List[Any] = [
-            Paragraph(txt['sec1_titulo'], estilo_secao),
-        ]
+        elementos_bloco_pagina1: List[Any] = []
         
-        dados_hemodinamica = [
-            [Paragraph(txt['h_vascular'], estilo_celula_header), Paragraph(txt['h_metrica'], estilo_celula_header), Paragraph(txt['h_painel'], estilo_celula_header), Paragraph(txt['h_status'], estilo_celula_header)],
-            [Paragraph(txt['row_fluxo'], estilo_celula), Paragraph(f"{dados['fluxo_q']} RPM", estilo_metrica_verde), Paragraph(f'<font color="#00875A"><b>[■■■■■■■■□□] {dados["fluxo_q"]}</b></font>', estilo_codigo), Paragraph(txt['desc_fluxo'], estilo_corpo)],
-            [Paragraph(txt['row_resistencia'], estilo_celula), Paragraph(f"{dados['resistencia_r']} dyn·s/cm⁵", estilo_celula), Paragraph(f'<font color="#B8860B"><b>{dados["resistencia_r"]}</b></font>', estilo_codigo), Paragraph(dados['status_clinico'], estilo_corpo)],
-            [Paragraph(txt['row_diag'], estilo_celula), Paragraph(txt['row_impacto'], estilo_celula), Paragraph(f'<font color="#00875A"><b>{self.segment}</b></font>', estilo_metrica_verde), Paragraph(dados['vulnerabilidade_texto'], estilo_corpo)]
+        # --- TABELA 01: LINHA DO TEMPO DO MEDO ---
+        elementos_bloco_pagina1.append(Paragraph(txt['sec1_titulo'], estilo_secao))
+        tabela_medo_data = [
+            [Paragraph(txt['h_mes'], estilo_celula_header), Paragraph(txt['h_densidade'], estilo_celula_header), Paragraph(txt['h_status_colapso'], estilo_celula_header), Paragraph(txt['h_investimento'], estilo_celula_header)]
         ]
-        
-        tab_hemo = Table(dados_hemodinamica, colWidths=[105, 75, 105, 225])
-        tab_hemo.setStyle(TableStyle([
+        for item in timeline_medo:
+            tabela_medo_data.append([
+                Paragraph(f"<b>{item['mes']}</b>", estilo_celula),
+                Paragraph(item['densidade'], estilo_metrica_vermelha if "Colapso" in item['status'] else estilo_celula),
+                Paragraph(item['status'], estilo_corpo),
+                Paragraph(f"<b><font color='#00875A'>{item['investimento']}</font></b>", estilo_metrica_verde)
+            ])
+        tab_medo = Table(tabela_medo_data, colWidths=[45, 75, 235, 145])
+        tab_medo.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
-            ('LEFTPADDING', (0,0), (-1,-1), 4),
-            ('RIGHTPADDING', (0,0), (-1,-1), 4),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
-        elementos_bloco_pagina1.append(tab_hemo)
-        elementos_bloco_pagina1.append(Spacer(1, 4))
+        elementos_bloco_pagina1.append(tab_medo)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
         
+        # --- TABELA 02: ESPECTROMETRIA & TERMOGRAFIA ÓPTICA ---
         elementos_bloco_pagina1.append(Paragraph(txt['sec2_titulo'], estilo_secao))
         dados_optica = [
             [Paragraph(txt['h_indicador'], estilo_celula_header), Paragraph(txt['h_valor'], estilo_celula_header), Paragraph(txt['h_diretriz'], estilo_celula_header)],
@@ -504,45 +676,200 @@ class C2UltraAdvancedTrichologyEngine:
             [Paragraph(txt['opt_cronobio'], estilo_celula), Paragraph(txt['val_sincronizado'], estilo_metrica_verde), Paragraph(dados['cronograma_horario'], estilo_corpo)],
             [Paragraph(txt['opt_clima'], estilo_celula), Paragraph(f"{txt['umid_label']}: {self.umidade_ar}%", estilo_celula), Paragraph(dados['alerta_clima'], estilo_corpo)]
         ]
-        
-        tab_optica = Table(dados_optica, colWidths=[110, 80, 314])
+        tab_optica = Table(dados_optica, colWidths=[100, 65, 335])
         tab_optica.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
-            ('LEFTPADDING', (0,0), (-1,-1), 4),
-            ('RIGHTPADDING', (0,0), (-1,-1), 4),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_pagina1.append(tab_optica)
-        elementos_bloco_pagina1.append(Spacer(1, 4))
+        elementos_bloco_pagina1.append(Spacer(1, 1))
 
+        # --- TABELA 03: GOVERNANÇA TÉCNICA E CADEIA PQC ---
         elementos_bloco_pagina1.append(Paragraph(txt['sec3_titulo'], estilo_secao))
         elementos_bloco_total_texto = f"""
-        <b>{txt['ass_sha']}</b> <font name='Courier' size=5.5 color='#00875A'>{hash_sha256}</font><br/>
+        <b>{txt['ass_sha']}</b> <font name='Courier' size=4.0 color='#00875A'>{hash_sha256}</font><br/>
         <b>{txt['dir_soberana']}</b> <font color='#00875A'>{dados['diretriz_tática']}</font>
         """
         elementos_bloco_pagina1.append(Paragraph(elementos_bloco_total_texto, estilo_corpo))
-        elementos_bloco_pagina1.append(Spacer(1, 2))
-        
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
+        # --- TABELA 04: MATRIZ NUTRACÊUTICA HIPER-PERSONALIZADA DINÂMICA ---
+        elementos_bloco_pagina1.append(Paragraph(txt["sec4_trico_titulo"], estilo_secao))
+        t4_data = [
+            [Paragraph(txt["t4_tr_l1_nome"], estilo_tabela_bold), Paragraph("Urgente", estilo_metrica_verde), Paragraph(txt["t4_tr_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t4_tr_l2_nome"], estilo_tabela_bold), Paragraph(status_fator, estilo_metrica_verde if self.estresse <= 0.70 else estilo_metrica_vermelha), Paragraph(ativo_urgente, estilo_tabela)],
+            [Paragraph(txt["t4_tr_l3_nome"], estilo_tabela_bold), Paragraph("Sincronizado", estilo_tabela), Paragraph(txt["t4_tr_l3_desc"], estilo_tabela)]
+        ]
+        tab_nutra = Table(t4_data, colWidths=[120, 85, 295])
+        tab_nutra.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_pagina1.append(tab_nutra)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
+        # --- TABELA 05: ENGENHARIA DE PRECIFICAÇÃO E ALOCAÇÃO APEX ---
+        elementos_bloco_pagina1.append(Paragraph(txt["sec5_trico_titulo"], estilo_secao))
+        t5_data = [
+            [Paragraph(txt["t5_tr_l1_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(preco_trico_standard), estilo_tabela), Paragraph(txt["t5_tr_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t5_tr_l2_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(preco_trico_platinum), estilo_metrica_verde), Paragraph(txt["t5_tr_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t5_tr_l3_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(preco_trico_sovereign), estilo_tabela), Paragraph(txt["t5_tr_l3_desc"], estilo_tabela)]
+        ]
+        tab_preco = Table(t5_data, colWidths=[120, 75, 305])
+        tab_preco.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_pagina1.append(tab_preco)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
+        # --- TABELA 06: DEPRECIAÇÃO REPUTACIONAL E COA (CUSTO DE INAÇÃO) ---
+        elementos_bloco_pagina1.append(Paragraph(txt["sec6_trico_titulo"], estilo_secao))
+        t6_data = [
+            [Paragraph("Erosão Volátil de Imagem (24M)", estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(perda_reputacional_24m), estilo_tabela), Paragraph("Prejuízo intangível projetado sobre o valor de mercado do executivo.", estilo_tabela)],
+            [Paragraph("Custo de Inação Mensal (COA)", estilo_tabela_bold), Paragraph(f"<font color='#910000'>{self.formatar_moeda_eur(custo_de_inatividade_mensal)} /m</font>", estilo_tabela_bold), Paragraph("O custo financeiro real de adiar a decisão de blindagem por 30 dias.", estilo_tabela)],
+            [Paragraph("Taxa de Retorno de Ativo (ROI)", estilo_tabela_bold), Paragraph(f"{roi_preservacao_imagem:.1f}% ROI", estilo_metrica_verde), Paragraph("Retorno líquido sobre o capital aplicado em relação à perda mitigada.", estilo_tabela)]
+        ]
+        tab_coadata = Table(t6_data, colWidths=[120, 90, 290])
+        tab_coadata.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_pagina1.append(tab_coadata)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
+        # --- TABELA 07: A FALÁCIA DO IMPLANTE E A DISTORÇÃO FACIAL ---
+        elementos_bloco_pagina1.append(Paragraph(txt["sec7_trico_titulo"], estilo_secao))
+        t7_data = [
+            [Paragraph(txt["t7_tr_l1_nome"], estilo_tabela_bold), Paragraph("Inviável Biologicamente", estilo_metrica_vermelha), Paragraph(txt["t7_tr_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t7_tr_l2_nome"], estilo_tabela_bold), Paragraph("Distorção Feição -24%", estilo_metrica_vermelha), Paragraph(txt["t7_tr_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t7_tr_l3_nome"], estilo_tabela_bold), Paragraph("Downtime Crítico", estilo_tabela), Paragraph(txt["t7_tr_l3_desc"], estilo_tabela)]
+        ]
+        tab_sla = Table(t7_data, colWidths=[120, 80, 300])
+        tab_sla.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_pagina1.append(tab_sla)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
+        # --- TABELA 08: ACIDEZ CELULAR E MOTOR DE BIOGÊMEOS ---
+        elementos_bloco_pagina1.append(Paragraph(txt["sec8_trico_titulo"], estilo_secao))
+        t8_data = [
+            [Paragraph(txt["t8_tr_l1_nome"], estilo_tabela_bold), Paragraph("Desidratação Severa", estilo_metrica_vermelha), Paragraph(txt["t8_tr_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t8_tr_l2_nome"], estilo_tabela_bold), Paragraph("Platinum Ativa", estilo_metrica_verde), Paragraph(txt["t8_tr_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t8_tr_l3_nome"], estilo_tabela_bold), Paragraph("Risco Congelado C2", estilo_metrica_verde), Paragraph(txt["t8_tr_l3_desc"], estilo_tabela)]
+        ]
+        tab_cta = Table(t8_data, colWidths=[120, 90, 290])
+        tab_cta.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_pagina1.append(tab_cta)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
+        # --- TABELA 09: GATEWAY DE CONFORMIDADE FINANCEIRA E SALVAGUARDA ---
+        elementos_bloco_pagina1.append(Paragraph(txt["sec9_trico_titulo"], estilo_secao))
+        t9_data = [
+            [Paragraph(txt["t9_tr_l1_nome"], estilo_tabela_bold), Paragraph("Gateway Seguro", estilo_metrica_verde), Paragraph(txt["t9_tr_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t9_tr_l2_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(preco_trico_platinum), estilo_metrica_verde), Paragraph(txt["t9_tr_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t9_tr_l3_nome"], estilo_tabela_bold), Paragraph("PQC-SHA256", estilo_tabela), Paragraph(txt["t9_tr_l3_desc"], estilo_tabela)]
+        ]
+        tab_swiss = Table(t9_data, colWidths=[120, 85, 295])
+        tab_swiss.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_pagina1.append(tab_swiss)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
+        # --- TABELA 10: O XEQUE-MATE PSICOLÓGICO (INTERROMPER CORROSÃO) ---
+        elementos_bloco_pagina1.append(Paragraph(txt["sec10_trico_titulo"], estilo_secao))
+        t10_data = [
+            [Paragraph(txt["t10_tr_l1_nome"], estilo_tabela_bold), Paragraph("INTERROMPER CORROSÃO", estilo_metrica_verde), Paragraph(txt["t10_tr_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t10_tr_l2_nome"], estilo_tabela_bold), Paragraph("Zero Ineficiência", estilo_metrica_verde), Paragraph(txt["t10_tr_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t10_tr_l3_nome"], estilo_tabela_bold), Paragraph("Homologado", estilo_metrica_verde), Paragraph(txt["t10_tr_l3_desc"], estilo_tabela)]
+        ]
+        tab_genom = Table(t10_data, colWidths=[120, 85, 295])
+        tab_genom.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 1),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 1),
+            ('LEFTPADDING', (0,0), (-1,-1), 2),
+            ('RIGHTPADDING', (0,0), (-1,-1), 2),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_pagina1.append(tab_genom)
+        elementos_bloco_pagina1.append(Spacer(1, 1))
+
         elementos_bloco_pagina1.append(Paragraph(txt['auditoria_nota'].format(cortisol=self.fator_cortisol, horizon=self.horizon), estilo_auditoria))
 
+        # Bloco Mestre com largura exata de 530 pt
         bloco_mestre_pagina1 = Table([[elementos_bloco_pagina1]], colWidths=[530])
         bloco_mestre_pagina1.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
             ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 8),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 8),
-            ('LEFTPADDING', (0,0), (-1,-1), 8),
-            ('RIGHTPADDING', (0,0), (-1,-1), 8),
+            ('TOPPADDING', (0,0), (-1,-1), 3),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('LEFTPADDING', (0,0), (-1,-1), 3),
+            ('RIGHTPADDING', (0,0), (-1,-1), 3),
         ]))
         story.append(bloco_mestre_pagina1)
 
         # =========================================================================
-        # SEÇÃO II: ANEXO DE INTELIGÊNCIA DINÂMICA & NMN (LAUDO CLÍNICO HOSPITALAR)
+        # SEÇÃO II: ANEXO DE INTELIGÊNCIA DINÂMICA & NMN / PEPTÍDEOS (LAUDO HOSPITALAR)
         # =========================================================================
         if self.analise_llm:
             story.append(PageBreak())
@@ -594,7 +921,8 @@ class C2UltraAdvancedTrichologyEngine:
                         Paragraph(linha.replace("*", ""), estilo_laudo_corpo)
                     ])
 
-            tab_laudo_clinico = Table(tabela_dados_laudo, colWidths=[180, 350])
+            # Largura cirúrgica de 170 + 344 = 514 pt (Encaixe perfeito na margem interna)
+            tab_laudo_clinico = Table(tabela_dados_laudo, colWidths=[170, 344])
             tab_laudo_clinico.setStyle(TableStyle([
                 ('BACKGROUND', (0,0), (-1,-1), WHITE_BG),
                 ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, WHITE_BG]),
@@ -621,7 +949,7 @@ class C2UltraAdvancedTrichologyEngine:
             story.append(bloco_mestre_pagina2)
 
         doc.build(story, canvasmaker=SovereignSecureCanvas)
-        print(f"[C2 ENGINE] PDF de Tricologia gerado com sucesso em: {caminho_salvamento} [SHA-256: {hash_sha256}]")
+        print(f"[C2 PRIVATE BANKING APEX ENGINE] PDF Checkmate gerado com sucesso em: {caminho_salvamento} [PQC-SHA256: {hash_sha256}]")
         return caminho_salvamento
 
     def gerar_dossie(self, caminho_salvamento: str = "tricologia_ultra_avancada_dossier.pdf", lang: Optional[str] = None, *args, **kwargs) -> str:
@@ -634,8 +962,8 @@ class C2UltraAdvancedTrichologyEngine:
 if __name__ == "__main__":
     pasta_finais = os.path.join(ROOT_DIR, "pdfs_finais")
     os.makedirs(pasta_finais, exist_ok=True)
-    caminho_teste = os.path.join(pasta_finais, "02_Dossie_Tricologia_Avancada.pdf")
+    caminho_teste = os.path.join(pasta_finais, "02_Dossie_Tricologia_PrivateBanking_CheckmateComplete.pdf")
     
-    engine = C2UltraAdvancedTrichologyEngine(lang="PT")
+    engine = C2UltraAdvancedTrichologyEngine(ceo_name="José Carlos Executive", market_segment="Tecnologia", net_worth_eur=4500000.0, lang="PT")
     arquivo_gerado = engine.gerar_pdf_tricologia_avancada(caminho_teste)
-    print(f"Gerador de Tricologia executado! Salvo em: {arquivo_gerado}")
+    print(f"Gerador Private Banking Apex Checkmate Complete executado! Salvo em: {arquivo_gerado}")

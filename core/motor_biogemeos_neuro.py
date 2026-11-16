@@ -11,14 +11,13 @@ agreement is strictly prohibited under international copyright frameworks.
 ===========================================================================
 """
 
-# -*- coding: utf-8 -*-
 import os
 import json
 import hashlib
 import requests
 from datetime import datetime
 
-class MotorBiociberneticoUHNW:
+class MotorBiogemeosNeuro:
     def __init__(self, memoria_compartilhada, lang: str = "PT"):
         self.memoria = memoria_compartilhada
         print("[MOTOR MESTRE] Ecossistema TCC Ativado: Neurociência (Lent), Frequências e Biogêmeos.")
@@ -38,7 +37,8 @@ class MotorBiociberneticoUHNW:
         """
         Cruza telemetria de vídeo (olhar, parassimpático, respiração diafragmática, inflamação),
         clima de 16 dias, protocolos de óleos terapêuticos, frequências sonoras e 
-        a matriz neurobiológica inspirada em 'Cem Bilhões de Neurônios'.
+        a matriz neurobiológica inspirada em 'Cem Bilhões de Neurônios', incluindo
+        os marcos temporais de projeção cronológica de 5, 10 e 15 anos.
         """
         print(f"\n[PROCESSANDO ANÁLISE INTEGRAL] Alvo: {cliente_id}")
 
@@ -62,30 +62,34 @@ class MotorBiociberneticoUHNW:
             protocolo_oleos = "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular"
             frequencia_sonora_hz = "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)"
 
-        # 5. Cálculo dos 10 Biogêmeos e identificação do Dia de Ápice Regenerativo
-        matriz_10_biogemeos = []
+        # 5. Cálculo dos Biogêmeos estruturados com os Marcos Cronológicos (5, 10 e 15 Anos)
+        matriz_biogemeos = []
         dia_do_apice = 0
         menor_inflamacao = 999.0
 
-        for i in range(1, 11):
-            inflamacao_projetada = max(0.4, inflamacao_tecido - (i * 0.16))
+        # Marcos de projeção estruturados para focar cirurgicamente em 5, 10 e 15 anos
+        marcos_cronologicos = [1, 2, 3, 4, 5, 7, 10, 12, 15, 20]
+
+        for i, anos_alvo in enumerate(marcos_cronologicos, start=1):
+            inflamacao_projetada = max(0.4, inflamacao_tecido - (anos_alvo * 0.05))
             
             if inflamacao_projetada < menor_inflamacao:
                 menor_inflamacao = inflamacao_projetada
-                dia_do_apice = round(i * 1.6, 1)
+                dia_do_apice = round(anos_alvo * 1.2, 1)
 
             dados_biogem = {
                 "estagio_biogemeo": i,
-                "desgaste_tecido_projetado": f"{round(descolamento_adiposo * (i * 0.85), 2)} mm",
+                "marco_temporal_anos": f"{anos_alvo} Anos de Projeção",
+                "desgaste_tecido_projetado": f"{round(descolamento_adiposo * (anos_alvo * 0.45), 2)} mm",
                 "inflamacao_celular": f"{round(inflamacao_projetada, 2)}%",
-                "eficiencia_sinaptica_estimada": f"{round(max(60.0, 98.0 - (i * 1.2)), 2)}%",
+                "eficiencia_sinaptica_estimada": f"{round(max(50.0, 98.0 - (anos_alvo * 2.2)), 2)}%",
                 "frequencia_ressonancia": frequencia_sonora_hz,
                 "suporte_terapeutico": protocolo_oleos
             }
 
-            string_hash = f"{cliente_id}-biogem-{i}-{inflamacao_projetada}-{frequencia_sonora_hz}"
+            string_hash = f"{cliente_id}-biogemeos-anos-{anos_alvo}-{inflamacao_projetada}-{frequencia_sonora_hz}"
             dados_biogem["hash_auditoria_sha256"] = hashlib.sha256(string_hash.encode()).hexdigest()
-            matriz_10_biogemeos.append(dados_biogem)
+            matriz_biogemeos.append(dados_biogem)
 
         # 6. Relatório Consolidado Mestre
         relatorio_biocibernetico = {
@@ -96,16 +100,16 @@ class MotorBiociberneticoUHNW:
             "prognostico_ambiental_16_dias": clima,
             "protocolo_oleos_e_massagem": protocolo_oleos,
             "frequencia_sonora_diretriz": frequencia_sonora_hz,
-            "cronograma_10_biogemeos": matriz_10_biogemeos,
+            "cronograma_biogemeos": matriz_biogemeos,
             "dia_apse_regenerativa": f"Dia {dia_do_apice} do Ciclo (Pico Máximo de Neurogênese e Regeneração Celular)",
             "assinatura_mestre_sha256": hashlib.sha256(f"{cliente_id}-APEX-MASTER-{datetime.now()}".encode()).hexdigest()
         }
 
         # 7. Salvamento direto na MemoriaComum
-        chave_armazenamento = f"biogem_completo_neuro_{cliente_id.lower().replace(' ', '_')}"
+        chave_armazenamento = f"biogemeos_completo_neuro_{cliente_id.lower().replace(' ', '_')}"
         self.memoria.salvar_dados(chave_armazenamento, relatorio_biocibernetico)
 
-        print(f"[SUCESSO ABSOLUTO] Matriz de Biogêmeos, Frequências e Óleos calculada!")
+        print(f"[SUCESSO ABSOLUTO] Matriz de Biogêmeos com marcos de 5, 10 e 15 anos calculada!")
         print(f"[ÁPICE REGENERATIVO] Identificado para o {relatorio_biocibernetico['dia_apse_regenerativa']}")
         print(f"[ESTADO GRAVADO] Chave na MemoriaComum: '{chave_armazenamento}'\n")
         return relatorio_biocibernetico

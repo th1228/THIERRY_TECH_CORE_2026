@@ -4,118 +4,152 @@
 THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
 MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - PROPRIETARY TECH DIRECTIVE
 ===========================================================================
-NOTICE: This software source code and its mathematical algorithms are the 
-intellectual property of Thierry Technology Concept Global. Unauthorized 
-distribution, reverse engineering, or usage without a signed NDA/License 
-agreement is strictly prohibited under international copyright frameworks.
+Módulo: sensor_fadiga_climatico.py
+Versão: 6.1.0 - TIER-1 DYNAMIC USER RESOLVER
 ===========================================================================
 """
 
-# -*- coding: utf-8 -*-
-"""
-Módulo: sensor_fadiga.py
-Sistema: Thierry Technology Concept Global - Motor de Fadiga Biométrico & Climático
-"""
-
 import os
-import random
-from datetime import datetime
+import datetime
+import hashlib
+import math
+from typing import Dict, Any, Tuple, Optional
 
-# Importação segura da Memória Comum do Ecossistema
+# --- PONTE DE MEMÓRIA AUTOMÁTICA (THIERRY TECH) ---
 try:
-    from core.memoria_comum import memoria_global
+    from memoria_comum import instancia_memoria as memoria
 except ImportError:
     try:
-        from memoria_comum import memoria_global
+        from core.memoria_comum import instancia_memoria as memoria
     except ImportError:
-        memoria_global = None
+        class MemoriaMock:
+            def __init__(self):
+                self.db = {}
+            def salvar_dados(self, chave: str, valor: Any): self.db[chave] = valor
+            def ler_dados(self, chave: str) -> Any: return self.db.get(chave, None)
+        memoria = MemoriaMock()
 
-# Cores ANSI para exibição estilizada no terminal
-RESET   = "\033[0m"
-BOLD    = "\033[1m"
-RED     = "\033[31m"
-GREEN   = "\033[32m"
-YELLOW  = "\033[33m"
-CYAN    = "\033[36m"
-MAGENTA = "\033[35m"
+# Cores ANSI para o terminal estilo Centro de Comando (C2)
+GREEN = "\033[92m"
+YELLOW = "\033[93m"
+RED = "\033[91m"
+CYAN = "\033[96m"
+RESET = "\033[0m"
+BOLD = "\033[1m"
 
-class SensorFadigaClimatico:
-    def __init__(self, temperatura_padrao: float = 27.0, umidade_padrao: float = 60.0, lang: str = "PT"):
-        self.temperatura = temperatura_padrao
-        self.umidade = umidade_padrao
-        self._sincronizar_memoria()
-
-    def _sincronizar_memoria(self):
-        """Puxa os dados climáticos em tempo real da Memória Comum, se disponíveis."""
-        if memoria_global:
-            dados_clima = memoria_global.ler_dados("dados_climaticos")
-            if dados_clima and 'clima_regional' in dados_clima:
-                try:
-                    partes = dados_clima['clima_regional'].split('|')
-                    temp_str = partes[0].strip().split('°')[0]
-                    umid_str = partes[1].strip().split(':')[1].replace('%', '').strip()
-                    self.temperatura = float(temp_str)
-                    self.umidade = float(umid_str)
-                except Exception as e:
-                    print(f"[SENSOR FADIGA AVISO] Usando valores padrão. Erro ao ler memória: {e}")
-
-    def calcular_indice_fadiga_cutanea(self, micro_movimentos_faciais: int = 18) -> dict:
-        """
-        Cruza os dados climáticos da memória com os sinais faciais, 
-        imprime no terminal e injeta o resultado de volta na Memória Comum.
-        """
-        self._sincronizar_memoria()
-
-        fator_termico = max(0.0, (self.temperatura - 24.0) * 1.5)
-        fator_higrometrico = max(0.0, (50.0 - self.umidade) * 0.8) if self.umidade < 50 else 0.0
+class SensorFadigaClimaticoTier1:
+    """
+    Motor Ultra-Performance de Telemetria Biométrica com Identificação Dinâmica de Operador.
+    """
+    def __init__(self, usuario: Optional[str] = None):
+        # Resolução Dinâmica: Argumento direto > Memória Comum > Fallback Soberano
+        resolvedor_nome = (
+            usuario 
+            or memoria.ler_dados("nome_cliente") 
+            or memoria.ler_dados("titular") 
+            or memoria.ler_dados("operador_ativo") 
+            or "OPERADOR UHNW"
+        )
+        self.usuario = str(resolvedor_nome).upper()
         
-        score_fadiga = min(max((micro_movimentos_faciais * 1.2) + fator_termico + fator_higrometrico, 5.0), 98.5)
-        
-        if score_fadiga > 70.0:
-            status = f"{RED}ALERTA: Fadiga Crítica / Alta Desidratação Térmica{RESET}"
-        elif score_fadiga > 40.0:
-            status = f"{YELLOW}ATENÇÃO: Fadiga Moderada por Influência Ambiental{RESET}"
+    def _calcular_fator_circadiano(self) -> float:
+        """[CRONOBIOLOGIA ATIVA] Aplica multiplicador biológico baseado no horário do sistema."""
+        hora_atual = datetime.datetime.now().hour
+        if 16 <= hora_atual <= 19:
+            return 1.15  # Pico do fim da tarde
+        elif 0 <= hora_atual <= 5:
+            return 1.30  # Janela Crítica da Madrugada
+        elif 6 <= hora_atual <= 11:
+            return 0.85  # Alta Performance Matinal
         else:
-            status = f"{GREEN}ESTÁVEL: Boa Resiliência Cutânea e Térmica{RESET}"
+            return 1.00  # Platô Base
 
-        resultados = {
-            "timestamp": datetime.now().strftime('%d/%m/%Y %H:%M:%S'),
-            "temperatura": f"{self.temperatura}°C",
-            "umidade": f"{self.umidade}%",
-            "micro_movimentos": micro_movimentos_faciais,
-            "fator_termico": round(fator_termico, 1),
-            "fator_higrometrico": round(fator_higrometrico, 1),
-            "score_fadiga": round(score_fadiga, 1),
-            "status": status
+    def _analisar_tendencia_temporal(self, score_atual: float) -> Tuple[float, str]:
+        """[ANÁLISE DE TENDÊNCIA VETORIAL] Compara com o histórico dinâmico do operador."""
+        chave_historico = f"historico_fadiga_{self.usuario}"
+        historico_passado = memoria.ler_dados(chave_historico)
+        
+        if not historico_passado or not isinstance(historico_passado, dict):
+            return 0.0, "Estável (Primeira Leitura)"
+        
+        score_anterior = historico_passado.get("score_fadiga", score_atual)
+        if score_anterior == 0:
+            score_anterior = 1.0
+            
+        delta_percentual = ((score_atual - score_anterior) / score_anterior) * 100.0
+        
+        if delta_percentual > 0:
+            status_tendencia = f"+{delta_percentual:.1f}% vs leitura anterior (Aceleração)"
+        elif delta_percentual < 0:
+            status_tendencia = f"{delta_percentual:.1f}% vs leitura anterior (Recuperação)"
+        else:
+            status_tendencia = "Estável (Sem variação)"
+            
+        return delta_percentual, status_tendencia
+
+    def executar_varredura(self, micro_movimentos_fixos: float = 12.5) -> Dict[str, Any]:
+        """Executa a telemetria unindo clima, biometria, cronobiologia e criptografia."""
+        print("=" * 70)
+        print(f"{BOLD}{CYAN}THIERRY TECH C2 - SENSOR DE FADIGA BIOMÉTRICA TIER-1{RESET}")
+        print(f"Data/Hora: {datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+        print("=" * 70)
+
+        # 1. Coleta de Inputs Inteligentes
+        clima_memoria = memoria.ler_dados("dados_climaticos") or {}
+        temperatura = clima_memoria.get("temperatura", 27.0)
+        umidade = clima_memoria.get("umidade", 60.0)
+
+        # 2. Processamento Não-Linear
+        impacto_termico = max(0.0, (temperatura - 22.0) * 0.4)
+        impacto_higrometrico = max(0.0, (umidade - 50.0) * 0.1)
+        score_base = micro_movimentos_fixos + impacto_termico + impacto_higrometrico
+        
+        # 3. Vetor Circadiano
+        fator_tempo = self._calcular_fator_circadiano()
+        score_modulado = min(100.0, max(0.0, score_base * fator_tempo))
+
+        # 4. Tendência Temporal
+        delta, tendencia_txt = self._analisar_tendencia_temporal(score_modulado)
+
+        # 5. Assinatura SHA-256
+        timestamp_iso = datetime.datetime.now().isoformat()
+        payload = f"{self.usuario}|{score_modulado:.4f}|{temperatura}|{umidade}|{timestamp_iso}"
+        integrity_hash = hashlib.sha256(payload.encode('utf-8')).hexdigest().upper()
+
+        # 6. Consolidação do Pacote C2
+        dados_fadiga = {
+            "usuario": self.usuario,
+            "timestamp": timestamp_iso,
+            "score_fadiga": round(score_modulado, 2),
+            "fator_circadiano": fator_tempo,
+            "delta_aceleracao": round(delta, 2),
+            "clima_referencia": {"temp": temperatura, "umi": umidade},
+            "integrity_hash": integrity_hash
         }
+
+        # Persistência na Memória Comum
+        memoria.salvar_dados(f"historico_fadiga_{self.usuario}", dados_fadiga)
+        memoria.salvar_dados("dados_fadiga", dados_fadiga)
+
+        # 7. Output no Terminal
+        cor_alerta = GREEN if score_modulado < 35 else (YELLOW if score_modulado < 65 else RED)
         
-        if memoria_global:
-            memoria_global.salvar_dados("dados_fadiga", resultados)
-            print("[MEMÓRIA] Dados de fadiga injetados com sucesso na Memória Comum.")
+        print(f"  • Usuário Monitorado  : {self.usuario}")
+        print(f"  • Temperatura / UR    : {temperatura}°C | {umidade}%")
+        print(f"  • Modulador Circadiano: {fator_tempo:.2f}x")
+        print(f"  • Tendência Temporal  : {cor_alerta}{tendencia_txt}{RESET}")
+        print(f"  • {BOLD}SCORE DE FADIGA REAL : {cor_alerta}{score_modulado:.2f}%{RESET}")
+        print(f"  • SHA-256 BLOCK HASH  : {CYAN}{integrity_hash}{RESET}")
+        print("=" * 70)
 
-        self._imprimir_terminal(resultados)
-        return resultados
+        return dados_fadiga
 
-    def _imprimir_terminal(self, res: dict):
-        os.system('cls' if os.name == 'nt' else 'clear')
-        
-        divisoria = f"{CYAN}" + "═" * 60 + f"{RESET}"
-        linha_fina = f"{CYAN}" + "─" * 60 + f"{RESET}"
-
-        print(divisoria)
-        print(f"{BOLD}{MAGENTA}   DIAGNÓSTICO EM TEMPO REAL: SENSOR DE FADIGA & CLIMA{RESET}")
-        print(divisoria)
-        print(f" {YELLOW}Horário da Varredura :{RESET} {res['timestamp']}")
-        print(f" {YELLOW}Temperatura Ambiente :{RESET} {BOLD}{res['temperatura']}{RESET}")
-        print(f" {YELLOW}Umidade Relativa     :{RESET} {BOLD}{res['umidade']}{RESET}")
-        print(f" {YELLOW}Micro-movimentos     :{RESET} {res['micro_movimentos']} vértices monitorados")
-        print(f" {YELLOW}Impacto Térmico      :{RESET} +{res['fator_termico']} pts")
-        print(f" {YELLOW}Impacto Higrométrico :{RESET} +{res['fator_higrometrico']} pts")
-        print(linha_fina)
-        print(f" {BOLD}SCORE DE FADIGA      :{RESET} {CYAN}{BOLD}{res['score_fadiga']}%{RESET}")
-        print(f" {BOLD}ESTADO CLÍNICO       :{RESET} {res['status']}")
-        print(divisoria + "\n")
 
 if __name__ == "__main__":
-    sensor = SensorFadigaClimatico()
-    sensor.calcular_indice_fadiga_cutanea(micro_movimentos_faciais=16)
+    # Exemplo 1: Sem passar nada, ele busca automaticamente da memória ou assume o padrão UHNW
+    sensor_padrao = SensorFadigaClimaticoTier1()
+    sensor_padrao.executar_varredura(micro_movimentos_fixos=14.0)
+    
+    # Exemplo 2: Passando o nome dinamicamente vindo de uma requisição ou painel
+    sensor_dinamico = SensorFadigaClimaticoTier1(usuario="Thierry TCC")
+    sensor_dinamico.executar_varredura(micro_movimentos_fixos=18.5)

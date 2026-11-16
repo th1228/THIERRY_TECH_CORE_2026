@@ -21,7 +21,7 @@ Versão: 22.1.7 - Alinhamento Definitivo (R$ 999.999,00 | 12 Meses)
 
 import os
 import sys
-import uuid
+import uuid 
 import json
 import math
 from datetime import datetime

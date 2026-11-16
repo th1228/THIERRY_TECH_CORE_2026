@@ -16,7 +16,8 @@ agreement is strictly prohibited under international copyright frameworks.
 Módulo Mestre: gerador_dossies_master.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
 Descrição: Orquestrador Mestre dinâmico ajustado para aceitar 
-           qualquer nome informado dinamicamente no painel.
+           qualquer nome informado dinamicamente no painel e carregar
+           o motor contratual diretamente da pasta oficial /legal.
 """
 
 import os
@@ -85,12 +86,16 @@ try:
 except ImportError as e:
     MOTORES_STATUS["Motor 5"] = f"Indisponível ({e})"
 
-# Motor 6: Contrato Global de Licenciamento
+# Motor 6: Contrato Global de Licenciamento (Prioriza a pasta oficial /legal)
 try:
-    from core.contrato_global_engine import C2GlobalContractEngine  # type: ignore
-    MOTORES_STATUS["Motor 6"] = "OK"
-except ImportError as e:
-    MOTORES_STATUS["Motor 6"] = f"Indisponível ({e})"
+    from legal.contrato_global_engine import C2GlobalContractEngine  # type: ignore
+    MOTORES_STATUS["Motor 6"] = "OK (Via /legal)"
+except ImportError:
+    try:
+        from core.contrato_global_engine import C2GlobalContractEngine  # type: ignore
+        MOTORES_STATUS["Motor 6"] = "OK (Via /core)"
+    except ImportError as e:
+        MOTORES_STATUS["Motor 6"] = f"Indisponível ({e})"
 
 
 def limpar_markdown_para_pdf(texto_cru: str) -> str:
@@ -143,7 +148,7 @@ def compilar_dossies_master(
     os.makedirs(pasta_finais, exist_ok=True)
 
     # 1. Compilação Motor 1 (C2 Sovereign Intelligence)
-    if MOTORES_STATUS.get("Motor 1") == "OK":
+    if "OK" in MOTORES_STATUS.get("Motor 1", ""):
         try:
             print(f"[1/6] Compilando Inteligência Soberana C2 [{idioma_limpo}]...")
             engine_1 = None
@@ -196,7 +201,7 @@ def compilar_dossies_master(
             traceback.print_exc()
 
     # 2. Compilação Motor 2 (Super Retorno Financeiro)
-    if MOTORES_STATUS.get("Motor 2") == "OK":
+    if "OK" in MOTORES_STATUS.get("Motor 2", ""):
         try:
             print(f"[2/6] Compilando Super Retorno Financeiro [{idioma_limpo}]...")
             engine_2 = None
@@ -236,7 +241,7 @@ def compilar_dossies_master(
             print(f" -> Erro na execução do Motor 2: {e}")
 
     # 3. Compilação Motor 3 (Tricologia Ultra Avançada)
-    if MOTORES_STATUS.get("Motor 3") == "OK":
+    if "OK" in MOTORES_STATUS.get("Motor 3", ""):
         try:
             print(f"[3/6] Compilando Tricologia Ultra Avançada [{idioma_limpo}]...")
             engine_3 = None
@@ -274,7 +279,7 @@ def compilar_dossies_master(
             print(f" -> Erro na execução do Motor 3: {e}")
 
     # 4. Compilação Motor 4 (Carta Internacional UHNW)
-    if MOTORES_STATUS.get("Motor 4") == "OK":
+    if "OK" in MOTORES_STATUS.get("Motor 4", ""):
         try:
             print(f"[4/6] Compilando Carta Internacional UHNW [{idioma_limpo}]...")
             engine_4 = None
@@ -308,7 +313,7 @@ def compilar_dossies_master(
             print(f" -> Erro na execução do Motor 4: {e}")
 
     # 5. Compilação Motor 5 (Modelagem Computacional Mônaco)
-    if MOTORES_STATUS.get("Motor 5") == "OK":
+    if "OK" in MOTORES_STATUS.get("Motor 5", ""):
         try:
             print(f"[5/6] Compilando Modelagem Computacional & Valuación Mônaco [{idioma_limpo}]...")
             engine_5 = None
@@ -342,7 +347,7 @@ def compilar_dossies_master(
             print(f" -> Erro na execução do Motor 5: {e}")
 
     # 6. Compilação Motor 6 (Contrato Global de Licenciamento)
-    if MOTORES_STATUS.get("Motor 6") == "OK":
+    if "OK" in MOTORES_STATUS.get("Motor 6", ""):
         try:
             print(f"[6/6] Compilando Contrato de Licenciamento Global [{idioma_limpo}]...")
             engine_contrato = None

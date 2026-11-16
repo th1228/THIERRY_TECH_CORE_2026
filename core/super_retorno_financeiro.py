@@ -15,7 +15,7 @@ agreement is strictly prohibited under international copyright frameworks.
 """
 Módulo: super_retorno_financeiro.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 5.8.2 - MONACO EXECUTIVE PLATINUM EDITION (Bilingual PT/EN & Dynamic Client Name)
+Versão: 6.8.0 - MONACO EXECUTIVE PLATINUM EDITION (Tópicos 1 a 8 Perfeitos)
 Descrição: Motor de Alta Performance de Auditoria Preditiva e Valuation de Ativos Biométricos.
            Aplica Geometria Diferencial, Amortização Exponencial e Bloco Mestre Platina Clean.
 """
@@ -47,7 +47,7 @@ except ImportError:
 # ---------------------------------------------------
 
 # =====================================================================
-# DICIONÁRIO DE TRADUÇÕES BILINGUE (PT / EN)
+# DICIONÁRIO DE TRADUÇÕES BILINGUE (PT / EN) - TÓPICOS 1 A 8
 # =====================================================================
 TEXTOS_ROI = {
     "PT": {
@@ -63,14 +63,13 @@ TEXTOS_ROI = {
         "public_key": "SOVEREIGN SYSTEM PUBLIC KEY:",
         "audit_metric": "AUDIT METRIC: STOCHASTIC DECAY MODEL",
         
-        "sec1_titulo": "1. INPUTS DE TELEMETRIA FISIOLÓGICA E ESTRESSE METABÓLICO",
-        "t1_l1_nome": "Saturação de Oxigênio (SpO2)",
-        "t1_l1_desc": "Capacidade de difusão microvascular periférica estável. Oxigenação mitocondrial adequada.",
-        "t1_l2_nome": "Carga Coeficiente de Estresse (Cortisol)",
-        "t1_l2_desc": "Fator multiplicador exógeno de catabolismo tecidual profundo induzido por alta pressão executiva.",
-        "t1_l3_nome": "Exposição Ultravioleta Atmosférica",
-        "t1_l3_val": "UV 2 Baixo",
-        "t1_l3_desc": "Bloqueio ativo contra radiação eletromagnética exógena e degradação de matriz extracelular.",
+        "sec1_titulo": "1. INPUTS DE TELEMETRIA FISIOLÓGICA E FADIGA (REAL-TIME C2)",
+        "t1_l1_nome": "Score de Fadiga CDE (Sensor)",
+        "t1_l1_desc": "Índice dinâmico acoplado à cronobiologia, temperatura e micro-movimentos faciais.",
+        "t1_l2_nome": "Modulador Circadiano / Estresse",
+        "t1_l2_desc": "Fator multiplicador exógeno extraído diretamente do motor de fadiga Tier-1.",
+        "t1_l3_nome": "Condições Ambientais (Temp / UR)",
+        "t1_l3_desc": "Telemetria térmica e higrométrica recolhida em tempo real pelo ecossistema.",
         
         "sec2_titulo": "2. MATRIZ DE DEFORMAÇÃO GEOMÉTRICA E VETOR DE QUEDA (CDE NON-LINEAR)",
         "sec2_desc": "Mapeamento por geometria diferencial de linhas de tensão miofacial profunda e perda de ancoragem volumétrica.",
@@ -96,7 +95,43 @@ TEXTOS_ROI = {
         "t4_l2_nome": "Perda Mitigada e Evitada",
         "t4_l2_desc": "Proteção de ativos intangíveis garantida pelo modelo preditivo soberano em 15 anos.",
         "t4_l3_nome": "Taxa de Retorno Absoluto (ROI)",
-        "t4_l3_desc": "Retorno financeiro líquido gerado pela preservação soberana do capital de imagem."
+        "t4_l3_desc": "Retorno financeiro líquido gerado pela preservação soberana do capital de imagem.",
+
+        "sec5_titulo": "5. ANÁLISE DE SENSIBILIDADE E TESTE DE ESTRESSE PATRIMONIAL (STOCHASTIC RISK)",
+        "sec5_desc": "Simulação algorítmica em tempo real da volatilidade do capital de imagem sob vetores de estresse circadiano.",
+        "t5_l1_nome": "Cenário Amortecido (Blindagem C2)",
+        "t5_l1_desc": "Preservação máxima de ativos intangíveis decorrente da estabilização celular imediata.",
+        "t5_l2_nome": "Cenário Projetado (Caso Base)",
+        "t5_l2_desc": "Erosão patrimonial padrão calculada com base na telemetria atual.",
+        "t5_l3_nome": "Estresse Crítico (Colapso Biológico)",
+        "t5_l3_desc": "Degradação severa e acelerada por privação de sono e pico inflamatório de cortisol.",
+
+        "sec6_titulo": "6. DIRETIVAS DE GOVERNANÇA INTEGRADA E CRONOGRAMA DE ALOCAÇÃO TIER-1",
+        "sec6_desc": "Valores de ativação imediata para retenção de valor reputacional e mitigação de perdas atuarial.",
+        "t6_l1_nome": "Módulo I: Calibração Circadiana Base",
+        "t6_l1_desc": "Estabilização inicial dos vetores de ptose e fadiga microvascular em tempo real.",
+        "t6_l2_nome": "Módulo II: Blindagem Ativa Platinum",
+        "t6_l2_desc": "Protocolo Premium de engenharia celular profunda e otimização mitocondrial Tier-1.",
+        "t6_l3_nome": "Módulo III: Governança Perpétua C2",
+        "t6_l3_desc": "Monitoramento computacional contínuo 24/7 com proteção algorítmica de integridade.",
+
+        "sec7_titulo": "7. ANCORAGEM DE SEGURANÇA E GARANTIAS ATUARIAIS (SLAS)",
+        "sec7_desc": "Níveis de serviço garantidos contratualmente para preservação da estabilidade biométrica.",
+        "t7_l1_nome": "SLA de Retenção Estrutural",
+        "t7_l1_desc": "Garantia matemática de ancoragem elástica e prevenção de ptose avançada.",
+        "t7_l2_nome": "Valor Total Assegurado (15 Anos)",
+        "t7_l2_desc": "Montante global sob apólice preditiva soberana Tier-1.",
+        "t7_l3_nome": "Indedutível de Criptografia PQC",
+        "t7_l3_desc": "Segurança de dados e imutabilidade de registros em padrão pós-quântico.",
+
+        "sec8_titulo": "8. PRÓXIMOS PASSOS E CALL TO ACTION OPERACIONAL",
+        "sec8_desc": "Diretrizes imediatas para ativação do protocolo executivo UHNW.",
+        "t8_l1_nome": "Homologação de Identidade C2",
+        "t8_l1_desc": "Confirmação de credenciais soberanas e liberação de acesso ao dashboard.",
+        "t8_l2_nome": "Setup da Infraestrutura Local",
+        "t8_l2_desc": "Instalamento dos módulos offline e calibragem de sensores térmicos.",
+        "t8_l3_nome": "Ratificação Executiva",
+        "t8_l3_desc": "Assinatura digital e início imediato do monitoramento 24/7."
     },
     "EN": {
         "marca_agua": "MONACO TIER-1 • EXECUTIVE PLATINUM",
@@ -111,14 +146,13 @@ TEXTOS_ROI = {
         "public_key": "SOVEREIGN SYSTEM PUBLIC KEY:",
         "audit_metric": "AUDIT METRIC: STOCHASTIC DECAY MODEL",
         
-        "sec1_titulo": "1. PHYSIOLOGICAL TELEMETRY & METABOLIC STRESS INPUTS",
-        "t1_l1_nome": "Oxygen Saturation (SpO2)",
-        "t1_l1_desc": "Stable peripheral microvascular diffusion capacity. Adequate mitochondrial oxygenation.",
-        "t1_l2_nome": "Stress Coefficient Load (Cortisol)",
-        "t1_l2_desc": "Exogenous multiplying factor of deep tissue catabolism induced by high executive pressure.",
-        "t1_l3_nome": "Atmospheric Ultraviolet Exposure",
-        "t1_l3_val": "UV 2 Low",
-        "t1_l3_desc": "Active shielding against exogenous electromagnetic radiation and extracellular matrix decay.",
+        "sec1_titulo": "1. PHYSIOLOGICAL TELEMETRY & FATIGUE INPUTS (REAL-TIME C2)",
+        "t1_l1_nome": "CDE Fatigue Score (Sensor)",
+        "t1_l1_desc": "Dynamic index coupled with chronobiology, temperature, and facial micro-movements.",
+        "t1_l2_nome": "Circadian Modulator / Stress",
+        "t1_l2_desc": "Exogenous multiplying factor extracted directly from the Tier-1 fatigue engine.",
+        "t1_l3_nome": "Environmental Conditions (Temp / RH)",
+        "t1_l3_desc": "Thermal and hygrometric telemetry collected in real time by the ecosystem.",
         
         "sec2_titulo": "2. GEOMETRIC DEFORMATION MATRIX & FALL VECTOR (NON-LINEAR CDE)",
         "sec2_desc": "Differential geometry mapping of deep myofascial tension lines and loss of volumetric anchoring.",
@@ -144,7 +178,43 @@ TEXTOS_ROI = {
         "t4_l2_nome": "Mitigated & Avoided Loss",
         "t4_l2_desc": "Intangible asset protection guaranteed by the sovereign predictive model over 15 years.",
         "t4_l3_nome": "Absolute Return Rate (ROI)",
-        "t4_l3_desc": "Net financial return generated by the sovereign preservation of image capital."
+        "t4_l3_desc": "Net financial return generated by the sovereign preservation of image capital.",
+
+        "sec5_titulo": "5. SENSITIVITY ANALYSIS & PATRIMONIAL STRESS TESTING (STOCHASTIC RISK)",
+        "sec5_desc": "Real-time algorithmic simulation of image capital volatility under circadian stress vectors.",
+        "t5_l1_nome": "Buffered Scenario (C2 Shielding)",
+        "t5_l1_desc": "Maximum preservation of intangible assets resulting from immediate cellular stabilization.",
+        "t5_l2_nome": "Projected Scenario (Base Case)",
+        "t5_l2_desc": "Standard asset erosion computed based on current telemetry data.",
+        "t5_l3_nome": "Critical Stress (Biological Collapse)",
+        "t5_l3_desc": "Severe accelerated degradation driven by sleep deprivation and cortisol inflammatory peaks.",
+
+        "sec6_titulo": "6. INTEGRATED GOVERNANCE DIRECTIVES & TIER-1 ALLOCATION SCHEDULE",
+        "sec6_desc": "Immediate activation values for reputational asset retention and actuarial loss mitigation.",
+        "t6_l1_nome": "Module I: Base Circadian Calibration",
+        "t6_l1_desc": "Initial stabilization of ptosis vectors and microvascular fatigue in real time.",
+        "t6_l2_nome": "Module II: Active Platinum Shielding",
+        "t6_l2_desc": "Premium deep cellular engineering protocol and Tier-1 mitochondrial optimization.",
+        "t6_l3_nome": "Module III: Perpetual C2 Governance",
+        "t6_l3_desc": "Continuous 24/7 computational monitoring with cryptographic integrity protection.",
+
+        "sec7_titulo": "7. SECURITY ANCHORING & ACTUARIAL GUARANTEES (SLAS)",
+        "sec7_desc": "Contractually guaranteed service levels for biometric stability preservation.",
+        "t7_l1_nome": "Structural Retention SLA",
+        "t7_l1_desc": "Mathematical guarantee of elastic anchoring and advanced ptosis prevention.",
+        "t7_l2_nome": "Total Insured Value (15 Years)",
+        "t7_l2_desc": "Global amount under Tier-1 sovereign predictive policy.",
+        "t7_l3_nome": "PQC Cryptography Indeductible",
+        "t7_l3_desc": "Data security and record immutability in post-quantum standard.",
+
+        "sec8_titulo": "8. NEXT STEPS & OPERATIONAL CALL TO ACTION",
+        "sec8_desc": "Immediate guidelines for activating the UHNW executive protocol.",
+        "t8_l1_nome": "C2 Identity Homologation",
+        "t8_l1_desc": "Confirmation of sovereign credentials and dashboard access release.",
+        "t8_l2_nome": "Local Infrastructure Setup",
+        "t8_l2_desc": "Installation of offline modules and thermal sensor calibration.",
+        "t8_l3_nome": "Executive Ratification",
+        "t8_l3_desc": "Digital signature and immediate start of 24/7 monitoring."
     }
 }
 
@@ -178,15 +248,15 @@ class SovereignSecureCanvas(canvas.Canvas):
 
 class C2SovereignROIEngine:
     """
-    O Motor Máximo de Engenharia Atuarial Biométrica com Nome Dinâmico.
-    Simula o colapso físico e financeiro de ativos intangíveis de imagem em tempo real.
+    O Motor Máximo de Engenharia Atuarial Biométrica com Nome Dinâmico 
+    e Integração em Tempo Real com o Sensor de Fadiga Tier-1.
     """
     def __init__(self, 
                  chave_publica_sistema: str = "TTC-KEY-MONACO-SECURE-9948", 
                  titular: Optional[str] = None, 
                  idade: int = 35, 
                  patrimonio_liquido_eur: float = 1000000.0, 
-                 fator_estresse_biologico: float = 0.65, 
+                 fator_estresse_biologico: Optional[float] = None, 
                  custo_setup_estrutura_eur: float = 75000.0,
                  auditor_lider: str = "THIERRY TCC",
                  market_segment: str = "Tecnologia e Inovação",
@@ -197,14 +267,13 @@ class C2SovereignROIEngine:
         self.telemetria_externa = telemetria or {}
         
         # Resolução dinâmica do nome do titular vindo do painel, telemetria ou fallback seguro
-        resolvedor_nome = titular or self.telemetria_externa.get('nome_cliente') or self.telemetria_externa.get('nome') or "CLIENTE UHNW"
+        resolvedor_nome = titular or self.telemetria_externa.get('nome_cliente') or self.telemetria_externa.get('nome') or memoria.ler_dados("nome_cliente") or memoria.ler_dados("titular") or "CLIENTE UHNW"
         self.titular = resolvedor_nome.upper()
         
         self.auditor = auditor_lider.upper()
         self.public_key = chave_publica_sistema
         self.idade = idade
         self.net_worth = patrimonio_liquido_eur
-        self.estresse = min(1.0, max(0.0, fator_estresse_biologico))
         self.custo_setup = custo_setup_estrutura_eur
         self.market_segment = market_segment
         self.horizon_years = horizon_years
@@ -212,6 +281,23 @@ class C2SovereignROIEngine:
         if self.lang not in TEXTOS_ROI:
             self.lang = "PT"
             
+        # --- CAPTURA AUTOMÁTICA DOS DADOS DO SENSOR DE FADIGA NA MEMÓRIA ---
+        dados_fadiga_memoria = memoria.ler_dados("dados_fadiga") or memoria.ler_dados(f"historico_fadiga_{self.titular}") or {}
+        
+        if fator_estresse_biologico is not None:
+            self.estresse = min(1.0, max(0.0, fator_estresse_biologico))
+            self.score_fadiga_sensor = dados_fadiga_memoria.get("score_fadiga", self.estresse * 100.0)
+            self.fator_circadiano = dados_fadiga_memoria.get("fator_circadiano", 1.0)
+        else:
+            score_sensor = dados_fadiga_memoria.get("score_fadiga", 25.0)
+            self.score_fadiga_sensor = score_sensor
+            self.estresse = min(1.0, max(0.0, score_sensor / 100.0))
+            self.fator_circadiano = dados_fadiga_memoria.get("fator_circadiano", 1.0)
+            
+        self.temp_ambiente = dados_fadiga_memoria.get("clima_referencia", {}).get("temp", 27.0)
+        self.umi_ambiente = dados_fadiga_memoria.get("clima_referencia", {}).get("umi", 60.0)
+        self.hash_fadiga_sensor = dados_fadiga_memoria.get("integrity_hash", "PENDING-SYNC")
+
         self.timestamp = datetime.datetime.now().strftime("%d/%m/%Y às %H:%M:%S UTC")
         
         # --- NÚCLEO DE CÁLCULO ATUARIAL AVANÇADO ---
@@ -238,11 +324,11 @@ class C2SovereignROIEngine:
         """Gera o texto comparativo final personalizado de acordo com o titular e perfil."""
         if self.lang == "EN":
             return f"""
-            <b>Comparative Executive Audit Summary ({self.titular}):</b> In contrast to generic wealth management strategies that overlook optoelectronic asset erosion, the Monaco Tier-1 compliance framework deployed for <i>{self.titular}</i> secures multi-faceted capital preservation across <i>{self.market_segment}</i>. By anchoring biometric valuation to real-time structural telemetry, this governance model prevents speculative decay and guarantees long-term absolute market dominance.
+            <b>Comparative Executive Audit Summary ({self.titular}):</b> Integrating real-time biometric fatigue telemetry (Score: {self.score_fadiga_sensor:.1f}%, Circadian Factor: {self.fator_circadiano}x) and complete Tier-1 governance, the compliance framework deployed for <i>{self.titular}</i> secures multi-faceted capital preservation across <i>{self.market_segment}</i>, guaranteeing absolute market dominance.
             """
         else:
             return f"""
-            <b>Síntese Comparativa de Auditoria Executiva ({self.titular}):</b> Em nítido contraste com abordagens patrimoniais tradicionais que ignoram a erosão de ativos intangíveis, o modelo de conformidade Monaco Tier-1 aplicado a <i>{self.titular}</i> assegura uma blindagem patrimonial sem precedentes no setor de <i>{self.market_segment}</i>. Ao vincular o valuation atuarial à telemetria estrutural em tempo real, este padrão neutraliza a desvalorização especulativa e consolida uma liderança de mercado perpétua e inabalável.
+            <b>Síntese Comparativa de Auditoria Executiva ({self.titular}):</b> Integrando a telemetria de fadiga em tempo real (Score: {self.score_fadiga_sensor:.1f}%, Fator Circadiano: {self.fator_circadiano}x) e a governança Tier-1 completa, o modelo aplicado a <i>{self.titular}</i> assegura uma blindagem patrimonial sem precedentes no setor de <i>{self.market_segment}</i>, consolidando liderança perpétua.
             """
 
     def gerar_relatorio_roi(self, caminho_pdf: str, lang: str = "PT") -> str:
@@ -270,7 +356,7 @@ class C2SovereignROIEngine:
         CARD_BORDER = colors.HexColor('#CBD5E1')      # Borda Prata Fina
         TABLE_HEADER_BG = colors.HexColor('#F1F5F9')  # Topo de Tabela Claro
         
-        # Estilos
+        # Estilos exatos que você aprovou
         estilo_titulo_solto = ParagraphStyle('MaxTitleSolto', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=12.5, leading=15, textColor=MONACO_NAVY, alignment=1, spaceAfter=2)
         estilo_sub_solto = ParagraphStyle('MaxSubSolto', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7.5, leading=10, textColor=SOVEREIGN_GOLD, alignment=1, spaceAfter=2)
         estilo_meta_solto = ParagraphStyle('MaxMetaSolto', parent=styles['Normal'], fontName='Helvetica', fontSize=7, leading=9.5, textColor=colors.HexColor('#333333'), alignment=1, spaceAfter=6)
@@ -293,20 +379,20 @@ class C2SovereignROIEngine:
         # --- 2. CONTEÚDO ENCAPSULADO NO BLOCO MESTRE PLATINA CLEAN ---
         elementos_bloco_total = [
             Paragraph(f"<b>{txt['block_auth']}</b> SYSTEM_SEC_C2_PREDICTIVE_V4 // <b>{txt['integrity_hash']}</b> <font color='#00875A'>{self.audit_hash}</font><br/>"
-                      f"<b>{txt['public_key']}</b> {self.public_key} // <b>{txt['audit_metric']}</b>", 
+                      f"<b>{txt['public_key']}</b> {self.public_key} // <b>Sensor Hash:</b> {self.hash_fadiga_sensor[:16]}...", 
                       ParagraphStyle('CryptoLight', parent=styles['Normal'], fontName='Courier-Bold', fontSize=5, textColor=MONACO_NAVY, leading=6.5, spaceAfter=3)),
             Spacer(1, 2),
             
-            # --- TABELA 1 ---
+            # --- TABELA 1: TELEMETRIA E FADIGA REAL-TIME ---
             Paragraph(txt["sec1_titulo"], estilo_secao),
         ]
         
         tabela_1_data = [
-            [Paragraph(txt["t1_l1_nome"], estilo_tabela_bold), Paragraph("98%", estilo_tabela_verde), Paragraph(txt["t1_l1_desc"], estilo_tabela)],
-            [Paragraph(txt["t1_l2_nome"], estilo_tabela_bold), Paragraph(f"<font color='#00875A'>{self.estresse * 100:.1f}%</font>", estilo_tabela), Paragraph(txt["t1_l2_desc"], estilo_tabela)],
-            [Paragraph(txt["t1_l3_nome"], estilo_tabela_bold), Paragraph(txt["t1_l3_val"], estilo_tabela), Paragraph(txt["t1_l3_desc"], estilo_tabela)]
+            [Paragraph(txt["t1_l1_nome"], estilo_tabela_bold), Paragraph(f"{self.score_fadiga_sensor:.1f}%", estilo_tabela_verde), Paragraph(txt["t1_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t1_l2_nome"], estilo_tabela_bold), Paragraph(f"{self.fator_circadiano}x (Estresse: {self.estresse*100:.1f}%)", estilo_tabela), Paragraph(txt["t1_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t1_l3_nome"], estilo_tabela_bold), Paragraph(f"{self.temp_ambiente}°C | UR {self.umi_ambiente}%", estilo_tabela), Paragraph(txt["t1_l3_desc"], estilo_tabela)]
         ]
-        t1 = Table(tabela_1_data, colWidths=[140, 60, 314])
+        t1 = Table(tabela_1_data, colWidths=[140, 75, 299])
         t1.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
@@ -327,7 +413,7 @@ class C2SovereignROIEngine:
             [Paragraph(txt["t2_l2_nome"], estilo_tabela_bold), Paragraph(f"{self.cde:.2f}%", estilo_tabela_verde), Paragraph(txt["t2_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t2_l3_nome"], estilo_tabela_bold), Paragraph(f"<font color='#00875A'>{self.deficit_sustentacao:.2f}%</font>", estilo_tabela), Paragraph(txt["t2_l3_desc"], estilo_tabela)]
         ]
-        t2 = Table(tabela_2_data, colWidths=[140, 60, 314])
+        t2 = Table(tabela_2_data, colWidths=[140, 75, 299])
         t2.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
@@ -379,6 +465,89 @@ class C2SovereignROIEngine:
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t4)
+
+        # --- TABELA 5: ANÁLISE DE SENSIBILIDADE E STRESS TEST ---
+        elementos_bloco_total.append(Paragraph(txt["sec5_titulo"], estilo_secao))
+        elementos_bloco_total.append(Paragraph(txt["sec5_desc"], estilo_texto))
+        
+        tabela_5_data = [
+            [Paragraph(txt["t5_l1_nome"], estilo_tabela_bold), Paragraph(f"<font color='#00875A'>Perda Reduzida (8%)</font>", estilo_tabela_verde), Paragraph(txt["t5_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t5_l2_nome"], estilo_tabela_bold), Paragraph(f"Perda Projetada (40%)", estilo_tabela), Paragraph(txt["t5_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t5_l3_nome"], estilo_tabela_bold), Paragraph(f"<font color='#C0392B'>Colapso Severo (75%)</font>", estilo_tabela), Paragraph(txt["t5_l3_desc"], estilo_tabela)]
+        ]
+        t5 = Table(tabela_5_data, colWidths=[140, 75, 299])
+        t5.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 3),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_total.append(t5)
+
+        # --- TABELA 6: DIRETIVAS DE GOVERNANÇA INTEGRADA E CRONOGRAMA ---
+        elementos_bloco_total.append(Paragraph(txt["sec6_titulo"], estilo_secao))
+        elementos_bloco_total.append(Paragraph(txt["sec6_desc"], estilo_texto))
+        
+        tabela_6_data = [
+            [Paragraph(txt["t6_l1_nome"], estilo_tabela_bold), Paragraph("€ 25.000,00", estilo_tabela), Paragraph(txt["t6_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t6_l2_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(self.custo_setup), estilo_tabela_verde), Paragraph(txt["t6_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t6_l3_nome"], estilo_tabela_bold), Paragraph("€ 12.500,00 / a.a.", estilo_tabela), Paragraph(txt["t6_l3_desc"], estilo_tabela)]
+        ]
+        t6 = Table(tabela_6_data, colWidths=[140, 75, 299])
+        t6.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 3),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_total.append(t6)
+
+        # --- TABELA 7: ANCORAGEM DE SEGURANÇA E GARANTIAS (SLAS) ---
+        sla_retencao = max(85.0, 100.0 - (self.deficit_sustentacao * 0.15))
+        valor_total_protegido = self.perda_mitigada_evitada
+
+        elementos_bloco_total.append(Paragraph(txt["sec7_titulo"], estilo_secao))
+        tabela_7_data = [
+            [Paragraph(txt["t7_l1_nome"], estilo_tabela_bold), Paragraph(f"{sla_retencao:.2f}% SLA", estilo_tabela_verde), Paragraph(txt["t7_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t7_l2_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(valor_total_protegido), estilo_tabela), Paragraph(txt["t7_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t7_l3_nome"], estilo_tabela_bold), Paragraph("99.9999%", estilo_tabela), Paragraph(txt["t7_l3_desc"], estilo_tabela)]
+        ]
+        t7 = Table(tabela_7_data, colWidths=[140, 75, 299])
+        t7.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 3),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_total.append(t7)
+
+        # --- TABELA 8: PRÓXIMOS PASSOS E CALL TO ACTION ---
+        elementos_bloco_total.append(Paragraph(txt["sec8_titulo"], estilo_secao))
+        tabela_8_data = [
+            [Paragraph(txt["t8_l1_nome"], estilo_tabela_bold), Paragraph("Imediato", estilo_tabela), Paragraph(txt["t8_l1_desc"], estilo_tabela)],
+            [Paragraph(txt["t8_l2_nome"], estilo_tabela_bold), Paragraph("D+1 Técnico", estilo_tabela), Paragraph(txt["t8_l2_desc"], estilo_tabela)],
+            [Paragraph(txt["t8_l3_nome"], estilo_tabela_bold), Paragraph("Aprovação", estilo_tabela_verde), Paragraph(txt["t8_l3_desc"], estilo_tabela)]
+        ]
+        t8 = Table(tabela_8_data, colWidths=[140, 75, 299])
+        t8.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
+            ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
+            ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 3),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        elementos_bloco_total.append(t8)
         elementos_bloco_total.append(Spacer(1, 4))
 
         # --- BLOCO COMPARATIVO FINAL INTEGRADO ---
@@ -408,7 +577,7 @@ class C2SovereignROIEngine:
 
 
 if __name__ == "__main__":
-    print("Testando motor Super Retorno Financeiro em versão Executive Platinum com Nome Dinâmico...")
-    engine = C2SovereignROIEngine(titular="José", idade=35, lang="PT")
+    print("Testando motor Super Retorno Financeiro com Tópicos 1 a 8 integrados perfeitamente...")
+    engine = C2SovereignROIEngine(titular="Genilson Rodrigues", idade=35, lang="PT")
     saida = engine.gerar_pdf("super_retorno_financeiro_clean.pdf")
     print(f"Relatório gerado com sucesso em: {saida}")

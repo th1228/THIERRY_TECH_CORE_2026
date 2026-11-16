@@ -1,9 +1,9 @@
 RELATÓRIO DE AUDITORIA CIRÚRGICA - THIERRY TECHNOLOGY CONCEPT GLOBAL
 
 Classificacao: Quantum-Biometric & Heavy Computational Intelligence Ecosystem (Zero Trust Architecture)
-Total de Linhas Varridas: 69,880
-Valuation Nacional (BRL): R$ 23,898,960.00
-Valuation Internacional (USD): $ 11,152,848.00
+Total de Linhas Varridas: 76,585
+Valuation Nacional (BRL): R$ 26,192,070.00
+Valuation Internacional (USD): $ 12,222,966.00
 Motores Ativos: 8/8
 
 Pitch Executivo:

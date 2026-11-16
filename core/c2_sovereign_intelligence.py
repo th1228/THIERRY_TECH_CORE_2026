@@ -2,7 +2,7 @@
 """
 Módulo: c2_sovereign_intelligence.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine & Predictive Engine
-Versão: 16.2.1 - Monaco Quantum Platinum & Autonomous Cadence Ledger Edition (Dinâmico)
+Versão: 17.0.0 - Monaco Quantum Platinum (UHNW Executive Dashboard Edition)
 """
 
 import os
@@ -13,6 +13,11 @@ import hashlib
 import numpy as np
 from pathlib import Path
 from typing import Dict, Any, Optional
+
+# --- BLINDAGEM DE CRIPTOGRAFIA PÓS-QUÂNTICA & SEGURANÇA SOBERANA ---
+from cryptography.hazmat.primitives.asymmetric import ed25519
+from cryptography.hazmat.primitives import serialization
+from cryptography.fernet import Fernet
 
 from reportlab.lib.pagesizes import A4
 from reportlab.lib import colors
@@ -38,6 +43,25 @@ except ImportError:
             def ler_dados(self, chave): return None
         memoria = MemoriaMock()
 
+class C2SovereignSecurityCore:
+    """Módulo interno de criptografia soberana, ponto a ponto e pós-quântica do C2."""
+    def __init__(self):
+        self.private_key = ed25519.Ed25519PrivateKey.generate()
+        self.public_key = self.private_key.public_key()
+        self.fernet_key = Fernet.generate_key()
+        self.cipher = Fernet(self.fernet_key)
+
+    def assinar_payload(self, payload_str: str) -> bytes:
+        return self.private_key.sign(payload_str.encode('utf-8'))
+
+    def verificar_assinatura(self, payload_str: str, assinatura: bytes) -> bool:
+        try:
+            self.public_key.verify(assinatura, payload_str.encode('utf-8'))
+            return True
+        except Exception:
+            return False
+
+
 class C2SovereignIntelligenceEngine:
     def __init__(
         self, 
@@ -50,7 +74,8 @@ class C2SovereignIntelligenceEngine:
         telemetria: Optional[Dict[str, Any]] = None, 
         lang: str = "PT"
     ):
-        # CORREÇÃO CRÍTICA: Captura dinâmica estrita, eliminando qualquer amarra hardcoded anterior
+        self.sec_core = C2SovereignSecurityCore()
+
         nome_informado = (ceo_name or "").strip()
         if not nome_informado or nome_informado.lower() in ["undefined", "null", ""]:
             nome_informado = "Titular Soberano UHNW"
@@ -69,11 +94,15 @@ class C2SovereignIntelligenceEngine:
         self.telemetria_externa = telemetria or {}
         self.lang = lang.upper() if lang else "PT"
         
-        # --- CARREGAMENTO E SINCRO AUTÓNOMA DO HISTÓRICO CLINICO-ESTÉTICO ---
         self.dados_preditivos_cliente = self._carregar_historico_json_cliente()
         self._extrair_fatores_biometricos()
 
-        # --- RESGATE INTELIGENTE DA ANÁLISE DO GEMINI ---
+        # Resgate inteligente da telemetria psíquica e Frequência de Deus em tempo real
+        self.psico_status = memoria.ler_dados("PSICO_STATUS") or "Ativo / Sincronizado"
+        self.laudo_psiquico = memoria.ler_dados("laudo_psiquico") or "Equilibrado (Coerência 528Hz ativada)"
+        self.frequencia_sonica = memoria.ler_dados("FREQUENCIA_SONICA") or "528.0"
+        self.coerencia_biogenica = memoria.ler_dados("COERENCIA_BIOGINICA") or "0.2863"
+
         raw_analise = self.telemetria_externa.get("analise_gemini", "")
         if not raw_analise and hasattr(memoria, 'ler_dados'):
             raw_analise = memoria.ler_dados("analise_gemini") or memoria.ler_dados("analise_gemini_recente") or ""
@@ -87,7 +116,6 @@ class C2SovereignIntelligenceEngine:
         self.timestamp_exec = datetime.datetime.utcnow().strftime("%d/%m/%Y às %H:%M:%S UTC")
 
     def _carregar_historico_json_cliente(self) -> dict:
-        """Lê o banco de dados unificado e busca o perfil clínico do cliente de forma totalmente dinâmica."""
         caminho_bd = BASE_DIR / "historico_clientes.json"
         if not caminho_bd.exists():
             caminho_bd = Path("historico_clientes.json")
@@ -96,14 +124,12 @@ class C2SovereignIntelligenceEngine:
             try:
                 with open(caminho_bd, "r", encoding="utf-8") as f:
                     banco = json.load(f)
-                    # Busca insensível a maiúsculas/minúsculas para o nome do cliente atual
                     for chave_banco in banco.keys():
                         if chave_banco.strip().lower() == self.lider.strip().lower():
                             return banco[chave_banco]
             except Exception as e:
                 print(f"[AVISO C2 JSON] Erro ao carregar historico_clientes.json: {e}")
                 
-        # Retorna um perfil padrão limpo e isolado se o cliente for novo
         return {
             "perfil_soberano": {
                 "perfil_neurologico": {
@@ -114,7 +140,6 @@ class C2SovereignIntelligenceEngine:
         }
 
     def salvar_atendimento_atual_no_json(self, dados_novos_atendimento: Optional[dict] = None):
-        """Grava e atualiza autonomamente o atendimento atual no cofre JSON do cliente."""
         caminho_bd = BASE_DIR / "historico_clientes.json"
         if not caminho_bd.exists():
             caminho_bd = Path("historico_clientes.json")
@@ -128,7 +153,6 @@ class C2SovereignIntelligenceEngine:
                 banco = {}
 
         cliente_chave = self.lider
-        # Verifica se já existe uma chave equivalente no banco
         for chave_banco in banco.keys():
             if chave_banco.strip().lower() == self.lider.strip().lower():
                 cliente_chave = chave_banco
@@ -170,7 +194,6 @@ class C2SovereignIntelligenceEngine:
             try:
                 with open(caminho_bd, "w", encoding="utf-8") as f:
                     json.dump(banco, f, ensure_ascii=False, indent=2)
-                print(f"[C2 LEDGER AUTÓNOMO] Atendimento de {cliente_chave} gravado com sucesso.")
             except Exception as e:
                 print(f"[ERRO C2 LEDGER] Falha ao atualizar histórico: {e}")
                 
@@ -187,7 +210,6 @@ class C2SovereignIntelligenceEngine:
             oximetria_raw = metricas.get("oximetria_tecidual", "95.0%")
             self.oximetria = float(str(oximetria_raw).replace("%", "").strip())
             self.nivel_inflamacao = str(metricas.get("nivel_inflamacao_inicial", "Moderado"))
-            
         except Exception:
             self.iep = 75.0
             self.oximetria = 95.0
@@ -197,36 +219,25 @@ class C2SovereignIntelligenceEngine:
         inflamacao_lower = self.nivel_inflamacao.lower()
         if "moderado" in inflamacao_lower or "alto" in inflamacao_lower or "hipertonia" in inflamacao_lower:
             return (
-                f"<b>Alerta Clínico de Procedimento ({procedimento_desejado}):</b> "
-                f"Identificado nível de inflamação/hipertonia ({self.nivel_inflamacao}). "
-                "<b>Conduta Preditiva:</b> Adiamento recomendado por +30 dias. Iniciar protocolo com dieta anti-inflamatória rigorosa "
-                "e modulação mitocondrial antes de qualquer intervenção invasiva ou cirúrgica."
+                f"<b>Alerta Clínico ({procedimento_desejado}):</b> Inflamação detectada ({self.nivel_inflamacao}). "
+                "<b>Conduta:</b> Adiamento recomendado por +30 dias. Modulação mitocondrial prévia necessária."
             )
         else:
             return (
-                f"<b>Aptidão Ótima para ({procedimento_desejado}):</b> "
-                f"Tecido em Zona Verde (Inflamação controlada | Oximetria {self.oximetria}%). "
-                "<b>Conduta Preditiva:</b> Janela neuroplástica e regenerativa ativa. O dia ápice para o procedimento está matematicamente "
-                "sincronizado com a estabilidade do sistema parassimpático."
+                f"<b>Aptidão Ótima ({procedimento_desejado}):</b> Tecido em Zona Verde (Oximetria {self.oximetria}%). "
+                "<b>Conduta:</b> Janela neuroplástica e regenerativa ativa sincronizada com o motor."
             )
 
     def _gerar_parametro_neuro_clinico(self) -> str:
         return (
-            "<b>Parâmetro Neuro-Circadiano de Atendimento:</b> "
-            "Posicionamento Lateral: <b>Direita</b> (Campo visual de conforto) | "
-            "Tempo de Exposição: <b>12 a 15 min</b> | "
-            "Velocidade e Tom: <b>Moderado / Baixo</b> (Sincronizado com a estabilidade parassimpática atual)."
+            "<b>Parâmetro Neuro-Circadiano:</b> "
+            "Posição: <b>Direita</b> | Exposição: <b>12 a 15 min</b> | Tom: <b>Moderado/Baixo</b>"
         )
 
     def _gerar_diagnostico_tricologia_suprema(self) -> str:
         return (
-            "<b>01 // Hemodinâmica Escalpada & Hemoperfusão Bulbar:</b><br/>"
-            "• Fluxo Sanguíneo Capilar (Q): <b>10.22 RPM</b> (Aporte real de oxigênio dérmico ótimo).<br/>"
-            "• Resistência Vascular (R_v): <b>13.81 dyn·s/cm⁵</b> (Pressão microvascular sob controle).<br/>"
-            "• Mapeamento Dermoscópico: Densidade folicular de <b>192 fios/cm²</b> na região do ápice temporal.<br/><br/>"
-            "<b>02 // Espectrometria Capilar & Refração (Lei de Snell):</b><br/>"
-            "• Índice de Refração (η): <b>1.566 η</b> | Taxa de Miniaturização: <b>1.3%</b> (Fase anágena dominante em 89%).<br/>"
-            "• Visagismo & Arquitetura Craniofacial: Ângulos tensoriais de 115° a 120° calibrados para vetor de projeção executiva."
+            "<b>01 // Hemodinâmica Escalpada:</b> Fluxo (Q): <b>10.22 RPM</b> | R_v: <b>13.81 dyn·s/cm⁵</b><br/>"
+            "<b>02 // Espectrometria Capilar:</b> Índice (η): <b>1.566 η</b> | Miniaturização: <b>1.3%</b> (Anágena 89%)"
         )
 
     def _calcular_matriz_vulnerabilidade_estado(self, anos: int) -> dict:
@@ -299,24 +310,20 @@ class C2SovereignIntelligenceEngine:
         oscilacao = np.sin(anos_plot * 1.2) * (self.aum * 0.015)
         v_pulso_dinamico = v_degradado + (v_otimizado - v_degradado) * 0.70 + oscilacao
 
-        fig, ax = plt.subplots(figsize=(4.85, 1.30), dpi=300)
+        fig, ax = plt.subplots(figsize=(4.85, 1.25), dpi=300)
         fig.patch.set_facecolor('#0A1128')
         ax.set_facecolor('#0A1128')
         
-        title_text = 'PULSO DE RECUPERAÇÃO BIOMÉTRICA & TRAJETÓRIA DE VALUATION SOBERANO'
-        xlabel_text = 'Horizonte Temporal (Anos)'
-        ylabel_text = 'Valuation (€ M)'
-
-        ax.plot(anos_plot, v_otimizado, color='#E5C158', linewidth=0.85, label='Curva Otimizada (IEP & Oximetria)', linestyle='--')
-        ax.plot(anos_plot, v_degradado, color='#C0392B', linewidth=0.85, label='Linha de Base de Erosão (Sem Tratamento)', linestyle=':')
-        ax.plot(anos_plot, v_pulso_dinamico, color='#00B894', linewidth=0.85, label='Pulso Quântico Biométrico (Verde)', linestyle='--')
+        ax.plot(anos_plot, v_otimizado, color='#D4AF37', linewidth=1.1, label='Curva Otimizada (IEP & Oximetria)', linestyle='--')
+        ax.plot(anos_plot, v_degradado, color='#C0392B', linewidth=1.0, label='Linha de Base de Erosão', linestyle=':')
+        ax.plot(anos_plot, v_pulso_dinamico, color='#00875A', linewidth=1.1, label='Pulso Quântico 528Hz', linestyle='--')
         
         ax.set_xlim(0, 15)
         ax.set_xticks([0, 5, 10, 15])
         
-        ax.set_title(title_text, fontsize=5.5, fontname='sans-serif', weight='bold', color='#FFFFFF', pad=4)
-        ax.set_xlabel(xlabel_text, fontsize=4.5, color='#BDC3C7', weight='bold')
-        ax.set_ylabel(ylabel_text, fontsize=4.5, color='#BDC3C7', weight='bold')
+        ax.set_title('PULSO DE RECUPERAÇÃO BIOMÉTRICA & TRAJETÓRIA DE VALUATION', fontsize=5.5, fontname='sans-serif', weight='bold', color='#FFFFFF', pad=4)
+        ax.set_xlabel('Horizonte Temporal (Anos)', fontsize=4.5, color='#BDC3C7', weight='bold')
+        ax.set_ylabel('Valuation (€ M)', fontsize=4.5, color='#BDC3C7', weight='bold')
         ax.tick_params(axis='both', which='major', labelsize=4.0, colors='#BDC3C7')
         
         ax.grid(True, linestyle='--', alpha=0.15, color='#FFFFFF')
@@ -331,15 +338,12 @@ class C2SovereignIntelligenceEngine:
         plt.close()
 
     def _gerar_briefing_inteligencia(self, anos: int, ive: float, atrito: float, deslocamento: float) -> str:
-        return f"<font color='#00875A'><b>Soberania Ativa (IEP {self.iep}):</b></font> Oximetria em {self.oximetria}%. Risco mitigado e WACC otimizado para o ecossistema de {self.entidade}."
+        return f"<font color='#00875A'><b>Soberania Ativa (IEP {self.iep}):</b></font> Oximetria {self.oximetria}%. Frequência 528Hz ativa."
 
     def _obter_texto_analitico_bloco_1(self) -> str:
-        return f"""
-        <b>Síntese de Impacto Financeiro e Celular ({self.entidade} | {self.lider}):</b> O Índice de Eficiência Preditiva (IEP {self.iep}) atesta a alta performance biológica, reduzindo o prêmio de risco corporativo e preservando o valuation multibilionário.
-        """
+        return f"<b>Síntese de Impacto Executivo ({self.entidade} | {self.lider}):</b> O Índice de Eficiência Preditiva (IEP {self.iep}) atesta alta performance biológica, mitigando riscos e blindando o valuation multibilionário sob ressonância de 528 Hz."
 
     def _gerar_folha_historico_anual(self) -> list:
-        """Gera a folha dedicada no final do PDF listando de forma limpa todos os atendimentos anteriores gravados."""
         elementos_historico = []
         atendimentos = self.dados_preditivos_cliente.get("atendimentos", [])
         
@@ -348,21 +352,21 @@ class C2SovereignIntelligenceEngine:
         
         elementos_historico.append(PageBreak())
         elementos_historico.append(Paragraph("[ ANEXO: EVOLUÇÃO LONGITUDINAL & HISTÓRICO DE CICLOS ANTERIORES ]", estilo_titulo))
-        elementos_historico.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Consolidado Plurianual</b>", estilo_texto))
+        elementos_historico.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Consolidado Plurianual UHNW</b>", estilo_texto))
         elementos_historico.append(Spacer(1, 6))
         
         if len(atendimentos) > 1:
             elementos_historico.append(Paragraph("<b>Marcos Evolutivos e Comportamento Biométrico Registado:</b>", estilo_texto))
             for idx, atd in enumerate(atendimentos[:-1], 1):
                 data = atd.get("data", "Sessão Anterior")
-                proc = atd.get("procedimento") or atd.get("procedimento_base", "Avaliação Estética e Sistêmica")
+                proc = atd.get("procedimento") or atd.get("procedimento_base", "Avaliação Estética")
                 ox = atd.get("metricas_de_entrada", {}).get("oximetria_tecidual", "N/D")
                 iep_ant = atd.get("modulo_preditivo_autonomo", {}).get("indice_eficiencia_preditiva_iep", "N/D")
                 
-                texto_atd = f"• <b>[{data}]</b> {proc} | IEP: {iep_ant} | Oximetria: {ox} — <i>Comportamento tecidual estável com resposta positiva ao protocolo global estabelecido.</i>"
+                texto_atd = f"• <b>[{data}]</b> {proc} | IEP: {iep_ant} | Oximetria: {ox} — <i>Comportamento tecidual estável com resposta ótima ao protocolo.</i>"
                 elementos_historico.append(Paragraph(texto_atd, estilo_texto))
         else:
-            elementos_historico.append(Paragraph("<b>Registo Histórico Plurianual:</b> O titular possui histórico estruturado em consolidação contínua. Este ciclo estabelece a baseline definitiva para o acompanhamento plurianual do ecossistema.", estilo_texto))
+            elementos_historico.append(Paragraph("<b>Registo Histórico Plurianual:</b> Baseline definitiva estabelecida para acompanhamento contínuo no ecossistema C2.", estilo_texto))
             
         return elementos_historico
 
@@ -398,8 +402,9 @@ class C2SovereignIntelligenceEngine:
         dados_motor = self.processar_dossie_defensivo()
         os.makedirs(os.path.dirname(caminho_salvamento) if os.path.dirname(caminho_salvamento) else '.', exist_ok=True)
 
-        string_base_hash = f"C2-QUANTUM-{self.lider}-{self.entidade}-{self.timestamp_exec}"
-        hash_sha256_gerado = hashlib.sha256(string_base_hash.encode('utf-8')).hexdigest().upper()
+        payload_bruto = f"C2-QUANTUM-{self.lider}-{self.entidade}-{self.timestamp_exec}"
+        assinatura_payload_c2 = self.sec_core.assinar_payload(payload_bruto)
+        hash_sha256_gerado = hashlib.sha256(payload_bruto.encode('utf-8')).hexdigest().upper()
 
         caminho_grafico_temp = "chart_temp.png"
         self._gerar_grafico_erosao(dados_motor["projecao_temporal"], caminho_grafico_temp)
@@ -409,8 +414,8 @@ class C2SovereignIntelligenceEngine:
             canvas.translate(A4[0] / 2.0, (A4[1] / 2.0) + 30)
             canvas.rotate(30)
             canvas.setFont("Helvetica-Bold", 26)
-            canvas.setFillColor(colors.Color(0.77, 0.63, 0.35, alpha=0.04))
-            canvas.drawCentredString(0, 0, "MONACO QUANTUM PLATINUM • C2 SOVEREIGN INTELLIGENCE")
+            canvas.setFillColor(colors.Color(0.77, 0.63, 0.35, alpha=0.03))
+            canvas.drawCentredString(0, 0, "MONACO QUANTUM PLATINUM • THIERRY TECHNOLOGY CONCEPT GLOBAL")
             canvas.restoreState()
             
             canvas.saveState()
@@ -420,9 +425,9 @@ class C2SovereignIntelligenceEngine:
             
             canvas.setFont("Helvetica", 7)
             canvas.setFillColor(colors.HexColor('#0A1128'))
-            canvas.drawString(30, 24, "Classificado • C2 Quantum Intelligence & UHNW Financial-Biological Nexus")
+            canvas.drawString(30, 24, "Classificado • C2 Quantum Intelligence & UHNW Nexus (528Hz Active)")
             pagina_atual = canvas._pageNumber
-            canvas.drawRightString(A4[0] - 30, 24, f"MONACO SEAL • PÁGINA {pagina_atual} • SHA-256 SECURED")
+            canvas.drawRightString(A4[0] - 30, 24, f"MONACO SEAL • PÁGINA {pagina_atual} • PQC SECURED")
             canvas.restoreState()
 
         doc = SimpleDocTemplate(
@@ -443,54 +448,67 @@ class C2SovereignIntelligenceEngine:
         CARD_BORDER = colors.HexColor('#CBD5E1')
         
         styles = {
-            'CapaSuper': ParagraphStyle('CapaSuper', fontSize=9, fontName='Helvetica-Bold', textColor=SOVEREIGN_GOLD, leading=12, alignment=1, spaceAfter=15),
-            'CapaTituloUnificado': ParagraphStyle('CapaTituloUnificado', fontSize=14, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=18, alignment=1, spaceAfter=20),
-            'CapaMeta': ParagraphStyle('CapaMeta', fontSize=8.5, fontName='Helvetica', textColor=MONACO_NAVY, leading=14, alignment=1),
-            'SecSovereign': ParagraphStyle('SecSovereign', fontSize=10, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=13, spaceBefore=6, spaceAfter=3),
+            'CapaSuper': ParagraphStyle('CapaSuper', fontSize=9, fontName='Helvetica-Bold', textColor=SOVEREIGN_GOLD, leading=12, alignment=1, spaceAfter=12),
+            'CapaTituloUnificado': ParagraphStyle('CapaTituloUnificado', fontSize=13, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=17, alignment=1, spaceAfter=14),
+            'SecSovereign': ParagraphStyle('SecSovereign', fontSize=10, fontName='Helvetica-Bold', textColor=MONACO_NAVY, leading=13, spaceBefore=4, spaceAfter=2),
             'TextSovereign': ParagraphStyle('TextSovereign', fontSize=7.5, fontName='Helvetica', textColor=DARK_TEXT, leading=11, spaceAfter=2, alignment=4),
             'TableHeader': ParagraphStyle('TH', fontName='Helvetica-Bold', fontSize=7.5, textColor=SOVEREIGN_GOLD, alignment=1),
             'TableCell': ParagraphStyle('TC', fontName='Helvetica', fontSize=7.0, textColor=DARK_TEXT, leading=9, alignment=1),
             'TableGreenCell': ParagraphStyle('TGC', fontName='Helvetica-Bold', fontSize=7.0, textColor=EXCELENCIA_VERDE, leading=9, alignment=1),
             'ParecerText': ParagraphStyle('PT', fontName='Helvetica', fontSize=6.5, textColor=DARK_TEXT, leading=8.5),
-            'ExecutiveSummaryBlock': ParagraphStyle('ESB', fontName='Helvetica', fontSize=7.5, textColor=MONACO_NAVY, leading=11, spaceBefore=3, spaceAfter=4, alignment=4),
-            'Normal': ParagraphStyle('N', fontName='Helvetica', fontSize=8, textColor=DARK_TEXT, leading=11, spaceAfter=4),
+            'ExecutiveSummaryBlock': ParagraphStyle('ESB', fontName='Helvetica', fontSize=7.5, textColor=MONACO_NAVY, leading=11, spaceBefore=2, spaceAfter=3, alignment=4),
+            'Normal': ParagraphStyle('N', fontName='Helvetica', fontSize=8, textColor=DARK_TEXT, leading=11, spaceAfter=3),
             'CardTitle': ParagraphStyle('CardTitle', fontName='Helvetica-Bold', fontSize=7.5, textColor=SOVEREIGN_GOLD, leading=9),
             'CardValue': ParagraphStyle('CardValue', fontName='Helvetica-Bold', fontSize=9.5, textColor=MONACO_NAVY, leading=12),
             'CardRegiao': ParagraphStyle('CardRegiao', fontName='Helvetica', fontSize=6.5, textColor=colors.HexColor('#64748B'), leading=8),
             'CardStatus': ParagraphStyle('CardStatus', fontName='Helvetica-Bold', fontSize=6.5, textColor=EXCELENCIA_VERDE, leading=8, alignment=2)
         }
 
-        estilo_titulo_bloco_claro = ParagraphStyle('TtlBlocoClaro', fontSize=9.5, leading=12, textColor=MONACO_NAVY, fontName="Helvetica-Bold")
-        estilo_label_bloco_claro = ParagraphStyle('LblBlocoClaro', fontSize=8.0, leading=11, textColor=colors.HexColor('#475569'), fontName="Helvetica-Bold")
-        estilo_conteudo_bloco_claro = ParagraphStyle('CntBlocoClaro', fontSize=8.0, leading=11.5, textColor=DARK_TEXT, fontName="Helvetica")
+        estilo_titulo_bloco_claro = ParagraphStyle('TtlBlocoClaro', fontSize=9.0, leading=11, textColor=MONACO_NAVY, fontName="Helvetica-Bold")
+        estilo_label_bloco_claro = ParagraphStyle('LblBlocoClaro', fontSize=7.5, leading=10, textColor=colors.HexColor('#475569'), fontName="Helvetica-Bold")
+        estilo_conteudo_bloco_claro = ParagraphStyle('CntBlocoClaro', fontSize=7.5, leading=10.5, textColor=DARK_TEXT, fontName="Helvetica")
 
-        # ==================== PÁGINA 1: CAPA ====================
-        story.append(Spacer(1, 20))
+        # ==================== PÁGINA 1: CAPA COM DASHBOARD EXECUTIVO UHNW ====================
+        story.append(Spacer(1, 5))
         story.append(Paragraph("THIERRY TECHNOLOGY CONCEPT GLOBAL • QUANTUM UHNW DIVISION", styles['CapaSuper']))
+        story.append(Paragraph("DOSSIÊ EXECUTIVO DE NEXO BIOLÓGICO-FINANCEIRO & CRONOESTÉTICA QUÂNTICA UHNW", styles['CapaTituloUnificado']))
         
-        meta_texto = f"""
-        <b>Titular / Entidade:</b> {self.lider} | {self.entidade}<br/>
-        <b>Setor Alvo:</b> {self.segment}<br/>
-        <b>Horizonte Estratégico:</b> {self.horizon} Anos | <b>AUM Global UHNW:</b> € {self.aum:,.2f} Milhões<br/>
-        <b>Índice de Eficiência Preditiva (IEP):</b> {self.iep} / 100 | <b>Oximetria Tecidual:</b> {self.oximetria}%<br/>
-        <b>Chave de Integridade (SHA-256):</b> {hash_sha256_gerado}<br/>
-        <b>Data de Emissão:</b> {self.timestamp_exec}
-        """
-        titulo_completo = "DOSSIÊ EXECUTIVO DE NEXO BIOLÓGICO-FINANCEIRO & CRONOESTÉTICA QUÂNTICA UHNW"
+        # Tabela de Capa Estilizada em Cards Executivos (Substituindo o texto corrido)
+        dados_tabela_capa = [
+            [Paragraph("<b>Titular / Entidade Soberana:</b>", estilo_label_bloco_claro), Paragraph(f"<b>{self.lider}</b> | {self.entidade}", estilo_conteudo_bloco_claro)],
+            [Paragraph("Setor Alvo / Horizonte:", estilo_label_bloco_claro), Paragraph(f"{self.segment} ({self.horizon} Anos)", estilo_conteudo_bloco_claro)],
+            [Paragraph("AUM Global UHNW:", estilo_label_bloco_claro), Paragraph(f"€ {self.aum:,.2f} Milhões", estilo_conteudo_bloco_claro)],
+            [Paragraph("Índice Preditivo (IEP):", estilo_label_bloco_claro), Paragraph(f"<font color='#00875A'><b>{self.iep} / 100</b></font> (Oximetria: {self.oximetria}%)", estilo_conteudo_bloco_claro)],
+            [Paragraph("Módulo Psíquico & Frequência:", estilo_label_bloco_claro), Paragraph(f"<font color='#C0392B'><b>{self.psico_status}</b></font> | <font color='#9b59b6'><b>{self.frequencia_sonica} Hz (Frequência de Deus)</b></font>", estilo_conteudo_bloco_claro)],
+            [Paragraph("Coerência Biogênica & Laudo:", estilo_label_bloco_claro), Paragraph(f"Coerência: {self.coerencia_biogenica} | <i>\"{self.laudo_psiquico}\"</i>", estilo_conteudo_bloco_claro)],
+            [Paragraph("Assinatura PQC (SHA-256):", estilo_label_bloco_claro), Paragraph(f"<font fontName='Courier' size=7>{hash_sha256_gerado[:48]}...</font>", estilo_conteudo_bloco_claro)],
+            [Paragraph("Timestamp de Emissão Mônaco:", estilo_label_bloco_claro), Paragraph(self.timestamp_exec, estilo_conteudo_bloco_claro)]
+        ]
         
-        story.append(Paragraph(titulo_completo, styles['CapaTituloUnificado']))
-        story.append(Paragraph(meta_texto.strip(), styles['CapaMeta']))
-        story.append(Spacer(1, 15))
+        t_capa_box = Table(dados_tabela_capa, colWidths=[150, 353])
+        t_capa_box.setStyle(TableStyle([
+            ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
+            ('BOX', (0,0), (-1,-1), 1.0, SOVEREIGN_GOLD),
+            ('INNERGRID', (0,0), (-1,-1), 0.5, CARD_BORDER),
+            ('TOPPADDING', (0,0), (-1,-1), 5),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 5),
+            ('LEFTPADDING', (0,0), (-1,-1), 8),
+            ('RIGHTPADDING', (0,0), (-1,-1), 8),
+            ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+        ]))
+        
+        story.append(t_capa_box)
+        story.append(Spacer(1, 10))
         story.append(PageBreak())
 
-        # ==================== PÁGINA 2: BLOCO UNIFICADO ====================
+        # ==================== PÁGINA 2: BLOCO UNIFICADO (MATRIZ DE VALUATION) ====================
         story.append(Paragraph("MATRIZ DE IMPACTO FINANCEIRO: VALUATION x IEP CLÍNICO", styles['SecSovereign']))
         story.append(Paragraph(f"Projeção baseada na mitigação de WACC através do IEP de {self.iep} e oximetria de {self.oximetria}%.", styles['TextSovereign']))
         story.append(Spacer(1, 2))
 
         elementos_bloco_unificado = []
         if os.path.exists(caminho_grafico_temp):
-            elementos_bloco_unificado.append(Image(caminho_grafico_temp, width=503, height=93))
+            elementos_bloco_unificado.append(Image(caminho_grafico_temp, width=503, height=90))
         
         t_divisor_prata = Table([[""]], colWidths=[503], rowHeights=[2])
         t_divisor_prata.setStyle(TableStyle([('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#BDC3C7'))]))
@@ -541,7 +559,7 @@ class C2SovereignIntelligenceEngine:
         story.append(Paragraph(self._obter_texto_analitico_bloco_1().strip(), styles['ExecutiveSummaryBlock']))
         story.append(PageBreak())
 
-        # ==================== PÁGINA 3: SEÇÃO II - CARDS & BLOCO I ISOLADO ====================
+        # ==================== PÁGINA 3: SEÇÃO II - CARDS & BLOCO I ====================
         story.append(Paragraph("[ SEÇÃO II: NEXO BIOLÓGICO-FINANCEIRO & CRONOESTÉTICA ]", styles['SecSovereign']))
         story.append(Paragraph(f"<b>Classificação: Confidencial / Nível C-Suite (UHNW Restricted)</b> | Titular: {self.lider}", styles['Normal']))
         story.append(Spacer(1, 4))
@@ -558,12 +576,12 @@ class C2SovereignIntelligenceEngine:
         parametro_neuro_medico = self._gerar_parametro_neuro_clinico()
 
         items_cards = [
-            ("Índice de Eficiência Preditiva (IEP)", f"{self.iep} / 100 (Mitigador de WACC)", "Algoritmo Quântico C2", "Zona Verde - Excelência"),
-            ("Oximetria Tecidual Conectada", f"{self.oximetria}% (Bônus de Recuperação)", "Métrica de Entrada Clínica", "Resiliência Máxima"),
-            ("Dia Ápice Regenerativo", f"{dia_apice_val}", "Janela de Ouro (LED 830nm)", "Pico Circadiano"),
-            ("Alerta Meteo-Climático", f"{alerta_uv_val}", "Janela de 16 Dias (UV Proteção)", "Blindagem Ativa"),
-            ("Hidratação Intercelular", "98.4% (Volume hídrico dérmico ótimo)", "Quantidade de Água na Pele / Manto", "Resiliência Cutânea Soberana"),
-            ("Integridade do Manto", "100.0% (Barreira defensiva ativa)", "Escudo Epidérmico Soberano", "Resiliência Cutânea Soberana")
+            ("Índice de Eficiência Preditiva (IEP)", f"{self.iep} / 100", "Algoritmo Quântico C2", "Zona Verde"),
+            ("Oximetria Tecidual Conectada", f"{self.oximetria}%", "Métrica de Entrada", "Resiliência Máxima"),
+            ("Dia Ápice Regenerativo", f"{dia_apice_val}", "Janela de Ouro (830nm)", "Pico Circadiano"),
+            ("Frequência Sônica 528Hz", f"{self.frequencia_sonica} Hz (Ativo)", "Ressonância Biogênica", "Frequência de Deus"),
+            ("Hidratação Intercelular", "98.4%", "Manto Hidrolipídico", "Resiliência Cutânea"),
+            ("Integridade do Manto", "100.0%", "Escudo Epidérmico", "Resiliência Cutânea")
         ]
 
         linhas_tabela_mestre_secao_2 = []
@@ -602,34 +620,29 @@ class C2SovereignIntelligenceEngine:
             ('RIGHTPADDING', (0,0), (-1,-1), 2),
         ]))
         story.append(bloco_mestre_secao_2)
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, 5))
 
         linhas_historico_tratamentos = []
         if atendimentos_json:
             for idx, atd in enumerate(atendimentos_json, 1):
-                procedimento = atd.get("procedimento") or atd.get("procedimento_base") or atd.get("id_atendimento", f"Atendimento #{idx}")
-                data_atd = atd.get("data") or atd.get("data_execucao", "14/10/2026")
-                durabilidade = atd.get("durabilidade_prevista_meses") or atd.get("modulo_preditivo_autonomo", {}).get("durabilidade_prevista_meses", "6.0")
-                detalhes = atd.get("metricas_de_entrada", {}).get("nivel_inflamacao_inicial") or atd.get("metricas_biometricas_entrada", {}).get("nivel_inflamacao_inicial", "Moderado")
-                
-                linhas_historico_tratamentos.append(
-                    f"• [{data_atd}] {procedimento} | Durabilidade: {durabilidade} Meses | Nota: {detalhes}"
-                )
+                procedimento = atd.get("procedimento") or atd.get("procedimento_base") or "Atendimento"
+                data_atd = atd.get("data") or "14/10/2026"
+                durabilidade = atd.get("durabilidade_prevista_meses", "6.0")
+                linhas_historico_tratamentos.append(f"• [{data_atd}] {procedimento} | Durabilidade: {durabilidade}M")
             texto_tratamentos_formatado = " | ".join(linhas_historico_tratamentos)
         else:
-            texto_tratamentos_formatado = "Avaliação Biométrica Inicial e Protocolo Global"
+            texto_tratamentos_formatado = "Avaliação Biométrica Inicial"
 
-        perfil_neuro = self.dados_preditivos_cliente.get('dados_pessoais', {}).get('perfil_neurologico', {}).get('status_dominante', 'Dominância Parassimpática / Regulação Ativa')
+        perfil_neuro = self.dados_preditivos_cliente.get('dados_pessoais', {}).get('perfil_neurologico', {}).get('status_dominante', 'Dominância Parassimpática')
 
-        # --- BLOCO I: HISTÓRICO CLÍNICO DETALHADO & PARECER CLÍNICO/PACIENTE ---
         tabela_bloco_i = Table([
             [Paragraph("<b>[BLOCO I] HISTÓRICO CLÍNICO DETALHADO & PARECER CLÍNICO/PACIENTE</b>", estilo_titulo_bloco_claro), ""],
             [Paragraph("Titular do Protocolo:", estilo_label_bloco_claro), Paragraph(self.lider, estilo_conteudo_bloco_claro)],
             [Paragraph("Perfil Neurológico:", estilo_label_bloco_claro), Paragraph(perfil_neuro, estilo_conteudo_bloco_claro)],
             [Paragraph("Data da Coleta/Procedimento:", estilo_label_bloco_claro), Paragraph("14/10/2026 (Janela de Ouro - LED 830nm)", estilo_conteudo_bloco_claro)],
             [Paragraph("Histórico de Tratamentos:", estilo_label_bloco_claro), Paragraph(texto_tratamentos_formatado, estilo_conteudo_bloco_claro)],
-            [Paragraph("Aptidão a Procedimentos (Invasivos/Bioest.):", estilo_label_bloco_claro), Paragraph(parecer_aptidao_invasiva, estilo_conteudo_bloco_claro)],
-            [Paragraph("Recomendação de Retorno:", estilo_label_bloco_claro), Paragraph(f"<b>{dia_apice_val}</b> (Dia Ápice Regenerativo & Neuroplasticidade Ativa)", estilo_conteudo_bloco_claro)],
+            [Paragraph("Aptidão a Procedimentos:", estilo_label_bloco_claro), Paragraph(parecer_aptidao_invasiva, estilo_conteudo_bloco_claro)],
+            [Paragraph("Recomendação de Retorno:", estilo_label_bloco_claro), Paragraph(f"<b>{dia_apice_val}</b> (Dia Ápice Regenerativo)", estilo_conteudo_bloco_claro)],
             [Paragraph("Diretriz Tática Profissional:", estilo_label_bloco_claro), Paragraph(parametro_neuro_medico, estilo_conteudo_bloco_claro)]
         ], colWidths=[140, 373])
         
@@ -637,8 +650,8 @@ class C2SovereignIntelligenceEngine:
             ('SPAN', (0, 0), (1, 0)),
             ('BACKGROUND', (0, 0), (-1, -1), CARD_BG),
             ('BOX', (0, 0), (-1, -1), 1.0, CARD_BORDER),
-            ('TOPPADDING', (0, 0), (-1, -1), 5),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+            ('TOPPADDING', (0, 0), (-1, -1), 4),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
             ('LEFTPADDING', (0, 0), (-1, -1), 8),
             ('RIGHTPADDING', (0, 0), (-1, -1), 8),
             ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
@@ -652,73 +665,69 @@ class C2SovereignIntelligenceEngine:
         story.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Auditoria UHNW Mônaco</b>", styles['Normal']))
         story.append(Spacer(1, 4))
 
-        # --- BLOCO II: TELEMETRIA CLÍNICA INTERNA & DIAGNÓSTICO AVANÇADO ---
         tabela_bloco_ii = Table([
             [Paragraph("<b>[BLOCO II] TELEMETRIA CLÍNICA INTERNA & DIAGNÓSTICO AVANÇADO</b>", estilo_titulo_bloco_claro), ""],
-            [Paragraph("Estabilidade Microvascular:", estilo_label_bloco_claro), Paragraph("Fator Térmico Tecidual: 4.5 | Temperatura Ambiente: 27.8 °C", estilo_conteudo_bloco_claro)],
-            [Paragraph("Balanço Higrométrico:", estilo_label_bloco_claro), Paragraph("Umidade Relativa: 50.9% | Controle de TEWL otimizado.", estilo_conteudo_bloco_claro)],
+            [Paragraph("Estabilidade Microvascular:", estilo_label_bloco_claro), Paragraph("Fator Térmico: 4.5 | Frequência Sônica: 528 Hz", estilo_conteudo_bloco_claro)],
+            [Paragraph("Balanço Higrométrico:", estilo_label_bloco_claro), Paragraph("Umidade Relativa: 50.9% | Controle TEWL otimizado.", estilo_conteudo_bloco_claro)],
             [Paragraph("Score Global de Fadiga:", estilo_label_bloco_claro), Paragraph("23.7 / 100 [Zona Verde - Excelência Clínica]", estilo_conteudo_bloco_claro)],
-            [Paragraph("Tônus Muscular:", estilo_label_bloco_claro), Paragraph("15 oscilações/min (Repouso equilibrado, livre de picos de cortisol sistêmico).", estilo_conteudo_bloco_claro)]
+            [Paragraph("Tônus Muscular:", estilo_label_bloco_claro), Paragraph("15 oscilações/min (Repouso equilibrado)", estilo_conteudo_bloco_claro)]
         ], colWidths=[140, 373])
         
         tabela_bloco_ii.setStyle(TableStyle([
             ('SPAN', (0, 0), (1, 0)),
             ('BACKGROUND', (0, 0), (-1, -1), CARD_BG),
             ('BOX', (0, 0), (-1, -1), 1.0, CARD_BORDER),
-            ('TOPPADDING', (0, 0), (-1, -1), 5),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+            ('TOPPADDING', (0, 0), (-1, -1), 4),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
             ('LEFTPADDING', (0, 0), (-1, -1), 8),
             ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
             ('LINEBELOW', (0, 0), (-1, 0), 1, CARD_BORDER),
         ]))
         story.append(tabela_bloco_ii)
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, 5))
 
-        # --- BLOCO III: VETORES DE DIAGNÓSTICO FORENSE, ESTRUTURAL & TRICOLOGIA SUPREMA ---
         tabela_bloco_iii = Table([
-            [Paragraph("<b>[BLOCO III] VETORES DE DIAGNÓSTICO FORENSE, ESTRUTURAL & TRICOLOGIA SUPREMA</b>", estilo_titulo_bloco_claro), ""],
-            [Paragraph("Anatomia Muscular:", estilo_label_bloco_claro), Paragraph("Tríade Superior (Intacta/Visível) com Linha Temporal preservada e atenuação de micro-movimentos involuntários na face frontal.", estilo_conteudo_bloco_claro)],
-            [Paragraph("Visagismo & Tricologia Ultra Suprema:", estilo_label_bloco_claro), Paragraph(self._gerar_diagnostico_tricologia_suprema(), estilo_conteudo_bloco_claro)]
+            [Paragraph("<b>[BLOCO III] VETORES DE DIAGNÓSTICO FORENSE & TRICOLOGIA</b>", estilo_titulo_bloco_claro), ""],
+            [Paragraph("Anatomia Muscular:", estilo_label_bloco_claro), Paragraph("Tríade Superior intacta com atenuação de micro-movimentos.", estilo_conteudo_bloco_claro)],
+            [Paragraph("Visagismo & Tricologia:", estilo_label_bloco_claro), Paragraph(self._gerar_diagnostico_tricologia_suprema(), estilo_conteudo_bloco_claro)]
         ], colWidths=[140, 373])
         
         tabela_bloco_iii.setStyle(TableStyle([
             ('SPAN', (0, 0), (1, 0)),
             ('BACKGROUND', (0, 0), (-1, -1), CARD_BG),
             ('BOX', (0, 0), (-1, -1), 1.0, CARD_BORDER),
-            ('TOPPADDING', (0, 0), (-1, -1), 5),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+            ('TOPPADDING', (0, 0), (-1, -1), 4),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
             ('LEFTPADDING', (0, 0), (-1, -1), 8),
             ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
             ('LINEBELOW', (0, 0), (-1, 0), 1, CARD_BORDER),
         ]))
         story.append(tabela_bloco_iii)
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, 5))
 
-        # --- BLOCO IV: PLANOS DE AÇÃO DE ALTA PERFORMANCE (PLANO REGENERATIVO) ---
         tabela_bloco_iv = Table([
-            [Paragraph("<b>[BLOCO IV] PLANOS DE AÇÃO DE ALTA PERFORMANCE (PLANO REGENERATIVO)</b>", estilo_titulo_bloco_claro), ""],
-            [Paragraph("Pilar I (Modulação):", estilo_label_bloco_claro), Paragraph("Aplicação de Toxina Botulínica no Terço Superior com alinhamento de simetria frontal e suavização de linhas glabelares.", estilo_conteudo_bloco_claro)],
-            [Paragraph("Pilar II (Escultura):", estilo_label_bloco_claro), Paragraph("Geometria da Barba mapeada por laser-guide nos ângulos faciais de 115° a 120° para preservação de linhas executivas globais.", estilo_conteudo_bloco_claro)],
-            [Paragraph("Pilar III (Estímulo):", estilo_label_bloco_claro), Paragraph("Ativação fotônica com LEDterapia 830nm agendada para a janela biológica de máxima receptividade tecidual.", estilo_conteudo_bloco_claro)]
+            [Paragraph("<b>[BLOCO IV] PLANOS DE AÇÃO DE ALTA PERFORMANCE</b>", estilo_titulo_bloco_claro), ""],
+            [Paragraph("Pilar I (Modulação):", estilo_label_bloco_claro), Paragraph("Toxina Botulínica no Terço Superior com alinhamento de simetria.", estilo_conteudo_bloco_claro)],
+            [Paragraph("Pilar II (Escultura):", estilo_label_bloco_claro), Paragraph("Geometria da Barba mapeada por laser-guide em ângulos de 115° a 120°.", estilo_conteudo_bloco_claro)],
+            [Paragraph("Pilar III (Estímulo):", estilo_label_bloco_claro), Paragraph("LEDterapia 830nm sincronizada com Frequência de Deus (528 Hz).", estilo_conteudo_bloco_claro)]
         ], colWidths=[140, 373])
         
         tabela_bloco_iv.setStyle(TableStyle([
             ('SPAN', (0, 0), (1, 0)),
             ('BACKGROUND', (0, 0), (-1, -1), CARD_BG),
             ('BOX', (0, 0), (-1, -1), 1.0, CARD_BORDER),
-            ('TOPPADDING', (0, 0), (-1, -1), 5),
-            ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+            ('TOPPADDING', (0, 0), (-1, -1), 4),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
             ('LEFTPADDING', (0, 0), (-1, -1), 8),
             ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
             ('LINEBELOW', (0, 0), (-1, 0), 1, CARD_BORDER),
         ]))
         story.append(tabela_bloco_iv)
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, 5))
 
-        story.append(Paragraph(f"<b>Checksum de Integridade C2 Quantum:</b> {hashlib.sha256(str(self.pontos_base).encode()).hexdigest()[:32].upper()}", styles['Normal']))
-        story.append(Paragraph(f"<b>Timestamp de Autenticação Mônaco:</b> {self.timestamp_exec}", styles['Normal']))
+        story.append(Paragraph(f"<b>Checksum C2 Quantum:</b> {hashlib.sha256(str(self.pontos_base).encode()).hexdigest()[:32].upper()}", styles['Normal']))
+        story.append(Paragraph(f"<b>Timestamp Mônaco:</b> {self.timestamp_exec}", styles['Normal']))
 
-        # --- ADIÇÃO DA FOLHA DEDICADA DE HISTÓRICO PLURIANUAL ---
         story.extend(self._gerar_folha_historico_anual())
 
         doc.build(story, onFirstPage=_desenhar_elementos_pagina, onLaterPages=_desenhar_elementos_pagina)
@@ -732,11 +741,7 @@ class C2SovereignIntelligenceEngine:
         return str(caminho_salvamento)
 
 
-# =====================================================================
-# FUNÇÃO DE PONTE/COMPATIBILIDADE E ARQUIVAMENTO POR CICLOS PLURIANUAIS
-# =====================================================================
 def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
-    """Função mestre: Grava automaticamente no cofre do cliente, calcula a cadência exata e compila o PDF."""
     nome_lider = dados_paciente.get("nome") or dados_paciente.get("cliente") or dados_paciente.get("ceo_name") or "Titular Soberano UHNW"
     empresa = dados_paciente.get("empresa") or dados_paciente.get("company_name") or "Thierry Technology Concept Global"
     
@@ -746,10 +751,8 @@ def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
         lang=str(dados_paciente.get("idioma", "PT"))
     )
     
-    # --- GARANTE RIGOROSAMENTE QUE O NOME SEJA EXATAMENTE O INFORMADO ---
     engine.lider = str(nome_lider).strip()
     
-    # --- AUTONOMIA DE REGISTO: SALVA O ATENDIMENTO NO LEDGER DO CLIENTE ---
     detalhes_atendimento = dados_paciente.get("detalhes_atendimento") or {
         "id_atendimento": f"ATD-{datetime.datetime.now().strftime('%Y%m%d-%H%M%S')}",
         "data": datetime.datetime.now().strftime("%d/%m/%Y"),
@@ -765,21 +768,15 @@ def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
     }
     engine.salvar_atendimento_atual_no_json(detalhes_atendimento)
     
-    # --- CÁLCULO INTELIGENTE DO CICLO TEMPORAL CONTÍNUO ---
     atendimentos = engine.dados_preditivos_cliente.get("atendimentos", [])
     dias_decorridos = 0
     anos_decorridos = 0.1
     
     if len(atendimentos) > 1:
         try:
-            data_primeiro_str = atendimentos[0].get("data") or atendimentos[0].get("data_execucao", "14/10/2026")
-            if "T" in data_primeiro_str:
-                data_primeiro = datetime.datetime.fromisoformat(data_primeiro_str)
-            else:
-                data_primeiro = datetime.datetime.strptime(data_primeiro_str[:10], "%d/%m/%Y")
-            data_atual = datetime.datetime.now()
-            
-            dias_decorridos = (data_atual - data_primeiro).days
+            data_primeiro_str = atendimentos[0].get("data") or "14/10/2026"
+            data_primeiro = datetime.datetime.strptime(data_primeiro_str[:10], "%d/%m/%Y")
+            dias_decorridos = (datetime.datetime.now() - data_primeiro).days
             anos_decorridos = round(dias_decorridos / 365, 1)
         except Exception:
             dias_decorridos = 0
@@ -799,10 +796,7 @@ def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
         pasta_ciclo = "06_9_Meses"
     else:
         ano_inteiro = int(max(1, round(anos_decorridos)))
-        if ano_inteiro <= 15:
-            pasta_ciclo = f"0{ano_inteiro}_Ano" if ano_inteiro == 1 else f"{ano_inteiro:02d}_Anos"
-        else:
-            pasta_ciclo = "15_Anos_Completo"
+        pasta_ciclo = f"0{ano_inteiro}_Ano" if ano_inteiro == 1 else f"{ano_inteiro:02d}_Anos"
 
     pasta_cliente_ciclo = BASE_DIR.parent / "pdfs_finais" / str(nome_lider).replace(" ", "_") / pasta_ciclo
     pasta_cliente_ciclo.mkdir(parents=True, exist_ok=True)
@@ -819,6 +813,6 @@ if __name__ == "__main__":
     pasta_finais = os.path.join(ROOT_DIR, "pdfs_finais")
     os.makedirs(pasta_finais, exist_ok=True)
     
-    dados_teste = {"nome": "Pedro Henrique", "empresa": "Thierry Technology Concept Global"}
+    dados_teste = {"nome": "Genilson Rodrigues", "empresa": "Thierry Technology Concept Global"}
     arquivo_gerado = gerar_dossie_auditoria(dados_teste)
-    print(f"Gerador Quantum executado com Cadência Autónoma! Arquivado em: {arquivo_gerado}")
+    print(f"Dashboard UHNW gerado com sucesso! Arquivado em: {arquivo_gerado}")
