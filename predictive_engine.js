@@ -1,5 +1,5 @@
 /**
- * Predictive Engine - Monaco Tier & UHNW Governance
+ * Predictive Engine - Executive Global Tier & UHNW Governance
  * Calcula matrizes de projeção temporal (5, 10, 15 anos) baseadas no ecossistema e no negócio.
  */
 

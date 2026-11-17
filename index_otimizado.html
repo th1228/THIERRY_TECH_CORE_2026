@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thierry Technology Concept Global • Monaco Tier-1 Audit Terminal</title>
+    <title>Thierry Technology Concept Global • Executive Global Tier-1 Audit Terminal</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -535,7 +535,7 @@
         <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="palette-sub-lbl">Selecione o padrão clínico internacional:</div>
         <div class="palette-grid">
             <div class="palette-swatch" style="background: #0284C7;" onclick="applyClinicalPalette('#0284C7')" title="Azul Telemedicina"></div>
-            <div class="palette-swatch" style="background: #0369A1;" onclick="applyClinicalPalette('#0369A1')" title="Azul Mônaco Tech"></div>
+            <div class="palette-swatch" style="background: #0369A1;" onclick="applyClinicalPalette('#0369A1')" title="Azul Executive Global Tech"></div>
             <div class="palette-swatch" style="background: #059669;" onclick="applyClinicalPalette('#059669')" title="Verde Seguro Vascular"></div>
             <div class="palette-swatch" style="background: #7C3AED;" onclick="applyClinicalPalette('#7C3AED')" title="Roxo Órbita UHNW"></div>
             <div class="palette-swatch" style="background: #D97706;" onclick="applyClinicalPalette('#D97706')" title="Ouro Titanum Apex"></div>
@@ -1278,7 +1278,7 @@
             </div>
 
             <div class="governance-explanation-panel" id="biogen-focus-desc">
-                <b>Análise Dinâmica de Deformação Viscoelástica Dérmica:</b> Projeção tridimensional otimizada com mapeamento de tensão tecidual e pontos de ancoragem sob a Governança Mônaco.
+                <b>Análise Dinâmica de Deformação Viscoelástica Dérmica:</b> Projeção tridimensional otimizada com mapeamento de tensão tecidual e pontos de ancoragem sob a Governança Executive Global.
             </div>
         </div>
     </div>
@@ -1429,7 +1429,7 @@
         <button class="btn-master-trigger" onclick="abrirVideoDemonstracaoModal()" data-i18n="btn-demo-video">🎬 VÍDEO DE DEMONSTRAÇÃO (MAIN)</button>
         <button class="btn-master-trigger" onclick="openWealthFilterModal()" data-i18n="btn-geo-filter">[+] UHNW GEO FILTER</button>
         <button class="btn-master-trigger" onclick="openAdminPanelModal()" data-i18n="btn-admin-panel">[⚙️] PAINEL DE ADMINISTRAÇÃO</button>
-        <button class="btn-master-trigger locked-report" id="btn-open-stripe-modal" onclick="openStripeModal()" data-i18n="btn-stripe-lic">🛡️ Ativação de Licença Executiva</button>
+        <button class="btn-master-trigger locked-report" id="btn-open-licenciamento_executivo-modal" onclick="openLicenciamento ExecutivoModal()" data-i18n="btn-licenciamento_executivo-lic">🛡️ Ativação de Licença Executiva</button>
         <button class="btn-master-trigger locked-report" id="btn-open-pdf-modal" onclick="openPdfModal()" data-i18n="btn-gen-pdf">Gerar Relatórios PDF</button>
     </div>
 
@@ -1524,17 +1524,17 @@
 </div>
 
 <!-- MODAL DE CHECKOUT DA STRIPE COM DUPLA CAMADA DE BOTÕES DE RETORNO -->
-<div id="stripe-checkout-modal" class="uhnw-modal-overlay">
+<div id="licenciamento_executivo-checkout-modal" class="uhnw-modal-overlay">
     <div class="uhnw-modal-drawer" style="max-width: 540px;">
         <!-- CABEÇALHO DO CHECKOUT COM BOTÃO DE RETORNO NO TOPO -->
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-sovereign); padding-bottom: 12px;">
             <div style="display: flex; align-items: center; gap: 8px;">
-                <button onclick="closeStripeModal()" class="lang-btn" title="Retornar ao Painel" style="font-size: 9.5px; padding: 5px 10px; display: flex; align-items: center; gap: 5px; border-color: var(--accent-clinical); color: var(--accent-clinical); cursor: pointer; font-weight: bold; background: rgba(59,94,102,0.1);">
+                <button onclick="closeLicenciamento ExecutivoModal()" class="lang-btn" title="Retornar ao Painel" style="font-size: 9.5px; padding: 5px 10px; display: flex; align-items: center; gap: 5px; border-color: var(--accent-clinical); color: var(--accent-clinical); cursor: pointer; font-weight: bold; background: rgba(59,94,102,0.1);">
                     <span>←</span> <span>Voltar ao Terminal Principal</span>
                 </button>
-                <h3 style="font-size: 12px; color: var(--green-secure); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">Stripe Secure Checkout 💳</h3>
+                <h3 style="font-size: 12px; color: var(--green-secure); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin: 0;">Licenciamento Executivo Secure Checkout 💳</h3>
             </div>
-            <button onclick="closeStripeModal()" style="background: none; border: 1px solid var(--border-sovereign); color: var(--text-primary); padding: 5px 9px; border-radius: 6px; cursor: pointer; font-size: 11px;">✕</button>
+            <button onclick="closeLicenciamento ExecutivoModal()" style="background: none; border: 1px solid var(--border-sovereign); color: var(--text-primary); padding: 5px 9px; border-radius: 6px; cursor: pointer; font-size: 11px;">✕</button>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 12px; padding: 10px 0; font-family: monospace; font-size: 11px;">
@@ -1545,11 +1545,11 @@
 
             <div style="display: flex; flex-direction: column; gap: 4px;">
                 <label style="font-size: 9.5px; font-weight: bold; text-transform: uppercase; color: var(--text-secondary);">Titular da Licença:</label>
-                <input type="text" id="stripe-holder-name" value="THIÉBRY RODRIGUES" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-sovereign); border-radius: 6px; padding: 8px; color: var(--text-primary); font-size: 11px; outline: none;" readonly>
+                <input type="text" id="licenciamento_executivo-holder-name" value="THIÉBRY RODRIGUES" style="background: rgba(255,255,255,0.05); border: 1px solid var(--border-sovereign); border-radius: 6px; padding: 8px; color: var(--text-primary); font-size: 11px; outline: none;" readonly>
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 8px; background: rgba(59, 94, 102, 0.05); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 12px;">
-                <span style="font-size: 9.5px; font-weight: bold; text-transform: uppercase; color: var(--accent-clinical);">Informações do Cartão de Crédito / Stripe Elements:</span>
+                <span style="font-size: 9.5px; font-weight: bold; text-transform: uppercase; color: var(--accent-clinical);">Informações do Cartão de Crédito / Licenciamento Executivo Elements:</span>
                 
                 <div style="display: flex; flex-direction: column; gap: 4px;">
                     <label style="font-size: 8.5px; color: var(--text-secondary);">Número do Cartão</label>
@@ -1574,13 +1574,13 @@
             </div>
 
             <!-- BOTÃO DE ASSINAR / AUTORIZAR PAGAMENTO (AZUL STRIPE) -->
-            <button onclick="processarPagamentoStripeReal()" class="btn-proceed-flow" style="width: 100%; padding: 12px; background: #0085FF; border: none; color: #fff; font-weight: bold; font-size: 12px; text-transform: uppercase; border-radius: 6px; cursor: pointer; text-align: center; box-shadow: 0 4px 12px rgba(0,133,255,0.3); margin-top: 4px;">
+            <button onclick="processarPagamentoLicenciamento ExecutivoReal()" class="btn-proceed-flow" style="width: 100%; padding: 12px; background: #0085FF; border: none; color: #fff; font-weight: bold; font-size: 12px; text-transform: uppercase; border-radius: 6px; cursor: pointer; text-align: center; box-shadow: 0 4px 12px rgba(0,133,255,0.3); margin-top: 4px;">
                 Assinar / Autorizar Pagamento ✓
             </button>
 
             <!-- BOTÃO DE RETORNO DIRETO LOGO ABAIXO DA ASSINATURA -->
             <div style="display: flex; justify-content: center; margin-top: 4px;">
-                <button onclick="closeStripeModal()" class="lang-btn" style="background: rgba(255,255,255,0.03); border: 1px dashed var(--border-sovereign); color: var(--text-secondary); padding: 9px 16px; border-radius: 6px; font-size: 10px; text-transform: uppercase; cursor: pointer; width: 100%; transition: all 0.2s;">
+                <button onclick="closeLicenciamento ExecutivoModal()" class="lang-btn" style="background: rgba(255,255,255,0.03); border: 1px dashed var(--border-sovereign); color: var(--text-secondary); padding: 9px 16px; border-radius: 6px; font-size: 10px; text-transform: uppercase; cursor: pointer; width: 100%; transition: all 0.2s;">
                     ← Voltar ao Terminal Principal
                 </button>
             </div>
@@ -1618,7 +1618,7 @@
         },
         EN: {
             title: "UHNW Electronic Health Record & Evolution",
-            subtitle: "[Monaco Tier-1 Standard | HIPAA & GDPR Medical Encrypted]",
+            subtitle: "[Executive Global Tier-1 Standard | HIPAA & GDPR Medical Encrypted]",
             patient: "PATIENT:",
             doctor: "ATTENDING PHYSICIAN / CRM:",
             segment: "SEGMENT:",
@@ -1725,7 +1725,7 @@
         const textarea = document.getElementById('uhnw-new-clinical-note');
         const t = traducoesUHNW[idiomaAtualUHNW];
         if (textarea) {
-            let msgVoz = (idiomaAtualUHNW === 'EN') ? "[🎙️ Voice Transcribed]: Monaco anchor protocol & bioregulation applied successfully." : "[🎙️ Voz Transcrita]: Protocolo de ancoragem e biorregulação Mônaco aplicado com sucesso.";
+            let msgVoz = (idiomaAtualUHNW === 'EN') ? "[🎙️ Voice Transcribed]: Executive Global anchor protocol & bioregulation applied successfully." : "[🎙️ Voz Transcrita]: Protocolo de ancoragem e biorregulação Executive Global aplicado com sucesso.";
             textarea.value += (textarea.value ? "\n" : "") + msgVoz;
         }
         alert(t.alertVoice);
@@ -1778,23 +1778,23 @@
         fecharModalHistoricoUHNW();
     }
 
-    // Funções de Controle Stripe
-    function openStripeModal() {
+    // Funções de Controle Licenciamento Executivo
+    function openLicenciamento ExecutivoModal() {
         if (typeof playLuxuryAcousticChime === 'function') playLuxuryAcousticChime();
-        const modal = document.getElementById('stripe-checkout-modal');
+        const modal = document.getElementById('licenciamento_executivo-checkout-modal');
         if (modal) modal.classList.add('active');
     }
 
-    function closeStripeModal() {
+    function closeLicenciamento ExecutivoModal() {
         if (typeof playLuxuryAcousticChime === 'function') playLuxuryAcousticChime();
-        const modal = document.getElementById('stripe-checkout-modal');
+        const modal = document.getElementById('licenciamento_executivo-checkout-modal');
         if (modal) modal.classList.remove('active');
     }
 
-    function processarPagamentoStripeReal() {
+    function processarPagamentoLicenciamento ExecutivoReal() {
         if (typeof playLuxuryAcousticChime === 'function') playLuxuryAcousticChime();
-        alert("💳 Pagamento processado com sucesso via Stripe Secure API!\nLicença Tier-1 Mônaco ativada e enclaves liberados.");
-        closeStripeModal();
+        alert("💳 Pagamento processado com sucesso via Licenciamento Executivo Secure API!\nLicença Tier-1 Executive Global ativada e enclaves liberados.");
+        closeLicenciamento ExecutivoModal();
     }
 </script><div class="modal-overlay" id="apex-protocol-modal">
     <style>
@@ -1869,7 +1869,7 @@ THIERRY TECHNOLOGY CONCEPT GLOBAL
 TERMO DE COMPLIANCE E CONTRATO DE LICENCIAMENTO SOBERANO
 
 Cláusula Primeira (Da Varredura Biométrica Tier-1)
-O usuário autoriza expressamente a varredura e o rastreamento vetorial tridimensional sob os padrões da Governança Mônaco.
+O usuário autoriza expressamente a varredura e o rastreamento vetorial tridimensional sob os padrões da Governança Executive Global.
 
 Cláusula Segunda (Zero-Retention Cloud)
 Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em servidores externos não criptografados.
@@ -2018,7 +2018,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 <input type="checkbox" checked onchange="toggleCountryJurisdiction('DE', this.checked)" style="accent-color: var(--accent-clinical);">
             </label>
             <label style="display: flex; justify-content: space-between; align-items: center; background: var(--btn-glass-bg); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
-                <span>🇫🇷 FR.json — França (Paris / Mônaco Border)</span>
+                <span>🇫🇷 FR.json — França (Paris / Executive Global Border)</span>
                 <input type="checkbox" checked onchange="toggleCountryJurisdiction('FR', this.checked)" style="accent-color: var(--accent-clinical);">
             </label>
             <label style="display: flex; justify-content: space-between; align-items: center; background: var(--btn-glass-bg); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
@@ -2026,7 +2026,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 <input type="checkbox" checked onchange="toggleCountryJurisdiction('KR', this.checked)" style="accent-color: var(--accent-clinical);">
             </label>
             <label style="display: flex; justify-content: space-between; align-items: center; background: var(--btn-glass-bg); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
-                <span>🇲🇨 MC.json — Mônaco (Monte Carlo - Tier-1 Sovereign)</span>
+                <span>🇲🇨 MC.json — Executive Global (Monte Carlo - Tier-1 Sovereign)</span>
                 <input type="checkbox" checked onchange="toggleCountryJurisdiction('MC', this.checked)" style="accent-color: var(--accent-clinical);">
             </label>
             <label style="display: flex; justify-content: space-between; align-items: center; background: var(--btn-glass-bg); padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-sovereign); cursor: pointer;">
@@ -2074,38 +2074,38 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
     </div>
 </div>
 
-<div class="modal-overlay" id="stripe-licensing-modal">
+<div class="modal-overlay" id="licenciamento_executivo-licensing-modal">
     <div class="modal-drawer" style="width: 740px;">
         <div class="modal-header-elite">
-            <span data-i18n="stripe-modal-title">CENTRAL DE LICENCIAMENTO STRIPE • TCC GLOBAL</span>
-            <button class="modal-close-btn" onclick="closeStripeModal()">✕</button>
+            <span data-i18n="licenciamento_executivo-modal-title">CENTRAL DE LICENCIAMENTO STRIPE • TCC GLOBAL</span>
+            <button class="modal-close-btn" onclick="closeLicenciamento ExecutivoModal()">✕</button>
         </div>
-        <div style="font-size: 10px; color: var(--accent-clinical); letter-spacing: 1px; font-weight: 700;" data-i18n="stripe-sub-title">LICENÇAS DE ALTO PADRÃO UHNW (TETO ANUAL MÁXIMO)</div>
+        <div style="font-size: 10px; color: var(--accent-clinical); letter-spacing: 1px; font-weight: 700;" data-i18n="licenciamento_executivo-sub-title">LICENÇAS DE ALTO PADRÃO UHNW (TETO ANUAL MÁXIMO)</div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
             <div style="display: flex; justify-content: space-between; align-items: center; background: var(--btn-glass-bg); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
                 <div>
-                    <div style="font-weight: bold; font-size: 11px;" data-i18n="stripe-item-1-title">Licença Global Estratégica (US$ 999.999,00 / ano)</div>
-                    <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="stripe-item-1-desc">Mercado Américas, Oriente Médio e Expansão Global.</div>
+                    <div style="font-weight: bold; font-size: 11px;" data-i18n="licenciamento_executivo-item-1-title">Licença Global Estratégica (US$ 999.999,00 / ano)</div>
+                    <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="licenciamento_executivo-item-1-desc">Mercado Américas, Oriente Médio e Expansão Global.</div>
                 </div>
                 <!-- BOTÃO STRIPE DISCRETO COM HOVER SUTIL (SEM VERDE FIXO) -->
-                <button class="btn-master-trigger btn-apex-subtle" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarStripe('global_estrategica')" data-i18n="stripe-btn-1">ADQUIRIR ESTRATÉGICA (USD)</button>
+                <button class="btn-master-trigger btn-apex-subtle" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarLicenciamento Executivo('global_estrategica')" data-i18n="licenciamento_executivo-btn-1">ADQUIRIR ESTRATÉGICA (USD)</button>
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; background: var(--btn-glass-bg); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
                 <div>
-                    <div style="font-weight: bold; font-size: 11px;" data-i18n="stripe-item-2-title">Monaco Supremacy License (€ 999.999,00 / ano)</div>
-                    <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="stripe-item-2-desc">Padrão ouro internacional UHNW Europa & Mônaco.</div>
+                    <div style="font-weight: bold; font-size: 11px;" data-i18n="licenciamento_executivo-item-2-title">Executive Global Supremacy License (€ 999.999,00 / ano)</div>
+                    <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="licenciamento_executivo-item-2-desc">Padrão ouro internacional UHNW Europa & Executive Global.</div>
                 </div>
-                <button class="btn-master-trigger btn-apex-subtle" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarStripe('monaco_supremacy')" data-i18n="stripe-btn-2">ADQUIRIR MONACO (EUR)</button>
+                <button class="btn-master-trigger btn-apex-subtle" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarLicenciamento Executivo('monaco_supremacy')" data-i18n="licenciamento_executivo-btn-2">ADQUIRIR MONACO (EUR)</button>
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center; background: var(--btn-glass-bg); padding: 10px; border-radius: 8px; border: 1px solid var(--border-sovereign);">
                 <div>
-                    <div style="font-weight: bold; font-size: 11px;" data-i18n="stripe-item-3-title">US Premium License (US$ 999.999,00 / ano)</div>
-                    <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="stripe-item-3-desc">Homologação integral para os Estados Unidos.</div>
+                    <div style="font-weight: bold; font-size: 11px;" data-i18n="licenciamento_executivo-item-3-title">US Premium License (US$ 999.999,00 / ano)</div>
+                    <div style="font-size: 9px; color: var(--text-secondary);" data-i18n="licenciamento_executivo-item-3-desc">Homologação integral para os Estados Unidos.</div>
                 </div>
-                <button class="btn-master-trigger btn-apex-subtle" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarStripe('us_premium')" data-i18n="stripe-btn-3">ADQUIRIR US PREMIUM (USD)</button>
+                <button class="btn-master-trigger btn-apex-subtle" style="margin:0; padding:8px 14px; font-size:9px; width:auto;" onclick="redirecionarLicenciamento Executivo('us_premium')" data-i18n="licenciamento_executivo-btn-3">ADQUIRIR US PREMIUM (USD)</button>
             </div>
         </div>
-        <button class="btn-master-trigger btn-apex-subtle" style="margin-top: 10px;" onclick="closeStripeModal()" data-i18n="stripe-btn-back">
+        <button class="btn-master-trigger btn-apex-subtle" style="margin-top: 10px;" onclick="closeLicenciamento ExecutivoModal()" data-i18n="licenciamento_executivo-btn-back">
             ← Voltar ao Terminal Principal
         </button>
     </div>
@@ -2641,7 +2641,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 "btn-demo-video": "🎬 VÍDEO DE DEMONSTRAÇÃO (MAIN)",
                 "btn-geo-filter": "[+] UHNW GEO FILTER",
                 "btn-admin-panel": "[⚙️] PAINEL DE ADMINISTRAÇÃO",
-                "btn-stripe-lic": "Comprar Licença Stripe 💳",
+                "btn-licenciamento_executivo-lic": "Comprar Licença Licenciamento Executivo 💳",
                 "btn-gen-pdf": "Gerar Relatórios PDF",
                 "cat-kernel-logs": "Kernel Logs",
                 "ref-base": "BASE DE REFERÊNCIA (-10 ANOS NATURAL)",
@@ -2698,13 +2698,13 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 "tel-nodes": "Control Nodes",
                 "cat-gateway": "UHNW Client Gateway",
                 "btn-apex-protocol": "🛡️ APEX PROTOCOL [UHNW CONTEXT]",
-                "consent-text": "I accept the Compliance Terms and authorize biometric telemetry audit and scanning under Monaco Standards.",
+                "consent-text": "I accept the Compliance Terms and authorize biometric telemetry audit and scanning under Executive Global Standards.",
                 "btn-exec-scan": "[+] Execute Real Scan & Capture",
                 "btn-voice-cmd": "🎙️ CLINICAL VOICE COMMAND",
                 "btn-demo-video": "🎬 DEMO VIDEO (MAIN)",
                 "btn-geo-filter": "[+] UHNW GEO FILTER",
                 "btn-admin-panel": "[⚙️] ADMIN PANEL",
-                "btn-stripe-lic": "Purchase Stripe License 💳",
+                "btn-licenciamento_executivo-lic": "Purchase Licenciamento Executivo License 💳",
                 "btn-gen-pdf": "Generate PDF Reports",
                 "cat-kernel-logs": "Kernel Logs",
                 "ref-base": "REFERENCE BASE (-10 YEARS NATURAL)",
@@ -3040,15 +3040,15 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         function closeGeoFilterModal() { document.getElementById('geo-filter-modal').classList.remove('active-modal'); salvarEstadoNoNavegador(); }
         function toggleCountryJurisdiction(code, status) { salvarEstadoNoNavegador(); }
 
-        function openStripeModal() { if(!scanCompletedFlag) return; document.getElementById('stripe-licensing-modal').classList.add('active-modal'); }
-        function closeStripeModal() { document.getElementById('stripe-licensing-modal').classList.remove('active-modal'); }
+        function openLicenciamento ExecutivoModal() { if(!scanCompletedFlag) return; document.getElementById('licenciamento_executivo-licensing-modal').classList.add('active-modal'); }
+        function closeLicenciamento ExecutivoModal() { document.getElementById('licenciamento_executivo-licensing-modal').classList.remove('active-modal'); }
 
-        async function redirecionarStripe(tierKey) {
-            closeStripeModal();
+        async function redirecionarLicenciamento Executivo(tierKey) {
+            closeLicenciamento ExecutivoModal();
             const formData = new FormData();
             formData.append('tier', tierKey);
             try {
-                const response = await fetch('http://127.0.0.1:801/obter-link-stripe', { method: 'POST', body: formData });
+                const response = await fetch('http://127.0.0.1:801/obter-link-licenciamento_executivo', { method: 'POST', body: formData });
                 const data = await response.json();
                 if (data.url_checkout) { window.location.href = data.url_checkout; }
             } catch (error) { alert('Erro ao carregar checkout.'); }
@@ -3423,10 +3423,10 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 document.getElementById('telemetry-gov').innerText = "100% Tier-1";
                 document.getElementById('telemetry-nodes-val').innerText = "64 Nós";
 
-                const stripeBtn = document.getElementById('btn-open-stripe-modal');
+                const licenciamento_executivoBtn = document.getElementById('btn-open-licenciamento_executivo-modal');
                 const reportBtn = document.getElementById('btn-open-pdf-modal');
-                stripeBtn.classList.remove('locked-report'); stripeBtn.classList.add('unlocked-report');
-                stripeBtn.innerText = "Comprar Licença Stripe 💳";
+                licenciamento_executivoBtn.classList.remove('locked-report'); licenciamento_executivoBtn.classList.add('unlocked-report');
+                licenciamento_executivoBtn.innerText = "Comprar Licença Licenciamento Executivo 💳";
                 reportBtn.classList.remove('locked-report'); reportBtn.classList.add('unlocked-report');
                 reportBtn.innerText = "Gerar Relatórios PDF";
 
