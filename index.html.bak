@@ -457,15 +457,24 @@
         }
     </style>
 
+    
     <style id="auditor-tcc-styles">
+        /* ORGANIZAÇÃO VISUAL, RESPIRO E SUAVIZAÇÃO DE BORDAS */
         .biogen-imperial-grid {
-            gap: 16px !important;
-            padding: 20px !important;
+            gap: 18px !important;
+            padding: 22px !important;
         }
         .grid-cell {
-            padding: 12px !important;
-            border-width: 0.5px !important;
+            padding: 14px !important;
+            border-width: 1px !important;
+            border-radius: 10px !important;
+            transition: transform 0.2s ease, box-shadow 0.2s ease !important;
         }
+        .grid-cell:hover {
+            transform: translateY(-2px) !important;
+        }
+
+        /* PROTEÇÃO DE CONTRASTE NO MODO CLARO */
         body.light-theme,
         body.light-mode,
         html[data-theme="light"] body {
@@ -484,6 +493,44 @@
         body.light-mode .metadata,
         html[data-theme="light"] .metadata {
             color: #047857 !important;
+        }
+    </style>
+    
+
+    <style id="auditor-refino-metricas">
+        /* AFINA SUAVEMENTE OS CARTÕES DE MÉTRICAS SEM ALTERAR A ESTRUTURA */
+        .metric-card, .telemetry-card, [class*="metric-item"], [class*="telemetry-box"] {
+            padding-top: 7px !important;
+            padding-bottom: 7px !important;
+            min-height: unset !important;
+        }
+        .metric-card .metric-value, .telemetry-card .metric-value {
+            font-size: 0.92rem !important;
+            line-height: 1.2 !important;
+        }
+    </style>
+    
+
+    <style id="auditor-silicio-ui">
+        body {
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+            font-variant-numeric: tabular-nums !important;
+        }
+        .luxury-sidebar {
+            gap: 10px !important;
+        }
+        .elite-menu-btn {
+            border-radius: 10px !important;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+        .biogen-imperial-grid {
+            gap: 16px !important;
+            padding: 20px !important;
+        }
+        .grid-cell {
+            border-radius: 12px !important;
+            transition: transform 0.2s ease !important;
         }
     </style>
     
@@ -652,7 +699,7 @@
         <aside class="luxury-sidebar" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
             <div>
                 <div class="category-header" id="cat-morph-analysis" data-i18n="cat-sync-compliance">Sync Global Compliance</div>
-                <div class="sub-tag-label" id="lbl-profiles" data-i18n="lbl-pillars" style="margin-bottom: 8px;">Pilares de Arquitetura Sênior</div>
+                <div class="sub-tag-label" id="lbl-profiles" data-i18n="lbl-pillars" style="margin-bottom: 8px;">Pilares de Soberania Clínica</div>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                     <button id="btn-perf-lideranca" class="elite-menu-btn" onclick="dispararVarreduraComGateway('lideranca')" data-i18n="btn-lideranca">Autoliderança & Comando Global</button>
                     <button id="btn-perf-vitalidade" class="elite-menu-btn" onclick="dispararVarreduraComGateway('clinica')" data-i18n="btn-clinica">Clínica & Rejuvenescimento Facial</button>
@@ -660,34 +707,34 @@
                 </div>
 
                 <div class="category-header" style="margin-top: 18px;" id="cat-regen" data-i18n="cat-regen">Global Clinical Compliance</div>
-                <div class="sub-tag-label" id="lbl-posture-metrics" data-i18n="lbl-posture" style="margin-bottom: 8px;">Métricas Dinâmicas do Motor</div>
+                <div class="sub-tag-label" id="lbl-posture-metrics" data-i18n="lbl-posture" style="margin-bottom: 8px;">Telemetria Biométrica Avançada</div>
                 
-                <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; flex-direction: column; gap: 6px;">
                     <!-- Métrica 1: Integridade Tecidual -->
-                    <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 8px 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 5px 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;">Integridade Tecidual</span>
-                            <span id="metric-val-integridade" style="color: var(--accent-clinical); font-weight: 700; font-size: 11px;">99.4% — Estável</span>
+                            <span id="metric-val-integridade" style="color: var(--accent-clinical); font-weight: 700; font-size: 10px;">99.4% — Estável</span>
                         </div>
-                        <span style="width: 8px; height: 8px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 8px #38bdf8;" title="Ativo no Motor"></span>
+                        <span style="width: 6px; height: 6px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 8px #38bdf8;" title="Ativo no Motor"></span>
                     </div>
 
                     <!-- Métrica 2: Colágeno Apex -->
-                    <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 8px 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 5px 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;">Colágeno Apex</span>
-                            <span id="metric-val-colageno" style="color: var(--green-secure); font-weight: 700; font-size: 11px;">98.8% — Ótimo</span>
+                            <span id="metric-val-colageno" style="color: var(--green-secure); font-weight: 700; font-size: 10px;">98.8% — Ótimo</span>
                         </div>
-                        <span style="width: 8px; height: 8px; background: #059669; border-radius: 50%; box-shadow: 0 0 8px #059669;" title="Sincronizado"></span>
+                        <span style="width: 6px; height: 6px; background: #059669; border-radius: 50%; box-shadow: 0 0 8px #059669;" title="Sincronizado"></span>
                     </div>
 
                     <!-- Métrica 3: Valor Hídrico -->
-                    <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 8px 10px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                    <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 5px 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;">Valor Hídrico (Hidratação)</span>
-                            <span id="metric-val-hidrico" style="color: #f59e0b; font-weight: 700; font-size: 11px;">88.5% — Balanceado</span>
+                            <span id="metric-val-hidrico" style="color: #f59e0b; font-weight: 700; font-size: 10px;">88.5% — Balanceado</span>
                         </div>
-                        <span style="width: 8px; height: 8px; background: #f59e0b; border-radius: 50%; box-shadow: 0 0 8px #f59e0b;" title="Monitorado"></span>
+                        <span style="width: 6px; height: 6px; background: #f59e0b; border-radius: 50%; box-shadow: 0 0 8px #f59e0b;" title="Monitorado"></span>
                     </div>
                 </div>
             </div>
@@ -695,8 +742,8 @@
             <!-- Bloco Inferior de Alinhamento e Governança Global -->
             <div style="margin-top: 15px; border-top: 1px solid var(--border-sovereign); padding-top: 12px;">
                 <div class="category-header" style="margin-bottom: 6px;">Governança de Sincronia</div>
-                <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 8px 10px; border-radius: 8px;">
-                    <span style="color: var(--text-secondary); display: block; font-size: 9px;">STATUS DO MOTOR GLOBAL</span>
+                <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 6px 10px; border-radius: 10px;">
+                    <span style="color: var(--text-secondary); display: block; font-size: 8.5px; letter-spacing: 0.4px;">STATUS DO NÚCLEO GLOBAL</span>
                     <span style="color: var(--text-primary); font-weight: 700; font-size: 11px;">Sincronizado • 64 Nós Ativos</span>
                 </div>
             </div>
@@ -2652,7 +2699,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 camBtn: "CAM: BLOQUEADA",
                 auditLink: "AUDIT LINK:",
                 "cat-sync-compliance": "Sync Global Compliance",
-                "lbl-pillars": "Pilares de Arquitetura Sênior",
+                "lbl-pillars": "Pilares de Soberania Clínica",
                 "btn-lideranca": "Autoliderança & Comando Soberano",
                 "btn-clinica": "Clínica (Estética / ROI)",
                 "btn-tricologia": "Visagismo & Tricologia Avançada",
@@ -2715,7 +2762,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 camBtn: "CAM: BLOCKED",
                 auditLink: "AUDIT LINK:",
                 "cat-sync-compliance": "Sync Global Compliance",
-                "lbl-pillars": "Senior Architecture Pillars",
+                "lbl-pillars": "Clinical Sovereignty Pillars",
                 "btn-lideranca": "Self-Leadership & Sovereign Command",
                 "btn-clinica": "Clinic (Aesthetics / ROI)",
                 "btn-tricologia": "Visagism & Advanced Trichology",
