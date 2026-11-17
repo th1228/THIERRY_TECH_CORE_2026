@@ -1,29 +1,63 @@
 # -*- coding: utf-8 -*-
-from pathlib import Path
 import re
+from pathlib import Path
 
 HTML_PATH = Path("index.html")
 
-def limpar_chaves_vazias_css():
+def auditor_estilo_limpo_silicio():
     if not HTML_PATH.exists():
-        print("[ERRO] index.html não encontrado.")
+        print("[ERRO] index.html não encontrado no diretório.")
         return
-
-    print("=" * 75)
-    print("AUDITOR: REMOVENDO BLOCOS CSS VAZIOS PARA LIMPAR A ABA DE PROBLEMAS")
-    print("=" * 75)
 
     conteudo = HTML_PATH.read_text(encoding="utf-8")
 
-    # Regex cirúrgica para encontrar seletores CSS com chaves totalmente vazias (ex: .classe { }) e removê-los
-    conteudo_limpo, count = re.subn(r'[a-zA-Z0-9_.-]+\s*\{\s*\}', '', conteudo)
+    # 1. Remove totalmente o bloco anterior que gerou os contornos ovais
+    conteudo = re.sub(r'<style id="auditor-tcc-styles">.*?</style>\s*', '', conteudo, flags=re.DOTALL)
 
-    HTML_PATH.write_text(conteudo_limpo, encoding="utf-8")
+    # 2. Aplica apenas limpeza minimalista e contraste seguro no Modo Claro
+    css_minimalista = """
+    <style id="auditor-tcc-styles">
+        /* ESTILO MINIMALISTA LIMPO - SEM BORDAS OVAIS OU DECORAÇÕES EXTRAS */
+        .biogen-imperial-grid {
+            gap: 16px !important;
+            padding: 20px !important;
+        }
+        .grid-cell {
+            padding: 12px !important;
+            border-width: 0.5px !important;
+        }
 
-    print("=" * 75)
-    print(f"[SUCESSO] {count} blocos vazios foram eliminados do ficheiro!")
-    print("-> Guarde o ficheiro, execute o script no terminal e veja a aba 'Problems' limpar-se instantaneamente.")
-    print("=" * 75)
+        /* Proteção de legibilidade no Modo Claro */
+        body.light-theme,
+        body.light-mode,
+        html[data-theme="light"] body {
+            background-color: #f8fafc !important;
+            color: #0f172a !important;
+            --card-final-bg: #ffffff !important;
+            --text-biogen-title: #0f172a !important;
+            --text-biogen-metadata: #047857 !important;
+        }
+
+        body.light-theme :is(h1, h2, h3, h4, p, span, label, small, div, td, th),
+        body.light-mode :is(h1, h2, h3, h4, p, span, label, small, div, td, th),
+        html[data-theme="light"] :is(h1, h2, h3, h4, p, span, label, small, div, td, th) {
+            color: #0f172a !important;
+        }
+
+        body.light-theme .metadata,
+        body.light-mode .metadata,
+        html[data-theme="light"] .metadata {
+            color: #047857 !important;
+        }
+    </style>
+    """
+
+    if "</head>" in conteudo:
+        conteudo = conteudo.replace("</head>", f"{css_minimalista}\n</head>", 1)
+        HTML_PATH.write_text(conteudo, encoding="utf-8")
+        print("[SUCESSO] Contornos ovais removidos e estilo limpo restaurado!")
+    else:
+        print("[ERRO] Tag </head> não encontrada no HTML.")
 
 if __name__ == "__main__":
-    limpar_chaves_vazias_css()
+    auditor_estilo_limpo_silicio()

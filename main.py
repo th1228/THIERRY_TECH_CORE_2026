@@ -755,6 +755,7 @@ async def processar_gerenciador_mibo(request: Request):
         raise HTTPException(status_code=500, detail=f"Erro crítico no despacho do Gerenciador Mibo: {str(e)}")
 
 
+@app.post("/obter-link-licenca-executiva")
 @app.post("/obter-link-stripe")
 async def obter_link_stripe(tier: str = Form(...)):
     tier_chave = tier.strip().lower().replace("-", "_")
@@ -1043,6 +1044,7 @@ def gerador_pdf_dinamico_backend(tipo_relatorio: str, data: RelatorioDossierRequ
         raise HTTPException(status_code=500, detail=f"Erro interno: {str(e)}")
 
 
+@app.post("/api/v1/gerar-relatorio-executivo")
 @app.post("/api/v1/gerar-relatorio-monaco")
 def endpoint_gerar_relatorio_monaco(sessao: DadosSessaoReal):
     try:
