@@ -1517,8 +1517,8 @@
         function closeGeoFilterModal() { document.getElementById('geo-filter-modal').classList.remove('active-modal'); salvarEstadoNoNavegador(); }
         function toggleCountryJurisdiction(code, status) { salvarEstadoNoNavegador(); }
 
-        function abrirModalLicencaExecutiva() { if(!scanCompletedFlag) return; document.getElementById('executive-licensing-modal').classList.add('active-modal'); }
-        function fecharModalLicencaExecutiva() { document.getElementById('executive-licensing-modal').classList.remove('active-modal'); }
+        function abrirModalLicencaExecutiva() { if(!scanCompletedFlag) return; const m = document.getElementById('executive-licensing-modal'); if(m){ m.style.display = 'flex'; m.classList.add('active-modal'); }; }
+        function fecharModalLicencaExecutiva() { const m = document.getElementById('executive-licensing-modal'); if(m){ m.classList.remove('active-modal'); m.style.display = 'none'; }; }
 
         async function ativarLicencaExecutiva(tierKey) {
             if (tierKey === 'europa_executiva') tierKey = 'mona' + 'co_supremacy';
