@@ -1,8 +1,21 @@
 # -*- coding: utf-8 -*-
 """
+===========================================================================
+THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
+MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - PROPRIETARY TECH DIRECTIVE
+===========================================================================
+NOTICE: This software source code and its mathematical algorithms are the 
+intellectual property of Thierry Technology Concept Global. Unauthorized 
+distribution, reverse engineering, or usage without a signed NDA/License 
+agreement is strictly prohibited under international copyright frameworks.
+===========================================================================
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Módulo: carta_internacional_engine.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 6.3.4 - MONACO EXECUTIVE PLATINUM EDITION (Vertical Centered Master Block)
+Versão: 6.3.5 - MONACO EXECUTIVE PLATINUM EDITION (A4 Harmonized)
 Descrição: Emissor da Carta Diplomática e de Encaminhamento Internacional UHNW.
            Formatado em Bloco Único perfeitamente centralizado na página A4.
 """
@@ -234,6 +247,7 @@ class CartaInternacionalEngine:
             canvas.saveState()
             canvas.setStrokeColor(colors.HexColor("#B8860B"))
             canvas.setLineWidth(0.75)
+            # Margem harmonizada de 40pt
             canvas.line(40, 36, A4[0] - 40, 36)
             
             canvas.setFont("Helvetica", 7)
@@ -242,11 +256,12 @@ class CartaInternacionalEngine:
             canvas.drawRightString(A4[0] - 40, 26, txt["rodape_seal"].format(pagina=canvas._pageNumber))
             canvas.restoreState()
 
-        # Margens otimizadas para centralizar o bloco perfeitamente na página verticalmente
+        # ==================== CONFIGURAÇÃO DO DOCUMENTO A4 INTERNACIONAL ====================
+        # Largura A4 = 595.28 pt. Com margens de 40pt, largura útil = 515.28 pt (~515)
         doc = SimpleDocTemplate(
             caminho_salvamento,
             pagesize=A4,
-            leftMargin=40, rightMargin=40, topMargin=65, bottomMargin=50,
+            leftMargin=40, rightMargin=40, topMargin=45, bottomMargin=45,
             title="Carta Internacional de Encaminhamento - Mônaco Sovereign"
         )
 
@@ -272,8 +287,7 @@ class CartaInternacionalEngine:
         cliente_nome = self.nome_cliente.upper() if self.nome_cliente else 'TITULAR SOBERANO NÃO IDENTIFICADO'
         operador_nome = self.operador.upper() if self.operador else 'THIERRY'
         
-        # Espaçador superior inicial para empurrar o bloco elegantemente para o centro da página
-        story.append(Spacer(1, 15))
+        story.append(Spacer(1, 10))
 
         # --- CABEÇALHO EXTERNO ---
         story.append(Paragraph(txt["emp_sub"], style_capa_sub))
@@ -302,7 +316,7 @@ class CartaInternacionalEngine:
         bloco_unico_conteudo.append(Paragraph(txt["sec1_p1"], style_cell_text))
         bloco_unico_conteudo.append(Spacer(1, 3))
 
-        # 4. Seção 02: Tabela de Telemetria Interna
+        # 4. Seção 02: Tabela de Telemetria Interna (Soma exata das larguras = 503 pt, dentro dos 515pt úteis)
         bloco_unico_conteudo.append(Paragraph(txt["sec2_titulo"], style_section_title))
         bloco_unico_conteudo.append(Spacer(1, 1))
         
@@ -312,7 +326,7 @@ class CartaInternacionalEngine:
             [Paragraph(txt["t_diafragma"], style_cell_text), Paragraph(f"<font color='#00875A'><b>{diafragma}</b></font>", style_cell_text), Paragraph(txt["t_diaf_status"], style_cell_text)],
             [Paragraph(txt["t_uv"], style_cell_text), Paragraph(f"<font color='#00875A'><b>{indice_uv}</b></font> ({temp_amb})", style_cell_text), Paragraph(txt["t_uv_status"], style_cell_text)]
         ]
-        tab_tel = Table(dados_telemetria, colWidths=[170, 150, 185.27])
+        tab_tel = Table(dados_telemetria, colWidths=[170, 148, 185])
         tab_tel.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), TABLE_HEADER_BG),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
@@ -362,7 +376,7 @@ class CartaInternacionalEngine:
                 else:
                     tabela_dados_laudo.append([Paragraph("<b>PARECER</b>", estilo_laudo_cel), Paragraph(linha.replace('*', ''), estilo_laudo_cel)])
 
-            tab_laudo = Table(tabela_dados_laudo, colWidths=[160, 345.27])
+            tab_laudo = Table(tabela_dados_laudo, colWidths=[155, 348])
             tab_laudo.setStyle(TableStyle([
                 ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
                 ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
@@ -376,8 +390,8 @@ class CartaInternacionalEngine:
             ]))
             bloco_unico_conteudo.append(tab_laudo)
 
-        # Empacotamento na Tabela Mestre única de Página Única
-        tabela_mestre_unica = Table([[bloco_unico_conteudo]], colWidths=[515.27])
+        # Empacotamento na Tabela Mestre única (Largura exata de 515pt)
+        tabela_mestre_unica = Table([[bloco_unico_conteudo]], colWidths=[515])
         tabela_mestre_unica.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('BOX', (0,0), (-1,-1), 0.75, OURO_CHAMPAGNE),

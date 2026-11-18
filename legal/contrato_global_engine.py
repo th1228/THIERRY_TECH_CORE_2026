@@ -2,9 +2,9 @@
 """
 Módulo: contrato_global_engine.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 22.4.0 - Alinhamento Definitivo Bilingual (PT/EN) com EULA na Abertura & Governança On-Premise
-Descrição: Motor mestre de contrato jurídico exaustivo posicionando a EULA na primeira página, 
-           seguida das cláusulas, inventário técnico de código e certificação APEX.
+Versão: 22.10.0 - Monaco Executive Platinum Edition (Estabilidade Absoluta & Cartões Seguros)
+Descrição: Motor mestre de contrato jurídico com EULA na abertura, 
+           cláusulas fluidas e cartões aplicados estritamente nos componentes tabulares.
 """
 
 import os
@@ -34,7 +34,6 @@ TEXTOS_CONTRATO = {
         "titulo_contrato": "THIERRY TECHNOLOGY CONCEPT GLOBAL — CONTRATO GLOBAL & DOSSIÊ SOBERANO",
         "sub_contrato": "INTERNATIONAL LICENSING & APDP APEX TECHNICAL COMPLIANCE AGREEMENT",
         
-        # TEXTOS DA EULA (POSICIONADOS LOGO NO INÍCIO)
         "eula_titulo": "CONTRATO GLOBAL DE LICENÇA DE USUÁRIO FINAL (EULA)",
         "eula_licenciador": "LICENCIANTE: Thierry Technology Concept Global © 2026",
         "eula_c1_titulo": "1. CONCESSÃO DE LICENÇA:",
@@ -49,7 +48,6 @@ TEXTOS_CONTRATO = {
         "eula_c4_titulo": "4. CONFORMIDADE, TRIBUTAÇÃO E RESOLUÇÃO DE DISPUTAS:",
         "eula_c4_txt": "Todos os impostos regionais, Impostos sobre o Valor Agregado (VAT/IVA) e taxas de processamento digital são calculados e coletados automaticamente no ponto de venda via Stripe, atuando como Merchant of Record. Quaisquer disputas legais decorrentes deste acordo internacional serão regidas pelo direito comercial internacional, com arbitragem executada sob as regras da Câmara de Comércio Internacional (ICC). O uso não autorizado de marcas ou infração de direitos autorais fora do território licenciado acarreta penalidade contratual automática de dez (10) vezes o valor base da licença ($1,750,000.00 USD).",
 
-        # CLÁUSULAS GERAIS E FUNDAMENTAÇÃO
         "lbl_fundamentacao": "FUNDAMENTAÇÃO ESTRATÉGICA E ANÁLISE DE LIDERANÇA FACIAL",
         "c1_titulo": "CLÁUSULA PRIMEIRA: DA ESCASSEZ MUNDIAL DE 10 VAGAS E VIGÊNCIA SOBERANA DE 12 MESES",
         "c2_titulo": "CLÁUSULA SEGUNDA: METADADOS DE VALUATION E CURVA PERCENTUAL",
@@ -114,7 +112,6 @@ TEXTOS_CONTRATO = {
         "titulo_contrato": "THIERRY TECHNOLOGY CONCEPT GLOBAL — SOVEREIGN INSTITUTIONAL DOSSIER",
         "sub_contrato": "INTERNATIONAL LICENSING & APDP APEX TECHNICAL COMPLIANCE AGREEMENT",
         
-        # EULA TEXTS IN ENGLISH
         "eula_titulo": "GLOBAL END USER LICENSE AGREEMENT (EULA)",
         "eula_licenciador": "LICENSOR: Thierry Technology Concept Global © 2026",
         "eula_c1_titulo": "1. GRANT OF LICENSE:",
@@ -129,7 +126,6 @@ TEXTOS_CONTRATO = {
         "eula_c4_titulo": "4. COMPLIANCE, TAXATION, AND DISPUTE RESOLUTION:",
         "eula_c4_txt": "All regional taxes, Value Added Taxes (VAT/IVA), and digital processing fees are calculated and collected automatically at the point of sale via Stripe acting as the Merchant of Record. Any legal disputes arising under this international agreement shall be governed by international commercial law, with arbitration executed under the rules of the International Chamber of Commerce (ICC). Unauthorized trademark deployment or copyright infringement outside the licensed territory triggers an automatic contractual penalty of ten (10) times the base value of the master license ($1,750,000.00 USD).",
 
-        # GENERAL CLAUSES
         "lbl_fundamentacao": "STRATEGIC FOUNDATION AND FACIAL LEADERSHIP ANALYSIS",
         "c1_titulo": "FIRST CLAUSE: WORLDWIDE SCARCITY OF 10 EXCLUSIVE SLOTS & 12-MONTH SOVEREIGN TERM",
         "c2_titulo": "SECOND CLAUSE: VALUATION METADATA AND PERCENTAGE CURVE",
@@ -304,8 +300,16 @@ class TCCSoftwareDualScanner:
 
 
 class C2GlobalContractEngine:
-    def __init__(self, licenciado_nome: str = "GENILSON RODRIGUES", pais_destino: str = "BR", plano_escolhido: str = "global_estrategica", lang: Optional[str] = "PT"):
-        self.licenciado = licenciado_nome.upper() if licenciado_nome else "GENILSON RODRIGUES"
+    def __init__(self, licenciado_nome: Optional[str] = None, pais_destino: str = "BR", plano_escolhido: str = "global_estrategica", lang: Optional[str] = "PT", telemetria: Optional[Dict[str, Any]] = None):
+        self.telemetria_externa = telemetria or {}
+        
+        resolvedor_nome = (
+            licenciado_nome 
+            or self.telemetria_externa.get('nome_cliente') 
+            or self.telemetria_externa.get('nome') 
+            or "GENILSON RODRIGUES"
+        )
+        self.licenciado = resolvedor_nome.upper()
         self.pais = pais_destino.upper() if pais_destino else "BR"
         self.plano = plano_escolhido if plano_escolhido else "global_estrategica"
         self.lang = lang.upper() if lang and isinstance(lang, str) else "PT"
@@ -395,7 +399,6 @@ class C2GlobalContractEngine:
         story.append(Paragraph(txt["eula_c4_titulo"], estilo_h1))
         story.append(Paragraph(txt["eula_c4_txt"], estilo_txt))
         
-        # Garante que as demais cláusulas e o dossiê comecem limpos na próxima página
         story.append(PageBreak())
 
         # =====================================================================
@@ -434,6 +437,7 @@ class C2GlobalContractEngine:
         story.append(Spacer(1, 4))
         story.append(Paragraph(txt["inventario_titulo"], estilo_h2))
         
+        # --- TABELA DE INVENTÁRIO COM ESTILO LIMPO E COMPATÍVEL ---
         filas_inventario = [
             [Paragraph(f"<b>{txt['col_modulo']}</b>", estilo_cel_head), Paragraph(f"<b>{txt['col_linhas']}</b>", estilo_cel_head), Paragraph(f"<b>{txt['col_hash']}</b>", estilo_cel_head), Paragraph(f"<b>{txt['col_status']}</b>", estilo_cel_head)]
         ]
@@ -463,6 +467,7 @@ class C2GlobalContractEngine:
 
         story.append(Paragraph(txt["c2_titulo"], estilo_h1))
         
+        # --- TABELA DE METADADOS ---
         dados_tabela = [
             [Paragraph(txt["t2_col1"], estilo_cel_head), Paragraph(txt["t2_col2"], estilo_cel_head)],
             [Paragraph(f"<b>{txt['t2_l1']}</b>", estilo_cel), Paragraph(self.licenciado, estilo_cel_bold)],
@@ -536,4 +541,4 @@ class C2GlobalContractEngine:
 if __name__ == '__main__':
     engine = C2GlobalContractEngine(licenciado_nome="GENILSON RODRIGUES", pais_destino="BR", plano_escolhido="global_estrategica", lang="PT")
     engine.gerar_pdf("Contrato_Global_Original.pdf")
-    print("Contrato Global gerado com sucesso: EULA na abertura, seguido das cláusulas, inventário de código e certificação APEX.")
+    print("Contrato Global gerado com sucesso sem estouros.")

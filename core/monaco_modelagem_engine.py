@@ -1,8 +1,21 @@
 # -*- coding: utf-8 -*-
 """
+===========================================================================
+THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
+MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - PROPRIETARY TECH DIRECTIVE
+===========================================================================
+NOTICE: This software source code and its mathematical algorithms are the 
+intellectual property of Thierry Technology Concept Global. Unauthorized 
+distribution, reverse engineering, or usage without a signed NDA/License 
+agreement is strictly prohibited under international copyright frameworks.
+===========================================================================
+"""
+
+# -*- coding: utf-8 -*-
+"""
 Módulo Unificado: monaco_modelagem_engine.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 6.1.1 - MONACO EXECUTIVE PLATINUM EDITION (Bilingual PT/EN & Clean Clinical Lab Table Format)
+Versão: 6.1.4 - MONACO EXECUTIVE PLATINUM EDITION (Alinhamento Perfeito Sem Blocos Duplos)
 Descrição: Motor unificado formatado no Padrão Executive Platinum (Fundo Claro / Clean), 
            bordas douradas, texto em grafite executivo e laudo estruturado de inteligência dinâmico.
 """
@@ -184,9 +197,16 @@ class C2MonacoModelingEngine:
     ) -> None:
         self.telemetria = telemetria if telemetria is not None else {}
         
-        # Resolução dinâmica do nome do titular vindo do painel, telemetria ou fallback seguro
-        self.ceo = ceo_name or self.telemetria.get('nome_cliente') or self.telemetria.get('nome') or "Cliente UHNW"
-        
+        # Resolução 100% dinâmica sem nomes fixos estáticos
+        resolvedor_nome = (
+            ceo_name 
+            or self.telemetria.get('nome_cliente') 
+            or self.telemetria.get('nome') 
+            or memoria.ler_dados("nome_cliente") 
+            or memoria.ler_dados("titular") 
+            or "CLIENTE UHNW"
+        )
+        self.ceo = resolvedor_nome.upper()
         self.company = company_name
         self.segment = market_segment
         self.horizon = int(horizon_years)
@@ -203,7 +223,6 @@ class C2MonacoModelingEngine:
             self.fator_degradacao = 1.00  
 
     def calcular_geometria_espacial_3d(self) -> Dict[str, Any]:
-        """Executa os cálculos da matriz de deformação e coeficientes de blindagem jurídica."""
         pontos_malha = 468
         desvio_aurea_base = 4.82  
         custo_evitado_base = 4927.50  
@@ -255,7 +274,6 @@ class C2MonacoModelingEngine:
         }
 
     def gerar_dossie_modelagem(self, caminho_salvamento: Optional[str] = None, lang: Optional[str] = None) -> str:
-        """Compila o Dossiê Executivo integrando Modelagem, Valuación e o Arcabouço Legal de PI."""
         if lang:
             self.lang = lang.upper()
             if self.lang not in TEXTOS_MONACO:
@@ -275,16 +293,16 @@ class C2MonacoModelingEngine:
             
             canvas.setStrokeColor(colors.HexColor("#B8860B"))
             canvas.setLineWidth(0.75)
-            canvas.line(54, 48, A4[0] - 54, 48)
+            canvas.line(45, 36, A4[0] - 45, 36)
             
             canvas.setFont("Helvetica", 7.5)
             canvas.setFillColor(colors.HexColor('#0A1128'))
             
-            canvas.drawString(54, 36, txt["rodape_linha1"])
-            canvas.drawString(54, 24, txt["rodape_linha2"])
+            canvas.drawString(45, 26, txt["rodape_linha1"])
+            canvas.drawString(45, 16, txt["rodape_linha2"])
             
             pagina_atual = canvas._pageNumber
-            canvas.drawRightString(A4[0] - 54, 24, txt["rodape_seal"].format(pagina=pagina_atual))
+            canvas.drawRightString(A4[0] - 45, 16, txt["rodape_seal"].format(pagina=pagina_atual))
             canvas.restoreState()
 
         if not caminho_salvamento:
@@ -308,10 +326,12 @@ class C2MonacoModelingEngine:
         string_base_hash = f"{self.ceo}-{self.company}-{calc['desvio_calculado']}-{self.emissao}-LEGAL-PI-{self.lang}"
         hash_sha256_gerado = hashlib.sha256(string_base_hash.encode('utf-8')).hexdigest().upper()
 
+        # ==================== CONFIGURAÇÃO DO DOCUMENTO A4 INTERNACIONAL ====================
+        # Largura A4 = 595.28 pt. Com margens de 45pt, largura útil exata = 505 pt
         doc = SimpleDocTemplate(
             caminho_salvamento,
             pagesize=A4,
-            leftMargin=54, rightMargin=54, topMargin=54, bottomMargin=54,
+            leftMargin=45, rightMargin=45, topMargin=45, bottomMargin=45,
             title="Dossiê de Modelagem Computacional e Arcabouço Legal - Monaco Sovereign"
         )
 
@@ -325,13 +345,13 @@ class C2MonacoModelingEngine:
         TABLE_HEADER_BG = colors.HexColor("#F1F5F9")
         EXCELENCIA_VERDE = colors.HexColor("#00875A")
         
-        style_capa_titulo = ParagraphStyle('CapaTituloMod', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=13, leading=16, textColor=MONACO_NAVY, alignment=1, spaceAfter=2)
-        style_capa_sub = ParagraphStyle('CapaSubMod', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7.5, leading=10, textColor=OURO_CHAMPAGNE, alignment=1, spaceAfter=3)
-        style_protocol = ParagraphStyle('ProtoMod', parent=styles['Normal'], fontName='Helvetica', fontSize=7.5, leading=10, textColor=colors.HexColor('#334155'), alignment=1, spaceAfter=6)
+        style_capa_titulo = ParagraphStyle('CapaTituloMod', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=12, leading=14, textColor=MONACO_NAVY, alignment=1, spaceAfter=2)
+        style_capa_sub = ParagraphStyle('CapaSubMod', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7, leading=9, textColor=OURO_CHAMPAGNE, alignment=1, spaceAfter=3)
+        style_protocol = ParagraphStyle('ProtoMod', parent=styles['Normal'], fontName='Helvetica', fontSize=6.5, leading=8.5, textColor=colors.HexColor('#334155'), alignment=1, spaceAfter=5)
 
-        style_table_header_dark = ParagraphStyle('TabHeadClean', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7.5, leading=9, textColor=MONACO_NAVY)
-        style_cell_text_dark = ParagraphStyle('CellClean', parent=styles['Normal'], fontName='Helvetica', fontSize=7, leading=9, textColor=DARK_TEXT)
-        style_formula_dark = ParagraphStyle('FormClean', parent=styles['Normal'], fontName='Courier-Bold', fontSize=7, leading=9, textColor=EXCELENCIA_VERDE, alignment=2)
+        style_table_header_dark = ParagraphStyle('TabHeadClean', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7, leading=9, textColor=MONACO_NAVY)
+        style_cell_text_dark = ParagraphStyle('CellClean', parent=styles['Normal'], fontName='Helvetica', fontSize=6.5, leading=8.5, textColor=DARK_TEXT)
+        style_formula_dark = ParagraphStyle('FormClean', parent=styles['Normal'], fontName='Courier-Bold', fontSize=6.5, leading=8.5, textColor=EXCELENCIA_VERDE, alignment=2)
 
         story: List[Flowable] = []
         
@@ -342,9 +362,9 @@ class C2MonacoModelingEngine:
         story.append(Paragraph(f"{self.company.upper()} • {txt['emp_sub']}", style_capa_sub))
         story.append(Paragraph(txt["doc_titulo"], style_capa_titulo))
         story.append(Paragraph(f"<b>{txt['meta_titular']}</b> <font color='#00875A'><b>{cliente_nome}</b></font> | <b>{txt['meta_horizonte']}</b> {self.horizon} {txt['anos_label']} | <b>{txt['meta_operador']}</b> {operador_nome} | <b>{txt['meta_emissao']}</b> {self.emissao}<br/><b>{txt['meta_params']}</b> Ambiente: {temp_amb} ({umid_amb}) | Setor: {self.segment}", style_protocol))
-        story.append(Spacer(1, 4))
+        story.append(Spacer(1, 3))
 
-        # --- 2. SUMÁRIO EXECUTIVO ENCAPSULADO NO BLOCO PLATINA CLEAN ---
+        # --- 2. SUMÁRIO EXECUTIVO ENCAPSULADO NO BLOCO PLATINA CLEAN (Largura útil exata = 505pt) ---
         sumario_linhas = [
             [Paragraph(txt["sumario_titulo"], style_table_header_dark), Paragraph(txt["sumario_status"], style_table_header_dark)],
             [
@@ -352,20 +372,20 @@ class C2MonacoModelingEngine:
                 Paragraph("<font color='#00875A'><b>SECURE // LOCKED</b></font>", style_formula_dark)
             ]
         ]
-        tabela_sumario = Table(sumario_linhas, colWidths=[407.27, 80])
+        tabela_sumario = Table(sumario_linhas, colWidths=[420, 85])
         tabela_sumario.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
             ('GRID', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 4),
-            ('TOPPADDING', (0,0), (-1,-1), 4),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 3),
             ('LEFTPADDING', (0,0), (-1,-1), 5),
             ('RIGHTPADDING', (0,0), (-1,-1), 5),
             ('LINEBELOW', (0,0), (-1,0), 1.5, OURO_CHAMPAGNE)
         ]))
         story.append(KeepTogether([tabela_sumario]))
-        story.append(Spacer(1, 4))
+        story.append(Spacer(1, 3))
 
         # --- 3. BLOCOS TÉCNICOS E JURÍDICOS EM BLOCO PLATINA CLEAN ---
         blocos = [
@@ -442,20 +462,21 @@ class C2MonacoModelingEngine:
                     Paragraph(formula_matematica, style_formula_dark)
                 ])
                 
-            tabela_bloco = Table(linhas_tabela, colWidths=[337.27, 150])
+            # Largura útil total exata = 505 pt (345 + 160)
+            tabela_bloco = Table(linhas_tabela, colWidths=[345, 160])
             tabela_bloco.setStyle(TableStyle([
                 ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
                 ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
                 ('GRID', (0,0), (-1,-1), 0.5, CARD_BORDER),
                 ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
-                ('BOTTOMPADDING', (0,0), (-1,-1), 3),
-                ('TOPPADDING', (0,0), (-1,-1), 3),
+                ('BOTTOMPADDING', (0,0), (-1,-1), 2.5),
+                ('TOPPADDING', (0,0), (-1,-1), 2.5),
                 ('LEFTPADDING', (0,0), (-1,-1), 5),
                 ('RIGHTPADDING', (0,0), (-1,-1), 5),
                 ('LINEBELOW', (0,0), (-1,0), 1.5, OURO_CHAMPAGNE)
             ]))
             elementos_bloco.append(tabela_bloco)
-            elementos_bloco.append(Spacer(1, 4))
+            elementos_bloco.append(Spacer(1, 3))
             story.append(KeepTogether(elementos_bloco))
 
         # =========================================================================
@@ -516,35 +537,24 @@ class C2MonacoModelingEngine:
                         Paragraph(linha.replace("*", ""), estilo_laudo_celula)
                     ])
 
-            tab_laudo_clinico = Table(tabela_dados_laudo, colWidths=[170, 317.27])
+            # Largura útil exata e limpa sem blocos duplos (165 + 340 = 505 pt)
+            tab_laudo_clinico = Table(tabela_dados_laudo, colWidths=[165, 340])
             tab_laudo_clinico.setStyle(TableStyle([
                 ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
                 ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
-                ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
+                ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
                 ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
                 ('TOPPADDING', (0,0), (-1,-1), 3),
                 ('BOTTOMPADDING', (0,0), (-1,-1), 3),
-                ('LEFTPADDING', (0,0), (-1,-1), 4),
-                ('RIGHTPADDING', (0,0), (-1,-1), 4),
+                ('LEFTPADDING', (0,0), (-1,-1), 5),
+                ('RIGHTPADDING', (0,0), (-1,-1), 5),
                 ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
+                ('LINEBELOW', (0,0), (-1,0), 1.5, OURO_CHAMPAGNE)
             ]))
 
-            elementos_bloco_anexo = [
-                Paragraph(txt["anexo_titulo"], style_table_header_dark),
-                Spacer(1, 3),
-                tab_laudo_clinico
-            ]
-
-            tabela_mestre_anexo = Table([[elementos_bloco_anexo]], colWidths=[515.27])
-            tabela_mestre_anexo.setStyle(TableStyle([
-                ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
-                ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
-                ('TOPPADDING', (0,0), (-1,-1), 8),
-                ('BOTTOMPADDING', (0,0), (-1,-1), 8),
-                ('LEFTPADDING', (0,0), (-1,-1), 8),
-                ('RIGHTPADDING', (0,0), (-1,-1), 8),
-            ]))
-            story.append(tabela_mestre_anexo)
+            story.append(Paragraph(txt["anexo_titulo"], style_table_header_dark))
+            story.append(Spacer(1, 3))
+            story.append(tab_laudo_clinico)
 
         doc.build(
             story,
@@ -563,7 +573,6 @@ class C2MonacoModelingEngine:
 
 if __name__ == "__main__":
     motor = C2MonacoModelingEngine(
-        ceo_name="José",
         company_name="Thierry Technology Concept Global",
         market_segment="Tecnologia e Inovação",
         horizon_years=10,

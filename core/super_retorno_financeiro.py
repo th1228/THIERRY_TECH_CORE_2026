@@ -11,11 +11,10 @@ agreement is strictly prohibited under international copyright frameworks.
 ===========================================================================
 """
 
-# -*- coding: utf-8 -*-
 """
 Módulo: super_retorno_financeiro.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 6.8.0 - MONACO EXECUTIVE PLATINUM EDITION (Tópicos 1 a 8 Perfeitos)
+Versão: 6.8.6 - MONACO EXECUTIVE PLATINUM EDITION (Alinhamento Geométrico Perfeito)
 Descrição: Motor de Alta Performance de Auditoria Preditiva e Valuation de Ativos Biométricos.
            Aplica Geometria Diferencial, Amortização Exponencial e Bloco Mestre Platina Clean.
 """
@@ -24,7 +23,7 @@ import os
 import datetime
 import hashlib
 import math
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import A4
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak
 from reportlab.platypus.flowables import Flowable
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
@@ -207,11 +206,11 @@ TEXTOS_ROI = {
         "t7_l3_nome": "PQC Cryptography Indeductible",
         "t7_l3_desc": "Data security and record immutability in post-quantum standard.",
 
-        "sec8_titulo": "8. NEXT STEPS & OPERATIONAL CALL TO ACTION",
+        "sec8_titulo": "8. PRÓXIMOS PASSOS E CALL TO ACTION OPERACIONAL",
         "sec8_desc": "Immediate guidelines for activating the UHNW executive protocol.",
         "t8_l1_nome": "C2 Identity Homologation",
         "t8_l1_desc": "Confirmation of sovereign credentials and dashboard access release.",
-        "t8_l2_nome": "Local Infrastructure Setup",
+        "t8_l2_nome": "Setup da Infraestrutura Local",
         "t8_l2_desc": "Installation of offline modules and thermal sensor calibration.",
         "t8_l3_nome": "Executive Ratification",
         "t8_l3_desc": "Digital signature and immediate start of 24/7 monitoring."
@@ -220,7 +219,6 @@ TEXTOS_ROI = {
 
 
 class SovereignSecureCanvas(canvas.Canvas):
-    """Canvas de Alta Segurança Atuarial. Renderiza marcas d'água geométricas e vetores de integridade no padrão Executive Platinum."""
     def __init__(self, *args, **kwargs):
         super(SovereignSecureCanvas, self).__init__(*args, **kwargs)
         self._saved_page_states = []
@@ -247,10 +245,6 @@ class SovereignSecureCanvas(canvas.Canvas):
 
 
 class C2SovereignROIEngine:
-    """
-    O Motor Máximo de Engenharia Atuarial Biométrica com Nome Dinâmico 
-    e Integração em Tempo Real com o Sensor de Fadiga Tier-1.
-    """
     def __init__(self, 
                  chave_publica_sistema: str = "TTC-KEY-MONACO-SECURE-9948", 
                  titular: Optional[str] = None, 
@@ -266,7 +260,6 @@ class C2SovereignROIEngine:
         
         self.telemetria_externa = telemetria or {}
         
-        # Resolução dinâmica do nome do titular vindo do painel, telemetria ou fallback seguro
         resolvedor_nome = titular or self.telemetria_externa.get('nome_cliente') or self.telemetria_externa.get('nome') or memoria.ler_dados("nome_cliente") or memoria.ler_dados("titular") or "CLIENTE UHNW"
         self.titular = resolvedor_nome.upper()
         
@@ -281,7 +274,6 @@ class C2SovereignROIEngine:
         if self.lang not in TEXTOS_ROI:
             self.lang = "PT"
             
-        # --- CAPTURA AUTOMÁTICA DOS DADOS DO SENSOR DE FADIGA NA MEMÓRIA ---
         dados_fadiga_memoria = memoria.ler_dados("dados_fadiga") or memoria.ler_dados(f"historico_fadiga_{self.titular}") or {}
         
         if fator_estresse_biologico is not None:
@@ -300,7 +292,6 @@ class C2SovereignROIEngine:
 
         self.timestamp = datetime.datetime.now().strftime("%d/%m/%Y às %H:%M:%S UTC")
         
-        # --- NÚCLEO DE CÁLCULO ATUARIAL AVANÇADO ---
         fator_aceleracao = 0.012 * (1.0 + self.estresse * 1.5)
         self.cde = 100.0 * math.exp(-fator_aceleracao * max(0, self.idade - 25))
         self.cde = max(35.0, min(100.0, self.cde))
@@ -321,7 +312,6 @@ class C2SovereignROIEngine:
         return f"€ {valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
 
     def _obter_texto_comparativo_final(self) -> str:
-        """Gera o texto comparativo final personalizado de acordo com o titular e perfil."""
         if self.lang == "EN":
             return f"""
             <b>Comparative Executive Audit Summary ({self.titular}):</b> Integrating real-time biometric fatigue telemetry (Score: {self.score_fadiga_sensor:.1f}%, Circadian Factor: {self.fator_circadiano}x) and complete Tier-1 governance, the compliance framework deployed for <i>{self.titular}</i> secures multi-faceted capital preservation across <i>{self.market_segment}</i>, guaranteeing absolute market dominance.
@@ -339,72 +329,74 @@ class C2SovereignROIEngine:
 
         txt = TEXTOS_ROI[self.lang]
         
+        # Margens otimizadas de 45pt para dar folga exata na folha A4
         doc = SimpleDocTemplate(
             caminho_pdf,
-            pagesize=letter,
-            rightMargin=30, leftMargin=30, topMargin=30, bottomMargin=30
+            pagesize=A4,
+            rightMargin=45, leftMargin=45, topMargin=45, bottomMargin=45
         )
         
         styles = getSampleStyleSheet()
         
-        # --- PALETA EXECUTIVE PLATINUM (CLEAN & FUNDO CLARO) ---
         MONACO_NAVY = colors.HexColor('#0A1128')
-        SOVEREIGN_GOLD = colors.HexColor('#B8860B')   # Dourado Nobre
-        EXCELENCIA_VERDE = colors.HexColor('#00875A') # Verde Esmeralda Clínico
-        DARK_TEXT = colors.HexColor('#1E293B')        # Grafite de Leitura Fácil
-        CARD_BG = colors.HexColor('#F8FAFC')          # Cinza Platina Limpo
-        CARD_BORDER = colors.HexColor('#CBD5E1')      # Borda Prata Fina
-        TABLE_HEADER_BG = colors.HexColor('#F1F5F9')  # Topo de Tabela Claro
+        SOVEREIGN_GOLD = colors.HexColor('#B8860B')   
+        EXCELENCIA_VERDE = colors.HexColor('#00875A') 
+        DARK_TEXT = colors.HexColor('#1E293B')        
+        CARD_BG = colors.HexColor('#F8FAFC')          
+        CARD_BORDER = colors.HexColor('#CBD5E1')      
+        TABLE_HEADER_BG = colors.HexColor('#F1F5F9')  
         
-        # Estilos exatos que você aprovou
-        estilo_titulo_solto = ParagraphStyle('MaxTitleSolto', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=12.5, leading=15, textColor=MONACO_NAVY, alignment=1, spaceAfter=2)
-        estilo_sub_solto = ParagraphStyle('MaxSubSolto', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7.5, leading=10, textColor=SOVEREIGN_GOLD, alignment=1, spaceAfter=2)
-        estilo_meta_solto = ParagraphStyle('MaxMetaSolto', parent=styles['Normal'], fontName='Helvetica', fontSize=7, leading=9.5, textColor=colors.HexColor('#333333'), alignment=1, spaceAfter=6)
+        estilo_titulo_solto = ParagraphStyle('MaxTitleSolto', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=12, leading=14, textColor=MONACO_NAVY, alignment=1, spaceAfter=2)
+        estilo_sub_solto = ParagraphStyle('MaxSubSolto', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7, leading=9, textColor=SOVEREIGN_GOLD, alignment=1, spaceAfter=2)
+        estilo_meta_solto = ParagraphStyle('MaxMetaSolto', parent=styles['Normal'], fontName='Helvetica', fontSize=6.5, leading=8.5, textColor=colors.HexColor('#333333'), alignment=1, spaceAfter=4)
         
-        estilo_secao = ParagraphStyle('MaxSec', parent=styles['Heading2'], fontName='Helvetica-Bold', fontSize=7.5, textColor=MONACO_NAVY, spaceBefore=4, spaceAfter=2)
-        estilo_texto = ParagraphStyle('MaxText', parent=styles['Normal'], fontName='Helvetica', fontSize=6.0, textColor=DARK_TEXT, leading=8.0, spaceAfter=2)
-        estilo_tabela = ParagraphStyle('MaxTab', parent=styles['Normal'], fontName='Helvetica', fontSize=5.5, textColor=DARK_TEXT, leading=7.5)
-        estilo_tabela_bold = ParagraphStyle('MaxTabBold', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=5.5, textColor=MONACO_NAVY, leading=7.5)
-        estilo_tabela_verde = ParagraphStyle('MaxTabGreen', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=5.5, textColor=EXCELENCIA_VERDE, leading=7.5)
-        estilo_comparativo = ParagraphStyle('MaxComp', parent=styles['Normal'], fontName='Helvetica', fontSize=6.5, textColor=DARK_TEXT, leading=9.0, spaceBefore=4, spaceAfter=2)
+        estilo_secao = ParagraphStyle('MaxSec', parent=styles['Heading2'], fontName='Helvetica-Bold', fontSize=7, textColor=MONACO_NAVY, spaceBefore=3, spaceAfter=2)
+        estilo_texto = ParagraphStyle('MaxText', parent=styles['Normal'], fontName='Helvetica', fontSize=5.5, leading=7.5, textColor=DARK_TEXT, spaceAfter=2)
+        
+        # Estilos de texto com fonte reduzida cirurgicamente para não estourar as caixas
+        estilo_tabela = ParagraphStyle('MaxTab', parent=styles['Normal'], fontName='Helvetica', fontSize=4.8, textColor=DARK_TEXT, leading=6.5)
+        estilo_tabela_bold = ParagraphStyle('MaxTabBold', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=4.8, textColor=MONACO_NAVY, leading=6.5)
+        estilo_tabela_verde = ParagraphStyle('MaxTabGreen', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=4.8, textColor=EXCELENCIA_VERDE, leading=6.5)
+        estilo_comparativo = ParagraphStyle('MaxComp', parent=styles['Normal'], fontName='Helvetica', fontSize=5.8, textColor=DARK_TEXT, leading=8, spaceBefore=3, spaceAfter=2)
 
         story: List[Flowable] = []
 
-        # --- 1. CABEÇALHO SUPERIOR SOLTO E IMPONENTE ---
         story.append(Paragraph(txt["doc_titulo"], estilo_titulo_solto))
         story.append(Paragraph(txt["doc_subtitulo"], estilo_sub_solto))
         story.append(Paragraph(f"<b>{txt['meta_emissao']}</b> {self.timestamp} | <b>{txt['meta_titular']}</b> {self.titular} ({txt['meta_idade']} {self.idade}) | <b>{txt['meta_auditor']}</b> {self.auditor}", estilo_meta_solto))
         story.append(Spacer(1, 2))
 
-        # --- 2. CONTEÚDO ENCAPSULADO NO BLOCO MESTRE PLATINA CLEAN ---
         elementos_bloco_total = [
             Paragraph(f"<b>{txt['block_auth']}</b> SYSTEM_SEC_C2_PREDICTIVE_V4 // <b>{txt['integrity_hash']}</b> <font color='#00875A'>{self.audit_hash}</font><br/>"
                       f"<b>{txt['public_key']}</b> {self.public_key} // <b>Sensor Hash:</b> {self.hash_fadiga_sensor[:16]}...", 
-                      ParagraphStyle('CryptoLight', parent=styles['Normal'], fontName='Courier-Bold', fontSize=5, textColor=MONACO_NAVY, leading=6.5, spaceAfter=3)),
+                      ParagraphStyle('CryptoLight', parent=styles['Normal'], fontName='Courier-Bold', fontSize=4.5, textColor=MONACO_NAVY, leading=6, spaceAfter=2)),
             Spacer(1, 2),
             
-            # --- TABELA 1: TELEMETRIA E FADIGA REAL-TIME ---
             Paragraph(txt["sec1_titulo"], estilo_secao),
         ]
         
+        # LARGURAS GEOMETRICAMENTE CALIBRADAS: 120 + 75 + 285 = 480 pt (Encaixe perfeito na caixa de 485 pt)
+        COL_W1, COL_W2, COL_W3 = 120, 75, 285
+
         tabela_1_data = [
             [Paragraph(txt["t1_l1_nome"], estilo_tabela_bold), Paragraph(f"{self.score_fadiga_sensor:.1f}%", estilo_tabela_verde), Paragraph(txt["t1_l1_desc"], estilo_tabela)],
             [Paragraph(txt["t1_l2_nome"], estilo_tabela_bold), Paragraph(f"{self.fator_circadiano}x (Estresse: {self.estresse*100:.1f}%)", estilo_tabela), Paragraph(txt["t1_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t1_l3_nome"], estilo_tabela_bold), Paragraph(f"{self.temp_ambiente}°C | UR {self.umi_ambiente}%", estilo_tabela), Paragraph(txt["t1_l3_desc"], estilo_tabela)]
         ]
-        t1 = Table(tabela_1_data, colWidths=[140, 75, 299])
+        t1 = Table(tabela_1_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t1.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t1)
         
-        # --- TABELA 2 ---
         elementos_bloco_total.append(Paragraph(txt["sec2_titulo"], estilo_secao))
         elementos_bloco_total.append(Paragraph(txt["sec2_desc"], estilo_texto))
         
@@ -413,19 +405,20 @@ class C2SovereignROIEngine:
             [Paragraph(txt["t2_l2_nome"], estilo_tabela_bold), Paragraph(f"{self.cde:.2f}%", estilo_tabela_verde), Paragraph(txt["t2_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t2_l3_nome"], estilo_tabela_bold), Paragraph(f"<font color='#00875A'>{self.deficit_sustentacao:.2f}%</font>", estilo_tabela), Paragraph(txt["t2_l3_desc"], estilo_tabela)]
         ]
-        t2 = Table(tabela_2_data, colWidths=[140, 75, 299])
+        t2 = Table(tabela_2_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t2.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t2)
 
-        # --- TABELA 3 ---
         elementos_bloco_total.append(Paragraph(txt["sec3_titulo"], estilo_secao))
         elementos_bloco_total.append(Paragraph(txt["sec3_desc"], estilo_texto))
         
@@ -434,19 +427,20 @@ class C2SovereignROIEngine:
             [Paragraph(txt["t3_l2_nome"], estilo_tabela_bold), Paragraph(f"<font color='#00875A'>{self.formatar_moeda_eur(self.image_capital)}</font>", estilo_tabela), Paragraph(txt["t3_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t3_l3_nome"], estilo_tabela_bold), Paragraph(f"<font color='#00875A'>{self.formatar_moeda_eur(self.perda_capital_15_anos)}</font>", estilo_tabela), Paragraph(txt["t3_l3_desc"], estilo_tabela)]
         ]
-        t3 = Table(tabela_3_data, colWidths=[140, 75, 299])
+        t3 = Table(tabela_3_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t3.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t3)
 
-        # --- TABELA 4 ---
         elementos_bloco_total.append(Paragraph(txt["sec4_titulo"], estilo_secao))
         
         tabela_4_data = [
@@ -454,19 +448,20 @@ class C2SovereignROIEngine:
             [Paragraph(txt["t4_l2_nome"], estilo_tabela_bold), Paragraph(f"<font color='#00875A'>{self.formatar_moeda_eur(self.perda_mitigada_evitada)}</font>", estilo_tabela), Paragraph(txt["t4_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t4_l3_nome"], estilo_tabela_bold), Paragraph(f"{self.roi_absoluto:.2f}%", estilo_tabela_verde), Paragraph(txt["t4_l3_desc"], estilo_tabela)]
         ]
-        t4 = Table(tabela_4_data, colWidths=[140, 75, 299])
+        t4 = Table(tabela_4_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t4.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t4)
 
-        # --- TABELA 5: ANÁLISE DE SENSIBILIDADE E STRESS TEST ---
         elementos_bloco_total.append(Paragraph(txt["sec5_titulo"], estilo_secao))
         elementos_bloco_total.append(Paragraph(txt["sec5_desc"], estilo_texto))
         
@@ -475,19 +470,20 @@ class C2SovereignROIEngine:
             [Paragraph(txt["t5_l2_nome"], estilo_tabela_bold), Paragraph(f"Perda Projetada (40%)", estilo_tabela), Paragraph(txt["t5_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t5_l3_nome"], estilo_tabela_bold), Paragraph(f"<font color='#C0392B'>Colapso Severo (75%)</font>", estilo_tabela), Paragraph(txt["t5_l3_desc"], estilo_tabela)]
         ]
-        t5 = Table(tabela_5_data, colWidths=[140, 75, 299])
+        t5 = Table(tabela_5_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t5.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t5)
 
-        # --- TABELA 6: DIRETIVAS DE GOVERNANÇA INTEGRADA E CRONOGRAMA ---
         elementos_bloco_total.append(Paragraph(txt["sec6_titulo"], estilo_secao))
         elementos_bloco_total.append(Paragraph(txt["sec6_desc"], estilo_texto))
         
@@ -496,19 +492,20 @@ class C2SovereignROIEngine:
             [Paragraph(txt["t6_l2_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(self.custo_setup), estilo_tabela_verde), Paragraph(txt["t6_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t6_l3_nome"], estilo_tabela_bold), Paragraph("€ 12.500,00 / a.a.", estilo_tabela), Paragraph(txt["t6_l3_desc"], estilo_tabela)]
         ]
-        t6 = Table(tabela_6_data, colWidths=[140, 75, 299])
+        t6 = Table(tabela_6_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t6.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t6)
 
-        # --- TABELA 7: ANCORAGEM DE SEGURANÇA E GARANTIAS (SLAS) ---
         sla_retencao = max(85.0, 100.0 - (self.deficit_sustentacao * 0.15))
         valor_total_protegido = self.perda_mitigada_evitada
 
@@ -518,50 +515,52 @@ class C2SovereignROIEngine:
             [Paragraph(txt["t7_l2_nome"], estilo_tabela_bold), Paragraph(self.formatar_moeda_eur(valor_total_protegido), estilo_tabela), Paragraph(txt["t7_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t7_l3_nome"], estilo_tabela_bold), Paragraph("99.9999%", estilo_tabela), Paragraph(txt["t7_l3_desc"], estilo_tabela)]
         ]
-        t7 = Table(tabela_7_data, colWidths=[140, 75, 299])
+        t7 = Table(tabela_7_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t7.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t7)
 
-        # --- TABELA 8: PRÓXIMOS PASSOS E CALL TO ACTION ---
         elementos_bloco_total.append(Paragraph(txt["sec8_titulo"], estilo_secao))
         tabela_8_data = [
             [Paragraph(txt["t8_l1_nome"], estilo_tabela_bold), Paragraph("Imediato", estilo_tabela), Paragraph(txt["t8_l1_desc"], estilo_tabela)],
             [Paragraph(txt["t8_l2_nome"], estilo_tabela_bold), Paragraph("D+1 Técnico", estilo_tabela), Paragraph(txt["t8_l2_desc"], estilo_tabela)],
             [Paragraph(txt["t8_l3_nome"], estilo_tabela_bold), Paragraph("Aprovação", estilo_tabela_verde), Paragraph(txt["t8_l3_desc"], estilo_tabela)]
         ]
-        t8 = Table(tabela_8_data, colWidths=[140, 75, 299])
+        t8 = Table(tabela_8_data, colWidths=[COL_W1, COL_W2, COL_W3])
         t8.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('ROWBACKGROUNDS', (0,0), (-1,-1), [TABLE_HEADER_BG, CARD_BG]),
             ('BOX', (0,0), (-1,-1), 0.5, CARD_BORDER),
             ('INNERGRID', (0,0), (-1,-1), 0.3, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 3),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 3),
+            ('TOPPADDING', (0,0), (-1,-1), 2.0),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 2.0),
+            ('LEFTPADDING', (0,0), (-1,-1), 4.0),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4.0),
             ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
         ]))
         elementos_bloco_total.append(t8)
-        elementos_bloco_total.append(Spacer(1, 4))
+        elementos_bloco_total.append(Spacer(1, 3))
 
-        # --- BLOCO COMPARATIVO FINAL INTEGRADO ---
         elementos_bloco_total.append(Paragraph(self._obter_texto_comparativo_final().strip(), estilo_comparativo))
 
-        # --- GRANDE BLOCO MESTRE ÚNICO PLATINA CLEAN ---
-        bloco_mestre_total = Table([[elementos_bloco_total]], colWidths=[534])
+        # BLOCO MESTRE TOTAL COM LARGURA EXATA DE 485 pt (Alinhado com as margens de 45pt da página A4)
+        bloco_mestre_total = Table([[elementos_bloco_total]], colWidths=[485])
         bloco_mestre_total.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
-            ('TOPPADDING', (0,0), (-1,-1), 8),
-            ('BOTTOMPADDING', (0,0), (-1,-1), 8),
-            ('LEFTPADDING', (0,0), (-1,-1), 8),
-            ('RIGHTPADDING', (0,0), (-1,-1), 8),
+            ('TOPPADDING', (0,0), (-1,-1), 5),
+            ('BOTTOMPADDING', (0,0), (-1,-1), 5),
+            ('LEFTPADDING', (0,0), (-1,-1), 5),
+            ('RIGHTPADDING', (0,0), (-1,-1), 5),
         ]))
 
         story.append(bloco_mestre_total)
@@ -578,6 +577,6 @@ class C2SovereignROIEngine:
 
 if __name__ == "__main__":
     print("Testando motor Super Retorno Financeiro com Tópicos 1 a 8 integrados perfeitamente...")
-    engine = C2SovereignROIEngine(titular="Genilson Rodrigues", idade=35, lang="PT")
+    engine = C2SovereignROIEngine(lang="PT")
     saida = engine.gerar_pdf("super_retorno_financeiro_clean.pdf")
     print(f"Relatório gerado com sucesso em: {saida}")

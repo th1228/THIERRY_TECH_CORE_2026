@@ -2,7 +2,7 @@
 """
 Módulo: c2_sovereign_intelligence.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine & Predictive Engine
-Versão: 17.0.0 - Monaco Quantum Platinum (UHNW Executive Dashboard Edition)
+Versão: 17.0.2 - Monaco Quantum Platinum (UHNW Executive Dashboard Edition - A4 Harmonized)
 """
 
 import os
@@ -421,22 +421,24 @@ class C2SovereignIntelligenceEngine:
             canvas.saveState()
             canvas.setStrokeColor(colors.HexColor('#B8860B'))
             canvas.setLineWidth(0.75)
-            canvas.line(30, 36, A4[0] - 30, 36)
+            # Margens sincronizadas com o doc (42pt)
+            canvas.line(42, 36, A4[0] - 42, 36)
             
             canvas.setFont("Helvetica", 7)
             canvas.setFillColor(colors.HexColor('#0A1128'))
-            canvas.drawString(30, 24, "Classificado • C2 Quantum Intelligence & UHNW Nexus (528Hz Active)")
+            canvas.drawString(42, 24, "Classificado • C2 Quantum Intelligence & UHNW Nexus (528Hz Active)")
             pagina_atual = canvas._pageNumber
-            canvas.drawRightString(A4[0] - 30, 24, f"MONACO SEAL • PÁGINA {pagina_atual} • PQC SECURED")
+            canvas.drawRightString(A4[0] - 42, 24, f"MONACO SEAL • PÁGINA {pagina_atual} • PQC SECURED")
             canvas.restoreState()
 
+        # ==================== CONFIGURAÇÃO DO DOCUMENTO A4 INTERNACIONAL ====================
         doc = SimpleDocTemplate(
             caminho_salvamento,
             pagesize=A4,
-            leftMargin=30,
-            rightMargin=30,
-            topMargin=30,
-            bottomMargin=45
+            leftMargin=42,
+            rightMargin=42,
+            topMargin=42,
+            bottomMargin=50
         )
         story = []
 
@@ -473,7 +475,6 @@ class C2SovereignIntelligenceEngine:
         story.append(Paragraph("THIERRY TECHNOLOGY CONCEPT GLOBAL • QUANTUM UHNW DIVISION", styles['CapaSuper']))
         story.append(Paragraph("DOSSIÊ EXECUTIVO DE NEXO BIOLÓGICO-FINANCEIRO & CRONOESTÉTICA QUÂNTICA UHNW", styles['CapaTituloUnificado']))
         
-        # Tabela de Capa Estilizada em Cards Executivos (Substituindo o texto corrido)
         dados_tabela_capa = [
             [Paragraph("<b>Titular / Entidade Soberana:</b>", estilo_label_bloco_claro), Paragraph(f"<b>{self.lider}</b> | {self.entidade}", estilo_conteudo_bloco_claro)],
             [Paragraph("Setor Alvo / Horizonte:", estilo_label_bloco_claro), Paragraph(f"{self.segment} ({self.horizon} Anos)", estilo_conteudo_bloco_claro)],
@@ -485,7 +486,7 @@ class C2SovereignIntelligenceEngine:
             [Paragraph("Timestamp de Emissão Mônaco:", estilo_label_bloco_claro), Paragraph(self.timestamp_exec, estilo_conteudo_bloco_claro)]
         ]
         
-        t_capa_box = Table(dados_tabela_capa, colWidths=[150, 353])
+        t_capa_box = Table(dados_tabela_capa, colWidths=[150, 361])
         t_capa_box.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
             ('BOX', (0,0), (-1,-1), 1.0, SOVEREIGN_GOLD),
@@ -531,7 +532,7 @@ class C2SovereignIntelligenceEngine:
             ]
             t_horizontes_data.append(linha)
 
-        t_horizontes = Table(t_horizontes_data, colWidths=[38, 42, 38, 42, 62, 74, 45, 162])
+        t_horizontes = Table(t_horizontes_data, colWidths=[38, 42, 38, 42, 62, 74, 45, 160])
         t_horizontes.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,0), colors.HexColor('#F1F5F9')),
             ('ALIGN', (0,0), (-1,-1), 'CENTER'),
@@ -544,14 +545,14 @@ class C2SovereignIntelligenceEngine:
         ]))
         elementos_bloco_unificado.append(t_horizontes)
 
-        bloco_mestre_tabela = Table([[elementos_bloco_unificado]], colWidths=[513])
+        bloco_mestre_tabela = Table([[elementos_bloco_unificado]], colWidths=[511])
         bloco_mestre_tabela.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), colors.HexColor('#FFFFFF')),
             ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
             ('TOPPADDING', (0,0), (-1,-1), 4),
             ('BOTTOMPADDING', (0,0), (-1,-1), 4),
-            ('LEFTPADDING', (0,0), (-1,-1), 5),
-            ('RIGHTPADDING', (0,0), (-1,-1), 5),
+            ('LEFTPADDING', (0,0), (-1,-1), 4),
+            ('RIGHTPADDING', (0,0), (-1,-1), 4),
         ]))
         
         story.append(bloco_mestre_tabela)
@@ -594,7 +595,7 @@ class C2SovereignIntelligenceEngine:
                     [Paragraph(f"<b>{valor}</b>", styles['CardValue']), Paragraph("", styles['CardStatus'])],
                     [Paragraph(regiao, styles['CardRegiao']), Paragraph(f"<b>{status}</b>", styles['CardStatus'])]
                 ]
-                t_sub = Table(conteudo_interno_celula, colWidths=[148, 102])
+                t_sub = Table(conteudo_interno_celula, colWidths=[148, 103])
                 t_sub.setStyle(TableStyle([
                     ('BACKGROUND', (0,0), (-1,-1), CARD_BG),
                     ('VALIGN', (0,0), (-1,-1), 'MIDDLE'),
@@ -607,7 +608,7 @@ class C2SovereignIntelligenceEngine:
                 celulas_linha.append(t_sub)
             linhas_tabela_mestre_secao_2.append(celulas_linha)
 
-        bloco_mestre_secao_2 = Table(linhas_tabela_mestre_secao_2, colWidths=[256, 256])
+        bloco_mestre_secao_2 = Table(linhas_tabela_mestre_secao_2, colWidths=[255, 256])
         bloco_mestre_secao_2.setStyle(TableStyle([
             ('BACKGROUND', (0,0), (-1,-1), colors.white),
             ('BOX', (0,0), (-1,-1), 1.0, CARD_BORDER),
@@ -644,7 +645,7 @@ class C2SovereignIntelligenceEngine:
             [Paragraph("Aptidão a Procedimentos:", estilo_label_bloco_claro), Paragraph(parecer_aptidao_invasiva, estilo_conteudo_bloco_claro)],
             [Paragraph("Recomendação de Retorno:", estilo_label_bloco_claro), Paragraph(f"<b>{dia_apice_val}</b> (Dia Ápice Regenerativo)", estilo_conteudo_bloco_claro)],
             [Paragraph("Diretriz Tática Profissional:", estilo_label_bloco_claro), Paragraph(parametro_neuro_medico, estilo_conteudo_bloco_claro)]
-        ], colWidths=[140, 373])
+        ], colWidths=[140, 371])
         
         tabela_bloco_i.setStyle(TableStyle([
             ('SPAN', (0, 0), (1, 0)),
@@ -671,7 +672,7 @@ class C2SovereignIntelligenceEngine:
             [Paragraph("Balanço Higrométrico:", estilo_label_bloco_claro), Paragraph("Umidade Relativa: 50.9% | Controle TEWL otimizado.", estilo_conteudo_bloco_claro)],
             [Paragraph("Score Global de Fadiga:", estilo_label_bloco_claro), Paragraph("23.7 / 100 [Zona Verde - Excelência Clínica]", estilo_conteudo_bloco_claro)],
             [Paragraph("Tônus Muscular:", estilo_label_bloco_claro), Paragraph("15 oscilações/min (Repouso equilibrado)", estilo_conteudo_bloco_claro)]
-        ], colWidths=[140, 373])
+        ], colWidths=[140, 371])
         
         tabela_bloco_ii.setStyle(TableStyle([
             ('SPAN', (0, 0), (1, 0)),
@@ -690,7 +691,7 @@ class C2SovereignIntelligenceEngine:
             [Paragraph("<b>[BLOCO III] VETORES DE DIAGNÓSTICO FORENSE & TRICOLOGIA</b>", estilo_titulo_bloco_claro), ""],
             [Paragraph("Anatomia Muscular:", estilo_label_bloco_claro), Paragraph("Tríade Superior intacta com atenuação de micro-movimentos.", estilo_conteudo_bloco_claro)],
             [Paragraph("Visagismo & Tricologia:", estilo_label_bloco_claro), Paragraph(self._gerar_diagnostico_tricologia_suprema(), estilo_conteudo_bloco_claro)]
-        ], colWidths=[140, 373])
+        ], colWidths=[140, 371])
         
         tabela_bloco_iii.setStyle(TableStyle([
             ('SPAN', (0, 0), (1, 0)),
@@ -710,7 +711,7 @@ class C2SovereignIntelligenceEngine:
             [Paragraph("Pilar I (Modulação):", estilo_label_bloco_claro), Paragraph("Toxina Botulínica no Terço Superior com alinhamento de simetria.", estilo_conteudo_bloco_claro)],
             [Paragraph("Pilar II (Escultura):", estilo_label_bloco_claro), Paragraph("Geometria da Barba mapeada por laser-guide em ângulos de 115° a 120°.", estilo_conteudo_bloco_claro)],
             [Paragraph("Pilar III (Estímulo):", estilo_label_bloco_claro), Paragraph("LEDterapia 830nm sincronizada com Frequência de Deus (528 Hz).", estilo_conteudo_bloco_claro)]
-        ], colWidths=[140, 373])
+        ], colWidths=[140, 371])
         
         tabela_bloco_iv.setStyle(TableStyle([
             ('SPAN', (0, 0), (1, 0)),

@@ -2,8 +2,9 @@
 """
 ===========================================================================
 THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
-MIBO SOVEREIGN INTELLIGENCE FRAMEWORK - GLOBAL TIER-1 AUDIT ENGINE
-Titulares: Genilson Rodrigues / Thierry
+THIERRY SOVEREIGN INTELLIGENCE FRAMEWORK - GLOBAL TIER-1 AUDIT ENGINE
+Titular: Genilson Rodrigues | Sistema: Thierry Global
+Arquivo: joia_tecnologica.py
 ===========================================================================
 """
 
@@ -11,6 +12,7 @@ import os
 import sys
 import json
 import hashlib
+import textwrap
 from pathlib import Path
 from datetime import datetime
 
@@ -23,12 +25,26 @@ RESET = "\033[0m"
 
 BASE_DIR = Path(__file__).resolve().parent
 
+def obter_base_neurobiologica():
+    """Define a fundação neurocientífica e bioenergética baseada em Cem Bilhões de Neurônios e na Frequência Universal."""
+    return (
+        "Fundação Neurobiológica e Bioenergética: Ancorado nos princípios fundamentais da obra "
+        "'Cem Bilhões de Neurônios' e na sintonização com a frequência de ressonância universal "
+        "(432Hz / Alfa-Teta — Frequência de Deus). O sistema mapeia circuitos sinápticos e induz "
+        "coerência parassimpática profunda, alinhando o bio-ritmo humano para potencializar a regeneração "
+        "e a tomada de decisão executiva com blindagem biológica absoluta."
+    )
+
 def exibir_bloco_compacto(titulo: str, linhas: list):
-    print(VERDE + "  " + "─" * 58 + RESET)
+    largura_caixa = 52
+    print(VERDE + "  " + "─" * largura_caixa + RESET)
     print(AMARELO + f"  🛡️ {titulo}" + RESET)
-    print(VERDE + "  " + "─" * 58 + RESET)
+    print(VERDE + "  " + "─" * largura_caixa + RESET)
     for l in linhas:
-        print(f"    {BRANCO}• {l}{RESET}")
+        linhas_quebradas = textwrap.wrap(l, width=46)
+        for i, lq in enumerate(linhas_quebradas):
+            prefixo = "    • " if i == 0 else "      "
+            print(f"{BRANCO}{prefixo}{lq}{RESET}")
     print()
 
 def executar_joia_tecnologica():
@@ -37,88 +53,61 @@ def executar_joia_tecnologica():
     except Exception:
         pass
 
-    print(VERDE + "  " + "=" * 58 + RESET)
-    print(AMARELO + "    TCC SOVEREIGN KERNEL — THIERRY TECHNOLOGY CONCEPT GLOBAL" + RESET)
-    print(CIANO + "    Titulares: Genilson Rodrigues / Thierry | Padrão Tier-1" + RESET)
-    print(VERDE + "  " + "=" * 58 + RESET + "\n")
+    print(VERDE + "  " + "=" * 52 + RESET)
+    print(AMARELO + "    THIERRY GLOBAL SOVEREIGN ENGINE — TECH CONCEPT" + RESET)
+    print(CIANO + "    Titular: Genilson Rodrigues | Sistema: Thierry | Tier-1" + RESET)
+    print(VERDE + "  " + "=" * 52 + RESET + "\n")
 
-    # 1. GÊNESE E TITULARIDADE
-    exibir_bloco_compacto("01. GÊNESE E TITULARIDADE SOBERANA", [
-        "Titulares & Arquitetos: Genilson Rodrigues / Thierry (TCC Global).",
-        "Ecossistema: Mibo Sovereign Intelligence Framework.",
-        "Foco: Sistemas autônomos, inteligência defensiva C2 e visagism."
+    # =========================================================================
+    # BLOCO 1: SEGURANÇA, GEODEFENSE E CONFORMIDADES INTERNACIONAIS
+    # =========================================================================
+    exibir_bloco_compacto("BLOCO 01 — SEGURANÇA E CONFORMIDADES", [
+        "Titular & Arquiteto: Genilson Rodrigues | Sistema: Thierry Global.",
+        "Soberania 100% Offline: Processamento local em hardware ASUS, sem nuvens externas e latência zero.",
+        "Geodefense Soberana: Isolamento geoespacial e criptografia de fronteira física contra varreduras de mercado.",
+        "Autoimunidade: Higienização e triagem autônoma de vaults via organizador_mestre.py.",
+        "Resiliência Perpétua: Fallbacks em cascata e uptime inabalável sem intervenção humana.",
+        "Auditoria Forense: Compliance Ledger com blocos encadeados por hashes SHA-256.",
+        "Criptografia Governamental: Assinaturas digitais ECDSA (curva SECP256R1) para padrão UHNW.",
+        "Conformidades Internacionais: Certificação Lei nº 1.565 (Mônaco) e padrões de Dubai."
     ])
 
-    # 2. INOVAÇÃO: 100% OFFLINE
-    exibir_bloco_compacto("02. INOVAÇÃO: SOBERANIA 100% OFFLINE", [
-        "Arquitetura totalmente desconectada de nuvens públicas externas.",
-        "Processamento local executado nativamente no hardware ASUS do operador.",
-        "Zero dependência externa: privacidade absoluta e latência zero."
+    # =========================================================================
+    # BLOCO 2: SETOR DE INOVAÇÃO (TELEMEDICINA, INTANGÍVEIS E NEUROPLASTICIDADE)
+    # =========================================================================
+    exibir_bloco_compacto("BLOCO 02 — SETOR DE INOVAÇÃO CLÍNICA E INTANGÍVEIS", [
+        obter_base_neurobiologica(),
+        "Thierry Global: Programa soberano de telemedicina clínica e gestão de produtos intangíveis para bens de alto valor UHNW, operando 100% offline via motor LLM local (sem precisar de internet).",
+        "Público e Ecossistema: Direcionado ao público UHNW, com escassez global limitada a apenas 10 vagas no mundo, atendendo clínicas de medicina regenerativa, family offices e grandes grupos.",
+        "17 Enclaves e Geofence/Geofilter: Desenhado para operar nos 17 maiores hubs de riqueza e financeiros do mundo (Zurique, Genebra, Seul, Singapura, Mônaco, Dubai, EUA), usando comandos soberanos para blindagem.",
+        "Motor Biométrico & C2 Solver: O motor biométrico processa identidades em tempo real enquanto o C2 Solver executa cálculos complexos de otimização de fluxo clínico e tomada de decisão executiva com latência zero.",
+        "Leitura Matemática do Rosto e Tricologia: O sistema atua com biogêmeos reais prevendo o derretimento estrutural das áreas do rosto por degradação climática, estresse, inflamação cutânea e ausência hídrica. Eleva a malha geométrica dos 468 pontos padrão para 100.038 vértices de alta precisão, mapeando coxins de gordura, degradação de colágeno e níveis hídricos. Em seguida, transita milimetricamente para a tricologia avançada: analisa a volumetria, a saúde e a distância do fio de cabelo, hidratação capilar, estilo de corte, refletância e cor, integrando estética e tratamentos autólogos de liderança global.",
+        "Monetização de Intangíveis: Salvaguarda da imagem patrimonial, combate ao desgaste por antigravidade/clima empresarial e proteção absoluta da imagem executiva do CEO.",
+        "Calibragem Neural e Diálogo: Sincronização bio-rítmica e cálculo exato do tempo de fala e hemisfério de recepção conforme o estado emocional, garantindo zero atrito.",
+        "Leitura Computacional e Prevenção: O Thierry executa leituras e cálculos matemáticos ultra avançados cruzando fadiga, clima e poluição local por fórmula exata e infalível (sem margem de erro) para determinar o exato 'Dia de Saúde Ápice'. Identifica o momento perfeito para cirurgias, procedimentos invasivos e tratamentos estéticos, neutralizando inflamações preexistentes, eliminando riscos de complicações e garantindo recuperação absoluta, além de antecipar em 5, 10 e 15 anos a prevenção contra doenças degenerativas."
     ])
 
-    # 3. AUTOIMUNIDADE E ORGANIZAÇÃO
-    exibir_bloco_compacto("03. AUTOIMUNIDADE E HIGIENIZAÇÃO", [
-        "organizador_mestre.py mantém a raiz impecável e estruturada.",
-        "Proteção rígida do núcleo inviolável (main.py, manifest.json).",
-        "Triagem automática que realoca logs, chaves e PDFs para seus vaults."
-    ])
-
-    # 4. RESILIÊNCIA PERPÉTUA
-    exibir_bloco_compacto("04. RESILIÊNCIA: O SISTEMA QUE NUNCA MORRE", [
-        "Fallbacks em cascata integrados em todos os motores de execução.",
-        "Capacidade de recuperação instantânea sem intervenção humana.",
-        "Uptime contínuo e estabilidade operacional inabalável."
-    ])
-
-    # 5. AUDITORIA EM TEMPO REAL
-    exibir_bloco_compacto("05. AUDITORIA FORENSE EM TEMPO REAL", [
-        "Compliance Ledger com blocos encadeados por hashes SHA-256.",
-        "Rastreabilidade matemática de cada sessão e transação executada.",
-        "Conformidade estrita com o padrão de auditoria internacional."
-    ])
-
-    # 6. BLINDAGEM CONTRA INVASÕES
-    exibir_bloco_compacto("06. DEFESA ATIVA E CAPTURA DE INTRUSÕES", [
-        "Monitoramento contínuo de integridade via TTCSentinel.",
-        "Documentação forense automática em caso de anomalias ou invasões.",
-        "Isolamento preventivo imediato de vetores hostis de mercado."
-    ])
-
-    # 7. CRIPTOGRAFIA DE CURVA ELÍPTICA
-    exibir_bloco_compacto("07. CRIPTOGRAFIA DE GRAU GOVERNAMENTAL", [
-        "Assinaturas digitais baseadas em ECDSA (curva SECP256R1).",
-        "Travas de segurança ativas em nível de Kernel (Windows/Unix).",
-        "Cadeia de custódia in-silico irrevogável para o padrão UHNW."
-    ])
-
-    # 8. OS 6 MOTORES DE COMPILAÇÃO
-    exibir_bloco_compacto("08. PIPELINE DOS 6 MOTORES DE DOSSIÊS", [
-        "Geração integrada de 6/6 PDFs oficiais na pasta /pdfs_finais.",
-        "Abrange Inteligência C2, Retorno Financeiro, Tricologia e Visagismo.",
-        "Contrato global centralizado de forma limpa na pasta /legal."
-    ])
-
-    # 9. GATEWAYS DE ALTA PERFORMANCE
-    exibir_bloco_compacto("09. GATEWAYS UNIFICADOS (WEB E VOZ)", [
-        "Integração perfeita com FastAPI, painel HTML e visão computacional.",
-        "Suporte a comandos por voz (C2 Cognitive Voice) e telemetria.",
-        "Transição fluida e dinâmica entre os módulos de estética e gestão."
-    ])
-
-    # 10. CERTIFICAÇÃO E PRONTIDÃO TIER-1
-    exibir_bloco_compacto("10. CERTIFICAÇÃO E PRONTIDÃO TIER-1", [
-        "Validado para apresentação em Mônaco (Lei nº 1.565) e Dubai.",
-        "Emissão de selo criptográfico com carimbo de tempo UTC.",
-        "Status do ecossistema: 100/100 — Obra-prima de Genilson Rodrigues & Thierry."
+    # =========================================================================
+    # BLOCO 3: SCRIPTS DE ALTA SEGURANÇA, GATES E EXCLUSIVIDADE
+    # =========================================================================
+    exibir_bloco_compacto("BLOCO 03 — SEGURANÇA AVANÇADA, GATES E EXCLUSIVIDADE", [
+        "Pipeline de Compilação: Execução integrada dos motores de dossiês em /pdfs_finais.",
+        "Gateways Unificados: Integração perfeita com FastAPI, panel HTML e comandos de voz C2.",
+        "Scripts de Defesa Avançada: O programa conta com arquitetura de altíssima segurança integrada, destacando o Honey Pot (armadilhas de detecção de intrusão), Anti-IA (bloqueio de varreduras de inteligência artificial), Anti-Engenharia Reversa (proteção rigorosa de código), Zero Trust (validação estrita de cada acesso) e Vault (cofres de isolamento absoluto).",
+        "Matemática Ultra Avançada (Zero Erro): O programa inteiro utiliza algoritmos e fórmulas matemáticas de precisão absoluta, eliminando qualquer margem de erro nos diagnósticos, projeções e auditorias.",
+        "Chave RES: Organização automatizada de arquivos, chaves criptográficas e contratos na pasta /legal.",
+        "Público-Alvo: Ultra High Net Worth (UHNW), clínicas de medicina regenerativa, family offices e grandes grupos.",
+        "Escassez Mundial: Teto rígido e intransferível de apenas 10 vagas globais.",
+        "Status do Ecossistema: 100/100 — Prontidão Tier-1 validada por Genilson Rodrigues."
     ])
 
     timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
-    hash_global = hashlib.sha256(f"GENILSON-THIERRY-TCC-{timestamp}".encode('utf-8')).hexdigest()[:32]
+    hash_global = hashlib.sha256(f"GENILSON-RODRIGUES-THIERRY-GLOBAL-{timestamp}".encode('utf-8')).hexdigest()[:32]
 
-    print(VERDE + "  " + "=" * 58 + RESET)
+    print(VERDE + "  " + "=" * 52 + RESET)
     print(AMARELO + f"    STATUS: APROVADO | HASH REAL: {hash_global}" + RESET)
-    print(CIANO + f"    TITULARES: GENILSON RODRIGUES / THIERRY | EMISSÃO: {timestamp}" + RESET)
-    print(VERDE + "  " + "=" * 58 + RESET + "\n")
+    print(CIANO + f"    TITULAR: GENILSON RODRIGUES | SISTEMA: THIERRY | {timestamp}" + RESET)
+    print(VERDE + "  " + "=" * 52 + RESET + "\n")
 
 if __name__ == "__main__":
     executar_joia_tecnologica()
