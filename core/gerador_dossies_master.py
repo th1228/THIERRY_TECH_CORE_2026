@@ -11,12 +11,13 @@ agreement is strictly prohibited under international copyright frameworks.
 ===========================================================================
 """
 
+# -*- coding: utf-8 -*-
 """
 Módulo Mestre: gerador_dossies_master.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 6.9.3 - DINÂMICO, SOBERANO E BLINDAGEM ISO A4 DE MARGEM
-Descrição: Orquestrador Mestre dinâmico com normalização automática ISO 216 (A4)
-           via ajuste direto de caixa de mídia e compensação geométrica de margem.
+Versão: 6.8.7 - DINÂMICO E SOBERANO (Padrão Internacional & Licenciado Alinhado)
+Descrição: Orquestrador Mestre dinâmico ajustado para aceitar 
+           qualquer nome informado dinamicamente no painel sem conflitos de tipo.
 """
 
 import os
@@ -25,7 +26,6 @@ import datetime
 import traceback
 import re
 from typing import Dict, Any, Optional
-import pymupdf as fitz
 
 # --- PONTE DE MEMÓRIA AUTOMÁTICA (THIERRY TECH) ---
 try:
@@ -41,6 +41,7 @@ except ImportError:
         memoria = MemoriaMock()
 # ---------------------------------------------------
 
+# Garante a resolução de escopo para o core do ecossistema
 ROOT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
@@ -50,36 +51,42 @@ if ROOT_DIR not in sys.path:
 # =====================================================================
 MOTORES_STATUS = {}
 
+# Motor 1: Inteligência Soberana C2
 try:
     from core.c2_sovereign_intelligence import C2SovereignIntelligenceEngine  # type: ignore
     MOTORES_STATUS["Motor 1"] = "OK"
 except ImportError as e:
     MOTORES_STATUS["Motor 1"] = f"Indisponível ({e})"
 
+# Motor 2: Super Retorno Financeiro
 try:
     from core.super_retorno_financeiro import C2SovereignROIEngine  # type: ignore
     MOTORES_STATUS["Motor 2"] = "OK"
 except ImportError as e:
     MOTORES_STATUS["Motor 2"] = f"Indisponível ({e})"
 
+# Motor 3: Tricologia Ultra Avançada
 try:
     from core.tricologia_ultra_avancada import C2UltraAdvancedTrichologyEngine  # type: ignore
     MOTORES_STATUS["Motor 3"] = "OK"
 except ImportError as e:
     MOTORES_STATUS["Motor 3"] = f"Indisponível ({e})"
 
+# Motor 4: Carta Internacional UHNW
 try:
     from core.carta_internacional_engine import CartaInternacionalEngine  # type: ignore
     MOTORES_STATUS["Motor 4"] = "OK"
 except ImportError as e:
     MOTORES_STATUS["Motor 4"] = f"Indisponível ({e})"
 
+# Motor 5: Modelagem Computacional & Valuación Mônaco
 try:
     from core.monaco_modelagem_engine import C2MonacoModelingEngine  # type: ignore
     MOTORES_STATUS["Motor 5"] = "OK"
 except ImportError as e:
     MOTORES_STATUS["Motor 5"] = f"Indisponível ({e})"
 
+# Motor 6: Contrato Global de Licenciamento (Prioriza a pasta oficial /legal)
 try:
     from legal.contrato_global_engine import C2GlobalContractEngine  # type: ignore
     MOTORES_STATUS["Motor 6"] = "OK (Via /legal)"
@@ -91,70 +98,19 @@ except ImportError:
         MOTORES_STATUS["Motor 6"] = f"Indisponível ({e})"
 
 
-def padronizar_pdf_iso_a4(caminho_pdf: str) -> None:
-    """
-    Garante que o PDF esteja estritamente no formato ISO A4 (595.28 x 841.89 pt)
-    e com metadado 'Title' preenchido (ISO 14289). Realiza o ajuste da caixa de mídia
-    e aplica compensação de escala/translação caso haja blocos de texto a menos de 3.5mm das bordas.
-    """
-    if not os.path.exists(caminho_pdf):
-        return
-
-    largura_a4, altura_a4 = 595.28, 841.89
-    doc = fitz.open(caminho_pdf)
-    
-    meta = doc.metadata or {}
-    if not meta.get("title") or not meta.get("title").strip():
-        meta["title"] = os.path.splitext(os.path.basename(caminho_pdf))[0].replace("_", " ")
-        doc.set_metadata(meta)
-
-    retangulo_a4 = fitz.Rect(0, 0, largura_a4, altura_a4)
-    pt_para_mm = 0.352778
-    limiar_min_mm = 3.5
-
-    for pagina in doc:
-        w, h = float(pagina.rect.width), float(pagina.rect.height)
-        
-        # Força o mediabox para o padrão A4 absoluto
-        pagina.set_mediabox(retangulo_a4)
-        
-        # Varredura preventiva de margem interna nos blocos de texto
-        blocos = pagina.get_text("blocks")
-        if blocos:
-            x0_list, y0_list, x1_list, y1_list = [], [], [], []
-            for b in blocos:
-                bx0, by0, bx1, by1 = float(b[0]), float(b[1]), float(b[2]), float(b[3])
-                if 0 <= bx0 < w - 20: x0_list.append(bx0)
-                if 0 <= by0 < h - 20: y0_list.append(by0)
-                if 20 < bx1 <= w: x1_list.append(bx1)
-                if 20 < by1 <= h: y1_list.append(by1)
-
-            if x0_list and y0_list and x1_list and y1_list:
-                m_esq = min(x0_list) * pt_para_mm
-                m_sup = min(y0_list) * pt_para_mm
-                m_dir = (w - max(x1_list)) * pt_para_mm
-                m_inf = (h - max(y1_list)) * pt_para_mm
-                
-                # Se detectado risco de margem estourada (< 3.5mm), aplica translação leve de respiro central
-                if min(m_esq, m_sup, m_dir, m_inf) < limiar_min_mm:
-                    # Aplica uma matriz de ajuste centralizada sutil (escala 0.98 e deslocamento de segurança)
-                    matriz_ajuste = fitz.Matrix(0.98, 0.98).preTranslate(3.0, 3.0)
-                    pagina.set_mediabox(retangulo_a4)
-
-    caminho_temp = caminho_pdf + ".a4.tmp"
-    doc.save(caminho_temp, garbage=4, deflate=True)
-    doc.close()
-
-    os.replace(caminho_temp, caminho_pdf)
-
-
 def limpar_markdown_para_pdf(texto_cru: str) -> str:
+    """
+    Remove tags de Markdown cruas (###, **, ---) para que o ReportLab 
+    exiba um texto limpo, elegante e executivo nos anexos.
+    """
     if not isinstance(texto_cru, str):
         return str(texto_cru)
+    
     texto = re.sub(r'#{1,6}\s*', '', texto_cru)
     texto = re.sub(r'\*\*', '', texto)
     texto = re.sub(r'\*', '', texto)
     texto = re.sub(r'---+', '', texto)
+    
     return texto.strip()
 
 
@@ -167,8 +123,12 @@ def compilar_dossies_master(
     telemetria_dinamica: Optional[Dict[str, Any]] = None,
     lang: str = "PT"
 ) -> Dict[str, str]:
+    """
+    Executa o pipeline mestre dinâmico recebendo o nome do cliente do painel.
+    """
     session_data: Dict[str, Any] = telemetria_dinamica or {}
     
+    # Resolução 100% dinâmica com coerção estrita para string
     c_name = str(ceo_name) if ceo_name else ""
     s_cli = str(session_data.get('nome_cliente', '')) if session_data.get('nome_cliente') else ""
     s_nom = str(session_data.get('nome', '')) if session_data.get('nome') else ""
@@ -176,6 +136,7 @@ def compilar_dossies_master(
     m_tit = str(memoria.ler_dados("titular") or "")
 
     nome_titular_efetivo: str = c_name or s_cli or s_nom or m_cli or m_tit or "CLIENTE UHNW"
+
     idioma_limpo = str(lang).upper() if lang and isinstance(lang, str) else "PT"
     timestamp_autentico = datetime.datetime.now().strftime("%d/%m/%Y às %H:%M:%S")
     
@@ -192,7 +153,7 @@ def compilar_dossies_master(
     pasta_finais = os.path.join(ROOT_DIR, "pdfs_finais")
     os.makedirs(pasta_finais, exist_ok=True)
 
-    # 1. Compilação Motor 1
+    # 1. Compilação Motor 1 (C2 Sovereign Intelligence)
     if "OK" in MOTORES_STATUS.get("Motor 1", ""):
         try:
             print(f"[1/6] Compilando Inteligência Soberana C2 [{idioma_limpo}]...")
@@ -204,6 +165,7 @@ def compilar_dossies_master(
                 telemetria=session_data,
                 lang=idioma_limpo
             )
+
             caminho_1 = os.path.join(pasta_finais, "01_Dossie_Sovereign_Intelligence.pdf")
             if hasattr(engine_1, 'gerar_pdf_defensivo_soberano'):
                 try:
@@ -216,14 +178,13 @@ def compilar_dossies_master(
                 except TypeError:
                     engine_1.gerar_dossie(caminho_1)
             
-            padronizar_pdf_iso_a4(caminho_1)
             resultados_geracao["01_Sovereign_Intelligence"] = caminho_1
             print(f" -> Sucesso: {caminho_1}")
         except Exception as e:
             print(f" -> Erro na execução do Motor 1: {e}")
             traceback.print_exc()
 
-    # 2. Compilação Motor 2
+    # 2. Compilação Motor 2 (Super Retorno Financeiro)
     if "OK" in MOTORES_STATUS.get("Motor 2", ""):
         try:
             print(f"[2/6] Compilando Super Retorno Financeiro [{idioma_limpo}]...")
@@ -234,6 +195,7 @@ def compilar_dossies_master(
                 telemetria=session_data,
                 lang=idioma_limpo
             )
+
             caminho_2 = os.path.join(pasta_finais, "02_Super_Retorno_Financeiro.pdf")
             if hasattr(engine_2, 'gerar_dossie'):
                 try:
@@ -245,14 +207,12 @@ def compilar_dossies_master(
                     engine_2.gerar_pdf(caminho_2, lang=idioma_limpo)
                 except TypeError:
                     engine_2.gerar_pdf(caminho_2)
-            
-            padronizar_pdf_iso_a4(caminho_2)
             resultados_geracao["02_Super_Retorno_Financeiro"] = caminho_2
             print(f" -> Sucesso: {caminho_2}")
         except Exception as e:
             print(f" -> Erro na execução do Motor 2: {e}")
 
-    # 3. Compilação Motor 3
+    # 3. Compilação Motor 3 (Tricologia Ultra Avançada)
     if "OK" in MOTORES_STATUS.get("Motor 3", ""):
         try:
             print(f"[3/6] Compilando Tricologia Ultra Avançada [{idioma_limpo}]...")
@@ -262,6 +222,7 @@ def compilar_dossies_master(
                 telemetria=session_data,
                 lang=idioma_limpo
             )
+
             caminho_3 = os.path.join(pasta_finais, "03_Dossie_Tricologia_Avancada.pdf")
             if hasattr(engine_3, 'gerar_dossie'):
                 try:
@@ -273,14 +234,12 @@ def compilar_dossies_master(
                     engine_3.gerar_pdf(caminho_3, lang=idioma_limpo)
                 except TypeError:
                     engine_3.gerar_pdf(caminho_3)
-            
-            padronizar_pdf_iso_a4(caminho_3)
             resultados_geracao["03_Tricologia_Avancada"] = caminho_3
             print(f" -> Sucesso: {caminho_3}")
         except Exception as e:
             print(f" -> Erro na execução do Motor 3: {e}")
 
-    # 4. Compilação Motor 4
+    # 4. Compilação Motor 4 (Carta Internacional UHNW)
     if "OK" in MOTORES_STATUS.get("Motor 4", ""):
         try:
             print(f"[4/6] Compilando Carta Internacional UHNW [{idioma_limpo}]...")
@@ -290,6 +249,7 @@ def compilar_dossies_master(
                 telemetria=session_data,
                 lang=idioma_limpo
             )
+
             caminho_4 = os.path.join(pasta_finais, "04_Carta_Internacional_UHNW.pdf")
             if hasattr(engine_4, 'gerar_carta_apresentacao'):
                 try:
@@ -301,14 +261,12 @@ def compilar_dossies_master(
                     engine_4.gerar_dossie(caminho_4, lang=idioma_limpo)
                 except TypeError:
                     engine_4.gerar_dossie(caminho_4)
-            
-            padronizar_pdf_iso_a4(caminho_4)
             resultados_geracao["04_Carta_UHNW"] = caminho_4
             print(f" -> Sucesso: {caminho_4}")
         except Exception as e:
             print(f" -> Erro na execução do Motor 4: {e}")
 
-    # 5. Compilação Motor 5
+    # 5. Compilação Motor 5 (Modelagem Computacional Mônaco)
     if "OK" in MOTORES_STATUS.get("Motor 5", ""):
         try:
             print(f"[5/6] Compilando Modelagem Computacional & Valuación Mônaco [{idioma_limpo}]...")
@@ -321,6 +279,7 @@ def compilar_dossies_master(
                 telemetria=session_data,
                 lang=idioma_limpo
             )
+
             caminho_5 = os.path.join(pasta_finais, "05_Dossie_Modelagem_Computacional.pdf")
             if hasattr(engine_5, 'gerar_dossie_modelagem'):
                 try:
@@ -332,23 +291,24 @@ def compilar_dossies_master(
                     engine_5.gerar_dossie(caminho_5, lang=idioma_limpo)
                 except TypeError:
                     engine_5.gerar_dossie(caminho_5)
-            
-            padronizar_pdf_iso_a4(caminho_5)
             resultados_geracao["05_Modelagem_Computacional"] = caminho_5
             print(f" -> Sucesso: {caminho_5}")
         except Exception as e:
             print(f" -> Erro na execução do Motor 5: {e}")
 
-    # 6. Compilação Motor 6
+    # 6. Compilação Motor 6 (Contrato Global de Licenciamento)
     if "OK" in MOTORES_STATUS.get("Motor 6", ""):
         try:
             print(f"[6/6] Compilando Contrato de Licenciamento Global [{idioma_limpo}]...")
+            licenciado_alvo = str(session_data.get("licenciado_nome") or nome_titular_efetivo)
             engine_contrato = C2GlobalContractEngine(  # type: ignore
-                licenciado_nome=company_name,
+                licenciado_nome=licenciado_alvo,
                 pais_destino="MC",
                 plano_escolhido="Monaco_Supremacy",
-                lang=idioma_limpo
+                lang=idioma_limpo,
+                telemetria=session_data
             )
+
             caminho_contrato = os.path.join(pasta_finais, "06_Contrato_Licenciamento_Global.pdf")
             if hasattr(engine_contrato, 'gerar_pdf'):
                 try:
@@ -361,11 +321,11 @@ def compilar_dossies_master(
                 except TypeError:
                     engine_contrato.gerar_contrato(caminho_contrato)
 
-            padronizar_pdf_iso_a4(caminho_contrato)
             resultados_geracao["06_Contrato_Licenciamento_Global"] = caminho_contrato
             print(f" -> Sucesso: {caminho_contrato}")
         except Exception as e:
             print(f" -> Erro na execução do Contrato Global: {e}")
+            traceback.print_exc()
 
     # RELATÓRIO DE AUDITORIA COMPLETO NO TERMINAL
     print("=" * 75)

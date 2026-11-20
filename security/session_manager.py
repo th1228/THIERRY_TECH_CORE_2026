@@ -11,17 +11,30 @@ agreement is strictly prohibited under international copyright frameworks.
 ===========================================================================
 """
 
+import os
 import jwt
+import secrets
 import datetime
 import hashlib
 
+
+def _obter_secret_key() -> str:
+    chave_env = os.environ.get("SECRET_KEY", "").strip()
+    if chave_env:
+        return chave_env
+    if not hasattr(_obter_secret_key, "_chave_efemera"):
+        setattr(_obter_secret_key, "_chave_efemera", secrets.token_hex(32))
+    return getattr(_obter_secret_key, "_chave_efemera")
+
+
 class SessionManager:
-    # Em um sistema real, a SECRET_KEY deve vir de uma variável de ambiente (nunca hardcoded)
-    SECRET_KEY = "CHAVE_SECRETA_SUPER_BLINDADA_2026"
+    # A SECRET_KEY é carregada da variável de ambiente SECRET_KEY (com fallback efêmero em memória)
+    SECRET_KEY = _obter_secret_key()
 
     @staticmethod
     def gerar_token(usuario_id, ip_origem, hardware_fingerprint):
         """Gera um token vinculado ao usuário e ao seu dispositivo/rede."""
+        chave = _obter_secret_key()
         payload = {
             "sub": usuario_id,
             "iat": datetime.datetime.utcnow(),
@@ -29,13 +42,14 @@ class SessionManager:
             # Bind de segurança: O token só é válido para este IP e este Hardware
             "context_hash": hashlib.sha256(f"{ip_origem}{hardware_fingerprint}".encode()).hexdigest()
         }
-        return jwt.encode(payload, SessionManager.SECRET_KEY, algorithm="HS256")
+        return jwt.encode(payload, chave, algorithm="HS256")
 
     @staticmethod
     def validar_token(token, ip_atual, hardware_fingerprint_atual):
         """Valida o token e verifica se o contexto atual coincide com o de origem."""
+        chave = _obter_secret_key()
         try:
-            payload = jwt.decode(token, SessionManager.SECRET_KEY, algorithms=["HS256"])
+            payload = jwt.decode(token, chave, algorithms=["HS256"])
             
             # Recalcula o hash do contexto atual para comparar
             hash_atual = hashlib.sha256(f"{ip_atual}{hardware_fingerprint_atual}".encode()).hexdigest()

@@ -1,0 +1,4 @@
+Documentos/th.prn|existe=True|tamanho=0
+STORAGE_DATA/thierry_tech_biogenio.db|existe=True|tamanho=0
+security/core/ultimo_motodiagnostico.json|existe=True|tamanho=0
+tools/vault_internal_audit.log|existe=True|tamanho=0

@@ -13,6 +13,7 @@ agreement is strictly prohibited under international copyright frameworks.
 
 # -*- coding: utf-8 -*-
 import subprocess
+import shlex
 import sys
 import os
 import json
@@ -55,7 +56,8 @@ def efeito_piscar_alerta(texto_alerta, repeticoes=6):
 def run_command(command, description):
     escrever_devagar(f"\n{CYAN}[AUDIT]{RESET} Analisando: {WHITE_BOLD}{description}{RESET}...", delay=0.015)
     try:
-        result = subprocess.run(command, shell=True, capture_output=True, text=True)
+        args = command if isinstance(command, (list, tuple)) else shlex.split(command, posix=(os.name != "nt"))
+        result = subprocess.run(args, shell=False, capture_output=True, text=True)
         return result.stdout, result.stderr, result.returncode
     except (subprocess.SubprocessError, OSError) as e:
         return "", str(e), -1
@@ -159,7 +161,7 @@ def main():
 
     # 1. Análise Estática de Segurança
     escrever_devagar(f"\n{WHITE_BOLD}[1/5] Executando Scanner de Vulnerabilidades de Código...{RESET}", delay=0.015)
-    stdout, stderr, code = run_command("bandit -r . -f json", "Bandit Static Analysis")
+    stdout, stderr, code = run_command(["bandit", "-r", ".", "-f", "json"], "Bandit Static Analysis")
     escrever_devagar(f"  {GREEN}✔ Nenhuma vulnerabilidade detectada pelo Bandit. [OK]{RESET}", delay=0.015)
 
     # 2. Varredura de chaves expostas e Segredos
