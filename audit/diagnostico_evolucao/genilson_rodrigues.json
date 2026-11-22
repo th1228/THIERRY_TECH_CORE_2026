@@ -1,0 +1,38 @@
+[
+  {
+    "emitido_em": "22/11/2026 17:06:16",
+    "dados": {
+      "oximetria": null,
+      "inflamacao": null,
+      "dieta_nutricao": null,
+      "fpn": null,
+      "phi_global": null,
+      "dist_descolamento_mm": null,
+      "agua_estimada": null,
+      "agua_necessaria_ml": null,
+      "grau_envelhecimento": null,
+      "status_sebo": null,
+      "densidade_capilar": null,
+      "taxa_miniaturizacao": null,
+      "score_fadiga": 24.5
+    }
+  },
+  {
+    "emitido_em": "22/11/2026 17:07:10",
+    "dados": {
+      "oximetria": null,
+      "inflamacao": null,
+      "dieta_nutricao": null,
+      "fpn": null,
+      "phi_global": null,
+      "dist_descolamento_mm": null,
+      "agua_estimada": null,
+      "agua_necessaria_ml": null,
+      "grau_envelhecimento": null,
+      "status_sebo": null,
+      "densidade_capilar": null,
+      "taxa_miniaturizacao": null,
+      "score_fadiga": 24.5
+    }
+  }
+]

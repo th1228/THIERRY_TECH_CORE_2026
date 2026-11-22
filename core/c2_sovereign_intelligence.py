@@ -2,7 +2,7 @@
 """
 Módulo: c2_sovereign_intelligence.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine & Predictive Engine
-Versão: 17.0.2 - Monaco Quantum Platinum (UHNW Executive Dashboard Edition - A4 Harmonized)
+Versão: 17.0.4 - Global Quantum Platinum (UHNW Executive Dashboard Edition - A4 Harmonized)
 """
 
 import os
@@ -12,7 +12,7 @@ import datetime
 import hashlib
 import numpy as np
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 
 # --- BLINDAGEM DE CRIPTOGRAFIA PÓS-QUÂNTICA & SEGURANÇA SOBERANA ---
 from cryptography.hazmat.primitives.asymmetric import ed25519
@@ -40,8 +40,16 @@ except ImportError:
         class MemoriaMock:
             def salvar_dados(self, chave, valor): pass
             def registrar(self, chave, valor): pass
-            def ler_dados(self, chave): return None
+            def ler_dados(self, chave=None): return None
         memoria = MemoriaMock()
+
+obter_evolucao_titular: Any = None
+try:
+    from core.diagnostico_evolucao import obter_evolucao_titular as _obt_evo_titular  # type: ignore
+    obter_evolucao_titular = _obt_evo_titular
+except ImportError:
+    obter_evolucao_titular = None
+
 
 class C2SovereignSecurityCore:
     """Módulo interno de criptografia soberana, ponto a ponto e pós-quântica do C2."""
@@ -91,11 +99,12 @@ class C2SovereignIntelligenceEngine:
         self.aum = aum_bilhoes_eur * 1000.0  
         self.ameaca = fator_ameaca_mercado
         self.pontos_base = 100380
-        self.telemetria_externa = telemetria or {}
+        self.telemetria_externa: Dict[str, Any] = telemetria or {}
         self.lang = lang.upper() if lang else "PT"
         
         self.dados_preditivos_cliente = self._carregar_historico_json_cliente()
         self._extrair_fatores_biometricos()
+        self.evolucao_longitudinal: Dict[str, Any] = self._carregar_evolucao_longitudinal()
 
         # Resgate inteligente da telemetria psíquica e Frequência de Deus em tempo real
         self.psico_status = memoria.ler_dados("PSICO_STATUS") or "Ativo / Sincronizado"
@@ -107,13 +116,113 @@ class C2SovereignIntelligenceEngine:
         if not raw_analise and hasattr(memoria, 'ler_dados'):
             raw_analise = memoria.ler_dados("analise_gemini") or memoria.ler_dados("analise_gemini_recente") or ""
         
-        if raw_analise.startswith("```"):
+        if isinstance(raw_analise, str) and raw_analise.startswith("```"):
             linhas_analise = raw_analise.split("\n")
             if len(linhas_analise) > 2:
                 raw_analise = "\n".join(linhas_analise[1:-1] if linhas_analise[-1].strip() == "```" else linhas_analise[1:])
-        self.analise_llm = raw_analise.strip()
+        self.analise_llm = str(raw_analise).strip()
 
         self.timestamp_exec = datetime.datetime.utcnow().strftime("%d/%m/%Y às %H:%M:%S UTC")
+
+    def _projetar_ciclos_padrao_5_10_15(self) -> Dict[str, Dict[str, Any]]:
+        """Calcula projeções locais para 5, 10 e 15 anos quando não há snapshot prévio."""
+        reg_base = round(min(99.5, max(75.0, (self.iep * 0.65) + (self.oximetria * 0.35))), 2)
+        dens_base = 128.0
+        idade_base = 31.0
+        adesao_base = 18.5
+        fator_adesao = min(max(adesao_base / 100.0, 0.05), 0.50)
+
+        ciclos: Dict[str, Dict[str, Any]] = {}
+        for anos in (5, 10, 15):
+            fator_tempo = anos / 5.0
+            reg_proj = round(min(99.9, reg_base + (fator_tempo * 1.4 * (1.0 + fator_adesao))), 2)
+            dens_proj = round(dens_base + (fator_tempo * 4.5 * (1.0 + fator_adesao)), 2)
+            delta_idade = round(-0.6 * fator_tempo * (1.0 + fator_adesao), 2)
+            idade_proj = round(max(18.0, idade_base + anos + delta_idade), 1)
+            estab = round(min(100.0, 75.0 + (fator_adesao * 40.0) - (anos * 0.4)), 2)
+            ciclos[f"{anos}_anos"] = {
+                "horizonte_anos": anos,
+                "regeneracao_projetada_pct": reg_proj,
+                "densidade_projetada_fios_cm2": dens_proj,
+                "idade_biologica_projetada_anos": idade_proj,
+                "indice_estabilidade_ciclo": estab,
+            }
+        return ciclos
+
+    def _projetar_marcos_curtos_e_medios(self) -> List[Dict[str, Any]]:
+        """Calcula marcos de 3, 6, 9, 12 meses e 2, 3, 4 e 5 anos."""
+        reg_base = round(min(99.5, max(75.0, (self.iep * 0.65) + (self.oximetria * 0.35))), 2)
+        dens_base = 128.0
+        idade_base = 31.0
+        adesao_base = 18.5
+        fator_adesao = min(max(adesao_base / 100.0, 0.05), 0.50)
+
+        marcos_fracao_ano: List[tuple[str, float]] = [
+            ("3 Months" if self.lang == "EN" else "3 Meses", 0.25),
+            ("6 Months" if self.lang == "EN" else "6 Meses", 0.50),
+            ("9 Months" if self.lang == "EN" else "9 Meses", 0.75),
+            ("12 Months" if self.lang == "EN" else "12 Meses", 1.00),
+            ("2 Years" if self.lang == "EN" else "2 Anos", 2.00),
+            ("3 Years" if self.lang == "EN" else "3 Anos", 3.00),
+            ("4 Years" if self.lang == "EN" else "4 Anos", 4.00),
+            ("5 Years" if self.lang == "EN" else "5 Anos", 5.00),
+        ]
+        resultado: List[Dict[str, Any]] = []
+        for rotulo, fracao_anos in marcos_fracao_ano:
+            fator_tempo = fracao_anos / 5.0
+            reg_proj = round(min(99.9, reg_base + (fator_tempo * 1.4 * (1.0 + fator_adesao))), 2)
+            dens_proj = round(dens_base + (fator_tempo * 4.5 * (1.0 + fator_adesao)), 2)
+            delta_idade = round(-0.6 * fator_tempo * (1.0 + fator_adesao), 2)
+            idade_proj = round(max(18.0, idade_base + fracao_anos + delta_idade), 1)
+            estab = round(min(100.0, 75.0 + (fator_adesao * 40.0) - (fracao_anos * 0.4)), 2)
+            resultado.append({
+                "marco": rotulo,
+                "regeneracao_projetada_pct": reg_proj,
+                "densidade_projetada_fios_cm2": dens_proj,
+                "idade_biologica_projetada_anos": idade_proj,
+                "indice_estabilidade_ciclo": estab,
+            })
+        return resultado
+
+    def _carregar_evolucao_longitudinal(self) -> Dict[str, Any]:
+        evo = self.telemetria_externa.get("evolucao_longitudinal")
+        if isinstance(evo, dict) and evo:
+            if not evo.get("projecao_ciclos"):
+                evo = {**evo, "projecao_ciclos": self._projetar_ciclos_padrao_5_10_15()}
+            return evo
+
+        proj = self.telemetria_externa.get("projecao_ciclos")
+        if isinstance(proj, dict) and proj:
+            return {
+                "titular": self.lider,
+                "empresa": self.entidade,
+                "projecao_ciclos": proj,
+                "historico_ciclos": [],
+            }
+
+        if callable(obter_evolucao_titular):
+            try:
+                dados_evo = obter_evolucao_titular(titular=self.lider, empresa=self.entidade)
+                if isinstance(dados_evo, dict) and dados_evo.get("execucoes"):
+                    execucoes = dados_evo["execucoes"]
+                    ultimo = execucoes[-1] if isinstance(execucoes, list) else {}
+                    return {
+                        "titular": self.lider,
+                        "empresa": self.entidade,
+                        "total_execucoes": dados_evo.get("total_execucoes", len(execucoes)),
+                        "historico_ciclos": execucoes,
+                        "projecao_ciclos": ultimo.get("projecao_ciclos") or self._projetar_ciclos_padrao_5_10_15(),
+                        "comparativo_snapshot_anterior": ultimo.get("comparativo_snapshot_anterior"),
+                    }
+            except Exception:
+                pass
+
+        return {
+            "titular": self.lider,
+            "empresa": self.entidade,
+            "projecao_ciclos": self._projetar_ciclos_padrao_5_10_15(),
+            "historico_ciclos": [],
+        }
 
     def _carregar_historico_json_cliente(self) -> dict:
         caminho_bd = BASE_DIR / "historico_clientes.json"
@@ -236,8 +345,8 @@ class C2SovereignIntelligenceEngine:
 
     def _gerar_diagnostico_tricologia_suprema(self) -> str:
         return (
-            "<b>01 // Hemodinâmica Escalpada:</b> Fluxo (Q): <b>10.22 RPM</b> | R_v: <b>13.81 dyn·s/cm⁵</b><br/>"
-            "<b>02 // Espectrometria Capilar:</b> Índice (η): <b>1.566 η</b> | Miniaturização: <b>1.3%</b> (Anágena 89%)"
+            "01 // Hemodinâmica Escalpada: Fluxo (Q): <font color='#00875A'><b>10.22 RPM</b></font> | R_v: <font color='#00875A'><b>13.81 dyn·s/cm⁵</b></font><br/>"
+            "02 // Espectrometria Capilar: Índice (η): <font color='#00875A'><b>1.566 η</b></font> | Miniaturização: <font color='#00875A'><b>1.3%</b></font> (<font color='#0A7A28'><b>Anágena 89%</b></font>)"
         )
 
     def _calcular_matriz_vulnerabilidade_estado(self, anos: int) -> dict:
@@ -343,17 +452,196 @@ class C2SovereignIntelligenceEngine:
     def _obter_texto_analitico_bloco_1(self) -> str:
         return f"<b>Síntese de Impacto Executivo ({self.entidade} | {self.lider}):</b> O Índice de Eficiência Preditiva (IEP {self.iep}) atesta alta performance biológica, mitigando riscos e blindando o valuation multibilionário sob ressonância de 528 Hz."
 
-    def _gerar_folha_historico_anual(self) -> list:
-        elementos_historico = []
+    def _gerar_folha_historico_anual(self, chave_doc: Optional[str] = None) -> list:
+        elementos_historico: List[Any] = []
         atendimentos = self.dados_preditivos_cliente.get("atendimentos", [])
-        
-        estilo_titulo = ParagraphStyle('HistTtl', fontSize=10, leading=13, textColor=colors.HexColor('#0A1128'), fontName="Helvetica-Bold", spaceAfter=6)
-        estilo_texto = ParagraphStyle('HistTxt', fontSize=7.5, leading=11, textColor=colors.HexColor('#1E293B'), fontName="Helvetica", spaceAfter=4)
-        
+
+        verde_padrao = colors.HexColor('#0A7A28')
+        idioma = (self.lang or "PT").upper()
+        chave_final = chave_doc or hashlib.sha256(f"{self.lider}-{self.entidade}-{self.timestamp_exec}".encode('utf-8')).hexdigest()[:12].upper()
+
+        # Título Principal da Folha Verde (#0A7A28)
+        titulo = (
+            f"ACOMPANHAMENTO EVOLUTIVO, PRECAUÇÃO ATUARIAL E NOVA GERAÇÃO [{chave_final}]"
+            if idioma == "PT"
+            else f"EVOLUTIONARY TRACKING, ACTUARIAL FORESIGHT & NEW GENERATION [{chave_final}]"
+        )
+
+        # Subtítulo da Tabela de Marcos
+        subtitulo_tabela = (
+            "MATRIZ PREDITIVA DE PRECAUÇÃO ATUARIAL E PROTEÇÃO DE ATIVO (3 MESES A 15 ANOS)"
+            if idioma == "PT"
+            else "PREDICTIVE MATRIX OF ACTUARIAL FORESIGHT & ASSET PROTECTION (3 MONTHS TO 15 YEARS)"
+        )
+
+        if idioma == "EN":
+            rotulo_ciclo = "Cycle"
+            rotulo_reg = "Proj. Regeneration"
+            rotulo_dens = "Proj. Density"
+            rotulo_idade = "Proj. Bio. Age"
+            rotulo_estab = "Stability"
+            subtitulo_5_10_15 = "<b>Longitudinal Cycle Projection (5, 10 and 15 Years):</b>"
+            subtitulo_marcos = f"<b>{subtitulo_tabela} — Short & Medium Milestones (3M to 5Y):</b>"
+            texto_explicativo_bilingue = (
+                "<b>GOVERNANCE & ACTUARIAL FORESIGHT:</b> Protocol continuity converts biometric parameters "
+                "(IEP, oximetry & frequency) into measurable tissue stability, decelerating the biological aging curve "
+                "and neutralizing the silent liability of operational inaction. Sustaining this trajectory secures human "
+                "capital integrity and safeguards executive valuation over the next 15 years.<br/><br/>"
+                "<b>GOVERNANÇA & PRECAUÇÃO ATUARIAL:</b> A continuidade do protocolo converte parâmetros biométricos "
+                "(IEP, oximetria e frequência) em estabilidade tecidual mensurável, desacelerando a curva de envelhecimento "
+                "biológico e neutralizando o passivo silencioso da inação operacional. A sustentação dessa trajetória "
+                "assegura a integridade do capital humano e protege o valuation executivo nos próximos 15 anos."
+            )
+            parecer_evolucao = (
+                f"<b>Actuarial & Evolutionary Opinion (3M–15Y):</b> With IEP of <b>{self.iep}/100</b>, "
+                f"oximetry of <b>{self.oximetria}%</b> and active frequency of <b>{self.frequencia_sonica} Hz</b>, "
+                f"{self.lider}'s longitudinal trajectory projects actuarial stability across 3 months to 15 years, "
+                f"preserving biological integrity and mitigating valuation erosion."
+            )
+        else:
+            rotulo_ciclo = "Ciclo"
+            rotulo_reg = "Regeneração Proj."
+            rotulo_dens = "Densidade Proj."
+            rotulo_idade = "Idade Bio. Proj."
+            rotulo_estab = "Estabilidade"
+            subtitulo_5_10_15 = "<b>Projeção Evolutiva de Ciclos Plurianuais (5, 10 e 15 Anos):</b>"
+            subtitulo_marcos = f"<b>{subtitulo_tabela}:</b>"
+            texto_explicativo_bilingue = (
+                "<b>GOVERNANÇA & PRECAUÇÃO ATUARIAL:</b> A continuidade do protocolo converte parâmetros biométricos "
+                "(IEP, oximetria e frequência) em estabilidade tecidual mensurável, desacelerando a curva de envelhecimento "
+                "biológico e neutralizando o passivo silencioso da inação operacional. A sustentação dessa trajetória "
+                "assegura a integridade do capital humano e protege o valuation executivo nos próximos 15 anos.<br/><br/>"
+                "<b>GOVERNANCE & ACTUARIAL FORESIGHT:</b> Protocol continuity converts biometric parameters "
+                "(IEP, oximetry & frequency) into measurable tissue stability, decelerating the biological aging curve "
+                "and neutralizing the silent liability of operational inaction. Sustaining this trajectory secures human "
+                "capital integrity and safeguards executive valuation over the next 15 years."
+            )
+            parecer_evolucao = (
+                f"<b>Parecer Atuarial & Evolutivo (3M–15A):</b> Com IEP de <b>{self.iep}/100</b>, "
+                f"oximetria de <b>{self.oximetria}%</b> e frequência ativa de <b>{self.frequencia_sonica} Hz</b>, "
+                f"a trajetória longitudinal de {self.lider} projeta estabilidade atuarial nos horizontes de 3 meses a 15 anos, "
+                f"preservando integridade biológica e mitigando erosão de valuation."
+            )
+
+        estilo_titulo = ParagraphStyle('HistTtl', fontSize=9.0, leading=11.5, textColor=verde_padrao, fontName="Helvetica-Bold", spaceAfter=4)
+        estilo_texto = ParagraphStyle('HistTxt', fontSize=7.1, leading=10.0, textColor=colors.HexColor('#1E293B'), fontName="Helvetica", spaceAfter=3, alignment=4)
+        estilo_explicativo = ParagraphStyle('HistExp', fontSize=7.0, leading=9.8, textColor=colors.HexColor('#1E293B'), fontName="Helvetica", spaceAfter=4, alignment=4)
+        estilo_hdr = ParagraphStyle('HistHdr', fontSize=6.8, leading=8.5, textColor=verde_padrao, fontName="Helvetica-Bold", alignment=1)
+        estilo_cel = ParagraphStyle('HistCel', fontSize=6.7, leading=8.5, textColor=colors.HexColor('#1E293B'), fontName="Helvetica", alignment=1)
+
         elementos_historico.append(PageBreak())
-        elementos_historico.append(Paragraph("[ ANEXO: EVOLUÇÃO LONGITUDINAL & HISTÓRICO DE CICLOS ANTERIORES ]", estilo_titulo))
-        elementos_historico.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Consolidado Plurianual UHNW</b>", estilo_texto))
-        elementos_historico.append(Spacer(1, 6))
+        elementos_historico.append(Paragraph(titulo, estilo_titulo))
+        elementos_historico.append(Paragraph(f"<font color='#0A7A28'><b>Titular:</b></font> {self.lider} | <b>Consolidado Plurianual UHNW</b>", estilo_texto))
+        elementos_historico.append(Spacer(1, 3))
+
+        projecao_ciclos = self.evolucao_longitudinal.get("projecao_ciclos") if isinstance(self.evolucao_longitudinal, dict) else {}
+        if not isinstance(projecao_ciclos, dict) or not projecao_ciclos:
+            projecao_ciclos = self._projetar_ciclos_padrao_5_10_15()
+
+        historico_ciclos = self.evolucao_longitudinal.get("historico_ciclos") if isinstance(self.evolucao_longitudinal, dict) else []
+
+        elementos_historico.append(Paragraph(subtitulo_5_10_15, estilo_texto))
+        dados_ciclos = [[
+            Paragraph(rotulo_ciclo, estilo_hdr),
+            Paragraph(rotulo_reg, estilo_hdr),
+            Paragraph(rotulo_dens, estilo_hdr),
+            Paragraph(rotulo_idade, estilo_hdr),
+            Paragraph(rotulo_estab, estilo_hdr),
+        ]]
+        for anos_chave in ("5_anos", "10_anos", "15_anos"):
+            c = projecao_ciclos.get(anos_chave)
+            if isinstance(c, dict):
+                horizonte = c.get("horizonte_anos", anos_chave.replace("_anos", ""))
+                rotulo_horizonte = f"+{horizonte} Years" if idioma == "EN" else f"+{horizonte} Anos"
+                rotulo_anos_cel = "yrs" if idioma == "EN" else "anos"
+                dados_ciclos.append([
+                    Paragraph(f"<b>{rotulo_horizonte}</b>", estilo_cel),
+                    Paragraph(f"{c.get('regeneracao_projetada_pct', 'N/D')}%", estilo_cel),
+                    Paragraph(f"{c.get('densidade_projetada_fios_cm2', 'N/D')} fios/cm²", estilo_cel),
+                    Paragraph(f"{c.get('idade_biologica_projetada_anos', 'N/D')} {rotulo_anos_cel}", estilo_cel),
+                    Paragraph(f"{c.get('indice_estabilidade_ciclo', 'N/D')}%", estilo_cel),
+                ])
+        if len(dados_ciclos) > 1:
+            tabela_ciclos = Table(dados_ciclos, colWidths=[78, 102, 112, 102, 102])
+            tabela_ciclos.setStyle(TableStyle([
+                ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#ECFDF5')),
+                ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#F8FAFC')),
+                ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor('#CBD5E1')),
+                ('LINEBELOW', (0, 0), (-1, 0), 1.2, verde_padrao),
+                ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+                ('TOPPADDING', (0, 0), (-1, -1), 2.5),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 2.5),
+                ('LEFTPADDING', (0, 0), (-1, -1), 4),
+                ('RIGHTPADDING', (0, 0), (-1, -1), 4),
+            ]))
+            elementos_historico.append(tabela_ciclos)
+            elementos_historico.append(Spacer(1, 4))
+
+        elementos_historico.append(Paragraph(subtitulo_marcos, estilo_texto))
+        marcos_curtos = self._projetar_marcos_curtos_e_medios()
+        dados_marcos = [[
+            Paragraph(rotulo_ciclo, estilo_hdr),
+            Paragraph(rotulo_reg, estilo_hdr),
+            Paragraph(rotulo_dens, estilo_hdr),
+            Paragraph(rotulo_idade, estilo_hdr),
+            Paragraph(rotulo_estab, estilo_hdr),
+        ]]
+        for m_item in marcos_curtos:
+            rotulo_anos_cel = "yrs" if idioma == "EN" else "anos"
+            dados_marcos.append([
+                Paragraph(f"<b>{m_item['marco']}</b>", estilo_cel),
+                Paragraph(f"{m_item['regeneracao_projetada_pct']}%", estilo_cel),
+                Paragraph(f"{m_item['densidade_projetada_fios_cm2']} fios/cm²", estilo_cel),
+                Paragraph(f"{m_item['idade_biologica_projetada_anos']} {rotulo_anos_cel}", estilo_cel),
+                Paragraph(f"{m_item['indice_estabilidade_ciclo']}%", estilo_cel),
+            ])
+        tabela_marcos = Table(dados_marcos, colWidths=[78, 102, 112, 102, 102])
+        tabela_marcos.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.HexColor('#ECFDF5')),
+            ('BACKGROUND', (0, 1), (-1, -1), colors.HexColor('#F8FAFC')),
+            ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor('#CBD5E1')),
+            ('LINEBELOW', (0, 0), (-1, 0), 1.0, verde_padrao),
+            ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
+            ('TOPPADDING', (0, 0), (-1, -1), 2.2),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 2.2),
+            ('LEFTPADDING', (0, 0), (-1, -1), 4),
+            ('RIGHTPADDING', (0, 0), (-1, -1), 4),
+        ]))
+        elementos_historico.append(tabela_marcos)
+        elementos_historico.append(Spacer(1, 5))
+
+        # Texto explicativo alinhado em Português e Inglês abaixo da tabela
+        caixa_explicativa = Table([[Paragraph(texto_explicativo_bilingue, estilo_explicativo)]], colWidths=[496])
+        caixa_explicativa.setStyle(TableStyle([
+            ('BACKGROUND', (0, 0), (-1, -1), colors.HexColor('#F8FAFC')),
+            ('BOX', (0, 0), (-1, -1), 0.6, verde_padrao),
+            ('TOPPADDING', (0, 0), (-1, -1), 5),
+            ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
+            ('LEFTPADDING', (0, 0), (-1, -1), 7),
+            ('RIGHTPADDING', (0, 0), (-1, -1), 7),
+        ]))
+        elementos_historico.append(caixa_explicativa)
+        elementos_historico.append(Spacer(1, 4))
+
+        elementos_historico.append(Paragraph(parecer_evolucao, estilo_texto))
+        elementos_historico.append(Spacer(1, 3))
+
+        if isinstance(historico_ciclos, list) and len(historico_ciclos) > 0:
+            elementos_historico.append(Paragraph("<b>Snapshots de Evolução Registados no Cofre Local:</b>", estilo_texto))
+            for snap in historico_ciclos[-5:]:
+                if isinstance(snap, dict):
+                    num_exec = snap.get("execucao_numero", "-")
+                    data_snap = snap.get("registrado_em_utc", "N/D")
+                    m = snap.get("metricas") if isinstance(snap.get("metricas"), dict) else {}
+                    texto_snap = (
+                        f"• <b>Execução #{num_exec}</b> [{data_snap}] — "
+                        f"Regeneração: {m.get('regeneracao_pct', 'N/D')}% | "
+                        f"Densidade: {m.get('densidade_fios_cm2', 'N/D')} fios/cm² | "
+                        f"Idade Bio.: {m.get('idade_biologica_anos', 'N/D')} anos | "
+                        f"Adesão: {m.get('adesao_pct', 'N/D')}%"
+                    )
+                    elementos_historico.append(Paragraph(texto_snap, estilo_texto))
+            elementos_historico.append(Spacer(1, 3))
         
         if len(atendimentos) > 1:
             elementos_historico.append(Paragraph("<b>Marcos Evolutivos e Comportamento Biométrico Registado:</b>", estilo_texto))
@@ -365,8 +653,6 @@ class C2SovereignIntelligenceEngine:
                 
                 texto_atd = f"• <b>[{data}]</b> {proc} | IEP: {iep_ant} | Oximetria: {ox} — <i>Comportamento tecidual estável com resposta ótima ao protocolo.</i>"
                 elementos_historico.append(Paragraph(texto_atd, estilo_texto))
-        else:
-            elementos_historico.append(Paragraph("<b>Registo Histórico Plurianual:</b> Baseline definitiva estabelecida para acompanhamento contínuo no ecossistema C2.", estilo_texto))
             
         return elementos_historico
 
@@ -397,7 +683,9 @@ class C2SovereignIntelligenceEngine:
             "projecao_temporal": projecoes
         }
 
-    def gerar_pdf_defensivo_soberano(self, caminho_salvamento: str = "c2_sovereign_intelligence_dossier.pdf") -> Optional[str]:
+    def gerar_pdf_defensivo_soberano(self, caminho_salvamento: str = "c2_sovereign_intelligence_dossier.pdf", lang: Optional[str] = None) -> Optional[str]:
+        if lang and isinstance(lang, str):
+            self.lang = lang.upper().strip()
         self.timestamp_exec = datetime.datetime.utcnow().strftime("%d/%m/%Y às %H:%M:%S UTC")
         dados_motor = self.processar_dossie_defensivo()
         os.makedirs(os.path.dirname(caminho_salvamento) if os.path.dirname(caminho_salvamento) else '.', exist_ok=True)
@@ -405,6 +693,7 @@ class C2SovereignIntelligenceEngine:
         payload_bruto = f"C2-QUANTUM-{self.lider}-{self.entidade}-{self.timestamp_exec}"
         assinatura_payload_c2 = self.sec_core.assinar_payload(payload_bruto)
         hash_sha256_gerado = hashlib.sha256(payload_bruto.encode('utf-8')).hexdigest().upper()
+        chave_doc = hash_sha256_gerado[:12]
 
         caminho_grafico_temp = "chart_temp.png"
         self._gerar_grafico_erosao(dados_motor["projecao_temporal"], caminho_grafico_temp)
@@ -415,7 +704,7 @@ class C2SovereignIntelligenceEngine:
             canvas.rotate(30)
             canvas.setFont("Helvetica-Bold", 26)
             canvas.setFillColor(colors.Color(0.77, 0.63, 0.35, alpha=0.03))
-            canvas.drawCentredString(0, 0, "MONACO QUANTUM PLATINUM • THIERRY TECHNOLOGY CONCEPT GLOBAL")
+            canvas.drawCentredString(0, 0, "GLOBAL QUANTUM PLATINUM • THIERRY TECHNOLOGY CONCEPT GLOBAL")
             canvas.restoreState()
             
             canvas.saveState()
@@ -428,7 +717,7 @@ class C2SovereignIntelligenceEngine:
             canvas.setFillColor(colors.HexColor('#0A1128'))
             canvas.drawString(42, 24, "Classificado • C2 Quantum Intelligence & UHNW Nexus (528Hz Active)")
             pagina_atual = canvas._pageNumber
-            canvas.drawRightString(A4[0] - 42, 24, f"MONACO SEAL • PÁGINA {pagina_atual} • PQC SECURED")
+            canvas.drawRightString(A4[0] - 42, 24, f"GLOBAL SEAL • PÁGINA {pagina_atual} • PQC SECURED")
             canvas.restoreState()
 
         # ==================== CONFIGURAÇÃO DO DOCUMENTO A4 INTERNACIONAL ====================
@@ -483,7 +772,7 @@ class C2SovereignIntelligenceEngine:
             [Paragraph("Módulo Psíquico & Frequência:", estilo_label_bloco_claro), Paragraph(f"<font color='#C0392B'><b>{self.psico_status}</b></font> | <font color='#9b59b6'><b>{self.frequencia_sonica} Hz (Frequência de Deus)</b></font>", estilo_conteudo_bloco_claro)],
             [Paragraph("Coerência Biogênica & Laudo:", estilo_label_bloco_claro), Paragraph(f"Coerência: {self.coerencia_biogenica} | <i>\"{self.laudo_psiquico}\"</i>", estilo_conteudo_bloco_claro)],
             [Paragraph("Assinatura PQC (SHA-256):", estilo_label_bloco_claro), Paragraph(f"<font fontName='Courier' size=7>{hash_sha256_gerado[:48]}...</font>", estilo_conteudo_bloco_claro)],
-            [Paragraph("Timestamp de Emissão Mônaco:", estilo_label_bloco_claro), Paragraph(self.timestamp_exec, estilo_conteudo_bloco_claro)]
+            [Paragraph("Timestamp de Emissão Global:", estilo_label_bloco_claro), Paragraph(self.timestamp_exec, estilo_conteudo_bloco_claro)]
         ]
         
         t_capa_box = Table(dados_tabela_capa, colWidths=[150, 361])
@@ -663,15 +952,15 @@ class C2SovereignIntelligenceEngine:
 
         # ==================== PÁGINA 4: BLOCOS II, III E IV ====================
         story.append(Paragraph("[ ANEXO TÉCNICO: TELEMETRIA, DIAGNÓSTICO & PLANOS DE AÇÃO ]", styles['SecSovereign']))
-        story.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Auditoria UHNW Mônaco</b>", styles['Normal']))
+        story.append(Paragraph(f"<b>Titular:</b> {self.lider} | <b>Auditoria UHNW Global</b>", styles['Normal']))
         story.append(Spacer(1, 4))
 
         tabela_bloco_ii = Table([
             [Paragraph("<b>[BLOCO II] TELEMETRIA CLÍNICA INTERNA & DIAGNÓSTICO AVANÇADO</b>", estilo_titulo_bloco_claro), ""],
-            [Paragraph("Estabilidade Microvascular:", estilo_label_bloco_claro), Paragraph("Fator Térmico: 4.5 | Frequência Sônica: 528 Hz", estilo_conteudo_bloco_claro)],
-            [Paragraph("Balanço Higrométrico:", estilo_label_bloco_claro), Paragraph("Umidade Relativa: 50.9% | Controle TEWL otimizado.", estilo_conteudo_bloco_claro)],
-            [Paragraph("Score Global de Fadiga:", estilo_label_bloco_claro), Paragraph("23.7 / 100 [Zona Verde - Excelência Clínica]", estilo_conteudo_bloco_claro)],
-            [Paragraph("Tônus Muscular:", estilo_label_bloco_claro), Paragraph("15 oscilações/min (Repouso equilibrado)", estilo_conteudo_bloco_claro)]
+            [Paragraph("Estabilidade Microvascular:", estilo_label_bloco_claro), Paragraph("Fator Térmico: <font color='#00875A'><b>4.5</b></font> | Frequência Sônica: <font color='#0A7A28'><b>528 Hz</b></font>", estilo_conteudo_bloco_claro)],
+            [Paragraph("Balanço Higrométrico:", estilo_label_bloco_claro), Paragraph("Umidade Relativa: <font color='#00875A'><b>50.9%</b></font> | <font color='#0A7A28'><b>Controle TEWL otimizado.</b></font>", estilo_conteudo_bloco_claro)],
+            [Paragraph("Score Global de Fadiga:", estilo_label_bloco_claro), Paragraph("<font color='#00875A'><b>23.7 / 100</b></font> <font color='#0A7A28'><b>[Zona Verde - Excelência Clínica]</b></font>", estilo_conteudo_bloco_claro)],
+            [Paragraph("Tônus Muscular:", estilo_label_bloco_claro), Paragraph("<font color='#00875A'><b>15 oscilações/min</b></font> (Repouso equilibrado)", estilo_conteudo_bloco_claro)]
         ], colWidths=[140, 371])
         
         tabela_bloco_ii.setStyle(TableStyle([
@@ -689,7 +978,7 @@ class C2SovereignIntelligenceEngine:
 
         tabela_bloco_iii = Table([
             [Paragraph("<b>[BLOCO III] VETORES DE DIAGNÓSTICO FORENSE & TRICOLOGIA</b>", estilo_titulo_bloco_claro), ""],
-            [Paragraph("Anatomia Muscular:", estilo_label_bloco_claro), Paragraph("Tríade Superior intacta com atenuação de micro-movimentos.", estilo_conteudo_bloco_claro)],
+            [Paragraph("Anatomia Muscular:", estilo_label_bloco_claro), Paragraph("Tríade Superior intacta com <font color='#0A7A28'><b>atenuação de micro-movimentos.</b></font>", estilo_conteudo_bloco_claro)],
             [Paragraph("Visagismo & Tricologia:", estilo_label_bloco_claro), Paragraph(self._gerar_diagnostico_tricologia_suprema(), estilo_conteudo_bloco_claro)]
         ], colWidths=[140, 371])
         
@@ -708,9 +997,9 @@ class C2SovereignIntelligenceEngine:
 
         tabela_bloco_iv = Table([
             [Paragraph("<b>[BLOCO IV] PLANOS DE AÇÃO DE ALTA PERFORMANCE</b>", estilo_titulo_bloco_claro), ""],
-            [Paragraph("Pilar I (Modulação):", estilo_label_bloco_claro), Paragraph("Toxina Botulínica no Terço Superior com alinhamento de simetria.", estilo_conteudo_bloco_claro)],
-            [Paragraph("Pilar II (Escultura):", estilo_label_bloco_claro), Paragraph("Geometria da Barba mapeada por laser-guide em ângulos de 115° a 120°.", estilo_conteudo_bloco_claro)],
-            [Paragraph("Pilar III (Estímulo):", estilo_label_bloco_claro), Paragraph("LEDterapia 830nm sincronizada com Frequência de Deus (528 Hz).", estilo_conteudo_bloco_claro)]
+            [Paragraph("Pilar I (Modulação):", estilo_label_bloco_claro), Paragraph("Toxina Botulínica no Terço Superior com <font color='#0A7A28'><b>alinhamento de simetria.</b></font>", estilo_conteudo_bloco_claro)],
+            [Paragraph("Pilar II (Escultura):", estilo_label_bloco_claro), Paragraph("Geometria da Barba mapeada por laser-guide em ângulos de <font color='#00875A'><b>115° a 120°</b></font>.", estilo_conteudo_bloco_claro)],
+            [Paragraph("Pilar III (Estímulo):", estilo_label_bloco_claro), Paragraph("LEDterapia <font color='#00875A'><b>830nm</b></font> sincronizada com Frequência de Deus (<font color='#0A7A28'><b>528 Hz</b></font>).", estilo_conteudo_bloco_claro)]
         ], colWidths=[140, 371])
         
         tabela_bloco_iv.setStyle(TableStyle([
@@ -727,9 +1016,9 @@ class C2SovereignIntelligenceEngine:
         story.append(Spacer(1, 5))
 
         story.append(Paragraph(f"<b>Checksum C2 Quantum:</b> {hashlib.sha256(str(self.pontos_base).encode()).hexdigest()[:32].upper()}", styles['Normal']))
-        story.append(Paragraph(f"<b>Timestamp Mônaco:</b> {self.timestamp_exec}", styles['Normal']))
+        story.append(Paragraph(f"<b>Timestamp Global:</b> {self.timestamp_exec}", styles['Normal']))
 
-        story.extend(self._gerar_folha_historico_anual())
+        story.extend(self._gerar_folha_historico_anual(chave_doc=chave_doc))
 
         doc.build(story, onFirstPage=_desenhar_elementos_pagina, onLaterPages=_desenhar_elementos_pagina)
 

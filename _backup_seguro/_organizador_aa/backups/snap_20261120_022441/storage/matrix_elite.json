@@ -1,0 +1,25 @@
+{
+    "historico_sucesso": [
+        {
+            "timestamp": "2026-06-18 18:44:54",
+            "perfil": {
+                "perfil_id": "ID_001_VISAGISMO",
+                "biometria": "completa",
+                "status": "normal"
+            },
+            "protocolo": "Protocolo_Padrao",
+            "satisfacao": "Alta"
+        },
+        {
+            "timestamp": "2026-06-18 18:59:26",
+            "perfil": {
+                "espectral": "verde",
+                "ambiente": "ok",
+                "vitalidade": "98",
+                "densidade": "ok"
+            },
+            "protocolo": "Protocolo_Padrao",
+            "satisfacao": "Alta"
+        }
+    ]
+}

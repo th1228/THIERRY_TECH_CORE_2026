@@ -1,0 +1,2 @@
+[2026-06-28 17:04:10] Verificação de integridade: OK (Sem alterações).
+[2026-06-30 07:40:30] Verificação de integridade: ALTERAÇÕES DETECTADAS.

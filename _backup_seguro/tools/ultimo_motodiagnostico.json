@@ -1,0 +1,47 @@
+{
+    "status": "sucesso",
+    "cabecalho_institucional": {
+        "instituicao": "Thierry Technology Concept Global",
+        "titulo_do_dossie": "Dossiê Setorial - Módulo MONACO",
+        "autoridade_tecnologica": "Thierry Concept Global"
+    },
+    "foco_analise": "Câmera Mônaco - Protocolo Supremo de Bio-Harmonia e Longevidade Global",
+    "resultados_tecnicos": {
+        "foco": "Câmera Mônaco - Protocolo Supremo de Bio-Harmonia e Longevidade Global",
+        "dados_esquerda": {
+            "HAIR_DENS_L": 142,
+            "HYDR_CAP_L": 0.93,
+            "ALOPEC_AL_L": 0.12,
+            "VISAG_SYM_L": 0.95,
+            "CELL_REG_L": 0.88,
+            "SKIN_REFL_L": 0.76,
+            "OXIM_MICRO_L": 0.94,
+            "NEURO_RESP_L": 0.92,
+            "DERM_HYDR_L": 0.91,
+            "POST_STAB_L": 0.85,
+            "FACIAL_SM_L": 0.92,
+            "EYE_FAT_L": 0.34,
+            "CART_STR_L": 0.94,
+            "MAND_PROP_L": 0.96
+        },
+        "dados_direita": {
+            "HAIR_DENS_R": 145,
+            "HYDR_CAP_R": 34.5,
+            "ALOPEC_AL_R": 0.1,
+            "VISAG_SYM_R": 31.5,
+            "CELL_REG_R": 22.8,
+            "SKIN_REFL_R": 74.2,
+            "OXIM_MICRO_R": 13.9,
+            "NEURO_RESP_R": 20.0,
+            "DERM_HYDR_R": 37.3,
+            "POST_STAB_R": 88.1,
+            "FACIAL_SM_R": 40.2,
+            "EYE_FAT_R": 38.9,
+            "CART_STR_R": 35.0,
+            "MAND_PROP_R": 33.4
+        }
+    },
+    "timestamp": "2026-08-31 23:15:41",
+    "modulo_selecionado": "monaco",
+    "idioma": "pt"
+}

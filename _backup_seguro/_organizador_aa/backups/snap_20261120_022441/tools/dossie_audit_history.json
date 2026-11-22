@@ -1,0 +1,3948 @@
+[
+    {
+        "timestamp": "2026-09-12 07:38:38",
+        "dias_de_jornada": 213,
+        "total_arquivos_fixados": 327,
+        "total_linhas_codigo": 41293,
+        "horas_ativas_estimadas": 7432.74,
+        "valuation_total": 5351572.8,
+        "arquivos_oficiais": {
+            "acao_mestre.py": {
+                "linhas": 99,
+                "ultima_modificacao": "2026-08-19 19:52:35"
+            },
+            "analizador_conectividade.py": {
+                "linhas": 29,
+                "ultima_modificacao": "2026-08-12 01:03:24"
+            },
+            "analizar_fluxo.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-09 22:16:47"
+            },
+            "api_server.py": {
+                "linhas": 102,
+                "ultima_modificacao": "2026-08-17 11:10:35"
+            },
+            "aplicador_correcao.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-07 01:32:18"
+            },
+            "app_executivo.py": {
+                "linhas": 288,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "arduino_bridge.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-17 16:43:28"
+            },
+            "auditoria_profunda.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-09 20:20:00"
+            },
+            "auditoria_sistema.py": {
+                "linhas": 100,
+                "ultima_modificacao": "2026-08-27 06:47:33"
+            },
+            "auditoria_total.py": {
+                "linhas": 44,
+                "ultima_modificacao": "2026-08-12 00:54:44"
+            },
+            "auditor_geral_ttc.py": {
+                "linhas": 22,
+                "ultima_modificacao": "2026-08-12 01:00:29"
+            },
+            "auditor_integridade_global.py": {
+                "linhas": 109,
+                "ultima_modificacao": "2026-09-05 00:29:06"
+            },
+            "biometria_resultado.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-08-10 19:07:04"
+            },
+            "camera_engine.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-10 18:50:55"
+            },
+            "carregador_automatico.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-08-27 07:10:59"
+            },
+            "checar_arquivos.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-26 23:47:49"
+            },
+            "checkout_ui.py": {
+                "linhas": 45,
+                "ultima_modificacao": "2026-08-17 16:59:16"
+            },
+            "config_pagamentos.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-20 21:12:24"
+            },
+            "dados_biometricos.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-08-10 10:28:22"
+            },
+            "db.manager.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "db_config.py": {
+                "linhas": 1,
+                "ultima_modificacao": "2026-08-13 23:40:43"
+            },
+            "db_init.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-14 00:42:11"
+            },
+            "debug_dossie.py": {
+                "linhas": 46,
+                "ultima_modificacao": "2026-08-22 07:49:57"
+            },
+            "diagnostico.py": {
+                "linhas": 42,
+                "ultima_modificacao": "2026-07-14 22:54:32"
+            },
+            "diagnostico_painel.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-09-02 22:13:42"
+            },
+            "diagnostico_pdf.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-09-07 18:46:22"
+            },
+            "dossie_final.json": {
+                "linhas": 5,
+                "ultima_modificacao": "2026-08-13 07:14:08"
+            },
+            "error_guard.py": {
+                "linhas": 90,
+                "ultima_modificacao": "2026-08-11 07:55:14"
+            },
+            "estado_sistema.json": {
+                "linhas": 640,
+                "ultima_modificacao": "2026-09-10 23:28:31"
+            },
+            "faxina_ttc.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-17 15:48:06"
+            },
+            "fix_imports.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "gerador_pitch_soberano.py": {
+                "linhas": 123,
+                "ultima_modificacao": "2026-09-07 15:52:59"
+            },
+            "gerar_son.py": {
+                "linhas": 226,
+                "ultima_modificacao": "2026-08-23 19:52:07"
+            },
+            "gui_main.py": {
+                "linhas": 293,
+                "ultima_modificacao": "2026-09-07 15:02:38"
+            },
+            "homologacao_global.py": {
+                "linhas": 156,
+                "ultima_modificacao": "2026-09-10 19:29:06"
+            },
+            "iniciar.py": {
+                "linhas": 19,
+                "ultima_modificacao": "2026-06-16 23:14:26"
+            },
+            "inspecionar_e_popular_memoria.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-09-10 22:46:54"
+            },
+            "interface_dashboard.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-12 08:23:13"
+            },
+            "inventario_global.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-27 19:19:20"
+            },
+            "inventario_sistema_executivo.py": {
+                "linhas": 27,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "laudo_Paciente_Padrao.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-07-07 23:57:02"
+            },
+            "laudo_Thierry_Cliente.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-07-05 23:55:25"
+            },
+            "licenca.py": {
+                "linhas": 144,
+                "ultima_modificacao": "2026-08-20 22:06:16"
+            },
+            "licenca_ativa.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-07 23:11:10"
+            },
+            "limpar_dossies.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-17 11:39:03"
+            },
+            "limpar_imports.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "limpar_todos_pdfs.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-17 11:44:18"
+            },
+            "limpeza_profissional.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "listar_status.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-14 01:06:56"
+            },
+            "loader_core.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "main.py": {
+                "linhas": 451,
+                "ultima_modificacao": "2026-09-12 01:28:00"
+            },
+            "main_diagostico.py": {
+                "linhas": 166,
+                "ultima_modificacao": "2026-08-23 23:58:11"
+            },
+            "mapa_de_correcao.py": {
+                "linhas": 43,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "mapeador_de_dependecias.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-09 21:08:04"
+            },
+            "memoria_comum_ttc.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-18 22:59:11"
+            },
+            "memoria_historica.json": {
+                "linhas": 1950,
+                "ultima_modificacao": "2026-09-07 16:14:29"
+            },
+            "monaco_ambiente.py": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-08-07 00:01:09"
+            },
+            "monaco_comunicacao.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-07-20 12:17:50"
+            },
+            "monaco_consciencia.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 22:34:18"
+            },
+            "monaco_eminencia.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-07-20 12:20:55"
+            },
+            "monaco_integrador.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-27 23:16:26"
+            },
+            "monaco_nucleo_acesso.py": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-07-20 12:22:57"
+            },
+            "monaco_plan.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-07-20 12:23:47"
+            },
+            "monaco_ressonancia.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-07-20 12:24:47"
+            },
+            "motor_biometrico_dados.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-07 00:29:08"
+            },
+            "organizador_sistema.py": {
+                "linhas": 37,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "painel_luxo.html": {
+                "linhas": 1259,
+                "ultima_modificacao": "2026-09-06 21:50:49"
+            },
+            "pyrightconfig.json": {
+                "linhas": 11,
+                "ultima_modificacao": "2026-08-07 00:04:54"
+            },
+            "python ler_memoria.py": {
+                "linhas": 71,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "rastreador_correcao.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-07 01:28:07"
+            },
+            "run_all.py": {
+                "linhas": 52,
+                "ultima_modificacao": "2026-08-06 23:53:27"
+            },
+            "scanner_busca.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-19 22:44:16"
+            },
+            "servidor_local.py": {
+                "linhas": 269,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "sessao.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-12 07:19:44"
+            },
+            "setup_seguranca.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-13 23:40:41"
+            },
+            "sovereign_auditor.py": {
+                "linhas": 98,
+                "ultima_modificacao": "2026-09-12 07:38:24"
+            },
+            "sovereign_gate.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-19 21:36:32"
+            },
+            "stress_teste.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-31 17:24:01"
+            },
+            "stripe_service.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-19 23:16:49"
+            },
+            "tempCodeRunnerFile.py": {
+                "linhas": 288,
+                "ultima_modificacao": "2026-09-07 22:26:04"
+            },
+            "testar_ataque.py": {
+                "linhas": 31,
+                "ultima_modificacao": "2026-08-25 21:23:25"
+            },
+            "testar_integracao_memoria.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-14 07:02:12"
+            },
+            "testar_logica.py": {
+                "linhas": 27,
+                "ultima_modificacao": "2026-08-23 17:20:16"
+            },
+            "testar_memoria.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-25 21:21:47"
+            },
+            "testar_motor.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-25 21:20:32"
+            },
+            "testar_sanitizer.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-14 00:09:44"
+            },
+            "testar_seguranca.py": {
+                "linhas": 40,
+                "ultima_modificacao": "2026-08-25 21:19:10"
+            },
+            "testar_vozes.py": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-26 19:36:40"
+            },
+            "teste_camera.py": {
+                "linhas": 373,
+                "ultima_modificacao": "2026-09-03 20:10:37"
+            },
+            "teste_integrado_global.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-09-10 19:13:54"
+            },
+            "teste_inteligencia.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-14 01:24:14"
+            },
+            "teste_orquestracao.py": {
+                "linhas": 30,
+                "ultima_modificacao": "2026-08-25 21:24:55"
+            },
+            "teste_seguranca.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-08-14 01:01:27"
+            },
+            "test_bridge.py": {
+                "linhas": 46,
+                "ultima_modificacao": "2026-08-25 21:05:10"
+            },
+            "test_consciencia.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-09-10 23:36:31"
+            },
+            "test_integrado.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-09-10 23:11:28"
+            },
+            "test_total_mestre.py": {
+                "linhas": 92,
+                "ultima_modificacao": "2026-09-10 23:18:29"
+            },
+            "traducoes_ttc.py": {
+                "linhas": 50,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "ultimo_motodiagnostico.json": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-31 23:15:41"
+            },
+            "verificador_nuvem - Copia.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "verificador_nuvem.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-09 19:58:33"
+            },
+            "verificar_camera.py": {
+                "linhas": 42,
+                "ultima_modificacao": "2026-09-03 21:05:46"
+            },
+            "verificar_caminhos.py": {
+                "linhas": 17,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "verificar_dependencias.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-09-10 19:32:12"
+            },
+            "verificar_integracao.py": {
+                "linhas": 54,
+                "ultima_modificacao": "2026-09-05 00:35:41"
+            },
+            "verificar_prontidao.py": {
+                "linhas": 50,
+                "ultima_modificacao": "2026-08-25 21:29:59"
+            },
+            "verificar_sistema.py": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "ver_memoria.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-07-23 20:15:37"
+            },
+            ".vscode\\settings.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-07-15 22:30:39"
+            },
+            "config\\paises\\AE.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:46:46"
+            },
+            "config\\paises\\BR.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:50:22"
+            },
+            "config\\paises\\CH.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:47:26"
+            },
+            "config\\paises\\DE.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:48:06"
+            },
+            "config\\paises\\FR.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:48:57"
+            },
+            "config\\paises\\KR.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-07-27 11:04:35"
+            },
+            "config\\paises\\MC.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:38:22"
+            },
+            "config\\paises\\QA.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:42:12"
+            },
+            "config\\paises\\SG.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:45:00"
+            },
+            "config\\paises\\UK.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:50:10"
+            },
+            "config\\paises\\US.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:44:01"
+            },
+            "core\\analise.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-27 21:54:13"
+            },
+            "core\\analise_cabelo.py": {
+                "linhas": 82,
+                "ultima_modificacao": "2026-08-27 21:58:22"
+            },
+            "core\\analise_colorimetria.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-08-27 21:57:04"
+            },
+            "core\\analise_rosto.py": {
+                "linhas": 79,
+                "ultima_modificacao": "2026-08-30 16:09:02"
+            },
+            "core\\atelie.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-09-07 16:04:05"
+            },
+            "core\\banco_dados.py": {
+                "linhas": 89,
+                "ultima_modificacao": "2026-08-27 21:51:54"
+            },
+            "core\\biblioteca_estilo.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 21:49:59"
+            },
+            "core\\biogemio_orquestrador.py": {
+                "linhas": 402,
+                "ultima_modificacao": "2026-09-07 16:13:37"
+            },
+            "core\\biogem_engine.py": {
+                "linhas": 350,
+                "ultima_modificacao": "2026-09-10 22:32:04"
+            },
+            "core\\biometria.py": {
+                "linhas": 98,
+                "ultima_modificacao": "2026-08-27 20:25:41"
+            },
+            "core\\camera_hub.py": {
+                "linhas": 75,
+                "ultima_modificacao": "2026-08-27 22:37:04"
+            },
+            "core\\carta_internacional_engine.py": {
+                "linhas": 108,
+                "ultima_modificacao": "2026-08-27 21:44:13"
+            },
+            "core\\coreia_engine.py": {
+                "linhas": 95,
+                "ultima_modificacao": "2026-08-27 21:40:02"
+            },
+            "core\\core_reconstrucao.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 21:43:00"
+            },
+            "core\\dashboard_global.py": {
+                "linhas": 75,
+                "ultima_modificacao": "2026-08-27 21:37:42"
+            },
+            "core\\detector_erros.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-27 21:36:51"
+            },
+            "core\\diagnostico_ante_gravidade_neural.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-27 21:35:16"
+            },
+            "core\\diagnostico_seguranca.py": {
+                "linhas": 79,
+                "ultima_modificacao": "2026-08-27 21:34:18"
+            },
+            "core\\engine.py": {
+                "linhas": 81,
+                "ultima_modificacao": "2026-09-05 00:35:41"
+            },
+            "core\\engine_scanner.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 21:32:53"
+            },
+            "core\\estado_sistema.json": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-09-10 22:47:10"
+            },
+            "core\\generator.py": {
+                "linhas": 70,
+                "ultima_modificacao": "2026-08-27 21:30:48"
+            },
+            "core\\geodefense.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-09-10 19:24:59"
+            },
+            "core\\gerador_faturamento.py": {
+                "linhas": 131,
+                "ultima_modificacao": "2026-08-27 21:29:20"
+            },
+            "core\\gerador_pdf.py": {
+                "linhas": 215,
+                "ultima_modificacao": "2026-09-10 21:57:21"
+            },
+            "core\\gerar_relatorio_roi_clinica.py": {
+                "linhas": 102,
+                "ultima_modificacao": "2026-09-10 20:58:26"
+            },
+            "core\\gerenciador_geografico.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 21:28:03"
+            },
+            "core\\gerenciador_global.py": {
+                "linhas": 78,
+                "ultima_modificacao": "2026-08-27 21:27:06"
+            },
+            "core\\gerenciador_hardware.py": {
+                "linhas": 92,
+                "ultima_modificacao": "2026-08-27 21:24:51"
+            },
+            "core\\global_state.py": {
+                "linhas": 29,
+                "ultima_modificacao": "2026-08-27 21:23:19"
+            },
+            "core\\integracao_google.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 21:21:41"
+            },
+            "core\\memoria_comum.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 22:43:15"
+            },
+            "core\\metrics.py": {
+                "linhas": 63,
+                "ultima_modificacao": "2026-08-27 21:20:23"
+            },
+            "core\\midi_listener.py": {
+                "linhas": 120,
+                "ultima_modificacao": "2026-08-27 21:18:52"
+            },
+            "core\\modulo_psiquico.py": {
+                "linhas": 101,
+                "ultima_modificacao": "2026-08-27 20:40:30"
+            },
+            "core\\motor_ambiental.py": {
+                "linhas": 74,
+                "ultima_modificacao": "2026-08-27 21:06:46"
+            },
+            "core\\motor_biometrico.py": {
+                "linhas": 134,
+                "ultima_modificacao": "2026-08-27 23:03:04"
+            },
+            "core\\motor_dados.py": {
+                "linhas": 77,
+                "ultima_modificacao": "2026-08-27 21:01:01"
+            },
+            "core\\motor_olhar_store.py": {
+                "linhas": 142,
+                "ultima_modificacao": "2026-08-27 21:03:57"
+            },
+            "core\\motor_performance.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 20:58:36"
+            },
+            "core\\motor_prognostico.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 20:57:36"
+            },
+            "core\\motor_regeneracao.py": {
+                "linhas": 96,
+                "ultima_modificacao": "2026-08-27 20:56:06"
+            },
+            "core\\motor_sincronia.py": {
+                "linhas": 72,
+                "ultima_modificacao": "2026-08-27 20:54:43"
+            },
+            "core\\neuro_gravidade_preditor.py": {
+                "linhas": 56,
+                "ultima_modificacao": "2026-08-27 20:52:55"
+            },
+            "core\\neuro_protocolos.py": {
+                "linhas": 78,
+                "ultima_modificacao": "2026-08-27 20:51:15"
+            },
+            "core\\osteometria_script.py": {
+                "linhas": 82,
+                "ultima_modificacao": "2026-08-27 20:49:51"
+            },
+            "core\\precificacao_motor.py": {
+                "linhas": 105,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\processador_inteligente.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\protocolo_logica.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\scanner_integrado.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\script_clima.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 20:17:02"
+            },
+            "core\\sensor_fadiga.py": {
+                "linhas": 85,
+                "ultima_modificacao": "2026-08-27 20:31:10"
+            },
+            "core\\sentinela_fisio.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\stress_core_engine.py": {
+                "linhas": 52,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\synapse_core.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tempCodeRunnerFile.py": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-09-07 16:04:17"
+            },
+            "core\\testae_portas.py": {
+                "linhas": 15,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\test_modulos.py": {
+                "linhas": 30,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tradutor.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tricologia_disruptiva_engine.py": {
+                "linhas": 143,
+                "ultima_modificacao": "2026-08-30 08:49:20"
+            },
+            "core\\validador_licenca.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-09-10 19:43:29"
+            },
+            "core\\validador_sistema.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\verificar_banco.py": {
+                "linhas": 37,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\viasualizador_visagista.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\voz_motor.py": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-08-30 16:18:32"
+            },
+            "core\\historico_dossies\\dossie_DESCONHECIDO_20260810_104728.json": {
+                "linhas": 231,
+                "ultima_modificacao": "2026-08-10 10:47:28"
+            },
+            "core\\historico_dossies\\dossie_josé_20260810_105430.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 10:54:30"
+            },
+            "core\\historico_dossies\\dossie_thierry_20260810_105238.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 10:52:38"
+            },
+            "core\\pdfs_finais\\dossie_oficial.html": {
+                "linhas": 97,
+                "ultima_modificacao": "2026-09-07 16:14:15"
+            },
+            "Dado\\Config\\master_audit_ledger_profundo.json": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-09-10 07:50:17"
+            },
+            "dados\\estado_atual.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "database\\db_manager.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-14 00:45:00"
+            },
+            "defesa_ativa\\blacklist.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-07-05 15:40:20"
+            },
+            "defesa_ativa\\blindagem.py": {
+                "linhas": 34,
+                "ultima_modificacao": "2026-07-16 20:38:36"
+            },
+            "defesa_ativa\\detector.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "defesa_ativa\\honeypot.py": {
+                "linhas": 34,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "dossies_gerados\\dossie_cliente_não_identificado.json": {
+                "linhas": 44,
+                "ultima_modificacao": "2026-08-24 07:00:08"
+            },
+            "dossies_gerados\\dossie_thierry.json": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-23 23:02:17"
+            },
+            "historico_dossies\\dossie_h_20260812_221646.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:16:46"
+            },
+            "historico_dossies\\dossie_joao_20260810_164351.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 16:43:51"
+            },
+            "historico_dossies\\dossie_jose_20260810_110808.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 11:08:08"
+            },
+            "historico_dossies\\dossie_jose_20260810_164045.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:40:45"
+            },
+            "historico_dossies\\dossie_jose_20260810_165151.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:51:51"
+            },
+            "historico_dossies\\dossie_jose_20260812_222636.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:26:36"
+            },
+            "historico_dossies\\dossie_k_20260810_170037.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:00:37"
+            },
+            "historico_dossies\\dossie_k_20260810_171735.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:17:35"
+            },
+            "historico_dossies\\dossie_k_20260810_172619.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:26:19"
+            },
+            "historico_dossies\\dossie_l_20260810_170427.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:04:27"
+            },
+            "historico_dossies\\dossie_l_20260810_171422.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:14:22"
+            },
+            "historico_dossies\\dossie_l_20260810_172149.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:21:49"
+            },
+            "historico_dossies\\dossie_l_20260810_172237.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:22:37"
+            },
+            "historico_dossies\\dossie_l_20260810_173700.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 17:37:00"
+            },
+            "historico_dossies\\dossie_l_20260812_221757.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:17:57"
+            },
+            "historico_dossies\\dossie_l_20260812_233926.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 23:39:26"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_154211.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:42:11"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_162307.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:23:07"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_214822.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:48:22"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_215619.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:56:19"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_220325.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:03:25"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_225020.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:50:20"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260811_212351.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:23:51"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_154139.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:41:39"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_162237.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:22:37"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_163313.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:33:13"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_211649.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:16:49"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_213859.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:38:59"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_214752.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:47:52"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_214930.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:49:30"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_215538.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:55:38"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_220252.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:02:52"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260811_212312.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:23:12"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_154245.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:42:45"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_215654.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:56:54"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_220401.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:04:01"
+            },
+            "historico_dossies\\dossie_Paciente_monaco_20260812_000838.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:08:38"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_154100.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:41:00"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_160650.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:06:50"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_161433.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:14:33"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_162210.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:22:10"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_162346.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:23:46"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_163223.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:32:23"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_193704.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:37:04"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_200106.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:01:06"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_203825.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:38:26"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_205607.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:56:07"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_205856.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:58:56"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_211557.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:15:57"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_213640.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:36:40"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_214646.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:46:46"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_214719.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:47:19"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_215452.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:54:52"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_220209.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:02:09"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_221133.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:11:33"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_221450.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:14:50"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_224853.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:48:53"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_225441.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:54:41"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_204552.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 20:45:52"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_205348.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 20:53:48"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_210120.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:01:20"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_210740.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:07:40"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_211320.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:13:20"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_212045.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:20:45"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_212221.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:22:21"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_221006.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 22:10:06"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_000013.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:00:13"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_000654.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:06:54"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_011545.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 01:15:45"
+            },
+            "historico_dossies\\dossie_pedro_20260810_153050.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:30:50"
+            },
+            "historico_dossies\\dossie_pedro_20260810_164455.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 16:44:55"
+            },
+            "historico_dossies\\dossie_p_20260810_165607.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:56:07"
+            },
+            "historico_dossies\\dossie_th_20260810_170320.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:03:20"
+            },
+            "historico_dossies\\dossie_th_20260810_191145.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 19:11:45"
+            },
+            "historico_dossies\\dossie_th_20260810_192958.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:29:58"
+            },
+            "historico_dossies\\dossie_t_20260810_165230.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:52:30"
+            },
+            "historico_dossies\\dossie_t_20260810_171040.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:10:40"
+            },
+            "historico_dossies\\dossie_t_20260810_193507.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:35:07"
+            },
+            "historico_dossies\\dossie_~ççç_20260810_172739.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:27:39"
+            },
+            "neural_core\\neural_visage_engine.py": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "PERICIA_DESCO\\cliente_thierry_16-05-2026.py": {
+                "linhas": 185,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "PERICIA_DESCO\\04_luxury_reports\\pdf leitor.py": {
+                "linhas": 95,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "security\\anti_reverse.py": {
+                "linhas": 63,
+                "ultima_modificacao": "2026-08-07 20:08:22"
+            },
+            "security\\auditoria_total_profundo.py": {
+                "linhas": 121,
+                "ultima_modificacao": "2026-09-10 07:50:14"
+            },
+            "security\\audit_ledger.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:39:41"
+            },
+            "security\\autodestruicao.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-08-07 23:19:32"
+            },
+            "security\\BehaviorMonitor.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-14 07:17:41"
+            },
+            "security\\biometric_validator.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-07 20:07:29"
+            },
+            "security\\confidential_compute.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-08-07 19:30:13"
+            },
+            "security\\crypto_engine.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-07 20:06:26"
+            },
+            "security\\data_anonymizer.py": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-08-13 23:52:53"
+            },
+            "security\\data_masking.py": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-14 07:44:38"
+            },
+            "security\\email_service.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-11 22:34:09"
+            },
+            "security\\ephemeral.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-16 23:47:55"
+            },
+            "security\\geo_defense.py": {
+                "linhas": 107,
+                "ultima_modificacao": "2026-08-18 18:59:13"
+            },
+            "security\\homomorphic_biometrics.py": {
+                "linhas": 58,
+                "ultima_modificacao": "2026-08-07 19:28:03"
+            },
+            "security\\input_sanitizer.py": {
+                "linhas": 41,
+                "ultima_modificacao": "2026-08-14 00:58:21"
+            },
+            "security\\integrit_verifier.py": {
+                "linhas": 22,
+                "ultima_modificacao": "2026-08-13 23:26:21"
+            },
+            "security\\log_seguro.py": {
+                "linhas": 88,
+                "ultima_modificacao": "2026-08-13 23:44:23"
+            },
+            "security\\network_shield.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-07 20:09:17"
+            },
+            "security\\nonce_cache.py": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-08-14 01:09:30"
+            },
+            "security\\policyEngine.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-14 07:30:39"
+            },
+            "security\\portaria.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-08-28 08:35:43"
+            },
+            "security\\pqc_engine.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-07 19:32:57"
+            },
+            "security\\Ratelimiting.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-14 07:14:22"
+            },
+            "security\\sandbox_executor.py": {
+                "linhas": 13,
+                "ultima_modificacao": "2026-08-13 23:55:40"
+            },
+            "security\\schemas.py": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-08-07 19:44:54"
+            },
+            "security\\session_manager.py": {
+                "linhas": 38,
+                "ultima_modificacao": "2026-08-14 00:20:13"
+            },
+            "security\\system_shield.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:41:02"
+            },
+            "security\\threat_intel.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:37:44"
+            },
+            "security\\token_blacklist.py": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-13 23:54:13"
+            },
+            "security\\zero_trust_governor.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:38:38"
+            },
+            "security\\__init__.py": {
+                "linhas": 13,
+                "ultima_modificacao": "2026-08-07 20:16:17"
+            },
+            "security\\core\\processamento_camera.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "security\\core\\ultimo_motodiagnostico.json": {
+                "linhas": 0,
+                "ultima_modificacao": "2026-08-23 19:56:26"
+            },
+            "storage\\laudo_Jose.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-06-29 10:43:58"
+            },
+            "storage\\laudo_Paciente_Teste.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-06-29 10:55:47"
+            },
+            "storage\\laudo_th.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-06-29 21:44:02"
+            },
+            "storage\\matrix_elite.json": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-06-18 18:59:26"
+            },
+            "storage\\memoria_sessao.json": {
+                "linhas": 93,
+                "ultima_modificacao": "2026-08-09 20:47:10"
+            },
+            "storage\\registro_capilar.json": {
+                "linhas": 1,
+                "ultima_modificacao": "2026-06-28 19:52:36"
+            },
+            "storage\\ultimo_diagnostico.json": {
+                "linhas": 4,
+                "ultima_modificacao": "2026-06-08 12:20:58"
+            },
+            "STORAGE_DATA\\config_sistema.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-07-05 15:58:04"
+            },
+            "templates\\dossie_global.html": {
+                "linhas": 1062,
+                "ultima_modificacao": "2026-09-12 02:20:24"
+            },
+            "templates\\painel_web.html": {
+                "linhas": 1076,
+                "ultima_modificacao": "2026-09-10 01:32:33"
+            },
+            "testes_temp\\teste_cameras.py": {
+                "linhas": 31,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "testes_temp\\teste_sistema.py": {
+                "linhas": 72,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "thierry_global_os\\interface_layout.py": {
+                "linhas": 116,
+                "ultima_modificacao": "2026-08-12 07:08:35"
+            },
+            "thierry_global_os\\teste_isolado.py": {
+                "linhas": 19,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            }
+        }
+    },
+    {
+        "timestamp": "2026-09-12 07:47:37",
+        "dias_de_jornada": 213,
+        "total_arquivos_fixados": 326,
+        "total_linhas_codigo": 41313,
+        "horas_ativas_estimadas": 7436.34,
+        "valuation_total": 5354164.8,
+        "arquivos_oficiais": {
+            "acao_mestre.py": {
+                "linhas": 99,
+                "ultima_modificacao": "2026-08-19 19:52:35"
+            },
+            "analizador_conectividade.py": {
+                "linhas": 29,
+                "ultima_modificacao": "2026-08-12 01:03:24"
+            },
+            "analizar_fluxo.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-09 22:16:47"
+            },
+            "api_server.py": {
+                "linhas": 102,
+                "ultima_modificacao": "2026-08-17 11:10:35"
+            },
+            "aplicador_correcao.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-07 01:32:18"
+            },
+            "app_executivo.py": {
+                "linhas": 288,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "arduino_bridge.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-17 16:43:28"
+            },
+            "auditoria_profunda.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-09 20:20:00"
+            },
+            "auditoria_sistema.py": {
+                "linhas": 100,
+                "ultima_modificacao": "2026-08-27 06:47:33"
+            },
+            "auditoria_total.py": {
+                "linhas": 44,
+                "ultima_modificacao": "2026-08-12 00:54:44"
+            },
+            "auditor_geral_ttc.py": {
+                "linhas": 22,
+                "ultima_modificacao": "2026-08-12 01:00:29"
+            },
+            "auditor_integridade_global.py": {
+                "linhas": 109,
+                "ultima_modificacao": "2026-09-05 00:29:06"
+            },
+            "biometria_resultado.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-08-10 19:07:04"
+            },
+            "camera_engine.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-10 18:50:55"
+            },
+            "carregador_automatico.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-08-27 07:10:59"
+            },
+            "checar_arquivos.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-26 23:47:49"
+            },
+            "checkout_ui.py": {
+                "linhas": 45,
+                "ultima_modificacao": "2026-08-17 16:59:16"
+            },
+            "config_pagamentos.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-20 21:12:24"
+            },
+            "dados_biometricos.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-08-10 10:28:22"
+            },
+            "db.manager.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "db_config.py": {
+                "linhas": 1,
+                "ultima_modificacao": "2026-08-13 23:40:43"
+            },
+            "db_init.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-14 00:42:11"
+            },
+            "debug_dossie.py": {
+                "linhas": 46,
+                "ultima_modificacao": "2026-08-22 07:49:57"
+            },
+            "diagnostico.py": {
+                "linhas": 42,
+                "ultima_modificacao": "2026-07-14 22:54:32"
+            },
+            "diagnostico_painel.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-09-02 22:13:42"
+            },
+            "diagnostico_pdf.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-09-07 18:46:22"
+            },
+            "dossie_final.json": {
+                "linhas": 5,
+                "ultima_modificacao": "2026-08-13 07:14:08"
+            },
+            "error_guard.py": {
+                "linhas": 90,
+                "ultima_modificacao": "2026-08-11 07:55:14"
+            },
+            "estado_sistema.json": {
+                "linhas": 640,
+                "ultima_modificacao": "2026-09-10 23:28:31"
+            },
+            "faxina_ttc.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-17 15:48:06"
+            },
+            "fix_imports.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "gerador_pitch_soberano.py": {
+                "linhas": 123,
+                "ultima_modificacao": "2026-09-07 15:52:59"
+            },
+            "gerar_son.py": {
+                "linhas": 226,
+                "ultima_modificacao": "2026-08-23 19:52:07"
+            },
+            "gui_main.py": {
+                "linhas": 293,
+                "ultima_modificacao": "2026-09-07 15:02:38"
+            },
+            "homologacao_global.py": {
+                "linhas": 156,
+                "ultima_modificacao": "2026-09-10 19:29:06"
+            },
+            "iniciar.py": {
+                "linhas": 19,
+                "ultima_modificacao": "2026-06-16 23:14:26"
+            },
+            "inspecionar_e_popular_memoria.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-09-10 22:46:54"
+            },
+            "interface_dashboard.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-12 08:23:13"
+            },
+            "inventario_global.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-27 19:19:20"
+            },
+            "inventario_sistema_executivo.py": {
+                "linhas": 27,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "laudo_Paciente_Padrao.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-07-07 23:57:02"
+            },
+            "laudo_Thierry_Cliente.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-07-05 23:55:25"
+            },
+            "licenca.py": {
+                "linhas": 144,
+                "ultima_modificacao": "2026-08-20 22:06:16"
+            },
+            "licenca_ativa.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-07 23:11:10"
+            },
+            "limpar_dossies.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-17 11:39:03"
+            },
+            "limpar_imports.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "limpar_todos_pdfs.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-17 11:44:18"
+            },
+            "limpeza_profissional.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "listar_status.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-14 01:06:56"
+            },
+            "loader_core.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "main.py": {
+                "linhas": 451,
+                "ultima_modificacao": "2026-09-12 01:28:00"
+            },
+            "main_diagostico.py": {
+                "linhas": 166,
+                "ultima_modificacao": "2026-08-23 23:58:11"
+            },
+            "mapa_de_correcao.py": {
+                "linhas": 43,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "mapeador_de_dependecias.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-09 21:08:04"
+            },
+            "memoria_comum_ttc.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-18 22:59:11"
+            },
+            "memoria_historica.json": {
+                "linhas": 1950,
+                "ultima_modificacao": "2026-09-07 16:14:29"
+            },
+            "monaco_ambiente.py": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-08-07 00:01:09"
+            },
+            "monaco_comunicacao.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-07-20 12:17:50"
+            },
+            "monaco_consciencia.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 22:34:18"
+            },
+            "monaco_eminencia.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-07-20 12:20:55"
+            },
+            "monaco_integrador.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-27 23:16:26"
+            },
+            "monaco_nucleo_acesso.py": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-07-20 12:22:57"
+            },
+            "monaco_plan.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-07-20 12:23:47"
+            },
+            "monaco_ressonancia.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-07-20 12:24:47"
+            },
+            "motor_biometrico_dados.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-07 00:29:08"
+            },
+            "organizador_sistema.py": {
+                "linhas": 37,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "painel_luxo.html": {
+                "linhas": 1259,
+                "ultima_modificacao": "2026-09-06 21:50:49"
+            },
+            "pyrightconfig.json": {
+                "linhas": 11,
+                "ultima_modificacao": "2026-08-07 00:04:54"
+            },
+            "python ler_memoria.py": {
+                "linhas": 71,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "rastreador_correcao.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-07 01:28:07"
+            },
+            "run_all.py": {
+                "linhas": 52,
+                "ultima_modificacao": "2026-08-06 23:53:27"
+            },
+            "scanner_busca.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-19 22:44:16"
+            },
+            "servidor_local.py": {
+                "linhas": 269,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "sessao.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-12 07:19:44"
+            },
+            "setup_seguranca.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-13 23:40:41"
+            },
+            "sovereign_auditor.py": {
+                "linhas": 121,
+                "ultima_modificacao": "2026-09-12 07:47:33"
+            },
+            "sovereign_gate.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-19 21:36:32"
+            },
+            "stress_teste.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-31 17:24:01"
+            },
+            "stripe_service.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-19 23:16:49"
+            },
+            "tempCodeRunnerFile.py": {
+                "linhas": 288,
+                "ultima_modificacao": "2026-09-07 22:26:04"
+            },
+            "testar_ataque.py": {
+                "linhas": 31,
+                "ultima_modificacao": "2026-08-25 21:23:25"
+            },
+            "testar_integracao_memoria.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-14 07:02:12"
+            },
+            "testar_logica.py": {
+                "linhas": 27,
+                "ultima_modificacao": "2026-08-23 17:20:16"
+            },
+            "testar_memoria.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-25 21:21:47"
+            },
+            "testar_motor.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-25 21:20:32"
+            },
+            "testar_sanitizer.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-14 00:09:44"
+            },
+            "testar_seguranca.py": {
+                "linhas": 40,
+                "ultima_modificacao": "2026-08-25 21:19:10"
+            },
+            "testar_vozes.py": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-26 19:36:40"
+            },
+            "teste_camera.py": {
+                "linhas": 373,
+                "ultima_modificacao": "2026-09-03 20:10:37"
+            },
+            "teste_integrado_global.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-09-10 19:13:54"
+            },
+            "teste_inteligencia.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-14 01:24:14"
+            },
+            "teste_orquestracao.py": {
+                "linhas": 30,
+                "ultima_modificacao": "2026-08-25 21:24:55"
+            },
+            "teste_seguranca.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-08-14 01:01:27"
+            },
+            "test_bridge.py": {
+                "linhas": 46,
+                "ultima_modificacao": "2026-08-25 21:05:10"
+            },
+            "test_consciencia.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-09-12 07:46:17"
+            },
+            "test_integrado.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-09-10 23:11:28"
+            },
+            "test_total_mestre.py": {
+                "linhas": 92,
+                "ultima_modificacao": "2026-09-10 23:18:29"
+            },
+            "traducoes_ttc.py": {
+                "linhas": 50,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "ultimo_motodiagnostico.json": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-31 23:15:41"
+            },
+            "verificador_nuvem - Copia.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "verificador_nuvem.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-09 19:58:33"
+            },
+            "verificar_camera.py": {
+                "linhas": 42,
+                "ultima_modificacao": "2026-09-03 21:05:46"
+            },
+            "verificar_caminhos.py": {
+                "linhas": 17,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "verificar_dependencias.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-09-10 19:32:12"
+            },
+            "verificar_integracao.py": {
+                "linhas": 54,
+                "ultima_modificacao": "2026-09-05 00:35:41"
+            },
+            "verificar_prontidao.py": {
+                "linhas": 50,
+                "ultima_modificacao": "2026-08-25 21:29:59"
+            },
+            "verificar_sistema.py": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "ver_memoria.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-07-23 20:15:37"
+            },
+            "config\\paises\\AE.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:46:46"
+            },
+            "config\\paises\\BR.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:50:22"
+            },
+            "config\\paises\\CH.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:47:26"
+            },
+            "config\\paises\\DE.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:48:06"
+            },
+            "config\\paises\\FR.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:48:57"
+            },
+            "config\\paises\\KR.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-07-27 11:04:35"
+            },
+            "config\\paises\\MC.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:38:22"
+            },
+            "config\\paises\\QA.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:42:12"
+            },
+            "config\\paises\\SG.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:45:00"
+            },
+            "config\\paises\\UK.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:50:10"
+            },
+            "config\\paises\\US.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:44:01"
+            },
+            "core\\analise.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-27 21:54:13"
+            },
+            "core\\analise_cabelo.py": {
+                "linhas": 82,
+                "ultima_modificacao": "2026-08-27 21:58:22"
+            },
+            "core\\analise_colorimetria.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-08-27 21:57:04"
+            },
+            "core\\analise_rosto.py": {
+                "linhas": 79,
+                "ultima_modificacao": "2026-08-30 16:09:02"
+            },
+            "core\\atelie.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-09-07 16:04:05"
+            },
+            "core\\banco_dados.py": {
+                "linhas": 89,
+                "ultima_modificacao": "2026-08-27 21:51:54"
+            },
+            "core\\biblioteca_estilo.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 21:49:59"
+            },
+            "core\\biogemio_orquestrador.py": {
+                "linhas": 402,
+                "ultima_modificacao": "2026-09-07 16:13:37"
+            },
+            "core\\biogem_engine.py": {
+                "linhas": 350,
+                "ultima_modificacao": "2026-09-10 22:32:04"
+            },
+            "core\\biometria.py": {
+                "linhas": 98,
+                "ultima_modificacao": "2026-08-27 20:25:41"
+            },
+            "core\\camera_hub.py": {
+                "linhas": 75,
+                "ultima_modificacao": "2026-08-27 22:37:04"
+            },
+            "core\\carta_internacional_engine.py": {
+                "linhas": 108,
+                "ultima_modificacao": "2026-08-27 21:44:13"
+            },
+            "core\\coreia_engine.py": {
+                "linhas": 95,
+                "ultima_modificacao": "2026-08-27 21:40:02"
+            },
+            "core\\core_reconstrucao.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 21:43:00"
+            },
+            "core\\dashboard_global.py": {
+                "linhas": 75,
+                "ultima_modificacao": "2026-08-27 21:37:42"
+            },
+            "core\\detector_erros.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-27 21:36:51"
+            },
+            "core\\diagnostico_ante_gravidade_neural.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-27 21:35:16"
+            },
+            "core\\diagnostico_seguranca.py": {
+                "linhas": 79,
+                "ultima_modificacao": "2026-08-27 21:34:18"
+            },
+            "core\\engine.py": {
+                "linhas": 81,
+                "ultima_modificacao": "2026-09-05 00:35:41"
+            },
+            "core\\engine_scanner.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 21:32:53"
+            },
+            "core\\estado_sistema.json": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-09-10 22:47:10"
+            },
+            "core\\generator.py": {
+                "linhas": 70,
+                "ultima_modificacao": "2026-08-27 21:30:48"
+            },
+            "core\\geodefense.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-09-10 19:24:59"
+            },
+            "core\\gerador_faturamento.py": {
+                "linhas": 131,
+                "ultima_modificacao": "2026-08-27 21:29:20"
+            },
+            "core\\gerador_pdf.py": {
+                "linhas": 215,
+                "ultima_modificacao": "2026-09-10 21:57:21"
+            },
+            "core\\gerar_relatorio_roi_clinica.py": {
+                "linhas": 102,
+                "ultima_modificacao": "2026-09-10 20:58:26"
+            },
+            "core\\gerenciador_geografico.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 21:28:03"
+            },
+            "core\\gerenciador_global.py": {
+                "linhas": 78,
+                "ultima_modificacao": "2026-08-27 21:27:06"
+            },
+            "core\\gerenciador_hardware.py": {
+                "linhas": 92,
+                "ultima_modificacao": "2026-08-27 21:24:51"
+            },
+            "core\\global_state.py": {
+                "linhas": 29,
+                "ultima_modificacao": "2026-08-27 21:23:19"
+            },
+            "core\\integracao_google.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 21:21:41"
+            },
+            "core\\memoria_comum.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 22:43:15"
+            },
+            "core\\metrics.py": {
+                "linhas": 63,
+                "ultima_modificacao": "2026-08-27 21:20:23"
+            },
+            "core\\midi_listener.py": {
+                "linhas": 120,
+                "ultima_modificacao": "2026-08-27 21:18:52"
+            },
+            "core\\modulo_psiquico.py": {
+                "linhas": 101,
+                "ultima_modificacao": "2026-08-27 20:40:30"
+            },
+            "core\\motor_ambiental.py": {
+                "linhas": 74,
+                "ultima_modificacao": "2026-08-27 21:06:46"
+            },
+            "core\\motor_biometrico.py": {
+                "linhas": 134,
+                "ultima_modificacao": "2026-08-27 23:03:04"
+            },
+            "core\\motor_dados.py": {
+                "linhas": 77,
+                "ultima_modificacao": "2026-08-27 21:01:01"
+            },
+            "core\\motor_olhar_store.py": {
+                "linhas": 142,
+                "ultima_modificacao": "2026-08-27 21:03:57"
+            },
+            "core\\motor_performance.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 20:58:36"
+            },
+            "core\\motor_prognostico.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 20:57:36"
+            },
+            "core\\motor_regeneracao.py": {
+                "linhas": 96,
+                "ultima_modificacao": "2026-08-27 20:56:06"
+            },
+            "core\\motor_sincronia.py": {
+                "linhas": 72,
+                "ultima_modificacao": "2026-08-27 20:54:43"
+            },
+            "core\\neuro_gravidade_preditor.py": {
+                "linhas": 56,
+                "ultima_modificacao": "2026-08-27 20:52:55"
+            },
+            "core\\neuro_protocolos.py": {
+                "linhas": 78,
+                "ultima_modificacao": "2026-08-27 20:51:15"
+            },
+            "core\\osteometria_script.py": {
+                "linhas": 82,
+                "ultima_modificacao": "2026-08-27 20:49:51"
+            },
+            "core\\precificacao_motor.py": {
+                "linhas": 105,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\processador_inteligente.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\protocolo_logica.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\scanner_integrado.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\script_clima.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 20:17:02"
+            },
+            "core\\sensor_fadiga.py": {
+                "linhas": 85,
+                "ultima_modificacao": "2026-08-27 20:31:10"
+            },
+            "core\\sentinela_fisio.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\stress_core_engine.py": {
+                "linhas": 52,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\synapse_core.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tempCodeRunnerFile.py": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-09-07 16:04:17"
+            },
+            "core\\testae_portas.py": {
+                "linhas": 15,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\test_modulos.py": {
+                "linhas": 30,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tradutor.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tricologia_disruptiva_engine.py": {
+                "linhas": 143,
+                "ultima_modificacao": "2026-08-30 08:49:20"
+            },
+            "core\\validador_licenca.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-09-10 19:43:29"
+            },
+            "core\\validador_sistema.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\verificar_banco.py": {
+                "linhas": 37,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\viasualizador_visagista.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\voz_motor.py": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-08-30 16:18:32"
+            },
+            "core\\historico_dossies\\dossie_DESCONHECIDO_20260810_104728.json": {
+                "linhas": 231,
+                "ultima_modificacao": "2026-08-10 10:47:28"
+            },
+            "core\\historico_dossies\\dossie_josé_20260810_105430.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 10:54:30"
+            },
+            "core\\historico_dossies\\dossie_thierry_20260810_105238.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 10:52:38"
+            },
+            "core\\pdfs_finais\\dossie_oficial.html": {
+                "linhas": 97,
+                "ultima_modificacao": "2026-09-07 16:14:15"
+            },
+            "Dado\\Config\\master_audit_ledger_profundo.json": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-09-10 07:50:17"
+            },
+            "dados\\estado_atual.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "database\\db_manager.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-14 00:45:00"
+            },
+            "defesa_ativa\\blacklist.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-07-05 15:40:20"
+            },
+            "defesa_ativa\\blindagem.py": {
+                "linhas": 34,
+                "ultima_modificacao": "2026-07-16 20:38:36"
+            },
+            "defesa_ativa\\detector.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "defesa_ativa\\honeypot.py": {
+                "linhas": 34,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "dossies_gerados\\dossie_cliente_não_identificado.json": {
+                "linhas": 44,
+                "ultima_modificacao": "2026-08-24 07:00:08"
+            },
+            "dossies_gerados\\dossie_thierry.json": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-23 23:02:17"
+            },
+            "historico_dossies\\dossie_h_20260812_221646.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:16:46"
+            },
+            "historico_dossies\\dossie_joao_20260810_164351.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 16:43:51"
+            },
+            "historico_dossies\\dossie_jose_20260810_110808.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 11:08:08"
+            },
+            "historico_dossies\\dossie_jose_20260810_164045.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:40:45"
+            },
+            "historico_dossies\\dossie_jose_20260810_165151.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:51:51"
+            },
+            "historico_dossies\\dossie_jose_20260812_222636.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:26:36"
+            },
+            "historico_dossies\\dossie_k_20260810_170037.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:00:37"
+            },
+            "historico_dossies\\dossie_k_20260810_171735.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:17:35"
+            },
+            "historico_dossies\\dossie_k_20260810_172619.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:26:19"
+            },
+            "historico_dossies\\dossie_l_20260810_170427.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:04:27"
+            },
+            "historico_dossies\\dossie_l_20260810_171422.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:14:22"
+            },
+            "historico_dossies\\dossie_l_20260810_172149.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:21:49"
+            },
+            "historico_dossies\\dossie_l_20260810_172237.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:22:37"
+            },
+            "historico_dossies\\dossie_l_20260810_173700.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 17:37:00"
+            },
+            "historico_dossies\\dossie_l_20260812_221757.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:17:57"
+            },
+            "historico_dossies\\dossie_l_20260812_233926.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 23:39:26"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_154211.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:42:11"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_162307.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:23:07"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_214822.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:48:22"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_215619.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:56:19"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_220325.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:03:25"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_225020.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:50:20"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260811_212351.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:23:51"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_154139.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:41:39"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_162237.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:22:37"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_163313.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:33:13"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_211649.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:16:49"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_213859.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:38:59"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_214752.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:47:52"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_214930.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:49:30"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_215538.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:55:38"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_220252.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:02:52"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260811_212312.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:23:12"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_154245.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:42:45"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_215654.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:56:54"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_220401.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:04:01"
+            },
+            "historico_dossies\\dossie_Paciente_monaco_20260812_000838.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:08:38"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_154100.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:41:00"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_160650.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:06:50"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_161433.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:14:33"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_162210.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:22:10"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_162346.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:23:46"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_163223.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:32:23"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_193704.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:37:04"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_200106.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:01:06"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_203825.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:38:26"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_205607.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:56:07"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_205856.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:58:56"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_211557.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:15:57"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_213640.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:36:40"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_214646.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:46:46"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_214719.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:47:19"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_215452.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:54:52"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_220209.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:02:09"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_221133.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:11:33"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_221450.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:14:50"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_224853.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:48:53"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_225441.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:54:41"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_204552.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 20:45:52"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_205348.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 20:53:48"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_210120.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:01:20"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_210740.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:07:40"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_211320.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:13:20"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_212045.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:20:45"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_212221.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:22:21"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_221006.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 22:10:06"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_000013.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:00:13"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_000654.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:06:54"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_011545.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 01:15:45"
+            },
+            "historico_dossies\\dossie_pedro_20260810_153050.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:30:50"
+            },
+            "historico_dossies\\dossie_pedro_20260810_164455.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 16:44:55"
+            },
+            "historico_dossies\\dossie_p_20260810_165607.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:56:07"
+            },
+            "historico_dossies\\dossie_th_20260810_170320.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:03:20"
+            },
+            "historico_dossies\\dossie_th_20260810_191145.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 19:11:45"
+            },
+            "historico_dossies\\dossie_th_20260810_192958.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:29:58"
+            },
+            "historico_dossies\\dossie_t_20260810_165230.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:52:30"
+            },
+            "historico_dossies\\dossie_t_20260810_171040.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:10:40"
+            },
+            "historico_dossies\\dossie_t_20260810_193507.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:35:07"
+            },
+            "historico_dossies\\dossie_~ççç_20260810_172739.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:27:39"
+            },
+            "neural_core\\neural_visage_engine.py": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "PERICIA_DESCO\\cliente_thierry_16-05-2026.py": {
+                "linhas": 185,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "PERICIA_DESCO\\04_luxury_reports\\pdf leitor.py": {
+                "linhas": 95,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "security\\anti_reverse.py": {
+                "linhas": 63,
+                "ultima_modificacao": "2026-08-07 20:08:22"
+            },
+            "security\\auditoria_total_profundo.py": {
+                "linhas": 121,
+                "ultima_modificacao": "2026-09-10 07:50:14"
+            },
+            "security\\audit_ledger.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:39:41"
+            },
+            "security\\autodestruicao.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-08-07 23:19:32"
+            },
+            "security\\BehaviorMonitor.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-14 07:17:41"
+            },
+            "security\\biometric_validator.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-07 20:07:29"
+            },
+            "security\\confidential_compute.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-08-07 19:30:13"
+            },
+            "security\\crypto_engine.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-07 20:06:26"
+            },
+            "security\\data_anonymizer.py": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-08-13 23:52:53"
+            },
+            "security\\data_masking.py": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-14 07:44:38"
+            },
+            "security\\email_service.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-11 22:34:09"
+            },
+            "security\\ephemeral.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-16 23:47:55"
+            },
+            "security\\geo_defense.py": {
+                "linhas": 107,
+                "ultima_modificacao": "2026-08-18 18:59:13"
+            },
+            "security\\homomorphic_biometrics.py": {
+                "linhas": 58,
+                "ultima_modificacao": "2026-08-07 19:28:03"
+            },
+            "security\\input_sanitizer.py": {
+                "linhas": 41,
+                "ultima_modificacao": "2026-08-14 00:58:21"
+            },
+            "security\\integrit_verifier.py": {
+                "linhas": 22,
+                "ultima_modificacao": "2026-08-13 23:26:21"
+            },
+            "security\\log_seguro.py": {
+                "linhas": 88,
+                "ultima_modificacao": "2026-08-13 23:44:23"
+            },
+            "security\\network_shield.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-07 20:09:17"
+            },
+            "security\\nonce_cache.py": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-08-14 01:09:30"
+            },
+            "security\\policyEngine.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-14 07:30:39"
+            },
+            "security\\portaria.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-08-28 08:35:43"
+            },
+            "security\\pqc_engine.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-07 19:32:57"
+            },
+            "security\\Ratelimiting.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-14 07:14:22"
+            },
+            "security\\sandbox_executor.py": {
+                "linhas": 13,
+                "ultima_modificacao": "2026-08-13 23:55:40"
+            },
+            "security\\schemas.py": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-08-07 19:44:54"
+            },
+            "security\\session_manager.py": {
+                "linhas": 38,
+                "ultima_modificacao": "2026-08-14 00:20:13"
+            },
+            "security\\system_shield.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:41:02"
+            },
+            "security\\threat_intel.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:37:44"
+            },
+            "security\\token_blacklist.py": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-13 23:54:13"
+            },
+            "security\\zero_trust_governor.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:38:38"
+            },
+            "security\\__init__.py": {
+                "linhas": 13,
+                "ultima_modificacao": "2026-08-07 20:16:17"
+            },
+            "security\\core\\processamento_camera.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "security\\core\\ultimo_motodiagnostico.json": {
+                "linhas": 0,
+                "ultima_modificacao": "2026-08-23 19:56:26"
+            },
+            "storage\\laudo_Jose.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-06-29 10:43:58"
+            },
+            "storage\\laudo_Paciente_Teste.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-06-29 10:55:47"
+            },
+            "storage\\laudo_th.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-06-29 21:44:02"
+            },
+            "storage\\matrix_elite.json": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-06-18 18:59:26"
+            },
+            "storage\\memoria_sessao.json": {
+                "linhas": 93,
+                "ultima_modificacao": "2026-08-09 20:47:10"
+            },
+            "storage\\registro_capilar.json": {
+                "linhas": 1,
+                "ultima_modificacao": "2026-06-28 19:52:36"
+            },
+            "storage\\ultimo_diagnostico.json": {
+                "linhas": 4,
+                "ultima_modificacao": "2026-06-08 12:20:58"
+            },
+            "STORAGE_DATA\\config_sistema.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-07-05 15:58:04"
+            },
+            "templates\\dossie_global.html": {
+                "linhas": 1062,
+                "ultima_modificacao": "2026-09-12 02:20:24"
+            },
+            "templates\\painel_web.html": {
+                "linhas": 1076,
+                "ultima_modificacao": "2026-09-10 01:32:33"
+            },
+            "testes_temp\\teste_cameras.py": {
+                "linhas": 31,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "testes_temp\\teste_sistema.py": {
+                "linhas": 72,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "thierry_global_os\\interface_layout.py": {
+                "linhas": 116,
+                "ultima_modificacao": "2026-08-12 07:08:35"
+            },
+            "thierry_global_os\\teste_isolado.py": {
+                "linhas": 19,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            }
+        }
+    },
+    {
+        "timestamp": "2026-09-12 07:49:50",
+        "dias_de_jornada": 213,
+        "total_arquivos_fixados": 326,
+        "total_linhas_codigo": 41313,
+        "horas_ativas_estimadas": 7436.34,
+        "valuation_total": 5354164.8,
+        "arquivos_oficiais": {
+            "acao_mestre.py": {
+                "linhas": 99,
+                "ultima_modificacao": "2026-08-19 19:52:35"
+            },
+            "analizador_conectividade.py": {
+                "linhas": 29,
+                "ultima_modificacao": "2026-08-12 01:03:24"
+            },
+            "analizar_fluxo.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-09 22:16:47"
+            },
+            "api_server.py": {
+                "linhas": 102,
+                "ultima_modificacao": "2026-08-17 11:10:35"
+            },
+            "aplicador_correcao.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-07 01:32:18"
+            },
+            "app_executivo.py": {
+                "linhas": 288,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "arduino_bridge.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-17 16:43:28"
+            },
+            "auditoria_profunda.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-09 20:20:00"
+            },
+            "auditoria_sistema.py": {
+                "linhas": 100,
+                "ultima_modificacao": "2026-08-27 06:47:33"
+            },
+            "auditoria_total.py": {
+                "linhas": 44,
+                "ultima_modificacao": "2026-08-12 00:54:44"
+            },
+            "auditor_geral_ttc.py": {
+                "linhas": 22,
+                "ultima_modificacao": "2026-08-12 01:00:29"
+            },
+            "auditor_integridade_global.py": {
+                "linhas": 109,
+                "ultima_modificacao": "2026-09-05 00:29:06"
+            },
+            "biometria_resultado.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-08-10 19:07:04"
+            },
+            "camera_engine.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-10 18:50:55"
+            },
+            "carregador_automatico.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-08-27 07:10:59"
+            },
+            "checar_arquivos.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-26 23:47:49"
+            },
+            "checkout_ui.py": {
+                "linhas": 45,
+                "ultima_modificacao": "2026-08-17 16:59:16"
+            },
+            "config_pagamentos.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-20 21:12:24"
+            },
+            "dados_biometricos.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-08-10 10:28:22"
+            },
+            "db.manager.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "db_config.py": {
+                "linhas": 1,
+                "ultima_modificacao": "2026-08-13 23:40:43"
+            },
+            "db_init.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-14 00:42:11"
+            },
+            "debug_dossie.py": {
+                "linhas": 46,
+                "ultima_modificacao": "2026-08-22 07:49:57"
+            },
+            "diagnostico.py": {
+                "linhas": 42,
+                "ultima_modificacao": "2026-07-14 22:54:32"
+            },
+            "diagnostico_painel.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-09-02 22:13:42"
+            },
+            "diagnostico_pdf.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-09-07 18:46:22"
+            },
+            "dossie_final.json": {
+                "linhas": 5,
+                "ultima_modificacao": "2026-08-13 07:14:08"
+            },
+            "error_guard.py": {
+                "linhas": 90,
+                "ultima_modificacao": "2026-08-11 07:55:14"
+            },
+            "estado_sistema.json": {
+                "linhas": 640,
+                "ultima_modificacao": "2026-09-10 23:28:31"
+            },
+            "faxina_ttc.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-17 15:48:06"
+            },
+            "fix_imports.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "gerador_pitch_soberano.py": {
+                "linhas": 123,
+                "ultima_modificacao": "2026-09-07 15:52:59"
+            },
+            "gerar_son.py": {
+                "linhas": 226,
+                "ultima_modificacao": "2026-08-23 19:52:07"
+            },
+            "gui_main.py": {
+                "linhas": 293,
+                "ultima_modificacao": "2026-09-07 15:02:38"
+            },
+            "homologacao_global.py": {
+                "linhas": 156,
+                "ultima_modificacao": "2026-09-10 19:29:06"
+            },
+            "iniciar.py": {
+                "linhas": 19,
+                "ultima_modificacao": "2026-06-16 23:14:26"
+            },
+            "inspecionar_e_popular_memoria.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-09-10 22:46:54"
+            },
+            "interface_dashboard.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-12 08:23:13"
+            },
+            "inventario_global.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-27 19:19:20"
+            },
+            "inventario_sistema_executivo.py": {
+                "linhas": 27,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "laudo_Paciente_Padrao.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-07-07 23:57:02"
+            },
+            "laudo_Thierry_Cliente.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-07-05 23:55:25"
+            },
+            "licenca.py": {
+                "linhas": 144,
+                "ultima_modificacao": "2026-08-20 22:06:16"
+            },
+            "licenca_ativa.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-07 23:11:10"
+            },
+            "limpar_dossies.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-17 11:39:03"
+            },
+            "limpar_imports.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "limpar_todos_pdfs.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-17 11:44:18"
+            },
+            "limpeza_profissional.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "listar_status.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-14 01:06:56"
+            },
+            "loader_core.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "main.py": {
+                "linhas": 451,
+                "ultima_modificacao": "2026-09-12 01:28:00"
+            },
+            "main_diagostico.py": {
+                "linhas": 166,
+                "ultima_modificacao": "2026-08-23 23:58:11"
+            },
+            "mapa_de_correcao.py": {
+                "linhas": 43,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "mapeador_de_dependecias.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-09 21:08:04"
+            },
+            "memoria_comum_ttc.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-18 22:59:11"
+            },
+            "memoria_historica.json": {
+                "linhas": 1950,
+                "ultima_modificacao": "2026-09-07 16:14:29"
+            },
+            "monaco_ambiente.py": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-08-07 00:01:09"
+            },
+            "monaco_comunicacao.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-07-20 12:17:50"
+            },
+            "monaco_consciencia.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 22:34:18"
+            },
+            "monaco_eminencia.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-07-20 12:20:55"
+            },
+            "monaco_integrador.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-27 23:16:26"
+            },
+            "monaco_nucleo_acesso.py": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-07-20 12:22:57"
+            },
+            "monaco_plan.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-07-20 12:23:47"
+            },
+            "monaco_ressonancia.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-07-20 12:24:47"
+            },
+            "motor_biometrico_dados.json": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-07 00:29:08"
+            },
+            "organizador_sistema.py": {
+                "linhas": 37,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "painel_luxo.html": {
+                "linhas": 1259,
+                "ultima_modificacao": "2026-09-06 21:50:49"
+            },
+            "pyrightconfig.json": {
+                "linhas": 11,
+                "ultima_modificacao": "2026-08-07 00:04:54"
+            },
+            "python ler_memoria.py": {
+                "linhas": 71,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "rastreador_correcao.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-07 01:28:07"
+            },
+            "run_all.py": {
+                "linhas": 52,
+                "ultima_modificacao": "2026-08-06 23:53:27"
+            },
+            "scanner_busca.py": {
+                "linhas": 35,
+                "ultima_modificacao": "2026-08-19 22:44:16"
+            },
+            "servidor_local.py": {
+                "linhas": 269,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "sessao.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-12 07:19:44"
+            },
+            "setup_seguranca.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-13 23:40:41"
+            },
+            "sovereign_auditor.py": {
+                "linhas": 121,
+                "ultima_modificacao": "2026-09-12 07:47:33"
+            },
+            "sovereign_gate.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-08-19 21:36:32"
+            },
+            "stress_teste.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-31 17:24:01"
+            },
+            "stripe_service.py": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-08-19 23:16:49"
+            },
+            "tempCodeRunnerFile.py": {
+                "linhas": 288,
+                "ultima_modificacao": "2026-09-07 22:26:04"
+            },
+            "testar_ataque.py": {
+                "linhas": 31,
+                "ultima_modificacao": "2026-08-25 21:23:25"
+            },
+            "testar_integracao_memoria.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-14 07:02:12"
+            },
+            "testar_logica.py": {
+                "linhas": 27,
+                "ultima_modificacao": "2026-08-23 17:20:16"
+            },
+            "testar_memoria.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-25 21:21:47"
+            },
+            "testar_motor.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-25 21:20:32"
+            },
+            "testar_sanitizer.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-14 00:09:44"
+            },
+            "testar_seguranca.py": {
+                "linhas": 40,
+                "ultima_modificacao": "2026-08-25 21:19:10"
+            },
+            "testar_vozes.py": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-26 19:36:40"
+            },
+            "teste_camera.py": {
+                "linhas": 373,
+                "ultima_modificacao": "2026-09-03 20:10:37"
+            },
+            "teste_integrado_global.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-09-10 19:13:54"
+            },
+            "teste_inteligencia.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-14 01:24:14"
+            },
+            "teste_orquestracao.py": {
+                "linhas": 30,
+                "ultima_modificacao": "2026-08-25 21:24:55"
+            },
+            "teste_seguranca.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-08-14 01:01:27"
+            },
+            "test_bridge.py": {
+                "linhas": 46,
+                "ultima_modificacao": "2026-08-25 21:05:10"
+            },
+            "test_consciencia.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-09-12 07:46:17"
+            },
+            "test_integrado.py": {
+                "linhas": 73,
+                "ultima_modificacao": "2026-09-10 23:11:28"
+            },
+            "test_total_mestre.py": {
+                "linhas": 92,
+                "ultima_modificacao": "2026-09-10 23:18:29"
+            },
+            "traducoes_ttc.py": {
+                "linhas": 50,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "ultimo_motodiagnostico.json": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-31 23:15:41"
+            },
+            "verificador_nuvem - Copia.py": {
+                "linhas": 48,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "verificador_nuvem.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-09 19:58:33"
+            },
+            "verificar_camera.py": {
+                "linhas": 42,
+                "ultima_modificacao": "2026-09-03 21:05:46"
+            },
+            "verificar_caminhos.py": {
+                "linhas": 17,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "verificar_dependencias.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-09-10 19:32:12"
+            },
+            "verificar_integracao.py": {
+                "linhas": 54,
+                "ultima_modificacao": "2026-09-05 00:35:41"
+            },
+            "verificar_prontidao.py": {
+                "linhas": 50,
+                "ultima_modificacao": "2026-08-25 21:29:59"
+            },
+            "verificar_sistema.py": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "ver_memoria.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-07-23 20:15:37"
+            },
+            "config\\paises\\AE.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:46:46"
+            },
+            "config\\paises\\BR.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:50:22"
+            },
+            "config\\paises\\CH.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:47:26"
+            },
+            "config\\paises\\DE.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:48:06"
+            },
+            "config\\paises\\FR.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:48:57"
+            },
+            "config\\paises\\KR.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-07-27 11:04:35"
+            },
+            "config\\paises\\MC.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:38:22"
+            },
+            "config\\paises\\QA.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:42:12"
+            },
+            "config\\paises\\SG.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:45:00"
+            },
+            "config\\paises\\UK.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:50:10"
+            },
+            "config\\paises\\US.json": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-07-20 17:44:01"
+            },
+            "core\\analise.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-27 21:54:13"
+            },
+            "core\\analise_cabelo.py": {
+                "linhas": 82,
+                "ultima_modificacao": "2026-08-27 21:58:22"
+            },
+            "core\\analise_colorimetria.py": {
+                "linhas": 64,
+                "ultima_modificacao": "2026-08-27 21:57:04"
+            },
+            "core\\analise_rosto.py": {
+                "linhas": 79,
+                "ultima_modificacao": "2026-08-30 16:09:02"
+            },
+            "core\\atelie.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-09-07 16:04:05"
+            },
+            "core\\banco_dados.py": {
+                "linhas": 89,
+                "ultima_modificacao": "2026-08-27 21:51:54"
+            },
+            "core\\biblioteca_estilo.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 21:49:59"
+            },
+            "core\\biogemio_orquestrador.py": {
+                "linhas": 402,
+                "ultima_modificacao": "2026-09-07 16:13:37"
+            },
+            "core\\biogem_engine.py": {
+                "linhas": 350,
+                "ultima_modificacao": "2026-09-10 22:32:04"
+            },
+            "core\\biometria.py": {
+                "linhas": 98,
+                "ultima_modificacao": "2026-08-27 20:25:41"
+            },
+            "core\\camera_hub.py": {
+                "linhas": 75,
+                "ultima_modificacao": "2026-08-27 22:37:04"
+            },
+            "core\\carta_internacional_engine.py": {
+                "linhas": 108,
+                "ultima_modificacao": "2026-08-27 21:44:13"
+            },
+            "core\\coreia_engine.py": {
+                "linhas": 95,
+                "ultima_modificacao": "2026-08-27 21:40:02"
+            },
+            "core\\core_reconstrucao.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 21:43:00"
+            },
+            "core\\dashboard_global.py": {
+                "linhas": 75,
+                "ultima_modificacao": "2026-08-27 21:37:42"
+            },
+            "core\\detector_erros.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-27 21:36:51"
+            },
+            "core\\diagnostico_ante_gravidade_neural.py": {
+                "linhas": 59,
+                "ultima_modificacao": "2026-08-27 21:35:16"
+            },
+            "core\\diagnostico_seguranca.py": {
+                "linhas": 79,
+                "ultima_modificacao": "2026-08-27 21:34:18"
+            },
+            "core\\engine.py": {
+                "linhas": 81,
+                "ultima_modificacao": "2026-09-05 00:35:41"
+            },
+            "core\\engine_scanner.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 21:32:53"
+            },
+            "core\\estado_sistema.json": {
+                "linhas": 32,
+                "ultima_modificacao": "2026-09-10 22:47:10"
+            },
+            "core\\generator.py": {
+                "linhas": 70,
+                "ultima_modificacao": "2026-08-27 21:30:48"
+            },
+            "core\\geodefense.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-09-10 19:24:59"
+            },
+            "core\\gerador_faturamento.py": {
+                "linhas": 131,
+                "ultima_modificacao": "2026-08-27 21:29:20"
+            },
+            "core\\gerador_pdf.py": {
+                "linhas": 215,
+                "ultima_modificacao": "2026-09-10 21:57:21"
+            },
+            "core\\gerar_relatorio_roi_clinica.py": {
+                "linhas": 102,
+                "ultima_modificacao": "2026-09-10 20:58:26"
+            },
+            "core\\gerenciador_geografico.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 21:28:03"
+            },
+            "core\\gerenciador_global.py": {
+                "linhas": 78,
+                "ultima_modificacao": "2026-08-27 21:27:06"
+            },
+            "core\\gerenciador_hardware.py": {
+                "linhas": 92,
+                "ultima_modificacao": "2026-08-27 21:24:51"
+            },
+            "core\\global_state.py": {
+                "linhas": 29,
+                "ultima_modificacao": "2026-08-27 21:23:19"
+            },
+            "core\\integracao_google.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 21:21:41"
+            },
+            "core\\memoria_comum.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-27 22:43:15"
+            },
+            "core\\metrics.py": {
+                "linhas": 63,
+                "ultima_modificacao": "2026-08-27 21:20:23"
+            },
+            "core\\midi_listener.py": {
+                "linhas": 120,
+                "ultima_modificacao": "2026-08-27 21:18:52"
+            },
+            "core\\modulo_psiquico.py": {
+                "linhas": 101,
+                "ultima_modificacao": "2026-08-27 20:40:30"
+            },
+            "core\\motor_ambiental.py": {
+                "linhas": 74,
+                "ultima_modificacao": "2026-08-27 21:06:46"
+            },
+            "core\\motor_biometrico.py": {
+                "linhas": 134,
+                "ultima_modificacao": "2026-08-27 23:03:04"
+            },
+            "core\\motor_dados.py": {
+                "linhas": 77,
+                "ultima_modificacao": "2026-08-27 21:01:01"
+            },
+            "core\\motor_olhar_store.py": {
+                "linhas": 142,
+                "ultima_modificacao": "2026-08-27 21:03:57"
+            },
+            "core\\motor_performance.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 20:58:36"
+            },
+            "core\\motor_prognostico.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 20:57:36"
+            },
+            "core\\motor_regeneracao.py": {
+                "linhas": 96,
+                "ultima_modificacao": "2026-08-27 20:56:06"
+            },
+            "core\\motor_sincronia.py": {
+                "linhas": 72,
+                "ultima_modificacao": "2026-08-27 20:54:43"
+            },
+            "core\\neuro_gravidade_preditor.py": {
+                "linhas": 56,
+                "ultima_modificacao": "2026-08-27 20:52:55"
+            },
+            "core\\neuro_protocolos.py": {
+                "linhas": 78,
+                "ultima_modificacao": "2026-08-27 20:51:15"
+            },
+            "core\\osteometria_script.py": {
+                "linhas": 82,
+                "ultima_modificacao": "2026-08-27 20:49:51"
+            },
+            "core\\precificacao_motor.py": {
+                "linhas": 105,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\processador_inteligente.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\protocolo_logica.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\scanner_integrado.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\script_clima.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-27 20:17:02"
+            },
+            "core\\sensor_fadiga.py": {
+                "linhas": 85,
+                "ultima_modificacao": "2026-08-27 20:31:10"
+            },
+            "core\\sentinela_fisio.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\stress_core_engine.py": {
+                "linhas": 52,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\synapse_core.py": {
+                "linhas": 80,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tempCodeRunnerFile.py": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-09-07 16:04:17"
+            },
+            "core\\testae_portas.py": {
+                "linhas": 15,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\test_modulos.py": {
+                "linhas": 30,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tradutor.py": {
+                "linhas": 36,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\tricologia_disruptiva_engine.py": {
+                "linhas": 143,
+                "ultima_modificacao": "2026-08-30 08:49:20"
+            },
+            "core\\validador_licenca.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-09-10 19:43:29"
+            },
+            "core\\validador_sistema.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\verificar_banco.py": {
+                "linhas": 37,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\viasualizador_visagista.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "core\\voz_motor.py": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-08-30 16:18:32"
+            },
+            "core\\historico_dossies\\dossie_DESCONHECIDO_20260810_104728.json": {
+                "linhas": 231,
+                "ultima_modificacao": "2026-08-10 10:47:28"
+            },
+            "core\\historico_dossies\\dossie_josé_20260810_105430.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 10:54:30"
+            },
+            "core\\historico_dossies\\dossie_thierry_20260810_105238.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 10:52:38"
+            },
+            "core\\pdfs_finais\\dossie_oficial.html": {
+                "linhas": 97,
+                "ultima_modificacao": "2026-09-07 16:14:15"
+            },
+            "Dado\\Config\\master_audit_ledger_profundo.json": {
+                "linhas": 53,
+                "ultima_modificacao": "2026-09-10 07:50:17"
+            },
+            "dados\\estado_atual.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-27 07:11:30"
+            },
+            "database\\db_manager.py": {
+                "linhas": 26,
+                "ultima_modificacao": "2026-08-14 00:45:00"
+            },
+            "defesa_ativa\\blacklist.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-07-05 15:40:20"
+            },
+            "defesa_ativa\\blindagem.py": {
+                "linhas": 34,
+                "ultima_modificacao": "2026-07-16 20:38:36"
+            },
+            "defesa_ativa\\detector.py": {
+                "linhas": 49,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "defesa_ativa\\honeypot.py": {
+                "linhas": 34,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "dossies_gerados\\dossie_cliente_não_identificado.json": {
+                "linhas": 44,
+                "ultima_modificacao": "2026-08-24 07:00:08"
+            },
+            "dossies_gerados\\dossie_thierry.json": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-23 23:02:17"
+            },
+            "historico_dossies\\dossie_h_20260812_221646.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:16:46"
+            },
+            "historico_dossies\\dossie_joao_20260810_164351.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 16:43:51"
+            },
+            "historico_dossies\\dossie_jose_20260810_110808.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 11:08:08"
+            },
+            "historico_dossies\\dossie_jose_20260810_164045.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:40:45"
+            },
+            "historico_dossies\\dossie_jose_20260810_165151.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:51:51"
+            },
+            "historico_dossies\\dossie_jose_20260812_222636.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:26:36"
+            },
+            "historico_dossies\\dossie_k_20260810_170037.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:00:37"
+            },
+            "historico_dossies\\dossie_k_20260810_171735.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:17:35"
+            },
+            "historico_dossies\\dossie_k_20260810_172619.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:26:19"
+            },
+            "historico_dossies\\dossie_l_20260810_170427.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:04:27"
+            },
+            "historico_dossies\\dossie_l_20260810_171422.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:14:22"
+            },
+            "historico_dossies\\dossie_l_20260810_172149.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:21:49"
+            },
+            "historico_dossies\\dossie_l_20260810_172237.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:22:37"
+            },
+            "historico_dossies\\dossie_l_20260810_173700.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 17:37:00"
+            },
+            "historico_dossies\\dossie_l_20260812_221757.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 22:17:57"
+            },
+            "historico_dossies\\dossie_l_20260812_233926.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 23:39:26"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_154211.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:42:11"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_162307.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:23:07"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_214822.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:48:22"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_215619.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:56:19"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_220325.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:03:25"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260810_225020.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:50:20"
+            },
+            "historico_dossies\\dossie_Paciente_biometria_20260811_212351.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:23:51"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_154139.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:41:39"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_162237.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:22:37"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_163313.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:33:13"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_211649.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:16:49"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_213859.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:38:59"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_214752.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:47:52"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_214930.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:49:30"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_215538.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:55:38"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260810_220252.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:02:52"
+            },
+            "historico_dossies\\dossie_Paciente_clinica_20260811_212312.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:23:12"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_154245.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:42:45"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_215654.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:56:54"
+            },
+            "historico_dossies\\dossie_Paciente_forense_20260810_220401.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:04:01"
+            },
+            "historico_dossies\\dossie_Paciente_monaco_20260812_000838.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:08:38"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_154100.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:41:00"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_160650.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:06:50"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_161433.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:14:33"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_162210.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:22:10"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_162346.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:23:46"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_163223.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 16:32:23"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_193704.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:37:04"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_200106.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:01:06"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_203825.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:38:26"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_205607.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:56:07"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_205856.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 20:58:56"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_211557.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:15:57"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_213640.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:36:40"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_214646.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:46:46"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_214719.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:47:19"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_215452.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 21:54:52"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_220209.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:02:09"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_221133.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:11:33"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_221450.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:14:50"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_224853.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:48:53"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260810_225441.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 22:54:41"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_204552.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 20:45:52"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_205348.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 20:53:48"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_210120.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:01:20"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_210740.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:07:40"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_211320.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:13:20"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_212045.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:20:45"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_212221.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 21:22:21"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260811_221006.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-11 22:10:06"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_000013.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:00:13"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_000654.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 00:06:54"
+            },
+            "historico_dossies\\dossie_Paciente_salao_20260812_011545.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-12 01:15:45"
+            },
+            "historico_dossies\\dossie_pedro_20260810_153050.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 15:30:50"
+            },
+            "historico_dossies\\dossie_pedro_20260810_164455.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 16:44:55"
+            },
+            "historico_dossies\\dossie_p_20260810_165607.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:56:07"
+            },
+            "historico_dossies\\dossie_th_20260810_170320.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:03:20"
+            },
+            "historico_dossies\\dossie_th_20260810_191145.json": {
+                "linhas": 245,
+                "ultima_modificacao": "2026-08-10 19:11:45"
+            },
+            "historico_dossies\\dossie_th_20260810_192958.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:29:58"
+            },
+            "historico_dossies\\dossie_t_20260810_165230.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 16:52:30"
+            },
+            "historico_dossies\\dossie_t_20260810_171040.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:10:40"
+            },
+            "historico_dossies\\dossie_t_20260810_193507.json": {
+                "linhas": 251,
+                "ultima_modificacao": "2026-08-10 19:35:07"
+            },
+            "historico_dossies\\dossie_~ççç_20260810_172739.json": {
+                "linhas": 250,
+                "ultima_modificacao": "2026-08-10 17:27:39"
+            },
+            "neural_core\\neural_visage_engine.py": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "PERICIA_DESCO\\cliente_thierry_16-05-2026.py": {
+                "linhas": 185,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "PERICIA_DESCO\\04_luxury_reports\\pdf leitor.py": {
+                "linhas": 95,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "security\\anti_reverse.py": {
+                "linhas": 63,
+                "ultima_modificacao": "2026-08-07 20:08:22"
+            },
+            "security\\auditoria_total_profundo.py": {
+                "linhas": 121,
+                "ultima_modificacao": "2026-09-10 07:50:14"
+            },
+            "security\\audit_ledger.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:39:41"
+            },
+            "security\\autodestruicao.py": {
+                "linhas": 33,
+                "ultima_modificacao": "2026-08-07 23:19:32"
+            },
+            "security\\BehaviorMonitor.py": {
+                "linhas": 20,
+                "ultima_modificacao": "2026-08-14 07:17:41"
+            },
+            "security\\biometric_validator.py": {
+                "linhas": 66,
+                "ultima_modificacao": "2026-08-07 20:07:29"
+            },
+            "security\\confidential_compute.py": {
+                "linhas": 57,
+                "ultima_modificacao": "2026-08-07 19:30:13"
+            },
+            "security\\crypto_engine.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-07 20:06:26"
+            },
+            "security\\data_anonymizer.py": {
+                "linhas": 7,
+                "ultima_modificacao": "2026-08-13 23:52:53"
+            },
+            "security\\data_masking.py": {
+                "linhas": 14,
+                "ultima_modificacao": "2026-08-14 07:44:38"
+            },
+            "security\\email_service.py": {
+                "linhas": 67,
+                "ultima_modificacao": "2026-08-11 22:34:09"
+            },
+            "security\\ephemeral.py": {
+                "linhas": 55,
+                "ultima_modificacao": "2026-08-16 23:47:55"
+            },
+            "security\\geo_defense.py": {
+                "linhas": 107,
+                "ultima_modificacao": "2026-08-18 18:59:13"
+            },
+            "security\\homomorphic_biometrics.py": {
+                "linhas": 58,
+                "ultima_modificacao": "2026-08-07 19:28:03"
+            },
+            "security\\input_sanitizer.py": {
+                "linhas": 41,
+                "ultima_modificacao": "2026-08-14 00:58:21"
+            },
+            "security\\integrit_verifier.py": {
+                "linhas": 22,
+                "ultima_modificacao": "2026-08-13 23:26:21"
+            },
+            "security\\log_seguro.py": {
+                "linhas": 88,
+                "ultima_modificacao": "2026-08-13 23:44:23"
+            },
+            "security\\network_shield.py": {
+                "linhas": 47,
+                "ultima_modificacao": "2026-08-07 20:09:17"
+            },
+            "security\\nonce_cache.py": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-08-14 01:09:30"
+            },
+            "security\\policyEngine.py": {
+                "linhas": 24,
+                "ultima_modificacao": "2026-08-14 07:30:39"
+            },
+            "security\\portaria.py": {
+                "linhas": 86,
+                "ultima_modificacao": "2026-08-28 08:35:43"
+            },
+            "security\\pqc_engine.py": {
+                "linhas": 61,
+                "ultima_modificacao": "2026-08-07 19:32:57"
+            },
+            "security\\Ratelimiting.py": {
+                "linhas": 28,
+                "ultima_modificacao": "2026-08-14 07:14:22"
+            },
+            "security\\sandbox_executor.py": {
+                "linhas": 13,
+                "ultima_modificacao": "2026-08-13 23:55:40"
+            },
+            "security\\schemas.py": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-08-07 19:44:54"
+            },
+            "security\\session_manager.py": {
+                "linhas": 38,
+                "ultima_modificacao": "2026-08-14 00:20:13"
+            },
+            "security\\system_shield.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:41:02"
+            },
+            "security\\threat_intel.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:37:44"
+            },
+            "security\\token_blacklist.py": {
+                "linhas": 9,
+                "ultima_modificacao": "2026-08-13 23:54:13"
+            },
+            "security\\zero_trust_governor.py": {
+                "linhas": 12,
+                "ultima_modificacao": "2026-08-14 07:38:38"
+            },
+            "security\\__init__.py": {
+                "linhas": 13,
+                "ultima_modificacao": "2026-08-07 20:16:17"
+            },
+            "security\\core\\processamento_camera.py": {
+                "linhas": 65,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "security\\core\\ultimo_motodiagnostico.json": {
+                "linhas": 0,
+                "ultima_modificacao": "2026-08-23 19:56:26"
+            },
+            "storage\\laudo_Jose.json": {
+                "linhas": 8,
+                "ultima_modificacao": "2026-06-29 10:43:58"
+            },
+            "storage\\laudo_Paciente_Teste.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-06-29 10:55:47"
+            },
+            "storage\\laudo_th.json": {
+                "linhas": 6,
+                "ultima_modificacao": "2026-06-29 21:44:02"
+            },
+            "storage\\matrix_elite.json": {
+                "linhas": 25,
+                "ultima_modificacao": "2026-06-18 18:59:26"
+            },
+            "storage\\memoria_sessao.json": {
+                "linhas": 93,
+                "ultima_modificacao": "2026-08-09 20:47:10"
+            },
+            "storage\\registro_capilar.json": {
+                "linhas": 1,
+                "ultima_modificacao": "2026-06-28 19:52:36"
+            },
+            "storage\\ultimo_diagnostico.json": {
+                "linhas": 4,
+                "ultima_modificacao": "2026-06-08 12:20:58"
+            },
+            "STORAGE_DATA\\config_sistema.json": {
+                "linhas": 3,
+                "ultima_modificacao": "2026-07-05 15:58:04"
+            },
+            "templates\\dossie_global.html": {
+                "linhas": 1062,
+                "ultima_modificacao": "2026-09-12 02:20:24"
+            },
+            "templates\\painel_web.html": {
+                "linhas": 1076,
+                "ultima_modificacao": "2026-09-10 01:32:33"
+            },
+            "testes_temp\\teste_cameras.py": {
+                "linhas": 31,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "testes_temp\\teste_sistema.py": {
+                "linhas": 72,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            },
+            "thierry_global_os\\interface_layout.py": {
+                "linhas": 116,
+                "ultima_modificacao": "2026-08-12 07:08:35"
+            },
+            "thierry_global_os\\teste_isolado.py": {
+                "linhas": 19,
+                "ultima_modificacao": "2026-08-07 01:32:21"
+            }
+        }
+    }
+]

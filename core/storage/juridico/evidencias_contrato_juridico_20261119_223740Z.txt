@@ -8150,7 +8150,7 @@ OCORRÊNCIAS (1937):
   [L4133] [L1956] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L4134] [L1959] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L4135] [L1965] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L4136] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L4136] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L4137] [L2054] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4138] [L2058] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4139] [L2062] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -8363,7 +8363,7 @@ OCORRÊNCIAS (1937):
   [L4352] [L1908] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L4353] [L1911] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L4354] [L1917] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L4355] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L4355] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L4356] [L2006] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4357] [L2010] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4358] [L2014] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -9433,7 +9433,7 @@ OCORRÊNCIAS (221):
   [L1956] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L1959] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L1965] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L2054] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2058] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2062] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -9652,7 +9652,7 @@ OCORRÊNCIAS (195):
   [L1908] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L1911] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L1917] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L2006] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2010] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2014] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">

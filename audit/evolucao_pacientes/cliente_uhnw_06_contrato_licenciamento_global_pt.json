@@ -1,0 +1,49 @@
+{
+  "paciente": "CLIENTE UHNW",
+  "documento": "06_Contrato_Licenciamento_Global",
+  "idioma": "PT",
+  "horizontes": 10,
+  "data_dia": "22/11/2026",
+  "atualizado_em": "22/11/2026 às 16:25:23",
+  "timestamp_iso": "2026-11-22T16:25:23.987629",
+  "intervalo_anterior": "Primeira leitura (linha de base)",
+  "marcos_antecipados": {
+    "3_meses": "22/02/2027",
+    "6_meses": "22/05/2027",
+    "9_meses": "22/08/2027",
+    "12_meses": "22/11/2027",
+    "2_anos": "22/11/2028",
+    "3_anos": "22/11/2029",
+    "4_anos": "22/11/2030",
+    "5_anos": "22/11/2031"
+  },
+  "indicadores": {
+    "oximetria": "",
+    "nivel_estresse": "",
+    "inflamacao": "",
+    "dieta": "",
+    "distancia_fio": "",
+    "agua": "",
+    "clima_15_dias": "Sem dado climático de 15 dias retornado nesta leitura",
+    "neuroplasticidade": "",
+    "dia_apice": "",
+    "empresa": "Thierry Technology Concept Global",
+    "segmento": "Tecnologia e Inovação",
+    "saude_financeira_empresa": "",
+    "prospeccao": "",
+    "imagem": ""
+  },
+  "hash_analise": "SEM_ANALISE",
+  "valores_paciente": {},
+  "resumo_leitura": "Data 22/11/2026 às 16:25:23 (Primeira leitura (linha de base)) | Oximetria: Dado não concretizado | Estresse: Dado não concretizado | Inflamação: Dado não concretizado | Fio: Dado não concretizado | Água: Dado não concretizado | Clima 15d: Sem dado climático de 15 dias retornado nesta leitura | Empresa: Thierry Technology Concept Global",
+  "evolucao": [
+    "Leitura inicial registrada em 22/11/2026 às 16:25:23 (Primeira leitura (linha de base)).",
+    "Leituras principais: Oximetria=Dado não concretizado | Estresse=Dado não concretizado | Inflamação=Dado não concretizado | Distância do fio=Dado não concretizado | Água=Dado não concretizado.",
+    "Pedir auxílio médico (nunca prescrever sozinho): faltam dados concretos de Oximetria, Inflamação, Dieta / nutrição; solicitar avaliação/orientação médica para apurar inflamação, dieta ou aptidão para cirurgia/procedimento."
+  ],
+  "parecer_empresa": [
+    "Empresa / Segmento: Thierry Technology Concept Global (Tecnologia e Inovação) | Saúde financeira: Saúde financeira em monitoramento contínuo.",
+    "Precaução matemática e sustentação: o método matemático antecipa sinais de queda ou desvalorização em Tecnologia e Inovação com antecedência, atuando junto ao especialista nas mudanças necessárias para evitar perda de prospecção ou valor e manter o alinhamento com a imagem (alinhar imagem institucional e autoridade do titular; manter constância de prospecção e retenção de valor).",
+    "Marcos de acompanhamento antecipado — Meses: 3m (22/02/2027), 6m (22/05/2027), 9m (22/08/2027), 12m (22/11/2027) | Anos: 2a (22/11/2028), 3a (22/11/2029), 4a (22/11/2030), 5a (22/11/2031)."
+  ]
+}

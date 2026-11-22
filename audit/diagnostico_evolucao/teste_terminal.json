@@ -1,0 +1,30 @@
+[
+  {
+    "emitido_em": "22/11/2026 16:50:13",
+    "dados": {
+      "oximetria": 98,
+      "inflamacao": null,
+      "dieta_nutricao": null,
+      "fpn": 0.82,
+      "phi_global": null,
+      "dist_descolamento_mm": null,
+      "agua_estimada": 61.5,
+      "densidade_capilar": null,
+      "taxa_miniaturizacao": null
+    }
+  },
+  {
+    "emitido_em": "22/11/2026 16:50:28",
+    "dados": {
+      "oximetria": 98,
+      "inflamacao": null,
+      "dieta_nutricao": null,
+      "fpn": 0.82,
+      "phi_global": null,
+      "dist_descolamento_mm": null,
+      "agua_estimada": 61.5,
+      "densidade_capilar": null,
+      "taxa_miniaturizacao": null
+    }
+  }
+]

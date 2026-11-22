@@ -1,0 +1,4015 @@
+================================================================================
+   CERTIFICADO OFICIAL DE AUDITORIA - THIERRY TECHNOLOGY CONCEPT GLOBAL
+================================================================================
+================================================================================
+1. ANÁLISE ESTRUTURAL, VOLUMETRIA E CERTIFICAÇÃO DE ATIVOS
+================================================================================
+
+[+] ATIVO ANALISADO: .\acao_mestre.py
+    - Tamanho do Ficheiro: 3083 bytes
+    - Total de Linhas: 99
+    - Linhas de Código Efetivo: 78
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def executar_pipeline_mestre()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\analizador_conectividade.py
+    - Tamanho do Ficheiro: 1082 bytes
+    - Total de Linhas: 29
+    - Linhas de Código Efetivo: 21
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def analisar_conectividade()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\analizar_fluxo.py
+    - Tamanho do Ficheiro: 1285 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 18
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def mapear_toda_hierarquia()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\api_server.py
+    - Tamanho do Ficheiro: 3358 bytes
+    - Total de Linhas: 119
+    - Linhas de Código Efetivo: 98
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def home()
+        * def exibir_dossie()
+        * def criar_sessao_pagamento()
+        * def obter_telemetria()
+        * def desligar_camera()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\aplicador_correcao.py
+    - Tamanho do Ficheiro: 1559 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 23
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def aplicar_correcao_definitiva()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\app.py
+    - Tamanho do Ficheiro: 2886 bytes
+    - Total de Linhas: 75
+    - Linhas de Código Efetivo: 55
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def pagina_inicial()
+        * def acao_gerar_pdf()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\app_executivo.py
+    - Tamanho do Ficheiro: 16153 bytes
+    - Total de Linhas: 288
+    - Linhas de Código Efetivo: 237
+    - Linhas de Documentação/Comentários: 13
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\arduino_bridge.py
+    - Tamanho do Ficheiro: 1202 bytes
+    - Total de Linhas: 36
+    - Linhas de Código Efetivo: 30
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def ler_dados_esp32()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auditar_fluxo_pdfs.py
+    - Tamanho do Ficheiro: 2667 bytes
+    - Total de Linhas: 52
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auditar_geradores_pdf.py
+    - Tamanho do Ficheiro: 1821 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 36
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def auditar_geradores()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auditar_logica.py
+    - Tamanho do Ficheiro: 3798 bytes
+    - Total de Linhas: 83
+    - Linhas de Código Efetivo: 65
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def auditar_projeto()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auto_reparador.py
+    - Tamanho do Ficheiro: 2773 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 12
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def reparar_arquivo()
+        * def executar_varredura_reparacao()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\camera_engine.py
+    - Tamanho do Ficheiro: 1926 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 42
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def __init__()
+        * def processar_frame()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\carregador_automatico.py
+    - Tamanho do Ficheiro: 2557 bytes
+    - Total de Linhas: 64
+    - Linhas de Código Efetivo: 51
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def carregar_todos_os_modulos()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\checar_arquivos.py
+    - Tamanho do Ficheiro: 628 bytes
+    - Total de Linhas: 20
+    - Linhas de Código Efetivo: 16
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\checkout_ui.py
+    - Tamanho do Ficheiro: 2007 bytes
+    - Total de Linhas: 45
+    - Linhas de Código Efetivo: 33
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def abrir_janela_checkout()
+        * def anexar_comprovante()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\config_pagamentos.py
+    - Tamanho do Ficheiro: 944 bytes
+    - Total de Linhas: 18
+    - Linhas de Código Efetivo: 10
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def get_link()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\db.manager.py
+    - Tamanho do Ficheiro: 925 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 26
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def salvar_analise()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\db_config.py
+    - Tamanho do Ficheiro: 52 bytes
+    - Total de Linhas: 1
+    - Linhas de Código Efetivo: 1
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\db_init.py
+    - Tamanho do Ficheiro: 945 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 21
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def configurar_banco()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\debug_dossie.py
+    - Tamanho do Ficheiro: 2611 bytes
+    - Total de Linhas: 46
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def calcular_inteligencia_preditiva()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico.py
+    - Tamanho do Ficheiro: 1554 bytes
+    - Total de Linhas: 42
+    - Linhas de Código Efetivo: 30
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def diagnosticar()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_backend.py
+    - Tamanho do Ficheiro: 2671 bytes
+    - Total de Linhas: 70
+    - Linhas de Código Efetivo: 57
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def executar_diagnostico()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_html.py
+    - Tamanho do Ficheiro: 1328 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 25
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def diagnosticar_modulo_html()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_painel.py
+    - Tamanho do Ficheiro: 2415 bytes
+    - Total de Linhas: 64
+    - Linhas de Código Efetivo: 49
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def executar_e_capturar_erros()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_pdf.py
+    - Tamanho do Ficheiro: 1863 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 33
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\error_guard.py
+    - Tamanho do Ficheiro: 4313 bytes
+    - Total de Linhas: 90
+    - Linhas de Código Efetivo: 71
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def __init__()
+        * def verificar_arquivos_obrigatorios()
+        * def validar_integridade_json()
+        * def inspecionar_biometria_e_metricas()
+        * def executar_varredura_completa()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\faxina_ttc.py
+    - Tamanho do Ficheiro: 2367 bytes
+    - Total de Linhas: 61
+    - Linhas de Código Efetivo: 44
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def varrer_e_limpar()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\fix_imports.py
+    - Tamanho do Ficheiro: 1034 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 19
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\gerar_son.py
+    - Tamanho do Ficheiro: 10705 bytes
+    - Total de Linhas: 226
+    - Linhas de Código Efetivo: 214
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\gui_main.py
+    - Tamanho do Ficheiro: 15317 bytes
+    - Total de Linhas: 293
+    - Linhas de Código Efetivo: 259
+    - Linhas de Documentação/Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+        * def carregar_modulo_por_caminho()
+        * def __init__()
+        * def log()
+        * def executar_modulo_async()
+        * def executar_modulo()
+        * def _inserir()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\historico_auditoria_monaco.py
+    - Tamanho do Ficheiro: 7440 bytes
+    - Total de Linhas: 162
+    - Linhas de Código Efetivo: 117
+    - Linhas de Documentação/Comentários: 11
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 3
+        * def varredura_forense_total()
+        * def gerenciar_historico_diario()
+        * def executar_auditoria_monaco_completa()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\homologacao_global.py
+    - Tamanho do Ficheiro: 5376 bytes
+    - Total de Linhas: 156
+    - Linhas de Código Efetivo: 119
+    - Linhas de Documentação/Comentários: 18
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def calcular_distancia_km()
+        * def executar_homologacao_global()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\iniciar.py
+    - Tamanho do Ficheiro: 499 bytes
+    - Total de Linhas: 19
+    - Linhas de Código Efetivo: 14
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def executar_sistema()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\iniciar_sistema.py
+    - Tamanho do Ficheiro: 1155 bytes
+    - Total de Linhas: 37
+    - Linhas de Código Efetivo: 33
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def verificar_e_instalar()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\inspecionar_e_popular_memoria.py
+    - Tamanho do Ficheiro: 2498 bytes
+    - Total de Linhas: 49
+    - Linhas de Código Efetivo: 43
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def popular_memoria_compativel()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\interface_dashboard.py
+    - Tamanho do Ficheiro: 1986 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 56
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def verificar_sessao_ativa()
+    - Dependências/Módulos Importados: 9
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\inventario_global.py
+    - Tamanho do Ficheiro: 3460 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 55
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def gerar_inventario_completo()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\inventario_sistema_executivo.py
+    - Tamanho do Ficheiro: 1175 bytes
+    - Total de Linhas: 27
+    - Linhas de Código Efetivo: 20
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def diagnostico_hierarquia_executiva()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\licenca.py
+    - Tamanho do Ficheiro: 22473 bytes
+    - Total de Linhas: 479
+    - Linhas de Código Efetivo: 388
+    - Linhas de Documentação/Comentários: 11
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 13
+        * def obter_hwid()
+        * def verificar_integridade()
+        * def aplicar_multa()
+        * def obter_detalhes_licenca_com_pib()
+        * def carregar_banco_tokens()
+        * def salvar_banco_tokens()
+        * def gerar_tokens_soberanos()
+        * def calcular_distancia_haversine_km()
+        * def validar_e_vincular_no()
+        * def __init__()
+        * def varrer_core_projeto()
+        * def processar_memoria_estavel()
+        * def executar_auditoria_completa()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\limpar_imports.py
+    - Tamanho do Ficheiro: 1099 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 15
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\limpar_todos_pdfs.py
+    - Tamanho do Ficheiro: 785 bytes
+    - Total de Linhas: 24
+    - Linhas de Código Efetivo: 17
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\limpeza_profissional.py
+    - Tamanho do Ficheiro: 1154 bytes
+    - Total de Linhas: 33
+    - Linhas de Código Efetivo: 20
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def quarentena_arquivos()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\listar_status.py
+    - Tamanho do Ficheiro: 1332 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 25
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def verificar_arquivos()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\loader_core.py
+    - Tamanho do Ficheiro: 866 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 19
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def carregar_core()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\main.py
+    - Tamanho do Ficheiro: 41080 bytes
+    - Total de Linhas: 811
+    - Linhas de Código Efetivo: 661
+    - Linhas de Documentação/Comentários: 16
+    - Classes Mapeadas: 7
+    - Funções Extraídas: 34
+        * def gerar_dossie_monaco_nativo()
+        * def disparar_alerta_celular_email()
+        * def startup_event()
+        * def servir_painel_html()
+        * def gerar_frames()
+        * def video_feed()
+        * def gateway_biogemeos()
+        * def gateway_clinica()
+        * def gateway_salao()
+        * def gerar_pdf_dinamico_backend()
+        * def endpoint_gerar_relatorio_monaco()
+        * def verificar_ledger()
+        * def consultar_fila_arquivos()
+        * def listar_pdfs_finais()
+        * def abrir_pdf_especifico()
+        * def renderizar_pagina_pdf_como_imagem()
+        * def registrar()
+        * def __init__()
+        * def _inicializar_par_de_chaves()
+        * def _carregar_chave_privada()
+        * def _obter_ultimo_hash()
+        * def _alterar_trava_so()
+        * def gerar_bloco_auditado()
+        * def verificar_integridade_ledger()
+        * def gerar_dossie_auditoria()
+        * def __init__()
+        * def inicializar_sistema()
+        * def salvar_frame_capturado()
+        * def registrar_arquivo_na_fila()
+        * def validar_geofencing_global()
+        * def gerar_token_titular_global()
+        * def __init__()
+        * def inspecionar_dicionario_metricas()
+        * def gerar_selo_criptografico_soberano()
+    - Dependências/Módulos Importados: 40
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\main_diagostico.py
+    - Tamanho do Ficheiro: 9333 bytes
+    - Total de Linhas: 166
+    - Linhas de Código Efetivo: 138
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def __init__()
+        * def criar_layout()
+        * def log()
+        * def executar_mega_varredura()
+        * def lancar_sistema_principal()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\mapa_de_correcao.py
+    - Tamanho do Ficheiro: 1600 bytes
+    - Total de Linhas: 43
+    - Linhas de Código Efetivo: 32
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def gerar_mapa()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\mapeador_de_dependecias.py
+    - Tamanho do Ficheiro: 1249 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 25
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def mapear_importacoes()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_ambiente.py
+    - Tamanho do Ficheiro: 1976 bytes
+    - Total de Linhas: 53
+    - Linhas de Código Efetivo: 35
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def rodar()
+        * def iniciar()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_comunicacao.py
+    - Tamanho do Ficheiro: 1463 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 30
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def rodar()
+        * def iniciar()
+        * def __init__()
+        * def processar()
+        * def transmitir()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_consciencia.py
+    - Tamanho do Ficheiro: 2545 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 52
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def rodar()
+        * def iniciar()
+        * def __init__()
+        * def processar()
+        * def aprender_com_sucesso()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_eminencia.py
+    - Tamanho do Ficheiro: 1940 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 37
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+        * def rodar()
+        * def ativar()
+        * def iniciar()
+        * def __init__()
+        * def processar()
+        * def analisar()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_integrador.py
+    - Tamanho do Ficheiro: 2575 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 49
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+        * def rodar()
+        * def sincronizar()
+        * def iniciar()
+        * def __init__()
+        * def processar()
+        * def integrar_resultados()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_nucleo_acesso.py
+    - Tamanho do Ficheiro: 1891 bytes
+    - Total de Linhas: 53
+    - Linhas de Código Efetivo: 34
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def rodar()
+        * def iniciar()
+        * def __init__()
+        * def processar()
+        * def integrar_resultados()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_plan.py
+    - Tamanho do Ficheiro: 3077 bytes
+    - Total de Linhas: 61
+    - Linhas de Código Efetivo: 42
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def iniciar()
+        * def __init__()
+        * def processar()
+        * def executar_estrategia()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_ressonancia.py
+    - Tamanho do Ficheiro: 1664 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 30
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+        * def rodar()
+        * def sintonizar()
+        * def iniciar()
+        * def __init__()
+        * def processar()
+        * def sincronizar()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\motor_ao_ vivo.py
+    - Tamanho do Ficheiro: 1927 bytes
+    - Total de Linhas: 45
+    - Linhas de Código Efetivo: 30
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\organizador_sistema.py
+    - Tamanho do Ficheiro: 1393 bytes
+    - Total de Linhas: 37
+    - Linhas de Código Efetivo: 28
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def organizar_definitivamente()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\progresso-100.py
+    - Tamanho do Ficheiro: 2590 bytes
+    - Total de Linhas: 62
+    - Linhas de Código Efetivo: 46
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def calcular_valuation_pib_global()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\python ler_memoria.py
+    - Tamanho do Ficheiro: 2351 bytes
+    - Total de Linhas: 71
+    - Linhas de Código Efetivo: 58
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def inspecionar_tudo()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\rastreador_correcao.py
+    - Tamanho do Ficheiro: 1173 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 20
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\rastrear_limpeza.py
+    - Tamanho do Ficheiro: 1360 bytes
+    - Total de Linhas: 38
+    - Linhas de Código Efetivo: 28
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\recriar_audit.py
+    - Tamanho do Ficheiro: 7468 bytes
+    - Total de Linhas: 114
+    - Linhas de Código Efetivo: 77
+    - Linhas de Documentação/Comentários: 14
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def recriar_ambiente_audit()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\run_all.py
+    - Tamanho do Ficheiro: 1810 bytes
+    - Total de Linhas: 52
+    - Linhas de Código Efetivo: 34
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def menu_principal()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\scanner_busca.py
+    - Tamanho do Ficheiro: 1529 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 26
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def varrer_projeto()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\servidor_local.py
+    - Tamanho do Ficheiro: 12525 bytes
+    - Total de Linhas: 269
+    - Linhas de Código Efetivo: 212
+    - Linhas de Documentação/Comentários: 16
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def loop_visao_computacional()
+    - Dependências/Módulos Importados: 11
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\setup_seguranca.py
+    - Tamanho do Ficheiro: 829 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 17
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def mover_agora()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\sovereign_due-diligence_simulator.py.py
+    - Tamanho do Ficheiro: 4399 bytes
+    - Total de Linhas: 87
+    - Linhas de Código Efetivo: 65
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def simular_due_diligence_global()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\sovereign_gate.py
+    - Tamanho do Ficheiro: 2917 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 52
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 3
+        * def obter_fingerprint_hardware()
+        * def calcular_distancia_km()
+        * def soberign_gate_validador()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\stress_teste.py
+    - Tamanho do Ficheiro: 935 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 18
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def simular_ataque()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\stripe_service.py
+    - Tamanho do Ficheiro: 1151 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 28
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def criar_sessao_pagamento()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_ataque.py
+    - Tamanho do Ficheiro: 1943 bytes
+    - Total de Linhas: 31
+    - Linhas de Código Efetivo: 27
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def auditar_ram()
+        * def bloquear_debugger()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_integracao_memoria.py
+    - Tamanho do Ficheiro: 2177 bytes
+    - Total de Linhas: 59
+    - Linhas de Código Efetivo: 47
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def simular_camada()
+        * def testar_integracao_total()
+        * def __init__()
+        * def salvar_dados()
+        * def obter_dados()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_memoria.py
+    - Tamanho do Ficheiro: 982 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 21
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def gravar()
+        * def ler()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_motor.py
+    - Tamanho do Ficheiro: 1454 bytes
+    - Total de Linhas: 36
+    - Linhas de Código Efetivo: 30
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def processar_biometria()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_sanitizer.py
+    - Tamanho do Ficheiro: 935 bytes
+    - Total de Linhas: 24
+    - Linhas de Código Efetivo: 17
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def testar_seguranca()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_seguranca.py
+    - Tamanho do Ficheiro: 1648 bytes
+    - Total de Linhas: 40
+    - Linhas de Código Efetivo: 31
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def sanitize()
+        * def check_rbac()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_vozes.py
+    - Tamanho do Ficheiro: 390 bytes
+    - Total de Linhas: 14
+    - Linhas de Código Efetivo: 10
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_camera.py
+    - Tamanho do Ficheiro: 18707 bytes
+    - Total de Linhas: 373
+    - Linhas de Código Efetivo: 316
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 16
+        * def emitir_voz_sincronizada()
+        * def __init__()
+        * def escrever_texto_premium()
+        * def aplicar_filtro_biogemeo()
+        * def _configurar_rotas_flask()
+        * def _gerar_stream_web()
+        * def capturar_foto_instantanea()
+        * def iniciar_feed_camera_integrado()
+        * def _loop_camera_processamento()
+        * def index()
+        * def video_feed()
+        * def status_biometria()
+        * def capturar_manual()
+        * def disparar_varredura()
+        * def reiniciar()
+        * def obter_clima_atual()
+    - Dependências/Módulos Importados: 18
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_integrado_global.py
+    - Tamanho do Ficheiro: 2142 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 47
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def executar_teste_integrado_global()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_inteligencia.py
+    - Tamanho do Ficheiro: 2462 bytes
+    - Total de Linhas: 59
+    - Linhas de Código Efetivo: 33
+    - Linhas de Documentação/Comentários: 14
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def testar_inteligencia_ttc()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_orquestracao.py
+    - Tamanho do Ficheiro: 1275 bytes
+    - Total de Linhas: 30
+    - Linhas de Código Efetivo: 26
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def adicionar_tarefa()
+        * def executar_todas()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_seguranca.py
+    - Tamanho do Ficheiro: 2109 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 31
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def rodar_testes()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\traducoes_ttc.py
+    - Tamanho do Ficheiro: 1704 bytes
+    - Total de Linhas: 50
+    - Linhas de Código Efetivo: 34
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def traduzir()
+        * def __init__()
+        * def processar()
+        * def verificar_integridade()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificador_nuvem - Copia.py
+    - Tamanho do Ficheiro: 1793 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 29
+    - Linhas de Documentação/Comentários: 12
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def checar_licenca_na_nuvem()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificador_nuvem.py
+    - Tamanho do Ficheiro: 1791 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 28
+    - Linhas de Documentação/Comentários: 11
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def checar_licenca_na_nuvem()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_camera.py
+    - Tamanho do Ficheiro: 2572 bytes
+    - Total de Linhas: 42
+    - Linhas de Código Efetivo: 34
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def inspecionar_sistema_video()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_caminhos.py
+    - Tamanho do Ficheiro: 527 bytes
+    - Total de Linhas: 17
+    - Linhas de Código Efetivo: 13
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_dependencias.py
+    - Tamanho do Ficheiro: 2080 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 54
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def verificar_dependencias()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_integracao.py
+    - Tamanho do Ficheiro: 2792 bytes
+    - Total de Linhas: 60
+    - Linhas de Código Efetivo: 48
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def verificar_ecossistema()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_prontidao.py
+    - Tamanho do Ficheiro: 2012 bytes
+    - Total de Linhas: 50
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def verificar_projeto()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_sistema.py
+    - Tamanho do Ficheiro: 96 bytes
+    - Total de Linhas: 3
+    - Linhas de Código Efetivo: 2
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\ver_memoria.py
+    - Tamanho do Ficheiro: 1101 bytes
+    - Total de Linhas: 33
+    - Linhas de Código Efetivo: 24
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\architecture_auditor.py
+    - Tamanho do Ficheiro: 4153 bytes
+    - Total de Linhas: 88
+    - Linhas de Código Efetivo: 74
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def _analisar_imports_ast()
+        * def auditar_arquitetura_global()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\develops_readiness.py
+    - Tamanho do Ficheiro: 849 bytes
+    - Total de Linhas: 23
+    - Linhas de Código Efetivo: 19
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def audit_devops()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\privacy_auditor.py
+    - Tamanho do Ficheiro: 2806 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 46
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def __init__()
+        * def auditar_privacidade_e_zero_retention()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\sovereign_auditor.py
+    - Tamanho do Ficheiro: 13680 bytes
+    - Total de Linhas: 248
+    - Linhas de Código Efetivo: 212
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 7
+        * def __init__()
+        * def _obter_metricas_git()
+        * def _auditar_dependencias()
+        * def _escanear_profundo()
+        * def _imprimir_bloco_formatado()
+        * def _imprimir_item_composto()
+        * def auditar_e_consolidar()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\verificar_integridade.py
+    - Tamanho do Ficheiro: 1841 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 40
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def verificar_integridade()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise.py
+    - Tamanho do Ficheiro: 1487 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 34
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def executar_analise_geral()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise_cabelo.py
+    - Tamanho do Ficheiro: 3245 bytes
+    - Total de Linhas: 82
+    - Linhas de Código Efetivo: 57
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def calcular_vitalidade_completa()
+        * def processar()
+        * def salvar_dados()
+        * def registrar()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise_colorimetria.py
+    - Tamanho do Ficheiro: 2331 bytes
+    - Total de Linhas: 64
+    - Linhas de Código Efetivo: 52
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def calcular_cor_forense()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise_rosto.py
+    - Tamanho do Ficheiro: 2866 bytes
+    - Total de Linhas: 79
+    - Linhas de Código Efetivo: 56
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def classificar_formato()
+        * def processar()
+        * def salvar_dados()
+        * def registrar()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\atelie.py
+    - Tamanho do Ficheiro: 3854 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 64
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def salvar_memoria_comum()
+        * def gerar_laudo_fisico()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\banco_dados.py
+    - Tamanho do Ficheiro: 2936 bytes
+    - Total de Linhas: 89
+    - Linhas de Código Efetivo: 74
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 7
+        * def inicializar_banco()
+        * def salvar_cliente()
+        * def buscar_cliente()
+        * def listar_todos()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\biblioteca_estilo.py
+    - Tamanho do Ficheiro: 2826 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 52
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def consultar_estilo()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\biogemio_orquestrador.py
+    - Tamanho do Ficheiro: 7647 bytes
+    - Total de Linhas: 177
+    - Linhas de Código Efetivo: 125
+    - Linhas de Documentação/Comentários: 15
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 3
+        * def garantir_infraestrutura()
+        * def calcular_md5()
+        * def executar_orquestrador_biogemeo()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\biogem_engine.py
+    - Tamanho do Ficheiro: 9797 bytes
+    - Total de Linhas: 190
+    - Linhas de Código Efetivo: 145
+    - Linhas de Documentação/Comentários: 11
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def _desenhar_elementos_pagina_biogen()
+        * def __init__()
+        * def _refinar_malha_alta_densidade()
+        * def gerar_dossie_biogenese()
+        * def gerar_dossie_longevidade()
+    - Dependências/Módulos Importados: 13
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\biometria.py
+    - Tamanho do Ficheiro: 4720 bytes
+    - Total de Linhas: 98
+    - Linhas de Código Efetivo: 79
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+        * def obter_laudo_biometrico()
+        * def __init__()
+        * def _classificar_precisamente()
+        * def _calcular_fator_sustentacao()
+        * def gerar_laudo_completo()
+        * def salvar_dados()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\camera_hub.py
+    - Tamanho do Ficheiro: 2799 bytes
+    - Total de Linhas: 75
+    - Linhas de Código Efetivo: 53
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+        * def processar()
+        * def __new__()
+        * def get_frame()
+        * def release()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\carta_internacional_engine.py
+    - Tamanho do Ficheiro: 5044 bytes
+    - Total de Linhas: 99
+    - Linhas de Código Efetivo: 73
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def __init__()
+        * def gerar_carta_apresentacao()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\clinica_estetica_roi.py
+    - Tamanho do Ficheiro: 4927 bytes
+    - Total de Linhas: 84
+    - Linhas de Código Efetivo: 66
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def __init__()
+        * def gerar_pdf_roi_clinica()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\coreia_engine.py
+    - Tamanho do Ficheiro: 3720 bytes
+    - Total de Linhas: 95
+    - Linhas de Código Efetivo: 72
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+        * def bridge_cory_to_layout_and_core()
+        * def processar()
+        * def __init__()
+        * def projetar_degenerativo()
+        * def process_epigenetic_matrix()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\core_reconstrucao.py
+    - Tamanho do Ficheiro: 2651 bytes
+    - Total de Linhas: 66
+    - Linhas de Código Efetivo: 50
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def executar_reconstrucao_total()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\dashboard_global.py
+    - Tamanho do Ficheiro: 2663 bytes
+    - Total de Linhas: 75
+    - Linhas de Código Efetivo: 52
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 7
+        * def analisar_expressao_olhar()
+        * def processar_rosto_completo()
+        * def processar()
+        * def obter_laudo_biometrico()
+        * def gerar_diagnostico_final()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\detector_erros.py
+    - Tamanho do Ficheiro: 2387 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 49
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 5
+        * def processar()
+        * def __init__()
+        * def registrar_falha()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\diagnostico_ante_gravidade_neural.py
+    - Tamanho do Ficheiro: 1955 bytes
+    - Total de Linhas: 59
+    - Linhas de Código Efetivo: 43
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def executar_leitura_anti_gravidade()
+        * def obter_dados()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\diagnostico_seguranca.py
+    - Tamanho do Ficheiro: 2865 bytes
+    - Total de Linhas: 79
+    - Linhas de Código Efetivo: 59
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+        * def processar()
+        * def __init__()
+        * def _verificar_arquitetura()
+        * def _verificar_ambiente()
+        * def verificar_status()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\engine.py
+    - Tamanho do Ficheiro: 3027 bytes
+    - Total de Linhas: 81
+    - Linhas de Código Efetivo: 57
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def processar_ultima_pericia()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\engine_scanner.py
+    - Tamanho do Ficheiro: 2179 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 50
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def rodar_camera()
+        * def iniciar_scanner_thread()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\generator.py
+    - Tamanho do Ficheiro: 3152 bytes
+    - Total de Linhas: 70
+    - Linhas de Código Efetivo: 46
+    - Linhas de Documentação/Comentários: 12
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def processar_fluxo_global()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\geodefense.py
+    - Tamanho do Ficheiro: 5742 bytes
+    - Total de Linhas: 123
+    - Linhas de Código Efetivo: 96
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 7
+        * def calcular_distancia_km()
+        * def gerar_token_titular_global()
+        * def gerar_senha_temporaria_perimetro()
+        * def registrar_bonus_indicacao()
+        * def executar_onboarding_e_indicacao()
+        * def simular_pagamento_stripe()
+        * def validar_geofencing_global()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerador_dossies_master.py
+    - Tamanho do Ficheiro: 8932 bytes
+    - Total de Linhas: 178
+    - Linhas de Código Efetivo: 133
+    - Linhas de Documentação/Comentários: 21
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def carregar_telemetria_viva()
+        * def executar_geracao_master()
+    - Dependências/Módulos Importados: 15
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerador_faturamento.py
+    - Tamanho do Ficheiro: 6036 bytes
+    - Total de Linhas: 131
+    - Linhas de Código Efetivo: 98
+    - Linhas de Documentação/Comentários: 10
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 5
+        * def processar()
+        * def __init__()
+        * def gerar_ordem_pagamento_global()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerenciador_geografico.py
+    - Tamanho do Ficheiro: 2240 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+        * def processar()
+        * def __init__()
+        * def carregar_pais()
+        * def obter()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerenciador_global.py
+    - Tamanho do Ficheiro: 2950 bytes
+    - Total de Linhas: 78
+    - Linhas de Código Efetivo: 54
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+        * def __init__()
+        * def processar_ecossistema_completo()
+        * def iniciar_biometria()
+        * def iniciar_prognostico()
+        * def executar_coleta_inicial()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerenciador_hardware.py
+    - Tamanho do Ficheiro: 3140 bytes
+    - Total de Linhas: 92
+    - Linhas de Código Efetivo: 73
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+        * def processar()
+        * def __init__()
+        * def _escutar_hardware()
+        * def _gerar_valores_simulados()
+        * def _sincronizar_memoria()
+        * def obter_dados()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\global_state.py
+    - Tamanho do Ficheiro: 967 bytes
+    - Total de Linhas: 29
+    - Linhas de Código Efetivo: 19
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def __init__()
+        * def salvar_dados()
+        * def ler_dados()
+        * def listar_tudo()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\integracao_google.py
+    - Tamanho do Ficheiro: 2322 bytes
+    - Total de Linhas: 66
+    - Linhas de Código Efetivo: 47
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def enviar_laudo()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\memoria_comum.py
+    - Tamanho do Ficheiro: 2293 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 50
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 8
+        * def __init__()
+        * def adicionar_tarefa()
+        * def pegar_proxima_tarefa()
+        * def salvar_dados()
+        * def obter_dados()
+        * def ler_dados()
+        * def _salvar_estado()
+        * def _carregar_estado()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\metrics.py
+    - Tamanho do Ficheiro: 2078 bytes
+    - Total de Linhas: 63
+    - Linhas de Código Efetivo: 47
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def calculate_visagism_metrics()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\midi_listener.py
+    - Tamanho do Ficheiro: 5042 bytes
+    - Total de Linhas: 120
+    - Linhas de Código Efetivo: 101
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 5
+        * def processar_escuta_background()
+        * def __init__()
+        * def iniciar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\modulo_psiquico.py
+    - Tamanho do Ficheiro: 3864 bytes
+    - Total de Linhas: 101
+    - Linhas de Código Efetivo: 74
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def processar_analise()
+        * def processar()
+        * def capturar_e_analisar()
+        * def ler_dados()
+        * def salvar_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\monaco_modelagem_engine.py
+    - Tamanho do Ficheiro: 14961 bytes
+    - Total de Linhas: 279
+    - Linhas de Código Efetivo: 223
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+        * def __init__()
+        * def showPage()
+        * def save()
+        * def draw_decorations()
+        * def __init__()
+        * def _carregar_estado_sistema()
+        * def _calcular_tensor_degradacao()
+        * def gerar_dossie_modelagem()
+    - Dependências/Módulos Importados: 13
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_ambiental.py
+    - Tamanho do Ficheiro: 2951 bytes
+    - Total de Linhas: 74
+    - Linhas de Código Efetivo: 61
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+        * def processar()
+        * def __init__()
+        * def calcular_risco()
+        * def definir_protocolo()
+        * def executar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_biogemeos_neuro.py
+    - Tamanho do Ficheiro: 5450 bytes
+    - Total de Linhas: 98
+    - Linhas de Código Efetivo: 75
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def obter_clima_16_dias()
+        * def processar_sessao_completa()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_biometrico.py
+    - Tamanho do Ficheiro: 4586 bytes
+    - Total de Linhas: 136
+    - Linhas de Código Efetivo: 106
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 9
+        * def processar()
+        * def get_emg()
+        * def get_vfc()
+        * def iniciar()
+        * def __init__()
+        * def processar_frame()
+        * def get_vfc()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_dados.py
+    - Tamanho do Ficheiro: 2880 bytes
+    - Total de Linhas: 77
+    - Linhas de Código Efetivo: 64
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def inicializar_banco()
+        * def inserir_cliente()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_olhar_store.py
+    - Tamanho do Ficheiro: 6013 bytes
+    - Total de Linhas: 142
+    - Linhas de Código Efetivo: 111
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def processar()
+        * def __init__()
+        * def _calcular_ear()
+        * def processar_frame()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_performance.py
+    - Tamanho do Ficheiro: 3015 bytes
+    - Total de Linhas: 80
+    - Linhas de Código Efetivo: 56
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+        * def processar()
+        * def __init__()
+        * def medir_latencia()
+        * def registrar_log()
+        * def tarefa_padrao()
+        * def teste_exemplo()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_prognostico.py
+    - Tamanho do Ficheiro: 3480 bytes
+    - Total de Linhas: 80
+    - Linhas de Código Efetivo: 65
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+        * def iniciar()
+        * def processar()
+        * def __init__()
+        * def calcular_matriz_total()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_regeneracao.py
+    - Tamanho do Ficheiro: 3664 bytes
+    - Total de Linhas: 96
+    - Linhas de Código Efetivo: 65
+    - Linhas de Documentação/Comentários: 12
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+        * def processar()
+        * def __init__()
+        * def _validar_clima()
+        * def calcular_fpn()
+        * def _registrar_log()
+        * def obter_status_protocolo()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_sincronia.py
+    - Tamanho do Ficheiro: 2591 bytes
+    - Total de Linhas: 72
+    - Linhas de Código Efetivo: 52
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+        * def executar_coleta_inicial()
+        * def coleta_dados_sensores()
+        * def verificar_integridade_malha()
+        * def processar()
+        * def salvar_dados()
+        * def ler_dados()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\neuro_gravidade_preditor.py
+    - Tamanho do Ficheiro: 2006 bytes
+    - Total de Linhas: 56
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def processar()
+        * def processar_biometria()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\neuro_protocolos.py
+    - Tamanho do Ficheiro: 3316 bytes
+    - Total de Linhas: 78
+    - Linhas de Código Efetivo: 61
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def processar()
+        * def __init__()
+        * def gerar_prescricao()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\osteometria_script.py
+    - Tamanho do Ficheiro: 2878 bytes
+    - Total de Linhas: 82
+    - Linhas de Código Efetivo: 67
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def executar_osteometria()
+        * def processar()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\precificacao_motor.py
+    - Tamanho do Ficheiro: 3709 bytes
+    - Total de Linhas: 105
+    - Linhas de Código Efetivo: 86
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def obter_dados_cotas()
+        * def obter_cota_por_pais()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\processador_inteligente.py
+    - Tamanho do Ficheiro: 3692 bytes
+    - Total de Linhas: 86
+    - Linhas de Código Efetivo: 66
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 8
+        * def __init__()
+        * def conectar_memoria()
+        * def set_historico()
+        * def verificar_geodefense()
+        * def analisar_estado_atual()
+        * def _encontrar_dia_mais_semelhante()
+        * def _gerar_parecer()
+        * def iniciar_processamento()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\protocolo_logica.py
+    - Tamanho do Ficheiro: 2131 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 39
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def registrar_log()
+        * def processar_protocolo()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\scanner_integrado.py
+    - Tamanho do Ficheiro: 1254 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 29
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def main()
+    - Dependências/Módulos Importados: 10
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\script_clima.py
+    - Tamanho do Ficheiro: 3201 bytes
+    - Total de Linhas: 80
+    - Linhas de Código Efetivo: 57
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def obter_telemetria_ambiental()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\sensor_fadiga.py
+    - Tamanho do Ficheiro: 3304 bytes
+    - Total de Linhas: 85
+    - Linhas de Código Efetivo: 62
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 4
+        * def processar()
+        * def __init__()
+        * def analisar_quadro()
+        * def registrar()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\sentinela_fisio.py
+    - Tamanho do Ficheiro: 990 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 15
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\stress_core_engine.py
+    - Tamanho do Ficheiro: 1929 bytes
+    - Total de Linhas: 52
+    - Linhas de Código Efetivo: 37
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\super_retorno_financeiro.py
+    - Tamanho do Ficheiro: 14104 bytes
+    - Total de Linhas: 230
+    - Linhas de Código Efetivo: 179
+    - Linhas de Documentação/Comentários: 14
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def _desenhar_elementos_pagina()
+        * def __init__()
+        * def _calcular_vetor_degradacao_tissular()
+        * def gerar_pdf_roi_soberano()
+    - Dependências/Módulos Importados: 9
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\synapse_core.py
+    - Tamanho do Ficheiro: 4128 bytes
+    - Total de Linhas: 80
+    - Linhas de Código Efetivo: 56
+    - Linhas de Documentação/Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def __init__()
+        * def processar_sessao_completa()
+        * def _calcular_nivel_apto()
+        * def _calcular_densidade_neuronal()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\testae_portas.py
+    - Tamanho do Ficheiro: 408 bytes
+    - Total de Linhas: 15
+    - Linhas de Código Efetivo: 11
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def encontrar_arduino()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\tradutor.py
+    - Tamanho do Ficheiro: 956 bytes
+    - Total de Linhas: 36
+    - Linhas de Código Efetivo: 26
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def definir_idioma()
+        * def t()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\tricologia_disruptiva_engine.py
+    - Tamanho do Ficheiro: 7642 bytes
+    - Total de Linhas: 143
+    - Linhas de Código Efetivo: 118
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def __init__()
+        * def _analisar_biometria_optica()
+        * def processar_diagnostico_avancado()
+        * def processar_diagnostico_com_clima()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\tricologia_ultra_avancada.py
+    - Tamanho do Ficheiro: 12300 bytes
+    - Total de Linhas: 241
+    - Linhas de Código Efetivo: 191
+    - Linhas de Documentação/Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def _desenhar_elementos_pagina_trico()
+        * def __init__()
+        * def _calcular_hemodinamica_bulbar()
+        * def _calcular_optica_haste()
+        * def gerar_pdf_tricologia_avancada()
+    - Dependências/Módulos Importados: 9
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\validador_licenca.py
+    - Tamanho do Ficheiro: 1447 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 33
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def __init__()
+        * def varrer_servidor_local()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\validador_sistema.py
+    - Tamanho do Ficheiro: 1939 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def __init__()
+        * def rodar_validacao()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\verificar_banco.py
+    - Tamanho do Ficheiro: 976 bytes
+    - Total de Linhas: 37
+    - Linhas de Código Efetivo: 22
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def ler_banco()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\viasualizador_visagista.py
+    - Tamanho do Ficheiro: 1674 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 40
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def executar_analise_e_abrir_laudo()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\visagismo_estetica_roi.py
+    - Tamanho do Ficheiro: 10231 bytes
+    - Total de Linhas: 167
+    - Linhas de Código Efetivo: 132
+    - Linhas de Documentação/Comentários: 11
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def _calcular_distancia_3d()
+        * def gerar_pdf_visagismo_roi()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\visualizador_relatorios.py
+    - Tamanho do Ficheiro: 2257 bytes
+    - Total de Linhas: 58
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def abrir_todos_os_pdfs()
+        * def __init__()
+        * def espelhar_tela()
+        * def enviar_cliente()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\voz_motor.py
+    - Tamanho do Ficheiro: 139 bytes
+    - Total de Linhas: 7
+    - Linhas de Código Efetivo: 5
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def falar()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\database\db_manager.py
+    - Tamanho do Ficheiro: 977 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 18
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def verificar_permissao()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\defesa_ativa\blindagem.py
+    - Tamanho do Ficheiro: 1108 bytes
+    - Total de Linhas: 34
+    - Linhas de Código Efetivo: 26
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def ativar_protecao()
+        * def rodar()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\defesa_ativa\detector.py
+    - Tamanho do Ficheiro: 1792 bytes
+    - Total de Linhas: 49
+    - Linhas de Código Efetivo: 38
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 5
+        * def iniciar_monitoramento()
+        * def carregar_blacklist()
+        * def is_ip_bloqueado()
+        * def adicionar_ao_blacklist()
+        * def verificar_anomalia()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\defesa_ativa\honeypot.py
+    - Tamanho do Ficheiro: 1026 bytes
+    - Total de Linhas: 34
+    - Linhas de Código Efetivo: 25
+    - Linhas de Documentação/Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 4
+        * def armar()
+        * def ativar_armadilha()
+        * def iniciar()
+        * def rodar_ambiente_falso()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\neural_core\neural_visage_engine.py
+    - Tamanho do Ficheiro: 96 bytes
+    - Total de Linhas: 3
+    - Linhas de Código Efetivo: 2
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\PERICIA_DESCO\cliente_thierry_16-05-2026.py
+    - Tamanho do Ficheiro: 8148 bytes
+    - Total de Linhas: 185
+    - Linhas de Código Efetivo: 140
+    - Linhas de Documentação/Comentários: 12
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def salvar_laudo_txt()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\PERICIA_DESCO\04_luxury_reports\pdf leitor.py
+    - Tamanho do Ficheiro: 3827 bytes
+    - Total de Linhas: 95
+    - Linhas de Código Efetivo: 74
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+        * def capturar_foto_webcam()
+        * def criar_relatorio_thierry()
+    - Dependências/Módulos Importados: 8
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\anti_reverse.py
+    - Tamanho do Ficheiro: 2679 bytes
+    - Total de Linhas: 63
+    - Linhas de Código Efetivo: 52
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def verificar_depurador()
+        * def gerar_vetor_envenenado()
+        * def simular_honeypot_luxo()
+        * def executar_varredura_seguranca()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\audit_ledger.py
+    - Tamanho do Ficheiro: 583 bytes
+    - Total de Linhas: 12
+    - Linhas de Código Efetivo: 8
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def registrar_trilha()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\autodestruicao.py
+    - Tamanho do Ficheiro: 1159 bytes
+    - Total de Linhas: 33
+    - Linhas de Código Efetivo: 23
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def executar_protocolo_emergencia()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\BehaviorMonitor.py
+    - Tamanho do Ficheiro: 1011 bytes
+    - Total de Linhas: 20
+    - Linhas de Código Efetivo: 12
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def inspecionar_comportamento()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\biometric_validator.py
+    - Tamanho do Ficheiro: 2937 bytes
+    - Total de Linhas: 66
+    - Linhas de Código Efetivo: 46
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def injetar_marca_dagua_invisivel()
+        * def validar_vetor_biometrico()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\confidential_compute.py
+    - Tamanho do Ficheiro: 2821 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 41
+    - Linhas de Documentação/Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def validar_atestacao_hardware()
+        * def executar_em_enclave_seguro()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\crypto_engine.py
+    - Tamanho do Ficheiro: 2940 bytes
+    - Total de Linhas: 61
+    - Linhas de Código Efetivo: 46
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def __init__()
+        * def _derivar_chave_temporaria()
+        * def _verificar_e_rotacionar()
+        * def cifrar()
+        * def decifrar()
+    - Dependências/Módulos Importados: 7
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\data_anonymizer.py
+    - Tamanho do Ficheiro: 218 bytes
+    - Total de Linhas: 7
+    - Linhas de Código Efetivo: 6
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def anonimizar()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\data_masking.py
+    - Tamanho do Ficheiro: 640 bytes
+    - Total de Linhas: 14
+    - Linhas de Código Efetivo: 10
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def mascarar()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\email_service.py
+    - Tamanho do Ficheiro: 2830 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 45
+    - Linhas de Documentação/Comentários: 10
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def secure_delivery()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\ephemeral.py
+    - Tamanho do Ficheiro: 2226 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 43
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def shred()
+        * def secure_wipe_string()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\geo_defense.py
+    - Tamanho do Ficheiro: 5276 bytes
+    - Total de Linhas: 107
+    - Linhas de Código Efetivo: 75
+    - Linhas de Documentação/Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def _modo_desenvolvedor_ativo()
+        * def calcular_distancia()
+        * def validar_perimetro_interno_loja()
+        * def validar_soberania_territorial()
+        * def validar_sub_licenca_satelite()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\homomorphic_biometrics.py
+    - Tamanho do Ficheiro: 2672 bytes
+    - Total de Linhas: 58
+    - Linhas de Código Efetivo: 39
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def __init__()
+        * def exportar_contexto_publico()
+        * def criptografar_vetor()
+        * def calcular_similaridade_homomorfica()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\input_sanitizer.py
+    - Tamanho do Ficheiro: 1561 bytes
+    - Total de Linhas: 41
+    - Linhas de Código Efetivo: 32
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def limpar_string()
+        * def limpar_dicionario()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\integrit_verifier.py
+    - Tamanho do Ficheiro: 763 bytes
+    - Total de Linhas: 22
+    - Linhas de Código Efetivo: 19
+    - Linhas de Documentação/Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def calcular_hash()
+        * def verificar_arquivo()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\log_seguro.py
+    - Tamanho do Ficheiro: 3531 bytes
+    - Total de Linhas: 88
+    - Linhas de Código Efetivo: 68
+    - Linhas de Documentação/Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+        * def __init__()
+        * def _inicializar_banco()
+        * def registrar()
+        * def dividir_segredo_shamir()
+        * def reconstituir_segredo_shamir()
+    - Dependências/Módulos Importados: 6
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\network_shield.py
+    - Tamanho do Ficheiro: 2156 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 37
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def __init__()
+        * def validar_certificate_pinning()
+        * def criar_contexto_mtls()
+        * def tunel_overlay_status()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\nonce_cache.py
+    - Tamanho do Ficheiro: 942 bytes
+    - Total de Linhas: 25
+    - Linhas de Código Efetivo: 19
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def __init__()
+        * def validar_e_registrar()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\policyEngine.py
+    - Tamanho do Ficheiro: 1051 bytes
+    - Total de Linhas: 24
+    - Linhas de Código Efetivo: 15
+    - Linhas de Documentação/Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def avaliar_regras()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\portaria.py
+    - Tamanho do Ficheiro: 3565 bytes
+    - Total de Linhas: 86
+    - Linhas de Código Efetivo: 62
+    - Linhas de Documentação/Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def verificar_acesso()
+        * def __init__()
+        * def validar_e_registrar()
+    - Dependências/Módulos Importados: 12
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\pqc_engine.py
+    - Tamanho do Ficheiro: 2671 bytes
+    - Total de Linhas: 61
+    - Linhas de Código Efetivo: 46
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def __init__()
+        * def gerar_chaves_post_quanticas()
+        * def assinar_payload_pqc()
+        * def verificar_assinatura_pqc()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\Ratelimiting.py
+    - Tamanho do Ficheiro: 1171 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 18
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def verificar_vazao()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\sandbox_executor.py
+    - Tamanho do Ficheiro: 455 bytes
+    - Total de Linhas: 13
+    - Linhas de Código Efetivo: 12
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def rodar_seguro()
+    - Dependências/Módulos Importados: 1
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\schemas.py
+    - Tamanho do Ficheiro: 1001 bytes
+    - Total de Linhas: 25
+    - Linhas de Código Efetivo: 19
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def validar_janela_tempo()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\session_manager.py
+    - Tamanho do Ficheiro: 1757 bytes
+    - Total de Linhas: 38
+    - Linhas de Código Efetivo: 28
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+        * def gerar_token()
+        * def validar_token()
+    - Dependências/Módulos Importados: 3
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\system_shield.py
+    - Tamanho do Ficheiro: 655 bytes
+    - Total de Linhas: 12
+    - Linhas de Código Efetivo: 8
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def varredura_final()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\threat_intel.py
+    - Tamanho do Ficheiro: 641 bytes
+    - Total de Linhas: 12
+    - Linhas de Código Efetivo: 8
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def verificar_reputacao()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\token_blacklist.py
+    - Tamanho do Ficheiro: 227 bytes
+    - Total de Linhas: 9
+    - Linhas de Código Efetivo: 7
+    - Linhas de Documentação/Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def bloquear()
+        * def esta_bloqueado()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\zero_trust_governor.py
+    - Tamanho do Ficheiro: 656 bytes
+    - Total de Linhas: 12
+    - Linhas de Código Efetivo: 8
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+        * def governar_transacao()
+    - Dependências/Módulos Importados: 0
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\__init__.py
+    - Tamanho do Ficheiro: 595 bytes
+    - Total de Linhas: 13
+    - Linhas de Código Efetivo: 9
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Dependências/Módulos Importados: 9
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\core\.py
+    - Tamanho do Ficheiro: 1237 bytes
+    - Total de Linhas: 42
+    - Linhas de Código Efetivo: 31
+    - Linhas de Documentação/Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def __init__()
+        * def _update()
+        * def get_frame()
+        * def encerrar()
+    - Dependências/Módulos Importados: 4
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\core\processamento_camera.py
+    - Tamanho do Ficheiro: 2190 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 49
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+        * def __init__()
+        * def processar()
+        * def _executar_salvamento()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testes_temp\teste_cameras.py
+    - Tamanho do Ficheiro: 1085 bytes
+    - Total de Linhas: 31
+    - Linhas de Código Efetivo: 23
+    - Linhas de Documentação/Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+        * def identificar_cameras()
+    - Dependências/Módulos Importados: 2
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testes_temp\teste_sistema.py
+    - Tamanho do Ficheiro: 2740 bytes
+    - Total de Linhas: 72
+    - Linhas de Código Efetivo: 54
+    - Linhas de Documentação/Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+        * def gerar_relatorio()
+        * def __init__()
+        * def processar()
+        * def calcular_cronograma_detalhado()
+    - Dependências/Módulos Importados: 5
+    - Status de Integridade (Bytecode): OK (Integridade e Conformidade Confirmadas)
+--------------------------------------------------
+
+================================================================================
+2. AUDITORIA DE SEGURANÇA INTERNACIONAL (PADRÃO OWASP / COMPLIANCE)
+================================================================================
+[*] Executando varredura estática de vulnerabilidades nos módulos limpos...
+
+Working... ---------------------------------------- 100% 0:00:02
+Run started:2026-09-22 11:30:08.648228+00:00
+
+Test results:
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\PERICIA_DESCO\cliente_thierry_16-05-2026.py:108:52
+107	                for item in ESQUERDA_MAPEADA:
+108	                    valores_persistentes[item] = f"{random.uniform(10, 25):.1f}mm"
+109	                for item in DIREITA_MAPEADA:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\PERICIA_DESCO\cliente_thierry_16-05-2026.py:110:52
+109	                for item in DIREITA_MAPEADA:
+110	                    valores_persistentes[item] = f"{random.uniform(0.5, 1.9):.2f}"
+111	            
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\PERICIA_DESCO\cliente_thierry_16-05-2026.py:176:43
+175	            for item in ESQUERDA_MAPEADA:
+176	                valores_manuais[item] = f"{random.uniform(10, 25):.1f}mm"
+177	            for item in DIREITA_MAPEADA:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\PERICIA_DESCO\cliente_thierry_16-05-2026.py:178:43
+177	            for item in DIREITA_MAPEADA:
+178	                valores_manuais[item] = f"{random.uniform(0.5, 1.9):.2f}"
+179	            
+
+--------------------------------------------------
+>> Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
+   Severity: High   Confidence: Medium
+   CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b201_flask_debug_true.html
+   Location: .\app.py:75:4
+74	    print("[FLASK APP] Inicializando Ponte Garçom na porta 5000...")
+75	    app.run(host='127.0.0.1', port=5000, debug=True)
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\audit\sovereign_auditor.py:3:0
+2	import json
+3	import subprocess
+4	import textwrap
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\audit\sovereign_auditor.py:34:26
+33	        try:
+34	            res_commits = subprocess.run(
+35	                ['git', 'rev-list', '--count', 'HEAD'],
+36	                cwd=self.project_root, capture_output=True, text=True, check=True
+37	            )
+38	            git_data["total_commits"] = int(res_commits.stdout.strip())
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\audit\sovereign_auditor.py:34:26
+33	        try:
+34	            res_commits = subprocess.run(
+35	                ['git', 'rev-list', '--count', 'HEAD'],
+36	                cwd=self.project_root, capture_output=True, text=True, check=True
+37	            )
+38	            git_data["total_commits"] = int(res_commits.stdout.strip())
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\audit\sovereign_auditor.py:40:24
+39	
+40	            res_datas = subprocess.run(
+41	                ['git', 'log', '--format=%aI', '--reverse'],
+42	                cwd=self.project_root, capture_output=True, text=True, check=True
+43	            )
+44	            linhas_datas = res_datas.stdout.strip().splitlines()
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\audit\sovereign_auditor.py:40:24
+39	
+40	            res_datas = subprocess.run(
+41	                ['git', 'log', '--format=%aI', '--reverse'],
+42	                cwd=self.project_root, capture_output=True, text=True, check=True
+43	            )
+44	            linhas_datas = res_datas.stdout.strip().splitlines()
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\audit\sovereign_auditor.py:50:8
+49	                git_data["horas_trabalhadas_git"] = max(git_data["total_commits"] * 3.5, round(diff_horas * 0.25, 2))
+50	        except Exception:
+51	            pass
+52	        return git_data
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\audit\sovereign_auditor.py:58:24
+57	        try:
+58	            resultado = subprocess.run(
+59	                ['pip-audit', '--format', 'json'],
+60	                cwd=self.project_root, capture_output=True, text=True
+61	            )
+62	            if resultado.stdout:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\audit\sovereign_auditor.py:58:24
+57	        try:
+58	            resultado = subprocess.run(
+59	                ['pip-audit', '--format', 'json'],
+60	                cwd=self.project_root, capture_output=True, text=True
+61	            )
+62	            if resultado.stdout:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\audit\sovereign_auditor.py:70:8
+69	                    status_seguranca = "REPROVADO"
+70	        except Exception:
+71	            pass
+72	        return status_seguranca, len(vulnerabilidades)
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\audit\sovereign_auditor.py:111:16
+110	                        metricas_modulos["core_geral"]["linhas"] += linhas
+111	                except Exception:
+112	                    pass
+113	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\auditoria_visagismo.py:10:0
+9	import ast
+10	import subprocess
+11	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\auditoria_visagismo.py:72:18
+71	            # Validação de integridade e compilação em bytecode
+72	            res = subprocess.run([sys.executable, "-m", "py_compile", arq], capture_output=True, text=True)
+73	            status = "OK (Integridade e Conformidade Confirmadas)" if res.returncode == 0 else "FALHA NA COMPILAÇÃO"
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\auditoria_visagismo.py:90:20
+89	        # Executa o bandit excluindo pastas e ficheiros indesejados
+90	        resultado = subprocess.run(
+91	            ["bandit", "-r", ".", "-x", "./venv,./__pycache__,./.git,test_*.py,auditor*.py,tempCodeRunnerFile.py"], 
+92	            capture_output=True, text=True
+93	        )
+94	        
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\auditoria_visagismo.py:90:20
+89	        # Executa o bandit excluindo pastas e ficheiros indesejados
+90	        resultado = subprocess.run(
+91	            ["bandit", "-r", ".", "-x", "./venv,./__pycache__,./.git,test_*.py,auditor*.py,tempCodeRunnerFile.py"], 
+92	            capture_output=True, text=True
+93	        )
+94	        
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\auto_reparador.py:59:16
+58	                            f.writelines(novas_linhas)
+59	                except Exception as e:
+60	                    pass
+61	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\carregador_automatico.py:34:12
+33	                modulos_carregados += 1
+34	            except Exception as e:
+35	                # Ignora arquivos que não são módulos importáveis diretamente
+36	                pass
+37	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\analise.py:37:4
+36	        memoria.salvar_dados("ULTIMA_ANALISE_GERAL", resultado)
+37	    except Exception:
+38	        pass
+39	        
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\analise_cabelo.py:69:4
+68	            memoria.registrar("CABELO_DIAGNOSTICO", dados_cabelo)
+69	    except Exception:
+70	        pass
+71	    
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\analise_colorimetria.py:54:4
+53	        memoria.salvar_dados("COLORIMETRIA_STATUS", resultado)
+54	    except Exception:
+55	        pass
+56	        
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\analise_rosto.py:70:8
+69	                memoria.registrar("ROSTO_STATUS", status_rosto)
+70	        except Exception:
+71	            pass
+72	        
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\banco_dados.py:38:4
+37	        memoria.salvar_dados("banco_status", {"status": "inicializado", "path": DB_PATH})
+38	    except Exception:
+39	        pass
+40	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\banco_dados.py:56:4
+55	        })
+56	    except Exception:
+57	        pass
+58	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\biblioteca_estilo.py:54:4
+53	        })
+54	    except Exception:
+55	        pass
+56	        
+
+--------------------------------------------------
+>> Issue: [B324:hashlib] Use of weak MD5 hash for security. Consider usedforsecurity=False
+   Severity: High   Confidence: High
+   CWE: CWE-327 (https://cwe.mitre.org/data/definitions/327.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b324_hashlib.html
+   Location: .\core\biogemio_orquestrador.py:70:15
+69	    """Gera o 'DNA' (checksum MD5) do arquivo gerado para auditoria internacional."""
+70	    hash_md5 = hashlib.md5()
+71	    with open(caminho_arquivo, "rb") as f:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\camera_hub.py:43:16
+42	                    memoria.salvar_dados("camera_hub_status", {"aberta": status_camera})
+43	                except Exception:
+44	                    pass
+45	                    
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\camera_hub.py:62:12
+61	                memoria.salvar_dados("camera_hub_status", {"aberta": False})
+62	            except Exception:
+63	                pass
+64	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\core_reconstrucao.py:45:8
+44	            memoria.salvar_dados("core_reconstrucao_consolidado", dados_consolidado)
+45	        except Exception:
+46	            pass
+47	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\core_reconstrucao.py:55:8
+54	            memoria.salvar_dados("core_reconstrucao_consolidado", erro_payload)
+55	        except Exception:
+56	            pass
+57	            
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\coreia_engine.py:77:8
+76	                self.shared_memory["cory_active_telemetry"] = payload
+77	        except Exception:
+78	            pass
+79	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\dashboard_global.py:55:4
+54	        memoria.salvar_dados("status_processamento_rosto", "SUCESSO")
+55	    except Exception:
+56	        pass
+57	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\detector_erros.py:48:8
+47	            })
+48	        except Exception:
+49	            pass
+50	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\core\diagnostico_ante_gravidade_neural.py:4:0
+3	import os
+4	import subprocess
+5	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\core\diagnostico_ante_gravidade_neural.py:27:12
+26	        if os.path.exists(caminho_clima):
+27	            subprocess.run([sys.executable, caminho_clima], check=True)
+28	        else:
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\diagnostico_ante_gravidade_neural.py:46:4
+45	        memoria.salvar_dados("leitura_anti_gravidade", dados)
+46	    except Exception:
+47	        pass
+48	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\diagnostico_seguranca.py:63:8
+62	            memoria.salvar_dados("status_seguranca", {"integro": True, "status": "Liberado"})
+63	        except Exception:
+64	            pass
+65	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\engine.py:61:12
+60	                memoria.salvar_dados("pericia_engine", resposta_final)
+61	            except Exception:
+62	                pass
+63	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\engine_scanner.py:41:12
+40	                memoria.salvar_dados("scanner_rosto_status", {"detectado": True, "status": "Ativo"})
+41	            except Exception:
+42	                pass
+43	            
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\gerador_dossies_master.py:79:8
+78	                }
+79	        except Exception:
+80	            pass
+81	    return telemetria_padrao
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\gerador_faturamento.py:116:12
+115	                })
+116	            except Exception:
+117	                pass
+118	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\core\gerenciador_hardware.py:73:40
+72	    def _gerar_valores_simulados(self):
+73	        self.dados_atuais["bpm"] = 75 + random.randint(-2, 3)
+74	        self.dados_atuais["spo2"] = 98 + (random.randint(0, 10) / 10.0)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\core\gerenciador_hardware.py:74:42
+73	        self.dados_atuais["bpm"] = 75 + random.randint(-2, 3)
+74	        self.dados_atuais["spo2"] = 98 + (random.randint(0, 10) / 10.0)
+75	        self.dados_atuais["gsr"] = 1.2 + (random.randint(-1, 1) / 10.0)
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\core\gerenciador_hardware.py:75:42
+74	        self.dados_atuais["spo2"] = 98 + (random.randint(0, 10) / 10.0)
+75	        self.dados_atuais["gsr"] = 1.2 + (random.randint(-1, 1) / 10.0)
+76	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\gerenciador_hardware.py:81:8
+80	            memoria.salvar_dados("hardware_biometrico", self.dados_atuais)
+81	        except Exception:
+82	            pass
+83	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\monaco_modelagem_engine.py:106:12
+105	                        return conteudo
+106	            except Exception:
+107	                pass
+108	        return {}
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\motor_biometrico.py:28:8
+27	            memoria.salvar_dados("contexto_geografico", "KR")
+28	        except Exception as e:
+29	            pass
+30	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\motor_biometrico.py:68:12
+67	                winsound.Beep(1200, 150)
+68	            except Exception:
+69	                pass
+70	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\motor_performance.py:51:8
+50	                f.write(f"{time.ctime()} | Motor: {nome_motor} | Media: {media:.4f}ms | Pico: {pico:.4f}ms\n")
+51	        except Exception:
+52	            pass
+53	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\core\motor_regeneracao.py:66:8
+65	                f.write(log_entry)
+66	        except Exception:
+67	            pass
+68	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\core\viasualizador_visagista.py:10:0
+9	import mediapipe as mp
+10	import subprocess
+11	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\core\viasualizador_visagista.py:15:8
+14	    try:
+15	        subprocess.run(["python", "core/analise.py"], check=True)
+16	    except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\core\viasualizador_visagista.py:15:8
+14	    try:
+15	        subprocess.run(["python", "core/analise.py"], check=True)
+16	    except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\diagnostico_painel.py:4:0
+3	import sys
+4	import subprocess
+5	import traceback
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\diagnostico_painel.py:38:19
+37	        # Executa o script do orquestrador em tempo real, redirecionando a saída direto para o seu terminal
+38	        processo = subprocess.Popen(
+39	            [sys.executable, "-u", caminho_orquestrador],
+40	            stdout=subprocess.PIPE,
+41	            stderr=subprocess.STDOUT,
+42	            text=True,
+43	            encoding='utf-8',
+44	            errors='ignore'
+45	        )
+46	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\gui_main.py:13:0
+12	    ctypes.windll.shcore.SetProcessDpiAwareness(2)
+13	except: pass
+14	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\gui_main.py:85:12
+84	                self.textbox_log.see("end")
+85	            except Exception:
+86	                pass
+87	            print(mensagem)
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html
+   Location: .\historico_auditoria_monaco.py:8:0
+7	# Habilita o interpretador de cores ANSI para o terminal
+8	os.system('')
+9	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\historico_auditoria_monaco.py:8:0
+7	# Habilita o interpretador de cores ANSI para o terminal
+8	os.system('')
+9	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\historico_auditoria_monaco.py:50:16
+49	                        linhas_codigo_limpas += len(linhas)
+50	                except Exception:
+51	                    pass
+52	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\historico_auditoria_monaco.py:158:4
+157	            f.write(texto_limpo)
+158	    except Exception:
+159	        pass
+160	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\iniciar_sistema.py:2:0
+1	# -*- coding: utf-8 -*-
+2	import subprocess
+3	import sys
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\iniciar_sistema.py:27:12
+26	            print(f"[TCC] A instalar dependência em falta: {pacote}")
+27	            subprocess.check_call([sys.executable, "-m", "pip", "install", pacote])
+28	    print("[TCC] Ambiente verificado com sucesso.")
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\iniciar_sistema.py:35:8
+34	        print(f"[TCC] A iniciar o orquestrador principal na porta 801...")
+35	        subprocess.run([sys.executable, str(caminho_main)])
+36	    else:
+
+--------------------------------------------------
+>> Issue: [B605:start_process_with_a_shell] Starting a process with a shell: Seems safe, but may be changed in the future, consider rewriting without shell
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b605_start_process_with_a_shell.html
+   Location: .\licenca.py:11:4
+10	if os.name == 'nt':
+11	    os.system('')
+12	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\licenca.py:11:4
+10	if os.name == 'nt':
+11	    os.system('')
+12	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\licenca.py:151:20
+150	                            linhas_codigo_limpas += len(linhas)
+151	                    except Exception:
+152	                        pass
+153	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\licenca.py:172:8
+171	                json.dump(dados_historicos, f, indent=4, ensure_ascii=False)
+172	        except Exception:
+173	            pass
+174	            
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\licenca.py:300:8
+299	                return json.load(f)
+300	        except Exception:
+301	            pass
+302	    return {"tokens_ativos": {}, "total_vagas_ocupadas": 0}
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\licenca.py:320:12
+319	                os.remove(arquivo_temp)
+320	            except:
+321	                pass
+322	        raise IOError(f"Falha na escrita atômica do banco de tokens: {e}")
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\loader_core.py:6:0
+5	import os
+6	import subprocess
+7	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\loader_core.py:24:12
+23	            print(f">>> Iniciando {arquivo}")
+24	            subprocess.run(["python", caminho])
+25	        else:
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\loader_core.py:24:12
+23	            print(f">>> Iniciando {arquivo}")
+24	            subprocess.run(["python", caminho])
+25	        else:
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\main.py:16:0
+15	import platform
+16	import subprocess
+17	import numpy as np
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\main.py:185:12
+184	            comando = ["sudo", "chattr", "+a" if ativar else "-a", str(self.ledger_file)]
+185	            subprocess.run(comando, capture_output=True)
+186	        elif sistema == "Windows":
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\main.py:189:12
+188	            regra = "Everyone:(DE,WD,AD)" if ativar else "Everyone:F"
+189	            subprocess.run(["icacls", str(self.ledger_file), permissao, regra], capture_output=True)
+190	
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\main.py:189:12
+188	            regra = "Everyone:(DE,WD,AD)" if ativar else "Everyone:F"
+189	            subprocess.run(["icacls", str(self.ledger_file), permissao, regra], capture_output=True)
+190	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\main_diagostico.py:5:0
+4	import time
+5	import subprocess
+6	import customtkinter as ctk
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\main_diagostico.py:160:16
+159	            try:
+160	                subprocess.Popen([sys.executable, "main.py"])
+161	            except Exception as e:
+
+--------------------------------------------------
+>> Issue: [B112:try_except_continue] Try, Except, Continue detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b112_try_except_continue.html
+   Location: .\mapeador_de_dependecias.py:25:8
+24	                dependencias[arquivo] = [imp.split('.')[0] for imp in lista_imports if imp]
+25	        except:
+26	            continue
+27	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\monaco_consciencia.py:42:12
+41	                    historico = json.load(f)
+42	            except: pass
+43	        
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\progresso-100.py:32:16
+31	                        modulos_ativos += 1
+32	                except Exception:
+33	                    pass
+34	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\scanner_busca.py:29:16
+28	                                    encontrados += 1
+29	                except Exception as e:
+30	                    pass
+31	                    
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\security\anti_reverse.py:28:12
+27	                    return True
+28	            except Exception:
+29	                pass
+30	        return False
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\security\anti_reverse.py:40:16
+39	        # Gera valores aleatórios que parecem vetores reais mas corrompem qualquer modelo preditivo
+40	        return [random.uniform(-999.9, 999.9) for _ in range(128)]
+41	
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\security\anti_reverse.py:51:49
+50	        return {
+51	            "cliente_id": "HNPT-" + "".join([str(random.randint(0, 9)) for _ in range(6)]),
+52	            "perfil_alvo": random.choice(nomes_falsos),
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: .\security\anti_reverse.py:52:27
+51	            "cliente_id": "HNPT-" + "".join([str(random.randint(0, 9)) for _ in range(6)]),
+52	            "perfil_alvo": random.choice(nomes_falsos),
+53	            "status_ativo": True,
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: .\security\portaria.py:47:31
+46	                     token: Optional[str] = None, 
+47	                     ip: str = "0.0.0.0", 
+48	                     hardware_id: str = "unknown") -> bool:
+49	    try:
+50	        # 1. Sanitização
+51	        if 'id_scanner' in dados_json:
+52	            dados_json['id_scanner'] = InputSanitizer.limpar_string(str(dados_json['id_scanner']))
+
+--------------------------------------------------
+>> Issue: [B105:hardcoded_password_string] Possible hardcoded password: 'CHAVE_SECRETA_SUPER_BLINDADA_2026'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b105_hardcoded_password_string.html
+   Location: .\security\session_manager.py:7:17
+6	    # Em um sistema real, a SECRET_KEY deve vir de uma variável de ambiente (nunca hardcoded)
+7	    SECRET_KEY = "CHAVE_SECRETA_SUPER_BLINDADA_2026"
+8	
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\servidor_local.py:95:4
+94	            await asyncio.sleep(0.02)
+95	    except Exception:
+96	        pass
+97	
+
+--------------------------------------------------
+>> Issue: [B404:blacklist] Consider possible security implications associated with the subprocess module.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_imports.html#b404-import-subprocess
+   Location: .\test_auditoria_completa.py:11:0
+10	import ast
+11	import subprocess
+12	
+
+--------------------------------------------------
+>> Issue: [B607:start_process_with_partial_path] Starting a process with a partial executable path
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b607_start_process_with_partial_path.html
+   Location: .\test_auditoria_completa.py:61:27
+60	    try:
+61	        resultado_bandit = subprocess.run(
+62	            ["bandit", "-r", TARGET_FILE, "-f", "json"],
+63	            capture_output=True,
+64	            text=True
+65	        )
+66	        
+
+--------------------------------------------------
+>> Issue: [B603:subprocess_without_shell_equals_true] subprocess call - check for execution of untrusted input.
+   Severity: Low   Confidence: High
+   CWE: CWE-78 (https://cwe.mitre.org/data/definitions/78.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b603_subprocess_without_shell_equals_true.html
+   Location: .\test_auditoria_completa.py:61:27
+60	    try:
+61	        resultado_bandit = subprocess.run(
+62	            ["bandit", "-r", TARGET_FILE, "-f", "json"],
+63	            capture_output=True,
+64	            text=True
+65	        )
+66	        
+
+--------------------------------------------------
+>> Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: 'TCC-GLOBAL-FALLBACK'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b106_hardcoded_password_funcarg.html
+   Location: .\test_integrado.py:27:18
+26	            lon_atual=-44.3068, 
+27	            token_titular_atual="TCC-GLOBAL-FALLBACK", 
+28	            token_dispositivo="DISPOSITIVO-MASTER"
+29	        )
+30	    except TypeError:
+31	        try:
+32	            res_geo = GeoDefense.validar_geofencing_global(
+33	                (-2.5307, -44.3068), 
+
+--------------------------------------------------
+>> Issue: [B110:try_except_pass] Try, Except, Pass detected.
+   Severity: Low   Confidence: High
+   CWE: CWE-703 (https://cwe.mitre.org/data/definitions/703.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b110_try_except_pass.html
+   Location: .\teste_camera.py:41:4
+40	        engine.runAndWait()
+41	    except:
+42	        pass
+43	
+
+--------------------------------------------------
+>> Issue: [B104:hardcoded_bind_all_interfaces] Possible binding to all interfaces.
+   Severity: Medium   Confidence: Medium
+   CWE: CWE-605 (https://cwe.mitre.org/data/definitions/605.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b104_hardcoded_bind_all_interfaces.html
+   Location: .\teste_camera.py:221:30
+220	            print(f"[BIO-ORQUESTRADOR] Servidor rodando em http://localhost:{porta_web}")
+221	            self.app.run(host='0.0.0.0', port=porta_web, debug=False, threaded=True)
+222	            return
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 12613
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 95
+		Medium: 2
+		High: 2
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 5
+		High: 94
+Files skipped (0):
+
+================================================================================
+               FIM DO RELATÓRIO - CONFORMIDADE INTERNACIONAL VALIDADA
+================================================================================

@@ -73,7 +73,7 @@ class GerenciadorCentralMibo:
         print(f"\n[ 01 // STATUS DO DOSSIÊ MATEMÁTICO ]")
         print(f" * Área Atendida     : {res['modulo']}")
         print(f" * Ação Executada    : {res['acao'].capitalize()}")
-        print(f" * Certificação      : {res['certificado']}")
+        print(f" * Certificação      : {res['certificado']}") 
         print(f" * Métricas de Base  :")
         for chave, valor in res['dados_matematicos'].items():
             print(f"   - {chave.replace('_', ' ').title()}: {valor}")

@@ -1,0 +1,18 @@
+{
+  "documento": "02_Super_Retorno_Financeiro",
+  "titular": "CLIENTE UHNW",
+  "idioma": "PT",
+  "horizontes": 10,
+  "leitura_numero": 3,
+  "emitido_em": "22/11/2026 às 16:12:53",
+  "leitura_anterior": "22/11/2026 às 16:08:04",
+  "tamanho_kb": 6.4,
+  "sha256": "20ceeca17080e02ec81b3c090ac6e981fc7f2fcb1cea070826ff4552c70af71d",
+  "hash_analise": "SEM_ANALISE",
+  "chaves_telemetria": [],
+  "mudancas": [
+    "NOVA GERAÇÃO: Leitura anterior 22/11/2026 às 16:08:04 -> Leitura atual 22/11/2026 às 16:12:53.",
+    "Conteúdo/arquivo atualizado (variação de tamanho: +0.00 KB | novo SHA-256: 20ceeca17080...).",
+    "Análise/telemetria sem alteração de conteúdo em relação à leitura anterior."
+  ]
+}

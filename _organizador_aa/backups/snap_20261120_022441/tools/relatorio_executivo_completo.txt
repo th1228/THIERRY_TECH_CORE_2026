@@ -1,0 +1,77 @@
+===========================================================================
+         TCC GLOBAL - MONACO PLAN CORE (DOSSIÊ EXECUTIVO GLOBAL)
+===========================================================================
+[METADADOS DO SISTEMA & MEMÓRIA COMUM]
+- Empresa: TCC Global
+- Cliente / Paciente: José
+- Data / Hora: 2026-08-18 22:59:11
+- Estilista / Visagista: Thierry
+- Médico Responsável: Dr. Felipe
+
+---------------------------------------------------------------------------
+1. TRICOLOGIA AVANÇADA E ESTÉTICA CAPILAR
+---------------------------------------------------------------------------
+- Setor: Tricologia Avançada e Estética Capilar
+- Hidratação Facial e Couro Cabeludo: 79.8% retenção
+- Reflectância da Pele: 30.1%
+- Densidade Capilar: 214 fios/cm²
+- Alerta Clínico Queda/Alopecia: Densidade capilar estável (214 fios/cm²). Manutenção preventiva.
+- Formato de Rosto: Quadrado / Mandíbula e Topo Largos
+
+   [10 Opções de Corte e Visagismo Mônaco Plan]:
+   * [Curto] Pixie Contour | Visagismo: Emoldura traços finos com leveza. | Franja: Lateral desfiada
+   * [Curto] Bixie Estruturado | Visagismo: Volume controlado no topo. | Franja: Baby fringe
+   * [Curto] French Bob | Visagismo: Base reta elegante no queixo. | Franja: Reta clássica
+   * [Médio] Long Bob Geométrico | Visagismo: Alonga o pescoço e suaviza ângulos. | Franja: Lateral degradê
+   * [Médio] Shaggy Hair | Visagismo: Volume topo e leveza pontas. | Franja: Curtain bangs
+   * [Médio] Medium Blunt Cut | Visagismo: Base reta de alta densidade. | Franja: Sem franja/reta
+   * [Longo] Long Layers | Visagismo: Camadas longas pós queixo. | Franja: Longa integrada
+   * [Longo] Longo Reto Despontado | Visagismo: Simplicidade com toque moderno. | Franja: Desfiada leve
+   * [Longo] Butterfly Cut | Visagismo: Camadas marcadas e versáteis. | Franja: Cortina volumosa
+   * [Longo] Repicado Invisível | Visagismo: Mantém comprimento com leveza. | Franja: Sem franja
+
+   [Cronograma de Tratamentos Capulares Intercalados]:
+   * 1. Detox -> L'Oréal - Metal Detox (Neutraliza metais pesados.)
+   * 2. pH -> Acidificação TTC (Ajusta ponto isoelétrico.)
+   * 3. Reconstrução -> L'Oréal - Absolut Repair (Repõe peptídeos no córtex.)
+   * 4. Choque -> Joico - CPR (Recupera porosidade.)
+   * 5. Regeneração -> Wella - Ultimate Repair (AHA e Ômega 9.)
+   * 6. Nutrição -> Kérastase - Chronologiste (Infusão vitamínica.)
+   * 7. Restauração -> Senscience - Inner Restore (Restaura elasticidade.)
+   * 8. Botânica -> Davines - Oi / NouNou (Proteção antioxidante.)
+
+---------------------------------------------------------------------------
+2. MONOCOPLANO CORE - BIOMECÂNICA E POSTURA
+---------------------------------------------------------------------------
+- Score de Estabilidade Postural: 75.0
+- Score de Simetria Facial: 44.25
+- Condição Crânio-Facial: Variação Adaptativa
+
+---------------------------------------------------------------------------
+3. MEDICINA REGENERATIVA E PREDITIVA
+---------------------------------------------------------------------------
+- Taxa de Regeneração Celular Diária: 82.2%
+- Estresse Cutâneo / Inflamação: 17.48% (Tensão Reativa Moderada)
+- Oximetria Tecidual Periférica: 97.4%
+- Durabilidade Estimada Toxina Botulínica: 113 dias
+
+   [Análise Temporal de Carga e Desinflamação]:
+   * Carga de Dias para Limpeza Inflamatória: 13 dias
+   * Data Limite de Desinflamação Completa: 31/08/2026
+   * Tempo Estimado para o Ápice de Sinergia: 22 dias
+   * Data Exata do Ápice Regenerativo: 09/09/2026
+   * Diretriz Terapêutica: Protocolo ativo por 13 dias para limpeza da carga reativa de 17.48%.
+
+   [Predições de Longo Prazo]:
+   * Risco Paralisia Facial (5 / 10 / 15 anos): 2.2% / 3.3% / 4.62%
+   * Inflamação Sistêmica (5 / 10 / 15 anos): 8.4% / 11.2% / 14.5%
+
+---------------------------------------------------------------------------
+4. NEUROPERFORMANCE E COMPORTAMENTO
+---------------------------------------------------------------------------
+- Lado Dominante: Direito
+- Estilo de Decisão: Criativo e Sensorial
+- Cromoterapia Indicada: Verde / Nude
+- Frequência Sonora: 528Hz (Calma)
+   * Correlação Neuro-Regenerativa: O alinhamento comportamental otimiza a resposta ao protocolo, modulando o estresse e acelerando o ápice biológico nos prazos estipulados.
+===========================================================================

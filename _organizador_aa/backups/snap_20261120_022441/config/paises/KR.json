@@ -1,0 +1,8 @@
+{
+    "pais": "Coreia do Sul",
+    "codigo_iso": "KR",
+    "regime_fiscal": "Global_Tech_Advanced",
+    "berco_visagismo": true,
+    "fator_calibragem_facial": 1.05,
+    "moeda": "KRW"
+}

@@ -1,0 +1,30 @@
+==================================================
+      THIERRY TECHNOLOGY CONCEPT GLOBAL 2026      
+     RELATÓRIO BIOMÉTRICO LUXO - (MANUAL)    
+==================================================
+Data/Hora da Análise: 20/10/2026 21:26:38
+--------------------------------------------------
+
+[ANÁLISE HEMISFÉRIO ESQUERDO]
+F1: Subcutaneous Fat: 10.9mm
+F3: Dermal Thick: 20.9mm
+F8: Adipose Index: 16.0mm
+T2: Fascia Depth: 17.1mm
+T5: Bone Contour: 14.1mm
+ER_1: Muscle Density: 24.4mm
+N1: Cartilage Ratio: 16.8mm
+C_L1: Malar Fat Pad: 19.7mm
+J1: Mandibular Angle: 14.5mm
+
+[ANÁLISE HEMISFÉRIO DIREITO]
+B_Z1: Bizygomatic W.: 1.64
+O_F1: Orbital Fat: 1.89
+J_G2: Jawline Def.: 1.55
+M_M1: Masseter Muscle: 0.94
+L_A3: Lateral Ang.: 0.73
+G_R2: Buccal Fat: 0.64
+P_C1: Pre-auricular: 0.90
+H_F4: Hypodermis: 1.03
+N2: Nasal Angle: 1.18
+
+==================================================

@@ -1,0 +1,29 @@
+{
+    "audit_trail_status": "VERIFIED_AND_LOCKED",
+    "sha256_ledger_hash": "e6aa14a4db8ef54e6bc3691d8b51cd228a00aac861acb1d7b2e994519bf4aee1",
+    "compliance": "IAS 38 / CPC 04 Intangible Asset Compliant",
+    "payload": {
+        "ledger_version": "2.1-Sovereign",
+        "standard": "CPC 04 / IAS 38 Compliance",
+        "asset_origin": "Thierry Tech Core Framework",
+        "audit_timestamp": "2026-10-22T22:10:27.372431",
+        "financial_valuation": {
+            "asset_value_usd": 3565724.5,
+            "asset_value_brl": 19968057.2,
+            "cost_per_line_usd": 115.0,
+            "multipliers_applied": "Health Factor (1.15)"
+        },
+        "metrics_source": {
+            "timestamp": "2026-10-22T22:04:13.033408",
+            "meta": {
+                "scanned_modules": 281,
+                "total_lloc": 26962,
+                "coupling_alerts": 21,
+                "vulnerability_alerts": 1
+            },
+            "risk_index": 6.6,
+            "health_score": 93.4,
+            "status_etapa_1": "VERIFIED_AND_SIGNED"
+        }
+    }
+}

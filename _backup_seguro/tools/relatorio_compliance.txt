@@ -1,0 +1,2387 @@
+================================================================================
+   RELATÓRIO OFICIAL DE COMPLIANCE - THIERRY TECHNOLOGY CONCEPT GLOBAL
+================================================================================
+================================================================================
+1. ANÁLISE ESTRUTURAL E VOLUMETRIA DE ATIVOS (PRODUÇÃO)
+================================================================================
+
+[+] ATIVO ANALISADO: .\0rquestrador_camadas.py
+    - Tamanho: 2486 bytes
+    - Total de Linhas: 63
+    - Linhas de Código Efetivo: 39
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\acao_mestre.py
+    - Tamanho: 3083 bytes
+    - Total de Linhas: 99
+    - Linhas de Código Efetivo: 78
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\analizador_conectividade.py
+    - Tamanho: 1082 bytes
+    - Total de Linhas: 29
+    - Linhas de Código Efetivo: 21
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\analizar_fluxo.py
+    - Tamanho: 1285 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 18
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\api_server.py
+    - Tamanho: 3358 bytes
+    - Total de Linhas: 119
+    - Linhas de Código Efetivo: 98
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\aplicador_correcao.py
+    - Tamanho: 1559 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 23
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\app.py
+    - Tamanho: 2886 bytes
+    - Total de Linhas: 75
+    - Linhas de Código Efetivo: 55
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\app_executivo.py
+    - Tamanho: 16153 bytes
+    - Total de Linhas: 288
+    - Linhas de Código Efetivo: 237
+    - Linhas de Comentários: 13
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\apresentacao_ecossistema.py
+    - Tamanho: 6479 bytes
+    - Total de Linhas: 129
+    - Linhas de Código Efetivo: 93
+    - Linhas de Comentários: 13
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\arduino_bridge.py
+    - Tamanho: 1202 bytes
+    - Total de Linhas: 36
+    - Linhas de Código Efetivo: 30
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit_global_financeiro.py
+    - Tamanho: 2433 bytes
+    - Total de Linhas: 51
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auto_reparador.py
+    - Tamanho: 2773 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 12
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\camera_engine.py
+    - Tamanho: 1926 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 42
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\carregador_automatico.py
+    - Tamanho: 2557 bytes
+    - Total de Linhas: 64
+    - Linhas de Código Efetivo: 51
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\checar_arquivos.py
+    - Tamanho: 628 bytes
+    - Total de Linhas: 20
+    - Linhas de Código Efetivo: 16
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\checkout_ui.py
+    - Tamanho: 2007 bytes
+    - Total de Linhas: 45
+    - Linhas de Código Efetivo: 33
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\compliance_global.py
+    - Tamanho: 6140 bytes
+    - Total de Linhas: 147
+    - Linhas de Código Efetivo: 115
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\config_pagamentos.py
+    - Tamanho: 944 bytes
+    - Total de Linhas: 18
+    - Linhas de Código Efetivo: 10
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\db.manager.py
+    - Tamanho: 925 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 26
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\db_config.py
+    - Tamanho: 52 bytes
+    - Total de Linhas: 1
+    - Linhas de Código Efetivo: 1
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\db_init.py
+    - Tamanho: 945 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 21
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\debug_dossie.py
+    - Tamanho: 2611 bytes
+    - Total de Linhas: 46
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico.py
+    - Tamanho: 1405 bytes
+    - Total de Linhas: 46
+    - Linhas de Código Efetivo: 37
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_backend.py
+    - Tamanho: 2800 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 59
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_conexao.py
+    - Tamanho: 1187 bytes
+    - Total de Linhas: 33
+    - Linhas de Código Efetivo: 26
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_html.py
+    - Tamanho: 1328 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 25
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_painel.py
+    - Tamanho: 2415 bytes
+    - Total de Linhas: 64
+    - Linhas de Código Efetivo: 49
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\diagnostico_pdf.py
+    - Tamanho: 1882 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 33
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\encontrar _origem_nome.py
+    - Tamanho: 1687 bytes
+    - Total de Linhas: 40
+    - Linhas de Código Efetivo: 28
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\encontrar_data_inicio.py
+    - Tamanho: 1638 bytes
+    - Total de Linhas: 43
+    - Linhas de Código Efetivo: 33
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\error_guard.py
+    - Tamanho: 4313 bytes
+    - Total de Linhas: 90
+    - Linhas de Código Efetivo: 71
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\faxina_ttc.py
+    - Tamanho: 2367 bytes
+    - Total de Linhas: 61
+    - Linhas de Código Efetivo: 44
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\fix_imports.py
+    - Tamanho: 1034 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 19
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\gerar_son.py
+    - Tamanho: 10705 bytes
+    - Total de Linhas: 226
+    - Linhas de Código Efetivo: 214
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\gerenciador_vult.py
+    - Tamanho: 2157 bytes
+    - Total de Linhas: 52
+    - Linhas de Código Efetivo: 39
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\gui_main.py
+    - Tamanho: 15317 bytes
+    - Total de Linhas: 293
+    - Linhas de Código Efetivo: 259
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\historico_auditoria_monaco.py
+    - Tamanho: 7440 bytes
+    - Total de Linhas: 162
+    - Linhas de Código Efetivo: 117
+    - Linhas de Comentários: 11
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\homologacao_global.py
+    - Tamanho: 5376 bytes
+    - Total de Linhas: 156
+    - Linhas de Código Efetivo: 119
+    - Linhas de Comentários: 18
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\iniciar.py
+    - Tamanho: 499 bytes
+    - Total de Linhas: 19
+    - Linhas de Código Efetivo: 14
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\iniciar_sistema.py
+    - Tamanho: 1155 bytes
+    - Total de Linhas: 37
+    - Linhas de Código Efetivo: 33
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\inspecionar_e_popular_memoria.py
+    - Tamanho: 2498 bytes
+    - Total de Linhas: 49
+    - Linhas de Código Efetivo: 43
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\interface_dashboard.py
+    - Tamanho: 1986 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 56
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\inventario_global.py
+    - Tamanho: 3460 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 55
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\inventario_sistema_executivo.py
+    - Tamanho: 1175 bytes
+    - Total de Linhas: 27
+    - Linhas de Código Efetivo: 20
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\joia_tecnologica_real.py
+    - Tamanho: 12692 bytes
+    - Total de Linhas: 219
+    - Linhas de Código Efetivo: 178
+    - Linhas de Comentários: 11
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\licenca.py
+    - Tamanho: 22473 bytes
+    - Total de Linhas: 479
+    - Linhas de Código Efetivo: 388
+    - Linhas de Comentários: 11
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 13
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\limpar_imports.py
+    - Tamanho: 1099 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 15
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\limpar_todos_pdfs.py
+    - Tamanho: 785 bytes
+    - Total de Linhas: 24
+    - Linhas de Código Efetivo: 17
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\limpeza_profissional.py
+    - Tamanho: 1154 bytes
+    - Total de Linhas: 33
+    - Linhas de Código Efetivo: 20
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\listar_status.py
+    - Tamanho: 1332 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 25
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\loader_core.py
+    - Tamanho: 866 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 19
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\main.py
+    - Tamanho: 47230 bytes
+    - Total de Linhas: 1057
+    - Linhas de Código Efetivo: 837
+    - Linhas de Comentários: 22
+    - Classes Mapeadas: 10
+    - Funções Extraídas: 54
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\main_diagostico.py
+    - Tamanho: 9333 bytes
+    - Total de Linhas: 166
+    - Linhas de Código Efetivo: 138
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\mapa_de_correcao.py
+    - Tamanho: 1600 bytes
+    - Total de Linhas: 43
+    - Linhas de Código Efetivo: 32
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\mapeador_de_dependecias.py
+    - Tamanho: 1249 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 25
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\mapear_ecossistema.py
+    - Tamanho: 15043 bytes
+    - Total de Linhas: 213
+    - Linhas de Código Efetivo: 176
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_ambiente.py
+    - Tamanho: 1976 bytes
+    - Total de Linhas: 53
+    - Linhas de Código Efetivo: 35
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_blindagem.py
+    - Tamanho: 3412 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 56
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_comunicacao.py
+    - Tamanho: 1463 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 30
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_consciencia.py
+    - Tamanho: 2545 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 52
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_core_final.py
+    - Tamanho: 10783 bytes
+    - Total de Linhas: 270
+    - Linhas de Código Efetivo: 220
+    - Linhas de Comentários: 14
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_eminencia.py
+    - Tamanho: 1940 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 37
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_integrador.py
+    - Tamanho: 5820 bytes
+    - Total de Linhas: 140
+    - Linhas de Código Efetivo: 106
+    - Linhas de Comentários: 11
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_nucleo_acesso.py
+    - Tamanho: 1891 bytes
+    - Total de Linhas: 53
+    - Linhas de Código Efetivo: 34
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_plan.py
+    - Tamanho: 3077 bytes
+    - Total de Linhas: 61
+    - Linhas de Código Efetivo: 42
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monaco_ressonancia.py
+    - Tamanho: 1664 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 30
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\monitor_maestro.py
+    - Tamanho: 2135 bytes
+    - Total de Linhas: 60
+    - Linhas de Código Efetivo: 45
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\motor_ao_ vivo.py
+    - Tamanho: 1927 bytes
+    - Total de Linhas: 45
+    - Linhas de Código Efetivo: 30
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\omni_watcher.py
+    - Tamanho: 10703 bytes
+    - Total de Linhas: 203
+    - Linhas de Código Efetivo: 160
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\organizador_arquivos.py
+    - Tamanho: 1722 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 34
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\organizador_sistema.py
+    - Tamanho: 1393 bytes
+    - Total de Linhas: 37
+    - Linhas de Código Efetivo: 28
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\python ler_memoria.py
+    - Tamanho: 2351 bytes
+    - Total de Linhas: 71
+    - Linhas de Código Efetivo: 58
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\rastreador_correcao.py
+    - Tamanho: 1173 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 20
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\rastrear_limpeza.py
+    - Tamanho: 1360 bytes
+    - Total de Linhas: 38
+    - Linhas de Código Efetivo: 28
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\recriar_audit.py
+    - Tamanho: 7468 bytes
+    - Total de Linhas: 114
+    - Linhas de Código Efetivo: 77
+    - Linhas de Comentários: 14
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\run_all.py
+    - Tamanho: 1810 bytes
+    - Total de Linhas: 52
+    - Linhas de Código Efetivo: 34
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\scanner_busca.py
+    - Tamanho: 1529 bytes
+    - Total de Linhas: 35
+    - Linhas de Código Efetivo: 26
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\servidor_local.py
+    - Tamanho: 12525 bytes
+    - Total de Linhas: 269
+    - Linhas de Código Efetivo: 212
+    - Linhas de Comentários: 16
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\setup_seguranca.py
+    - Tamanho: 829 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 17
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\sovereign_due-diligence_simulator.py.py
+    - Tamanho: 4399 bytes
+    - Total de Linhas: 87
+    - Linhas de Código Efetivo: 65
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\sovereign_gate.py
+    - Tamanho: 2917 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 52
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\stress_teste.py
+    - Tamanho: 935 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 18
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\stripe_service.py
+    - Tamanho: 1151 bytes
+    - Total de Linhas: 32
+    - Linhas de Código Efetivo: 28
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_ataque.py
+    - Tamanho: 1943 bytes
+    - Total de Linhas: 31
+    - Linhas de Código Efetivo: 27
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_envios.py
+    - Tamanho: 4868 bytes
+    - Total de Linhas: 111
+    - Linhas de Código Efetivo: 91
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_integracao_memoria.py
+    - Tamanho: 2177 bytes
+    - Total de Linhas: 59
+    - Linhas de Código Efetivo: 47
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_master.py
+    - Tamanho: 678 bytes
+    - Total de Linhas: 21
+    - Linhas de Código Efetivo: 15
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_memoria.py
+    - Tamanho: 982 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 21
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_motor.py
+    - Tamanho: 1454 bytes
+    - Total de Linhas: 36
+    - Linhas de Código Efetivo: 30
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_sanitizer.py
+    - Tamanho: 935 bytes
+    - Total de Linhas: 24
+    - Linhas de Código Efetivo: 17
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_seguranca.py
+    - Tamanho: 1648 bytes
+    - Total de Linhas: 40
+    - Linhas de Código Efetivo: 31
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testar_vozes.py
+    - Tamanho: 390 bytes
+    - Total de Linhas: 14
+    - Linhas de Código Efetivo: 10
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_camera.py
+    - Tamanho: 18707 bytes
+    - Total de Linhas: 373
+    - Linhas de Código Efetivo: 316
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 16
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_integrado_global.py
+    - Tamanho: 2142 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 47
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_inteligencia.py
+    - Tamanho: 2462 bytes
+    - Total de Linhas: 59
+    - Linhas de Código Efetivo: 33
+    - Linhas de Comentários: 14
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_orquestracao.py
+    - Tamanho: 1275 bytes
+    - Total de Linhas: 30
+    - Linhas de Código Efetivo: 26
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\teste_seguranca.py
+    - Tamanho: 2109 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 31
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\traducoes_ttc.py
+    - Tamanho: 1704 bytes
+    - Total de Linhas: 50
+    - Linhas de Código Efetivo: 34
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\validador_monaco.py
+    - Tamanho: 4038 bytes
+    - Total de Linhas: 93
+    - Linhas de Código Efetivo: 76
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\validador_valuation_tcc.py
+    - Tamanho: 8257 bytes
+    - Total de Linhas: 169
+    - Linhas de Código Efetivo: 129
+    - Linhas de Comentários: 15
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\validar_maestro.py
+    - Tamanho: 1159 bytes
+    - Total de Linhas: 30
+    - Linhas de Código Efetivo: 21
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificador_nuvem.py
+    - Tamanho: 1791 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 28
+    - Linhas de Comentários: 11
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_camera.py
+    - Tamanho: 2572 bytes
+    - Total de Linhas: 42
+    - Linhas de Código Efetivo: 34
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_caminhos.py
+    - Tamanho: 527 bytes
+    - Total de Linhas: 17
+    - Linhas de Código Efetivo: 13
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_dependencias.py
+    - Tamanho: 2080 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 54
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_integracao.py
+    - Tamanho: 2792 bytes
+    - Total de Linhas: 60
+    - Linhas de Código Efetivo: 48
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_prontidao.py
+    - Tamanho: 2012 bytes
+    - Total de Linhas: 50
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\verificar_sistema.py
+    - Tamanho: 96 bytes
+    - Total de Linhas: 3
+    - Linhas de Código Efetivo: 2
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\ver_memoria.py
+    - Tamanho: 1101 bytes
+    - Total de Linhas: 33
+    - Linhas de Código Efetivo: 24
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\architecture_auditor.py
+    - Tamanho: 4153 bytes
+    - Total de Linhas: 88
+    - Linhas de Código Efetivo: 74
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\develops_readiness.py
+    - Tamanho: 849 bytes
+    - Total de Linhas: 23
+    - Linhas de Código Efetivo: 19
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\privacy_auditor.py
+    - Tamanho: 2806 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 46
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\sovereign_auditor.py
+    - Tamanho: 13680 bytes
+    - Total de Linhas: 248
+    - Linhas de Código Efetivo: 212
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\audit\verificar_integridade.py
+    - Tamanho: 1841 bytes
+    - Total de Linhas: 48
+    - Linhas de Código Efetivo: 40
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auditorias_anteriores\auditar_fluxo_pdfs.py
+    - Tamanho: 2667 bytes
+    - Total de Linhas: 52
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auditorias_anteriores\auditar_geradores_pdf.py
+    - Tamanho: 1821 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 36
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auditorias_anteriores\auditar_logica.py
+    - Tamanho: 3798 bytes
+    - Total de Linhas: 83
+    - Linhas de Código Efetivo: 65
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\auditorias_anteriores\auditar_sistema_tcc.py
+    - Tamanho: 4022 bytes
+    - Total de Linhas: 93
+    - Linhas de Código Efetivo: 68
+    - Linhas de Comentários: 11
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise.py
+    - Tamanho: 1487 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 34
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise_cabelo.py
+    - Tamanho: 3245 bytes
+    - Total de Linhas: 82
+    - Linhas de Código Efetivo: 57
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise_colorimetria.py
+    - Tamanho: 2331 bytes
+    - Total de Linhas: 64
+    - Linhas de Código Efetivo: 52
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\analise_rosto.py
+    - Tamanho: 2866 bytes
+    - Total de Linhas: 79
+    - Linhas de Código Efetivo: 56
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\atelie.py
+    - Tamanho: 3854 bytes
+    - Total de Linhas: 73
+    - Linhas de Código Efetivo: 64
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\banco_dados.py
+    - Tamanho: 2936 bytes
+    - Total de Linhas: 89
+    - Linhas de Código Efetivo: 74
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\biblioteca_estilo.py
+    - Tamanho: 2826 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 52
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\biogemio_orquestrador.py
+    - Tamanho: 40420 bytes
+    - Total de Linhas: 792
+    - Linhas de Código Efetivo: 648
+    - Linhas de Comentários: 16
+    - Classes Mapeadas: 7
+    - Funções Extraídas: 34
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\biometria.py
+    - Tamanho: 4720 bytes
+    - Total de Linhas: 98
+    - Linhas de Código Efetivo: 79
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\c2_sovereign_intelligence.py
+    - Tamanho: 28104 bytes
+    - Total de Linhas: 481
+    - Linhas de Código Efetivo: 411
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 8
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\camera_hub.py
+    - Tamanho: 2799 bytes
+    - Total de Linhas: 75
+    - Linhas de Código Efetivo: 53
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\carta_internacional_engine.py
+    - Tamanho: 15141 bytes
+    - Total de Linhas: 251
+    - Linhas de Código Efetivo: 195
+    - Linhas de Comentários: 19
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\clinica_estetica_roi.py
+    - Tamanho: 4946 bytes
+    - Total de Linhas: 84
+    - Linhas de Código Efetivo: 66
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\contrato_global_engine.py
+    - Tamanho: 19052 bytes
+    - Total de Linhas: 321
+    - Linhas de Código Efetivo: 246
+    - Linhas de Comentários: 23
+    - Classes Mapeadas: 3
+    - Funções Extraídas: 10
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\coreia_engine.py
+    - Tamanho: 3720 bytes
+    - Total de Linhas: 95
+    - Linhas de Código Efetivo: 72
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\core_reconstrucao.py
+    - Tamanho: 2651 bytes
+    - Total de Linhas: 66
+    - Linhas de Código Efetivo: 50
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\dashboard_global.py
+    - Tamanho: 2663 bytes
+    - Total de Linhas: 75
+    - Linhas de Código Efetivo: 52
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\detector_erros.py
+    - Tamanho: 2387 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 49
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\diagnostico_ante_gravidade_neural.py
+    - Tamanho: 1955 bytes
+    - Total de Linhas: 59
+    - Linhas de Código Efetivo: 43
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\diagnostico_geracao.py
+    - Tamanho: 1428 bytes
+    - Total de Linhas: 43
+    - Linhas de Código Efetivo: 32
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\diagnostico_seguranca.py
+    - Tamanho: 2865 bytes
+    - Total de Linhas: 79
+    - Linhas de Código Efetivo: 59
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\engine.py
+    - Tamanho: 3027 bytes
+    - Total de Linhas: 81
+    - Linhas de Código Efetivo: 57
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\engine_scanner.py
+    - Tamanho: 2179 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 50
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\generator.py
+    - Tamanho: 3152 bytes
+    - Total de Linhas: 70
+    - Linhas de Código Efetivo: 46
+    - Linhas de Comentários: 12
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\geodefense.py
+    - Tamanho: 6185 bytes
+    - Total de Linhas: 138
+    - Linhas de Código Efetivo: 101
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerador_dossies_master.py
+    - Tamanho: 13177 bytes
+    - Total de Linhas: 311
+    - Linhas de Código Efetivo: 264
+    - Linhas de Comentários: 18
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerador_faturamento.py
+    - Tamanho: 6036 bytes
+    - Total de Linhas: 131
+    - Linhas de Código Efetivo: 98
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerenciador_geografico.py
+    - Tamanho: 2240 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerenciador_global.py
+    - Tamanho: 2950 bytes
+    - Total de Linhas: 78
+    - Linhas de Código Efetivo: 54
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\gerenciador_hardware.py
+    - Tamanho: 3140 bytes
+    - Total de Linhas: 92
+    - Linhas de Código Efetivo: 73
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\global_state.py
+    - Tamanho: 967 bytes
+    - Total de Linhas: 29
+    - Linhas de Código Efetivo: 19
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\integracao_google.py
+    - Tamanho: 2322 bytes
+    - Total de Linhas: 66
+    - Linhas de Código Efetivo: 47
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\memoria_comum.py
+    - Tamanho: 2293 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 50
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 8
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\metrics.py
+    - Tamanho: 2078 bytes
+    - Total de Linhas: 63
+    - Linhas de Código Efetivo: 47
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\midi_listener.py
+    - Tamanho: 5042 bytes
+    - Total de Linhas: 120
+    - Linhas de Código Efetivo: 101
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\modulo_psiquico.py
+    - Tamanho: 3864 bytes
+    - Total de Linhas: 101
+    - Linhas de Código Efetivo: 74
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\monaco_modelagem_engine.py
+    - Tamanho: 16931 bytes
+    - Total de Linhas: 302
+    - Linhas de Código Efetivo: 234
+    - Linhas de Comentários: 16
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_ambiental.py
+    - Tamanho: 2951 bytes
+    - Total de Linhas: 74
+    - Linhas de Código Efetivo: 61
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_biogemeos_neuro.py
+    - Tamanho: 5450 bytes
+    - Total de Linhas: 98
+    - Linhas de Código Efetivo: 75
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_biometrico.py
+    - Tamanho: 9109 bytes
+    - Total de Linhas: 179
+    - Linhas de Código Efetivo: 130
+    - Linhas de Comentários: 18
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_dados.py
+    - Tamanho: 2880 bytes
+    - Total de Linhas: 77
+    - Linhas de Código Efetivo: 64
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_olhar_store.py
+    - Tamanho: 6013 bytes
+    - Total de Linhas: 142
+    - Linhas de Código Efetivo: 111
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_performance.py
+    - Tamanho: 3015 bytes
+    - Total de Linhas: 80
+    - Linhas de Código Efetivo: 56
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_prognostico.py
+    - Tamanho: 3480 bytes
+    - Total de Linhas: 80
+    - Linhas de Código Efetivo: 65
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_regeneracao.py
+    - Tamanho: 3664 bytes
+    - Total de Linhas: 96
+    - Linhas de Código Efetivo: 65
+    - Linhas de Comentários: 12
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 8
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\motor_sincronia.py
+    - Tamanho: 2591 bytes
+    - Total de Linhas: 72
+    - Linhas de Código Efetivo: 52
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\neuro_gravidade_preditor.py
+    - Tamanho: 2006 bytes
+    - Total de Linhas: 56
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\neuro_protocolos.py
+    - Tamanho: 3316 bytes
+    - Total de Linhas: 78
+    - Linhas de Código Efetivo: 61
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\osteometria_script.py
+    - Tamanho: 2878 bytes
+    - Total de Linhas: 82
+    - Linhas de Código Efetivo: 67
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\precificacao_motor.py
+    - Tamanho: 3709 bytes
+    - Total de Linhas: 105
+    - Linhas de Código Efetivo: 86
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\processador_inteligente.py
+    - Tamanho: 3692 bytes
+    - Total de Linhas: 86
+    - Linhas de Código Efetivo: 66
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 8
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\protocolo_logica.py
+    - Tamanho: 2131 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 39
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\scanner_integrado.py
+    - Tamanho: 1254 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 29
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\script_clima.py
+    - Tamanho: 3253 bytes
+    - Total de Linhas: 82
+    - Linhas de Código Efetivo: 58
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\sensor_fadiga.py
+    - Tamanho: 3304 bytes
+    - Total de Linhas: 85
+    - Linhas de Código Efetivo: 62
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\sentinela_fisio.py
+    - Tamanho: 990 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 15
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\stress_core_engine.py
+    - Tamanho: 1929 bytes
+    - Total de Linhas: 52
+    - Linhas de Código Efetivo: 37
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\super_retorno_financeiro.py
+    - Tamanho: 14325 bytes
+    - Total de Linhas: 224
+    - Linhas de Código Efetivo: 175
+    - Linhas de Comentários: 16
+    - Classes Mapeadas: 2
+    - Funções Extraídas: 9
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\synapse_core.py
+    - Tamanho: 4128 bytes
+    - Total de Linhas: 80
+    - Linhas de Código Efetivo: 56
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\testae_portas.py
+    - Tamanho: 408 bytes
+    - Total de Linhas: 15
+    - Linhas de Código Efetivo: 11
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\tradutor.py
+    - Tamanho: 956 bytes
+    - Total de Linhas: 36
+    - Linhas de Código Efetivo: 26
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\tricologia_disruptiva_engine.py
+    - Tamanho: 7642 bytes
+    - Total de Linhas: 143
+    - Linhas de Código Efetivo: 118
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\tricologia_ultra_avancada.py
+    - Tamanho: 13843 bytes
+    - Total de Linhas: 232
+    - Linhas de Código Efetivo: 192
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\validador_licenca.py
+    - Tamanho: 1447 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 33
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\validador_sistema.py
+    - Tamanho: 1939 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\verificar_banco.py
+    - Tamanho: 976 bytes
+    - Total de Linhas: 37
+    - Linhas de Código Efetivo: 22
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\viasualizador_visagista.py
+    - Tamanho: 1674 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 40
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\visagismo_estetica_roi.py
+    - Tamanho: 10238 bytes
+    - Total de Linhas: 167
+    - Linhas de Código Efetivo: 132
+    - Linhas de Comentários: 11
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\visualizador_relatorios.py
+    - Tamanho: 2257 bytes
+    - Total de Linhas: 58
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\core\voz_motor.py
+    - Tamanho: 139 bytes
+    - Total de Linhas: 7
+    - Linhas de Código Efetivo: 5
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\database\db_manager.py
+    - Tamanho: 977 bytes
+    - Total de Linhas: 26
+    - Linhas de Código Efetivo: 18
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\defesa_ativa\blindagem.py
+    - Tamanho: 1108 bytes
+    - Total de Linhas: 34
+    - Linhas de Código Efetivo: 26
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\defesa_ativa\detector.py
+    - Tamanho: 1792 bytes
+    - Total de Linhas: 49
+    - Linhas de Código Efetivo: 38
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\defesa_ativa\honeypot.py
+    - Tamanho: 1026 bytes
+    - Total de Linhas: 34
+    - Linhas de Código Efetivo: 25
+    - Linhas de Comentários: 2
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\modulos_organizados\gerador_relatorios.py
+    - Tamanho: 305 bytes
+    - Total de Linhas: 6
+    - Linhas de Código Efetivo: 2
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\modulos_organizados\servidor_backend.py
+    - Tamanho: 281 bytes
+    - Total de Linhas: 10
+    - Linhas de Código Efetivo: 5
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\neural_core\neural_visage_engine.py
+    - Tamanho: 96 bytes
+    - Total de Linhas: 3
+    - Linhas de Código Efetivo: 2
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\PERICIA_DESCO\cliente_thierry_16-05-2026.py
+    - Tamanho: 8148 bytes
+    - Total de Linhas: 185
+    - Linhas de Código Efetivo: 140
+    - Linhas de Comentários: 12
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\PERICIA_DESCO\04_luxury_reports\pdf leitor.py
+    - Tamanho: 3827 bytes
+    - Total de Linhas: 95
+    - Linhas de Código Efetivo: 74
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\anti_reverse.py
+    - Tamanho: 5078 bytes
+    - Total de Linhas: 122
+    - Linhas de Código Efetivo: 96
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\ant_fake_ia.py
+    - Tamanho: 6482 bytes
+    - Total de Linhas: 137
+    - Linhas de Código Efetivo: 108
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 6
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\apdp_monaco.py
+    - Tamanho: 6044 bytes
+    - Total de Linhas: 122
+    - Linhas de Código Efetivo: 100
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\audit_ledger.py
+    - Tamanho: 583 bytes
+    - Total de Linhas: 12
+    - Linhas de Código Efetivo: 8
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\autodestruicao.py
+    - Tamanho: 4072 bytes
+    - Total de Linhas: 91
+    - Linhas de Código Efetivo: 61
+    - Linhas de Comentários: 12
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\BehaviorMonitor.py
+    - Tamanho: 1011 bytes
+    - Total de Linhas: 20
+    - Linhas de Código Efetivo: 12
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\biometric_validator.py
+    - Tamanho: 2937 bytes
+    - Total de Linhas: 66
+    - Linhas de Código Efetivo: 46
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\confidential_compute.py
+    - Tamanho: 2821 bytes
+    - Total de Linhas: 57
+    - Linhas de Código Efetivo: 41
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\crypto_engine.py
+    - Tamanho: 6795 bytes
+    - Total de Linhas: 158
+    - Linhas de Código Efetivo: 121
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 7
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\data_anonymizer.py
+    - Tamanho: 218 bytes
+    - Total de Linhas: 7
+    - Linhas de Código Efetivo: 6
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\data_masking.py
+    - Tamanho: 640 bytes
+    - Total de Linhas: 14
+    - Linhas de Código Efetivo: 10
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\email_service.py
+    - Tamanho: 2830 bytes
+    - Total de Linhas: 67
+    - Linhas de Código Efetivo: 45
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\emergency_recovery.py
+    - Tamanho: 3910 bytes
+    - Total de Linhas: 92
+    - Linhas de Código Efetivo: 61
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\ephemeral.py
+    - Tamanho: 2226 bytes
+    - Total de Linhas: 55
+    - Linhas de Código Efetivo: 43
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\geo_defense.py
+    - Tamanho: 5276 bytes
+    - Total de Linhas: 107
+    - Linhas de Código Efetivo: 75
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\homomorphic_biometrics.py
+    - Tamanho: 2672 bytes
+    - Total de Linhas: 58
+    - Linhas de Código Efetivo: 39
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\input_sanitizer.py
+    - Tamanho: 1561 bytes
+    - Total de Linhas: 41
+    - Linhas de Código Efetivo: 32
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\integrit_verifier.py
+    - Tamanho: 763 bytes
+    - Total de Linhas: 22
+    - Linhas de Código Efetivo: 19
+    - Linhas de Comentários: 1
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\log_seguro.py
+    - Tamanho: 3531 bytes
+    - Total de Linhas: 88
+    - Linhas de Código Efetivo: 68
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\monaco_audit_guard.py
+    - Tamanho: 4784 bytes
+    - Total de Linhas: 109
+    - Linhas de Código Efetivo: 81
+    - Linhas de Comentários: 12
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\network_shield.py
+    - Tamanho: 2156 bytes
+    - Total de Linhas: 47
+    - Linhas de Código Efetivo: 37
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\nonce_cache.py
+    - Tamanho: 942 bytes
+    - Total de Linhas: 25
+    - Linhas de Código Efetivo: 19
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\policyEngine.py
+    - Tamanho: 1051 bytes
+    - Total de Linhas: 24
+    - Linhas de Código Efetivo: 15
+    - Linhas de Comentários: 5
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\portaria.py
+    - Tamanho: 3565 bytes
+    - Total de Linhas: 86
+    - Linhas de Código Efetivo: 62
+    - Linhas de Comentários: 10
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\pqc_engine.py
+    - Tamanho: 2823 bytes
+    - Total de Linhas: 63
+    - Linhas de Código Efetivo: 48
+    - Linhas de Comentários: 7
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\Ratelimiting.py
+    - Tamanho: 1171 bytes
+    - Total de Linhas: 28
+    - Linhas de Código Efetivo: 18
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\sandbox_executor.py
+    - Tamanho: 455 bytes
+    - Total de Linhas: 13
+    - Linhas de Código Efetivo: 12
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\schemas.py
+    - Tamanho: 1001 bytes
+    - Total de Linhas: 25
+    - Linhas de Código Efetivo: 19
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\session_manager.py
+    - Tamanho: 1757 bytes
+    - Total de Linhas: 38
+    - Linhas de Código Efetivo: 28
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 2
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\system_shield.py
+    - Tamanho: 655 bytes
+    - Total de Linhas: 12
+    - Linhas de Código Efetivo: 8
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\threat_intel.py
+    - Tamanho: 641 bytes
+    - Total de Linhas: 12
+    - Linhas de Código Efetivo: 8
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\token_blacklist.py
+    - Tamanho: 227 bytes
+    - Total de Linhas: 9
+    - Linhas de Código Efetivo: 7
+    - Linhas de Comentários: 0
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\vault_manager.py
+    - Tamanho: 7416 bytes
+    - Total de Linhas: 168
+    - Linhas de Código Efetivo: 132
+    - Linhas de Comentários: 8
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 9
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\verificar_senha_master.py
+    - Tamanho: 4562 bytes
+    - Total de Linhas: 107
+    - Linhas de Código Efetivo: 86
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 5
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\zero_trust_governor.py
+    - Tamanho: 2300 bytes
+    - Total de Linhas: 51
+    - Linhas de Código Efetivo: 33
+    - Linhas de Comentários: 9
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\__init__.py
+    - Tamanho: 595 bytes
+    - Total de Linhas: 13
+    - Linhas de Código Efetivo: 9
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 0
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\core\.py
+    - Tamanho: 1237 bytes
+    - Total de Linhas: 42
+    - Linhas de Código Efetivo: 31
+    - Linhas de Comentários: 4
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\security\core\processamento_camera.py
+    - Tamanho: 2190 bytes
+    - Total de Linhas: 65
+    - Linhas de Código Efetivo: 49
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 3
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testes_temp\teste_cameras.py
+    - Tamanho: 1085 bytes
+    - Total de Linhas: 31
+    - Linhas de Código Efetivo: 23
+    - Linhas de Comentários: 3
+    - Classes Mapeadas: 0
+    - Funções Extraídas: 1
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+[+] ATIVO ANALISADO: .\testes_temp\teste_sistema.py
+    - Tamanho: 2740 bytes
+    - Total de Linhas: 72
+    - Linhas de Código Efetivo: 54
+    - Linhas de Comentários: 6
+    - Classes Mapeadas: 1
+    - Funções Extraídas: 4
+    - Status de Integridade: OK (Integridade Confirmada)
+--------------------------------------------------
+
+================================================================================
+2. AUDITORIA DE SEGURANÇA E COMPLIANCE INTERNACIONAL
+================================================================================
+[*] Executando varredura estática em 237 módulos limpos...
+
+Working... ---------------------------------------- 100% 0:00:02
+
+================================================================================
+               FIM DO RELATÓRIO - AUDITORIA CONCLUÍDA COM SUCESSO
+================================================================================

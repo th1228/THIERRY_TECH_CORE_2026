@@ -1,0 +1,32 @@
+{
+    "ETAPA_1_COMECO": {
+        "nome": "1. COMEÇO: Núcleo Matemático & C2 Solver",
+        "detalhes": "Coleta básica ativa. Necessita de análise preditiva de riscos e acoplamento.",
+        "itens": {
+            "Parser de Código": true,
+            "Linhas Lógicas de Código (LLOC)": true,
+            "Complexidade Ciclomática (Radon)": true,
+            "Análise Preditiva de Riscos Estruturais": false
+        }
+    },
+    "ETAPA_2_MEIO": {
+        "nome": "2. MEIO: Motor de Valoração (CPC 04 / IAS 38) & Ledger",
+        "detalhes": "Valoração ativa. Falta integrar Hash SHA-256 dinâmico em lote.",
+        "itens": {
+            "Cálculo de Replacement Cost (COCOMO II)": true,
+            "Valoração Contábil de Ativo Intangível (IAS 38)": true,
+            "Geração de Selo Hash SHA-256": true,
+            "Trilha de Auditoria Drenada em Tempo Real": false
+        }
+    },
+    "ETAPA_3_FIM": {
+        "nome": "3. FIM: Vitrine Executiva & PDF Monaco Tier-1",
+        "detalhes": "Gerador de PDF ReportLab compilando com o padrão Monaco Grid.",
+        "itens": {
+            "Capa Minimalista Tier-1": true,
+            "Quadro de Ativos (Scoreboard)": true,
+            "Paginação Dupla (NumberedCanvas)": true,
+            "Injeção Automática dos Dados das Etapas 1 e 2": false
+        }
+    }
+}

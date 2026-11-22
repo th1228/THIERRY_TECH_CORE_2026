@@ -1,0 +1,23 @@
+{
+    "timestamp": "2026-11-07T00:37:13.671912",
+    "status_global": "UI_PRONTA_PARA_ESCALA",
+    "padrao": "Silicon Valley B2B Standard",
+    "metricas_ux": [
+        {
+            "nome": "Acessibilidade Global e Contraste",
+            "risco": "Baixo",
+            "status": "Otimizado"
+        },
+        {
+            "nome": "Estabilidade de Layout Grid / Flexbox",
+            "risco": "Nulo",
+            "status": "Blindado contra sobreposição"
+        },
+        {
+            "nome": "Tempo de Resposta de Eventos de Botões (DOM)",
+            "risco": "Nulo",
+            "status": "Baixa latência local"
+        }
+    ],
+    "alertas_detalhados": []
+}

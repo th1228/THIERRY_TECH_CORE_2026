@@ -1,0 +1,11 @@
+{
+    "root": ".",
+    "extraPaths": ["./core"],
+    "typeCheckingMode": "basic",
+    "reportAttributeAccessIssue": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportUnusedExpression": "none",
+    "reportCallIssue": "none",
+    "reportMissingImports": "warning"
+}

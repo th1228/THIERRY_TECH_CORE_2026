@@ -1,0 +1,92 @@
+[
+  {
+    "execucao_numero": 1,
+    "registrado_em_utc": "2026-11-22 21:45:52 UTC",
+    "titular": "Genilson Rodrigues",
+    "empresa": "Thierry Technology Concept Global",
+    "documento": "01_Dossie_Sovereign_Intelligence",
+    "modo_operacao": "LOCAL_OFFLINE_FIRST",
+    "metricas": {
+      "regeneracao_pct": 92.17,
+      "densidade_fios_cm2": 128.0,
+      "idade_biologica_anos": 31.0,
+      "adesao_pct": 18.5
+    },
+    "comparativo_snapshot_anterior": null,
+    "projecao_ciclos": {
+      "5_anos": {
+        "horizonte_anos": 5,
+        "regeneracao_projetada_pct": 93.83,
+        "densidade_projetada_fios_cm2": 133.33,
+        "idade_biologica_projetada_anos": 35.3,
+        "delta_idade_biologica_vs_baseline": -0.71,
+        "indice_estabilidade_ciclo": 80.4
+      },
+      "10_anos": {
+        "horizonte_anos": 10,
+        "regeneracao_projetada_pct": 95.49,
+        "densidade_projetada_fios_cm2": 138.66,
+        "idade_biologica_projetada_anos": 39.6,
+        "delta_idade_biologica_vs_baseline": -1.42,
+        "indice_estabilidade_ciclo": 78.4
+      },
+      "15_anos": {
+        "horizonte_anos": 15,
+        "regeneracao_projetada_pct": 97.15,
+        "densidade_projetada_fios_cm2": 144.0,
+        "idade_biologica_projetada_anos": 43.9,
+        "delta_idade_biologica_vs_baseline": -2.13,
+        "indice_estabilidade_ciclo": 76.4
+      }
+    },
+    "hash_snapshot": "2d290adac7ea0189ce90645916feb214c7bd96c8c2c3bfdfa07397492e6f47dc"
+  },
+  {
+    "execucao_numero": 2,
+    "registrado_em_utc": "2026-11-22 21:45:56 UTC",
+    "titular": "Genilson Rodrigues",
+    "empresa": "Thierry Technology Concept Global",
+    "documento": "01_Dossie_Sovereign_Intelligence",
+    "modo_operacao": "LOCAL_OFFLINE_FIRST",
+    "metricas": {
+      "regeneracao_pct": 92.17,
+      "densidade_fios_cm2": 128.0,
+      "idade_biologica_anos": 31.0,
+      "adesao_pct": 18.5
+    },
+    "comparativo_snapshot_anterior": {
+      "snapshot_anterior_em": "2026-11-22 21:45:52 UTC",
+      "delta_regeneracao_pct": 0.0,
+      "delta_densidade_fios_cm2": 0.0,
+      "delta_idade_biologica_anos": 0.0,
+      "delta_adesao_pct": 0.0
+    },
+    "projecao_ciclos": {
+      "5_anos": {
+        "horizonte_anos": 5,
+        "regeneracao_projetada_pct": 93.83,
+        "densidade_projetada_fios_cm2": 133.33,
+        "idade_biologica_projetada_anos": 35.3,
+        "delta_idade_biologica_vs_baseline": -0.71,
+        "indice_estabilidade_ciclo": 80.4
+      },
+      "10_anos": {
+        "horizonte_anos": 10,
+        "regeneracao_projetada_pct": 95.49,
+        "densidade_projetada_fios_cm2": 138.66,
+        "idade_biologica_projetada_anos": 39.6,
+        "delta_idade_biologica_vs_baseline": -1.42,
+        "indice_estabilidade_ciclo": 78.4
+      },
+      "15_anos": {
+        "horizonte_anos": 15,
+        "regeneracao_projetada_pct": 97.15,
+        "densidade_projetada_fios_cm2": 144.0,
+        "idade_biologica_projetada_anos": 43.9,
+        "delta_idade_biologica_vs_baseline": -2.13,
+        "indice_estabilidade_ciclo": 76.4
+      }
+    },
+    "hash_snapshot": "415580d4ca67cedaf183d3b677d480129441be9037cc2d6d57e7fb71e3ed5c58"
+  }
+]

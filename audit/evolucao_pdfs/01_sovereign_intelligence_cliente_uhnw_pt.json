@@ -1,0 +1,18 @@
+{
+  "documento": "01_Sovereign_Intelligence",
+  "titular": "CLIENTE UHNW",
+  "idioma": "PT",
+  "horizontes": 10,
+  "leitura_numero": 3,
+  "emitido_em": "22/11/2026 às 16:12:53",
+  "leitura_anterior": "22/11/2026 às 16:08:04",
+  "tamanho_kb": 69.84,
+  "sha256": "5ec0ec53dadc05d95815fc11a13b05bc0db5e954e47f8ed1ab506855a7048ebd",
+  "hash_analise": "SEM_ANALISE",
+  "chaves_telemetria": [],
+  "mudancas": [
+    "NOVA GERAÇÃO: Leitura anterior 22/11/2026 às 16:08:04 -> Leitura atual 22/11/2026 às 16:12:53.",
+    "Conteúdo/arquivo atualizado (variação de tamanho: +0.00 KB | novo SHA-256: 5ec0ec53dadc...).",
+    "Análise/telemetria sem alteração de conteúdo em relação à leitura anterior."
+  ]
+}

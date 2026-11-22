@@ -1,0 +1,1116 @@
+{
+    "timestamp": "2026-10-19T13:46:14.238007",
+    "project_root": "c:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026",
+    "directories_found": [
+        "security",
+        "core",
+        "storage",
+        "config",
+        "tests",
+        "tools",
+        "relatorios"
+    ],
+    "missing_directories": [],
+    "critical_files_status": {
+        "main.py": true
+    },
+    "structure_tree": {
+        ".": {
+            "subdirectories": [
+                "Arquivos_TTC",
+                "assets",
+                "ASSETS_MEDIA",
+                "audit",
+                "auditorias_anteriores",
+                "config",
+                "core",
+                "Dado",
+                "dados",
+                "data",
+                "database",
+                "database_sql",
+                "defesa_ativa",
+                "Documentos",
+                "dossies_gerados",
+                "downloads",
+                "engine",
+                "fotos_clientes",
+                "generated",
+                "historico_dossies",
+                "identity",
+                "imagens",
+                "laudos",
+                "legal",
+                "MARKTING_TTC_GLOBAL",
+                "memory",
+                "modulos_organizados",
+                "monaco_security_vault",
+                "neural_",
+                "neural_core",
+                "output",
+                "pdfs_finais",
+                "PERICIA_DESCO",
+                "RECONSTRUCAO_FACIAL_TTC",
+                "relatorios",
+                "relatorios_finais_tcc",
+                "security",
+                "seguranca",
+                "services",
+                "static",
+                "storage",
+                "STORAGE_DATA",
+                "testes_temp",
+                "tests",
+                "tools",
+                "vault_uhnw_storage"
+            ],
+            "files": [
+                ".bandit",
+                ".env",
+                ".gitignore",
+                "04_Carta_Internacional_Bloco_Unico.pdf",
+                "04_Carta_Internacional_Clean_EN.pdf",
+                "0rquestrador_camadas.py",
+                "acao_mestre.py",
+                "analizador_conectividade.py",
+                "analizar_fluxo.py",
+                "api_server.py",
+                "aplicador_correcao.py",
+                "app.py",
+                "app_executivo.py",
+                "apresentacao_ecossistema.py",
+                "arduino_bridge.py",
+                "auditoria_estrutura_20261019_133604.json",
+                "auditoria_estrutura_20261019_133712.json",
+                "auditoria_estrutura_20261019_133940.json",
+                "auditoria_estrutura_20261019_134127.json",
+                "auditoria_estrutura_20261019_134409.json",
+                "auditoria_estrutura_20261019_134436.json",
+                "auditoria_sistema_auditoria_global.py",
+                "auditor_estrutura.py",
+                "auditor_sistema.py",
+                "auto_reparador.py",
+                "biometria_genilson .jpg",
+                "biometria_genilson rodrigues.jpg",
+                "biometria_genilson.jpg",
+                "biometria_resultado.json",
+                "biometria_th.jpg",
+                "biometria_thierrry.jpg",
+                "biometria_Thierry_1784253026.jpg",
+                "biometria_True_1784558440.jpg",
+                "biometria_yury.jpg",
+                "camera_click.wav",
+                "camera_engine.py",
+                "carregador_automatico.py",
+                "certificado_auditoria_thierry.json",
+                "checar_arquivos.py",
+                "checklist_15_dias.json",
+                "checklist_seguranca.txt",
+                "checkout_ui.py",
+                "compliance_global.py",
+                "config_pagamentos.py",
+                "dados_biometricos.json",
+                "db.manager.py",
+                "db_config.py",
+                "db_init.py",
+                "debug_dossie.py",
+                "dossie_arquitetura.md",
+                "dossie_audit_history.json",
+                "dossie_final.json",
+                "dossie_pitch_completo_global.txt",
+                "DOSSIE_VALUATION_TCC_GLOBAL.md",
+                "encontrar _origem_nome.py",
+                "encontrar_data_inicio.py",
+                "error_guard.py",
+                "estado_preditivo.json",
+                "estado_sistema.json",
+                "faxina_ttc.py",
+                "fix_imports.py",
+                "foto_diaria.jpg",
+                "foto_paciente_limpa.jpg",
+                "foto_relatorio_monaco.jpg",
+                "foto_relatorio_salao.jpg",
+                "foto_relatorio_scanner.jpg",
+                "gerar_son.py",
+                "gerenciador_vult.py",
+                "global_audit_report.json",
+                "gui_main.py",
+                "historico_analises.csv",
+                "historico_auditoria_monaco.json",
+                "historico_auditoria_monaco.py",
+                "historico_auditoria_monaco_definitivo.json",
+                "historico_cliente.json",
+                "historico_licenciamento_monaco.json",
+                "homologacao_global.py",
+                "index.html",
+                "iniciar.bat",
+                "iniciar.py",
+                "iniciar_sistema.py",
+                "inspecionar_e_popular_memoria.py",
+                "interface_dashboard.py",
+                "inventario_global.py",
+                "inventario_sistema_executivo.py",
+                "joia_tecnologica_real.py",
+                "laudo_auditoria_patrimonial.json",
+                "laudo_Paciente_Padrao.json",
+                "laudo_Thierry_Cliente.json",
+                "licenca.py",
+                "licenca_ativa.json",
+                "limpar_imports.py",
+                "limpar_todos_pdfs.py",
+                "limpeza_profissional.py",
+                "listar_modelos.py",
+                "listar_status.py",
+                "loader_core.py",
+                "log_hub.txt",
+                "log_performance.txt",
+                "log_seguranca.txt",
+                "main.py",
+                "main_diagostico.py",
+                "mapa_de_correcao.py",
+                "mapeador_de_dependecias.py",
+                "mapeamento_avaliação_real.txt",
+                "memoria_comum_ttc.json",
+                "memoria_historica.json",
+                "monaco_ambiente.py",
+                "monaco_blindagem.py",
+                "monaco_comunicacao.py",
+                "monaco_consciencia.py",
+                "monaco_core_final.py",
+                "monaco_eminencia.py",
+                "monaco_integrador.py",
+                "monaco_nucleo_acesso.py",
+                "monaco_plan.py",
+                "monaco_ressonancia.py",
+                "monitoramento_sistema.log",
+                "monitor_maestro.py",
+                "motor_ao_ vivo.py",
+                "motor_biometrico_dados.json",
+                "omni_watcher.py",
+                "oratoria_soberana_engine.py",
+                "organizador_arquivos.py",
+                "organizador_mestre.py",
+                "organizador_sistema.py",
+                "orquestrador_llm.py",
+                "predictive_engine.js",
+                "prontuario_paciente.log",
+                "protocolo_monaco_log.txt",
+                "pyproject.toml",
+                "pyrightconfig.json",
+                "python ler_memoria.py",
+                "rastreador_correcao.py",
+                "README_ARCHITECTURE.md",
+                "recrar_audit.py",
+                "recriar_audit.py",
+                "relatorio_auditoria.txt",
+                "relatorio_auditoria_matematica_monaco.txt",
+                "relatorio_auditoria_sistema.json",
+                "relatorio_compliance.txt",
+                "RELATORIO_ESTRATEGICO_7_PONTOS.md",
+                "relatorio_evolucao_diaria_monaco.txt",
+                "relatorio_executivo_completo.txt",
+                "relatorio_executivo_monaco.txt",
+                "relatorio_licenciamento_oficial_monaco.txt",
+                "Relatorio_Master_TCC.md",
+                "relatorio_multitelas_salao.txt",
+                "relatorio_valuation_monaco_evolutivo.txt",
+                "requirements.txt",
+                "run_all.py",
+                "scanner_busca.py",
+                "servidor_local.py",
+                "sessao.json",
+                "setup_seguranca.py",
+                "sistema_en.mp3",
+                "sistema_pt.mp3",
+                "sovereign_due-diligence_simulator.py.py",
+                "sovereign_gate.py",
+                "stripe_service.py",
+                "tempCodeRunnerFile.py",
+                "thierry_tech_core.db",
+                "traducoes_ttc.py",
+                "ttc_global_secure_memory.enc",
+                "ttc_session.key",
+                "ui_resources",
+                "ultimo_motodiagnostico.json",
+                "validador_monaco.py",
+                "validador_valuation_tcc.py",
+                "validar_maestro.py",
+                "vault_internal_audit.log",
+                "verificador_nuvem.py",
+                "ver_memoria.py",
+                "WhatsApp Image 2026-05-19 at 10.10.42  - Copia.jpeg",
+                "WhatsApp Image 2026-05-19 at 10.10.42 .jpeg"
+            ]
+        },
+        "Arquivos_TTC": {
+            "subdirectories": [],
+            "files": [
+                "diagnostico_FRAME_CAPTURA_BIOMETRICA.jpg",
+                "diagnostico_Teste_Thierry.jpg"
+            ]
+        },
+        "assets": {
+            "subdirectories": [],
+            "files": [
+                "apresentacao.mp4",
+                "apresentacao_en.mp4",
+                "apresentacao_pt.mp4",
+                "scan_ping.wav"
+            ]
+        },
+        "ASSETS_MEDIA": {
+            "subdirectories": [],
+            "files": []
+        },
+        "audit": {
+            "subdirectories": [],
+            "files": [
+                "architecture_auditor.py",
+                "auditor_geral_ttc.py",
+                "dependency_sbom.json",
+                "develops_readiness.py",
+                "dossier_audit_history.json",
+                "dossier_executivo_global.md",
+                "dossie_audit_history.json",
+                "license_compliance.json",
+                "privacy_auditor.py",
+                "security_policy.md",
+                "sovereign_auditor.py",
+                "verificar_integridade.py"
+            ]
+        },
+        "auditorias_anteriores": {
+            "subdirectories": [],
+            "files": [
+                "auditar_fluxo_pdfs.py",
+                "auditar_geradores_pdf.py",
+                "auditar_logica.py",
+                "auditar_sistema_tcc.py",
+                "auditoria_master.py",
+                "auditoria_profunda.py",
+                "auditoria_prontidao.py",
+                "auditoria_sistema.py",
+                "auditoria_total.py",
+                "auditoria_valuation.py",
+                "auditor_geral_ttc.py",
+                "auditor_integridade_global.py",
+                "auditor__monaco_ master.py"
+            ]
+        },
+        "config": {
+            "subdirectories": [
+                "paises"
+            ],
+            "files": []
+        },
+        "config\\paises": {
+            "subdirectories": [],
+            "files": [
+                "AE.json",
+                "BR.json",
+                "CH.json",
+                "DE.json",
+                "FR.json",
+                "KR.json",
+                "MC.json",
+                "QA.json",
+                "SG.json",
+                "UK.json",
+                "US-AS.json",
+                "US-AT.json",
+                "US-BH.json",
+                "US-HB.json",
+                "US-PB.json",
+                "US-RH.json",
+                "US.json"
+            ]
+        },
+        "core": {
+            "subdirectories": [
+                "acervo_historico_15anos",
+                "Arquivos_TTC",
+                "capturas",
+                "entrega_bpm",
+                "historico_dossies",
+                "staging_processamento",
+                "storage"
+            ],
+            "files": [
+                "analise.py",
+                "analise_cabelo.py",
+                "analise_colorimetria.py",
+                "analise_rosto.py",
+                "atelie.py",
+                "banco_dados.py",
+                "biblioteca_estilo.py",
+                "biogemio_orquestrador.py",
+                "biometria.py",
+                "c2_sovereign_intelligence.py",
+                "camera_hub.py",
+                "carta_internacional_engine.py",
+                "contrato_global_engine.py",
+                "coreia_engine.py",
+                "core_reconstrucao.py",
+                "dashboard_global.py",
+                "detector_erros.py",
+                "diagnostico_ante_gravidade_neural.py",
+                "diagnostico_geracao.py",
+                "diagnostico_seguranca.py",
+                "engine.py",
+                "engine_scanner.py",
+                "generator.py",
+                "geodefense.py",
+                "gerador_dossies_master.py",
+                "gerador_faturamento.py",
+                "gerenciador_geografico.py",
+                "gerenciador_global.py",
+                "gerenciador_hardware.py",
+                "global_state.py",
+                "integracao_google.py",
+                "memoria_comum.py",
+                "metrics.py",
+                "midi_listener.py",
+                "modulo_psiquico.py",
+                "monaco_modelagem_engine.py",
+                "motor_ambiental.py",
+                "motor_biogemeos_neuro.py",
+                "motor_biometrico.py",
+                "motor_dados.py",
+                "motor_olhar_store.py",
+                "motor_performance.py",
+                "motor_prognostico.py",
+                "motor_regeneracao.py",
+                "motor_sincronia.py",
+                "neuro_gravidade.py",
+                "neuro_protocolos.py",
+                "osteometria_script.py",
+                "precificacao_motor.py",
+                "processador_inteligente.py",
+                "protocolo_logica.py",
+                "resultado_biometria.jpg",
+                "rodar_sistema.bat",
+                "scanner.txt",
+                "scanner_integrado.py",
+                "script_clima.py",
+                "sensor_fadiga.py",
+                "sentinela_fisio.py",
+                "stress_core_engine.py",
+                "super_retorno_financeiro.py",
+                "synapse_core.py",
+                "testae_portas.py",
+                "test_modulos.py",
+                "tradutor.py",
+                "tricologia_disruptiva_engine.py",
+                "tricologia_ultra_avancada.py",
+                "validador_licenca.py",
+                "validador_sistema.py",
+                "verificar_banco.py",
+                "viasualizador_visagista.py",
+                "visagismo_estetica_roi.py",
+                "visualizador_relatorios.py",
+                "voz_motor.py"
+            ]
+        },
+        "core\\acervo_historico_15anos": {
+            "subdirectories": [],
+            "files": []
+        },
+        "core\\Arquivos_TTC": {
+            "subdirectories": [],
+            "files": []
+        },
+        "core\\capturas": {
+            "subdirectories": [],
+            "files": [
+                "FOTO_BIOGEME_20260901_001356.png",
+                "FOTO_BIOGEME_20260901_001359.png",
+                "FOTO_BIOGEME_20260901_003457.png",
+                "FOTO_BIOGEME_20260901_212419.png",
+                "FOTO_BIOGEME_20260901_221422.png",
+                "FOTO_BIOGEME_20260901_222221.png",
+                "FOTO_BIOGEME_20260901_222315.png",
+                "FOTO_BIOGEME_20260902_215345.png",
+                "FOTO_BIOGEME_20260902_220830.png",
+                "FOTO_BIOGEME_20260902_221354.png"
+            ]
+        },
+        "core\\entrega_bpm": {
+            "subdirectories": [],
+            "files": [
+                "painel_Thiêrry_TCC_20260916_221100.json",
+                "painel_Thiêrry_TCC_20260916_224421.json",
+                "painel_Thiêrry_TCC_20260916_224427.json",
+                "painel_Thiêrry_TCC_20260916_225425.json",
+                "painel_Thiêrry_TCC_20260916_230245.json",
+                "painel_Thiêrry_TCC_20260916_230642.json",
+                "painel_Thiêrry_TCC_20260916_231001.json",
+                "painel_Thiêrry_TCC_20260916_231400.json",
+                "painel_Thiêrry_TCC_20260916_231548.json",
+                "painel_Thiêrry_TCC_20260918_073148.json",
+                "painel_Thiêrry_TCC_20260918_073558.json"
+            ]
+        },
+        "core\\historico_dossies": {
+            "subdirectories": [],
+            "files": [
+                "dossie_DESCONHECIDO_20260810_104728.json",
+                "dossie_josé_20260810_105430.json",
+                "dossie_thierry_20260810_105238.json"
+            ]
+        },
+        "core\\staging_processamento": {
+            "subdirectories": [],
+            "files": []
+        },
+        "core\\storage": {
+            "subdirectories": [
+                "BR"
+            ],
+            "files": []
+        },
+        "core\\storage\\BR": {
+            "subdirectories": [],
+            "files": [
+                "memoria_segura.bin",
+                "sessao.key"
+            ]
+        },
+        "Dado": {
+            "subdirectories": [
+                "Config"
+            ],
+            "files": []
+        },
+        "Dado\\Config": {
+            "subdirectories": [],
+            "files": [
+                "master_audit_ledger_profundo.json"
+            ]
+        },
+        "dados": {
+            "subdirectories": [],
+            "files": [
+                "estado_atual.json"
+            ]
+        },
+        "data": {
+            "subdirectories": [],
+            "files": []
+        },
+        "database": {
+            "subdirectories": [],
+            "files": [
+                "db_manager.py",
+                "sistema_seguro.db"
+            ]
+        },
+        "database_sql": {
+            "subdirectories": [
+                "THIERRY_TECH_CORE_2026"
+            ],
+            "files": []
+        },
+        "database_sql\\THIERRY_TECH_CORE_2026": {
+            "subdirectories": [
+                "core"
+            ],
+            "files": []
+        },
+        "database_sql\\THIERRY_TECH_CORE_2026\\core": {
+            "subdirectories": [],
+            "files": []
+        },
+        "defesa_ativa": {
+            "subdirectories": [],
+            "files": [
+                "blacklist.json",
+                "blindagem.py",
+                "detector.py",
+                "honeypot.py"
+            ]
+        },
+        "Documentos": {
+            "subdirectories": [
+                "GitHub",
+                "KingsoftData",
+                "Modelos Personalizados do Office",
+                "Nova pasta",
+                "Nova pasta (2)",
+                "Nova pasta (3)",
+                "Power BI Desktop",
+                "th01"
+            ],
+            "files": [
+                "@echo off.txt",
+                "backup_iara_funcional.txt",
+                "Biometria Facial DOURADA Sci-Fi.png",
+                "DASH BOARD.pbix",
+                "desktop.ini",
+                "tggg.pbix",
+                "th.prn",
+                "THIERRY TECHNOLOGY - DENSE DATA.png",
+                "THIERRY TECHNOLOGY - PERICIA CYBERPUNK.png",
+                "Thierry Technology Concept Global.png",
+                "trabalho 02.xlsx",
+                "trabalhos th.xlsx",
+                "TTC CORE - INTERFACE FINAL.png",
+                "TTC CORE - SCANNER FLASH SYNC.png",
+                "TTC GLOBAL SYSTEM.png"
+            ]
+        },
+        "Documentos\\GitHub": {
+            "subdirectories": [
+                "teste.py"
+            ],
+            "files": []
+        },
+        "Documentos\\GitHub\\teste.py": {
+            "subdirectories": [],
+            "files": []
+        },
+        "Documentos\\KingsoftData": {
+            "subdirectories": [
+                "office6"
+            ],
+            "files": []
+        },
+        "Documentos\\KingsoftData\\office6": {
+            "subdirectories": [],
+            "files": []
+        },
+        "Documentos\\Modelos Personalizados do Office": {
+            "subdirectories": [],
+            "files": []
+        },
+        "Documentos\\Nova pasta": {
+            "subdirectories": [],
+            "files": []
+        },
+        "Documentos\\Nova pasta (2)": {
+            "subdirectories": [],
+            "files": []
+        },
+        "Documentos\\Nova pasta (3)": {
+            "subdirectories": [],
+            "files": []
+        },
+        "Documentos\\Power BI Desktop": {
+            "subdirectories": [
+                "Custom Connectors"
+            ],
+            "files": []
+        },
+        "Documentos\\Power BI Desktop\\Custom Connectors": {
+            "subdirectories": [],
+            "files": []
+        },
+        "Documentos\\th01": {
+            "subdirectories": [],
+            "files": []
+        },
+        "dossies_gerados": {
+            "subdirectories": [],
+            "files": [
+                "dossie_cliente_não_identificado.json",
+                "dossie_thierry.json"
+            ]
+        },
+        "downloads": {
+            "subdirectories": [],
+            "files": []
+        },
+        "engine": {
+            "subdirectories": [],
+            "files": []
+        },
+        "fotos_clientes": {
+            "subdirectories": [
+                "GENILSON",
+                "GENILSON_RODRIGUES",
+                "GENILSON_RTODRIGUES",
+                "GR",
+                "P",
+                "THIERRY",
+                "THIERRY_RODRIGUES"
+            ],
+            "files": []
+        },
+        "fotos_clientes\\GENILSON": {
+            "subdirectories": [],
+            "files": [
+                "historico_evolucao.csv"
+            ]
+        },
+        "fotos_clientes\\GENILSON_RODRIGUES": {
+            "subdirectories": [],
+            "files": []
+        },
+        "fotos_clientes\\GENILSON_RTODRIGUES": {
+            "subdirectories": [],
+            "files": []
+        },
+        "fotos_clientes\\GR": {
+            "subdirectories": [],
+            "files": []
+        },
+        "fotos_clientes\\P": {
+            "subdirectories": [],
+            "files": []
+        },
+        "fotos_clientes\\THIERRY": {
+            "subdirectories": [],
+            "files": []
+        },
+        "fotos_clientes\\THIERRY_RODRIGUES": {
+            "subdirectories": [],
+            "files": []
+        },
+        "generated": {
+            "subdirectories": [],
+            "files": [
+                "sovereign_audit_framework.pdf"
+            ]
+        },
+        "historico_dossies": {
+            "subdirectories": [],
+            "files": [
+                "01_Dossie_Biogemeos_Core_TITULAR_SOBERANO.pdf",
+                "dossie_h_20260812_221646.json",
+                "dossie_joao_20260810_164351.json",
+                "dossie_jose_20260810_110808.json",
+                "dossie_jose_20260810_164045.json",
+                "dossie_jose_20260810_165151.json",
+                "dossie_jose_20260812_222636.json",
+                "dossie_k_20260810_170037.json",
+                "dossie_k_20260810_171735.json",
+                "dossie_k_20260810_172619.json",
+                "dossie_l_20260810_170427.json",
+                "dossie_l_20260810_171422.json",
+                "dossie_l_20260810_172149.json",
+                "dossie_l_20260810_172237.json",
+                "dossie_l_20260810_173700.json",
+                "dossie_l_20260812_221757.json",
+                "dossie_l_20260812_233926.json",
+                "dossie_Paciente_biometria_20260810_154211.json",
+                "dossie_Paciente_biometria_20260810_162307.json",
+                "dossie_Paciente_biometria_20260810_214822.json",
+                "dossie_Paciente_biometria_20260810_215619.json",
+                "dossie_Paciente_biometria_20260810_220325.json",
+                "dossie_Paciente_biometria_20260810_225020.json",
+                "dossie_Paciente_biometria_20260811_212351.json",
+                "dossie_Paciente_biometria_20260811_212351.pdf",
+                "dossie_Paciente_clinica_20260810_154139.json",
+                "dossie_Paciente_clinica_20260810_162237.json",
+                "dossie_Paciente_clinica_20260810_163313.json",
+                "dossie_Paciente_clinica_20260810_211649.json",
+                "dossie_Paciente_clinica_20260810_213859.json",
+                "dossie_Paciente_clinica_20260810_214752.json",
+                "dossie_Paciente_clinica_20260810_214930.json",
+                "dossie_Paciente_clinica_20260810_215538.json",
+                "dossie_Paciente_clinica_20260810_220252.json",
+                "dossie_Paciente_clinica_20260811_212312.json",
+                "dossie_Paciente_forense_20260810_154245.json",
+                "dossie_Paciente_forense_20260810_215654.json",
+                "dossie_Paciente_forense_20260810_220401.json",
+                "dossie_Paciente_monaco_20260812_000838.json",
+                "dossie_Paciente_salao_20260810_154100.json",
+                "dossie_Paciente_salao_20260810_160650.json",
+                "dossie_Paciente_salao_20260810_161433.json",
+                "dossie_Paciente_salao_20260810_162210.json",
+                "dossie_Paciente_salao_20260810_162346.json",
+                "dossie_Paciente_salao_20260810_163223.json",
+                "dossie_Paciente_salao_20260810_193704.json",
+                "dossie_Paciente_salao_20260810_200106.json",
+                "dossie_Paciente_salao_20260810_203825.json",
+                "dossie_Paciente_salao_20260810_205607.json",
+                "dossie_Paciente_salao_20260810_205856.json",
+                "dossie_Paciente_salao_20260810_211557.json",
+                "dossie_Paciente_salao_20260810_213640.json",
+                "dossie_Paciente_salao_20260810_214646.json",
+                "dossie_Paciente_salao_20260810_214719.json",
+                "dossie_Paciente_salao_20260810_215452.json",
+                "dossie_Paciente_salao_20260810_220209.json",
+                "dossie_Paciente_salao_20260810_221133.json",
+                "dossie_Paciente_salao_20260810_221450.json",
+                "dossie_Paciente_salao_20260810_224853.json",
+                "dossie_Paciente_salao_20260810_225441.json",
+                "dossie_Paciente_salao_20260811_204552.json",
+                "dossie_Paciente_salao_20260811_205348.json",
+                "dossie_p_20260810_165607.json",
+                "dossie_~ççç_20260810_172739.json"
+            ]
+        },
+        "identity": {
+            "subdirectories": [],
+            "files": [
+                "MANIFESTO.md"
+            ]
+        },
+        "imagens": {
+            "subdirectories": [],
+            "files": []
+        },
+        "laudos": {
+            "subdirectories": [],
+            "files": [
+                "laudo_biogenio_14anos.jpg",
+                "Laudo_Final_jose.pdf",
+                "Laudo_th.pdf"
+            ]
+        },
+        "legal": {
+            "subdirectories": [],
+            "files": [
+                "Contrato_Final_Monaco.pdf"
+            ]
+        },
+        "MARKTING_TTC_GLOBAL": {
+            "subdirectories": [],
+            "files": [
+                "WhatsApp Video 2026-05-24 at 22.04.32.mp4"
+            ]
+        },
+        "memory": {
+            "subdirectories": [],
+            "files": []
+        },
+        "modulos_organizados": {
+            "subdirectories": [],
+            "files": [
+                "documentacao_tecnica.md",
+                "gerador_relatorios.py",
+                "servidor_backend.py"
+            ]
+        },
+        "monaco_security_vault": {
+            "subdirectories": [],
+            "files": [
+                "compliance_ledger.sec",
+                "compliance_ledger_tier1.sec",
+                "node_private_key.pem",
+                "node_public_key.pem"
+            ]
+        },
+        "neural_": {
+            "subdirectories": [],
+            "files": [
+                "diagnosticos.db"
+            ]
+        },
+        "neural_core": {
+            "subdirectories": [],
+            "files": [
+                "neural_visage_engine.py"
+            ]
+        },
+        "output": {
+            "subdirectories": [],
+            "files": []
+        },
+        "pdfs_finais": {
+            "subdirectories": [],
+            "files": [
+                "01_Dossie_Sovereign_Intelligence.pdf",
+                "02_Super_Retorno_Financeiro.pdf",
+                "03_Dossie_Tricologia_Avancada.pdf",
+                "04_Carta_Internacional_UHNW.pdf",
+                "05_Dossie_Modelagem_Computacional.pdf",
+                "06_Contrato_Licenciamento_Global.pdf"
+            ]
+        },
+        "PERICIA_DESCO": {
+            "subdirectories": [
+                "04_luxury_reports"
+            ],
+            "files": [
+                "cliente_thierry_16-05-2026.py"
+            ]
+        },
+        "PERICIA_DESCO\\04_luxury_reports": {
+            "subdirectories": [],
+            "files": [
+                "pdf leitor.py"
+            ]
+        },
+        "RECONSTRUCAO_FACIAL_TTC": {
+            "subdirectories": [
+                "dataset_fotos",
+                "RECONSTRUCAO_FACIAL_TTC"
+            ],
+            "files": []
+        },
+        "RECONSTRUCAO_FACIAL_TTC\\dataset_fotos": {
+            "subdirectories": [],
+            "files": [
+                "WhatsApp Image 2026-05-25 at 07.35.34.jpg",
+                "WhatsApp Image 2026-05-25 at 07.35.58.jpg"
+            ]
+        },
+        "RECONSTRUCAO_FACIAL_TTC\\RECONSTRUCAO_FACIAL_TTC": {
+            "subdirectories": [
+                "dataset_fotos"
+            ],
+            "files": []
+        },
+        "RECONSTRUCAO_FACIAL_TTC\\RECONSTRUCAO_FACIAL_TTC\\dataset_fotos": {
+            "subdirectories": [],
+            "files": []
+        },
+        "relatorios": {
+            "subdirectories": [
+                "2026-06-25"
+            ],
+            "files": [
+                "Laudo_Supremacy.pdf"
+            ]
+        },
+        "relatorios\\2026-06-25": {
+            "subdirectories": [],
+            "files": []
+        },
+        "relatorios_finais_tcc": {
+            "subdirectories": [],
+            "files": []
+        },
+        "security": {
+            "subdirectories": [
+                "core",
+                "vault_uhnw_storage"
+            ],
+            "files": [
+                "anti_reverse.py",
+                "ant_fake_ia.py",
+                "apdp_monaco.py",
+                "auditoria_total_profundo.py",
+                "audit_ledger.py",
+                "autodestruicao.py",
+                "BehaviorMonitor.py",
+                "biometric_validator.py",
+                "confidential_compute.py",
+                "crypto_engine.py",
+                "data_anonymizer.py",
+                "data_masking.py",
+                "email_service.py",
+                "emergency_recovery.py",
+                "ephemeral.py",
+                "geo_defense.py",
+                "homomorphic_biometrics.py",
+                "input_sanitizer.py",
+                "integrit_verifier.py",
+                "log_seguro.py",
+                "monaco_audit_guard.py",
+                "network_shield.py",
+                "nonce_cache.py",
+                "policyEngine.py",
+                "portaria.py",
+                "pqc_engine.py",
+                "Ratelimiting.py",
+                "sandbox_executor.py",
+                "schemas.py",
+                "session_manager.py",
+                "system.lock",
+                "system_shield.py",
+                "test_autoreparacao.py",
+                "test_concorrencia.py",
+                "test_condicao_corrida.py",
+                "test_desligamento_abrupto.py",
+                "test_handle_leaks.py",
+                "test_integridade_auditoria.py",
+                "threat_intel.py",
+                "token_blacklist.py",
+                "vault_internal_audit.log",
+                "vault_manager.py",
+                "verificar_senha_master.py",
+                "zero_trust_governor.py",
+                "__init__.py"
+            ]
+        },
+        "security\\core": {
+            "subdirectories": [
+                "Arquivos_TTC",
+                "historico_dossies",
+                "storage"
+            ],
+            "files": [
+                ".py",
+                "processamento_camera.py",
+                "ultimo_motodiagnostico.json"
+            ]
+        },
+        "security\\core\\Arquivos_TTC": {
+            "subdirectories": [],
+            "files": []
+        },
+        "security\\core\\historico_dossies": {
+            "subdirectories": [],
+            "files": []
+        },
+        "security\\core\\storage": {
+            "subdirectories": [
+                "BR"
+            ],
+            "files": []
+        },
+        "security\\core\\storage\\BR": {
+            "subdirectories": [],
+            "files": []
+        },
+        "security\\vault_uhnw_storage": {
+            "subdirectories": [
+                "COFRE_ANUAL_FISCAL",
+                "COFRE_HISTORICO_15_ANOS",
+                "COFRE_QUINZENAL"
+            ],
+            "files": []
+        },
+        "security\\vault_uhnw_storage\\COFRE_ANUAL_FISCAL": {
+            "subdirectories": [],
+            "files": []
+        },
+        "security\\vault_uhnw_storage\\COFRE_HISTORICO_15_ANOS": {
+            "subdirectories": [],
+            "files": []
+        },
+        "security\\vault_uhnw_storage\\COFRE_QUINZENAL": {
+            "subdirectories": [],
+            "files": []
+        },
+        "seguranca": {
+            "subdirectories": [],
+            "files": []
+        },
+        "services": {
+            "subdirectories": [],
+            "files": []
+        },
+        "static": {
+            "subdirectories": [
+                "results"
+            ],
+            "files": []
+        },
+        "static\\results": {
+            "subdirectories": [],
+            "files": [
+                "face_capturada.jpg",
+                "matriz_biogemeos.jpg",
+                "twin_10.jpg",
+                "twin_15.jpg",
+                "twin_5.jpg",
+                "twin_d15.jpg",
+                "twin_p15.jpg"
+            ]
+        },
+        "storage": {
+            "subdirectories": [],
+            "files": [
+                "backup_auditoria.txt",
+                "backup_historico.txt",
+                "biogenio.db",
+                "bip_final.wav",
+                "camera_click.wav",
+                "comando_captura.txt",
+                "laudo_Jose.json",
+                "laudo_Paciente_Teste.json",
+                "laudo_psiquico.txt",
+                "laudo_th.json",
+                "log_auditoria_sistema.txt",
+                "MAPA_ARQUITETURA_TTC_GLOBAL.txt",
+                "matrix_elite.json",
+                "memoria_sessao.json",
+                "registro_capilar.json",
+                "relatorio_definitivo.txt",
+                "Relatorio_Simetria_20260623_212220.txt",
+                "Relatorio_Simetria_20260623_212225.txt",
+                "TCC_global_forense.db",
+                "thierry_tech_global.db",
+                "ttc_biometrics.db",
+                "ultimo_diagnostico.json",
+                "ultimo_laudo.txt"
+            ]
+        },
+        "STORAGE_DATA": {
+            "subdirectories": [],
+            "files": [
+                "config_sistema.json",
+                "thierry_tech_biogenio.db",
+                "ttc_biometrics.sqbpro"
+            ]
+        },
+        "testes_temp": {
+            "subdirectories": [],
+            "files": [
+                "pericia_Teste_1782692326.png",
+                "pericia_Teste_1782745231.png",
+                "pericia_Teste_1782769060.png",
+                "pericia_Teste_1782896895.png",
+                "pericia_Teste_Usuario_1782694457.jpg",
+                "pericia_Teste_Usuario_1782694697.jpg",
+                "pericia_Teste_Usuario_1782694856.jpg",
+                "pericia_Teste_Usuario_1782694916.jpg",
+                "pericia_Teste_Usuario_1782695004.jpg",
+                "teste_cameras.py",
+                "teste_sistema.py"
+            ]
+        },
+        "tests": {
+            "subdirectories": [],
+            "files": [
+                "pericia_Teste_1783350176.png",
+                "stress_teste.py",
+                "testar_ataque.py",
+                "testar_envios.py",
+                "testar_integracao_memoria.py",
+                "testar_master.py",
+                "testar_memoria.py",
+                "testar_motor.py",
+                "testar_sanitizer.py",
+                "testar_seguranca.py",
+                "testar_vozes.py",
+                "teste_camera.py",
+                "teste_integrado_global.py",
+                "teste_inteligencia.py",
+                "teste_orquestracao.py",
+                "teste_seguranca.py",
+                "test_auditoria_completa.py",
+                "test_bridge.py",
+                "test_consciencia.py",
+                "test_integrado.py"
+            ]
+        },
+        "tools": {
+            "subdirectories": [],
+            "files": [
+                "auditar_estaticos.py",
+                "auditar_memoria.py",
+                "auditar_sistema_global.py",
+                "auditar_thierry.py",
+                "audit_engine.py",
+                "audit_global_financeiro.py",
+                "diagnostico.py",
+                "diagnostico_backend.py",
+                "diagnostico_conexao.py",
+                "diagnostico_html.py",
+                "diagnostico_painel.py",
+                "diagnostico_pdf.py",
+                "diagnostico_Thierry.png",
+                "diagnostico_Thierry_1783480020.png",
+                "diagnostico_UsuÃ¡rio Thierry.jpg",
+                "mapear_ecossistema.py",
+                "rastrear_limpeza.py",
+                "verificar_camera.py",
+                "verificar_caminhos.py",
+                "verificar_dependencias.py",
+                "verificar_integracao.py",
+                "verificar_prontidao.py",
+                "verificar_sintaxe.py",
+                "verificar_sistema.py",
+                "verificar_status_final.py"
+            ]
+        },
+        "vault_uhnw_storage": {
+            "subdirectories": [],
+            "files": []
+        }
+    }
+}

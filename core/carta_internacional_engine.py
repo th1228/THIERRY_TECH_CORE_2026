@@ -15,7 +15,7 @@ agreement is strictly prohibited under international copyright frameworks.
 """
 Módulo: carta_internacional_engine.py
 Sistema: Thierry Technology Concept Global - Sovereign C2 Defense Engine
-Versão: 6.3.5 - MONACO EXECUTIVE PLATINUM EDITION (A4 Harmonized)
+Versão: 6.3.10 - GLOBAL INTERNATIONAL PLATINUM EDITION (A4 Harmonized)
 Descrição: Emissor da Carta Diplomática e de Encaminhamento Internacional UHNW.
            Formatado em Bloco Único perfeitamente centralizado na página A4.
 """
@@ -53,17 +53,17 @@ except ImportError:
 
 TEXTOS_CARTA = {
     "PT": {
-        "marca_agua": "MONACO PLATINUM • DIPLOMATIC REFERRAL",
+        "marca_agua": "GLOBAL INTERNATIONAL • DIPLOMATIC REFERRAL",
         "rodape_linha1": "International Diplomatic Referral • Protocolo Bilateral de Alta Governança UHNW",
         "rodape_linha2": "THIERRY TECHNOLOGY CONCEPT GLOBAL • DIPLOMATIC AFFAIRS",
-        "rodape_seal": "MONACO SEAL • PÁGINA {pagina} • SHA-256 SECURED",
+        "rodape_seal": "GLOBAL SEAL • PÁGINA {pagina} • SHA-256 SECURED",
         "emp_sub": "THIERRY TECHNOLOGY CONCEPT GLOBAL • DIPLOMATIC AFFAIRS",
-        "doc_titulo": "MONACO INTERNATIONAL DIPLOMATIC & MEDICAL REFERRAL LETTER",
+        "doc_titulo": "GLOBAL INTERNATIONAL DIPLOMATIC & MEDICAL REFERRAL LETTER",
         "meta_titular": "Titular Credenciado:",
         "meta_chancela": "Chancela Operacional:",
         "meta_emissao": "Emissão:",
-        "meta_jurisdicao": "Jurisdição de Acolhimento:",
-        "jurisdicao_val": "Centros Associados de Alta Complexidade (Mônaco / Genebra / Zurique)",
+        "meta_jurisdicao": "Portabilidade & Governança:",
+        "jurisdicao_val": "Operação autônoma em qualquer jurisdição internacional; execução clínica complementar sob demanda por especialistas designados pelo titular",
         
         "sys_over_titulo": "<b>SYSTEM OVERVIEW & ENTERPRISE ARCHITECTURE</b>",
         "sys_over_texto": (
@@ -81,9 +81,10 @@ TEXTOS_CARTA = {
         "sec1_titulo": "<b>01 // DECLARAÇÃO DE ENCAMINHAMENTO GLOBAL & STATUS DIPLOMÁTICO</b>",
         "sec1_p1": (
             "<b>To Whom It May Concern / A quem possa interessar:</b><br/>"
-            "O presente instrumento chancela formalmente a auditoria biométrica tridimensional e a telemetria tecidual "
-            "conduzidas sob os padrões do ecossistema <i>Thierry Technology Concept Global</i>, assegurando plena continuidade terapêutica "
-            "e blindagem contra estresse oxidativo junto à rede global de centros associados (<font color='#00875A'><b>UHNW Standard</b></font>)."
+            "Sob titularidade intelectual exclusiva e governança privada da <b>Thierry Technology Concept Global</b>, este protocolo opera de forma "
+            "autônoma em qualquer jurisdição internacional, sem redes de terceiros ou afiliações societárias. Eventual execução clínica complementar ocorre "
+            "estritamente sob demanda por especialistas designados pelo próprio titular, assegurando discrição absoluta, rastreabilidade forense e preservação "
+            "integral do capital biológico e reputacional (<font color='#00875A'><b>UHNW Standard</b></font>)."
         ),
         
         "sec2_titulo": "<b>02 // PARÂMETROS DE AUDITORIA BIOMÉTRICA & TELEMETRIA TISSULAR</b>",
@@ -99,29 +100,29 @@ TEXTOS_CARTA = {
         
         "sec3_titulo": "<b>03 // GARANTIAS DIPLOMÁTICAS & HASH SHA-256</b>",
         "sec3_corpo": (
-            "<b>Instruções:</b> Atendimento prioritário e sigilo médico absoluto (Suíça/Mônaco).<br/>"
+            "<b>Instruções:</b> Atendimento prioritário, sigilo absoluto e execução sob demanda por especialistas designados pelo titular.<br/>"
             "<b>Hash SHA-256:</b> <font name='Courier' size=5.5 color='#00875A'>{hash_sha}</font>"
         ),
         
-        "sec4_titulo": "<b>04 // CHANCELA DO CONSELHO SOBERANO</b>",
-        "sec4_corpo": "Aprovado e chancelado pelo Conselho Soberano Thierry Technology Concept Global. [<font color='#00875A'><b>Status Locked @ 100% Verde</b></font>]",
+        "sec4_titulo": "<b>04 // CHANCELA DO CONSELHO THIERRY TECHNOLOGY CONCEPT GLOBAL</b>",
+        "sec4_corpo": "Aprovado e chancelado pelo Conselho da Thierry Technology Concept Global. [<font color='#00875A'><b>Status Locked @ 100% Verde</b></font>]",
         
         "anexo_titulo": "<b>[ ANEXO DE INTELIGÊNCIA DIPLOMÁTICA & NMN ]</b>",
         "laudo_col_param": "PARÂMETRO / SEÇÃO",
         "laudo_col_parecer": "DIRETRIZ ESTRATÉGICA UHNW"
     },
     "EN": {
-        "marca_agua": "MONACO PLATINUM • DIPLOMATIC REFERRAL",
+        "marca_agua": "GLOBAL INTERNATIONAL • DIPLOMATIC REFERRAL",
         "rodape_linha1": "International Diplomatic Referral • Bilateral UHNW High Governance Protocol",
         "rodape_linha2": "THIERRY TECHNOLOGY CONCEPT GLOBAL • DIPLOMATIC AFFAIRS",
-        "rodape_seal": "MONACO SEAL • PAGE {pagina} • SHA-256 SECURED",
+        "rodape_seal": "GLOBAL SEAL • PAGE {pagina} • SHA-256 SECURED",
         "emp_sub": "THIERRY TECHNOLOGY CONCEPT GLOBAL • DIPLOMATIC AFFAIRS",
-        "doc_titulo": "MONACO INTERNATIONAL DIPLOMATIC & MEDICAL REFERRAL LETTER",
+        "doc_titulo": "GLOBAL INTERNATIONAL DIPLOMATIC & MEDICAL REFERRAL LETTER",
         "meta_titular": "Accredited Holder:",
         "meta_chancela": "Operational Seal:",
         "meta_emissao": "Issuance:",
-        "meta_jurisdicao": "Hosting Jurisdiction:",
-        "jurisdicao_val": "Associated High-Complexity Centers (Monaco / Geneva / Zurich)",
+        "meta_jurisdicao": "Global Portability & Governance:",
+        "jurisdicao_val": "Autonomous operation across any international jurisdiction; complementary clinical execution strictly on demand via principal-designated specialists",
         
         "sys_over_titulo": "<b>SYSTEM OVERVIEW & ENTERPRISE ARCHITECTURE</b>",
         "sys_over_texto": (
@@ -139,9 +140,10 @@ TEXTOS_CARTA = {
         "sec1_titulo": "<b>01 // GLOBAL REFERRAL DECLARATION & DIPLOMATIC STATUS</b>",
         "sec1_p1": (
             "<b>To Whom It May Concern:</b><br/>"
-            "This instrument formally endorses the three-dimensional biometric audit and tissue telemetry conducted under "
-            "the rigorous standards of the <i>Thierry Technology Concept Global</i> ecosystem, ensuring full therapeutic continuity "
-            "and oxidative stress protection alongside associated medical centers (<font color='#00875A'><b>UHNW Standard</b></font>)."
+            "Engineered under sole intellectual property ownership and private governance of <b>Thierry Technology Concept Global</b>, this protocol "
+            "operates autonomously across any international jurisdiction, free from third-party networks or corporate affiliations. Any complementary clinical "
+            "execution takes place strictly on demand through elite specialists designated solely by the principal, ensuring absolute discretion, forensic "
+            "traceability, and integral preservation of biological and reputational capital (<font color='#00875A'><b>UHNW Standard</b></font>)."
         ),
         
         "sec2_titulo": "<b>02 // BIOMETRIC AUDIT PARAMETERS & TISSUE TELEMETRY</b>",
@@ -157,12 +159,12 @@ TEXTOS_CARTA = {
         
         "sec3_titulo": "<b>03 // RECEPTION GUIDELINES & SHA-256 HASH</b>",
         "sec3_corpo": (
-            "<b>Instructions:</b> Priority care and absolute medical secrecy (Switzerland/Monaco).<br/>"
+            "<b>Instructions:</b> Priority care, absolute discretion, and execution strictly on demand via principal-designated specialists.<br/>"
             "<b>SHA-256 Hash:</b> <font name='Courier' size=5.5 color='#00875A'>{hash_sha}</font>"
         ),
         
-        "sec4_titulo": "<b>04 // SOVEREIGN COUNCIL SEAL</b>",
-        "sec4_corpo": "Approved and sealed by the Thierry Technology Concept Global Sovereign Council. [<font color='#00875A'><b>Status Locked @ 100% Green</b></font>]",
+        "sec4_titulo": "<b>04 // THIERRY TECHNOLOGY CONCEPT GLOBAL COUNCIL SEAL</b>",
+        "sec4_corpo": "Approved and sealed by the Thierry Technology Concept Global Council. [<font color='#00875A'><b>Status Locked @ 100% Green</b></font>]",
         
         "anexo_titulo": "<b>[ DIPLOMATIC INTELLIGENCE ANNEX & NMN ]</b>",
         "laudo_col_param": "PARAMETER / SECTION",
@@ -176,10 +178,21 @@ if ROOT_DIR not in sys.path:
     sys.path.insert(0, ROOT_DIR)
 
 
+def _sanitizar_chancela(valor: Optional[str]) -> str:
+    """Remove referências antigas de sigla e padroniza o nome completo da empresa."""
+    texto = (valor or "").strip()
+    if not texto:
+        return "THIERRY TECHNOLOGY CONCEPT GLOBAL"
+    texto_limpo = re.sub(r"\(?\s*TCC\s*SOBERANO\s*\)?", "", texto, flags=re.IGNORECASE).strip(" |-–—")
+    if not texto_limpo or texto_limpo.upper() == "THIERRY":
+        return "THIERRY TECHNOLOGY CONCEPT GLOBAL"
+    return texto_limpo
+
+
 class CartaInternacionalEngine:
-    def __init__(self, nome_cliente: str = "TITULAR SOBERANO NÃO IDENTIFICADO", operador: str = "Thierry", telemetria: Optional[Dict[str, Any]] = None, lang: str = "PT") -> None:
-        self.nome_cliente = nome_cliente if nome_cliente and nome_cliente.strip() else "TITULAR SOBERANO NÃO IDENTIFICADO"
-        self.operador = operador
+    def __init__(self, nome_cliente: str = "TITULAR NÃO IDENTIFICADO", operador: str = "THIERRY TECHNOLOGY CONCEPT GLOBAL", telemetria: Optional[Dict[str, Any]] = None, lang: str = "PT") -> None:
+        self.nome_cliente = nome_cliente if nome_cliente and nome_cliente.strip() else "TITULAR NÃO IDENTIFICADO"
+        self.operador = _sanitizar_chancela(operador)
         self.telemetria = telemetria if telemetria is not None else {}
         self.lang = lang.upper() if lang and isinstance(lang, str) else "PT"
         if self.lang not in TEXTOS_CARTA:
@@ -235,9 +248,9 @@ class CartaInternacionalEngine:
         string_base_hash = f"DIPLOMATIC-REFERRAL-{self.nome_cliente}-{timestamp_exec}-{self.lang}"
         hash_sha256_gerado = hashlib.sha256(string_base_hash.encode('utf-8')).hexdigest().upper()
 
-        def desenhar_fundo_monaco(canvas, doc):
+        def desenhar_fundo_global(canvas, doc):
             canvas.saveState()
-            canvas.setFont("Helvetica-Bold", 32)
+            canvas.setFont("Helvetica-Bold", 30)
             canvas.setFillColor(colors.HexColor("#B8860B"), alpha=0.03)
             canvas.translate(A4[0] / 2.0, A4[1] / 2.0)
             canvas.rotate(45)
@@ -262,7 +275,7 @@ class CartaInternacionalEngine:
             caminho_salvamento,
             pagesize=A4,
             leftMargin=40, rightMargin=40, topMargin=45, bottomMargin=45,
-            title="Carta Internacional de Encaminhamento - Mônaco Sovereign"
+            title="Carta Internacional de Encaminhamento - Global International"
         )
 
         styles = getSampleStyleSheet()
@@ -275,19 +288,19 @@ class CartaInternacionalEngine:
         TABLE_HEADER_BG = colors.HexColor("#F1F5F9")
         EXCELENCIA_VERDE = colors.HexColor("#00875A")
         
-        style_capa_titulo = ParagraphStyle('CapaTituloCarta', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=11, leading=14, textColor=MONACO_NAVY, alignment=1, spaceAfter=1)
-        style_capa_sub = ParagraphStyle('CapaSubCarta', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=7, leading=9, textColor=OURO_CHAMPAGNE, alignment=1, spaceAfter=1)
-        style_protocol = ParagraphStyle('ProtoCarta', parent=styles['Normal'], fontName='Helvetica', fontSize=6.5, leading=8.5, textColor=colors.HexColor('#334155'), alignment=1, spaceAfter=3)
+        style_capa_sub = ParagraphStyle('CapaSubCarta', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=9.5, leading=12.5, textColor=OURO_CHAMPAGNE, alignment=1, spaceAfter=2)
+        style_capa_titulo = ParagraphStyle('CapaTituloCarta', parent=styles['Heading1'], fontName='Helvetica-Bold', fontSize=13, leading=16.5, textColor=MONACO_NAVY, alignment=1, spaceAfter=3)
+        style_protocol = ParagraphStyle('ProtoCarta', parent=styles['Normal'], fontName='Helvetica', fontSize=6.8, leading=9, textColor=colors.HexColor('#334155'), alignment=1, spaceAfter=4)
         
-        style_section_title = ParagraphStyle('SecTitleClean', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=6.5, leading=8, textColor=MONACO_NAVY)
-        style_cell_text = ParagraphStyle('CellClean', parent=styles['Normal'], fontName='Helvetica', fontSize=6, leading=7.5, textColor=DARK_TEXT)
+        style_section_title = ParagraphStyle('SecTitleClean', parent=styles['Normal'], fontName='Helvetica-Bold', fontSize=6.8, leading=8.5, textColor=MONACO_NAVY)
+        style_cell_text = ParagraphStyle('CellClean', parent=styles['Normal'], fontName='Helvetica', fontSize=6.2, leading=8, textColor=DARK_TEXT)
 
         story: List[Flowable] = []
         
-        cliente_nome = self.nome_cliente.upper() if self.nome_cliente else 'TITULAR SOBERANO NÃO IDENTIFICADO'
-        operador_nome = self.operador.upper() if self.operador else 'THIERRY'
+        cliente_nome = self.nome_cliente.upper() if self.nome_cliente else 'TITULAR NÃO IDENTIFICADO'
+        operador_nome = _sanitizar_chancela(self.operador).upper()
         
-        story.append(Spacer(1, 10))
+        story.append(Spacer(1, 8))
 
         # --- CABEÇALHO EXTERNO ---
         story.append(Paragraph(txt["emp_sub"], style_capa_sub))
@@ -405,8 +418,8 @@ class CartaInternacionalEngine:
 
         doc.build(
             story,
-            onFirstPage=desenhar_fundo_monaco,
-            onLaterPages=desenhar_fundo_monaco
+            onFirstPage=desenhar_fundo_global,
+            onLaterPages=desenhar_fundo_global
         )
         print(f"[CARTA INTERNACIONAL] Dossiê centralizado gerado com sucesso em: {caminho_salvamento} [SHA-256: {hash_sha256_gerado}]")
         return caminho_salvamento
@@ -421,6 +434,6 @@ class CartaInternacionalEngine:
 if __name__ == "__main__":
     print("Iniciando emissão da Carta Internacional (Bloco Centralizado Executive Platinum)...")
     telemetria_mock = {'oximetria': '98.5%', 'ritmo_diafragma': '14 RPM'}
-    motor = CartaInternacionalEngine(nome_cliente="Genilson Rodrigues", operador="Thierry", telemetria=telemetria_mock, lang="EN")
+    motor = CartaInternacionalEngine(nome_cliente="Genilson Rodrigues", operador="THIERRY TECHNOLOGY CONCEPT GLOBAL", telemetria=telemetria_mock, lang="EN")
     saida = motor.gerar_carta_apresentacao(caminho_salvamento="04_Carta_Internacional_Bloco_Unico.pdf")
     print(f"Carta diplomática pronta em: {saida}")

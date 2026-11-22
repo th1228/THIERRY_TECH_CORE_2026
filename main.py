@@ -19,7 +19,7 @@ Gerador de Dossiês PDF Nativos e Criptografia ECDSA Padrão Tier-1 de Mônaco.
 Integrado nativamente ao Motor APDP Mônaco (Lei nº 1.565) e C2 Cognitive Voice.
 """
 
-from datetime import datetime
+import datetime
 import os
 import sys
 import time
@@ -29,23 +29,20 @@ import hashlib
 import platform
 import subprocess
 import smtplib
-import requests
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
-import numpy as np  
-from pathlib import Path 
-from PIL import Image, ImageDraw, ImageFont
-from typing import Dict, Any, Optional, List
-from fastapi import FastAPI, Query, Response, HTTPException, Request, File, UploadFile, Form, Security, status
+import numpy as np
+from pathlib import Path
+from typing import Dict, Any, Optional
+from fastapi import FastAPI, Query, Response, HTTPException, Request, File, UploadFile, Form
 from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi.security import HTTPBearer
 from pydantic import BaseModel, Field
 import uvicorn
 import fitz  # PyMuPDF para conversão dinâmica de PDF em imagem
-import base64
 import stripe  # SDK oficial da Stripe para pagamentos reais
 from security.sentinel import TTCSentinel
 
@@ -91,7 +88,7 @@ try:
 except ImportError:
     try:
         sys.path.append(str(BASE_DIR / "security"))
-        from vault_manager import ativar_infraestrutura_vault # type: ignore
+        from vault_manager import ativar_infraestrutura_vault  # type: ignore
         VAULT_MANAGER_DISPONIVEL = True
     except ImportError:
         VAULT_MANAGER_DISPONIVEL = False
@@ -111,17 +108,11 @@ stripe.api_key = os.getenv("STRIPE_API_KEY", "")
 
 # Garantia de Criptografia Assimétrica de nível bancário para Mônaco (ECDSA + RSA)
 try:
-    from cryptography.hazmat.primitives.asymmetric import ec, padding
+    from cryptography.hazmat.primitives.asymmetric import ec
     from cryptography.hazmat.primitives import hashes, serialization
-    from cryptography.exceptions import InvalidSignature
 except ImportError:
     print("[ERRO] Para conformidade real Tier-1, instale a biblioteca: pip install cryptography")
     sys.exit(1)
-
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, HRFlowable
-from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
-from reportlab.lib import colors
 
 # --- CAMADA DE SEGURANÇA E FALLBACKS ---
 class LogSeguroFallback:
@@ -130,7 +121,7 @@ class LogSeguroFallback:
 
 LogSeguro: Any
 try:
-    from security.log_seguro import LogSeguro # type: ignore
+    from security.log_seguro import LogSeguro  # type: ignore
 except ImportError:
     LogSeguro = LogSeguroFallback
 
@@ -150,50 +141,53 @@ try:
     def carregar_dados_empresas() -> Dict[str, Any]:
         return _carregar_empresas()
 except ImportError:
-    def validar_senha_master(senha_digitada: str) -> Dict[str, Any]: 
+    def validar_senha_master(senha_digitada: str) -> Dict[str, Any]:
         return {"status": "sucesso", "mensagem": "Fallback ativo da senha master."}
-    def alterar_status_empresa(senha_digitada: str, token_ou_empresa: str, novo_status: str) -> Dict[str, Any]: 
+    def alterar_status_empresa(senha_digitada: str, token_ou_empresa: str, novo_status: str) -> Dict[str, Any]:
         return {"status": "sucesso", "mensagem": "Fallback ativo de alteração."}
-    def verificar_vigencia_licenca(token_ou_empresa: str) -> Dict[str, Any]: 
+    def verificar_vigencia_licenca(token_ou_empresa: str) -> Dict[str, Any]:
         return {"status": "ativo", "mensagem": "Fallback ativo de vigência."}
-    def carregar_dados_empresas() -> Dict[str, Any]: 
+    def carregar_dados_empresas() -> Dict[str, Any]:
         return {"tokens_ativos": {}, "total_vagas_ocupadas": 0}
 
 ValidadorLocal: Any = None
 try:
-    from core.validador_licenca import ValidadorLocal # type: ignore
+    from core.validador_licenca import ValidadorLocal  # type: ignore
 except ImportError:
     ValidadorLocal = None
 
 try:
-    from core.geodefense import validar_geofencing_global, gerar_token_titular_global # type: ignore
+    from core.geodefense import validar_geofencing_global, gerar_token_titular_global  # type: ignore
 except ImportError:
-    def validar_geofencing_global(*args: Any, **kwargs: Any) -> bool: return True # type: ignore
-    def gerar_token_titular_global() -> str: return "TCC-GLOBAL-FALLBACK" # type: ignore
+    def validar_geofencing_global(*args: Any, **kwargs: Any) -> bool: return True  # type: ignore
+    def gerar_token_titular_global() -> str: return "TCC-GLOBAL-FALLBACK"  # type: ignore
 
+memoria_global: Any = None
 try:
-    from memoria_comum import memoria_global # type: ignore
+    from memoria_comum import memoria_global as _mem_global  # type: ignore
+    memoria_global = _mem_global
 except ImportError:
     try:
-        from core.memoria_comum import memoria_global # type: ignore
+        from core.memoria_comum import memoria_global as _mem_global  # type: ignore
+        memoria_global = _mem_global
     except ImportError:
         memoria_global = None
 
 SovereignC2DefenseEngine: Any = None
 try:
-    from c2_sovereign_intelligence import SovereignC2DefenseEngine # type: ignore
+    from c2_sovereign_intelligence import SovereignC2DefenseEngine  # type: ignore
 except ImportError:
     try:
-        from core.c2_sovereign_intelligence import SovereignC2DefenseEngine # type: ignore
+        from core.c2_sovereign_intelligence import SovereignC2DefenseEngine  # type: ignore
     except ImportError:
         SovereignC2DefenseEngine = None
 
 motor_biometrico: Any = None
 try:
-    from core import motor_biometrico # type: ignore
+    from core import motor_biometrico  # type: ignore
 except ImportError:
     try:
-        import motor_biometrico # type: ignore
+        import motor_biometrico  # type: ignore
     except ImportError:
         motor_biometrico = None
 
@@ -207,8 +201,15 @@ except ImportError:
             print("[GERADOR MASTER] Fallback ativo.")
             return {}
 
+registrar_diagnostico_evolucao: Any = None
 try:
-    from auditor_integridade_global import AuditorIntegridadeGlobal # type: ignore
+    from core.diagnostico_evolucao import registrar_diagnostico_evolucao as _reg_diag_evo  # type: ignore
+    registrar_diagnostico_evolucao = _reg_diag_evo
+except ImportError:
+    registrar_diagnostico_evolucao = None
+
+try:
+    from auditor_integridade_global import AuditorIntegridadeGlobal  # type: ignore
 except ImportError:
     class AuditorIntegridadeGlobal:
         def __init__(self, limiar_confianca_minimo: float = 100.0):
@@ -274,17 +275,17 @@ class AuditoriaMonacoComplianceTier1:
             subprocess.run(["icacls", str(self.ledger_file), permissao, regra], capture_output=True)
 
     def gerar_bloco_auditado(self, operador: str, acao_realizada: str, status_seguranca: str) -> str:
-        timestamp = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
+        timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]
         hash_anterior = self._obter_ultimo_hash()
         dado_bruto = f"{timestamp}|{operador}|{acao_realizada}|{status_seguranca}|{hash_anterior}"
         hash_registro = hashlib.sha256(dado_bruto.encode('utf-8')).hexdigest()
-        
+
         chave_privada = self._carregar_chave_privada()
         assinatura_bytes = chave_privada.sign(
             dado_bruto.encode('utf-8'),
-            ec.ECDSA(hashes.SHA256()) # type: ignore[arg-type]
+            ec.ECDSA(hashes.SHA256())  # type: ignore[arg-type]
         )
-        
+
         registro_final = {
             "utc_timestamp": timestamp,
             "operador": operador,
@@ -294,7 +295,7 @@ class AuditoriaMonacoComplianceTier1:
             "proof_hash": hash_registro,
             "ecdsa_signature": assinatura_bytes.hex()
         }
-        
+
         self._alterar_trava_so(ativar=False)
         with open(self.ledger_file, "a", encoding="utf-8") as f:
             f.write(json.dumps(registro_final, ensure_ascii=False) + "\n")
@@ -305,7 +306,7 @@ class AuditoriaMonacoComplianceTier1:
         if not self.ledger_file.exists():
             return {"status_valido": True, "mensagem": "Ledger vazio."}
         with open(self.public_key_file, "rb") as f:
-            chave_publica = serialization.load_pem_public_key(f.read())
+            serialization.load_pem_public_key(f.read())
         hash_esperado = "0" * 64
         with open(self.ledger_file, "r", encoding="utf-8") as f:
             for i, linha in enumerate(f):
@@ -342,14 +343,13 @@ private_key_contrato = carregar_chave_privada_contrato()
 # 2. MOTOR DE ROTEAMENTO E COMPILAÇÃO DE PDF (100% DINÂMICO)
 # =====================================================================
 def compilar_pdf_especifico(
-    tipo_limpo: str, 
-    nome_cli: str, 
+    tipo_limpo: str,
+    nome_cli: str,
     empresa_cli: str,
-    operador_cli: str, 
+    operador_cli: str,
     lang: str = "PT",
     dados_orquestrador_llm: Optional[Dict[str, Any]] = None
 ) -> str:
-    # CAPTURA BLINDADA DO NOME DO TITULAR
     nome_limpo_input = (nome_cli or "").strip()
     if not nome_limpo_input or nome_limpo_input.lower() in ["undefined", "null", ""]:
         nome_limpo_input = "Genilson Rodrigues"
@@ -357,7 +357,7 @@ def compilar_pdf_especifico(
     empresa_limpa_input = (empresa_cli or "").strip()
     if not empresa_limpa_input or empresa_limpa_input.lower() in ["undefined", "null", ""]:
         empresa_limpa_input = "Thierry Technology Concept Global"
-    
+
     mapa_prefixos = {
         "biogem_core": "01_Dossie_Sovereign_Intelligence",
         "lideranca": "01_Dossie_Sovereign_Intelligence",
@@ -380,7 +380,7 @@ def compilar_pdf_especifico(
         "contrato_global": "06_Contrato_Licenciamento_Global",
         "06": "06_Contrato_Licenciamento_Global"
     }
-    
+
     prefixo_alvo = mapa_prefixos.get(tipo_limpo, None)
     if not prefixo_alvo:
         for chave, prefixo in mapa_prefixos.items():
@@ -389,47 +389,58 @@ def compilar_pdf_especifico(
                 break
     if not prefixo_alvo:
         prefixo_alvo = "01_Dossie_Sovereign_Intelligence"
-    
-    payload_exec = dados_orquestrador_llm or {}
+
+    payload_exec = dict(dados_orquestrador_llm or {})
     payload_exec["ceo_name"] = nome_limpo_input
     payload_exec["nome_cliente"] = nome_limpo_input
     payload_exec["company_name"] = empresa_limpa_input
-    
+
     try:
         try:
             executar_geracao_master(
                 ceo_name=nome_limpo_input,
                 company_name=empresa_limpa_input,
-                operador=operador_cli, 
+                operador=operador_cli,
                 lang=lang,
                 telemetria_dinamica=payload_exec
             )
         except TypeError:
             try:
                 executar_geracao_master(
-                    ceo_name=nome_limpo_input, 
-                    operador=operador_cli, 
+                    ceo_name=nome_limpo_input,
+                    operador=operador_cli,
                     lang=lang
                 )
             except TypeError:
                 executar_geracao_master(
-                    ceo_name=nome_limpo_input, 
+                    ceo_name=nome_limpo_input,
                     operador=operador_cli
                 )
     except (RuntimeError, ValueError, KeyError, TypeError, OSError) as e:
         print(f"[AVISO GERADOR MASTER] Erro ao despachar execução síncrona: {e}")
-    
+
+    if prefixo_alvo == "01_Dossie_Sovereign_Intelligence" and callable(registrar_diagnostico_evolucao):
+        try:
+            registrar_diagnostico_evolucao({
+                **payload_exec,
+                "titular": nome_limpo_input,
+                "empresa": empresa_limpa_input,
+                "documento": prefixo_alvo
+            })
+        except Exception as e:
+            print(f"[AVISO DIAGNÓSTICO EVOLUÇÃO] {e}")
+
     time.sleep(0.3)
-    
+
     caminho_final = None
     if PASTA_PDFS_FINAIS.exists():
         candidatos = [p for p in PASTA_PDFS_FINAIS.glob("*.pdf") if prefixo_alvo in p.name]
         if candidatos:
             caminho_final = max(candidatos, key=os.path.getmtime)
-            
+
     if not caminho_final or not Path(caminho_final).exists():
         caminho_final = PASTA_PDFS_FINAIS / f"{prefixo_alvo}.pdf"
-            
+
     return str(caminho_final)
 
 
@@ -457,13 +468,10 @@ def disparar_alerta_celular_email(nome_cliente: str, email_cliente: str, valor: 
     auditor_ledger.gerar_bloco_auditado("STRIPE_WEBHOOK", f"PAGAMENTO:{nome_cliente}", f"VALOR:{valor}|STATUS:OK")
 
 
-class BiogemOquestradorMaster:
-    pass
-
 class BiogemeoOrquestradorMaster:
     def __init__(self):
         self.frame_atual_camera: Optional[np.ndarray] = None
-        self.estado_fluxo: str = "AO_VIVO"  
+        self.estado_fluxo: str = "AO_VIVO"
         self.auditor = AuditorIntegridadeGlobal(limiar_confianca_minimo=100.0)
         self.apdp_engine = APDPMonacoApexEngine() if APEX_ENGINE_DISPONIVEL else None
 
@@ -485,7 +493,7 @@ class BiogemeoOrquestradorMaster:
             print(f"{GREEN}[ OK ] [VAULT UHNW] Infraestrutura autônoma de cofre ativada com sucesso.{RESET}")
         except (OSError, RuntimeError, ValueError) as e:
             print(f"[AVISO VAULT]: {e}")
-            
+
         print(f"{GREEN}[ OK ] [TTC SECURITY] Iniciando varredura de ambiente local...{RESET}")
         print(f"{GREEN}[ OK ] Diretório seguro verificado: core/{RESET}")
         print(f"{GREEN}[ OK ] Diretório seguro verificado: config/{RESET}")
@@ -506,7 +514,7 @@ class BiogemeoOrquestradorMaster:
         return ""
 
     def registrar_arquivo_na_fila(self, tipo: str, caminho: str) -> None:
-        item = {"tipo": tipo, "caminho": caminho, "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
+        item = {"tipo": tipo, "caminho": caminho, "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         self.memoria_sessao["fila_arquivos_gerados"].append(item)
         logger.registrar("FILA", "REGISTRO", f"Arquivo {tipo} enfileirado: {caminho}")
 
@@ -571,7 +579,6 @@ class ContractPayload(BaseModel):
     digital_signature: str = Field(..., description="Assinatura digital")
 
 
-# --- NOVO ESQUEMA PYDANTIC PARA O MÓDULO DE VOZ C2 ---
 class CondutaVozRequest(BaseModel):
     cliente: Optional[str] = Field(default="Genilson Rodrigues", description="Nome do paciente/alvo")
     empresa: Optional[str] = Field(default="Thierry Technology Concept Global", description="Holding associada")
@@ -622,7 +629,7 @@ def gerar_frames():
         else:
             frame = np.zeros((480, 640, 3), dtype=np.uint8)
             cv2.putText(frame, "TCC ORCHESTRATOR: WEBCAM ACTIVE", (20, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 200), 2, cv2.LINE_AA)
-        
+
         ret, buffer = cv2.imencode(".jpg", frame, [cv2.IMWRITE_JPEG_QUALITY, 85])
         if ret:
             yield (b"--frame\r\nContent-Type: image/jpeg\r\n\r\n" + buffer.tobytes() + b"\r\n")
@@ -648,7 +655,7 @@ def gateway_biogemeos(data: BiogemProcessRequest) -> JSONResponse:
     try:
         if SovereignC2DefenseEngine is None:
             raise HTTPException(status_code=500, detail="SovereignC2DefenseEngine indisponível.")
-        
+
         nome_cli = (data.cliente_id or "").strip()
         if not nome_cli or nome_cli.lower() in ["undefined", "null"]:
             nome_cli = "Genilson Rodrigues"
@@ -664,7 +671,7 @@ def gateway_biogemeos(data: BiogemProcessRequest) -> JSONResponse:
             aum_bilhoes_eur=data.aum_bilhoes_eur or 25.0,
             fator_ameaca_mercado=data.fator_ameaca_mercado or 0.40
         )
-        
+
         resultado = motor_mestre.processar_dossie_defensivo()
         auditor_ledger.gerar_bloco_auditado("GATEWAY_BIOGEMEOS", f"PROCESSAR:{nome_cli}", "STATUS:OK")
         return JSONResponse(content={"status": "sucesso", "gateway": "biogemeos", "dados": resultado, "dados_llm": data.dados_llm})
@@ -722,24 +729,18 @@ def gateway_salao(data: RelatorioDossierRequest) -> JSONResponse:
         raise HTTPException(status_code=500, detail=f"Erro no gateway de salão/tricologia: {str(e)}")
 
 
-# --- ROTA DE DESPACHO ISOLADO DO GERENCIADOR CENTRAL MIBO ---
 @app.post("/api/v1/processar-gerenciador-mibo")
 async def processar_gerenciador_mibo(request: Request):
-    """
-    Recebe o identificador do botão acionado no modal HTML, 
-    aciona o Gerenciador Central MIBO para cálculo isolado e emissão do parecer no terminal.
-    """
     try:
         corpo = await request.json()
         tipo_modulo = corpo.get("modulo", "").strip().lower()
-        
+
         if not tipo_modulo:
             raise HTTPException(status_code=400, detail="Módulo não especificado.")
 
         if not GERENCIADOR_MIBO_DISPONIVEL:
             raise HTTPException(status_code=500, detail="Gerenciador Central Mibo indisponível no kernel.")
 
-        # Executa o processamento isolado e emite o parecer no terminal do servidor
         resultado = GerenciadorCentralMibo.processar_solicitacao(tipo_modulo, acao="gerar_pdf")
 
         return JSONResponse(content={
@@ -765,7 +766,7 @@ async def obter_link_stripe(tier: str = Form(...)):
             link = get_link(tier_chave)
     except (KeyError, TypeError, ValueError, AttributeError):
         pass
-    
+
     if not link:
         fallback_map = {
             "tatica_nacional": "https://buy.stripe.com/28E6oH6Pg6Pu5Ri3O3eZ204",
@@ -775,7 +776,7 @@ async def obter_link_stripe(tier: str = Form(...)):
             "monaco_supremacy": "https://buy.stripe.com/dRmaEX4H80r64Ne1FVeZ20c"
         }
         link = fallback_map.get(tier_chave)
-        
+
     if not link:
         raise HTTPException(status_code=404, detail="Licença ou tier não encontrado.")
     return {"url_checkout": link}
@@ -791,7 +792,7 @@ async def stripe_webhook_producao(request: Request):
             event = stripe.Webhook.construct_event(payload_bytes, sig_header, endpoint_secret)
         else:
             event = json.loads(payload_bytes.decode('utf-8'))
-    except (stripe.error.SignatureVerificationError, stripe.error.StripeError, ValueError, json.JSONDecodeError, UnicodeDecodeError) as e: # type: ignore[attr-defined]
+    except (stripe.error.SignatureVerificationError, stripe.error.StripeError, ValueError, json.JSONDecodeError, UnicodeDecodeError) as e:  # type: ignore[attr-defined]
         raise HTTPException(status_code=400, detail=f"Erro Stripe: {str(e)}")
 
     event_type = event.get('type')
@@ -823,13 +824,8 @@ def registrar_aceite_contrato(payload: AceiteContrato):
     return {"status": "success", "message": "Licenciamento aceito com sucesso."}
 
 
-# --- ROTA DE VOZ C2 INTEGRADA ---
 @app.post("/api/v1/voz/salvar-conduta")
 def salvar_conduta_voz(dados: CondutaVozRequest):
-    """
-    Recebe a conduta ditada pelo médico via C2 Cognitive Voice,
-    registra no Ledger de Auditoria de Mônaco e prepara para compilação em PDF.
-    """
     try:
         nome_cli = (dados.cliente or "").strip()
         if not nome_cli or nome_cli.lower() in ["undefined", "null", ""]:
@@ -840,21 +836,19 @@ def salvar_conduta_voz(dados: CondutaVozRequest):
             empresa_cli = "Thierry Technology Concept Global"
 
         texto_conduta = dados.conduta_texto.strip()
-        
-        # 1. Registra no Ledger de Auditoria Tier-1 (ECDSA)
+
         hash_bloco = auditor_ledger.gerar_bloco_auditado(
             operador=dados.operador or "THIERRY (TCC SOBERANO)",
             acao_realizada=f"CONDUTA_CLINICA_VOZ:{nome_cli}",
             status_seguranca=f"TEXTO_HASH:{hashlib.sha256(texto_conduta.encode('utf-8')).hexdigest()[:16]}|APROVADO"
         )
 
-        # 2. Salva temporariamente no arquivo de estado
         caminho_estado = BASE_DIR / "ultima_conduta_voz.json"
         payload_salvar = {
             "cliente": nome_cli,
             "empresa": empresa_cli,
             "conduta": texto_conduta,
-            "timestamp": datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"),
+            "timestamp": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S"),
             "hash_ledger": hash_bloco
         }
         with open(caminho_estado, "w", encoding="utf-8") as f:
@@ -871,7 +865,6 @@ def salvar_conduta_voz(dados: CondutaVozRequest):
         raise HTTPException(status_code=500, detail=f"Erro ao processar conduta de voz: {str(e)}")
 
 
-# --- ROTA DE GERAÇÃO E VISUALIZAÇÃO DE PDF 100% DINÂMICA ---
 @app.api_route("/gerar-pdf", methods=["GET", "POST"])
 async def gerar_pdf_direto_painel(
     request: Request,
@@ -884,10 +877,10 @@ async def gerar_pdf_direto_painel(
     inline: bool = Query(False)
 ):
     try:
-        payload_llm = {}
+        payload_llm: Dict[str, Any] = {}
         cliente_corpo = None
         empresa_corpo = None
-        
+
         if request.method == "POST":
             try:
                 body = await request.json()
@@ -908,12 +901,12 @@ async def gerar_pdf_direto_painel(
 
         tipo_limpo = tipo.lower().strip()
         idioma_escolhido = lang.upper().strip() if lang else "PT"
-        
+
         caminho_gerado = Path(compilar_pdf_especifico(
-            tipo_limpo, 
-            nome_cliente_real, 
+            tipo_limpo,
+            nome_cliente_real,
             empresa_cliente_real,
-            operador or "THIERRY (TCC SOBERANO)", 
+            operador or "THIERRY (TCC SOBERANO)",
             lang=idioma_escolhido,
             dados_orquestrador_llm=payload_llm
         ))
@@ -928,8 +921,8 @@ async def gerar_pdf_direto_painel(
             )
             content_disposition = "inline" if inline else "attachment"
             return FileResponse(
-                path=str(caminho_gerado), 
-                media_type='application/pdf', 
+                path=str(caminho_gerado),
+                media_type='application/pdf',
                 filename=nome_arquivo,
                 headers={"Content-Disposition": f"{content_disposition}; filename={nome_arquivo}"}
             )
@@ -955,7 +948,7 @@ def enviar_relatorio_canal(
     try:
         tipo_limpo = tipo.lower().strip()
         canal_limpo = canal.lower().strip()
-        
+
         nome_cli = (cliente or "").strip()
         if not nome_cli or nome_cli.lower() in ["undefined", "null", ""]:
             nome_cli = "Genilson Rodrigues"
@@ -966,7 +959,7 @@ def enviar_relatorio_canal(
 
         idioma_escolhido = lang.upper().strip() if lang else "PT"
         operador_cli = operador or "THIERRY (TCC SOBERANO)"
-        
+
         destinatario_email = email.strip() if (email and email.strip()) else "contato@tccglobal.com"
         smtp_host = os.getenv("SMTP_HOST", "smtp.gmail.com")
         smtp_port = int(os.getenv("SMTP_PORT", "587"))
@@ -974,10 +967,10 @@ def enviar_relatorio_canal(
         smtp_pass = os.getenv("SMTP_PASS", "")
 
         caminho_gerado = Path(compilar_pdf_especifico(tipo_limpo, nome_cli, empresa_cli, operador_cli, lang=idioma_escolhido))
-        
+
         if not caminho_gerado.exists():
             raise HTTPException(status_code=404, detail="Dossiê PDF alvo não encontrado.")
-            
+
         if canal_limpo == "email":
             msg = MIMEMultipart()
             msg['From'] = smtp_user
@@ -1024,16 +1017,16 @@ def gerador_pdf_dinamico_backend(tipo_relatorio: str, data: RelatorioDossierRequ
         operador_cli = data.operador or "THIERRY (TCC SOBERANO)"
         tipo_limpo = tipo_relatorio.lower().strip()
         idioma_escolhido = (data.idioma or "PT").upper().strip()
-        
+
         caminho_gerado = Path(compilar_pdf_especifico(
-            tipo_limpo, 
-            nome_cli, 
+            tipo_limpo,
+            nome_cli,
             empresa_cli,
-            operador_cli, 
+            operador_cli,
             lang=idioma_escolhido,
             dados_orquestrador_llm=data.dados_llm
         ))
-        
+
         if caminho_gerado.exists():
             return FileResponse(path=str(caminho_gerado), media_type='application/pdf', filename=caminho_gerado.name)
         else:
@@ -1058,14 +1051,14 @@ def endpoint_gerar_relatorio_monaco(sessao: DadosSessaoReal):
             empresa_cli = "Thierry Technology Concept Global"
 
         caminho_gerado = Path(compilar_pdf_especifico(
-            "biogem_core", 
-            nome_cli, 
+            "biogem_core",
+            nome_cli,
             empresa_cli,
-            "THIERRY (TCC SOBERANO)", 
+            "THIERRY (TCC SOBERANO)",
             lang="PT",
             dados_orquestrador_llm=dados_reais.get("dados_llm", {})
         ))
-        
+
         return {
             "status": "sucesso",
             "mensagem": "Dossiê Mônaco gerado com sucesso!",
@@ -1139,7 +1132,7 @@ def listar_pdfs_finais() -> JSONResponse:
                 "nome": f.name, "tipo_identificado": tipo_classificado,
                 "caminho": f"/pdfs/{f.name}",
                 "tamanho_kb": round(f.stat().st_size / 1024, 2),
-                "data_modificacao": datetime.fromtimestamp(f.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
+                "data_modificacao": datetime.datetime.fromtimestamp(f.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")
             })
         return JSONResponse(content={"status": "sucesso", "total": len(lista_arquivos), "arquivos": lista_arquivos})
     except OSError as e:

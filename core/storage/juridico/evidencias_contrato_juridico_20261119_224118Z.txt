@@ -17626,7 +17626,7 @@ OCORRÊNCIAS (1937):
   [L4133] [L1956] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L4134] [L1959] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L4135] [L1965] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L4136] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L4136] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L4137] [L2054] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4138] [L2058] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4139] [L2062] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -17839,7 +17839,7 @@ OCORRÊNCIAS (1937):
   [L4352] [L1908] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L4353] [L1911] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L4354] [L1917] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L4355] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L4355] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L4356] [L2006] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4357] [L2010] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L4358] [L2014] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -21462,7 +21462,7 @@ OCORRÊNCIAS (4869):
   [L8150] [L4133] [L1956] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L8151] [L4134] [L1959] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L8152] [L4135] [L1965] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L8153] [L4136] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L8153] [L4136] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L8154] [L4137] [L2054] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L8155] [L4138] [L2058] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L8156] [L4139] [L2062] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -21675,7 +21675,7 @@ OCORRÊNCIAS (4869):
   [L8363] [L4352] [L1908] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L8364] [L4353] [L1911] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L8365] [L4354] [L1917] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L8366] [L4355] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L8366] [L4355] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L8367] [L4356] [L2006] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L8368] [L4357] [L2010] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L8369] [L4358] [L2014] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -22500,7 +22500,7 @@ OCORRÊNCIAS (4869):
   [L9433] [L1956] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L9434] [L1959] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L9435] [L1965] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L9436] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L9436] [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L9437] [L2054] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L9438] [L2058] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L9439] [L2062] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -22713,7 +22713,7 @@ OCORRÊNCIAS (4869):
   [L9652] [L1908] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L9653] [L1911] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L9654] [L1917] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L9655] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L9655] [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L9656] [L2006] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L9657] [L2010] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L9658] [L2014] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -23783,7 +23783,7 @@ OCORRÊNCIAS (221):
   [L1956] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L1959] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L1965] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L2011] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L2054] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2058] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2062] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">
@@ -24002,7 +24002,7 @@ OCORRÊNCIAS (195):
   [L1908] NOTA CLÍNICA / CONDUTA EM TEMPO REAL (REVISÃO MÉDICA)
   [L1911] [VOZ SOBERANA]: Análise biométrica executiva e rastreamento de oximetria tecidual registrados via IA CZ. Aguardando comandos clínicos de voz...
   [L1917] <span id="voice-live-status" style="font-size: 11px; color: var(--accent-clinical); font-weight: bold;" data-i18n="voice-status-live">[OUVINDO COMANDOS CLÍNICOS EM TEMPO REAL]</span>
-  [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina & Trilionários Tech">
+  [L1963] <input type="text" class="client-input-field" id="modal-market-segment" value="Telemedicina &s Tech">
   [L2006] <input type="checkbox" checked onchange="toggleCountryJurisdiction('AE', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2010] <input type="checkbox" checked onchange="toggleCountryJurisdiction('BR', this.checked)" style="accent-color: var(--accent-clinical);">
   [L2014] <input type="checkbox" checked onchange="toggleCountryJurisdiction('CH', this.checked)" style="accent-color: var(--accent-clinical);">

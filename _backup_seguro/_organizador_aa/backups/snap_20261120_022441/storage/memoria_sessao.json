@@ -1,0 +1,93 @@
+{
+    "status": "conectado",
+    "timestamp": "2026_06_29",
+    "ultimo_clima_capturado": {
+        "valor": {
+            "clima": "Ensolarado [37.5°C]",
+            "regiao": "São Luís, BR"
+        },
+        "timestamp": "2026-08-06 20:51:10"
+    },
+    "ultimo_relatorio_gerado": {
+        "valor": "Dossie_THIERRY_20260806_205111.pdf",
+        "timestamp": "2026-08-06 20:51:11"
+    },
+    "ultimo_boot_sistema": {
+        "valor": "2026-07-27 11:25:00",
+        "timestamp": "2026-07-27 11:25:00"
+    },
+    "clima_tempo_real": {
+        "valor": {
+            "temperatura": "28°C",
+            "condicao": "Estável"
+        },
+        "timestamp": "2026-07-27 11:40:56"
+    },
+    "status_motores_core": {
+        "valor": {
+            "camera_manager": "OK",
+            "motor_biometrico": "Erro: cannot import name 'instancia_memoria' from 'memoria_comum' (c:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026\\core\\memoria_comum.py)",
+            "analises_visagismo": "Erro: cannot import name 'instancia_memoria' from 'memoria_comum' (c:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026\\core\\memoria_comum.py)",
+            "sensores_inteligentes": "Erro: cannot import name 'instancia_memoria' from 'memoria_comum' (c:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026\\core\\memoria_comum.py)"
+        },
+        "timestamp": "2026-07-27 11:25:00"
+    },
+    "status_biometria": {
+        "valor": "CAPTURADO_COM_SUCESSO",
+        "timestamp": "2026-07-27 12:02:40"
+    },
+    "biometria_avancada_status": {
+        "valor": "CAPTURADO_E_VALIDADO",
+        "timestamp": "2026-07-27 12:05:26"
+    },
+    "ultimo_laudo_gerado": {
+        "valor": "C:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026\\storage\\Dossie_Monaco_THIERRY_20260728_074211.pdf",
+        "timestamp": "2026-07-28 07:42:11"
+    },
+    "dados_ultima_captura": {
+        "valor": {
+            "refletancia_pele": 79.36,
+            "indice_limbico": 0.95,
+            "sistema_parassimpatico": "Soberano / Calibrado",
+            "taxa_respiratoria": "14 ciclos/min (Parassimpático Ativo)",
+            "timestamp": "2026-08-03 17:32:41"
+        },
+        "timestamp": "2026-08-03 17:32:41"
+    },
+    "nome_cliente": "th",
+    "responsavel": "tgh",
+    "modulo_ativo": "SALAO",
+    "hash_cript": {
+        "valor": "TTC-WEB-API-182015"
+    },
+    "contexto_geografico": "KR",
+    "ultimo_relatorio": {
+        "valor": "Dossie_THIERRY_20260809_200345.pdf",
+        "timestamp": "2026-08-09 20:03:45"
+    },
+    "CLIENTE_ATUAL": {
+        "valor": "THIERRY_TECH_CORE",
+        "timestamp": "2026-08-09 20:09:23"
+    },
+    "ROSTO_STATUS": {
+        "valor": {
+            "FORMATO": "ALONGADO",
+            "PROPORCAO": 1.58
+        },
+        "timestamp": "2026-08-09 20:47:10"
+    },
+    "CABELO_DIAGNOSTICO": {
+        "valor": {
+            "VITALIDADE_SCORE": 1,
+            "DENSIDADE_CM2": 17.3,
+            "RISCO_ALOPECIA": "SAUDÁVEL",
+            "REFLEXO": "BRILHOSO",
+            "SAUDE_COURO": "BAIXA"
+        },
+        "timestamp": "2026-08-09 20:47:10"
+    },
+    "FADIGA_STATUS": {
+        "valor": "O2: 98% | FLUXO: 0.85 m/s",
+        "timestamp": "2026-08-09 20:47:10"
+    }
+}

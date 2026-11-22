@@ -1,0 +1,8 @@
+@echo off
+title Engenharia da Alma - Sistema de Processamento
+echo Iniciando o Motor de Prognostico e Gerador de Relatorio...
+echo.
+python gerador_relatorio_definitivo.py
+echo.
+echo Processo Finalizado. Verifique o PDF gerado na pasta.
+pause

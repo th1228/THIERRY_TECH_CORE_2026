@@ -1,0 +1,18 @@
+{
+  "documento": "05_Modelagem_Computacional",
+  "titular": "CLIENTE UHNW",
+  "idioma": "PT",
+  "horizontes": 10,
+  "leitura_numero": 3,
+  "emitido_em": "22/11/2026 às 16:12:53",
+  "leitura_anterior": "22/11/2026 às 16:08:04",
+  "tamanho_kb": 7.76,
+  "sha256": "ea1ca4de357bd9bb1b3ffa7aef1040dc46de8879f2c39d699a03230130c4b577",
+  "hash_analise": "SEM_ANALISE",
+  "chaves_telemetria": [],
+  "mudancas": [
+    "NOVA GERAÇÃO: Leitura anterior 22/11/2026 às 16:08:04 -> Leitura atual 22/11/2026 às 16:12:53.",
+    "Conteúdo/arquivo atualizado (variação de tamanho: +0.00 KB | novo SHA-256: ea1ca4de357b...).",
+    "Análise/telemetria sem alteração de conteúdo em relação à leitura anterior."
+  ]
+}
