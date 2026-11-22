@@ -504,6 +504,28 @@
         }
     </style>
     
+<style id="reparo-rodape-mesh">
+  .mesh-rodape-limpo {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 2px !important;
+    padding: 4px 6px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
+    letter-spacing: 0.2px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+</style>
 </head>
 <body class="light-theme">
     <header>
@@ -664,6 +686,54 @@
             }
         }
     </script>
+<script id="reparo-rodape-mesh-js">
+(function () {
+  function formatarIdentificadorCurto(raw) {
+    const limpo = raw.replace(/\s+/g, " ").trim();
+    const numMatch = limpo.match(/\b(\d{3})_SYS\b/i);
+    const meshMatch = limpo.match(/MESH_(\d+N)(?:_[A-Z0-9_]+)?/i);
+
+    if (numMatch && meshMatch) {
+      return `ID ${numMatch[1]} · ${meshMatch[1].toUpperCase()}`;
+    }
+    if (meshMatch) {
+      return meshMatch[1].toUpperCase();
+    }
+    if (numMatch) {
+      return `ID ${numMatch[1]}`;
+    }
+    return limpo.replace(/MESH_[A-Z0-9_]+/gi, "64N").replace(/_SYS\b/gi, "");
+  }
+
+  function organizarRodapeMesh() {
+    const candidatos = document.querySelectorAll("div, span, p, small, footer, label, code");
+    candidatos.forEach((el) => {
+      if (el.dataset.meshFormatado === "1") return;
+      if (el.closest("#reparo-rodape-mesh-js")) return;
+      if (el.children.length > 2) return;
+
+      const txt = (el.textContent || "").trim();
+      if (!txt || txt.length > 90) return;
+
+      if (/MESH_[A-Z0-9_]+/i.test(txt) || /\b\d{3}_SYS\b/i.test(txt)) {
+        if (!el.getAttribute("title")) {
+          el.setAttribute("title", txt);
+        }
+        el.classList.add("mesh-rodape-limpo");
+        el.textContent = formatarIdentificadorCurto(txt);
+        el.dataset.meshFormatado = "1";
+      }
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", organizarRodapeMesh);
+  } else {
+    organizarRodapeMesh();
+  }
+  setTimeout(organizarRodapeMesh, 400);
+})();
+</script>
 </body>
 </html><div class="dashboard-grid-master">
         <aside class="luxury-sidebar" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
@@ -1180,21 +1250,21 @@
                     <div class="status-badge" data-i18n="badge-approved">Aprovado</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-1">Índice Estético: 99.4% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 001_SYS • MESH_64N_V1</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 001_SYS • MESH_64N_V1</div>
                 </div>
                 <div class="grid-cell safe" onclick="openBiogenFocusModal('Bio-Sovereign Beta'); playLuxuryAcousticChime();">
                     <div class="cell-title" data-i18n="card-t2">02. CONTORNO</div>
                     <div class="status-badge" data-i18n="badge-normal">Normal</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-2">Índice Estético: 98.1% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 002_SYS • MESH_64N_V2</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 002_SYS • MESH_64N_V2</div>
                 </div>
                 <div class="grid-cell gold" onclick="openBiogenFocusModal('Bio-Sovereign Gamma'); playLuxuryAcousticChime();">
                     <div class="cell-title" data-i18n="card-t3">03. COLÁGENO</div>
                     <div class="status-badge" data-i18n="badge-stable">Estável</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-3">Índice Estético: 97.5% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 003_SYS • MESH_64N_VOL</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 003_SYS • MESH_64N_VOL</div>
                 </div>
                 <!-- Cartão 04: Sem "progressão", exibindo +5 ANOS perfeitamente -->
                 <div class="grid-cell alert" onclick="openBiogenFocusModal('Bio-Sovereign Delta'); playLuxuryAcousticChime();">
@@ -1202,7 +1272,7 @@
                     <div class="status-badge" data-i18n="badge-critical">Crítico</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-4">Índice Estético: 91.2% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 004_SYS • MESH_64N_AGE</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 004_SYS • MESH_64N_AGE</div>
                 </div>
                 <!-- Cartão 05: Sem "progressão", exibindo +10 ANOS perfeitamente -->
                 <div class="grid-cell alert" onclick="openBiogenFocusModal('Bio-Sovereign Epsilon'); playLuxuryAcousticChime();">
@@ -1210,7 +1280,7 @@
                     <div class="status-badge" data-i18n="badge-alert">Alerta</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-5">Índice Estético: 93.8% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 005_SYS • MESH_64N_AGE</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 005_SYS • MESH_64N_AGE</div>
                 </div>
                 <!-- Cartão 06: Sem "progressão", exibindo +15 ANOS perfeitamente -->
                 <div class="grid-cell alert" onclick="openBiogenFocusModal('Bio-Sovereign Zeta'); playLuxuryAcousticChime();">
@@ -1218,35 +1288,35 @@
                     <div class="status-badge" data-i18n="badge-zone-critical">Zona Crítica</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-6">Índice Estético: 89.9% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 006_SYS • MESH_64N_LMT</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 006_SYS • MESH_64N_LMT</div>
                 </div>
                 <div class="grid-cell safe" onclick="openBiogenFocusModal('Bio-Sovereign Eta'); playLuxuryAcousticChime();">
                     <div class="cell-title" data-i18n="card-t7">07. LIDERANÇA</div>
                     <div class="status-badge" data-i18n="badge-optimized">Otimizado</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-7">Índice Estético: 98.8% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 007_SYS • MESH_POL_OPT</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 007_SYS • MESH_POL_OPT</div>
                 </div>
                 <div class="grid-cell gold" onclick="openBiogenFocusModal('Bio-Sovereign Theta'); playLuxuryAcousticChime();">
                     <div class="cell-title" data-i18n="card-t8">08. VITALIDADE</div>
                     <div class="status-badge" data-i18n="badge-imperial">Imperial</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-8">Índice Estético: 99.9% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 008_SYS • MESH_VITAL_DN</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 008_SYS • MESH_VITAL_DN</div>
                 </div>
                 <div class="grid-cell alert" onclick="openBiogenFocusModal('Bio-Sovereign Iota'); playLuxuryAcousticChime();">
                     <div class="cell-title" data-i18n="card-t9">09. SOBERANO</div>
                     <div class="status-badge" data-i18n="badge-maximum">Máximo</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-9">Índice Estético: 95.4% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 009_SYS • MESH_COM_SOV</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 009_SYS • MESH_COM_SOV</div>
                 </div>
                 <div class="grid-cell safe" onclick="openBiogenFocusModal('Bio-Sovereign Kappa'); playLuxuryAcousticChime();">
                     <div class="cell-title" data-i18n="card-t10">10. AUTÔNOMO</div>
                     <div class="status-badge" data-i18n="badge-stable">Estável</div>
                     <div class="cell-photo-placeholder"><canvas class="cell-canvas-3d"></canvas></div>
                     <div class="diagnostic-subtext" data-i18n="card-sub-10">Índice Estético: 98.3% • Global Tier-1</div>
-                    <div class="cell-footer-security">ID: 010_SYS • MESH_AUT_LAT</div>
+                    <div class="cell-footer-security" style="max-width: 100%; min-width: 0; box-sizing: border-box; font-size: 0.70rem; line-height: 1.25; letter-spacing: -0.25px; overflow-wrap: anywhere; word-break: break-word; display: block;">ID: 010_SYS • MESH_AUT_LAT</div>
                 </div>
             </div>
             <div class="flow-action-strip-bottom">
