@@ -173,7 +173,8 @@ class AuditorGlobalMercado:
 
     def _extrair_texto_pdf(self, doc: fitz.Document) -> str:
         partes: List[str] = []
-        for pagina in doc:
+        for idx_pag in range(len(doc)):
+            pagina = doc[idx_pag]
             raw = pagina.get_text("text")
             if isinstance(raw, str) and raw:
                 partes.append(raw)
@@ -187,6 +188,15 @@ class AuditorGlobalMercado:
                 if d.lower() == "pdfs_finais":
                     return os.path.join(pasta_atual, d)
         return os.path.join(self.raiz, "pdfs_finais")
+
+    def _localizar_scripts_por_palavras_chave(self, arquivos_py: List[str], palavras: Tuple[str, ...]) -> List[str]:
+        hits: List[str] = []
+        for caminho in arquivos_py:
+            rel = os.path.relpath(caminho, self.raiz).replace("\\", "/")
+            low = rel.lower()
+            if any(p in low for p in palavras):
+                hits.append(rel)
+        return sorted(hits)[:6]
 
     def _inspecionar_conformidade_diretrizes(
         self, arquivos_projeto: List[str], pdfs: List[str]
@@ -711,7 +721,9 @@ class AuditorGlobalMercado:
 
         return alteracoes
 
-    def _avaliar_conformidade_iso(self, pdfs: List[str]) -> Tuple[int, List[str], List[str]]:
+    def _avaliar_conformidade_iso(
+        self, pdfs: List[str], arquivos_py: List[str]
+    ) -> Tuple[int, List[str], List[str]]:
         score = 100
         motivos: List[str] = []
         plano: List[str] = []
@@ -720,27 +732,34 @@ class AuditorGlobalMercado:
             return 1, ["Nenhum PDF localizado em 'pdfs_finais'."], ["Gerar os PDFs finais na pasta 'pdfs_finais'."]
 
         total_paginas = 0
-        paginas_fora_a4 = 0
-        paginas_margem_baixa = 0
-        sem_titulo = 0
+        paginas_fora_a4: List[str] = []
+        paginas_margem_baixa: List[str] = []
+        sem_titulo: List[str] = []
+        scripts_dossie = self._localizar_scripts_por_palavras_chave(
+            arquivos_py, ("dossie", "engine", "motor", "pdf", "gerador")
+        )
+        dica_scripts = f" [Scripts candidatos: {', '.join(scripts_dossie)}]" if scripts_dossie else ""
 
         for caminho in pdfs:
+            nome_pdf = os.path.basename(caminho)
             try:
                 doc = fitz.open(caminho)
             except Exception as e:
                 score -= 15
-                motivos.append(f"Falha ao abrir '{os.path.basename(caminho)}': {e}.")
-                plano.append(f"Regenerar '{os.path.basename(caminho)}'.")
+                motivos.append(f"Falha ao abrir '{nome_pdf}': {e}.")
+                plano.append(f"Regenerar '{nome_pdf}'.")
                 continue
 
             if not (doc.metadata or {}).get("title", "").strip():
-                sem_titulo += 1
+                sem_titulo.append(nome_pdf)
 
-            for pagina in doc:
+            for idx_pag in range(len(doc)):
+                num_pag = idx_pag + 1
+                pagina = doc[idx_pag]
                 total_paginas += 1
                 w, h = float(pagina.rect.width), float(pagina.rect.height)
                 if abs(w - self.largura_a4) > 5 or abs(h - self.altura_a4) > 5:
-                    paginas_fora_a4 += 1
+                    paginas_fora_a4.append(f"{nome_pdf} p.{num_pag} ({w:.1f}x{h:.1f}pt)")
 
                 blocos = pagina.get_text("blocks")
                 if blocos:
@@ -756,43 +775,60 @@ class AuditorGlobalMercado:
                             (h - max(y1)) * self.pt_para_mm,
                         )
                         if menor_margem < self.limiar_margem_mm:
-                            paginas_margem_baixa += 1
+                            paginas_margem_baixa.append(
+                                f"{nome_pdf} p.{num_pag} (margem {menor_margem:.2f}mm)"
+                            )
             doc.close()
 
-        if paginas_fora_a4 > 0:
-            penalidade = min(30, paginas_fora_a4 * 5)
+        if paginas_fora_a4:
+            penalidade = min(30, len(paginas_fora_a4) * 5)
             score -= penalidade
-            motivos.append(f"{paginas_fora_a4}/{total_paginas} página(s) fora do formato A4.")
-            plano.append("Padronizar todas as páginas para dimensões A4 (595.28 x 841.89 pt).")
+            motivos.append(
+                f"{len(paginas_fora_a4)}/{total_paginas} página(s) fora do formato A4 -> {', '.join(paginas_fora_a4)}."
+            )
+            plano.append(
+                f"Padronizar para A4 (595.28 x 841.89 pt): {', '.join(paginas_fora_a4)}{dica_scripts}."
+            )
 
-        if paginas_margem_baixa > 0:
-            penalidade = min(30, paginas_margem_baixa * 5)
+        if paginas_margem_baixa:
+            penalidade = min(30, len(paginas_margem_baixa) * 5)
             score -= penalidade
-            motivos.append(f"{paginas_margem_baixa}/{total_paginas} página(s) com margem < {self.limiar_margem_mm}mm.")
-            plano.append(f"Ajustar margens/espaçamentos para manter >= {self.limiar_margem_mm}mm.")
+            motivos.append(
+                f"{len(paginas_margem_baixa)}/{total_paginas} página(s) com margem < {self.limiar_margem_mm}mm -> {', '.join(paginas_margem_baixa)}."
+            )
+            plano.append(
+                f"Ajustar margens/espaçamentos para >= {self.limiar_margem_mm}mm em: {', '.join(paginas_margem_baixa)}{dica_scripts}."
+            )
 
-        if sem_titulo > 0:
-            penalidade = min(15, sem_titulo * 3)
+        if sem_titulo:
+            penalidade = min(15, len(sem_titulo) * 3)
             score -= penalidade
-            motivos.append(f"{sem_titulo}/{len(pdfs)} PDF(s) sem metadado 'Title'.")
-            plano.append("Definir metadado 'Title' em todos os PDFs gerados.")
+            motivos.append(f"{len(sem_titulo)}/{len(pdfs)} PDF(s) sem metadado 'Title' -> {', '.join(sem_titulo)}.")
+            plano.append(f"Definir metadado 'Title' em: {', '.join(sem_titulo)}{dica_scripts}.")
 
         if not motivos:
             motivos.append(f"{len(pdfs)} PDF(s) ({total_paginas} páginas) validados em A4, margens >= {self.limiar_margem_mm}mm e metadados sem alerta crítico.")
 
         return max(1, min(100, score)), motivos, plano
 
-    def _avaliar_densidade_conteudo(self, pdfs: List[str]) -> Tuple[int, int, List[str], List[str]]:
+    def _avaliar_densidade_conteudo(
+        self, pdfs: List[str], arquivos_py: List[str]
+    ) -> Tuple[int, int, List[str], List[str]]:
         score = 100
         total_palavras = 0
         motivos: List[str] = []
         plano: List[str] = []
+        scripts_dossie = self._localizar_scripts_por_palavras_chave(
+            arquivos_py, ("dossie", "engine", "motor", "gerador", "tricologia", "monaco", "carta")
+        )
+        dica_scripts = f" [Scripts candidatos: {', '.join(scripts_dossie)}]" if scripts_dossie else ""
 
         if not pdfs:
             return 1, 0, ["Sem PDFs para calcular densidade textual."], ["Gerar os PDFs finais."]
 
         curtos: List[str] = []
         for caminho in pdfs:
+            nome_pdf = os.path.basename(caminho)
             try:
                 doc = fitz.open(caminho)
                 texto = self._extrair_texto_pdf(doc)
@@ -800,21 +836,25 @@ class AuditorGlobalMercado:
                 qtd = len(texto.split())
                 total_palavras += qtd
                 if qtd < self.min_palavras_dossie:
-                    curtos.append(f"{os.path.basename(caminho)} ({qtd})")
+                    curtos.append(f"{nome_pdf} ({qtd} palavras)")
             except Exception as e:
                 score -= 10
-                motivos.append(f"Falha ao ler '{os.path.basename(caminho)}': {e}.")
+                motivos.append(f"Falha ao ler '{nome_pdf}': {e}.")
 
         if curtos:
             penalidade = min(40, len(curtos) * 10)
             score -= penalidade
-            motivos.append(f"PDF(s) abaixo de {self.min_palavras_dossie} palavras: {', '.join(curtos)}.")
-            plano.append(f"Aumentar o conteúdo técnico dos dossiês para >= {self.min_palavras_dossie} palavras cada.")
+            motivos.append(
+                f"PDF(s) abaixo de {self.min_palavras_dossie} palavras -> {', '.join(curtos)}."
+            )
+            plano.append(
+                f"Aumentar o conteúdo técnico para >= {self.min_palavras_dossie} palavras em: {', '.join(curtos)}{dica_scripts}."
+            )
 
         if total_palavras < 3000:
             score -= 15
             motivos.append(f"Total de {total_palavras} palavras abaixo da meta de 3.000 palavras.")
-            plano.append("Expandir o volume textual consolidado dos dossiês.")
+            plano.append(f"Expandir o volume textual consolidado dos dossiês{dica_scripts}.")
 
         if not motivos:
             motivos.append(f"{total_palavras} palavras no total; todos os {len(pdfs)} PDFs atendem ao limiar de densidade sem alerta crítico.")
@@ -1025,8 +1065,8 @@ class AuditorGlobalMercado:
         s_bio, mot_bio, plan_bio, qtd_bio = self._inspecionar_biometrico(arquivos_projeto)
         s_gem, mot_gem, plan_gem, qtd_gem = self._inspecionar_biogemeos(arquivos_projeto)
         s_c2s, mot_c2s, plan_c2s, res_c2s, achados_seg = self._inspecionar_c2_mibo_seguranca(arquivos_projeto, arquivos_py)
-        s_iso, mot_iso, plan_iso = self._avaliar_conformidade_iso(pdfs)
-        s_cnt, total_palavras, mot_cnt, plan_cnt = self._avaliar_densidade_conteudo(pdfs)
+        s_iso, mot_iso, plan_iso = self._avaliar_conformidade_iso(pdfs, arquivos_py)
+        s_cnt, total_palavras, mot_cnt, plan_cnt = self._avaliar_densidade_conteudo(pdfs, arquivos_py)
         s_conf, mot_conf, plan_conf, cnt_jur, cnt_dir = self._inspecionar_conformidade_diretrizes(
             arquivos_projeto, pdfs
         )
@@ -1144,7 +1184,8 @@ class AuditorGlobalMercado:
 
         plano_unificado: List[str] = []
         for acao in (
-            plan_main + plan_mem + plan_html + plan_mot + plan_bio + plan_gem + plan_c2s + plan_iso + plan_cnt + plan_conf
+            plan_main + plan_mem + plan_html + plan_mot + plan_bio
+            + plan_gem + plan_c2s + plan_iso + plan_cnt + plan_conf
         ):
             if acao not in plano_unificado:
                 plano_unificado.append(acao)
