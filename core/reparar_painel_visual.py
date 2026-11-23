@@ -4,7 +4,8 @@ Módulo: reparar_painel_visual.py
 Descrição: Varre ficheiros HTML e CSS do painel, normalizando z-index >= 100
 para 50 (auditoria MIBO), substituindo termos indesejados no HTML visível,
 simplificando/centralizando os identificadores MESH / _SYS no rodapé dos
-cards sem quebrar blocos existentes e oferecendo restauração via S ou V em caso de erro.
+cards (garantindo ID 010 · 64N no 10º card) sem quebrar blocos existentes
+e oferecendo restauração via S ou V em caso de erro.
 """
 
 import re
@@ -57,40 +58,71 @@ STYLE_ID_MESH = """<style id="reparo-rodape-mesh">
 
 SCRIPT_ID_MESH = """<script id="reparo-rodape-mesh-js">
 (function () {
-  function formatarIdentificadorCurto(raw) {
-    const limpo = raw.replace(/\\s+/g, " ").trim();
-    const numMatch = limpo.match(/\\b(\\d{3})_SYS\\b/i);
-    const meshMatch = limpo.match(/MESH_(\\d+N)(?:_[A-Z0-9_]+)?/i);
+  function extrairNumeroDoCard(el, indiceFallback) {
+    const card = el.closest("[class*='card'], [id*='card'], article, li, .item") || el.parentElement;
+    const textoCard = card ? (card.innerText || card.textContent || "") : "";
 
-    if (numMatch && meshMatch) {
-      return `ID ${numMatch[1]} · ${meshMatch[1].toUpperCase()}`;
+    if (/\\b10\\s*[.\\-–—:]\\s*AUT[OÔ]NOMO\\b/i.test(textoCard)) {
+      return "010";
     }
-    if (meshMatch) {
-      return meshMatch[1].toUpperCase();
+
+    const matchPrefixo = textoCard.match(/(?:^|\\n|\\s)(0?[1-9]|10)\\s*[.\\-–—:]\\s*[A-ZÁÉÍÓÚÂÊÔÃÕÇ]/i);
+    if (matchPrefixo) {
+      return String(parseInt(matchPrefixo[1], 10)).padStart(3, "0");
     }
-    if (numMatch) {
-      return `ID ${numMatch[1]}`;
-    }
-    return limpo.replace(/MESH_[A-Z0-9_]+/gi, "64N").replace(/_SYS\\b/gi, "");
+
+    return String(indiceFallback).padStart(3, "0");
+  }
+
+  function formatarIdentificadorCurto(raw, el, indiceFallback) {
+    const fonte = el.getAttribute("title") || raw || "";
+    const limpo = fonte.replace(/\\s+/g, " ").trim();
+
+    const numMatch =
+      limpo.match(/\\b(\\d{3})_SYS\\b/i) ||
+      limpo.match(/\\bID\\s*0*(\\d{1,3})\\b/i);
+
+    const meshMatch =
+      limpo.match(/MESH_(\\d+N)(?:_[A-Z0-9_]+)?/i) ||
+      limpo.match(/\\b(\\d+N)\\b/i);
+
+    const numeroCard = extrairNumeroDoCard(el, indiceFallback);
+    const idFinal = numMatch
+      ? String(parseInt(numMatch[1], 10)).padStart(3, "0")
+      : numeroCard;
+
+    const malhaFinal = meshMatch ? meshMatch[1].toUpperCase() : "64N";
+    return `ID ${idFinal} · ${malhaFinal}`;
   }
 
   function organizarRodapeMesh() {
-    const candidatos = document.querySelectorAll("div, span, p, small, footer, label, code");
+    const candidatos = Array.from(
+      document.querySelectorAll("div, span, p, small, footer, label, code")
+    );
+    let indiceCard = 0;
+
     candidatos.forEach((el) => {
-      if (el.dataset.meshFormatado === "1") return;
       if (el.closest("#reparo-rodape-mesh-js")) return;
       if (el.children.length > 2) return;
 
       const txt = (el.textContent || "").trim();
       if (!txt || txt.length > 90) return;
 
-      if (/MESH_[A-Z0-9_]+/i.test(txt) || /\\b\\d{3}_SYS\\b/i.test(txt)) {
+      const ehAlvo =
+        /MESH_[A-Z0-9_]+/i.test(txt) ||
+        /\\b\\d{3}_SYS\\b/i.test(txt) ||
+        /^ID\\s*\\d{1,3}(\\s*[·•-]\\s*\\d+N)?$/i.test(txt) ||
+        /^\\d+N$/i.test(txt) ||
+        /^ID\\s*:?$/i.test(txt);
+
+      if (ehAlvo) {
+        indiceCard += 1;
         if (!el.getAttribute("title")) {
           el.setAttribute("title", txt);
         }
         el.classList.add("mesh-rodape-limpo");
-        el.textContent = formatarIdentificadorCurto(txt);
-        el.dataset.meshFormatado = "1";
+        el.textContent = formatarIdentificadorCurto(txt, el, indiceCard);
+        el.dataset.meshFormatado = "3";
       }
     });
   }
@@ -137,8 +169,8 @@ def substituir_no_html_visivel(html: str, antigo: str, novo: str) -> str:
 
 def reparar_rodape_mesh_html(html: str) -> tuple[str, int]:
     """
-    Aplica estilo e ajuste DOM focado nos identificadores MESH / _SYS
-    na base dos cards para encurtar, centralizar e evitar corte à direita.
+    Aplica ou atualiza o estilo e ajuste DOM focado nos identificadores MESH / _SYS
+    na base dos cards, garantindo que o 10º card receba ID 010 · 64N.
     """
     if "MESH_" not in html and "_SYS" not in html and "reparo-rodape-mesh" not in html:
         return html, 0
@@ -146,27 +178,43 @@ def reparar_rodape_mesh_html(html: str) -> tuple[str, int]:
     alteracoes = 0
     atualizado = html
 
-    if 'id="reparo-rodape-mesh"' not in atualizado:
-        if re.search(r"</head>", atualizado, flags=re.IGNORECASE):
-            atualizado = re.sub(
-                r"</head>",
-                lambda _m: f"{STYLE_ID_MESH}\n</head>",
-                atualizado,
-                count=1,
-                flags=re.IGNORECASE,
-            )
+    padrao_style = re.compile(
+        r'<style\s+id=["\']reparo-rodape-mesh["\']\s*>.*?</style>',
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if padrao_style.search(atualizado):
+        novo_html = padrao_style.sub(lambda _m: STYLE_ID_MESH, atualizado, count=1)
+        if novo_html != atualizado:
+            atualizado = novo_html
             alteracoes += 1
+    elif re.search(r"</head>", atualizado, flags=re.IGNORECASE):
+        atualizado = re.sub(
+            r"</head>",
+            lambda _m: f"{STYLE_ID_MESH}\n</head>",
+            atualizado,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+        alteracoes += 1
 
-    if 'id="reparo-rodape-mesh-js"' not in atualizado:
-        if re.search(r"</body>", atualizado, flags=re.IGNORECASE):
-            atualizado = re.sub(
-                r"</body>",
-                lambda _m: f"{SCRIPT_ID_MESH}\n</body>",
-                atualizado,
-                count=1,
-                flags=re.IGNORECASE,
-            )
+    padrao_script = re.compile(
+        r'<script\s+id=["\']reparo-rodape-mesh-js["\']\s*>.*?</script>',
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    if padrao_script.search(atualizado):
+        novo_html = padrao_script.sub(lambda _m: SCRIPT_ID_MESH, atualizado, count=1)
+        if novo_html != atualizado:
+            atualizado = novo_html
             alteracoes += 1
+    elif re.search(r"</body>", atualizado, flags=re.IGNORECASE):
+        atualizado = re.sub(
+            r"</body>",
+            lambda _m: f"{SCRIPT_ID_MESH}\n</body>",
+            atualizado,
+            count=1,
+            flags=re.IGNORECASE,
+        )
+        alteracoes += 1
 
     return atualizado, alteracoes
 
@@ -179,7 +227,10 @@ def restaurar_backups(backups_criados: list[tuple[Path, Path]]) -> None:
             dados = arquivo_bak.read_bytes()
             arquivo_original.write_bytes(dados)
             restaurados += 1
-            print(f"↩️ [RESTAURADO] {arquivo_original.name} voltou ao estado anterior ({arquivo_bak.name}).")
+            print(
+                f"↩️ [RESTAURADO] {arquivo_original.name} "
+                f"voltou ao estado anterior ({arquivo_bak.name})."
+            )
     print(f"\n✅ Restauração concluída! {restaurados} arquivo(s) revertido(s) como era antes.")
 
 
@@ -189,7 +240,10 @@ def perguntar_e_restaurar_se_quiser(backups_criados: list[tuple[Path, Path]]) ->
         return
 
     print("\n⚠️ Ocorreu erro durante a operação.")
-    print("Aperte S ou V e dê Enter para voltar tudo como era antes (ou qualquer outra tecla para manter):")
+    print(
+        "Aperte S ou V e dê Enter para voltar tudo como era antes "
+        "(ou qualquer outra tecla para manter):"
+    )
     try:
         resposta = input("> ").strip().upper()
     except EOFError:
@@ -203,7 +257,10 @@ def perguntar_e_restaurar_se_quiser(backups_criados: list[tuple[Path, Path]]) ->
 
 def reparar_camadas_painel():
     diretorio_base = Path.cwd()
-    print(f"🎨 [SEGURANÇA ATIVA] Verificação profunda de camadas e textos em: {diretorio_base}\n")
+    print(
+        f"🎨 [SEGURANÇA ATIVA] Verificação profunda de camadas e textos em: "
+        f"{diretorio_base}\n"
+    )
 
     arquivos_alvo = [
         p for p in diretorio_base.rglob("*")

@@ -640,40 +640,71 @@
     </script>
 <script id="reparo-rodape-mesh-js">
 (function () {
-  function formatarIdentificadorCurto(raw) {
-    const limpo = raw.replace(/\s+/g, " ").trim();
-    const numMatch = limpo.match(/\b(\d{3})_SYS\b/i);
-    const meshMatch = limpo.match(/MESH_(\d+N)(?:_[A-Z0-9_]+)?/i);
+  function extrairNumeroDoCard(el, indiceFallback) {
+    const card = el.closest("[class*='card'], [id*='card'], article, li, .item") || el.parentElement;
+    const textoCard = card ? (card.innerText || card.textContent || "") : "";
 
-    if (numMatch && meshMatch) {
-      return `ID ${numMatch[1]} · ${meshMatch[1].toUpperCase()}`;
+    if (/\b10\s*[.\-–—:]\s*AUT[OÔ]NOMO\b/i.test(textoCard)) {
+      return "010";
     }
-    if (meshMatch) {
-      return meshMatch[1].toUpperCase();
+
+    const matchPrefixo = textoCard.match(/(?:^|\n|\s)(0?[1-9]|10)\s*[.\-–—:]\s*[A-ZÁÉÍÓÚÂÊÔÃÕÇ]/i);
+    if (matchPrefixo) {
+      return String(parseInt(matchPrefixo[1], 10)).padStart(3, "0");
     }
-    if (numMatch) {
-      return `ID ${numMatch[1]}`;
-    }
-    return limpo.replace(/MESH_[A-Z0-9_]+/gi, "64N").replace(/_SYS\b/gi, "");
+
+    return String(indiceFallback).padStart(3, "0");
+  }
+
+  function formatarIdentificadorCurto(raw, el, indiceFallback) {
+    const fonte = el.getAttribute("title") || raw || "";
+    const limpo = fonte.replace(/\s+/g, " ").trim();
+
+    const numMatch =
+      limpo.match(/\b(\d{3})_SYS\b/i) ||
+      limpo.match(/\bID\s*0*(\d{1,3})\b/i);
+
+    const meshMatch =
+      limpo.match(/MESH_(\d+N)(?:_[A-Z0-9_]+)?/i) ||
+      limpo.match(/\b(\d+N)\b/i);
+
+    const numeroCard = extrairNumeroDoCard(el, indiceFallback);
+    const idFinal = numMatch
+      ? String(parseInt(numMatch[1], 10)).padStart(3, "0")
+      : numeroCard;
+
+    const malhaFinal = meshMatch ? meshMatch[1].toUpperCase() : "64N";
+    return `ID ${idFinal} · ${malhaFinal}`;
   }
 
   function organizarRodapeMesh() {
-    const candidatos = document.querySelectorAll("div, span, p, small, footer, label, code");
+    const candidatos = Array.from(
+      document.querySelectorAll("div, span, p, small, footer, label, code")
+    );
+    let indiceCard = 0;
+
     candidatos.forEach((el) => {
-      if (el.dataset.meshFormatado === "1") return;
       if (el.closest("#reparo-rodape-mesh-js")) return;
       if (el.children.length > 2) return;
 
       const txt = (el.textContent || "").trim();
       if (!txt || txt.length > 90) return;
 
-      if (/MESH_[A-Z0-9_]+/i.test(txt) || /\b\d{3}_SYS\b/i.test(txt)) {
+      const ehAlvo =
+        /MESH_[A-Z0-9_]+/i.test(txt) ||
+        /\b\d{3}_SYS\b/i.test(txt) ||
+        /^ID\s*\d{1,3}(\s*[·•-]\s*\d+N)?$/i.test(txt) ||
+        /^\d+N$/i.test(txt) ||
+        /^ID\s*:?$/i.test(txt);
+
+      if (ehAlvo) {
+        indiceCard += 1;
         if (!el.getAttribute("title")) {
           el.setAttribute("title", txt);
         }
         el.classList.add("mesh-rodape-limpo");
-        el.textContent = formatarIdentificadorCurto(txt);
-        el.dataset.meshFormatado = "1";
+        el.textContent = formatarIdentificadorCurto(txt, el, indiceCard);
+        el.dataset.meshFormatado = "3";
       }
     });
   }
