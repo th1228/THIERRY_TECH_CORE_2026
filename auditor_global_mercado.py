@@ -30,6 +30,23 @@ ROXO_BOLD = "\033[1;95m"
 
 LARGURA_BANNER = 88
 
+PASTAS_IGNORADAS_PADRAO = {
+    ".git",
+    ".venv",
+    "venv",
+    "env",
+    "__pycache__",
+    "node_modules",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".auditor_backup",
+    "_backup_seguro",
+    "_organizador_aa",
+    "_backup_i18n",
+    "_backup_pdfs_originais",
+    "_reserva_segura",
+}
+
 JURISDICOES_ALVO: List[Tuple[str, str, str]] = [
     ("Mônaco", "CCIN", r"\b(m[oô]naco|ccin|monaco)\b"),
     ("Dubai", "DIFC", r"\b(dubai|difc|uae|emirados)\b"),
@@ -133,12 +150,8 @@ class AuditorGlobalMercado:
 
     def _coletar_arquivos(self, extensoes: Tuple[str, ...], incluir_ocultos_mibo: bool = False) -> List[str]:
         encontrados: List[str] = []
-        ignorar_dirs = {
-            ".git", ".venv", "venv", "env", "__pycache__",
-            "node_modules", ".pytest_cache", ".mypy_cache", ".auditor_backup",
-        }
         for pasta_atual, diretorios, arquivos in os.walk(self.raiz):
-            diretorios[:] = [d for d in diretorios if d not in ignorar_dirs]
+            diretorios[:] = [d for d in diretorios if d not in PASTAS_IGNORADAS_PADRAO]
             for arquivo in arquivos:
                 nome_low = arquivo.lower()
                 if arquivo.startswith(".") and not (incluir_ocultos_mibo and "mibo" in nome_low):
@@ -150,12 +163,8 @@ class AuditorGlobalMercado:
     def _contar_arquivos_pasta_security(self) -> Tuple[int, bool]:
         total = 0
         encontrada = False
-        ignorar_dirs = {
-            ".git", ".venv", "venv", "env", "__pycache__",
-            "node_modules", ".pytest_cache", ".mypy_cache", ".auditor_backup",
-        }
         for pasta_atual, diretorios, _ in os.walk(self.raiz):
-            diretorios[:] = [d for d in diretorios if d not in ignorar_dirs]
+            diretorios[:] = [d for d in diretorios if d not in PASTAS_IGNORADAS_PADRAO]
             for d in diretorios:
                 if d.lower() == "security":
                     encontrada = True
@@ -181,9 +190,8 @@ class AuditorGlobalMercado:
         return " ".join(partes)
 
     def _localizar_pasta_pdfs(self) -> str:
-        ignorar_dirs = {".git", ".venv", "venv", "env", "__pycache__", "node_modules", ".auditor_backup"}
         for pasta_atual, diretorios, _ in os.walk(self.raiz):
-            diretorios[:] = [d for d in diretorios if d not in ignorar_dirs]
+            diretorios[:] = [d for d in diretorios if d not in PASTAS_IGNORADAS_PADRAO]
             for d in diretorios:
                 if d.lower() == "pdfs_finais":
                     return os.path.join(pasta_atual, d)
@@ -420,16 +428,18 @@ class AuditorGlobalMercado:
             motores = arquivos_py
 
         erros_compilacao = 0
-        motores_vazios = 0
+        motores_curtos: List[Tuple[str, int]] = []
         for caminho in motores:
+            rel = os.path.relpath(caminho, self.raiz).replace("\\", "/")
             try:
                 py_compile.compile(caminho, doraise=True)
             except py_compile.PyCompileError:
                 erros_compilacao += 1
+                motivos.append(f"ERRO DE COMPILAÇÃO -> {rel}: corrija sintaxe/indentação neste arquivo.")
 
             conteudo = self._ler_texto_seguro(caminho).strip()
             if len(conteudo) < 100:
-                motores_vazios += 1
+                motores_curtos.append((rel, len(conteudo)))
 
         if not arquivos_py:
             score -= 50
@@ -438,14 +448,21 @@ class AuditorGlobalMercado:
         elif erros_compilacao > 0:
             penalidade = min(40, erros_compilacao * 10)
             score -= penalidade
-            motivos.append(f"{erros_compilacao} motor(es)/script(s) com compilação a revisar.")
-            plano.append("Corrigir erros de sintaxe nos scripts Python até compilar 100% sem falhas.")
+            plano.append("Corrigir erros de sintaxe nos scripts Python listados em Motores até compilar sem falhas.")
 
-        if motores_vazios > 0:
-            penalidade = min(20, motores_vazios * 5)
+        if motores_curtos:
+            penalidade = min(20, len(motores_curtos) * 5)
             score -= penalidade
-            motivos.append(f"{motores_vazios} módulo(s) de motor com extensão reduzida.")
-            plano.append("Completar a lógica e as rotinas internas dos módulos de motor curtos.")
+            for rel, tam in motores_curtos:
+                motivos.append(
+                    f"MOTOR CURTO ({tam} chars) -> {rel}: abra o arquivo e implemente (1) validacao de entrada, "
+                    f"(2) rotina principal de processamento do motor e (3) retorno estruturado (dict com status/resultado)."
+                )
+            plano.append(
+                "Completar nos arquivos apontados em Motores ("
+                + ", ".join(r for r, _ in motores_curtos[:8])
+                + ") a validacao de entrada, a rotina interna do motor e o retorno estruturado."
+            )
 
         if not motivos:
             motivos.append(f"{len(motores)} módulo(s) de motor inspecionados e compilados sem alerta crítico.")
@@ -909,9 +926,12 @@ class AuditorGlobalMercado:
         print(f"\n{CIANO_BOLD}[3] DIAGNÓSTICO E DIRETRIZES VERIFICADAS{RESET}")
         for titulo, itens, nota_sec in secoes_diagnostico:
             cor_tit = _cor_por_nota(nota_sec)
-            print(f"  {cor_tit}{titulo:<34}{RESET} | {VERDE_BOLD}SEM ALERTA CRÍTICO{RESET}")
+            tem_alerta = nota_sec < 100
+            status_txt = f"{AMARELO_BOLD}AJUSTE PENDENTE ({nota_sec}/100){RESET}" if tem_alerta else f"{VERDE_BOLD}SEM ALERTA CRÍTICO{RESET}"
+            print(f"  {cor_tit}{titulo:<34}{RESET} | {status_txt}")
             for item in itens:
-                print(f"    {VERDE}- {item}{RESET}")
+                cor_item = AMARELO if tem_alerta else VERDE
+                print(f"    {cor_item}- {item}{RESET}")
 
     def _imprimir_resumo_e_10_fatores(
         self,

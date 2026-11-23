@@ -570,13 +570,13 @@
         <div class="system-meta-nodes">
             <!-- BOTÃO DA MÃO (AJUSTES) ALINHADO PERFEITAMENTE COM OS DEMAIS CONTROLES -->
             <button class="hand-trigger-btn" onclick="toggleRetractableSettings()" title="Expandir/Recolher Ajustes">
-                🖐️ <span id="txt-hand-btn">AJUSTES</span>
+                🖐️ <span id="txt-hand-btn" data-i18n="ui_ajustes">AJUSTES</span>
             </button>
 
             <!-- CONTAINER DOS BOTÕES COM ANIMAÇÃO EM CASCATA HORIZONTAL -->
             <div id="retractable-controls-box" class="cinematic-cascade-container">
                 <button id="btn-toggle-camera" class="lang-btn cascade-item" onclick="toggleCameraPowerSafe()" title="Ligar/Desligar Câmera">
-                    📷 <span id="txt-cam-state">CAM: BLOQUEADA</span>
+                    📷 <span id="txt-cam-state" data-i18n="ui_cam_bloqueada">CAM: BLOQUEADA</span>
                 </button>
 
                 <button id="btn-toggle-ring-main" class="lang-btn cascade-item" onclick="toggleRingLightPopup()" title="Ajustes da Ring Light">
@@ -1000,6 +1000,380 @@
       observer.observe(document.body, { childList: true, subtree: true, characterData: true });
     }
   });
+})();
+</script>
+<script id="thierry-10-cards-i18n-patch">
+(function() {
+  const THIERRY_10_CARDS_I18N = {
+    pt: {
+    "card_01_arquetipo": "01. ARQUÉTIPO",
+    "card_02_contorno": "02. CONTORNO",
+    "card_03_colageno": "03. COLÁGENO",
+    "card_04_olhares": "04. OLHARES",
+    "card_05_microexpressao": "05. MICRO-EXPRESSÃO",
+    "card_05_microexpressao_alt": "05. MICROEXPRESSÃO",
+    "card_06_15_anos": "06. +15 ANOS",
+    "card_07_lideranca": "07. LIDERANÇA",
+    "card_08_vitalidade": "08. VITALIDADE",
+    "card_09_soberania": "09. SOBERANIA",
+    "card_10_simetria": "10. SIMETRIA",
+    "selo_aprovado": "APROVADO",
+    "selo_normal": "NORMAL",
+    "selo_style": "STYLE",
+    "selo_estilo": "ESTILO",
+    "selo_imperial": "IMPERIAL",
+    "selo_otimizado": "OTIMIZADO",
+    "selo_estavel_upper": "ESTÁVEL",
+    "selo_zona_critica": "ZONA CRÍTICA",
+    "selo_critico": "CRÍTICO",
+    "selo_alerta": "ALERTA",
+    "selo_soberano": "SOBERANO",
+    "selo_maximo": "MÁXIMO",
+    "selo_autonomo": "AUTÔNOMO",
+    "card_integridade_tecidual": "Integridade Tecidual",
+    "card_status_estavel": "Estável",
+    "card_colageno_apex": "Colágeno Apex",
+    "card_status_otimo": "Ótimo",
+    "card_valor_hidrico": "Valor Hídrico (Hidratação)",
+    "card_status_balanceado": "Balanceado",
+    "card_governanca_sincronia": "Governança de Sincronia",
+    "card_status_nucleo_global": "STATUS DO NÚCLEO GLOBAL",
+    "card_sincronizado_64_nos": "Sincronizado • 64 Nós Ativos",
+    "card_giro_3d": "Giro 3D",
+    "card_fechar": "X Fechar",
+    "card_comando_medico": "[+] Comando Médico",
+    "card_comando_clinico": "[+] Comando Clínico",
+    "card_status_ativo": "ATIVO",
+    "ui_historico_evolucao_uhnw": "HISTÓRICO & EVOLUÇÃO UHNW",
+    "ui_auditoria_ativa": "AUDITORIA ATIVA",
+    "ui_64_nos": "64 Nós",
+    "ui_ajustes": "AJUSTES",
+    "ui_cam_ligada": "CAM: LIGADA",
+    "ui_cam_bloqueada": "CAM: BLOQUEADA",
+    "ui_ligar": "LIGAR",
+    "ui_desligar": "DESLIGAR"
+},
+    en: {
+    "card_01_arquetipo": "01. ARCHETYPE",
+    "card_02_contorno": "02. CONTOUR",
+    "card_03_colageno": "03. COLLAGEN",
+    "card_04_olhares": "04. GAZE",
+    "card_05_microexpressao": "05. MICRO-EXPRESSION",
+    "card_05_microexpressao_alt": "05. MICRO-EXPRESSION",
+    "card_06_15_anos": "06. +15 YEARS",
+    "card_07_lideranca": "07. LEADERSHIP",
+    "card_08_vitalidade": "08. VITALITY",
+    "card_09_soberania": "09. SOVEREIGNTY",
+    "card_10_simetria": "10. SYMMETRY",
+    "selo_aprovado": "APPROVED",
+    "selo_normal": "NORMAL",
+    "selo_style": "STYLE",
+    "selo_estilo": "STYLE",
+    "selo_imperial": "IMPERIAL",
+    "selo_otimizado": "OPTIMIZED",
+    "selo_estavel_upper": "STABLE",
+    "selo_zona_critica": "CRITICAL ZONE",
+    "selo_critico": "CRITICAL",
+    "selo_alerta": "ALERT",
+    "selo_soberano": "SOVEREIGN",
+    "selo_maximo": "MAXIMUM",
+    "selo_autonomo": "AUTONOMOUS",
+    "card_integridade_tecidual": "Tissue Integrity",
+    "card_status_estavel": "Stable",
+    "card_colageno_apex": "Apex Collagen",
+    "card_status_otimo": "Optimal",
+    "card_valor_hidrico": "Hydric Value (Hydration)",
+    "card_status_balanceado": "Balanced",
+    "card_governanca_sincronia": "Synchrony Governance",
+    "card_status_nucleo_global": "GLOBAL CORE STATUS",
+    "card_sincronizado_64_nos": "Synchronized • 64 Active Nodes",
+    "card_giro_3d": "3D Rotate",
+    "card_fechar": "X Close",
+    "card_comando_medico": "[+] Medical Command",
+    "card_comando_clinico": "[+] Clinical Command",
+    "card_status_ativo": "ACTIVE",
+    "ui_historico_evolucao_uhnw": "UHNW HISTORY & EVOLUTION",
+    "ui_auditoria_ativa": "ACTIVE AUDIT",
+    "ui_64_nos": "64 Nodes",
+    "ui_ajustes": "SETTINGS",
+    "ui_cam_ligada": "CAM: ON",
+    "ui_cam_bloqueada": "CAM: LOCKED",
+    "ui_ligar": "ON",
+    "ui_desligar": "OFF"
+}
+  };
+
+  const PARES_PT_EN = [["Sincronizado • 64 Nós Ativos", "Synchronized • 64 Active Nodes"], ["Valor Hídrico (Hidratação)", "Hydric Value (Hydration)"], ["HISTÓRICO & EVOLUÇÃO UHNW", "UHNW HISTORY & EVOLUTION"], ["Governança de Sincronia", "Synchrony Governance"], ["STATUS DO NÚCLEO GLOBAL", "GLOBAL CORE STATUS"], ["Integridade Tecidual", "Tissue Integrity"], ["05. MICRO-EXPRESSÃO", "05. MICRO-EXPRESSION"], ["[+] Comando Clínico", "[+] Clinical Command"], ["05. MICROEXPRESSÃO", "05. MICRO-EXPRESSION"], ["[+] Comando Médico", "[+] Medical Command"], ["AUDITORIA ATIVA", "ACTIVE AUDIT"], ["08. VITALIDADE", "08. VITALITY"], ["CAM: BLOQUEADA", "CAM: LOCKED"], ["01. ARQUÉTIPO", "01. ARCHETYPE"], ["07. LIDERANÇA", "07. LEADERSHIP"], ["09. SOBERANIA", "09. SOVEREIGNTY"], ["Colágeno Apex", "Apex Collagen"], ["02. CONTORNO", "02. CONTOUR"], ["03. COLÁGENO", "03. COLLAGEN"], ["06. +15 ANOS", "06. +15 YEARS"], ["10. SIMETRIA", "10. SYMMETRY"], ["ZONA CRÍTICA", "CRITICAL ZONE"], ["04. OLHARES", "04. GAZE"], ["CAM: LIGADA", "CAM: ON"], ["Balanceado", "Balanced"], ["OTIMIZADO", "OPTIMIZED"], ["APROVADO", "APPROVED"], ["SOBERANO", "SOVEREIGN"], ["AUTÔNOMO", "AUTONOMOUS"], ["X Fechar", "X Close"], ["DESLIGAR", "OFF"], ["ESTÁVEL", "STABLE"], ["CRÍTICO", "CRITICAL"], ["Estável", "Stable"], ["Giro 3D", "3D Rotate"], ["AJUSTES", "SETTINGS"], ["ESTILO", "STYLE"], ["ALERTA", "ALERT"], ["MÁXIMO", "MAXIMUM"], ["64 Nós", "64 Nodes"], ["Ótimo", "Optimal"], ["ATIVO", "ACTIVE"], ["LIGAR", "ON"]];
+  const PARES_EN_PT = [["Synchronized • 64 Active Nodes", "Sincronizado • 64 Nós Ativos"], ["Hydric Value (Hydration)", "Valor Hídrico (Hidratação)"], ["UHNW HISTORY & EVOLUTION", "HISTÓRICO & EVOLUÇÃO UHNW"], ["05. MICRO-EXPRESSION", "05. MICRO-EXPRESSÃO"], ["05. MICRO-EXPRESSION", "05. MICROEXPRESSÃO"], ["Synchrony Governance", "Governança de Sincronia"], ["[+] Clinical Command", "[+] Comando Clínico"], ["[+] Medical Command", "[+] Comando Médico"], ["GLOBAL CORE STATUS", "STATUS DO NÚCLEO GLOBAL"], ["Tissue Integrity", "Integridade Tecidual"], ["09. SOVEREIGNTY", "09. SOBERANIA"], ["07. LEADERSHIP", "07. LIDERANÇA"], ["01. ARCHETYPE", "01. ARQUÉTIPO"], ["06. +15 YEARS", "06. +15 ANOS"], ["CRITICAL ZONE", "ZONA CRÍTICA"], ["Apex Collagen", "Colágeno Apex"], ["03. COLLAGEN", "03. COLÁGENO"], ["08. VITALITY", "08. VITALIDADE"], ["10. SYMMETRY", "10. SIMETRIA"], ["ACTIVE AUDIT", "AUDITORIA ATIVA"], ["02. CONTOUR", "02. CONTORNO"], ["CAM: LOCKED", "CAM: BLOQUEADA"], ["AUTONOMOUS", "AUTÔNOMO"], ["OPTIMIZED", "OTIMIZADO"], ["SOVEREIGN", "SOBERANO"], ["3D Rotate", "Giro 3D"], ["04. GAZE", "04. OLHARES"], ["APPROVED", "APROVADO"], ["CRITICAL", "CRÍTICO"], ["Balanced", "Balanceado"], ["64 Nodes", "64 Nós"], ["SETTINGS", "AJUSTES"], ["MAXIMUM", "MÁXIMO"], ["Optimal", "Ótimo"], ["X Close", "X Fechar"], ["CAM: ON", "CAM: LIGADA"], ["STABLE", "ESTÁVEL"], ["Stable", "Estável"], ["ACTIVE", "ATIVO"], ["STYLE", "ESTILO"], ["ALERT", "ALERTA"], ["OFF", "DESLIGAR"], ["ON", "LIGAR"]];
+
+  let idiomaAtual = (String(document.documentElement.lang || localStorage.getItem("lang") || "pt").toLowerCase().startsWith("en")) ? "en" : "pt";
+  let aplicando = false;
+
+  function escaparRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function aplicarIdiomaNos10Cards(lang) {
+    if (aplicando) return;
+    aplicando = true;
+    try {
+      const alvo = (String(lang || idiomaAtual || "pt").toLowerCase().startsWith("en")) ? "en" : "pt";
+      idiomaAtual = alvo;
+      const dict = THIERRY_10_CARDS_I18N[alvo] || {};
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const chave = el.getAttribute("data-i18n");
+        if (chave && Object.prototype.hasOwnProperty.call(dict, chave)) {
+          if (el.textContent.trim() !== dict[chave]) {
+            el.textContent = dict[chave];
+          }
+        }
+      });
+
+      const pares = alvo === "en" ? PARES_PT_EN : PARES_EN_PT;
+      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      let node;
+      while ((node = walker.nextNode())) {
+        const parentTag = node.parentElement ? node.parentElement.tagName : "";
+        if (parentTag === "SCRIPT" || parentTag === "STYLE") continue;
+
+        let texto = node.nodeValue || "";
+        if (!texto.trim()) continue;
+
+        let modificado = false;
+        for (let i = 0; i < pares.length; i++) {
+          const origem = pares[i][0];
+          const destino = pares[i][1];
+          if (texto.includes(origem)) {
+            const rx = new RegExp("(^|[^A-Za-zÀ-ÿ0-9_])" + escaparRegex(origem) + "(?=$|[^A-Za-zÀ-ÿ0-9_])", "g");
+            const novoTexto = texto.replace(rx, "$1" + destino);
+            if (novoTexto !== texto) {
+              texto = novoTexto;
+              modificado = true;
+            }
+          }
+        }
+        if (modificado) {
+          node.nodeValue = texto;
+        }
+      }
+    } finally {
+      aplicando = false;
+    }
+  }
+
+  window.THIERRY_10_CARDS_I18N = THIERRY_10_CARDS_I18N;
+  window.aplicarIdiomaNos10Cards = aplicarIdiomaNos10Cards;
+
+  document.addEventListener("click", function(ev) {
+    const btn = ev.target.closest("[data-lang], [lang], button, a, span, div");
+    if (!btn) return;
+    const txt = (btn.getAttribute("data-lang") || btn.textContent || "").trim().toUpperCase();
+    if (txt === "EN" || txt === "ENGLISH") {
+      idiomaAtual = "en";
+      setTimeout(() => aplicarIdiomaNos10Cards("en"), 40);
+      setTimeout(() => aplicarIdiomaNos10Cards("en"), 250);
+    } else if (txt === "PT" || txt === "PORTUGUES" || txt === "PORTUGUÊS") {
+      idiomaAtual = "pt";
+      setTimeout(() => aplicarIdiomaNos10Cards("pt"), 40);
+      setTimeout(() => aplicarIdiomaNos10Cards("pt"), 250);
+    }
+  }, true);
+
+  const observer = new MutationObserver(function() {
+    if (!aplicando) {
+      aplicarIdiomaNos10Cards(idiomaAtual);
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    aplicarIdiomaNos10Cards(idiomaAtual);
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+})();
+</script>
+<script id="thierry-camera-power-patch">
+(function() {
+  let streamAtivo = null;
+  let cameraLigada = false;
+
+  function pararTracksDeStream(stream) {
+    if (!stream) return;
+    try {
+      if (typeof stream.getTracks === "function") {
+        stream.getTracks().forEach((track) => {
+          try {
+            track.enabled = false;
+            track.stop();
+          } catch (_) {}
+        });
+      }
+      if (typeof stream.getVideoTracks === "function") {
+        stream.getVideoTracks().forEach((track) => {
+          try {
+            track.enabled = false;
+            track.stop();
+          } catch (_) {}
+        });
+      }
+    } catch (_) {}
+  }
+
+  function matarStreamsGlobaisNaWindow() {
+    try {
+      const chaves = Object.getOwnPropertyNames(window);
+      for (let i = 0; i < chaves.length; i++) {
+        const k = chaves[i];
+        let val = null;
+        try {
+          val = window[k];
+        } catch (_) {
+          continue;
+        }
+        if (val && typeof val === "object" && typeof val.getTracks === "function") {
+          pararTracksDeStream(val);
+          try {
+            window[k] = null;
+          } catch (_) {}
+        }
+      }
+    } catch (_) {}
+  }
+
+  function atualizarBadgeCamera(ligada) {
+    const btn = document.getElementById("btn-toggle-camera");
+    if (!btn) return;
+    const isEn = String(document.documentElement.lang || localStorage.getItem("lang") || "pt")
+      .toLowerCase().startsWith("en");
+    if (ligada) {
+      btn.textContent = isEn ? "CAM: ON" : "CAM: LIGADA";
+      btn.classList.add("active-lang");
+    } else {
+      btn.textContent = isEn ? "CAM: LOCKED" : "CAM: BLOQUEADA";
+      btn.classList.remove("active-lang");
+    }
+  }
+
+  function desligarCameraLocal() {
+    cameraLigada = false;
+
+    // 1. Para tracks e limpa TODOS os elementos <video> da página
+    const videos = Array.from(document.querySelectorAll("video"));
+    videos.forEach((vid) => {
+      try {
+        pararTracksDeStream(vid.srcObject);
+        vid.pause();
+        vid.srcObject = null;
+        vid.removeAttribute("src");
+        vid.load();
+      } catch (_) {}
+    });
+
+    // 2. Para o stream rastreado pelo patch e varre referências globais de MediaStream
+    pararTracksDeStream(streamAtivo);
+    streamAtivo = null;
+    matarStreamsGlobaisNaWindow();
+
+    // 3. Re-aplica limpeza curta caso algum listener nativo tente reassociar stream logo em seguida
+    setTimeout(() => {
+      if (!cameraLigada) {
+        document.querySelectorAll("video").forEach((vid) => {
+          if (vid.srcObject) {
+            pararTracksDeStream(vid.srcObject);
+            vid.srcObject = null;
+          }
+        });
+        matarStreamsGlobaisNaWindow();
+      }
+    }, 120);
+
+    atualizarBadgeCamera(false);
+  }
+
+  async function ligarCameraLocal() {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      return null;
+    }
+    if (streamAtivo && typeof streamAtivo.getVideoTracks === "function" &&
+        streamAtivo.getVideoTracks().some((t) => t.readyState === "live")) {
+      cameraLigada = true;
+      atualizarBadgeCamera(true);
+      return streamAtivo;
+    }
+
+    const stream = await navigator.mediaDevices.getUserMedia({
+      video: { facingMode: "user" },
+      audio: false
+    });
+    streamAtivo = stream;
+    cameraLigada = true;
+
+    const vidPrincipal = document.getElementById("webcam-feed-main") || document.querySelector("video");
+    if (vidPrincipal) {
+      vidPrincipal.srcObject = stream;
+      try { await vidPrincipal.play(); } catch (_) {}
+    }
+
+    atualizarBadgeCamera(true);
+    return stream;
+  }
+
+  window.desligarCameraLocal = desligarCameraLocal;
+  window.ligarCameraLocal = ligarCameraLocal;
+
+  // Intercepta clique no botão de câmera e em controles explícitos de ligar/desligar câmera
+  document.addEventListener("click", function(ev) {
+    const alvo = ev.target.closest("#btn-toggle-camera, [data-camera-action], button, a");
+    if (!alvo) return;
+
+    const isBtnCam = alvo.id === "btn-toggle-camera" || alvo.hasAttribute("data-camera-action");
+    const rotulo = (alvo.textContent || "").trim().toUpperCase();
+    const acaoAttr = (alvo.getAttribute("data-camera-action") || "").trim().toLowerCase();
+
+    if (acaoAttr === "off" || acaoAttr === "stop" || rotulo === "DESLIGAR" || rotulo === "OFF") {
+      if (isBtnCam || alvo.closest("[id*='cam' i], [class*='cam' i]")) {
+        ev.preventDefault();
+        ev.stopImmediatePropagation();
+        desligarCameraLocal();
+        return;
+      }
+    }
+
+    if (alvo.id === "btn-toggle-camera") {
+      ev.preventDefault();
+      ev.stopImmediatePropagation();
+      if (cameraLigada) {
+        desligarCameraLocal();
+      } else {
+        ligarCameraLocal().catch(() => desligarCameraLocal());
+      }
+    }
+  }, true);
+
+  ["startCinematicScan", "dispararVarreduraComGateway"].forEach((fnName) => {
+    const originalFn = window[fnName];
+    if (typeof originalFn === "function") {
+      window[fnName] = async function(...args) {
+        if (!cameraLigada) {
+          try { await ligarCameraLocal(); } catch (_) {}
+        }
+        return originalFn.apply(this, args);
+      };
+    }
+  });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => setTimeout(desligarCameraLocal, 50));
+  } else {
+    setTimeout(desligarCameraLocal, 50);
+  }
+
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden && cameraLigada) {
+      desligarCameraLocal();
+    }
+  });
+  window.addEventListener("beforeunload", desligarCameraLocal);
 })();
 </script>
 </body>
@@ -1657,7 +2031,7 @@
                 <div class="medical-panel-box">
                     <div class="medical-panel-title">
                         <span data-i18n="card_comando_clinico">[+] Comando Clínico</span>
-                        <span style="color:#38bdf8;">OPTIMIZED</span>
+                        <span style="color:#38bdf8;" data-i18n="selo_otimizado">OPTIMIZED</span>
                     </div>
                     <div>Ajuste viscoelástico de contorno com vetorização de ancoragem tridimensional. Prevenção de degradação estrutural e validação de simetria facial.</div>
                 </div>
@@ -1673,7 +2047,7 @@
         <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-freq" data-i18n="tel-freq">Frequência Vetorial</div><div class="telemetry-node-val magnetic-locked" id="telemetry-freq">1.4 Hz</div></div>
         <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-oxi" data-i18n="tel-oxi">Oximetria Tecidual</div><div class="telemetry-node-val magnetic-locked" id="telemetry-oxi">98.2%</div></div>
         <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-gov" data-i18n="tel-gov">Nível de Governança</div><div class="telemetry-node-val magnetic-locked" id="telemetry-gov">100% Tier-1</div></div>
-        <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-nodes" data-i18n="tel-nodes">Pontos de Controle</div><div class="telemetry-node-val magnetic-locked" id="telemetry-nodes-val">64 Nós</div></div>
+        <div class="telemetry-node"><div class="telemetry-node-label" id="tel-lbl-nodes" data-i18n="tel-nodes">Pontos de Controle</div><div class="telemetry-node-val magnetic-locked" id="telemetry-nodes-val" data-i18n="card_64_nos">64 Nós</div></div>
     </div>
 
     <script>
@@ -1823,7 +2197,7 @@
     <div style="background: rgba(59, 94, 102, 0.04); border: 1px solid var(--border-sovereign); border-radius: 8px; padding: 6px 8px; margin-top: 4px; display: flex; align-items: center; justify-content: space-between;">
         <div style="display: flex; align-items: center; gap: 6px;">
             <span style="width: 6px; height: 6px; background: var(--green-secure); border-radius: 50%; box-shadow: 0 0 6px var(--green-secure);"></span>
-            <span style="font-family: monospace; font-size: 8px; color: var(--text-primary); font-weight: bold; text-transform: uppercase;">AUDITORIA ATIVA</span>
+            <span style="font-family: monospace; font-size: 8px; color: var(--text-primary); font-weight: bold; text-transform: uppercase;" data-i18n="card_auditoria_ativa">AUDITORIA ATIVA</span>
         </div>
         <span style="font-family: monospace; font-size: 7.5px; color: var(--accent-clinical);">GLOBAL TIER-1</span>
     </div>
