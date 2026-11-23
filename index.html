@@ -455,7 +455,33 @@
                 grid-template-columns: 1fr !important;
             }
         }
-    </style>
+    
+/* === RESPONSIVIDADE TABLET (<= 1024px) & CELULAR (<= 640px) === */
+@media (max-width: 1024px) {
+  .biogen-imperial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  .biogen-imperial-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body {
+    font-size: 14px;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+}
+
+</style>
 
     
     

@@ -1,80 +1,108 @@
 # -*- coding: utf-8 -*-
 """
-Módulo: reparar_painel_visual.py
-Descrição: Varre ficheiros HTML e CSS do painel de forma abrangente, normalizando 
-qualquer z-index >= 100 para a faixa segura de 50 para satisfazer a auditoria MIBO.
+Script: ajustar_responsividade_painel.py
+Local: Raiz do projeto (THIERRY_TECH_CORE_2026)
+Objetivo: Localiza o index.html na raiz e garante viewport e regras CSS
+@media (max-width: 1024px) e @media (max-width: 640px) para satisfazer o checklist.
 """
 
-import os
 import re
+import shutil
 from pathlib import Path
 
-def reparar_camadas_painel():
-    diretorio_base = Path.cwd()
-    print(f"🎨 [SEGURANÇA ATIVA] Verificação profunda de camadas visuais em: {diretorio_base}\n")
-    
-    pastas_ignoradas = {".git", ".venv", "venv", "__pycache__", ".idea", "build", "dist"}
-    
-    arquivos_alvo = [
-        p for p in diretorio_base.rglob("*") 
-        if p.suffix in [".html", ".css"] and not any(ign in p.parts for ign in pastas_ignoradas)
-    ]
-    
-    if not arquivos_alvo:
-        print("⚠️ Nenhum ficheiro HTML ou CSS encontrado para varredura.")
+
+RAIZ_PROJETO = Path(__file__).resolve().parent
+PAINEL_HTML = RAIZ_PROJETO / "index.html"
+
+BLOCO_RESPONSIVO = """
+/* === RESPONSIVIDADE TABLET (<= 1024px) & CELULAR (<= 640px) === */
+@media (max-width: 1024px) {
+  .biogen-imperial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 640px) {
+  .biogen-imperial-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  body {
+    font-size: 14px;
+    padding: 12px;
+    overflow-x: hidden;
+  }
+}
+"""
+
+
+def ajustar_painel_na_raiz(caminho_html: Path) -> None:
+    print(f"Pasta raiz  : {RAIZ_PROJETO}")
+    print(f"Painel alvo : {caminho_html}")
+
+    if not caminho_html.exists() or not caminho_html.is_file():
+        print("[ERRO] index.html não encontrado na raiz do projeto.")
         return
 
-    print(f"📁 Total de ficheiros de layout mapeados: {len(arquivos_alvo)}")
-    print("=" * 60)
+    conteudo = caminho_html.read_text(encoding="utf-8")
+    backup = caminho_html.with_suffix(".html.bak")
+    shutil.copy2(caminho_html, backup)
 
-    total_corrigidos = 0
+    alterado = False
 
-    for caminho in arquivos_alvo:
-        try:
-            with open(caminho, "r", encoding="utf-8") as f:
-                conteudo_original = f.read()
-        except Exception as e:
-            print(f"❌ Erro de leitura em {caminho.name}: {e}")
-            continue
+    # 1. Garante meta viewport no <head>
+    if 'name="viewport"' not in conteudo and "name='viewport'" not in conteudo:
+        meta_vp = '  <meta name="viewport" content="width=device-width, initial-scale=1.0" />\n'
+        if re.search(r"</head>", conteudo, flags=re.IGNORECASE):
+            conteudo = re.sub(
+                r"(</head>)", meta_vp + r"\1", conteudo, count=1, flags=re.IGNORECASE
+            )
+            alterado = True
+            print('[OK] Tag <meta name="viewport"> adicionada ao index.html.')
 
-        # Expressão regular universal: captura qualquer z-index (independente de maiúsculas, espaços ou estilo inline)
-        def substituir_z_index(match):
-            valor_str = match.group(1)
-            
-            if not valor_str or not valor_str.isdigit():
-                return match.group(0)
-            
-            valor = int(valor_str)
-            
-            # Se for >= 100, normaliza para 50 para limpar o MIBO
-            if valor >= 100:
-                return "z-index: 50"
-            
-            return match.group(0)
+    # 2. Garante regras @media para tablet (1024px) e celular (640px)
+    tem_1024 = bool(re.search(r"@media[^\{]*max-width\s*:\s*1024px", conteudo, flags=re.IGNORECASE))
+    tem_640 = bool(re.search(r"@media[^\{]*max-width\s*:\s*640px", conteudo, flags=re.IGNORECASE))
 
-        # Aplica a substituição com ignorância total a maiúsculas/minúsculas e espaçamentos
-        conteudo_atualizado = re.sub(
-            r'z-index\s*:\s*(\d+)', 
-            substituir_z_index, 
-            conteudo_original, 
-            flags=re.IGNORECASE
-        )
+    if not (tem_1024 and tem_640):
+        if re.search(r"</style>", conteudo, flags=re.IGNORECASE):
+            conteudo = re.sub(
+                r"(</style>)",
+                BLOCO_RESPONSIVO + "\n" + r"\1",
+                conteudo,
+                count=1,
+                flags=re.IGNORECASE,
+            )
+            alterado = True
+            print("[OK] Regras @media (1024px e 640px) inseridas no <style> do index.html.")
+        elif re.search(r"</head>", conteudo, flags=re.IGNORECASE):
+            estilo_novo = f"<style>\n{BLOCO_RESPONSIVO}\n</style>\n"
+            conteudo = re.sub(
+                r"(</head>)",
+                estilo_novo + r"\1",
+                conteudo,
+                count=1,
+                flags=re.IGNORECASE,
+            )
+            alterado = True
+            print("[OK] Bloco <style> criado com regras @media (1024px e 640px) no index.html.")
+    else:
+        print("[OK] Regras @media para 1024px e 640px já constam no index.html.")
 
-        if conteudo_atualizado != conteudo_original:
-            backup_path = caminho.with_suffix(caminho.suffix + '.bak')
-            with open(backup_path, "w", encoding="utf-8") as f_bak:
-                f_bak.write(conteudo_original)
+    if alterado:
+        caminho_html.write_text(conteudo, encoding="utf-8")
+        print(f"[SALVO] {caminho_html.name} atualizado na raiz (backup em {backup.name}).")
+    else:
+        if backup.exists():
+            backup.unlink()
+        print("[INFO] Nenhuma alteração foi necessária no index.html.")
 
-            with open(caminho, "w", encoding="utf-8") as f:
-                f.write(conteudo_atualizado)
-            
-            total_corrigidos += 1
-            print(f"✔ [CORRIGIDO] Camadas ajustadas em: {caminho.name} (Backup gerado)")
-        else:
-            print(f"✔ [ESTÁVEL] {caminho.name} sem alterações necessárias.")
-
-    print("=" * 60)
-    print(f"🎯 Varredura concluída! Ficheiros corrigidos nesta ronda: {total_corrigidos}\n")
 
 if __name__ == "__main__":
-    reparar_camadas_painel()
+    ajustar_painel_na_raiz(PAINEL_HTML)
