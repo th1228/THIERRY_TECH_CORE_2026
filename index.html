@@ -791,6 +791,217 @@
   setTimeout(organizarRodapeMesh, 400);
 })();
 </script>
+
+<script id="thierry-cards-i18n-patch">
+(function() {
+  const THIERRY_CARDS_I18N = {
+    pt: {
+    "card_integridade_tecidual": "Integridade Tecidual",
+    "card_status_estavel": "Estável",
+    "card_colageno_apex": "Colágeno Apex",
+    "card_status_otimo": "Ótimo",
+    "card_valor_hidrico": "Valor Hídrico (Hidratação)",
+    "card_status_balanceado": "Balanceado",
+    "card_governanca_sincronia": "Governança de Sincronia",
+    "card_status_nucleo_global": "STATUS DO NÚCLEO GLOBAL",
+    "card_sincronizado_64_nos": "Sincronizado • 64 Nós Ativos",
+    "card_giro_3d": "Giro 3D",
+    "card_fechar": "X Fechar",
+    "card_comando_medico": "[+] Comando Médico",
+    "card_comando_clinico": "[+] Comando Clínico",
+    "card_status_ativo": "ATIVO"
+},
+    en: {
+    "card_integridade_tecidual": "Tissue Integrity",
+    "card_status_estavel": "Stable",
+    "card_colageno_apex": "Apex Collagen",
+    "card_status_otimo": "Optimal",
+    "card_valor_hidrico": "Hydric Value (Hydration)",
+    "card_status_balanceado": "Balanced",
+    "card_governanca_sincronia": "Synchrony Governance",
+    "card_status_nucleo_global": "GLOBAL CORE STATUS",
+    "card_sincronizado_64_nos": "Synchronized • 64 Active Nodes",
+    "card_giro_3d": "3D Rotate",
+    "card_fechar": "X Close",
+    "card_comando_medico": "[+] Medical Command",
+    "card_comando_clinico": "[+] Clinical Command",
+    "card_status_ativo": "ACTIVE"
+}
+  };
+
+  function aplicarIdiomaCards(lang) {
+    const alvo = (String(lang || "pt").toLowerCase().startsWith("en")) ? "en" : "pt";
+    const dict = THIERRY_CARDS_I18N[alvo] || {};
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const chave = el.getAttribute("data-i18n");
+      if (chave && Object.prototype.hasOwnProperty.call(dict, chave)) {
+        el.textContent = dict[chave];
+      }
+    });
+  }
+
+  window.THIERRY_CARDS_I18N = THIERRY_CARDS_I18N;
+  window.aplicarIdiomaCards = aplicarIdiomaCards;
+
+  // Engancha em cliques de botões/elementos que alternam PT / EN sem quebrar lógica existente
+  document.addEventListener("click", function(ev) {
+    const btn = ev.target.closest("[data-lang], [lang], button, a, span, div");
+    if (!btn) return;
+    const txt = (btn.getAttribute("data-lang") || btn.textContent || "").trim().toUpperCase();
+    if (txt === "EN" || txt === "ENGLISH") {
+      setTimeout(() => aplicarIdiomaCards("en"), 30);
+    } else if (txt === "PT" || txt === "PORTUGUES" || txt === "PORTUGUÊS") {
+      setTimeout(() => aplicarIdiomaCards("pt"), 30);
+    }
+  }, true);
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const langAtual = document.documentElement.lang || localStorage.getItem("lang") || "pt";
+    aplicarIdiomaCards(langAtual);
+  });
+})();
+</script>
+
+
+
+<script id="thierry-10-cards-estavel-i18n">
+(function() {
+  const PARES_EN = {
+    "fototipo": "Phototype",
+    "contorno": "Contour",
+    "colágeno": "Collagen",
+    "colageno": "Collagen",
+    "liderança": "Leadership",
+    "lideranca": "Leadership",
+    "vitalidade": "Vitality",
+    "aprovado": "Approved",
+    "otimizado": "Optimized",
+    "anos": "Years",
+    "nós": "Nodes",
+    "nos": "Nodes",
+    "integridade tecidual": "Tissue Integrity",
+    "estável": "Stable",
+    "estavel": "Stable",
+    "ótimo": "Optimal",
+    "otimo": "Optimal",
+    "hidratação": "Hydration",
+    "hidratacao": "Hydration",
+    "balanceado": "Balanced",
+    "ativo": "Active"
+};
+  const PARES_PT = Object.fromEntries(
+    Object.entries(PARES_EN).map(([pt, en]) => [en.toLowerCase(), pt])
+  );
+
+  let idiomaFixo = null;
+  let pausarObserver = false;
+  let timerDebounce = null;
+
+  function detectarIdiomaAtual() {
+    if (idiomaFixo === 'en' || idiomaFixo === 'pt') return idiomaFixo;
+
+    const htmlLang = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+    if (htmlLang.startsWith("en")) return "en";
+    if (htmlLang.startsWith("pt")) return "pt";
+
+    const saved = (localStorage.getItem("lang") || localStorage.getItem("language") || localStorage.getItem("i18nLang") || "").toLowerCase();
+    if (saved.startsWith("en")) return "en";
+    if (saved.startsWith("pt")) return "pt";
+
+    return "pt";
+  }
+
+  function escaparRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  }
+
+  function traduzirTexto(texto, alvo) {
+    if (!texto || typeof texto !== "string") return texto;
+    const mapa = alvo === "en" ? PARES_EN : PARES_PT;
+    let saida = texto;
+    const chaves = Object.keys(mapa).sort((a, b) => b.length - a.length);
+    for (const termo of chaves) {
+      const regex = new RegExp("(?<![A-Za-zÀ-ÿ0-9_])" + escaparRegex(termo) + "(?![A-Za-zÀ-ÿ0-9_])", "gi");
+      saida = saida.replace(regex, (match) => {
+        const trad = mapa[termo.toLowerCase()];
+        if (!trad) return match;
+        if (match === match.toUpperCase()) return trad.toUpperCase();
+        if (match[0] === match[0].toUpperCase()) return trad.charAt(0).toUpperCase() + trad.slice(1);
+        return trad;
+      });
+    }
+    return saida;
+  }
+
+  function obterAlvosDos10Cards() {
+    const candidatos = Array.from(document.querySelectorAll("div, article, section, li"));
+    const cards = candidatos.filter((el) => {
+      const txt = (el.textContent || "");
+      return /ID\s*0(?:0[1-9]|10)\b/i.test(txt) && txt.length < 600 && el.children.length >= 2;
+    });
+    return cards.slice(0, 10);
+  }
+
+  function aplicarNos10Cards(langForcado) {
+    if (langForcado === 'en' || langForcado === 'pt') {
+      idiomaFixo = langForcado;
+    }
+    const alvo = detectarIdiomaAtual();
+    const cards = obterAlvosDos10Cards();
+    const escopos = cards.length > 0 ? cards : [document.body];
+
+    pausarObserver = true;
+    try {
+      escopos.forEach((raizCard) => {
+        if (!raizCard) return;
+        const walker = document.createTreeWalker(raizCard, NodeFilter.SHOW_TEXT);
+        let node;
+        while ((node = walker.nextNode())) {
+          const pai = node.parentElement;
+          if (!pai || ["SCRIPT", "STYLE", "NOSCRIPT"].includes(pai.tagName)) continue;
+          const original = node.nodeValue;
+          const traduzido = traduzirTexto(original, alvo);
+          if (traduzido !== original) {
+            node.nodeValue = traduzido;
+          }
+        }
+      });
+    } finally {
+      setTimeout(() => { pausarObserver = false; }, 30);
+    }
+  }
+
+  window.aplicarNos10Cards = aplicarNos10Cards;
+
+  document.addEventListener("click", function(ev) {
+    const alvoBtn = ev.target.closest("button, [data-lang], a, span, div");
+    if (!alvoBtn) return;
+    const rotulo = (alvoBtn.getAttribute("data-lang") || alvoBtn.textContent || "").trim().toUpperCase();
+    if (rotulo === "EN" || rotulo === "ENGLISH") {
+      idiomaFixo = 'en';
+      [60, 180, 400].forEach((ms) => setTimeout(() => aplicarNos10Cards("en"), ms));
+    } else if (rotulo === "PT" || rotulo === "PORTUGUÊS" || rotulo === "PORTUGUES") {
+      idiomaFixo = 'pt';
+      [60, 180, 400].forEach((ms) => setTimeout(() => aplicarNos10Cards("pt"), ms));
+    }
+  }, true);
+
+  const observer = new MutationObserver(() => {
+    if (pausarObserver || !idiomaFixo) return;
+    clearTimeout(timerDebounce);
+    timerDebounce = setTimeout(() => aplicarNos10Cards(idiomaFixo), 90);
+  });
+
+  document.addEventListener("DOMContentLoaded", function() {
+    const inicial = detectarIdiomaAtual();
+    if (inicial === 'en') idiomaFixo = 'en';
+    aplicarNos10Cards(inicial);
+    if (document.body) {
+      observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    }
+  });
+})();
+</script>
 </body>
 </html><div class="dashboard-grid-master">
         <aside class="luxury-sidebar" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
@@ -810,7 +1021,7 @@
                     <!-- Métrica 1: Integridade Tecidual -->
                     <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 5px 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;">Integridade Tecidual</span>
+                            <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;" data-i18n="card_integridade_tecidual">Integridade Tecidual</span>
                             <span id="metric-val-integridade" style="color: var(--accent-clinical); font-weight: 700; font-size: 10px;">99.4% — Estável</span>
                         </div>
                         <span style="width: 6px; height: 6px; background: #38bdf8; border-radius: 50%; box-shadow: 0 0 8px #38bdf8;" title="Ativo no Motor"></span>
@@ -819,7 +1030,7 @@
                     <!-- Métrica 2: Colágeno Apex -->
                     <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 5px 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;">Colágeno Apex</span>
+                            <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;" data-i18n="card_colageno_apex">Colágeno Apex</span>
                             <span id="metric-val-colageno" style="color: var(--green-secure); font-weight: 700; font-size: 10px;">98.8% — Ótimo</span>
                         </div>
                         <span style="width: 6px; height: 6px; background: #059669; border-radius: 50%; box-shadow: 0 0 8px #059669;" title="Sincronizado"></span>
@@ -828,7 +1039,7 @@
                     <!-- Métrica 3: Valor Hídrico -->
                     <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 5px 10px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;">Valor Hídrico (Hidratação)</span>
+                            <span style="color: var(--text-secondary); display: block; font-size: 8.5px; text-transform: uppercase;" data-i18n="card_valor_hidrico">Valor Hídrico (Hidratação)</span>
                             <span id="metric-val-hidrico" style="color: #f59e0b; font-weight: 700; font-size: 10px;">88.5% — Balanceado</span>
                         </div>
                         <span style="width: 6px; height: 6px; background: #f59e0b; border-radius: 50%; box-shadow: 0 0 8px #f59e0b;" title="Monitorado"></span>
@@ -838,10 +1049,10 @@
 
             <!-- Bloco Inferior de Alinhamento e Governança Global -->
             <div style="margin-top: 15px; border-top: 1px solid var(--border-sovereign); padding-top: 12px;">
-                <div class="category-header" style="margin-bottom: 6px;">Governança de Sincronia</div>
+                <div class="category-header" style="margin-bottom: 6px;" data-i18n="card_governanca_sincronia">Governança de Sincronia</div>
                 <div style="background: rgba(59, 94, 102, 0.08); border: 1px solid var(--border-sovereign); padding: 6px 10px; border-radius: 10px;">
-                    <span style="color: var(--text-secondary); display: block; font-size: 8.5px; letter-spacing: 0.4px;">STATUS DO NÚCLEO GLOBAL</span>
-                    <span style="color: var(--text-primary); font-weight: 700; font-size: 11px;">Sincronizado • 64 Nós Ativos</span>
+                    <span style="color: var(--text-secondary); display: block; font-size: 8.5px; letter-spacing: 0.4px;" data-i18n="card_status_nucleo_global">STATUS DO NÚCLEO GLOBAL</span>
+                    <span style="color: var(--text-primary); font-weight: 700; font-size: 11px;" data-i18n="card_sincronizado_64_nos">Sincronizado • 64 Nós Ativos</span>
                 </div>
             </div>
         </aside><main class="center-stage-container">
@@ -1438,14 +1649,14 @@
             <div class="medical-commands-grid">
                 <div class="medical-panel-box">
                     <div class="medical-panel-title">
-                        <span>[+] Comando Médico</span>
-                        <span style="color:#10b981;">ATIVO</span>
+                        <span data-i18n="card_comando_medico">[+] Comando Médico</span>
+                        <span style="color:#10b981;" data-i18n="card_status_ativo">ATIVO</span>
                     </div>
                     <div>Protocolo de biosegurança Global Tier-1. Liberação de ativos biorreguladores e modulação de colágeno de alta densidade sob rastreamento óptico soberano.</div>
                 </div>
                 <div class="medical-panel-box">
                     <div class="medical-panel-title">
-                        <span>[+] Comando Clínico</span>
+                        <span data-i18n="card_comando_clinico">[+] Comando Clínico</span>
                         <span style="color:#38bdf8;">OPTIMIZED</span>
                     </div>
                     <div>Ajuste viscoelástico de contorno com vetorização de ancoragem tridimensional. Prevenção de degradação estrutural e validação de simetria facial.</div>

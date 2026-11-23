@@ -1,0 +1,65 @@
+======================================================================
+AUDITORIA DE TRADUÇÃO (PT / EN) & CARDS — THIERRY TECHNOLOGY CONCEPT GLOBAL
+======================================================================
+Data/Hora       : 2026-11-23 09:47:24
+Arquivo auditado: C:\projetos python\THIERRY_TECHNOLOGY_CORE\THIERRY_TECH_CORE_2026\index.html
+Backup seguro   : C:\projetos python\THIERRY_TECHNOLOGY_CORE\THIERRY_TECH_CORE_2026\_backup_i18n\index_20261123_094724.html.bak
+Usa data-i18n? : Sim
+Função idioma? : Sim
+Cards mapeados : 0
+Textos s/ i18n : 143
+----------------------------------------------------------------------
+O QUE PRECISA SER FEITO SEM QUEBRAR O LAYOUT:
+1. Não alterar classes de grid (.biogen-imperial-grid), z-index nem estrutura
+   de contêineres; mexer apenas no conteúdo textual/atributos data-i18n
+   e no dicionário de tradução PT/EN.
+2. Se algum card for renderizado via JavaScript, garantir que a função de
+   troca de idioma (PT/EN) chame novamente a renderização dos cards.
+3. Conferir cada rótulo de card no navegador após alternar para EN.
+----------------------------------------------------------------------
+CARDS DETECTADOS NO HTML:
+  [AVISO] Nenhum bloco com 'card' no class/id foi pego por regex estática.
+          Verifique se os cards são gerados por JS ou usam outra classe.
+----------------------------------------------------------------------
+AMOSTRA DE RÓTULOS/TEXTOS SEM data-i18n (ATÉ 40 ITENS):
+  [span] '• TELEMEDICINE COMPLIANCE TERMINAL v5.3'  -->  Sugestão EN: '[EN] • TELEMEDICINE COMPLIANCE TERMINAL v5.3'
+  [span] '🛡️ AUDIT TIER-1'  -->  Sugestão EN: '[EN] 🛡️ AUDIT TIER-1'
+  [span] '[TTC Global Corp]'  -->  Sugestão EN: '[EN] [TTC Global Corp]'
+  [span] 'AJUSTES'  -->  Sugestão EN: '[EN] AJUSTES'
+  [span] 'CAM: BLOQUEADA'  -->  Sugestão EN: '[EN] CAM: BLOQUEADA'
+  [span] '11:27 PM'  -->  Sugestão EN: '[EN] 11:27 PM'
+  [button] 'PT'  -->  Sugestão EN: '[EN] PT'
+  [button] 'EN'  -->  Sugestão EN: '[EN] EN'
+  [span] 'Integridade Tecidual'  -->  Sugestão EN: 'Integrity Tecidual'
+  [span] '99.4% — Estável'  -->  Sugestão EN: '[EN] 99.4% — Estável'
+  [span] 'Colágeno Apex'  -->  Sugestão EN: 'Collagen Apex'
+  [span] '98.8% — Ótimo'  -->  Sugestão EN: '[EN] 98.8% — Ótimo'
+  [span] 'Valor Hídrico (Hidratação)'  -->  Sugestão EN: 'Valor Hídrico (Hydration)'
+  [span] '88.5% — Balanceado'  -->  Sugestão EN: '[EN] 88.5% — Balanceado'
+  [div] 'Governança de Sincronia'  -->  Sugestão EN: 'Governance de Sincronia'
+  [span] 'STATUS DO NÚCLEO GLOBAL'  -->  Sugestão EN: '[EN] STATUS DO NÚCLEO GLOBAL'
+  [span] 'Sincronizado • 64 Nós Ativos'  -->  Sugestão EN: 'Synchronized • 64 Nós Ativos'
+  [div] 'ID: 001_SYS • MESH_64N_V1'  -->  Sugestão EN: '[EN] ID: 001_SYS • MESH_64N_V1'
+  [div] 'ID: 002_SYS • MESH_64N_V2'  -->  Sugestão EN: '[EN] ID: 002_SYS • MESH_64N_V2'
+  [div] 'ID: 003_SYS • MESH_64N_VOL'  -->  Sugestão EN: '[EN] ID: 003_SYS • MESH_64N_VOL'
+  [div] 'ID: 004_SYS • MESH_64N_AGE'  -->  Sugestão EN: '[EN] ID: 004_SYS • MESH_64N_AGE'
+  [div] 'ID: 005_SYS • MESH_64N_AGE'  -->  Sugestão EN: '[EN] ID: 005_SYS • MESH_64N_AGE'
+  [div] 'ID: 006_SYS • MESH_64N_LMT'  -->  Sugestão EN: '[EN] ID: 006_SYS • MESH_64N_LMT'
+  [div] 'ID: 007_SYS • MESH_POL_OPT'  -->  Sugestão EN: '[EN] ID: 007_SYS • MESH_POL_OPT'
+  [div] 'ID: 008_SYS • MESH_VITAL_DN'  -->  Sugestão EN: '[EN] ID: 008_SYS • MESH_VITAL_DN'
+  [div] 'ID: 009_SYS • MESH_COM_SOV'  -->  Sugestão EN: '[EN] ID: 009_SYS • MESH_COM_SOV'
+  [div] 'ID: 010_SYS • MESH_AUT_LAT'  -->  Sugestão EN: '[EN] ID: 010_SYS • MESH_AUT_LAT'
+  [button] '🔄 Giro 3D'  -->  Sugestão EN: '[EN] 🔄 Giro 3D'
+  [span] 'DESTAQUE 3D • ANÁLISE ESTEREOFOTOGRAMÉTRICA'  -->  Sugestão EN: '[EN] DESTAQUE 3D • ANÁLISE ESTEREOFOTOGRAMÉTRICA'
+  [div] '[HIPAA Compliant | GDPR Medical Encrypted | DICOM Ready]'  -->  Sugestão EN: '[EN] [HIPAA Compliant | GDPR Medical Encrypted | DICOM Ready]'
+  [button] '✕ Fechar'  -->  Sugestão EN: '[EN] ✕ Fechar'
+  [span] 'SINCRONIZADO'  -->  Sugestão EN: 'Synchronized'
+  [span] '99.4% STABLE'  -->  Sugestão EN: '[EN] 99.4% STABLE'
+  [span] '[+] Comando Médico'  -->  Sugestão EN: '[EN] [+] Comando Médico'
+  [span] 'ATIVO'  -->  Sugestão EN: '[EN] ATIVO'
+  [span] '[+] Comando Clínico'  -->  Sugestão EN: '[EN] [+] Comando Clínico'
+  [span] 'OPTIMIZED'  -->  Sugestão EN: '[EN] OPTIMIZED'
+  [div] '1.4 Hz'  -->  Sugestão EN: '[EN] 1.4 Hz'
+  [div] '100% Tier-1'  -->  Sugestão EN: '[EN] 100% Tier-1'
+  [div] '64 Nós'  -->  Sugestão EN: '64 Nodes'
+======================================================================
