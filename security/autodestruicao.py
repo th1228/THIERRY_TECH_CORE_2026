@@ -41,7 +41,7 @@ def executar_protocolo_emergencia():
             efeito_terminal("[SUCESSO] Logs do sistema sanitizados e apagados permanentemente.", "\033[92m")
         else:
             efeito_terminal("[INFO] Nenhum arquivo de log vulnerável encontrado na raiz.", "\033[96m")
-    except Exception as e:
+    except OSError as e:
         efeito_terminal(f"[ERRO] Falha na limpeza de logs: {e}", "\033[91m")
 
     time.sleep(0.4)
@@ -64,7 +64,7 @@ def executar_protocolo_emergencia():
         from core.memoria_comum import instancia_memoria
         instancia_memoria.limpar_sessao()
         efeito_terminal("[SUCESSO] Memória de sessão purgada com sucesso.", "\033[92m")
-    except Exception as e:
+    except (ImportError, AttributeError, OSError, RuntimeError, TypeError, ValueError) as e:
         efeito_terminal(f"[AVISO] Módulo de memória isolado ou não carregado: {e}", "\033[96m")
 
     time.sleep(0.4)
@@ -93,7 +93,7 @@ if __name__ == "__main__":
     os.system("cls" if os.name == "nt" else "clear")
     
     efeito_terminal("=" * 70, "\033[94m")
-    efeito_terminal(" THIERRY TECH CORE 2026 - PROTOCOLO DE AUTODESTRUICAO & COMPLIANCE", "\033[95m")
+    efeito_terminal(" THIERRY TECH CORE 2026 - PROTOCOLO DE AUTODESTRUIICAO & COMPLIANCE", "\033[95m")
     efeito_terminal("=" * 70, "\033[94m")
     
     time.sleep(0.5)

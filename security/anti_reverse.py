@@ -44,12 +44,13 @@ class AntiReverse:
         """Verifica se há tentativa real de depuração ativa no ambiente Windows."""
         if sys.platform == "win32":
             try:
-                kernel32 = ctypes.windll.kernel32
-                if kernel32.IsDebuggerPresent():
+                windll = getattr(ctypes, "windll", None)
+                kernel32 = getattr(windll, "kernel32", None) if windll is not None else None
+                if kernel32 is not None and bool(kernel32.IsDebuggerPresent()):
                     logger.registrar("ANTI_REVERSE", "ALERTA", "Debugger real detectado no sistema!")
                     return True
-            except Exception:
-                pass
+            except (AttributeError, OSError, RuntimeError, TypeError, ValueError) as exc:
+                logger.registrar("ANTI_REVERSE", "AVISO", f"Falha ao verificar depurador: {exc}")
         return False
 
     @staticmethod

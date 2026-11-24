@@ -44,15 +44,20 @@ from pydantic import BaseModel, Field
 import uvicorn
 import fitz  # PyMuPDF para conversão dinâmica de PDF em imagem
 import stripe  # SDK oficial da Stripe para pagamentos reais
-from security.sentinel import TTCSentinel
+from dotenv import load_dotenv
 
 # --- CARREGAMENTO SEGURO DAS VARIÁVEIS DE AMBIENTE (.ENV) ---
-from dotenv import load_dotenv
 load_dotenv()
 
 # --- CAMINHO BASE BLINDADO (À PROVA DE DESZIPAGEM) ---
 BASE_DIR = Path(__file__).resolve().parent
-sys.path.append(str(BASE_DIR))
+if str(BASE_DIR) not in sys.path:
+    sys.path.append(str(BASE_DIR))
+
+try:
+    from security.sentinel import TTCSentinel
+except ImportError:
+    from security.sentinel import Sentinel as TTCSentinel  # type: ignore
 
 # --- IMPORTAÇÃO DO GERENCIADOR CENTRAL MIBO (NÚCLEO ISOLADO) ---
 try:
@@ -159,8 +164,10 @@ except ImportError:
 try:
     from core.geodefense import validar_geofencing_global, gerar_token_titular_global  # type: ignore
 except ImportError:
-    def validar_geofencing_global(*args: Any, **kwargs: Any) -> bool: return True  # type: ignore
-    def gerar_token_titular_global() -> str: return "TCC-GLOBAL-FALLBACK"  # type: ignore
+    def validar_geofencing_global(*args: Any, **kwargs: Any) -> bool:
+        return True  # type: ignore
+    def gerar_token_titular_global() -> str:
+        return "TCC-GLOBAL-FALLBACK"  # type: ignore
 
 memoria_global: Any = None
 try:
@@ -323,9 +330,11 @@ class AuditoriaMonacoComplianceTier1:
                 hash_esperado = bloco["proof_hash"]
         return {"status_valido": True, "mensagem": "Cadeia e chaves assimétricas Mônaco Tier-1 100% íntegras."}
 
+
 auditor_ledger = AuditoriaMonacoComplianceTier1(PASTA_VAULT)
 
 CAMINHO_CHAVE_PRIVADA_CONTRATO = PASTA_VAULT / "node_private_key.pem"
+
 
 def carregar_chave_privada_contrato():
     if os.path.exists(CAMINHO_CHAVE_PRIVADA_CONTRATO):
@@ -335,6 +344,7 @@ def carregar_chave_privada_contrato():
     if private_key_env:
         return serialization.load_pem_private_key(private_key_env.encode("utf-8"), password=None)
     return None
+
 
 private_key_contrato = carregar_chave_privada_contrato()
 
@@ -427,7 +437,7 @@ def compilar_pdf_especifico(
                 "empresa": empresa_limpa_input,
                 "documento": prefixo_alvo
             })
-        except Exception as e:
+        except (RuntimeError, ValueError, KeyError, TypeError, OSError) as e:
             print(f"[AVISO DIAGNÓSTICO EVOLUÇÃO] {e}")
 
     time.sleep(0.3)
@@ -462,8 +472,9 @@ app.mount("/pdfs", StaticFiles(directory=str(PASTA_PDFS_FINAIS)), name="pdfs_fin
 
 logger = LogSeguro()
 
+
 def disparar_alerta_celular_email(nome_cliente: str, email_cliente: str, valor: str):
-    print(f"\n[ALERTA TCC GLOBAL] 🚨 Nova Licença UHNW Ativada via Stripe!")
+    print("\n[ALERTA TCC GLOBAL] 🚨 Nova Licença UHNW Ativada via Stripe!")
     logger.registrar("STRIPE", "PAGAMENTO_CONFIRMADO", f"Licença UHNW ativada para {nome_cliente} ({valor})")
     auditor_ledger.gerar_bloco_auditado("STRIPE_WEBHOOK", f"PAGAMENTO:{nome_cliente}", f"VALOR:{valor}|STATUS:OK")
 
@@ -517,6 +528,7 @@ class BiogemeoOrquestradorMaster:
         item = {"tipo": tipo, "caminho": caminho, "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")}
         self.memoria_sessao["fila_arquivos_gerados"].append(item)
         logger.registrar("FILA", "REGISTRO", f"Arquivo {tipo} enfileirado: {caminho}")
+
 
 orquestrador = BiogemeoOrquestradorMaster()
 
@@ -752,7 +764,7 @@ async def processar_gerenciador_mibo(request: Request):
         })
     except HTTPException:
         raise
-    except Exception as e:
+    except (ValueError, KeyError, TypeError, RuntimeError, OSError, json.JSONDecodeError) as e:
         raise HTTPException(status_code=500, detail=f"Erro crítico no despacho do Gerenciador Mibo: {str(e)}")
 
 
@@ -1129,7 +1141,8 @@ def listar_pdfs_finais() -> JSONResponse:
             nome_arq = f.name.lower()
             tipo_classificado = "roy" if "roy" in nome_arq else ("pit" if "pit" in nome_arq else ("contrato" if "contrato" in nome_arq else "dossie"))
             lista_arquivos.append({
-                "nome": f.name, "tipo_identificado": tipo_classificado,
+                "nome": f.name,
+                "tipo_identificado": tipo_classificado,
                 "caminho": f"/pdfs/{f.name}",
                 "tamanho_kb": round(f.stat().st_size / 1024, 2),
                 "data_modificacao": datetime.datetime.fromtimestamp(f.stat().st_mtime).strftime("%Y-%m-%d %H:%M:%S")

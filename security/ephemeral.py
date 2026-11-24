@@ -20,6 +20,7 @@ import logging
 logger = logging.getLogger("TTC_Security")
 logger.setLevel(logging.INFO)
 
+
 class EphemeralShredder:
     """
     Destruidor Efêmero de Memória (Ephemeral Shredder).
@@ -45,16 +46,18 @@ class EphemeralShredder:
                         EphemeralShredder.shred(data_container[i])
                     data_container[i] = None
             elif hasattr(data_container, "__bytes__") or isinstance(data_container, bytes):
-                logger.warning("Objetos do tipo 'bytes' são imutáveis em Python. Apenas a referência foi apagada.")
+                logger.warning(
+                    "Objetos do tipo 'bytes' são imutáveis em Python. Apenas a referência foi apagada."
+                )
 
             # Deleta a referência da variável do escopo atual
             del data_container
-            
+
             # Força o coletor de lixo a liberar a memória imediatamente
             gc.collect()
-            
-        except Exception as e:
-            logger.error(f"Erro crítico durante o processo de shredding: {str(e)}")
+
+        except (TypeError, ValueError, IndexError, MemoryError, RuntimeError) as e:
+            logger.error(f"Erro crítico durante o processo de shredding: {e}")
             raise
 
     @staticmethod

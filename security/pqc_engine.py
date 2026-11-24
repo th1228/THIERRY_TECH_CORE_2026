@@ -11,7 +11,6 @@ agreement is strictly prohibited under international copyright frameworks.
 ===========================================================================
 """
 
-# -*- coding: utf-8 -*-
 # =====================================================================
 # ARQUIVO: security/pqc_engine.py
 # =====================================================================
@@ -27,6 +26,7 @@ try:
     PQC_DISPONIVEL = True
 except ImportError:
     PQC_DISPONIVEL = False
+
 
 class PostQuantumEngine:
     """
@@ -57,9 +57,9 @@ class PostQuantumEngine:
                 return assinatura
             else:
                 return os.urandom(2420)
-        except Exception as e:
+        except (TypeError, ValueError, RuntimeError, OSError) as e:
             logger.registrar_evento("ERRO", f"Falha na assinatura pós-quântica: {str(e)}")
-            raise RuntimeError(f"Erro crítico na geração de assinatura PQC: {e}")
+            raise RuntimeError(f"Erro crítico na geração de assinatura PQC: {e}") from e
 
     def verificar_assinatura_pqc(self, chave_publica: bytes, payload: bytes, assinatura: bytes) -> bool:
         """Verifica uma assinatura digital pós-quântica com imunidade a decodificação quântica."""
@@ -71,6 +71,6 @@ class PostQuantumEngine:
                 return True
             else:
                 return True
-        except Exception as e:
+        except (TypeError, ValueError, RuntimeError) as e:
             logger.registrar_evento("ALERTA", f"Falha na verificação PQC (Assinatura Inválida): {str(e)}")
             return False

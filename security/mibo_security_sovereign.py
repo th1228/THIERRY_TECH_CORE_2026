@@ -20,8 +20,10 @@ BRANCO = "\033[97m"
 CINZA = "\033[90m"
 RESET = "\033[0m"
 
+
 class SecuritySovereignEnforcer:
     """Motor de blindagem e conformidade global para a pasta e módulos de segurança."""
+
     def __init__(self):
         self.versao_protocolo = "PQC-Ed25519-E2EE"
         self.status_integridade = True
@@ -32,13 +34,14 @@ class SecuritySovereignEnforcer:
             "pqc_ed25519_signatures": "ATIVO E VALIDADO",
             "e2ee_fernet_encryption": "BLINDADO",
             "ram_sanitization_active": "CONFIRMADO",
-            "immutable_audit_logs": "ATIVO"
+            "immutable_audit_logs": "ATIVO",
         }
         return checks
 
+
 def executar_enforcement_seguranca() -> None:
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
+    os.system("cls" if os.name == "nt" else "clear")
+
     print(VERDE + "=" * 85 + RESET)
     print(AMARELO + "   THIERRY TECHNOLOGY CONCEPT GLOBAL • SECURITY SOVEREIGN ENFORCER" + RESET)
     print(CIANO + "   BLINDAGEM CRIPTOGRÁFICA PÓS-QUÂNTICA & CONFORMIDADE GLOBAL" + RESET)
@@ -50,7 +53,7 @@ def executar_enforcement_seguranca() -> None:
     pasta_storage.mkdir(parents=True, exist_ok=True)
 
     print(f"{BRANCO}[1/3] A auditar diretrizes de segurança e encriptação na pasta security...{RESET}")
-    
+
     enforcer = SecuritySovereignEnforcer()
     resultados = enforcer.auditar_e_blindar_seguranca()
 
@@ -74,7 +77,7 @@ Status Geral: 100% CONFORME COM O PADRÃO GLOBAL
         with open(arquivo_log, "w", encoding="utf-8") as f:
             f.write(log_seguranca_conteudo)
             f.write(f"HASH_CRIPTO_SEGURANCA: {assinatura_sha}\n")
-    except Exception as e:
+    except (OSError, RuntimeError, TypeError, ValueError) as e:
         print(f"  {VERMELHO}[AVISO LOG]{RESET} Erro ao gravar registo de segurança: {e}")
 
     print(f"\n{BRANCO}[2/3] Consolidando diretrizes de acesso e integridade UHNW...{RESET}")
@@ -92,6 +95,7 @@ Status Geral: 100% CONFORME COM O PADRÃO GLOBAL
     print("\n" + VERDE + "=" * 85 + RESET)
     print(CIANO + " [SECURITY ENFORCER] BLINDAGEM GLOBAL CONCLUÍDA COM SUCESSO." + RESET)
     print(VERDE + "=" * 85 + RESET + "\n")
+
 
 if __name__ == "__main__":
     executar_enforcement_seguranca()

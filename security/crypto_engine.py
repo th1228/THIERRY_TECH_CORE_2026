@@ -18,11 +18,10 @@ agreement is strictly prohibited under international copyright frameworks.
 import os
 import sys
 import time
-import hmac
-import hashlib
 import base64
+import hashlib
 import importlib.util
-from cryptography.fernet import Fernet
+from cryptography.fernet import Fernet, InvalidToken
 
 # Garante a raiz do projeto no path do Python
 raiz_projeto = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
@@ -37,6 +36,7 @@ except ImportError:
 
 logger = LogSeguro()
 
+
 # =====================================================================
 # IMPORTAÇÃO DINÂMICA DO ANONIMIZADOR (Blindada contra erros)
 # =====================================================================
@@ -50,9 +50,10 @@ def _carregar_anonimizador():
                 spec.loader.exec_module(modulo)
                 if hasattr(modulo, "DataAnonimizer"):
                     return modulo.DataAnonimizer
-    except Exception:
+    except (OSError, ImportError, AttributeError, ValueError, RuntimeError):
         pass
     return None
+
 
 DataAnonimizer = _carregar_anonimizador()
 
@@ -68,7 +69,7 @@ class CryptoEngine:
         self._intervalo_rotacao = 60  # Rotação a cada 60 segundos
         self._timestamp_ultima_rotacao = time.time()
         self._sub_chave_atual = self._derivar_chave_temporaria()
-        
+
         status_anon = "Ativo e Sincronizado" if DataAnonimizer is not None else "Modo Isolado (Fallback Ativo)"
         logger.registrar("CRYPTO_ENGINE", "SUCESSO", f"Motor Criptográfico inicializado. DataAnonimizer: {status_anon}.")
 
@@ -103,7 +104,7 @@ class CryptoEngine:
                         dados_claros = dado_anonimizado
                     else:
                         dados_claros = str(dado_anonimizado).encode('utf-8')
-            except Exception as e:
+            except (UnicodeDecodeError, TypeError, ValueError, AttributeError, RuntimeError) as e:
                 logger.registrar("CRYPTO_ENGINE", "ALERTA", f"Aviso na anonimização prévia: {e}")
 
         f = Fernet(self._sub_chave_atual)
@@ -115,9 +116,9 @@ class CryptoEngine:
         f = Fernet(self._sub_chave_atual)
         try:
             return f.decrypt(dados_cifrados)
-        except Exception as e:
+        except (InvalidToken, TypeError, ValueError) as e:
             logger.registrar("CRYPTO_ENGINE", "ALERTA", "Tentativa de decifragem com chave expirada ou inválida.")
-            raise ValueError("Falha na decifragem: A chave pode ter expirado por rotação de Key Rolling.")
+            raise ValueError("Falha na decifragem: A chave pode ter expirado por rotação de Key Rolling.") from e
 
 
 def efeito_terminal(texto, cor_codigo="\033[96m", delay=0.015):
@@ -132,29 +133,29 @@ def efeito_terminal(texto, cor_codigo="\033[96m", delay=0.015):
 
 if __name__ == "__main__":
     os.system("cls" if os.name == "nt" else "clear")
-    
+
     efeito_terminal("=" * 65, "\033[94m")
     efeito_terminal(" THIEXEC TECH CORE 2026 - MOTOR CRIPTOGRAFICO INTEGRADO", "\033[95m")
     efeito_terminal("=" * 65, "\033[94m")
-    
+
     time.sleep(0.4)
     efeito_terminal("\n[INFO] Inicializando motor e validando conexões...", "\033[93m")
     time.sleep(0.5)
-    
+
     engine = CryptoEngine()
-    
+
     efeito_terminal("[SUCESSO] Conexão com DataAnonimizer validada com segurança.", "\033[92m")
     time.sleep(0.6)
-    
+
     mensagem = b"Dados Confidenciais Protegidos pelo Ecossistema Completo"
     efeito_terminal(f"\n[TESTE REAL] Mensagem clara: {mensagem.decode()}", "\033[96m")
     time.sleep(0.5)
-    
+
     efeito_terminal("[CIFRAGEM] Processando e encriptando...", "\033[93m")
     cifrado = engine.cifrar(mensagem)
     time.sleep(0.4)
     print(f"   -> Payload: \033[93m{cifrado[:35]}...\033[0m")
-    
+
     efeito_terminal("[DECIFRAGEM] Validando e restaurando dados...", "\033[93m")
     decifrado = engine.decifrar(cifrado)
     time.sleep(0.4)
@@ -165,7 +166,7 @@ if __name__ == "__main__":
     efeito_terminal(" -> Status de Auditoria: Aprovado sem ressalvas.", "\033[93m")
     efeito_terminal(" -> Importação Absoluta: Blindada para execução direta.", "\033[93m")
     efeito_terminal(" -> VEREDITO FINAL: Execução perfeita e zero erros.", "\033[92m")
-    
+
     efeito_terminal("\n" + "=" * 65, "\033[94m")
     efeito_terminal(" SISTEMA OPERANDO COM PERFEICAO ABSOLUTA.", "\033[92m")
     efeito_terminal("=" * 65 + "\n", "\033[94m")

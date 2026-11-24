@@ -15,6 +15,7 @@ agreement is strictly prohibited under international copyright frameworks.
 import hashlib
 import os
 
+
 class IntegrityVerifier:
     @staticmethod
     def calcular_hash(caminho_arquivo):
@@ -25,7 +26,7 @@ class IntegrityVerifier:
                 while chunk := f.read(8192):
                     sha256.update(chunk)
             return sha256.hexdigest()
-        except FileNotFoundError:
+        except (FileNotFoundError, PermissionError, OSError):
             return None
 
     @staticmethod

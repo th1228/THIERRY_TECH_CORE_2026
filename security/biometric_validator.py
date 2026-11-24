@@ -24,6 +24,7 @@ from .log_seguro import LogSeguro
 
 logger = LogSeguro()
 
+
 class BiometricValidator:
     """
     Validador Biométrico e Motor de Esteganografia Forense (Watermarking Invisível).
@@ -43,14 +44,14 @@ class BiometricValidator:
 
             # Gera o payload forense autenticado via HMAC
             h = hmac.new(chave_secreta, id_sessao.encode(), hashlib.sha256).digest()
-            
+
             # Abre a imagem e converte para array numpy
             img = Image.open(caminho_imagem).convert("RGB")
             arr = np.array(img, dtype=np.uint8)
-            
+
             # Converte o hash da assinatura para uma sequência de bits binários
             bits_assinatura = ''.join(format(byte, '08b') for byte in h)
-            
+
             flat_arr = arr.flatten()
             if len(bits_assinatura) > len(flat_arr):
                 logger.registrar("WATERMARK", "ERRO", "Imagem muito pequena para conter a assinatura forense.")
@@ -63,10 +64,10 @@ class BiometricValidator:
             # Reconstrói a imagem com a esteganografia aplicada
             img_marcada = Image.fromarray(flat_arr.reshape(arr.shape), 'RGB')
             img_marcada.save(caminho_imagem)
-            
+
             logger.registrar("WATERMARK", "SUCESSO", f"Assinatura forense invisível injetada na sessão: {id_sessao}")
             return True
-        except Exception as e:
+        except (OSError, ValueError, TypeError, OverflowError) as e:
             logger.registrar("WATERMARK", "EXCECAO", f"Falha ao aplicar marca d'água: {str(e)}")
             return False
 

@@ -50,16 +50,16 @@ class SessionManager:
         chave = _obter_secret_key()
         try:
             payload = jwt.decode(token, chave, algorithms=["HS256"])
-            
+
             # Recalcula o hash do contexto atual para comparar
             hash_atual = hashlib.sha256(f"{ip_atual}{hardware_fingerprint_atual}".encode()).hexdigest()
-            
+
             if payload["context_hash"] != hash_atual:
                 return {"valido": False, "erro": "Sequestro de Sessão Detectado"}
-                
+
             return {"valido": True, "usuario_id": payload["sub"]}
-            
+
         except jwt.ExpiredSignatureError:
             return {"valido": False, "erro": "Sessão Expirada"}
-        except Exception as e:
+        except (jwt.PyJWTError, KeyError, TypeError, ValueError) as e:
             return {"valido": False, "erro": str(e)}

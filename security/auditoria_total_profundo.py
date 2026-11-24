@@ -22,7 +22,7 @@ class AuditoriaTotalProfunda:
   def __init__(
       self,
       log_dir="Dado/Config",
-      operator="Thiêrry (TCC SOBERANO)",
+      operator="Genilson Rodrigues (TTC SOBERANO)",
       tenant="TTC Global Corp",
   ):
     self.log_dir = log_dir
@@ -65,8 +65,10 @@ class AuditoriaTotalProfunda:
     if os.path.exists(self.master_ledger_path):
       try:
         with open(self.master_ledger_path, "r", encoding="utf-8") as f:
-          historico = json.load(f)
-      except Exception:
+          dados = json.load(f)
+          if isinstance(dados, list):
+            historico = dados
+      except (OSError, ValueError, json.JSONDecodeError):
         historico = []
 
     historico.append(registro)

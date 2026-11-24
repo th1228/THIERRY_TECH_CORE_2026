@@ -49,12 +49,12 @@ class APDPMonacoApexEngine:
         bruta com zeros antes de liberar para o Garbage Collector.
         Impede que restos de imagens sejam recuperados da RAM (Memory Dumping).
         """
-        if isinstance(objeto_bytes_imagem, bytearray):
+        if isinstance(objeto_bytes_imagem, bytearray) and len(objeto_bytes_imagem) > 0:
             try:
                 local_memoria = (ctypes.c_char * len(objeto_bytes_imagem)).from_buffer(objeto_bytes_imagem)
                 ctypes.memset(local_memoria, 0, len(objeto_bytes_imagem))
                 self.logger.info("[✓] BLINDAGEM DE RAM: Buffer biométrico bruto destruído fisicamente com zeros.")
-            except Exception as e:
+            except (BufferError, OSError, RuntimeError, TypeError, ValueError) as e:
                 self.logger.critical(f"[❌] FALHA CRÍTICA DE BLINDAGEM: Não foi possível limpar a RAM: {e}")
         
         gc.collect()

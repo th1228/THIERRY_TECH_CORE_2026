@@ -18,12 +18,11 @@ agreement is strictly prohibited under international copyright frameworks.
 import os
 import sqlite3
 import hashlib
-import hmac
 import base64
-from datetime import datetime
+from datetime import datetime, timezone
 
-# Mude a linha 12 para:
 DB_PATH = "C:/TTC_SECURE_STORAGE/seguranca_audit.db"
+
 
 class LogSeguro:
     """
@@ -56,13 +55,13 @@ class LogSeguro:
         """Insere um log na cadeia imutável calculando o hash encadeado (Hash Chain)."""
         conexao = sqlite3.connect(DB_PATH)
         cursor = conexao.cursor()
-        
+
         # Pega o último hash para manter a imutabilidade em cadeia
         cursor.execute("SELECT hash_registro FROM logs_auditoria ORDER BY id DESC LIMIT 1")
         ultimo = cursor.fetchone()
         ultimo_hash = ultimo[0] if ultimo else "GENESIS_BLOCK"
 
-        timestamp = datetime.utcnow().isoformat()
+        timestamp = datetime.now(timezone.utc).isoformat()
         conteudo_bruto = f"{timestamp}|{modulo}|{nivel}|{mensagem}|{ultimo_hash}"
         hash_atual = hashlib.sha256(conteudo_bruto.encode()).hexdigest()
 
@@ -70,7 +69,7 @@ class LogSeguro:
             INSERT INTO logs_auditoria (timestamp, modulo, nivel, mensagem, hash_registro)
             VALUES (?, ?, ?, ?, ?)
         """, (timestamp, modulo, nivel, mensagem, hash_atual))
-        
+
         conexao.commit()
         conexao.close()
 

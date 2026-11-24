@@ -21,6 +21,7 @@ from .log_seguro import LogSeguro
 
 logger = LogSeguro()
 
+
 class HomomorphicBiometrics:
     """
     Motor de Criptografia Homomórfica para Vetores Biométricos.
@@ -48,7 +49,9 @@ class HomomorphicBiometrics:
         encrypted_vector = ts.ckks_vector(self.context, vetor_f64)
         return encrypted_vector.serialize()
 
-    def calcular_similaridade_homomorfica(self, vetor_cifrado_bytes: bytes, vetor_referencia_cifrado_bytes: bytes) -> float:
+    def calcular_similaridade_homomorfica(
+        self, vetor_cifrado_bytes: bytes, vetor_referencia_cifrado_bytes: bytes
+    ) -> float:
         """
         Calcula o produto interno (similaridade) diretamente com os dados 100% cifrados.
         O servidor processa a matemática sem saber quais são os números reais.
@@ -60,12 +63,12 @@ class HomomorphicBiometrics:
 
             # Operação homomórfica: Multiplicação direta na matriz cifrada
             resultado_cifrado = v1.dot(v2)
-            
+
             # Descriptografa apenas o resultado final da pontuação (opcional, ou mantido cifrado)
             pontuacao_final = resultado_cifrado.decrypt()[0]
-            
+
             return float(pontuacao_final)
 
-        except Exception as e:
-            logger.registrar("SISTEMA_HOMOMORFICO", "ERRO", f"Falha no cálculo cifrado: {str(e)}")
-            raise RuntimeError(f"Erro crítico em criptografia homomórfica: {e}")
+        except (TypeError, ValueError, RuntimeError, IndexError, BufferError) as e:
+            logger.registrar("SISTEMA_HOMOMORFICO", "ERRO", f"Falha no cálculo cifrado: {e}")
+            raise RuntimeError(f"Erro crítico em criptografia homomórfica: {e}") from e

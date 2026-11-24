@@ -17,7 +17,6 @@ Módulo de Gerenciamento do Cofre VaultUhnw (Background Worker)
 Compliance Mônaco & Auditoria Internacional (Localizado na pasta security)
 """
 
-import os
 import re
 import time
 import json
@@ -38,6 +37,7 @@ logging.basicConfig(
     format='{"timestamp": "%(asctime)s", "nivel": "%(levelname)s", "evento": %(message)s}'
 )
 
+
 class VaultUhnw:
     def __init__(self, base_dir: str = "vault_uhnw_storage"):
         """Inicializa a raiz do Cofre Seguro estritamente dentro da pasta security."""
@@ -46,26 +46,27 @@ class VaultUhnw:
             self.base_path = (SECURITY_DIR / caminho_passado).resolve()
         else:
             self.base_path = caminho_passado.resolve()
-        
+
         # Definição das pastas dos Cofres de Tempo (Compliance Mônaco)
         self.cofre_15_dias = self.base_path / "COFRE_QUINZENAL"
         self.cofre_1_ano = self.base_path / "COFRE_ANUAL_FISCAL"
         self.cofre_15_anos = self.base_path / "COFRE_HISTORICO_15_ANOS"
-        
+
         # Garante a criação física de toda a estrutura base
         for pasta in [self.base_path, self.cofre_15_dias, self.cofre_1_ano, self.cofre_15_anos]:
             pasta.mkdir(parents=True, exist_ok=True)
 
     def _sanitizar(self, texto: str) -> str:
         """Limpa textos removendo espaços e caracteres especiais para evitar falhas no SO."""
-        if not texto: return "GERAL"
+        if not texto:
+            return "GERAL"
         return re.sub(r'[^a-zA-Z0-9_]', '', texto.upper().strip().replace(" ", "_"))
 
     def obter_rota_armazenamento(self, nome_empresa: str, nome_ceo: str) -> Path:
         """Cria dinamicamente a pasta organizada do cliente por Nome e Data."""
         empresa_limpa = self._sanitizar(nome_empresa)
         ceo_limpo = self._sanitizar(nome_ceo)
-        
+
         agora = datetime.now()
         ano = agora.strftime("%Y")
         mes_nome = agora.strftime("%m_%B")
@@ -82,7 +83,7 @@ class VaultUhnw:
                 for byte_block in iter(lambda: f.read(4096), b""):
                     sha256_hash.update(byte_block)
             return sha256_hash.hexdigest()
-        except Exception:
+        except OSError:
             return "N/A"
 
     def _arquivo_esta_estavel(self, caminho_arquivo: Path) -> bool:
@@ -92,7 +93,7 @@ class VaultUhnw:
             time.sleep(0.5)
             tamanho_final = caminho_arquivo.stat().st_size
             return tamanho_inicial == tamanho_final
-        except Exception:
+        except OSError:
             return False
 
     def processar_ciclo_de_vida(self, caminho_arquivo: Path, empresa: str):
@@ -106,7 +107,7 @@ class VaultUhnw:
         agora = datetime.now()
         empresa_limpa = self._sanitizar(empresa)
         hash_documento = self.calcular_assinatura_digital(caminho_arquivo)
-        
+
         data_criacao = datetime.fromtimestamp(caminho_arquivo.stat().st_mtime)
         tempo_de_vida = agora - data_criacao
 
@@ -149,7 +150,7 @@ class VaultUhnw:
                             "tipo": "LIMPEZA_COFRE_QUINZENAL",
                             "arquivo_removido": arquivo.name
                         }))
-        except Exception as e:
+        except OSError as e:
             logging.error(f"Erro na limpeza do cofre quinzenal: {str(e)}")
 
 
@@ -160,14 +161,14 @@ def _loop_varredura_preventiva(vault_instance: VaultUhnw):
             vault_instance.limpar_cofre_quinzenal_expirado()
 
             for arquivo in list(vault_instance.base_path.glob("**/*")):
-                if arquivo.is_file() and not "COFRE_" in arquivo.parts and arquivo.suffix != '.log':
+                if arquivo.is_file() and "COFRE_" not in arquivo.parts and arquivo.suffix != '.log':
                     rel_path = arquivo.relative_to(vault_instance.base_path)
                     empresa_origem = rel_path.parts[0] if len(rel_path.parts) > 1 else "GERAL"
-                    
+
                     vault_instance.processar_ciclo_de_vida(arquivo, empresa_origem)
-        except Exception as e:
+        except (OSError, ValueError, RuntimeError) as e:
             logging.error(f"Falha no motor assíncrono: {str(e)}")
-        
+
         time.sleep(3600)
 
 
@@ -176,6 +177,6 @@ def ativar_infraestrutura_vault(pasta_raiz: str = "vault_uhnw_storage") -> Vault
     vault = VaultUhnw(pasta_raiz)
     thread_seguranca = Thread(target=_loop_varredura_preventiva, args=(vault,), daemon=True)
     thread_seguranca.start()
-    
+
     logging.info('"Infraestrutura autônoma do Vault ativada com sucesso dentro da pasta security."')
     return vault

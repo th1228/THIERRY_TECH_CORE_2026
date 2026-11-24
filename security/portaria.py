@@ -11,7 +11,7 @@ agreement is strictly prohibited under international copyright frameworks.
 ===========================================================================
 """
 
- # =====================================================================
+# =====================================================================
 # ARQUIVO: security/portaria.py
 # =====================================================================
 
@@ -32,7 +32,13 @@ from security.input_sanitizer import InputSanitizer
 from database.db_manager import DBManager  # <--- NOSSO NOVO GUARDIÃO
 from nacl.signing import VerifyKey
 
+try:
+    from pydantic import ValidationError as _SchemaValidationError
+except ImportError:
+    _SchemaValidationError = ValueError
+
 logger = LogSeguro()
+
 
 class NonceCache:
     def __init__(self, ttl_seconds: int = 30, teto_maximo: int = 50000):
@@ -52,17 +58,21 @@ class NonceCache:
             self.cache[nonce] = agora
             return True
 
+
 nonce_cache = NonceCache(ttl_seconds=30, teto_maximo=50000)
 
-def verificar_acesso(dados_json: dict, 
-                     verify_key: VerifyKey, 
-                     token: Optional[str] = None, 
-                     ip: str = "0.0.0.0", 
-                     hardware_id: str = "unknown") -> bool:
+
+def verificar_acesso(
+    dados_json: dict,
+    verify_key: VerifyKey,
+    token: Optional[str] = None,
+    ip: str = "0.0.0.0",
+    hardware_id: str = "unknown",
+) -> bool:
     try:
         # 1. Sanitização
-        if 'id_scanner' in dados_json:
-            dados_json['id_scanner'] = InputSanitizer.limpar_string(str(dados_json['id_scanner']))
+        if "id_scanner" in dados_json:
+            dados_json["id_scanner"] = InputSanitizer.limpar_string(str(dados_json["id_scanner"]))
 
         # 2. Validação de Sessão
         if token:
@@ -73,16 +83,15 @@ def verificar_acesso(dados_json: dict,
 
         # 3. Validação do Contrato
         payload = PayloadSeguro(**dados_json)
-        
+
         # 4. Validação Anti-Replay
-        nonce_str = getattr(payload, 'nonce', str(payload.payload_biometrico[:12]))
+        nonce_str = getattr(payload, "nonce", str(payload.payload_biometrico[:12]))
         if not nonce_cache.validar_e_registrar(nonce_str):
             logger.registrar(payload.id_scanner, "FALHA_SECURITY", "Tentativa de Replay.")
             return False
 
         # 5. Validação Criptográfica (Assinatura)
         if CryptoEngine.validar_assinatura(verify_key, payload.payload_biometrico, payload.assinatura):
-            
             # 6. VERIFICAÇÃO DE PERMISSÃO RBAC (O PASSO FINAL)
             if DBManager.verificar_permissao(payload.id_scanner):
                 logger.registrar(payload.id_scanner, "SUCESSO", "Acesso liberado com autorização RBAC.")
@@ -94,6 +103,6 @@ def verificar_acesso(dados_json: dict,
             logger.registrar(payload.id_scanner, "FALHA", "Assinatura inválida.")
             return False
 
-    except Exception as e:
-        logger.registrar("SISTEMA", "ERRO", f"Erro crítico: {str(e)}")
+    except (_SchemaValidationError, ValueError, TypeError, KeyError, AttributeError, OSError, RuntimeError) as e:
+        logger.registrar("SISTEMA", "ERRO", f"Falha controlada na portaria: {type(e).__name__}: {e}")
         return False

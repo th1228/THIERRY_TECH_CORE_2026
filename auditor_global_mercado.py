@@ -206,6 +206,89 @@ class AuditorGlobalMercado:
                 hits.append(rel)
         return sorted(hits)[:6]
 
+    def _inspecionar_pasta_security(self, arquivos_py: List[str]) -> Tuple[int, List[str], List[str], Dict[str, int]]:
+        """
+        Avalia de forma objetiva os módulos dentro de security/:
+        - Presença da pasta e arquivos .py
+        - Compilação sem erro de sintaxe
+        - Ausência de eval/exec/pickle, shell=True e segredos literais longos
+        - Ausência de captura genérica (except Exception / bare except)
+        Retorna 100/100 apenas quando não há falhas nem ressalvas nesses critérios.
+        """
+        score = 100
+        motivos: List[str] = []
+        plano: List[str] = []
+
+        sec_py = [
+            p for p in arquivos_py
+            if "security/" in os.path.relpath(p, self.raiz).replace("\\", "/").lower()
+            or os.path.relpath(p, self.raiz).replace("\\", "/").lower().startswith("security/")
+        ]
+
+        if not sec_py:
+            score = 0
+            motivos.append("Nenhum módulo .py localizado na pasta security/.")
+            plano.append("Garantir a presença e estrutura dos módulos de segurança na pasta security/.")
+            return score, motivos, plano, {"arquivos_py": 0, "erros_comp": 0, "excecoes_amplas": 0}
+
+        erros_comp: List[str] = []
+        excecoes_amplas: List[str] = []
+        achados_criticos_sec = self._mapear_achados_seguranca(sec_py)
+
+        padrao_except_amplo = re.compile(r"^\s*except\s*(?:Exception\b\s*(?:as\s+\w+)?\s*)?:")
+
+        for caminho in sec_py:
+            rel = os.path.relpath(caminho, self.raiz).replace("\\", "/")
+            try:
+                py_compile.compile(caminho, doraise=True)
+            except py_compile.PyCompileError:
+                erros_comp.append(rel)
+
+            linhas = self._ler_texto_seguro(caminho).splitlines()
+            linhas_exc = [
+                str(idx) for idx, ln in enumerate(linhas, start=1)
+                if padrao_except_amplo.match(ln)
+            ]
+            if linhas_exc:
+                excecoes_amplas.append(f"{rel} (linhas {', '.join(linhas_exc[:6])})")
+
+        if erros_comp:
+            score -= min(40, len(erros_comp) * 15)
+            motivos.append(f"Falha de compilação em {len(erros_comp)} arquivo(s) de security/: {', '.join(erros_comp[:6])}.")
+            plano.append(f"Corrigir erros de sintaxe/compilação em security/: {', '.join(erros_comp[:6])}.")
+
+        if achados_criticos_sec:
+            arqs_crit = sorted({a["arquivo"] for a in achados_criticos_sec})
+            score -= min(35, len(arqs_crit) * 12)
+            motivos.append(
+                f"{len(achados_criticos_sec)} ocorrência(s) crítica(s) (eval/exec/pickle, shell=True ou credencial fixa) em security/: {', '.join(arqs_crit[:6])}."
+            )
+            plano.append(
+                f"Eliminar eval/exec/pickle, shell=True e credenciais fixas nos arquivos de security/: {', '.join(arqs_crit[:6])}."
+            )
+
+        if excecoes_amplas:
+            penalidade_exc = min(44, len(excecoes_amplas) * 3)
+            score -= penalidade_exc
+            motivos.append(
+                f"Uso de 'except Exception' ou bare except em {len(excecoes_amplas)} arquivo(s) de security/: {', '.join(excecoes_amplas[:6])}."
+            )
+            plano.append(
+                f"Substituir 'except Exception' / bare except por exceções específicas nos módulos de security/: {', '.join(excecoes_amplas[:6])}."
+            )
+
+        if not motivos:
+            motivos.append(
+                f"Todos os {len(sec_py)} módulo(s) .py de security/ compilam sem erro, sem falhas críticas nem exceções genéricas."
+            )
+
+        resumo_sec = {
+            "arquivos_py": len(sec_py),
+            "erros_comp": len(erros_comp),
+            "excecoes_amplas": len(excecoes_amplas),
+        }
+        return max(0, min(100, score)), motivos, plano, resumo_sec
+
     def _inspecionar_conformidade_diretrizes(
         self, arquivos_projeto: List[str], pdfs: List[str]
     ) -> Tuple[int, List[str], List[str], Dict[str, int], Dict[str, int]]:
@@ -946,6 +1029,7 @@ class AuditorGlobalMercado:
         s_bio = dados_auditoria["s_bio"]
         s_gem = dados_auditoria["s_gem"]
         s_c2s = dados_auditoria["s_c2s"]
+        s_seg = dados_auditoria["s_seg"]
         s_iso = dados_auditoria["s_iso"]
         s_cnt = dados_auditoria["s_cnt"]
         s_conf = dados_auditoria["s_conf"]
@@ -966,7 +1050,7 @@ class AuditorGlobalMercado:
             f"  O que tem     : MIBO Sovereign ({s_venda}/100), main.py ({s_main}/100), "
             f"{total_py} .py / motores ({s_mot}/100), memória comum ({s_mem}/100), "
             f"HTML ({s_html}/100), biometria ({s_bio}/100), biogêmeos ({s_gem}/100), "
-            f"controle C2 ({qtd_c2} arq., {s_c2s}/100), pasta security ({qtd_security} arq.), "
+            f"controle C2 ({qtd_c2} arq., {s_c2s}/100), pasta security ({qtd_security} arq., {s_seg}/100), "
             f"MIBO ({qtd_mibo} arq.), {jur_ok}/{jur_tot} jurisdições e {dir_ok}/{dir_tot} diretrizes "
             f"({s_conf}/100), ISO ({s_iso}/100), {qtd_pdfs} PDFs com {total_palavras} palavras "
             f"({s_cnt}/100) e produtos intangíveis."
@@ -985,7 +1069,7 @@ class AuditorGlobalMercado:
             f"02. Cobertura legal e diretriz : {jur_ok}/{jur_tot} leis ({s_conf}/100) e {dir_ok}/{dir_tot} diretrizes vs. checklist genérico.",
             f"03. Motores e compilação       : Motores {s_mot}/100 em {total_py} scripts .py vs. scripts isolados sem validação global.",
             f"04. Biometria e biogêmeos      : Bio {s_bio}/100 e Biogêmeos {s_gem}/100 vs. ausência de modelagem integrada de gêmeos.",
-            f"05. Segurança do ramo          : Pasta security ({qtd_security} arq.), MIBO ({qtd_mibo}) e C2 ({qtd_c2}) nota {s_c2s}/100 vs. segurança solta em nuvem.",
+            f"05. Segurança do ramo          : Pasta security ({qtd_security} arq., {s_seg}/100), MIBO ({qtd_mibo}) e C2 ({qtd_c2}) nota {s_c2s}/100 vs. segurança solta em nuvem.",
             f"06. Risco estático e correção  : Alertas atuais: {alertas_seg} + --aplicar com backup em .auditor_backup vs. sem varredura embutida.",
             f"07. Documentação e ISO         : ISO {s_iso}/100 e {qtd_pdfs} PDFs ({total_palavras} palavras) vs. relatórios sem checagem A4/margem.",
             f"08. O que faz de diferente     : Audita código, PDFs e leis + selo SHA-256 vs. execução isolada ou lint básico.",
@@ -1008,6 +1092,7 @@ class AuditorGlobalMercado:
         qtd_c2 = dados_auditoria["qtd_c2"]
         qtd_security = dados_auditoria["qtd_security"]
         s_c2s = dados_auditoria["s_c2s"]
+        s_seg = dados_auditoria["s_seg"]
         s_conf = dados_auditoria["s_conf"]
         s_iso = dados_auditoria["s_iso"]
         s_cnt = dados_auditoria["s_cnt"]
@@ -1024,7 +1109,7 @@ class AuditorGlobalMercado:
         print(f"\n{CIANO_BOLD}[6] SELO DE CRIPTOGRAFIA, BENCHMARK GLOBAL DE TELEMEDICINA E VEREDICTO FINAL{RESET}")
         if tudo_ok:
             print(f"  {VERDE_BOLD}SELO SOBERANO 100/100 • PRONTIDÃO GLOBAL APROVADA SEM RESSALVAS{RESET}")
-            print(f"  {VERDE_BOLD}Excelência absoluta alcançada: arquitetura, motores, segurança C2, layout e densidade 100% íntegros.{RESET}")
+            print(f"  {VERDE_BOLD}Excelência absoluta alcançada: arquitetura, motores, segurança C2/security, layout e densidade 100% íntegros.{RESET}")
         else:
             print(f"  {AMARELO_BOLD}SELO EM PROGRESSO • SCORE GLOBAL: {s_venda:3d}/100 (AJUSTES PENDENTES){RESET}")
             print(f"  {AMARELO}Base sólida e avançada: conclua os pontos restantes do Plano de Ação para atingir 100/100.{RESET}")
@@ -1040,9 +1125,9 @@ class AuditorGlobalMercado:
             f"02. Por que está no mesmo patamar/padrão: Trata dados sensíveis/saúde com {s_conf}/100 em leis, exigindo sigilo, trilha e rigor legal.",
             f"03. Cobertura multi-jurisdição        : {jur_ok}/{jur_tot} jurisdições (GDPR/HIPAA/LGPD) alinhadas às exigências dos mercados internacionais.",
             f"04. Diretrizes e padrão técnico       : {dir_ok}/{dir_tot} diretrizes e ISO {s_iso}/100 compatíveis com padrões técnicos e de saúde.",
-            f"05. Privacidade, acesso e integridade : C2/Segurança {s_c2s}/100, rotinas de hash/integridade e {alertas_seg} alerta(s) estático(s).",
+            f"05. Privacidade, acesso e integridade : C2/Segurança {s_c2s}/100, pasta security {s_seg}/100, rotinas de hash/integridade e {alertas_seg} alerta(s) estático(s).",
             f"06. O que elas têm e ele tem também   : Foco em sigilo, conformidade regulatória, controle de acesso e proteção de dados sensíveis.",
-            f"07. Camada de segurança e blindagem   : security ({qtd_security} arq.), MIBO ({qtd_mibo} arq.) e C2 ({qtd_c2} arq.) vs. cloud/WAF e serviços externos.",
+            f"07. Camada de segurança e blindagem   : security ({qtd_security} arq., {s_seg}/100), MIBO ({qtd_mibo} arq.) e C2 ({qtd_c2} arq.) vs. cloud/WAF e serviços externos.",
             f"08. Inteligência e ativos intangíveis: Biometria ({s_bio}/100), biogêmeos ({s_gem}/100) e produtos intangíveis além da teleconsulta básica.",
             f"09. Documentação e auditoria ativa    : Auditor próprio + {qtd_pdfs} PDFs ({total_palavras} palavras, {s_cnt}/100) vs. plataformas sem auditoria própria.",
             f"10. O que ele faz que elas não fazem   : Audita código, PDFs e leis + --aplicar + arquitetura offline/C2 vs. nuvem contínua/APIs padrão.",
@@ -1054,7 +1139,7 @@ class AuditorGlobalMercado:
         print(f"    1. O que ele é: Ecossistema MIBO Sovereign ({s_venda}/100) voltado a telemedicina, biometria ({s_bio}/100), biogêmeos ({s_gem}/100), controle C2 e produtos intangíveis.")
         print(f"    2. Por que está no mesmo patamar / padrão: Trata dados sensíveis, {jur_ok}/{jur_tot} jurisdições e {dir_ok}/{dir_tot} diretrizes (conformidade {s_conf}/100, ISO {s_iso}/100) com alto rigor.")
         print(f"    3. O que elas têm que ele tem também: Foco em privacidade, controle de acesso, hash/criptografia, rastreabilidade e conformidade regulatória (densidade {s_cnt}/100).")
-        print(f"    4. O que ele faz que elas não fazem: Audita código, {qtd_pdfs} PDFs ({total_palavras} palavras) e leis + pasta security ({qtd_security} arq.), MIBO ({qtd_mibo}), C2 ({qtd_c2}), biogêmeos, controle C2 e produtos intangíveis.")
+        print(f"    4. O que ele faz que elas não fazem: Audita código, {qtd_pdfs} PDFs ({total_palavras} palavras) e leis + pasta security ({qtd_security} arq., {s_seg}/100), MIBO ({qtd_mibo}), C2 ({qtd_c2}), biogêmeos, controle C2 e produtos intangíveis.")
 
         print(f"\n{VERDE_BOLD}{'=' * LARGURA_BANNER}{RESET}\n")
 
@@ -1085,6 +1170,7 @@ class AuditorGlobalMercado:
         s_bio, mot_bio, plan_bio, qtd_bio = self._inspecionar_biometrico(arquivos_projeto)
         s_gem, mot_gem, plan_gem, qtd_gem = self._inspecionar_biogemeos(arquivos_projeto)
         s_c2s, mot_c2s, plan_c2s, res_c2s, achados_seg = self._inspecionar_c2_mibo_seguranca(arquivos_projeto, arquivos_py)
+        s_seg, mot_seg, plan_seg, _ = self._inspecionar_pasta_security(arquivos_py)
         s_iso, mot_iso, plan_iso = self._avaliar_conformidade_iso(pdfs, arquivos_py)
         s_cnt, total_palavras, mot_cnt, plan_cnt = self._avaliar_densidade_conteudo(pdfs, arquivos_py)
         s_conf, mot_conf, plan_conf, cnt_jur, cnt_dir = self._inspecionar_conformidade_diretrizes(
@@ -1096,16 +1182,17 @@ class AuditorGlobalMercado:
             min(
                 100,
                 round(
-                    (s_main * 0.09)
-                    + (s_mem * 0.09)
-                    + (s_html * 0.09)
-                    + (s_mot * 0.18)
-                    + (s_bio * 0.11)
-                    + (s_gem * 0.11)
-                    + (s_c2s * 0.13)
+                    (s_main * 0.08)
+                    + (s_mem * 0.08)
+                    + (s_html * 0.08)
+                    + (s_mot * 0.16)
+                    + (s_bio * 0.10)
+                    + (s_gem * 0.10)
+                    + (s_c2s * 0.12)
+                    + (s_seg * 0.07)
                     + (s_iso * 0.06)
                     + (s_cnt * 0.05)
-                    + (s_conf * 0.15)
+                    + (s_conf * 0.14)
                 ),
             ),
         )
@@ -1118,6 +1205,7 @@ class AuditorGlobalMercado:
             ("Biométrico", s_bio),
             ("Biogêmeos", s_gem),
             ("C2 Sovereign (MIBO & Segurança)", s_c2s),
+            ("Segurança (Pasta security)", s_seg),
             ("Conformidade ISO & Layout", s_iso),
             ("Densidade de Conteúdo", s_cnt),
             ("Conformidade & Diretrizes (Disco)", s_conf),
@@ -1136,6 +1224,7 @@ class AuditorGlobalMercado:
             "s_bio": s_bio,
             "s_gem": s_gem,
             "s_c2s": s_c2s,
+            "s_seg": s_seg,
             "s_iso": s_iso,
             "s_cnt": s_cnt,
             "s_conf": s_conf,
@@ -1186,6 +1275,7 @@ class AuditorGlobalMercado:
             ("Biométrico", mot_bio, s_bio),
             ("Biogêmeos", mot_gem, s_gem),
             ("C2 Sovereign (MIBO & Segurança)", mot_c2s, s_c2s),
+            ("Segurança (Pasta security)", mot_seg, s_seg),
             ("Conformidade ISO", mot_iso, s_iso),
             ("Densidade de Conteúdo", mot_cnt, s_cnt),
             ("Conformidade & Diretrizes (Disco)", mot_conf, s_conf),
@@ -1205,7 +1295,7 @@ class AuditorGlobalMercado:
         plano_unificado: List[str] = []
         for acao in (
             plan_main + plan_mem + plan_html + plan_mot + plan_bio
-            + plan_gem + plan_c2s + plan_iso + plan_cnt + plan_conf
+            + plan_gem + plan_c2s + plan_seg + plan_iso + plan_cnt + plan_conf
         ):
             if acao not in plano_unificado:
                 plano_unificado.append(acao)

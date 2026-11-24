@@ -21,8 +21,10 @@ BRANCO = "\033[97m"
 CINZA = "\033[90m"
 RESET = "\033[0m"
 
+
 class MiboQuantumShield:
     """Motor de Blindagem Quântica e Gestão de Chaves Híbridas PQC."""
+
     def __init__(self):
         self.algoritmo = "Kyber-1024 / Dilithium Hybrid"
         self.nivel_seguranca = "NIST Level 5 (Maximum Sovereign)"
@@ -38,12 +40,13 @@ class MiboQuantumShield:
             "status": "Blindagem Quântica Ativa",
             "algoritmo": self.algoritmo,
             "nivel": self.nivel_seguranca,
-            "chave_sessao": chave_ativa
+            "chave_sessao": chave_ativa,
         }
 
+
 def acionar_quantum_shield() -> None:
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
+    os.system("cls" if os.name == "nt" else "clear")
+
     print(VERDE + "=" * 85 + RESET)
     print(AMARELO + "   THIERRY TECHNOLOGY CONCEPT GLOBAL • MIBO QUANTUM SHIELD" + RESET)
     print(CIANO + "   BLINDAGEM PÓS-QUÂNTICA & SEGURANÇA DE DADOS DE ALTO DESEMPENHO" + RESET)
@@ -79,7 +82,7 @@ Status: Escudo quântico ativado com sucesso
         with open(arquivo_log, "w", encoding="utf-8") as f:
             f.write(log_conteudo)
             f.write(f"HASH_CRIPTO_SHIELD: {assinatura_sha}\n")
-    except Exception as e:
+    except (OSError, RuntimeError, TypeError, ValueError) as e:
         print(f"  {VERMELHO}[AVISO LOG]{RESET} Erro ao gravar registo: {e}")
 
     print(f"\n{BRANCO}[2/2] Consolidando Registo Criptografado do Escudo:{RESET}")
@@ -92,6 +95,7 @@ Status: Escudo quântico ativado com sucesso
     print("\n" + VERDE + "=" * 85 + RESET)
     print(CIANO + " [QUANTUM SHIELD] CICLO DE SEGURANÇA CONCLUÍDO COM SUCESSO." + RESET)
     print(VERDE + "=" * 85 + RESET + "\n")
+
 
 if __name__ == "__main__":
     acionar_quantum_shield()
