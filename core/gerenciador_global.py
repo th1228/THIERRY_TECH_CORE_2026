@@ -21,8 +21,19 @@ try:
     from memoria_comum import instancia_memoria as memoria
 except ImportError:
     class MemoriaMock:
-        def salvar_dados(self, chave, valor): pass
-        def ler_dados(self, chave): return None
+        def __init__(self):
+            self._dados = {}
+
+        def salvar_dados(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def registrar(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def ler_dados(self, chave):
+            return self._dados.get(chave)
     memoria = MemoriaMock()
 # -----------------------------------------------
 
@@ -35,7 +46,8 @@ except ImportError:
 try:
     from core.motor_prognostico import iniciar as iniciar_prognostico
 except ImportError:
-    def iniciar_prognostico(): pass
+    def iniciar_prognostico():
+        return {"status": "fallback", "modulo": "prognostico"}
 
 try:
     from core.motor_regeneracao import MotorRegeneracao
@@ -50,7 +62,8 @@ except ImportError:
 try:
     from core.motor_sincronia import executar_coleta_inicial
 except ImportError:
-    def executar_coleta_inicial(): pass
+    def executar_coleta_inicial():
+        return {"status": "fallback", "etapa": "coleta_inicial"}
 
 
 class GerenciadorGlobalEcosystem:

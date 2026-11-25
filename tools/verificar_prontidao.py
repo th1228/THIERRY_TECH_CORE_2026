@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 ===========================================================================
@@ -24,39 +32,39 @@ ARQUIVOS_ESSENCIAIS = [
 ]
 
 def verificar_projeto():
-    print("================================================================")
-    print(" [TTC CORE] AUDITORIA DE PRONTIDÃO PARA EMPACOTAMENTO (ZIP)")
-    print("================================================================")
+    logger.info("================================================================")
+    logger.info(" [TTC CORE] AUDITORIA DE PRONTIDÃO PARA EMPACOTAMENTO (ZIP)")
+    logger.info("================================================================")
     
     diretorio_atual = os.getcwd()
-    print(f" Diretório de Trabalho: {diretorio_atual}\n")
+    logger.info(f" Diretório de Trabalho: {diretorio_atual}\n")
     
     arquivos_faltando = []
     arquivos_encontrados = 0
 
-    print(" Verificando integridade dos módulos principais:")
+    logger.info(" Verificando integridade dos módulos principais:")
     for arquivo in ARQUIVOS_ESSENCIAIS:
         caminho_completo = os.path.join(diretorio_atual, arquivo)
         if os.path.exists(caminho_completo):
-            print(f"   [✓] {arquivo} -> OK")
+            logger.info(f"   [✓] {arquivo} -> OK")
             arquivos_encontrados += 1
         else:
-            print(f"   [X] {arquivo} -> FALTANDO!")
+            logger.info(f"   [X] {arquivo} -> FALTANDO!")
             arquivos_faltando.append(arquivo)
 
-    print("\n----------------------------------------------------------------")
-    print(f" Resumo: {arquivos_encontrados}/{len(ARQUIVOS_ESSENCIAIS)} módulos essenciais localizados.")
-    print("----------------------------------------------------------------")
+    logger.info("\n----------------------------------------------------------------")
+    logger.info(f" Resumo: {arquivos_encontrados}/{len(ARQUIVOS_ESSENCIAIS)} módulos essenciais localizados.")
+    logger.info("----------------------------------------------------------------")
 
     if len(arquivos_faltando) == 0:
-        print(" 👑 VEREDITO: SISTEMA 100% COMPLETO E INTEGRO!")
-        print(" 🚀 O seu ecossistema está pronto para ser zipado com segurança absoluta.")
-        print("================================================================")
+        logger.info(" 👑 VEREDITO: SISTEMA 100% COMPLETO E INTEGRO!")
+        logger.info(" 🚀 O seu ecossistema está pronto para ser zipado com segurança absoluta.")
+        logger.info("================================================================")
         return True
     else:
-        print(" ⚠️  VEREDITO: ATENÇÃO! Faltam alguns arquivos para o fechamento.")
-        print(f"     Arquivos pendentes: {arquivos_faltando}")
-        print("================================================================")
+        logger.info(" ⚠️  VEREDITO: ATENÇÃO! Faltam alguns arquivos para o fechamento.")
+        logger.info(f"     Arquivos pendentes: {arquivos_faltando}")
+        logger.info("================================================================")
         return False
 
 if __name__ == "__main__":

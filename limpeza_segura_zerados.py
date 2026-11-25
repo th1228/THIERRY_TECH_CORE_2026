@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 Script: limpeza_segura_zerados.py
@@ -91,7 +99,7 @@ def executar_limpeza_segura() -> None:
     zerados = [(rel, nome) for rel, nome, tam in todos if tam == 0]
 
     if not zerados:
-        print("[OK] Nenhum arquivo de 0 bytes encontrado para limpar.")
+        logger.info("[OK] Nenhum arquivo de 0 bytes encontrado para limpar.")
         return
 
     por_nome: Dict[str, List[Tuple[str, int]]] = {}
@@ -112,9 +120,9 @@ def executar_limpeza_segura() -> None:
     reservados: List[str] = []
     protegidos: List[str] = []
 
-    print("=" * 72)
-    print("LIMPEZA SEGURA DE ARQUIVOS ZERADOS (0 BYTES)")
-    print("=" * 72)
+    logger.info("=" * 72)
+    logger.info("LIMPEZA SEGURA DE ARQUIVOS ZERADOS (0 BYTES)")
+    logger.info("=" * 72)
 
     for rel, nome in zerados:
         caminho_origem = os.path.join(raiz, rel.replace("/", os.sep))
@@ -135,7 +143,7 @@ def executar_limpeza_segura() -> None:
         # Protege arquivos referenciados no código ou bancos de dados para evitar erro no sistema
         if tem_referencia or ext_low == ".db":
             protegidos.append(rel)
-            print(f"[PROTEGIDO] {rel} -> citado em código ou .db (mantido intacto)")
+            logger.info(f"[PROTEGIDO] {rel} -> citado em código ou .db (mantido intacto)")
             continue
 
         tem_copia_com_conteudo = any(
@@ -148,10 +156,10 @@ def executar_limpeza_segura() -> None:
             try:
                 os.remove(caminho_origem)
                 apagados.append(rel)
-                print(f"[APAGADO] {rel}")
+                logger.info(f"[APAGADO] {rel}")
             except OSError as exc:
                 protegidos.append(rel)
-                print(f"[FALHA AO APAGAR] {rel} -> {exc}")
+                logger.info(f"[FALHA AO APAGAR] {rel} -> {exc}")
             continue
 
         # Move automaticamente o restante sem referência para a pasta reservada
@@ -160,18 +168,18 @@ def executar_limpeza_segura() -> None:
             os.makedirs(os.path.dirname(destino_reserva), exist_ok=True)
             shutil.move(caminho_origem, destino_reserva)
             reservados.append(rel)
-            print(f"[RESERVADO] {rel} -> _reserva_segura/{rel}")
+            logger.info(f"[RESERVADO] {rel} -> _reserva_segura/{rel}")
         except OSError as exc:
             protegidos.append(rel)
-            print(f"[FALHA AO MOVER] {rel} -> {exc}")
+            logger.info(f"[FALHA AO MOVER] {rel} -> {exc}")
 
-    print("-" * 72)
-    print(
+    logger.info("-" * 72)
+    logger.info(
         f"Resumo: {len(apagados)} apagado(s) | "
         f"{len(reservados)} movido(s) para '_reserva_segura' | "
         f"{len(protegidos)} protegido(s)"
     )
-    print("=" * 72)
+    logger.info("=" * 72)
 
 
 if __name__ == "__main__":

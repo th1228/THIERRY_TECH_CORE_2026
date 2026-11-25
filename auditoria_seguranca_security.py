@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 ===========================================================================
@@ -248,44 +256,44 @@ def gerar_resumo_security(itens_python: list[dict[str, Any]]) -> dict[str, Any]:
 
 def imprimir_metrica_security(resumo: dict[str, Any]) -> None:
     cont = resumo["contagem"]
-    print("\n" + "=" * 72)
-    print("METRICA FINAL - CATEGORIA E DIAGNOSTICO OBJETIVO DE SECURITY")
-    print("=" * 72)
-    print(f"Categoria de Seguranca : {resumo['categoria_seguranca']}")
-    print(
+    logger.info("\n" + "=" * 72)
+    logger.info("METRICA FINAL - CATEGORIA E DIAGNOSTICO OBJETIVO DE SECURITY")
+    logger.info("=" * 72)
+    logger.info(f"Categoria de Seguranca : {resumo['categoria_seguranca']}")
+    logger.info(
         f"Indice de Conformidade : {resumo['indice_conformidade']}% "
         f"({cont['certo']}/{resumo['base_avaliada_conformidade']} itens avaliados sem falha/excecao ampla)"
     )
-    print(
+    logger.info(
         f"Achados de Risco       : REPARACAO={cont['reparacao']} | "
         f"RISCO_ALTO_CRITICO={cont['risco_alto_ou_critico']} | "
         f"RISCO_MEDIO={cont['risco_medio']} | OBS_UTF8={cont['observacao_nao_ascii']}"
     )
 
-    print("\n[O QUE ESTA CERTO]")
+    logger.info("\n[O QUE ESTA CERTO]")
     if resumo["certo"]:
         for item in resumo["certo"]:
-            print(f"  - {item['arquivo']}: {item['detalhe']}")
+            logger.info(f"  - {item['arquivo']}: {item['detalhe']}")
     else:
-        print("  - Nenhum item classificado como CERTO.")
+        logger.info("  - Nenhum item classificado como CERTO.")
 
-    print("\n[PONTOS DE ATENCAO - EXCECOES AMPLAS / LITERAIS / ENCODING]")
+    logger.info("\n[PONTOS DE ATENCAO - EXCECOES AMPLAS / LITERAIS / ENCODING]")
     if resumo["pontos_de_atencao"]:
         for item in resumo["pontos_de_atencao"]:
-            print(f"  - {item['arquivo']} [{item['risco']} / {item['categoria_achado']}]: {item['detalhe']}")
+            logger.info(f"  - {item['arquivo']} [{item['risco']} / {item['categoria_achado']}]: {item['detalhe']}")
     else:
-        print("  - Nenhum ponto de atencao.")
+        logger.info("  - Nenhum ponto de atencao.")
 
-    print("\n[ONDE PRECISA DE REPARACAO]")
+    logger.info("\n[ONDE PRECISA DE REPARACAO]")
     if resumo["onde_precisa_reparacao"]:
         for item in resumo["onde_precisa_reparacao"]:
-            print(f"  - {item['arquivo']} [{item['risco']} / {item['categoria_achado']}]: {item['detalhe']}")
+            logger.info(f"  - {item['arquivo']} [{item['risco']} / {item['categoria_achado']}]: {item['detalhe']}")
     else:
-        print("  - Nenhum item exigindo reparacao imediata.")
+        logger.info("  - Nenhum item exigindo reparacao imediata.")
 
-    print("\n[OBSERVACOES INFORMATIVAS - CARACTERES NAO-ASCII EM UTF-8]")
-    print(f"  - Total de arquivos com caracteres nao-ASCII em UTF-8: {cont['observacao_nao_ascii']} (nao penaliza a nota de conformidade).")
-    print("=" * 72)
+    logger.info("\n[OBSERVACOES INFORMATIVAS - CARACTERES NAO-ASCII EM UTF-8]")
+    logger.info(f"  - Total de arquivos com caracteres nao-ASCII em UTF-8: {cont['observacao_nao_ascii']} (nao penaliza a nota de conformidade).")
+    logger.info("=" * 72)
 
 
 def executar_auditoria(raiz_projeto: Path) -> dict[str, Any]:
@@ -313,18 +321,18 @@ def executar_auditoria(raiz_projeto: Path) -> dict[str, Any]:
     )
 
     for b in bancos:
-        print(f"BANCO: {b['banco']}")
-        print(f"  SITUACAO : {b['situacao']}")
-        print(f"  RISCO    : {b['risco']}")
+        logger.info(f"BANCO: {b['banco']}")
+        logger.info(f"  SITUACAO : {b['situacao']}")
+        logger.info(f"  RISCO    : {b['risco']}")
         if b["tabelas"]:
-            print(f"  - Tabelas: {', '.join(b['tabelas'])}")
+            logger.info(f"  - Tabelas: {', '.join(b['tabelas'])}")
         else:
-            print("  - Sem tabelas criadas.")
+            logger.info("  - Sem tabelas criadas.")
 
-    print("\nRESUMO FINAL")
-    print(f"  ERRADO  : {errado_geral}")
-    print(f"  ATENCAO : {atencao_geral}")
-    print(f"  CERTO   : {certo_geral}")
+    logger.info("\nRESUMO FINAL")
+    logger.info(f"  ERRADO  : {errado_geral}")
+    logger.info(f"  ATENCAO : {atencao_geral}")
+    logger.info(f"  CERTO   : {certo_geral}")
 
     resumo_security = gerar_resumo_security(itens_python)
     imprimir_metrica_security(resumo_security)
@@ -347,7 +355,7 @@ def executar_auditoria(raiz_projeto: Path) -> dict[str, Any]:
         json.dumps(relatorio, indent=2, ensure_ascii=False),
         encoding="utf-8",
     )
-    print(f"\nResumo exato salvo em: {saida_json.name}")
+    logger.info(f"\nResumo exato salvo em: {saida_json.name}")
     return relatorio
 
 

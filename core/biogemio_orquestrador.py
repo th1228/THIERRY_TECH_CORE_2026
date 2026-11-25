@@ -118,7 +118,8 @@ try:
 except ImportError:
     class AuditorIntegridadeGlobal:
         def __init__(self, limiar_confianca_minimo: float = 100.0, lang: str = "PT"):
-            pass
+            self.limiar_confianca_minimo = limiar_confianca_minimo
+            self.lang = lang
         def inspecionar_dicionario_metricas(self, d: Dict[str, Any]) -> Dict[str, Any]:
             return {"status_aprovacao": True, "indice_integridade_percentual": 100.0, "anomalias_encontradas": []}
         def gerar_selo_criptografico_soberano(self, d: Dict[str, Any], t: str) -> str:

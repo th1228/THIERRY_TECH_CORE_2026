@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 Script: gerar_dossie_advogado.py
@@ -609,30 +617,30 @@ def imprimir_resumo_terminal(
     pdfs_encontrados: List[PdfResumo],
     avaliacao_intl: Dict[str, Any],
 ) -> None:
-    print("=" * 72)
-    print("DOSSIÊ TÉCNICO-JURÍDICO PARA REVISÃO ADVOCATÍCIA")
-    print("=" * 72)
-    print(f"Raiz auditada     : {raiz}")
-    print(f"PDF gerado        : {caminho_pdf}")
-    print(f"Módulos .py       : {len(modulos)} | Total de linhas: {total_linhas}")
-    print(f"PDFs inspecionados : {len(pdfs_encontrados)}")
-    print(f"Nota licenças     : {auditoria_lic['nota_internacional']:.1f} / 10,0 (apoio técnico)")
-    print("-" * 72)
-    print("17 ENCLAVES / JURISDIÇÕES:")
+    logger.info("=" * 72)
+    logger.info("DOSSIÊ TÉCNICO-JURÍDICO PARA REVISÃO ADVOCATÍCIA")
+    logger.info("=" * 72)
+    logger.info(f"Raiz auditada     : {raiz}")
+    logger.info(f"PDF gerado        : {caminho_pdf}")
+    logger.info(f"Módulos .py       : {len(modulos)} | Total de linhas: {total_linhas}")
+    logger.info(f"PDFs inspecionados : {len(pdfs_encontrados)}")
+    logger.info(f"Nota licenças     : {auditoria_lic['nota_internacional']:.1f} / 10,0 (apoio técnico)")
+    logger.info("-" * 72)
+    logger.info("17 ENCLAVES / JURISDIÇÕES:")
     for c in cidades_17:
-        print(
+        logger.info(
             f"  {c['indice']:02d}. {c['codigo']:<10} | {c['pais_jurisdicao']:<22} | "
             f"{c['cidade']:<32} | {c['no_programa']}"
         )
-    print("-" * 72)
-    print("GLOSSÁRIO TÉCNICO:")
+    logger.info("-" * 72)
+    logger.info("GLOSSÁRIO TÉCNICO:")
     for termo, definicao in GLOSSARIO_TECNICO:
-        print(f"  • {termo}: {definicao}")
-    print("-" * 72)
-    print("PONTO DE VISTA JURÍDICO INTERNACIONAL (ENCERRAMENTO):")
-    print(f"  Nota jurisdição internacional (1 a 100): {avaliacao_intl['nota_1_100']} / 100")
-    print(f"  {avaliacao_intl['texto_juridico_internacional']}")
-    print("=" * 72)
+        logger.info(f"  • {termo}: {definicao}")
+    logger.info("-" * 72)
+    logger.info("PONTO DE VISTA JURÍDICO INTERNACIONAL (ENCERRAMENTO):")
+    logger.info(f"  Nota jurisdição internacional (1 a 100): {avaliacao_intl['nota_1_100']} / 100")
+    logger.info(f"  {avaliacao_intl['texto_juridico_internacional']}")
+    logger.info("=" * 72)
 
 
 def gerar_relatorio_advogado(caminho_pdf: str, raiz: str) -> str:

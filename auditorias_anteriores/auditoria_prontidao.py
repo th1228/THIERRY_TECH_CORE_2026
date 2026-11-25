@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 ===========================================================================
@@ -29,7 +37,7 @@ class TerminalColors:
 
 def log_status(modulo, status, mensagem):
     cor = TerminalColors.OKGREEN if status == "[OK]" else TerminalColors.FAIL
-    print(f"{cor}[{status}]{TerminalColors.ENDC} {modulo} -> {mensagem}")
+    logger.info(f"{cor}[{status}]{TerminalColors.ENDC} {modulo} -> {mensagem}")
 
 def gerar_hash_sha256(conteudo: str) -> str:
     return hashlib.sha256(conteudo.encode('utf-8')).hexdigest()
@@ -44,7 +52,7 @@ class ProtocoloProntidaoGlobal:
         }
 
     def executar_teste_carga_simulado(self, operacoes: int = 50000) -> bool:
-        print(f"\n{TerminalColors.HEADER}=== INICIANDO STRESS TEST DE CARGA ({operacoes} ops) ==={TerminalColors.ENDC}")
+        logger.info(f"\n{TerminalColors.HEADER}=== INICIANDO STRESS TEST DE CARGA ({operacoes} ops) ==={TerminalColors.ENDC}")
         inicio = time.time()
         falhas = 0
         
@@ -67,7 +75,7 @@ class ProtocoloProntidaoGlobal:
         return sucesso
 
     def verificar_integridade_estrutural(self) -> bool:
-        print(f"\n{TerminalColors.HEADER}=== VERIFICANDO DIRETÓRIOS E COMPARTIMENTOS DO COFRE ==={TerminalColors.ENDC}")
+        logger.info(f"\n{TerminalColors.HEADER}=== VERIFICANDO DIRETÓRIOS E COMPARTIMENTOS DO COFRE ==={TerminalColors.ENDC}")
         diretorios_criticos = ["core", "config", "relatorios", "seguranca"]
         todos_ok = True
 
@@ -86,7 +94,7 @@ class ProtocoloProntidaoGlobal:
         return todos_ok
 
     def emitir_veredito_final(self) -> str:
-        print(f"\n{TerminalColors.HEADER}=== EMITINDO CERTIFICADO DE PRONTIDÃO GLOBAL ==={TerminalColors.ENDC}")
+        logger.info(f"\n{TerminalColors.HEADER}=== EMITINDO CERTIFICADO DE PRONTIDÃO GLOBAL ==={TerminalColors.ENDC}")
         
         passou_tudo = all(
             v if isinstance(v, bool) else v.get("sucesso", False) 
@@ -99,8 +107,8 @@ class ProtocoloProntidaoGlobal:
         assinatura_final = gerar_hash_sha256(payload_str)
         
         cor_veredito = TerminalColors.OKGREEN if passou_tudo else TerminalColors.WARNING
-        print(f"{cor_veredito}[VEREDITO GLOBAL] Status: {self.relatorio_auditoria['status_geral']}{TerminalColors.ENDC}")
-        print(f"{TerminalColors.BOLD}Assinatura Criptográfica de Homologação (SHA-256):{TerminalColors.ENDC} {assinatura_final}")
+        logger.info(f"{cor_veredito}[VEREDITO GLOBAL] Status: {self.relatorio_auditoria['status_geral']}{TerminalColors.ENDC}")
+        logger.info(f"{TerminalColors.BOLD}Assinatura Criptográfica de Homologação (SHA-256):{TerminalColors.ENDC} {assinatura_final}")
         
         return assinatura_final
 

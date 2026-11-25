@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 Script: teste_seguro_zerados.py
@@ -111,7 +119,7 @@ def verificar_integridade_e_sistema(raiz: str) -> Tuple[bool, str]:
         "    raise RuntimeError('Não foi possível carregar main.py')\n"
         "mod = importlib.util.module_from_spec(spec)\n"
         "spec.loader.exec_module(mod)\n"
-        "print('SONDA_OK')\n"
+        "logger.info('SONDA_OK')\n"
     )
     try:
         proc = subprocess.run(
@@ -190,16 +198,16 @@ def loop_resgate_se_necessario(raiz: str, alvos: List[str], cofre: str) -> None:
     while True:
         resp = input("\nDeseja resgatar / recompor os arquivos de volta agora? (sim/nao): ").strip().lower()
         if resp not in {"sim", "s", "yes", "y"}:
-            print("Resgate não executado nesta etapa.")
+            logger.info("Resgate não executado nesta etapa.")
             return
 
         ok_rec, msg_rec = recompor_arquivos_zerados(raiz, alvos, cofre)
         if ok_rec:
-            print(f"[OK] {msg_rec}")
+            logger.info(f"[OK] {msg_rec}")
             return
 
-        print(f"[ERRO] {msg_rec}")
-        print("Execute a nova função de recomposição novamente para tentar trazer os arquivos de volta.")
+        logger.info(f"[ERRO] {msg_rec}")
+        logger.info("Execute a nova função de recomposição novamente para tentar trazer os arquivos de volta.")
 
 
 def executar_fluxo() -> None:
@@ -209,43 +217,43 @@ def executar_fluxo() -> None:
     if not alvos:
         alvos = ALVOS_PADRAO
 
-    print("=" * 72)
-    print("1. VERIFICANDO INTEGRIDADE E EXECUÇÃO DO SISTEMA (100%)")
-    print("=" * 72)
+    logger.info("=" * 72)
+    logger.info("1. VERIFICANDO INTEGRIDADE E EXECUÇÃO DO SISTEMA (100%)")
+    logger.info("=" * 72)
     ok_antes, parecer_antes = verificar_integridade_e_sistema(raiz)
-    print(f"Parecer inicial: {parecer_antes}")
+    logger.info(f"Parecer inicial: {parecer_antes}")
     if ok_antes:
-        print("Status: SIM — O sistema está rodando 100% com os arquivos atuais.")
+        logger.info("Status: SIM — O sistema está rodando 100% com os arquivos atuais.")
     else:
-        print("Status: ATENÇÃO — Há erro/impedimento detectado antes da remoção.")
+        logger.info("Status: ATENÇÃO — Há erro/impedimento detectado antes da remoção.")
 
     cofre = _criar_cofre_recuperacao(raiz, alvos)
-    print(f"[OK] Cópia de segurança criada em: {cofre}")
+    logger.info(f"[OK] Cópia de segurança criada em: {cofre}")
 
-    print("\nArquivos alvo:")
+    logger.info("\nArquivos alvo:")
     for item in alvos:
-        print(f"  - {item}")
+        logger.info(f"  - {item}")
 
     escolha = input("\nVocê quer apagar esses arquivos com segurança agora? (sim/nao): ").strip().lower()
     if escolha not in {"sim", "s", "yes", "y"}:
-        print("Operação cancelada. Nenhum arquivo foi apagado.")
+        logger.info("Operação cancelada. Nenhum arquivo foi apagado.")
         return
 
     apagados, falhas = apagar_arquivos_alvo(raiz, alvos)
-    print(f"[OK] Apagados ({len(apagados)}): {', '.join(apagados) if apagados else 'nenhum'}")
+    logger.info(f"[OK] Apagados ({len(apagados)}): {', '.join(apagados) if apagados else 'nenhum'}")
     if falhas:
-        print(f"[ERRO] Falhas ao apagar: {' | '.join(falhas)}")
+        logger.info(f"[ERRO] Falhas ao apagar: {' | '.join(falhas)}")
 
-    print("\n" + "=" * 72)
-    print("2. TESTANDO O PROGRAMA NOVAMENTE APÓS APAGAR")
-    print("=" * 72)
+    logger.info("\n" + "=" * 72)
+    logger.info("2. TESTANDO O PROGRAMA NOVAMENTE APÓS APAGAR")
+    logger.info("=" * 72)
     ok_depois, parecer_depois = verificar_integridade_e_sistema(raiz)
     if ok_depois:
-        print(f"[OK] Programa continua rodando 100% ativo sem os arquivos. ({parecer_depois})")
+        logger.info(f"[OK] Programa continua rodando 100% ativo sem os arquivos. ({parecer_depois})")
         return
 
-    print(f"[ERRO] Programa impedido de rodar ou deu erro: {parecer_depois}")
-    print("Execute a função recompor_arquivos_zerados() para devolver os arquivos vazios de volta.")
+    logger.info(f"[ERRO] Programa impedido de rodar ou deu erro: {parecer_depois}")
+    logger.info("Execute a função recompor_arquivos_zerados() para devolver os arquivos vazios de volta.")
     loop_resgate_se_necessario(raiz, alvos, cofre)
 
 

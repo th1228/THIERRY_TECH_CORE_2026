@@ -578,7 +578,7 @@
     "ultimo_dossie_gerado": {
         "titular": "CLIENTE UHNW",
         "idioma": "PT",
-        "emitido_em": "23/11/2026 às 09:00:12",
+        "emitido_em": "24/11/2026 às 18:39:15",
         "arquivos": {
             "01_Sovereign_Intelligence": "c:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026\\pdfs_finais\\01_Dossie_Sovereign_Intelligence.pdf",
             "02_Super_Retorno_Financeiro": "c:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026\\pdfs_finais\\02_Super_Retorno_Financeiro.pdf",
@@ -606,5 +606,169 @@
             "taxa_miniaturizacao": null,
             "score_fadiga": 24.5
         }
+    },
+    "biogemeos_completo_neuro_cli_teste_01": {
+        "cliente": "CLI_TESTE_01",
+        "timestamp": "24/11/2026 23:20:28",
+        "fundamentacao_teorica": "Neurociência Integrada (Base: Livro Cem Bilhões de Neurônios / Plasticidade Sináptica)",
+        "telemetria_biometrica": {
+            "olhar": 0.85,
+            "parassimpatico": 0.72,
+            "respiracao": 14,
+            "inflamacao": 0.15
+        },
+        "prognostico_ambiental_16_dias": {
+            "time": [
+                "2026-11-24",
+                "2026-11-25",
+                "2026-11-26",
+                "2026-11-27",
+                "2026-11-28",
+                "2026-11-29",
+                "2026-11-30"
+            ],
+            "temperature_2m_max": [
+                33.0,
+                34.0,
+                33.8,
+                33.8,
+                33.7,
+                34.0,
+                34.6
+            ],
+            "temperature_2m_min": [
+                27.3,
+                27.2,
+                27.2,
+                27.0,
+                26.9,
+                27.2,
+                27.3
+            ],
+            "uv_index_max": [
+                8.7,
+                8.7,
+                8.7,
+                5.95,
+                8.1,
+                8.75,
+                7.8
+            ],
+            "precipitation_probability_max": [
+                59,
+                25,
+                7,
+                0,
+                6,
+                10,
+                37
+            ]
+        },
+        "protocolo_oleos_e_massagem": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+        "frequencia_sonora_diretriz": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+        "cronograma_biogemeos": [
+            {
+                "estagio_biogemeo": 1,
+                "marco_temporal_anos": "1 Anos de Projeção",
+                "desgaste_tecido_projetado": "0.41 mm",
+                "inflamacao_celular": "2.45%",
+                "eficiencia_sinaptica_estimada": "95.8%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "1453f1a2875279da6f21d569fea22f042c5c91baef031d46dc8d721efa37072a"
+            },
+            {
+                "estagio_biogemeo": 2,
+                "marco_temporal_anos": "2 Anos de Projeção",
+                "desgaste_tecido_projetado": "0.81 mm",
+                "inflamacao_celular": "2.4%",
+                "eficiencia_sinaptica_estimada": "93.6%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "667798cb8fb2e530bf4fc74b977a21a1b95ae2dcdc471d1d40c671f74a4da805"
+            },
+            {
+                "estagio_biogemeo": 3,
+                "marco_temporal_anos": "3 Anos de Projeção",
+                "desgaste_tecido_projetado": "1.22 mm",
+                "inflamacao_celular": "2.35%",
+                "eficiencia_sinaptica_estimada": "91.4%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "4e044247004d0dc294556fce0c169c96a67db5bce449deb5c4e8f478404a2d9b"
+            },
+            {
+                "estagio_biogemeo": 4,
+                "marco_temporal_anos": "4 Anos de Projeção",
+                "desgaste_tecido_projetado": "1.62 mm",
+                "inflamacao_celular": "2.3%",
+                "eficiencia_sinaptica_estimada": "89.2%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "420df553fc3d513af06b9eee03ae2e123276e75529e949e2a3e5151a5ab936d8"
+            },
+            {
+                "estagio_biogemeo": 5,
+                "marco_temporal_anos": "5 Anos de Projeção",
+                "desgaste_tecido_projetado": "2.02 mm",
+                "inflamacao_celular": "2.25%",
+                "eficiencia_sinaptica_estimada": "87.0%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "e03d1596fc9918102539ddf8ee864f33525673c747dd9555eadc49e2bca2716e"
+            },
+            {
+                "estagio_biogemeo": 6,
+                "marco_temporal_anos": "7 Anos de Projeção",
+                "desgaste_tecido_projetado": "2.83 mm",
+                "inflamacao_celular": "2.15%",
+                "eficiencia_sinaptica_estimada": "82.6%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "b4f7467ad4a0e641e461d6ac9141ae8fcc9e759a5755e0611eb4eadc59cf6ec0"
+            },
+            {
+                "estagio_biogemeo": 7,
+                "marco_temporal_anos": "10 Anos de Projeção",
+                "desgaste_tecido_projetado": "4.05 mm",
+                "inflamacao_celular": "2.0%",
+                "eficiencia_sinaptica_estimada": "76.0%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "4dddf353d61d7ced4c1f6c184c10196056c0811bff6a20c67b358909a31e42c6"
+            },
+            {
+                "estagio_biogemeo": 8,
+                "marco_temporal_anos": "12 Anos de Projeção",
+                "desgaste_tecido_projetado": "4.86 mm",
+                "inflamacao_celular": "1.9%",
+                "eficiencia_sinaptica_estimada": "71.6%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "747f8f81109deea6abf42440037554768508cb8afcc9bbaf5352a67eb8d4aa1a"
+            },
+            {
+                "estagio_biogemeo": 9,
+                "marco_temporal_anos": "15 Anos de Projeção",
+                "desgaste_tecido_projetado": "6.08 mm",
+                "inflamacao_celular": "1.75%",
+                "eficiencia_sinaptica_estimada": "65.0%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "73b20a579289b6f0f5ec0e279a0c422f239b1a8e924ffbbd9959ec99b88a7290"
+            },
+            {
+                "estagio_biogemeo": 10,
+                "marco_temporal_anos": "20 Anos de Projeção",
+                "desgaste_tecido_projetado": "8.1 mm",
+                "inflamacao_celular": "1.5%",
+                "eficiencia_sinaptica_estimada": "54.0%",
+                "frequencia_ressonancia": "528 Hz (Frequência de Reparo DNA e Estímulo Neurogênico)",
+                "suporte_terapeutico": "Blend Regenerador Semicondutor: Óleo de Jojoba com Gotu Kola e Extrato Folicular",
+                "hash_auditoria_sha256": "a3e51374fe509f0272851121ba11fde51d82009379e207cbcac81fe06176f2d6"
+            }
+        ],
+        "dia_apse_regenerativa": "Dia 24.0 do Ciclo (Pico Máximo de Neurogênese e Regeneração Celular)",
+        "assinatura_mestre_sha256": "26c00c872a0efaa159ad865a7748ca70782bc87ad8435dc350b846a0e36b23eb"
     }
 }

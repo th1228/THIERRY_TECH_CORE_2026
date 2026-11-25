@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 THIERRY TECHNOLOGY CONCEPT GLOBAL © 2026 | ALL RIGHTS RESERVED
@@ -975,46 +983,46 @@ class AuditorGlobalMercado:
         diretorio_texto = self.raiz if mostrar_caminho else "[OCULTO — PROTEÇÃO DE CAMINHO SOBERANO]"
         cor_dir = AMARELO if mostrar_caminho else VERDE
 
-        print(f"\n{VERDE_BOLD}{'=' * LARGURA_BANNER}{RESET}")
-        print(_centralizar_linha(f"{AMARELO_BOLD}THIERRY TECHNOLOGY CONCEPT GLOBAL — AUDITORIA GLOBAL DO ECOSSISTEMA{RESET}"))
-        print(f"{CIANO}  Data da Emissão   : {BRANCO_BOLD}{agora}{RESET}")
-        print(f"{CIANO}  Projeto Cifrado   : {ROXO_BOLD}{id_cifrado}{RESET} {CINZA}(Nome real blindado){RESET}")
-        print(f"{CIANO}  Diretório Raiz    : {cor_dir}{diretorio_texto}{RESET}")
-        print(f"{VERDE_BOLD}{'-' * LARGURA_BANNER}{RESET}")
+        logger.info(f"\n{VERDE_BOLD}{'=' * LARGURA_BANNER}{RESET}")
+        logger.info(_centralizar_linha(f"{AMARELO_BOLD}THIERRY TECHNOLOGY CONCEPT GLOBAL — AUDITORIA GLOBAL DO ECOSSISTEMA{RESET}"))
+        logger.info(f"{CIANO}  Data da Emissão   : {BRANCO_BOLD}{agora}{RESET}")
+        logger.info(f"{CIANO}  Projeto Cifrado   : {ROXO_BOLD}{id_cifrado}{RESET} {CINZA}(Nome real blindado){RESET}")
+        logger.info(f"{CIANO}  Diretório Raiz    : {cor_dir}{diretorio_texto}{RESET}")
+        logger.info(f"{VERDE_BOLD}{'-' * LARGURA_BANNER}{RESET}")
 
-        print(f"\n{CIANO_BOLD}[0] IDENTIDADE, ESCOPO INTANGÍVEL E JURISDIÇÕES{RESET}")
-        print(f"  Produto MIBO (Telemedicina Nac/Int) : {BRANCO_BOLD}MIBO Sovereign Intelligence Framework{RESET} {_formatar_ok_status(True)}")
-        print(f"  Foco Comercial                      : {AMARELO}Produtos Intangíveis • Pronto para Venda{RESET} {_formatar_ok_status(True)}")
-        print(f"  Total de Vagas no Mundo             : {VERDE_BOLD}10 vagas no mundo{RESET} {_formatar_ok_status(True)}")
-        print(f"  Grupos / Classes Alvo               : {CIANO}UHNW • Clínicas • Longevity • Visagismo Elite{RESET} {_formatar_ok_status(True)}")
-        print(f"  Varredura de Jurisdições e Acervo   : {VERDE_BOLD}Conformidade com padrões mais rígidos{RESET} {_formatar_ok_status(all(v > 0 for v in cnt_jur.values()))}")
+        logger.info(f"\n{CIANO_BOLD}[0] IDENTIDADE, ESCOPO INTANGÍVEL E JURISDIÇÕES{RESET}")
+        logger.info(f"  Produto MIBO (Telemedicina Nac/Int) : {BRANCO_BOLD}MIBO Sovereign Intelligence Framework{RESET} {_formatar_ok_status(True)}")
+        logger.info(f"  Foco Comercial                      : {AMARELO}Produtos Intangíveis • Pronto para Venda{RESET} {_formatar_ok_status(True)}")
+        logger.info(f"  Total de Vagas no Mundo             : {VERDE_BOLD}10 vagas no mundo{RESET} {_formatar_ok_status(True)}")
+        logger.info(f"  Grupos / Classes Alvo               : {CIANO}UHNW • Clínicas • Longevity • Visagismo Elite{RESET} {_formatar_ok_status(True)}")
+        logger.info(f"  Varredura de Jurisdições e Acervo   : {VERDE_BOLD}Conformidade com padrões mais rígidos{RESET} {_formatar_ok_status(all(v > 0 for v in cnt_jur.values()))}")
 
         for pais, cod, _ in JURISDICOES_ALVO:
             chave = f"{pais} ({cod})"
             qtd = cnt_jur.get(chave, 0)
-            print(f"    {BRANCO_BOLD}{pais:<15}{RESET} | Código: {CIANO_BOLD}{cod:<13}{RESET} | Hits: {BRANCO_BOLD}{qtd:4d}{RESET} | {_formatar_ok_status(qtd > 0)}")
+            logger.info(f"    {BRANCO_BOLD}{pais:<15}{RESET} | Código: {CIANO_BOLD}{cod:<13}{RESET} | Hits: {BRANCO_BOLD}{qtd:4d}{RESET} | {_formatar_ok_status(qtd > 0)}")
 
-        print(f"  Diretrizes e Blindagem Soberana    : {CIANO_BOLD}Arquitetura & Controles de Segurança{RESET} {_formatar_ok_status(all(v > 0 for v in cnt_dir.values()))}")
+        logger.info(f"  Diretrizes e Blindagem Soberana    : {CIANO_BOLD}Arquitetura & Controles de Segurança{RESET} {_formatar_ok_status(all(v > 0 for v in cnt_dir.values()))}")
         for rotulo, _ in DIRETRIZES_ALVO:
             qtd = cnt_dir.get(rotulo, 0)
-            print(f"    {BRANCO_BOLD}{rotulo:<35}{RESET} | Hits: {BRANCO_BOLD}{qtd:4d}{RESET} | {_formatar_ok_status(qtd > 0)}")
+            logger.info(f"    {BRANCO_BOLD}{rotulo:<35}{RESET} | Hits: {BRANCO_BOLD}{qtd:4d}{RESET} | {_formatar_ok_status(qtd > 0)}")
 
-        print(f"  Segurança, MIBO & Pasta security    : {ROXO_BOLD}MIBO + Pasta security{RESET} {_formatar_ok_status(qtd_mibo > 0 and tem_security)}")
-        print(f"    {ROXO_BOLD}Arquivos MIBO{RESET}                      : {ROXO_BOLD}{qtd_mibo:4d} arquivo(s){RESET} | {_formatar_ok_status(qtd_mibo > 0)}")
-        print(f"    {ROXO_BOLD}Pasta security{RESET}                     : {ROXO_BOLD}{qtd_security:4d} arquivo(s){RESET} | {_formatar_ok_status(tem_security)}")
+        logger.info(f"  Segurança, MIBO & Pasta security    : {ROXO_BOLD}MIBO + Pasta security{RESET} {_formatar_ok_status(qtd_mibo > 0 and tem_security)}")
+        logger.info(f"    {ROXO_BOLD}Arquivos MIBO{RESET}                      : {ROXO_BOLD}{qtd_mibo:4d} arquivo(s){RESET} | {_formatar_ok_status(qtd_mibo > 0)}")
+        logger.info(f"    {ROXO_BOLD}Pasta security{RESET}                     : {ROXO_BOLD}{qtd_security:4d} arquivo(s){RESET} | {_formatar_ok_status(tem_security)}")
 
-        print(f"\n{VERDE_BOLD}{'=' * LARGURA_BANNER}{RESET}")
+        logger.info(f"\n{VERDE_BOLD}{'=' * LARGURA_BANNER}{RESET}")
 
     def _imprimir_diagnostico(self, secoes_diagnostico: List[Tuple[str, List[str], int]]) -> None:
-        print(f"\n{CIANO_BOLD}[3] DIAGNÓSTICO E DIRETRIZES VERIFICADAS{RESET}")
+        logger.info(f"\n{CIANO_BOLD}[3] DIAGNÓSTICO E DIRETRIZES VERIFICADAS{RESET}")
         for titulo, itens, nota_sec in secoes_diagnostico:
             cor_tit = _cor_por_nota(nota_sec)
             tem_alerta = nota_sec < 100
             status_txt = f"{AMARELO_BOLD}AJUSTE PENDENTE ({nota_sec}/100){RESET}" if tem_alerta else f"{VERDE_BOLD}SEM ALERTA CRÍTICO{RESET}"
-            print(f"  {cor_tit}{titulo:<34}{RESET} | {status_txt}")
+            logger.info(f"  {cor_tit}{titulo:<34}{RESET} | {status_txt}")
             for item in itens:
                 cor_item = AMARELO if tem_alerta else VERDE
-                print(f"    {cor_item}- {item}{RESET}")
+                logger.info(f"    {cor_item}- {item}{RESET}")
 
     def _imprimir_resumo_e_10_fatores(
         self,
@@ -1045,8 +1053,8 @@ class AuditorGlobalMercado:
         total_palavras = dados_auditoria["total_palavras"]
         total_py = dados_auditoria["total_py"]
 
-        print(f"\n{CIANO_BOLD}[5.1] RESUMO DO PROGRAMA E 10 FATORES DE ALTO PADRÃO{RESET}")
-        print(
+        logger.info(f"\n{CIANO_BOLD}[5.1] RESUMO DO PROGRAMA E 10 FATORES DE ALTO PADRÃO{RESET}")
+        logger.info(
             f"  O que tem     : MIBO Sovereign ({s_venda}/100), main.py ({s_main}/100), "
             f"{total_py} .py / motores ({s_mot}/100), memória comum ({s_mem}/100), "
             f"HTML ({s_html}/100), biometria ({s_bio}/100), biogêmeos ({s_gem}/100), "
@@ -1056,13 +1064,13 @@ class AuditorGlobalMercado:
             f"({s_cnt}/100) e produtos intangíveis."
         )
         if not plano_unificado and alertas_seg == 0:
-            print(f"  O que não tem : {VERDE_BOLD}Nenhuma pendência crítica ou alerta de segurança estática nesta execução.{RESET}")
+            logger.info(f"  O que não tem : {VERDE_BOLD}Nenhuma pendência crítica ou alerta de segurança estática nesta execução.{RESET}")
         else:
             pendencias: List[str] = []
             if alertas_seg > 0:
                 pendencias.append(f"{alertas_seg} alerta(s) de segurança estática (--aplicar)")
             pendencias.extend(plano_unificado)
-            print(f"  O que não tem : {AMARELO}{'; '.join(pendencias)}{RESET}")
+            logger.info(f"  O que não tem : {AMARELO}{'; '.join(pendencias)}{RESET}")
 
         fatores_alto_padrao = [
             f"01. O que é o software         : MIBO Sovereign ({s_venda}/100) vs. códigos comuns/templates soltos.",
@@ -1077,7 +1085,7 @@ class AuditorGlobalMercado:
             f"10. Por que é alto padrão      : Venda {s_venda}/100, ID cifrado, selo SHA-256, biogêmeos, controle C2 e produtos intangíveis vs. validação rasa.",
         ]
         for linha_fator in fatores_alto_padrao:
-            print(f"  {VERDE}{linha_fator}{RESET}")
+            logger.info(f"  {VERDE}{linha_fator}{RESET}")
 
     def _imprimir_bloco_final_telemedicina_e_selo(
         self,
@@ -1106,20 +1114,20 @@ class AuditorGlobalMercado:
         total_palavras = dados_auditoria["total_palavras"]
         alertas_seg = dados_auditoria["alertas_seg"]
 
-        print(f"\n{CIANO_BOLD}[6] SELO DE CRIPTOGRAFIA, BENCHMARK GLOBAL DE TELEMEDICINA E VEREDICTO FINAL{RESET}")
+        logger.info(f"\n{CIANO_BOLD}[6] SELO DE CRIPTOGRAFIA, BENCHMARK GLOBAL DE TELEMEDICINA E VEREDICTO FINAL{RESET}")
         if tudo_ok:
-            print(f"  {VERDE_BOLD}SELO SOBERANO 100/100 • PRONTIDÃO GLOBAL APROVADA SEM RESSALVAS{RESET}")
-            print(f"  {VERDE_BOLD}Excelência absoluta alcançada: arquitetura, motores, segurança C2/security, layout e densidade 100% íntegros.{RESET}")
+            logger.info(f"  {VERDE_BOLD}SELO SOBERANO 100/100 • PRONTIDÃO GLOBAL APROVADA SEM RESSALVAS{RESET}")
+            logger.info(f"  {VERDE_BOLD}Excelência absoluta alcançada: arquitetura, motores, segurança C2/security, layout e densidade 100% íntegros.{RESET}")
         else:
-            print(f"  {AMARELO_BOLD}SELO EM PROGRESSO • SCORE GLOBAL: {s_venda:3d}/100 (AJUSTES PENDENTES){RESET}")
-            print(f"  {AMARELO}Base sólida e avançada: conclua os pontos restantes do Plano de Ação para atingir 100/100.{RESET}")
+            logger.info(f"  {AMARELO_BOLD}SELO EM PROGRESSO • SCORE GLOBAL: {s_venda:3d}/100 (AJUSTES PENDENTES){RESET}")
+            logger.info(f"  {AMARELO}Base sólida e avançada: conclua os pontos restantes do Plano de Ação para atingir 100/100.{RESET}")
 
-        print(f"\n  {AMARELO_BOLD}CHAVE CRIPTOGRÁFICA DE VALIDAÇÃO SOBERANA (SHA-256):{RESET}")
-        print(f"    {BRANCO_BOLD}Selo do Nó:{RESET}  {CIANO_BOLD}{selo_no}{RESET}")
-        print(f"    {BRANCO_BOLD}Assinatura:{RESET}  {AMARELO_BOLD}{assinatura_b64}{RESET}")
-        print(f"    {BRANCO_BOLD}Timestamp :{RESET}  {VERDE_BOLD}{timestamp_local}{RESET}")
+        logger.info(f"\n  {AMARELO_BOLD}CHAVE CRIPTOGRÁFICA DE VALIDAÇÃO SOBERANA (SHA-256):{RESET}")
+        logger.info(f"    {BRANCO_BOLD}Selo do Nó:{RESET}  {CIANO_BOLD}{selo_no}{RESET}")
+        logger.info(f"    {BRANCO_BOLD}Assinatura:{RESET}  {AMARELO_BOLD}{assinatura_b64}{RESET}")
+        logger.info(f"    {BRANCO_BOLD}Timestamp :{RESET}  {VERDE_BOLD}{timestamp_local}{RESET}")
 
-        print(f"\n  {CIANO_BOLD}10 FATORES — TELEMEDICINA GLOBAL (MESMO PATAMAR / PADRÃO):{RESET}")
+        logger.info(f"\n  {CIANO_BOLD}10 FATORES — TELEMEDICINA GLOBAL (MESMO PATAMAR / PADRÃO):{RESET}")
         fatores_telemed = [
             f"01. O que ele é (critério global)     : MIBO Sovereign (Venda {s_venda}/100) no patamar de plataformas globais de telemedicina.",
             f"02. Por que está no mesmo patamar/padrão: Trata dados sensíveis/saúde com {s_conf}/100 em leis, exigindo sigilo, trilha e rigor legal.",
@@ -1133,15 +1141,15 @@ class AuditorGlobalMercado:
             f"10. O que ele faz que elas não fazem   : Audita código, PDFs e leis + --aplicar + arquitetura offline/C2 vs. nuvem contínua/APIs padrão.",
         ]
         for linha_tel in fatores_telemed:
-            print(f"    {CIANO}{linha_tel}{RESET}")
+            logger.info(f"    {CIANO}{linha_tel}{RESET}")
 
-        print(f"\n  {VERDE_BOLD}SÍNTESE FINAL DO PATAMAR GLOBAL DE TELEMEDICINA:{RESET}")
-        print(f"    1. O que ele é: Ecossistema MIBO Sovereign ({s_venda}/100) voltado a telemedicina, biometria ({s_bio}/100), biogêmeos ({s_gem}/100), controle C2 e produtos intangíveis.")
-        print(f"    2. Por que está no mesmo patamar / padrão: Trata dados sensíveis, {jur_ok}/{jur_tot} jurisdições e {dir_ok}/{dir_tot} diretrizes (conformidade {s_conf}/100, ISO {s_iso}/100) com alto rigor.")
-        print(f"    3. O que elas têm que ele tem também: Foco em privacidade, controle de acesso, hash/criptografia, rastreabilidade e conformidade regulatória (densidade {s_cnt}/100).")
-        print(f"    4. O que ele faz que elas não fazem: Audita código, {qtd_pdfs} PDFs ({total_palavras} palavras) e leis + pasta security ({qtd_security} arq., {s_seg}/100), MIBO ({qtd_mibo}), C2 ({qtd_c2}), biogêmeos, controle C2 e produtos intangíveis.")
+        logger.info(f"\n  {VERDE_BOLD}SÍNTESE FINAL DO PATAMAR GLOBAL DE TELEMEDICINA:{RESET}")
+        logger.info(f"    1. O que ele é: Ecossistema MIBO Sovereign ({s_venda}/100) voltado a telemedicina, biometria ({s_bio}/100), biogêmeos ({s_gem}/100), controle C2 e produtos intangíveis.")
+        logger.info(f"    2. Por que está no mesmo patamar / padrão: Trata dados sensíveis, {jur_ok}/{jur_tot} jurisdições e {dir_ok}/{dir_tot} diretrizes (conformidade {s_conf}/100, ISO {s_iso}/100) com alto rigor.")
+        logger.info(f"    3. O que elas têm que ele tem também: Foco em privacidade, controle de acesso, hash/criptografia, rastreabilidade e conformidade regulatória (densidade {s_cnt}/100).")
+        logger.info(f"    4. O que ele faz que elas não fazem: Audita código, {qtd_pdfs} PDFs ({total_palavras} palavras) e leis + pasta security ({qtd_security} arq., {s_seg}/100), MIBO ({qtd_mibo}), C2 ({qtd_c2}), biogêmeos, controle C2 e produtos intangíveis.")
 
-        print(f"\n{VERDE_BOLD}{'=' * LARGURA_BANNER}{RESET}\n")
+        logger.info(f"\n{VERDE_BOLD}{'=' * LARGURA_BANNER}{RESET}\n")
 
     def executar_auditoria_completa(
         self, aplicar_correcoes: bool = False, mostrar_caminho: bool = False
@@ -1252,20 +1260,20 @@ class AuditorGlobalMercado:
             tem_security=tem_security,
         )
 
-        print(f"\n{CIANO_BOLD}[1] INVENTÁRIO GERAL INSPECIONADO{RESET}")
-        print(f"  main.py presente.................: {VERDE_BOLD}{'Sim' if tem_main else 'Não'}{RESET}")
-        print(f"  Arquivos de memória comum........: {BRANCO_BOLD}{qtd_mem}{RESET}")
-        print(f"  Arquivos do painel HTML..........: {BRANCO_BOLD}{len(arquivos_html)}{RESET}")
-        print(f"  Scripts .py / Motores detectados...: {BRANCO_BOLD}{res_mot['total_py']} / {res_mot['motores_detectados']}{RESET}")
-        print(f"  Arquivos ligados a Biométrico.....: {BRANCO_BOLD}{qtd_bio}{RESET}")
-        print(f"  Arquivos ligados a Biogêmeos......: {BRANCO_BOLD}{qtd_gem}{RESET}")
-        print(f"  Arquivos MIBO / C2 Sovereign.......: {ROXO_BOLD}{res_c2s['arquivos_mibo']} MIBO{RESET} | {ROXO_BOLD}{res_c2s['arquivos_c2']} C2/Segurança{RESET} | {ROXO_BOLD}security: {qtd_security} arq.{RESET}")
-        print(f"  Jurisdições / Diretrizes no disco.: {VERDE}{jur_ok}/{len(cnt_jur)} jurisdições{RESET} | {CIANO}{dir_ok}/{len(cnt_dir)} diretrizes{RESET}")
-        print(f"  PDFs finais / Palavras totais......: {VERDE}{len(pdfs)} PDFs{RESET} | {VERDE_BOLD}{total_palavras} palavras{RESET}")
+        logger.info(f"\n{CIANO_BOLD}[1] INVENTÁRIO GERAL INSPECIONADO{RESET}")
+        logger.info(f"  main.py presente.................: {VERDE_BOLD}{'Sim' if tem_main else 'Não'}{RESET}")
+        logger.info(f"  Arquivos de memória comum........: {BRANCO_BOLD}{qtd_mem}{RESET}")
+        logger.info(f"  Arquivos do painel HTML..........: {BRANCO_BOLD}{len(arquivos_html)}{RESET}")
+        logger.info(f"  Scripts .py / Motores detectados...: {BRANCO_BOLD}{res_mot['total_py']} / {res_mot['motores_detectados']}{RESET}")
+        logger.info(f"  Arquivos ligados a Biométrico.....: {BRANCO_BOLD}{qtd_bio}{RESET}")
+        logger.info(f"  Arquivos ligados a Biogêmeos......: {BRANCO_BOLD}{qtd_gem}{RESET}")
+        logger.info(f"  Arquivos MIBO / C2 Sovereign.......: {ROXO_BOLD}{res_c2s['arquivos_mibo']} MIBO{RESET} | {ROXO_BOLD}{res_c2s['arquivos_c2']} C2/Segurança{RESET} | {ROXO_BOLD}security: {qtd_security} arq.{RESET}")
+        logger.info(f"  Jurisdições / Diretrizes no disco.: {VERDE}{jur_ok}/{len(cnt_jur)} jurisdições{RESET} | {CIANO}{dir_ok}/{len(cnt_dir)} diretrizes{RESET}")
+        logger.info(f"  PDFs finais / Palavras totais......: {VERDE}{len(pdfs)} PDFs{RESET} | {VERDE_BOLD}{total_palavras} palavras{RESET}")
 
-        print(f"\n{CIANO_BOLD}[2] NOTAS CALCULADAS (ESCALA 1 A 100){RESET}")
+        logger.info(f"\n{CIANO_BOLD}[2] NOTAS CALCULADAS (ESCALA 1 A 100){RESET}")
         for rotulo, valor in notas:
-            print(f"  {rotulo:<34}: {_barra_progresso(valor)}")
+            logger.info(f"  {rotulo:<34}: {_barra_progresso(valor)}")
 
         secoes_diagnostico = [
             ("main.py", mot_main, s_main),
@@ -1282,12 +1290,12 @@ class AuditorGlobalMercado:
         ]
         self._imprimir_diagnostico(secoes_diagnostico)
 
-        print(f"\n{CIANO_BOLD}[3.1] LOCALIZAÇÃO EXATA DOS PONTOS DE SEGURANÇA{RESET}")
+        logger.info(f"\n{CIANO_BOLD}[3.1] LOCALIZAÇÃO EXATA DOS PONTOS DE SEGURANÇA{RESET}")
         if not achados_seg:
-            print(f"  {VERDE_BOLD}Nenhum ponto de eval/exec/pickle, shell=True ou credencial fixa encontrado.{RESET}")
+            logger.info(f"  {VERDE_BOLD}Nenhum ponto de eval/exec/pickle, shell=True ou credencial fixa encontrado.{RESET}")
         else:
             for item in achados_seg:
-                print(
+                logger.info(
                     f"  {VERMELHO_BOLD}[{item['tipo']}]{RESET} {BRANCO_BOLD}{item['arquivo']}{RESET} "
                     f"{AMARELO}(linha {item['linha']}){RESET}: {CINZA}{item['trecho']}{RESET}"
                 )
@@ -1300,31 +1308,31 @@ class AuditorGlobalMercado:
             if acao not in plano_unificado:
                 plano_unificado.append(acao)
 
-        print(f"\n{CIANO_BOLD}[4] PLANO DE AÇÃO PARA ATINGIR 100/100{RESET}")
+        logger.info(f"\n{CIANO_BOLD}[4] PLANO DE AÇÃO PARA ATINGIR 100/100{RESET}")
         if not plano_unificado:
-            print(f"  {VERDE_BOLD}Tudo verificado está em 100/100 sem pendências.{RESET}")
+            logger.info(f"  {VERDE_BOLD}Tudo verificado está em 100/100 sem pendências.{RESET}")
         else:
             for idx, acao in enumerate(plano_unificado, start=1):
-                print(f"  {AMARELO_BOLD}{idx}.{RESET} {BRANCO_BOLD if idx == 1 else ''}{acao}{RESET}")
+                logger.info(f"  {AMARELO_BOLD}{idx}.{RESET} {BRANCO_BOLD if idx == 1 else ''}{acao}{RESET}")
 
         if aplicar_correcoes:
-            print(f"\n{ROXO_BOLD}[4.1] APLICAÇÃO SEGURA DE CORREÇÕES (--aplicar){RESET}")
+            logger.info(f"\n{ROXO_BOLD}[4.1] APLICAÇÃO SEGURA DE CORREÇÕES (--aplicar){RESET}")
             resultados_fix = self.aplicar_correcoes_seguras(achados_seg)
             if not resultados_fix:
-                print(f"  {CIANO}Nenhuma alteração automática aplicada.{RESET}")
+                logger.info(f"  {CIANO}Nenhuma alteração automática aplicada.{RESET}")
             else:
                 for msg in resultados_fix:
-                    print(f"  {VERDE}- {msg}{RESET}")
-            print(f"  {AMARELO}Nota: ocorrências de eval/exec/pickle exigem revisão manual caso dependam de lógica dinâmica específica.{RESET}")
+                    logger.info(f"  {VERDE}- {msg}{RESET}")
+            logger.info(f"  {AMARELO}Nota: ocorrências de eval/exec/pickle exigem revisão manual caso dependam de lógica dinâmica específica.{RESET}")
 
-        print(f"\n{CIANO_BOLD}[5] POSICIONAMENTO, COMERCIALIZAÇÃO E HOSPEDAGEM{RESET}")
-        print(f"  {VERDE}Aplicação:{RESET} Plataforma internacional de telemedicina, saúde/estética")
-        print("    avançada, análise biométrica/biogêmeos e governança soberana C2.")
-        print(f"  {VERDE}Canais:{RESET} Licenciamento B2B / API (ex.: Stripe / Lemon Squeezy) e entrega")
-        print("    controlada de licenças e dossiês.")
-        print(f"  {VERDE}Hospedagem:{RESET} Servidores/VPS dedicados na região-alvo (ex.: Europa —")
-        print("    Frankfurt/Paris via Hetzner ou DigitalOcean) com HTTPS/TLS, controle")
-        print("    de acesso rigoroso e isolamento de dados.")
+        logger.info(f"\n{CIANO_BOLD}[5] POSICIONAMENTO, COMERCIALIZAÇÃO E HOSPEDAGEM{RESET}")
+        logger.info(f"  {VERDE}Aplicação:{RESET} Plataforma internacional de telemedicina, saúde/estética")
+        logger.info("    avançada, análise biométrica/biogêmeos e governança soberana C2.")
+        logger.info(f"  {VERDE}Canais:{RESET} Licenciamento B2B / API (ex.: Stripe / Lemon Squeezy) e entrega")
+        logger.info("    controlada de licenças e dossiês.")
+        logger.info(f"  {VERDE}Hospedagem:{RESET} Servidores/VPS dedicados na região-alvo (ex.: Europa —")
+        logger.info("    Frankfurt/Paris via Hetzner ou DigitalOcean) com HTTPS/TLS, controle")
+        logger.info("    de acesso rigoroso e isolamento de dados.")
 
         self._imprimir_resumo_e_10_fatores(dados_auditoria, plano_unificado)
 

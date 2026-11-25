@@ -1,0 +1,25 @@
+{
+  "timestamp_utc": "2026-11-24T23:53:06.249434+00:00",
+  "frente": "Tricologia Ultra Avancada",
+  "motor": "core.tricologia_ultra_avancada.C2UltraAdvancedTrichologyEngine",
+  "assinaturas": {
+    "__init__": "(self, ceo_name: Optional[str] = None, company_name: str = 'Thierry Technology Concept Global', market_segment: str = 'Tecnologia, Inovação e Longevidade Global', horizon_years: int = 10, operador: str = 'Thierry', frame_capturado_rgb=None, densidade_fios_estimada: float = 130.0, miniaturizacao_pct: float = 22.5, umidade_ar_pct: float = 85.0, temp_externa_c: float = 32.0, net_worth_eur: float = 2500000.0, fator_estresse_biologico: Optional[float] = None, telemetria: Optional[Dict[str, Any]] = None, lang: str = 'PT', *args, **kwargs) -> None",
+    "calcular_telemetria_capilar": "() -> Dict[str, Any]",
+    "gerar_pdf_tricologia_avancada": "(caminho_salvamento: str = 'tricologia_ultra_avancada_dossier.pdf', lang: Optional[str] = None) -> str"
+  },
+  "entrada": {
+    "arquivo": "evidencias_p2p_tricologia_ultra\\amostra_capilar_ultra_128x128.npy",
+    "shape": [
+      128,
+      128,
+      3
+    ],
+    "dtype": "uint8",
+    "sha256": "ebfc718d776b0e7262837c466f238d31afa24ccbe8956c43632eb9df4961c068"
+  },
+  "execucao": {
+    "erro": null,
+    "tipo_retorno": "dict",
+    "saida_resumo": "{'fluxo_q': 10.22, 'resistencia_r': 13.81, 'indice_n': 1.566, 'taxa_miniaturizacao': 31.05, 'status_clinico': 'ISQUEMIA BULBAR PERIFÉRICA EM PROGRESSÃO', 'vulnerabilidade_texto': 'Atrofia folicular no setor de Tecnologia, Inovação e Longevidade Global. Resistência: 13.81 dyn·s/cm⁵.', 'diretriz_tática': 'Ativação mandatória de protocolo para estabilizar hemoperfusão de Cliente UHNW.', 'alerta_termico': 'Alerta Térmico (34.2°C): Vasoconstrição. Obrigatório LED 830nm.', 'fator_detox': 'Saturação [Crítica (Urbana)]: Estresse oxidativo. Requer Plasma Fracionado.', 'cronograma_horario': 'Cronobiologia [Noite]: Aplicar bloqueador de DHT às 22:30.', 'alerta_clima': 'Clima (Umidade: 85.0%): Risco de disbiose. Antisséptico obrigatório.'}"
+  }
+}

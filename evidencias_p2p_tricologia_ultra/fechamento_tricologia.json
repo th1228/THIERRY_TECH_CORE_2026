@@ -1,0 +1,60 @@
+{
+  "timestamp_utc": "2026-11-25T00:35:15.077300+00:00",
+  "motor": "core.tricologia_ultra_avancada.C2UltraAdvancedTrichologyEngine",
+  "cenarios": [
+    {
+      "cenario": "cenario_base",
+      "parametros_init": {
+        "miniaturizacao_pct": 10.0,
+        "umidade_ar_pct": 50.0,
+        "temp_externa_c": 26.0
+      },
+      "telemetria": {
+        "fluxo_q": 10.39,
+        "resistencia_r": 13.33,
+        "indice_n": 1.564,
+        "taxa_miniaturizacao": 10.24,
+        "status_clinico": "ISQUEMIA BULBAR PERIFÉRICA EM PROGRESSÃO",
+        "vulnerabilidade_texto": "Atrofia folicular no setor de Tecnologia, Inovação e Longevidade Global (miniaturização 10.2%). Resistência: 13.33 dyn·s/cm⁵.",
+        "diretriz_tatica": "Ativação de protocolo para estabilizar hemoperfusão de Cliente UHNW.",
+        "alerta_termico": "Alerta Térmico (33.7°C): Vasoconstrição. Obrigatório LED 830nm.",
+        "fator_detox": "Saturação Óptica: Baixa (Microambiente controlado).",
+        "cronograma_horario": "Cronobiologia [Noite]: Aplicar bloqueador de DHT às 22:30.",
+        "alerta_clima": "Clima (Umidade: 50.0%): Umidade em faixa moderada."
+      },
+      "pdf": {
+        "arquivo": "evidencias_p2p_tricologia_ultra\\dossier_tricologia_cenario_base.pdf",
+        "tamanho_bytes": 9893,
+        "sha256": "ffeafefbd1d82e920f5f99770c96eed163795842c5e98ed45d07ad452231de3e"
+      },
+      "pdf_erro": null
+    },
+    {
+      "cenario": "cenario_critico",
+      "parametros_init": {
+        "miniaturizacao_pct": 35.0,
+        "umidade_ar_pct": 88.0,
+        "temp_externa_c": 34.0
+      },
+      "telemetria": {
+        "fluxo_q": 9.87,
+        "resistencia_r": 17.0,
+        "indice_n": 1.568,
+        "taxa_miniaturizacao": 41.72,
+        "status_clinico": "ISQUEMIA BULBAR PERIFÉRICA EM PROGRESSÃO",
+        "vulnerabilidade_texto": "Atrofia folicular no setor de Tecnologia, Inovação e Longevidade Global (miniaturização 41.7%). Resistência: 17.0 dyn·s/cm⁵.",
+        "diretriz_tatica": "Ativação de protocolo para estabilizar hemoperfusão de Cliente UHNW.",
+        "alerta_termico": "Alerta Térmico (34.3°C): Vasoconstrição. Obrigatório LED 830nm.",
+        "fator_detox": "Saturação [Crítica (Urbana)]: Estresse oxidativo. Requer Plasma Fracionado.",
+        "cronograma_horario": "Cronobiologia [Noite]: Aplicar bloqueador de DHT às 22:30.",
+        "alerta_clima": "Clima (Umidade: 88.0%): Risco de disbiose. Antisséptico obrigatório."
+      },
+      "pdf": {
+        "arquivo": "evidencias_p2p_tricologia_ultra\\dossier_tricologia_cenario_critico.pdf",
+        "tamanho_bytes": 9919,
+        "sha256": "b9d1b9999f3bbab44d406abce324d192da068fc8ad716e561cc42ac631d65b35"
+      },
+      "pdf_erro": null
+    }
+  ]
+}

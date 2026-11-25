@@ -1,14 +1,22 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 import os
 from pathlib import Path
 from datetime import datetime
 
 def verificar_prontidao_comercial():
-    print("=" * 70)
-    print(" THIERRY TECHNOLOGY CONCEPT GLOBAL | CHECKLIST DE PRONTIDÃO COMERCIAL")
-    print("=" * 70)
-    print(f" Data da Varredura: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(" Alvo: Validação profunda de assets, PWA, index.html e responsividade total.")
-    print("-" * 70)
+    logger.info("=" * 70)
+    logger.info(" THIERRY TECHNOLOGY CONCEPT GLOBAL | CHECKLIST DE PRONTIDÃO COMERCIAL")
+    logger.info("=" * 70)
+    logger.info(f" Data da Varredura: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    logger.info(" Alvo: Validação profunda de assets, PWA, index.html e responsividade total.")
+    logger.info("-" * 70)
 
     # 1. Lista de arquivos críticos exigidos para o deploy e PWA
     arquivos_criticos = [
@@ -25,28 +33,28 @@ def verificar_prontidao_comercial():
     pendencias = 0
     sucessos = 0
 
-    print("\n[+] VERIFICANDO ASSETS CRÍTICOS DE FRONTEND & PWA:")
+    logger.info("\n[+] VERIFICANDO ASSETS CRÍTICOS DE FRONTEND & PWA:")
     for arquivo in arquivos_criticos:
         caminho = Path(arquivo)
         if caminho.is_file():
-            print(f"  [OK] Arquivo encontrado: {arquivo}")
+            logger.info(f"  [OK] Arquivo encontrado: {arquivo}")
             sucessos += 1
         else:
-            print(f"  [PENDENTE] Arquivo ausente: {arquivo}")
+            logger.info(f"  [PENDENTE] Arquivo ausente: {arquivo}")
             pendencias += 1
 
-    print("\n[+] VERIFICANDO DIRETÓRIOS DE COMPLIANCE & AUDITORIA:")
+    logger.info("\n[+] VERIFICANDO DIRETÓRIOS DE COMPLIANCE & AUDITORIA:")
     for pasta in pastas_criticas:
         caminho_pasta = Path(pasta)
         if caminho_pasta.is_dir():
-            print(f"  [OK] Diretório operacional presente: {pasta}/")
+            logger.info(f"  [OK] Diretório operacional presente: {pasta}/")
             sucessos += 1
         else:
-            print(f"  [PENDENTE] Diretório ausente: {pasta}/")
+            logger.info(f"  [PENDENTE] Diretório ausente: {pasta}/")
             pendencias += 1
 
     # 3. Varredura e Inspeção Interna do index.html (Componentes e Responsividade Multi-dispositivo)
-    print("\n[+] INSPEÇÃO ESTRUTURAL E RESPONSIVIDADE DO PAINEL (INDEX.HTML):")
+    logger.info("\n[+] INSPEÇÃO ESTRUTURAL E RESPONSIVIDADE DO PAINEL (INDEX.HTML):")
     index_path = Path("index.html")
     if index_path.is_file():
         try:
@@ -65,26 +73,26 @@ def verificar_prontidao_comercial():
 
             for nome_comp, termo in componentes_html.items():
                 if termo in conteudo_html:
-                    print(f"  [OK] Módulo validado: {nome_comp}")
+                    logger.info(f"  [OK] Módulo validado: {nome_comp}")
                     sucessos += 1
                 else:
-                    print(f"  [PENDENTE] Ausente ou não mapeado: {nome_comp}")
+                    logger.info(f"  [PENDENTE] Ausente ou não mapeado: {nome_comp}")
                     pendencias += 1
 
         except Exception as e:
-            print(f"  [ERRO] Não foi possível ler o arquivo index.html: {e}")
+            logger.info(f"  [ERRO] Não foi possível ler o arquivo index.html: {e}")
             pendencias += 1
     else:
-        print("  [ERRO CRÍTICO] O arquivo index.html não existe para ser inspecionado.")
+        logger.info("  [ERRO CRÍTICO] O arquivo index.html não existe para ser inspecionado.")
         pendencias += 2
 
-    print("\n" + "=" * 70)
-    print(f" RESUMO DO DIAGNÓSTICO: {sucessos} itens validados com sucesso.")
+    logger.info("\n" + "=" * 70)
+    logger.info(f" RESUMO DO DIAGNÓSTICO: {sucessos} itens validados com sucesso.")
     if pendencias == 0:
-        print(" VEREDITO: PLATAFORMA 100% PRONTA, RESPONSIVA (PC/TABLET/CELULAR) E GLOBAL!")
+        logger.info(" VEREDITO: PLATAFORMA 100% PRONTA, RESPONSIVA (PC/TABLET/CELULAR) E GLOBAL!")
     else:
-        print(f" ATENÇÃO: {pendencias} item(ns) requerem atenção para validação total.")
-    print("=" * 70)
+        logger.info(f" ATENÇÃO: {pendencias} item(ns) requerem atenção para validação total.")
+    logger.info("=" * 70)
 
 if __name__ == "__main__":
     verificar_prontidao_comercial()

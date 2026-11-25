@@ -22,8 +22,19 @@ try:
 except ImportError:
     # Fallback caso rode isolado sem a raiz configurada
     class MemoriaMock:
-        def salvar_dados(self, chave, valor): pass
-        def ler_dados(self, chave): return None
+        def __init__(self):
+            self._dados = {}
+
+        def salvar_dados(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def registrar(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def ler_dados(self, chave):
+            return self._dados.get(chave)
     instancia_memoria = MemoriaMock()
 # -----------------------------------------------
 
@@ -42,11 +53,12 @@ def executar_coleta_inicial():
     try:
         # Lógica de coleta
         dados = coleta_dados_sensores()
-        verificar_integridade_malha()
+        integridade = verificar_integridade_malha(dados)
         
         # AQUI A CONEXÃO: Salva o status na Memória Comum
         instancia_memoria.salvar_dados("STATUS_SINCRONIA", "CONCLUIDO")
         instancia_memoria.salvar_dados("DADOS_SINCRONIZADOS", dados)
+        instancia_memoria.salvar_dados("INTEGRIDADE_MALHA", integridade)
         
         print("[MOTOR SINCRONIA] Sincronia concluída com sucesso.")
         return True
@@ -60,9 +72,25 @@ def coleta_dados_sensores():
     """Simula a coleta de dados da rede de sensores."""
     return {"sensores": "ativos", "latencia": "baixa", "integridade": 100}
 
-def verificar_integridade_malha():
-    """Simula a verificação da integridade da malha de dados."""
-    pass
+def verificar_integridade_malha(dados=None):
+    """Verifica a integridade da malha de dados com base nos dados coletados."""
+    origem = dados if isinstance(dados, dict) else instancia_memoria.ler_dados("DADOS_SINCRONIZADOS")
+    if not isinstance(origem, dict):
+        resultado = {"ok": False, "integridade": 0, "motivo": "dados_indisponiveis"}
+    else:
+        valor = origem.get("integridade", 100)
+        try:
+            integridade_num = float(valor)
+        except (TypeError, ValueError):
+            integridade_num = 0.0
+        resultado = {
+            "ok": integridade_num > 0,
+            "integridade": integridade_num,
+            "motivo": "ok" if integridade_num > 0 else "integridade_zerada",
+        }
+    if hasattr(instancia_memoria, "registrar"):
+        instancia_memoria.registrar("malha_integridade_check", resultado)
+    return resultado
 
 def processar(frame=None):
     """

@@ -8,6 +8,8 @@ Versão: 17.0.4 - Global Quantum Platinum (UHNW Executive Dashboard Edition - A4
 import os
 import sys
 import json
+import uuid
+import tempfile
 import datetime
 import hashlib
 import numpy as np
@@ -38,9 +40,19 @@ except ImportError:
         from core.memoria_comum import instancia_memoria as memoria
     except ImportError:
         class MemoriaMock:
-            def salvar_dados(self, chave, valor): pass
-            def registrar(self, chave, valor): pass
-            def ler_dados(self, chave=None): return None
+            def __init__(self):
+                self._dados = {}
+
+            def salvar_dados(self, chave, valor):
+                self._dados[chave] = valor
+                return True
+
+            def registrar(self, chave, valor):
+                self._dados[chave] = valor
+                return True
+
+            def ler_dados(self, chave):
+                return self._dados.get(chave)
         memoria = MemoriaMock()
 
 obter_evolucao_titular: Any = None
@@ -49,6 +61,36 @@ try:
     obter_evolucao_titular = _obt_evo_titular
 except ImportError:
     obter_evolucao_titular = None
+
+
+
+# --- PATCH C2 SOVEREIGN INTELLIGENCE v17.0.5 ---
+def _extrair_float_c2(valor, padrao):
+    if valor is None:
+        return padrao
+    if isinstance(valor, (int, float)):
+        return float(valor)
+    txt = str(valor).strip()
+    if not txt:
+        return padrao
+    buf = []
+    dot = False
+    sign = False
+    for ch in txt:
+        if ch in "+-" and not buf and not sign:
+            buf.append(ch)
+            sign = True
+        elif ch.isdigit():
+            buf.append(ch)
+        elif ch in ".," and not dot:
+            buf.append(".")
+            dot = True
+        elif buf:
+            break
+    try:
+        return float("".join(buf)) if buf else padrao
+    except ValueError:
+        return padrao
 
 
 class C2SovereignSecurityCore:
@@ -95,9 +137,20 @@ class C2SovereignIntelligenceEngine:
         self.entidade = entidade_informada
 
         self.segment = market_segment if market_segment and market_segment.strip() else "Tecnologia, Inovação e Longevidade Global"
-        self.horizon = int(horizon_years)
-        self.aum = aum_bilhoes_eur * 1000.0  
-        self.ameaca = fator_ameaca_mercado
+        try:
+            self.horizon = int(float(horizon_years)) if horizon_years is not None else 15
+        except (ValueError, TypeError):
+            self.horizon = 15
+        if isinstance(aum_bilhoes_eur, dict):
+            _aum_bruto = aum_bilhoes_eur.get("aum_bilhoes_eur", aum_bilhoes_eur.get("valor", 25.0))
+        else:
+            _aum_bruto = aum_bilhoes_eur
+        self.aum = _extrair_float_c2(_aum_bruto, 25.0) * 1000.0  
+        if isinstance(fator_ameaca_mercado, dict):
+            _ameaca_bruta = fator_ameaca_mercado.get("fator_ameaca_mercado", fator_ameaca_mercado.get("valor", 0.40))
+        else:
+            _ameaca_bruta = fator_ameaca_mercado
+        self.ameaca = _extrair_float_c2(_ameaca_bruta, 0.40)
         self.pontos_base = 100380
         self.telemetria_externa: Dict[str, Any] = telemetria or {}
         self.lang = lang.upper() if lang else "PT"
@@ -695,7 +748,12 @@ class C2SovereignIntelligenceEngine:
         hash_sha256_gerado = hashlib.sha256(payload_bruto.encode('utf-8')).hexdigest().upper()
         chave_doc = hash_sha256_gerado[:12]
 
-        caminho_grafico_temp = "chart_temp.png"
+        fd_g, caminho_grafico_temp = tempfile.mkstemp(
+            prefix=f"c2_chart_{uuid.uuid4().hex[:8]}_",
+            suffix=".png"
+        )
+        import os as _os_patch
+        _os_patch.close(fd_g)
         self._gerar_grafico_erosao(dados_motor["projecao_temporal"], caminho_grafico_temp)
 
         def _desenhar_elementos_pagina(canvas, doc):
@@ -859,7 +917,7 @@ class C2SovereignIntelligenceEngine:
         crono = ultimo_atendimento.get("cronoestetica_e_gemeo_digital", {})
         meteo = ultimo_atendimento.get("engine_meteo_climatica_16_dias", {}).get("alerta_uv_radiacao", {})
 
-        dia_apice_val = crono.get("dia_apice_regeneracao", "24/10/2026")
+        dia_apice_val = crono.get("dia_apice_regeneracao", (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(days=10)).strftime("%d/%m/%Y"))
         alerta_uv_val = meteo.get("risco", "Monitoramento Climático Ativo")
 
         parecer_aptidao_invasiva = self._avaliar_aptidao_tratamento_invasivo("Bioestimulador de Colágeno / Cirurgia")
@@ -916,7 +974,7 @@ class C2SovereignIntelligenceEngine:
         if atendimentos_json:
             for idx, atd in enumerate(atendimentos_json, 1):
                 procedimento = atd.get("procedimento") or atd.get("procedimento_base") or "Atendimento"
-                data_atd = atd.get("data") or "14/10/2026"
+                data_atd = atd.get("data") or datetime.datetime.now(datetime.timezone.utc).strftime("%d/%m/%Y")
                 durabilidade = atd.get("durabilidade_prevista_meses", "6.0")
                 linhas_historico_tratamentos.append(f"• [{data_atd}] {procedimento} | Durabilidade: {durabilidade}M")
             texto_tratamentos_formatado = " | ".join(linhas_historico_tratamentos)
@@ -1064,7 +1122,7 @@ def gerar_dossie_auditoria(dados_paciente: Dict[str, Any]) -> str:
     
     if len(atendimentos) > 1:
         try:
-            data_primeiro_str = atendimentos[0].get("data") or "14/10/2026"
+            data_primeiro_str = atendimentos[0].get("data") or datetime.datetime.now(datetime.timezone.utc).strftime("%d/%m/%Y")
             data_primeiro = datetime.datetime.strptime(data_primeiro_str[:10], "%d/%m/%Y")
             dias_decorridos = (datetime.datetime.now() - data_primeiro).days
             anos_decorridos = round(dias_decorridos / 365, 1)
@@ -1106,3 +1164,10 @@ if __name__ == "__main__":
     dados_teste = {"nome": "Genilson Rodrigues", "empresa": "Thierry Technology Concept Global"}
     arquivo_gerado = gerar_dossie_auditoria(dados_teste)
     print(f"Dashboard UHNW gerado com sucesso! Arquivado em: {arquivo_gerado}")
+
+SovereignC2DefenseEngine = C2SovereignIntelligenceEngine
+
+
+class BiogemEngine(C2SovereignIntelligenceEngine):
+    """Alias de compatibilidade para motores legados que herdam BiogemEngine."""
+    pass

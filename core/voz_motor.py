@@ -20,9 +20,19 @@ except ImportError:
         from core.memoria_comum import instancia_memoria as memoria
     except ImportError:
         class MemoriaMock:
-            def salvar_dados(self, chave, valor): pass
-            def registrar(self, chave, valor): pass
-            def ler_dados(self, chave): return None
+            def __init__(self):
+                self._dados = {}
+
+            def salvar_dados(self, chave, valor):
+                self._dados[chave] = valor
+                return True
+
+            def registrar(self, chave, valor):
+                self._dados[chave] = valor
+                return True
+
+            def ler_dados(self, chave):
+                return self._dados.get(chave)
         memoria = MemoriaMock()
 # ---------------------------------------------------
 
@@ -32,4 +42,13 @@ def falar(texto):
     """
     Motor de voz desativado permanentemente a pedido do operador.
     """
-    pass
+    payload = {
+        "status": "desativado_permanente",
+        "motivo": "desativado a pedido do operador",
+        "tamanho_texto": len(texto) if texto is not None else 0,
+    }
+    if hasattr(memoria, "registrar"):
+        memoria.registrar("voz_motor_ultimo_evento", payload)
+    elif hasattr(memoria, "salvar_dados"):
+        memoria.salvar_dados("voz_motor_ultimo_evento", payload)
+    return payload

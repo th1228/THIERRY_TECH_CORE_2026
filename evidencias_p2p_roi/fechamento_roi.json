@@ -1,0 +1,59 @@
+{
+  "timestamp_utc": "2026-11-25T01:57:35.863032+00:00",
+  "super_retorno_financeiro": [
+    {
+      "motor": "C2SovereignROIEngine",
+      "cenario": "base",
+      "parametros_aplicados": {
+        "horizon_years": 5
+      },
+      "pdf": {
+        "metodo": "gerar_pdf",
+        "arquivo": "evidencias_p2p_roi\\super_retorno_base.pdf",
+        "tamanho_bytes": 6555,
+        "sha256": "06629204ade166ea976d30c102e3b951498dd1ff23c1869a73b1a081d8e395f0"
+      }
+    },
+    {
+      "motor": "C2SovereignROIEngine",
+      "cenario": "alto_patrimonio",
+      "parametros_aplicados": {
+        "horizon_years": 15
+      },
+      "pdf": {
+        "metodo": "gerar_pdf",
+        "arquivo": "evidencias_p2p_roi\\super_retorno_alto_patrimonio.pdf",
+        "tamanho_bytes": 6555,
+        "sha256": "26b4fa44a064ab176100eabf51492a8ad88a5417818523262d114c99a94a579c"
+      }
+    }
+  ],
+  "visagismo_estetica_roi": [
+    {
+      "motor": "VisagismoEsteticaRoi",
+      "cenario": "base",
+      "parametros_aplicados": {
+        "nome_cliente": "Cliente Base"
+      },
+      "pdf": {
+        "metodo": "gerar_pdf_visagismo_roi",
+        "arquivo": "visagismo_estetica_roi.pdf",
+        "tamanho_bytes": 4166,
+        "sha256": "15a6fb513d72da13d0e0dda868636fede3001cf7c9ffbad949f395e7fa538af1"
+      }
+    },
+    {
+      "motor": "VisagismoEsteticaRoi",
+      "cenario": "alto_estresse",
+      "parametros_aplicados": {
+        "nome_cliente": "Cliente Critico"
+      },
+      "pdf": {
+        "metodo": "gerar_pdf_visagismo_roi",
+        "arquivo": "visagismo_estetica_roi.pdf",
+        "tamanho_bytes": 4166,
+        "sha256": "f986738a686fe2f56d02d24030674bc371a9cf302cba112d47689a688eaa52fc"
+      }
+    }
+  ]
+}

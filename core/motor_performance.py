@@ -24,8 +24,19 @@ try:
 except ImportError:
     # Fallback para testes isolados
     class MemoriaMock:
-        def salvar_dados(self, chave, valor): pass
-        def ler_dados(self, chave): return None
+        def __init__(self):
+            self._dados = {}
+
+        def salvar_dados(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def registrar(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def ler_dados(self, chave):
+            return self._dados.get(chave)
     instancia_memoria = MemoriaMock()
 # -----------------------------------------------
 

@@ -24,8 +24,19 @@ try:
     from memoria_comum import instancia_memoria as memoria
 except ImportError:
     class MemoriaMock:
-        def salvar_dados(self, chave, valor): pass
-        def ler_dados(self, chave): return None
+        def __init__(self):
+            self._dados = {}
+
+        def salvar_dados(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def registrar(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def ler_dados(self, chave):
+            return self._dados.get(chave)
     memoria = MemoriaMock()
 # -----------------------------------------------
 
@@ -38,7 +49,8 @@ except ImportError:
 try:
     from core.atelie import gerar_diagnostico_final
 except ImportError:
-    def gerar_diagnostico_final(*args, **kwargs): pass
+    def gerar_diagnostico_final(*args, **kwargs):
+        return {"status": "fallback", "origem": "dashboard_global", "diagnostico": None}
 
 def analisar_expressao_olhar(imagem_path):
     """Analisa a psicologia do olhar."""

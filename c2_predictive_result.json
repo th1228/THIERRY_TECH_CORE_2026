@@ -1,12 +1,12 @@
 {
-    "timestamp": "2026-10-30T19:28:25.349282",
+    "timestamp": "2026-11-24T23:31:38.400079",
     "meta": {
-        "scanned_modules": 289,
-        "total_lloc": 32012,
-        "coupling_alerts": 23,
-        "vulnerability_alerts": 1
+        "scanned_modules": 391,
+        "total_lloc": 51351,
+        "coupling_alerts": 32,
+        "vulnerability_alerts": 0
     },
-    "risk_index": 6.7,
-    "health_score": 93.3,
+    "risk_index": 6.64,
+    "health_score": 93.36,
     "status_etapa_1": "VERIFIED_AND_SIGNED"
 }

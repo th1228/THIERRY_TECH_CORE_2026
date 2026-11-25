@@ -1,0 +1,203 @@
+{
+  "timestamp": "2026-11-24T23:47:30",
+  "veredicto_independente": "APROVADO EM ESTRUTURA E MOTOR BASE, COM RESSALVAS PARA VALIDAÇÃO DE PRODUÇÃO E MERCADO",
+  "resumo_codigo": {
+    "arquivos_py": 391,
+    "linhas_totais": 51351,
+    "erros_sintaxe": 0,
+    "modulos_com_bibliotecas_reais": 128,
+    "arquivos_de_teste": 33,
+    "funcoes_stub_ou_pass": 10,
+    "modulos_com_5_ou_mais_termos_simulacao_fallback": 9
+  },
+  "top_10_simulacao_fallback": [
+    {
+      "arquivo": "auditor_global_mercado.py",
+      "ocorrencias": 22,
+      "imports_reais": [
+        "hashlib",
+        "pymupdf"
+      ]
+    },
+    {
+      "arquivo": "auditor_verdade_mercado.py",
+      "ocorrencias": 18,
+      "imports_reais": [
+        "fitz",
+        "pymupdf"
+      ]
+    },
+    {
+      "arquivo": "core\\sovereign_due-diligence_simulator.py.py",
+      "ocorrencias": 12,
+      "imports_reais": []
+    },
+    {
+      "arquivo": "mapear_projeto_avalista.py",
+      "ocorrencias": 11,
+      "imports_reais": []
+    },
+    {
+      "arquivo": "atualizar_tricologia_ultra.py",
+      "ocorrencias": 7,
+      "imports_reais": []
+    },
+    {
+      "arquivo": "core\\tricologia_ultra_avancada.py",
+      "ocorrencias": 7,
+      "imports_reais": [
+        "hashlib",
+        "numpy",
+        "reportlab"
+      ]
+    },
+    {
+      "arquivo": "core\\tricologia_disruptiva_engine.py",
+      "ocorrencias": 6,
+      "imports_reais": [
+        "numpy"
+      ]
+    },
+    {
+      "arquivo": "main.py",
+      "ocorrencias": 6,
+      "imports_reais": [
+        "cryptography",
+        "cv2",
+        "fastapi",
+        "fitz",
+        "hashlib",
+        "numpy"
+      ]
+    },
+    {
+      "arquivo": "security\\test_desligamento_abrupto.py",
+      "ocorrencias": 6,
+      "imports_reais": []
+    }
+  ],
+  "aderencia_dominios_mercado": {
+    "Biometria & Visão Computacional": {
+      "total_modulos": 115,
+      "com_processamento_real": 53,
+      "exemplos": [
+        "auditor_prontidao_vendas.py",
+        "auditor_sistema.py",
+        "auditor_verdade_mercado.py"
+      ]
+    },
+    "Biogêmeos & Modelagem": {
+      "total_modulos": 40,
+      "com_processamento_real": 19,
+      "exemplos": [
+        "auditor_prontidao_vendas.py",
+        "auditor_verdade_mercado.py",
+        "core\\analisador_MIBO_inovação.py"
+      ]
+    },
+    "Tricologia & Saúde/Estética": {
+      "total_modulos": 63,
+      "com_processamento_real": 26,
+      "exemplos": [
+        "auditor_verdade_mercado.py",
+        "auditoria_juridica_evidencias.py",
+        "core\\analise_cabelo.py"
+      ]
+    },
+    "Segurança, Criptografia & C2": {
+      "total_modulos": 330,
+      "com_processamento_real": 126,
+      "exemplos": [
+        "auditor_conteudo_profundidade.py",
+        "auditor_global_mercado.py",
+        "auditor_prontidao_vendas.py"
+      ]
+    },
+    "Conformidade Regulatória": {
+      "total_modulos": 52,
+      "com_processamento_real": 29,
+      "exemplos": [
+        "auditor_global_mercado.py",
+        "auditor_prontidao_vendas.py",
+        "auditor_verdade_mercado.py"
+      ]
+    },
+    "Comercialização & Licenciamento": {
+      "total_modulos": 109,
+      "com_processamento_real": 51,
+      "exemplos": [
+        "auditor_conteudo_profundidade.py",
+        "auditor_global_mercado.py",
+        "auditor_prontidao_vendas.py"
+      ]
+    }
+  },
+  "dossies_pdf": {
+    "quantidade": 11,
+    "total_palavras": 10785,
+    "arquivos": [
+      {
+        "arquivo": "pdfs_finais\\01_Dossie_Sovereign_Intelligence.pdf",
+        "paginas": 5,
+        "palavras": 949
+      },
+      {
+        "arquivo": "pdfs_finais\\02_Dossie_Tricologia_PrivateBanking_CheckmateComplete.pdf",
+        "paginas": 2,
+        "palavras": 872
+      },
+      {
+        "arquivo": "pdfs_finais\\02_Super_Retorno_Financeiro.pdf",
+        "paginas": 1,
+        "palavras": 648
+      },
+      {
+        "arquivo": "pdfs_finais\\03_Dossie_Tricologia_Avancada.pdf",
+        "paginas": 2,
+        "palavras": 878
+      },
+      {
+        "arquivo": "pdfs_finais\\04_Carta_Internacional_UHNW.pdf",
+        "paginas": 1,
+        "palavras": 543
+      },
+      {
+        "arquivo": "pdfs_finais\\05_Dossie_Modelagem_Computacional.pdf",
+        "paginas": 2,
+        "palavras": 652
+      },
+      {
+        "arquivo": "pdfs_finais\\06_Contrato_Licenciamento_Global.pdf",
+        "paginas": 8,
+        "palavras": 2842
+      },
+      {
+        "arquivo": "pdfs_finais\\07_Varredura_Geral_Sistema.pdf",
+        "paginas": 4,
+        "palavras": 878
+      },
+      {
+        "arquivo": "pdfs_finais\\check_rapido_tricologia.pdf",
+        "paginas": 2,
+        "palavras": 870
+      },
+      {
+        "arquivo": "pdfs_finais\\teste_trico_en.pdf",
+        "paginas": 2,
+        "palavras": 783
+      },
+      {
+        "arquivo": "pdfs_finais\\teste_trico_pt.pdf",
+        "paginas": 2,
+        "palavras": 870
+      }
+    ]
+  },
+  "pendencias_verdade_tecnica": [
+    "10 função(ões) vazia(s) ou NotImplementedError encontrada(s)."
+  ],
+  "pendencias_dor_de_mercado": [
+    "Evidência externa: código e PDFs no disco não substituem validação com clientes reais (piloto pago, métricas de antes/depois, taxa de retenção).",
+    "Rastreabilidade ponta a ponta: cada promessa nos dossiês (biometria, biogêmeos, tricologia, conformidade) precisa de caso de teste reproduzível com entrada real e saída auditável."
+  ]
+}

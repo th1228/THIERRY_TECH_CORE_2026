@@ -1,0 +1,83 @@
+import os
+import re
+import shutil
+from pathlib import Path
+
+IGNORAR_PASTAS = {
+    ".git", "__pycache__", ".venv", "venv", "env",
+    "node_modules", ".next", "dist", "build", ".idea", ".vscode"
+}
+
+# Busca por trechos do nome (ignora maiúsculas/minúsculas e hífen/underline)
+PISTAS_ARQUIVOS = (
+    "dossie_advogado",
+    "dossie-advogado",
+    "investigar-zerados",
+    "investigar_zerados",
+    "zerados",
+)
+
+
+def buscar_arquivos(raiz: Path):
+    encontrados = []
+    vistos = set()
+
+    for atual, dirs, files in os.walk(raiz):
+        dirs[:] = [d for d in dirs if d not in IGNORAR_PASTAS]
+        caminho_atual = Path(atual)
+
+        for nome in sorted(files):
+            if not nome.endswith(".py"):
+                continue
+
+            # Evita pegar o próprio script de conversão ou backups
+            if nome.startswith("converter_") or nome.endswith(".bak"):
+                continue
+
+            nome_norm = nome.lower()
+            if any(pista in nome_norm for pista in PISTAS_ARQUIVOS):
+                arq = caminho_atual / nome
+                resolvido = str(arq.resolve())
+                if resolvido not in vistos:
+                    vistos.add(resolvido)
+                    encontrados.append(arq)
+
+    return encontrados
+
+
+def converter_arquivo(arq: Path, raiz: Path):
+    rel = arq.relative_to(raiz)
+    shutil.copy2(arq, str(arq) + ".bak")
+    texto = arq.read_text(encoding="utf-8", errors="ignore")
+
+    if "import logging" not in texto:
+        cabecalho = (
+            "import logging\n\n"
+            "logging.basicConfig(\n"
+            '    level=logging.INFO,\n'
+            '    format="%(asctime)s [%(levelname)s] %(message)s"\n'
+            ")\n"
+            "logger = logging.getLogger(__name__)\n\n"
+        )
+        texto = cabecalho + texto
+
+    novo_texto, qtd = re.subn(r"\bprint\s*\(", "logger.info(", texto)
+    arq.write_text(novo_texto, encoding="utf-8")
+    print(f"[OK] {rel}: {qtd} print() convertidos para logger.info() (.bak criado).")
+
+
+def main(caminho_projeto: str = "."):
+    raiz = Path(caminho_projeto).resolve()
+    arquivos = buscar_arquivos(raiz)
+
+    if not arquivos:
+        print("Nenhum arquivo correspondente a 'dossie' ou 'zerados' foi encontrado no projeto.")
+        return
+
+    print(f"Encontrados {len(arquivos)} arquivo(s):\n")
+    for arq in arquivos:
+        converter_arquivo(arq, raiz)
+
+
+if __name__ == "__main__":
+    main(".")

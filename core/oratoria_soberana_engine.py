@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 ===========================================================================
@@ -19,9 +27,19 @@ except ImportError:
         from core.memoria_comum import instancia_memoria as memoria
     except ImportError:
         class MemoriaMock:
-            def salvar_dados(self, chave, valor): pass
-            def registrar(self, chave, valor): pass
-            def ler_dados(self, chave): return None
+            def __init__(self):
+                self._dados = {}
+
+            def salvar_dados(self, chave, valor):
+                self._dados[chave] = valor
+                return True
+
+            def registrar(self, chave, valor):
+                self._dados[chave] = valor
+                return True
+
+            def ler_dados(self, chave):
+                return self._dados.get(chave)
         memoria = MemoriaMock()
 # ---------------------------------------------------
 
@@ -105,7 +123,7 @@ FIM DO ROTEIRO DE ORATÓRIA • PRONTO PARA APRESENTAÇÃO
         texto_roteiro = self.gerar_roteiro_oratoria()
         
         # Imprime diretamente na tela do terminal para você ler agora mesmo
-        print("\n" + texto_roteiro + "\n")
+        logger.info("\n" + texto_roteiro + "\n")
         
         # Salva o arquivo na pasta correta
         pasta_finais = os.path.join(ROOT_DIR, "pdfs_finais")
@@ -115,7 +133,7 @@ FIM DO ROTEIRO DE ORATÓRIA • PRONTO PARA APRESENTAÇÃO
         with open(caminho_completo, "w", encoding="utf-8") as f:
             f.write(texto_roteiro)
             
-        print(f"[ORATÓRIA ENGINE] Roteiro salvo com sucesso em: {caminho_completo}")
+        logger.info(f"[ORATÓRIA ENGINE] Roteiro salvo com sucesso em: {caminho_completo}")
         return caminho_completo
 
 if __name__ == "__main__":

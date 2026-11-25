@@ -34,7 +34,7 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 import numpy as np
 from pathlib import Path
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, Tuple
 from fastapi import FastAPI, Query, Response, HTTPException, Request, File, UploadFile, Form
 from fastapi.responses import HTMLResponse, JSONResponse, StreamingResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -147,13 +147,25 @@ try:
         return _carregar_empresas()
 except ImportError:
     def validar_senha_master(senha_digitada: str) -> Dict[str, Any]:
-        return {"status": "sucesso", "mensagem": "Fallback ativo da senha master."}
+        return {
+            "status": "erro",
+            "modo_fallback": True,
+            "mensagem": "Módulo verificar_senha_master indisponível; validação real não executada."
+        }
     def alterar_status_empresa(senha_digitada: str, token_ou_empresa: str, novo_status: str) -> Dict[str, Any]:
-        return {"status": "sucesso", "mensagem": "Fallback ativo de alteração."}
+        return {
+            "status": "erro",
+            "modo_fallback": True,
+            "mensagem": "Módulo verificar_senha_master indisponível; alteração não executada."
+        }
     def verificar_vigencia_licenca(token_ou_empresa: str) -> Dict[str, Any]:
-        return {"status": "ativo", "mensagem": "Fallback ativo de vigência."}
+        return {
+            "status": "indisponivel",
+            "modo_fallback": True,
+            "mensagem": "Módulo verificar_senha_master indisponível; vigência não verificada."
+        }
     def carregar_dados_empresas() -> Dict[str, Any]:
-        return {"tokens_ativos": {}, "total_vagas_ocupadas": 0}
+        return {"tokens_ativos": {}, "total_vagas_ocupadas": 0, "modo_fallback": True}
 
 ValidadorLocal: Any = None
 try:
@@ -165,7 +177,7 @@ try:
     from core.geodefense import validar_geofencing_global, gerar_token_titular_global  # type: ignore
 except ImportError:
     def validar_geofencing_global(*args: Any, **kwargs: Any) -> bool:
-        return True  # type: ignore
+        return False  # type: ignore
     def gerar_token_titular_global() -> str:
         return "TCC-GLOBAL-FALLBACK"  # type: ignore
 
@@ -205,7 +217,7 @@ except ImportError:
         from gerador_dossies_master import compilar_dossies_master as executar_geracao_master
     except ImportError:
         def executar_geracao_master(*args: Any, **kwargs: Any) -> Dict[str, str]:
-            print("[GERADOR MASTER] Fallback ativo.")
+            print("[GERADOR MASTER] Módulo gerador_dossies_master indisponível.")
             return {}
 
 registrar_diagnostico_evolucao: Any = None
@@ -220,11 +232,41 @@ try:
 except ImportError:
     class AuditorIntegridadeGlobal:
         def __init__(self, limiar_confianca_minimo: float = 100.0):
-            pass
+            self.limiar_confianca_minimo = limiar_confianca_minimo
         def inspecionar_dicionario_metricas(self, d: Dict[str, Any]) -> Dict[str, Any]:
-            return {"status_aprovacao": True, "indice_integridade_percentual": 100.0, "anomalias_encontradas": []}
+            return {
+                "status_aprovacao": False,
+                "modo_fallback": True,
+                "indice_integridade_percentual": 0.0,
+                "anomalias_encontradas": ["AuditorIntegridadeGlobal indisponível em modo fallback"]
+            }
         def gerar_selo_criptografico_soberano(self, d: Dict[str, Any], t: str) -> str:
-            return "TCC-SOBERANO-SHA256-SEAL"
+            return "TCC-FALLBACK-NAO-AUDITADO"
+
+
+def _resolver_cliente_empresa(
+    cliente: Optional[str],
+    empresa: Optional[str],
+    cliente_padrao: str = "Genilson Rodrigues",
+    empresa_padrao: str = "Thierry Technology Concept Global",
+) -> Tuple[str, str]:
+    nome_limpo = (cliente or "").strip()
+    if not nome_limpo or nome_limpo.lower() in {"undefined", "null", ""}:
+        nome_limpo = cliente_padrao
+
+    empresa_limpa = (empresa or "").strip()
+    if not empresa_limpa or empresa_limpa.lower() in {"undefined", "null", ""}:
+        empresa_limpa = empresa_padrao
+
+    return nome_limpo, empresa_limpa
+
+
+def _resolver_pdf_seguro(nome_arquivo: str) -> Path:
+    base_resolvida = PASTA_PDFS_FINAIS.resolve()
+    alvo_resolvido = (PASTA_PDFS_FINAIS / nome_arquivo).resolve()
+    if alvo_resolvido.parent != base_resolvida or not alvo_resolvido.is_relative_to(base_resolvida):
+        raise HTTPException(status_code=400, detail="Nome de arquivo inválido.")
+    return alvo_resolvido
 
 
 # =====================================================================
@@ -360,13 +402,7 @@ def compilar_pdf_especifico(
     lang: str = "PT",
     dados_orquestrador_llm: Optional[Dict[str, Any]] = None
 ) -> str:
-    nome_limpo_input = (nome_cli or "").strip()
-    if not nome_limpo_input or nome_limpo_input.lower() in ["undefined", "null", ""]:
-        nome_limpo_input = "Genilson Rodrigues"
-
-    empresa_limpa_input = (empresa_cli or "").strip()
-    if not empresa_limpa_input or empresa_limpa_input.lower() in ["undefined", "null", ""]:
-        empresa_limpa_input = "Thierry Technology Concept Global"
+    nome_limpo_input, empresa_limpa_input = _resolver_cliente_empresa(nome_cli, empresa_cli)
 
     mapa_prefixos = {
         "biogem_core": "01_Dossie_Sovereign_Intelligence",
@@ -668,13 +704,7 @@ def gateway_biogemeos(data: BiogemProcessRequest) -> JSONResponse:
         if SovereignC2DefenseEngine is None:
             raise HTTPException(status_code=500, detail="SovereignC2DefenseEngine indisponível.")
 
-        nome_cli = (data.cliente_id or "").strip()
-        if not nome_cli or nome_cli.lower() in ["undefined", "null"]:
-            nome_cli = "Genilson Rodrigues"
-
-        entidade_cli = (data.empresa or "").strip()
-        if not entidade_cli or entidade_cli.lower() in ["undefined", "null"]:
-            entidade_cli = "Thierry Technology Concept Global"
+        nome_cli, entidade_cli = _resolver_cliente_empresa(data.cliente_id, data.empresa)
 
         motor_mestre = SovereignC2DefenseEngine(
             codinome_lider=nome_cli,
@@ -696,13 +726,11 @@ def gateway_biogemeos(data: BiogemProcessRequest) -> JSONResponse:
 @app.post("/api/gateway/clinica")
 def gateway_clinica(data: RelatorioDossierRequest) -> JSONResponse:
     try:
-        nome_cli = (data.cliente or "").strip()
-        if not nome_cli or nome_cli.lower() in ["undefined", "null"]:
-            nome_cli = "Genilson Rodrigues"
+        nome_cli, empresa_cli = _resolver_cliente_empresa(data.cliente, data.empresa)
 
         dossie_clinico = {
             "cliente": nome_cli,
-            "empresa": data.empresa or "Thierry Technology Concept Global",
+            "empresa": empresa_cli,
             "modulo": "Clinica & Estética Avançada",
             "simetria_facial": "98.2%",
             "colageno_apex": "Preservado",
@@ -720,13 +748,11 @@ def gateway_clinica(data: RelatorioDossierRequest) -> JSONResponse:
 @app.post("/api/gateway/salao")
 def gateway_salao(data: RelatorioDossierRequest) -> JSONResponse:
     try:
-        nome_cli = (data.cliente or "").strip()
-        if not nome_cli or nome_cli.lower() in ["undefined", "null"]:
-            nome_cli = "Genilson Rodrigues"
+        nome_cli, empresa_cli = _resolver_cliente_empresa(data.cliente, data.empresa)
 
         metricas_tricologia = {
             "cliente": nome_cli,
-            "empresa": data.empresa or "Thierry Technology Concept Global",
+            "empresa": empresa_cli,
             "modulo": "Salão de Beleza & Tricologia",
             "densidade_fio": "Alta densidade (85 fios/cm²)",
             "saude_couro_cabeludo": "Equilibrado / Sem descamação visível",
@@ -800,10 +826,14 @@ async def stripe_webhook_producao(request: Request):
     sig_header = request.headers.get('stripe-signature')
     endpoint_secret = os.getenv('STRIPE_WEBHOOK_SECRET', '')
     try:
-        if endpoint_secret and sig_header:
+        if endpoint_secret:
+            if not sig_header:
+                raise HTTPException(status_code=400, detail="Assinatura Stripe ausente.")
             event = stripe.Webhook.construct_event(payload_bytes, sig_header, endpoint_secret)
         else:
             event = json.loads(payload_bytes.decode('utf-8'))
+    except HTTPException:
+        raise
     except (stripe.error.SignatureVerificationError, stripe.error.StripeError, ValueError, json.JSONDecodeError, UnicodeDecodeError) as e:  # type: ignore[attr-defined]
         raise HTTPException(status_code=400, detail=f"Erro Stripe: {str(e)}")
 
@@ -839,14 +869,7 @@ def registrar_aceite_contrato(payload: AceiteContrato):
 @app.post("/api/v1/voz/salvar-conduta")
 def salvar_conduta_voz(dados: CondutaVozRequest):
     try:
-        nome_cli = (dados.cliente or "").strip()
-        if not nome_cli or nome_cli.lower() in ["undefined", "null", ""]:
-            nome_cli = "Genilson Rodrigues"
-
-        empresa_cli = (dados.empresa or "").strip()
-        if not empresa_cli or empresa_cli.lower() in ["undefined", "null", ""]:
-            empresa_cli = "Thierry Technology Concept Global"
-
+        nome_cli, empresa_cli = _resolver_cliente_empresa(dados.cliente, dados.empresa)
         texto_conduta = dados.conduta_texto.strip()
 
         hash_bloco = auditor_ledger.gerar_bloco_auditado(
@@ -903,13 +926,10 @@ async def gerar_pdf_direto_painel(
             except (json.JSONDecodeError, ValueError, TypeError, UnicodeDecodeError):
                 pass
 
-        nome_cliente_real = (cliente_corpo or cliente or "").strip()
-        if not nome_cliente_real or nome_cliente_real.lower() in ["undefined", "null", ""]:
-            nome_cliente_real = "Genilson Rodrigues"
-
-        empresa_cliente_real = (empresa_corpo or empresa or "").strip()
-        if not empresa_cliente_real or empresa_cliente_real.lower() in ["undefined", "null", ""]:
-            empresa_cliente_real = "Thierry Technology Concept Global"
+        nome_cliente_real, empresa_cliente_real = _resolver_cliente_empresa(
+            cliente_corpo or cliente,
+            empresa_corpo or empresa
+        )
 
         tipo_limpo = tipo.lower().strip()
         idioma_escolhido = lang.upper().strip() if lang else "PT"
@@ -960,14 +980,7 @@ def enviar_relatorio_canal(
     try:
         tipo_limpo = tipo.lower().strip()
         canal_limpo = canal.lower().strip()
-
-        nome_cli = (cliente or "").strip()
-        if not nome_cli or nome_cli.lower() in ["undefined", "null", ""]:
-            nome_cli = "Genilson Rodrigues"
-
-        empresa_cli = (empresa or "").strip()
-        if not empresa_cli or empresa_cli.lower() in ["undefined", "null", ""]:
-            empresa_cli = "Thierry Technology Concept Global"
+        nome_cli, empresa_cli = _resolver_cliente_empresa(cliente, empresa)
 
         idioma_escolhido = lang.upper().strip() if lang else "PT"
         operador_cli = operador or "THIERRY (TCC SOBERANO)"
@@ -1018,14 +1031,7 @@ def enviar_relatorio_canal(
 @app.post("/api/pdf/{tipo_relatorio}")
 def gerador_pdf_dinamico_backend(tipo_relatorio: str, data: RelatorioDossierRequest):
     try:
-        nome_cli = (data.cliente or "").strip()
-        if not nome_cli or nome_cli.lower() in ["undefined", "null", ""]:
-            nome_cli = "Genilson Rodrigues"
-
-        empresa_cli = (data.empresa or "").strip()
-        if not empresa_cli or empresa_cli.lower() in ["undefined", "null", ""]:
-            empresa_cli = "Thierry Technology Concept Global"
-
+        nome_cli, empresa_cli = _resolver_cliente_empresa(data.cliente, data.empresa)
         operador_cli = data.operador or "THIERRY (TCC SOBERANO)"
         tipo_limpo = tipo_relatorio.lower().strip()
         idioma_escolhido = (data.idioma or "PT").upper().strip()
@@ -1054,13 +1060,7 @@ def gerador_pdf_dinamico_backend(tipo_relatorio: str, data: RelatorioDossierRequ
 def endpoint_gerar_relatorio_monaco(sessao: DadosSessaoReal):
     try:
         dados_reais = sessao.model_dump() if hasattr(sessao, "model_dump") else sessao.dict()
-        nome_cli = (dados_reais.get("nome") or "").strip()
-        if not nome_cli or nome_cli.lower() in ["undefined", "null", ""]:
-            nome_cli = "Genilson Rodrigues"
-
-        empresa_cli = (dados_reais.get("empresa") or "").strip()
-        if not empresa_cli or empresa_cli.lower() in ["undefined", "null", ""]:
-            empresa_cli = "Thierry Technology Concept Global"
+        nome_cli, empresa_cli = _resolver_cliente_empresa(dados_reais.get("nome"), dados_reais.get("empresa"))
 
         caminho_gerado = Path(compilar_pdf_especifico(
             "biogem_core",
@@ -1139,7 +1139,7 @@ def listar_pdfs_finais() -> JSONResponse:
         lista_arquivos = []
         for f in arquivos:
             nome_arq = f.name.lower()
-            tipo_classificado = "roy" if "roy" in nome_arq else ("pit" if "pit" in nome_arq else ("contrato" if "contrato" in nome_arq else "dossie"))
+            tipo_classificado = "roi" if "roi" in nome_arq else ("pit" if "pit" in nome_arq else ("contrato" if "contrato" in nome_arq else "dossie"))
             lista_arquivos.append({
                 "nome": f.name,
                 "tipo_identificado": tipo_classificado,
@@ -1154,16 +1154,16 @@ def listar_pdfs_finais() -> JSONResponse:
 
 @app.get("/api/v1/pdfs/abrir/{nome_arquivo}")
 def abrir_pdf_especifico(nome_arquivo: str):
-    caminho_arquivo = PASTA_PDFS_FINAIS / nome_arquivo
+    caminho_arquivo = _resolver_pdf_seguro(nome_arquivo)
     if caminho_arquivo.exists():
-        return FileResponse(path=caminho_arquivo, media_type='application/pdf', filename=nome_arquivo)
+        return FileResponse(path=caminho_arquivo, media_type='application/pdf', filename=caminho_arquivo.name)
     raise HTTPException(status_code=404, detail="Arquivo PDF não encontrado.")
 
 
 @app.get("/api/v1/pdfs/renderizar/{nome_arquivo}")
 def renderizar_pagina_pdf_como_imagem(nome_arquivo: str, pagina: int = 0):
     try:
-        caminho_arquivo = PASTA_PDFS_FINAIS / nome_arquivo
+        caminho_arquivo = _resolver_pdf_seguro(nome_arquivo)
         if not caminho_arquivo.exists():
             raise HTTPException(status_code=404, detail="Arquivo PDF não encontrado.")
         doc = fitz.open(str(caminho_arquivo))

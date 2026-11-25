@@ -23,8 +23,19 @@ try:
     from memoria_comum import instancia_memoria as memoria
 except ImportError:
     class MemoriaMock:
-        def salvar_dados(self, chave, valor): pass
-        def ler_dados(self, chave): return None
+        def __init__(self):
+            self._dados = {}
+
+        def salvar_dados(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def registrar(self, chave, valor):
+            self._dados[chave] = valor
+            return True
+
+        def ler_dados(self, chave):
+            return self._dados.get(chave)
     memoria = MemoriaMock()
 
 # Dicionário mestre com os 7 tipos de rosto

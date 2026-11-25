@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 Script: diagnostico_arquivos_zerados.py
@@ -131,12 +139,12 @@ def diagnosticar() -> None:
     todos = coletar_arquivos(raiz)
     zerados = [(rel, nome, mtime) for rel, nome, tam, mtime in todos if tam == 0]
 
-    print("=" * 76)
-    print(f"DIAGNÓSTICO DE ARQUIVOS ZERADOS (0 BYTES) — {raiz}")
-    print("=" * 76)
+    logger.info("=" * 76)
+    logger.info(f"DIAGNÓSTICO DE ARQUIVOS ZERADOS (0 BYTES) — {raiz}")
+    logger.info("=" * 76)
 
     if not zerados:
-        print("Nenhum arquivo de 0 bytes encontrado.")
+        logger.info("Nenhum arquivo de 0 bytes encontrado.")
         return
 
     por_nome: Dict[str, List[Tuple[str, int]]] = {}
@@ -156,30 +164,30 @@ def diagnosticar() -> None:
         refs = refs_por_alvo.get(rel, [])
         status_diag, orientacao = classificar_item(rel, nome, outras, refs)
 
-        print(f"\n[{idx}] {rel}")
-        print(f"    • Última modificação : {dt_str}")
-        print(f"    • Diagnóstico       : {status_diag}")
-        print(f"    • Orientação        : {orientacao}")
+        logger.info(f"\n[{idx}] {rel}")
+        logger.info(f"    • Última modificação : {dt_str}")
+        logger.info(f"    • Diagnóstico       : {status_diag}")
+        logger.info(f"    • Orientação        : {orientacao}")
 
         if outras:
             outras_fmt = ", ".join(f"{p} ({t} B)" for p, t in outras)
-            print(f"    • Mesmo nome em     : {outras_fmt}")
+            logger.info(f"    • Mesmo nome em     : {outras_fmt}")
         else:
-            print("    • Mesmo nome em     : nenhum outro arquivo com esse nome no projeto")
+            logger.info("    • Mesmo nome em     : nenhum outro arquivo com esse nome no projeto")
 
         if refs:
-            print(f"    • Citações em .py ({len(refs)}):")
+            logger.info(f"    • Citações em .py ({len(refs)}):")
             for arq_py, num_l, trecho, tem_io in refs[:6]:
                 tag_io = " [I/O/PATH]" if tem_io else ""
-                print(f"        - {arq_py}:{num_l}{tag_io} -> {trecho}")
+                logger.info(f"        - {arq_py}:{num_l}{tag_io} -> {trecho}")
             if len(refs) > 6:
-                print(f"        - ... (+{len(refs) - 6} citação(ões))")
+                logger.info(f"        - ... (+{len(refs) - 6} citação(ões))")
         else:
-            print("    • Citações em .py     : nenhuma menção encontrada nos arquivos .py")
+            logger.info("    • Citações em .py     : nenhuma menção encontrada nos arquivos .py")
 
-    print("\n" + "=" * 76)
-    print("Diagnóstico concluído. Nenhum arquivo foi modificado ou excluído.")
-    print("=" * 76)
+    logger.info("\n" + "=" * 76)
+    logger.info("Diagnóstico concluído. Nenhum arquivo foi modificado ou excluído.")
+    logger.info("=" * 76)
 
 
 if __name__ == "__main__":

@@ -1,3 +1,11 @@
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s"
+)
+logger = logging.getLogger(__name__)
+
 # -*- coding: utf-8 -*-
 """
 ===========================================================================
@@ -24,19 +32,19 @@ class AuditorProntidaoComercial:
 
     def registrar_ok(self, categoria: str, mensagem: str) -> None:
         self.aprovacoes.append((categoria, mensagem))
-        print(f"  [OK] {categoria}: {mensagem}")
+        logger.info(f"  [OK] {categoria}: {mensagem}")
 
     def registrar_erro(self, categoria: str, mensagem: str) -> None:
         self.erros_criticos.append((categoria, mensagem))
-        print(f"  [ERRO] {categoria}: {mensagem}")
+        logger.info(f"  [ERRO] {categoria}: {mensagem}")
 
     def registrar_aviso(self, categoria: str, mensagem: str) -> None:
         self.avisos.append((categoria, mensagem))
-        print(f"  [AVISO] {categoria}: {mensagem}")
+        logger.info(f"  [AVISO] {categoria}: {mensagem}")
 
     def verificar_sintaxe_python(self) -> None:
-        print("\n1. AUDITORIA DE INTEGRIDADE E SINTAXE DE CÓDIGO PYTHON")
-        print("-" * 70)
+        logger.info("\n1. AUDITORIA DE INTEGRIDADE E SINTAXE DE CÓDIGO PYTHON")
+        logger.info("-" * 70)
         arquivos_py = []
         for pasta_atual, diretorios, arquivos in os.walk(self.raiz):
             diretorios[:] = [d for d in diretorios if not d.startswith(('.', '_', 'venv', 'env', '__pycache__'))]
@@ -61,8 +69,8 @@ class AuditorProntidaoComercial:
             self.registrar_ok("Sintaxe", f"Todos os {len(arquivos_py)} scripts Python compilaram sem erros.")
 
     def verificar_motores_essenciais(self) -> None:
-        print("\n2. AUDITORIA DOS MOTORES E ARQUIVOS DO ECOSSISTEMA")
-        print("-" * 70)
+        logger.info("\n2. AUDITORIA DOS MOTORES E ARQUIVOS DO ECOSSISTEMA")
+        logger.info("-" * 70)
         alvos_esperados = {
             "Super Retorno Financeiro": "super_retorno_financeiro.py",
             "Modelagem Computacional": "monaco_modelagem_engine.py",
@@ -86,8 +94,8 @@ class AuditorProntidaoComercial:
                 self.registrar_aviso("Módulo", f"Arquivo '{nome_arquivo}' não encontrado pelo nome padrão.")
 
     def verificar_interface_html(self) -> None:
-        print("\n3. AUDITORIA DE INTERFACE E LINKS DO PAINEL WEB")
-        print("-" * 70)
+        logger.info("\n3. AUDITORIA DE INTERFACE E LINKS DO PAINEL WEB")
+        logger.info("-" * 70)
         arquivos_html = []
         for pasta_atual, diretorios, arquivos in os.walk(self.raiz):
             diretorios[:] = [d for d in diretorios if not d.startswith(('.', '_', 'venv', 'env'))]
@@ -112,8 +120,8 @@ class AuditorProntidaoComercial:
                 self.registrar_erro("Painel HTML", f"Erro ao ler '{relativo}': {e}")
 
     def verificar_pdfs_conformidade_iso(self) -> None:
-        print("\n4. AUDITORIA DE CONFORMIDADE INTERNACIONAL DOS PDFS (ISO 216 / 14289)")
-        print("-" * 70)
+        logger.info("\n4. AUDITORIA DE CONFORMIDADE INTERNACIONAL DOS PDFS (ISO 216 / 14289)")
+        logger.info("-" * 70)
         pasta_pdfs = None
         for pasta_atual, diretorios, _ in os.walk(self.raiz):
             for d in diretorios:
@@ -194,32 +202,32 @@ class AuditorProntidaoComercial:
                 self.registrar_erro("PDF", f"Erro ao auditar '{nome}': {e}")
 
     def gerar_veredito_final(self) -> None:
-        print("\n" + "=" * 70)
-        print(" VEREDITO FINAL DE PRONTIDÃO COMERCIAL")
-        print("=" * 70)
-        print(f" Data da Auditoria: {datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
-        print(f" Itens Aprovados:   {len(self.aprovacoes)}")
-        print(f" Avisos Menores:    {len(self.avisos)}")
-        print(f" Erros Críticos:    {len(self.erros_criticos)}")
-        print("-" * 70)
+        logger.info("\n" + "=" * 70)
+        logger.info(" VEREDITO FINAL DE PRONTIDÃO COMERCIAL")
+        logger.info("=" * 70)
+        logger.info(f" Data da Auditoria: {datetime.datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+        logger.info(f" Itens Aprovados:   {len(self.aprovacoes)}")
+        logger.info(f" Avisos Menores:    {len(self.avisos)}")
+        logger.info(f" Erros Críticos:    {len(self.erros_criticos)}")
+        logger.info("-" * 70)
 
         if len(self.erros_criticos) == 0:
-            print(" STATUS: [ PRONTO PARA VENDA E OPERAÇÃO COMERCIAL ]")
-            print(" Todos os códigos, motores e documentos passaram nas normas técnicas.")
+            logger.info(" STATUS: [ PRONTO PARA VENDA E OPERAÇÃO COMERCIAL ]")
+            logger.info(" Todos os códigos, motores e documentos passaram nas normas técnicas.")
         else:
-            print(" STATUS: [ BLOQUEADO PARA VENDA - REQUER AJUSTES ]")
-            print(" Corrija os erros críticos listados acima antes de comercializar:")
+            logger.info(" STATUS: [ BLOQUEADO PARA VENDA - REQUER AJUSTES ]")
+            logger.info(" Corrija os erros críticos listados acima antes de comercializar:")
             for cat, msg in self.erros_criticos:
-                print(f"   -> [{cat}] {msg}")
-        print("=" * 70 + "\n")
+                logger.info(f"   -> [{cat}] {msg}")
+        logger.info("=" * 70 + "\n")
 
 
 if __name__ == "__main__":
     raiz = os.getcwd()
-    print("=" * 70)
-    print(" INICIANDO VARREDURA COMPLETA DO ECOSSISTEMA")
-    print(f" Diretório Raiz: {raiz}")
-    print("=" * 70)
+    logger.info("=" * 70)
+    logger.info(" INICIANDO VARREDURA COMPLETA DO ECOSSISTEMA")
+    logger.info(f" Diretório Raiz: {raiz}")
+    logger.info("=" * 70)
 
     auditor = AuditorProntidaoComercial(raiz)
     auditor.verificar_sintaxe_python()
