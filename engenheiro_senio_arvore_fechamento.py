@@ -2,8 +2,25 @@ import ast
 import json
 import os
 import subprocess
+import sys
 from datetime import datetime
 from pathlib import Path
+
+# Habilita sequencias ANSI no terminal Windows (PowerShell / CMD / VS Code)
+if os.name == "nt":
+    os.system("")
+
+COR_RESET = "\033[0m"
+COR_VERDE = "\033[92m"
+COR_AMARELO = "\033[93m"
+COR_NEGRITO = "\033[1m"
+
+
+def _colorir(texto: str, cor: str) -> str:
+    if not sys.stdout.isatty() and os.name != "nt":
+        return texto
+    return f"{cor}{texto}{COR_RESET}"
+
 
 PASTAS_IGNORADAS = {
     ".venv",
@@ -20,18 +37,16 @@ PASTAS_IGNORADAS = {
     ".mypy_cache",
 }
 
-# Pilares padronizados (nomes curtos e organizados para tabela)
+# Pilares especificos avaliados antes de "Nucleo & Memoria" para nao capturar pastas "core"
 PILARES_ARQUITETURA = {
-    "Nucleo & Memoria": [
-        "memoria",
-        "core",
-        "hub",
-        "main",
-        "app",
-        "server",
-        "api",
-        "engine",
-        "orquestr",
+    "Tricologia & Saude": [
+        "tricologia_saude",
+        "tricolog",
+        "capilar",
+        "saude",
+        "estetica",
+        "protocolo",
+        "longevidade",
     ],
     "Biometria & Visao 3D": [
         "biometr",
@@ -57,14 +72,6 @@ PILARES_ARQUITETURA = {
         "gemini",
         "gravidade",
     ],
-    "Tricologia & Saude": [
-        "tricolog",
-        "capilar",
-        "saude",
-        "estetica",
-        "protocolo",
-        "longevidade",
-    ],
     "Seguranca & Soberania": [
         "seguranca",
         "security",
@@ -87,6 +94,7 @@ PILARES_ARQUITETURA = {
         "conformidade",
         "inpi",
         "parecer",
+        "relatorio",
     ],
     "Comercial & Vendas": [
         "venda",
@@ -98,7 +106,29 @@ PILARES_ARQUITETURA = {
         "mercado",
         "checkout",
     ],
+    "Nucleo & Memoria": [
+        "memoria",
+        "core",
+        "hub",
+        "main",
+        "app",
+        "server",
+        "api",
+        "engine",
+        "orquestr",
+    ],
 }
+
+ORDEM_EXIBICAO_PILARES = [
+    "Nucleo & Memoria",
+    "Biometria & Visao 3D",
+    "Biogemeos & IA",
+    "Tricologia & Saude",
+    "Seguranca & Soberania",
+    "Relatorios & Auditoria",
+    "Comercial & Vendas",
+    "Utilidades & Testes",
+]
 
 LIBS_REAIS_RELEVANTES = {
     "cv2",
@@ -126,20 +156,47 @@ LIBS_REAIS_RELEVANTES = {
 
 
 def deve_ignorar(caminho: Path) -> bool:
-    return any(parte in PASTAS_IGNORADAS for parte in caminho.parts)
+    if any(parte in PASTAS_IGNORADAS for parte in caminho.parts):
+        return True
+    if caminho.name.startswith("tempCodeRunnerFile"):
+        return True
+    return False
 
 
 def classificar_pilar(caminho_relativo: str) -> str:
-    nome_lower = caminho_relativo.lower()
+    nome_lower = caminho_relativo.replace("\\", "/").lower()
+    nome_arq = Path(nome_lower).name
+
+    if nome_arq.startswith("test_") and any(
+        k in nome_arq
+        for k in ("relator", "auditor", "laudo", "pdf", "report", "parecer")
+    ):
+        return "Relatorios & Auditoria"
+
+    if nome_arq.startswith("test_") and any(
+        k in nome_arq
+        for k in ("comercial", "venda", "stripe", "sentinela", "licenca", "plano", "checkout")
+    ):
+        return "Comercial & Vendas"
+
     for pilar, palavras in PILARES_ARQUITETURA.items():
         if any(p in nome_lower for p in palavras):
             return pilar
+
     return "Utilidades & Testes"
 
 
 def analisar_arquivo_python(arquivo: Path, raiz: Path) -> dict:
     rel = str(arquivo.relative_to(raiz))
     pilar = classificar_pilar(rel)
+    nome_arq_lower = arquivo.name.lower()
+    rel_lower = rel.replace("\\", "/").lower()
+    eh_teste = (
+        nome_arq_lower.startswith("test_")
+        or "test" in nome_arq_lower
+        or "teste" in rel_lower
+    )
+
     info = {
         "arquivo": rel,
         "pilar": pilar,
@@ -147,7 +204,7 @@ def analisar_arquivo_python(arquivo: Path, raiz: Path) -> dict:
         "erro_sintaxe": None,
         "stubs": [],
         "libs_reais": [],
-        "eh_teste": "test" in arquivo.name.lower(),
+        "eh_teste": eh_teste,
     }
 
     try:
@@ -273,7 +330,9 @@ def gerar_arvore_visual(raiz: Path) -> list[str]:
         arquivos_validos = sorted(
             f
             for f in filenames
-            if not f.endswith(".pyc") and f not in {"ARVORE_ESTRUTURAL_PROJETO.txt"}
+            if not f.endswith(".pyc")
+            and not f.startswith("tempCodeRunnerFile")
+            and f not in {"ARVORE_ESTRUTURAL_PROJETO.txt"}
         )
         for arq in arquivos_validos:
             linhas.append(f"{indent}    |-- {arq}")
@@ -311,19 +370,28 @@ def imprimir_tabela_pilares(pilares_dict: dict):
     print(cabecalho)
     print(linha_sep)
 
-    for nome_pilar, dados in pilares_dict.items():
-        pilar_fmt = nome_pilar[:col_pilar]
-        nota_fmt = f"{dados['nota_1_a_10']:.1f}/10"
-        sit_fmt = dados["status_conclusao"][:col_sit]
-        falta_fmt = dados["o_que_falta"][:col_falta]
+    for nome_pilar in ORDEM_EXIBICAO_PILARES:
+        if nome_pilar not in pilares_dict:
+            continue
+        dados = pilares_dict[nome_pilar]
+        ok = dados["status_conclusao"] == "CONCLUIDO"
+        cor_linha = COR_VERDE if ok else COR_AMARELO
+
+        nota_str = f"{dados['nota_1_a_10']:.1f}/10"
+        pilar_fmt = _colorir(f"{nome_pilar[:col_pilar]:<{col_pilar}}", cor_linha)
+        arqs_fmt = _colorir(f"{dados['arquivos']:>{col_arqs}}", cor_linha)
+        linhas_fmt = _colorir(f"{dados['linhas']:>{col_linhas}}", cor_linha)
+        nota_fmt = _colorir(f"{nota_str:>{col_nota}}", cor_linha)
+        sit_fmt = _colorir(f"{dados['status_conclusao'][:col_sit]:<{col_sit}}", cor_linha)
+        falta_fmt = _colorir(f"{dados['o_que_falta'][:col_falta]:<{col_falta}}", cor_linha)
 
         print(
-            f"| {pilar_fmt:<{col_pilar}} "
-            f"| {dados['arquivos']:>{col_arqs}} "
-            f"| {dados['linhas']:>{col_linhas}} "
-            f"| {nota_fmt:>{col_nota}} "
-            f"| {sit_fmt:<{col_sit}} "
-            f"| {falta_fmt:<{col_falta}} |"
+            f"| {pilar_fmt} "
+            f"| {arqs_fmt} "
+            f"| {linhas_fmt} "
+            f"| {nota_fmt} "
+            f"| {sit_fmt} "
+            f"| {falta_fmt} |"
         )
 
     print(linha_sep)
@@ -339,7 +407,6 @@ def executar_diagnostico(raiz: Path) -> dict:
     )
     resultados = [analisar_arquivo_python(p, raiz) for p in arquivos_py]
 
-    ordem_pilares = list(PILARES_ARQUITETURA.keys()) + ["Utilidades & Testes"]
     pilares_resumo = {
         p: {
             "arquivos": 0,
@@ -349,7 +416,7 @@ def executar_diagnostico(raiz: Path) -> dict:
             "stubs": 0,
             "erros_sintaxe": 0,
         }
-        for p in ordem_pilares
+        for p in ORDEM_EXIBICAO_PILARES
     }
 
     erros_sintaxe = []
@@ -357,6 +424,8 @@ def executar_diagnostico(raiz: Path) -> dict:
 
     for r in resultados:
         p = r["pilar"]
+        if p not in pilares_resumo:
+            p = "Utilidades & Testes"
         pilares_resumo[p]["arquivos"] += 1
         pilares_resumo[p]["linhas"] += r["linhas"]
         if r["libs_reais"]:
@@ -373,7 +442,8 @@ def executar_diagnostico(raiz: Path) -> dict:
     concluidos = 0
     notas = []
 
-    for p, dados in pilares_resumo.items():
+    for p in ORDEM_EXIBICAO_PILARES:
+        dados = pilares_resumo[p]
         avaliacao = avaliar_pilar(dados)
         dados["nota_1_a_10"] = avaliacao["nota"]
         dados["status_conclusao"] = avaliacao["situacao"]
@@ -398,16 +468,22 @@ def executar_diagnostico(raiz: Path) -> dict:
         if pronto
         else "FECHAR STUBS / SINTAXE LISTADOS ABAIXO PARA ENCERRAR"
     )
+    cor_veredicto = COR_VERDE if (pronto and concluidos == len(pilares_resumo)) else COR_AMARELO
+    media_str = f"{nota_media:.1f}/10"
+    concluidos_str = f"{concluidos}/{len(pilares_resumo)}"
 
-    print(f"\nMedia geral: {nota_media:.1f}/10 | Concluidos (10/10): {concluidos}/{len(pilares_resumo)}")
-    print(f"Conclusao  : {veredicto}")
+    print(
+        f"\nMedia geral: {_colorir(media_str, cor_veredicto)}"
+        f" | Concluidos (10/10): {_colorir(concluidos_str, cor_veredicto)}"
+    )
+    print(f"Conclusao  : {_colorir(veredicto, cor_veredicto)}")
 
     if erros_sintaxe or todos_stubs:
         print("\nITENS PARA FECHAR:")
         for e in erros_sintaxe:
-            print(f"  - [SINTAXE] {e['arquivo']} -> {e['erro']}")
+            print(_colorir(f"  - [SINTAXE] {e['arquivo']} -> {e['erro']}", COR_AMARELO))
         for s in todos_stubs:
-            print(f"  - [STUB]    {s['arquivo']} ({s['pilar']}) -> {s['detalhe']}")
+            print(_colorir(f"  - [STUB]    {s['arquivo']} ({s['pilar']}) -> {s['detalhe']}", COR_AMARELO))
 
     relatorio_json = {
         "gerado_em": datetime.now().isoformat(),
@@ -457,9 +533,9 @@ def terminal_embutido(raiz: Path, ultimo_parecer: dict):
                 f"Stubs: {len(ultimo_parecer['pendencias_stubs'])}"
             )
             for e in ultimo_parecer["erros_sintaxe"]:
-                print(f"  - [SINTAXE] {e['arquivo']} -> {e['erro']}")
+                print(_colorir(f"  - [SINTAXE] {e['arquivo']} -> {e['erro']}", COR_AMARELO))
             for s in ultimo_parecer["pendencias_stubs"]:
-                print(f"  - [STUB]    {s['arquivo']} -> {s['detalhe']}")
+                print(_colorir(f"  - [STUB]    {s['arquivo']} -> {s['detalhe']}", COR_AMARELO))
         elif c == "arvore":
             arq_arv = raiz / "ARVORE_ESTRUTURAL_PROJETO.txt"
             print(arq_arv.read_text(encoding="utf-8") if arq_arv.exists() else "Sem arvore.")

@@ -1,5 +1,5 @@
 ARVORE DO PROJETO: THIERRY_TECH_CORE_2026
-Gerado em: 2026-11-25 00:13:48
+Gerado em: 2026-11-25 07:58:07
 ============================================================================
 
 [DIR] THIERRY_TECH_CORE_2026/
@@ -20,6 +20,7 @@ Gerado em: 2026-11-25 00:13:48
     |-- apicar_memoria_mock.py
     |-- aplicar_global_mercado.py
     |-- aplicar_i18n_cards.py
+    |-- aplicar_memoria_tricologia.py
     |-- aplicar_patch_auditor.py
     |-- aplicar_patch_c2.py
     |-- atualizar_tricologia_ultra.py
@@ -118,6 +119,7 @@ Gerado em: 2026-11-25 00:13:48
     |-- reparador_pdf-iso.py
     |-- reparador_pdf_iso.py
     |-- reparar_painel_visual.py
+    |-- reparar_tricologia_ultra_avancada.py
     |-- requirements.txt
     |-- reverter_backup.py
     |-- sessao.json
@@ -127,6 +129,9 @@ Gerado em: 2026-11-25 00:13:48
     |-- sovereign-elite.css
     |-- super_retorno_financeiro_clean.pdf
     |-- sw.js
+    |-- test_biometria_visao_3d.py
+    |-- test_comercial_vendas.py
+    |-- test_relatorios_auditoria.py
     |-- teste_p2p_tricologia_ultra.py
     |-- teste_seguro_zerados.py
     |-- teste_seguro_zerados.py.bak
@@ -491,7 +496,6 @@ Gerado em: 2026-11-25 00:13:48
         |-- super_retorno_financeiro.py.bak_roi
         |-- synapse_core.py
         |-- synapse_core.py.bak
-        |-- tempCodeRunnerFile.py
         |-- traducoes_ttc.py
         |-- tradutor.py
         |-- tradutor.py.bak
@@ -616,6 +620,17 @@ Gerado em: 2026-11-25 00:13:48
                 |-- evidencias_contrato_juridico_20261119_223602Z.txt
                 |-- evidencias_contrato_juridico_20261119_223740Z.txt
                 |-- evidencias_contrato_juridico_20261119_224118Z.txt
+        [DIR] tricologia_saude/
+            |-- --init--.py
+            |-- analise_eletricidade_volume_densidade.py
+            |-- analise_fibra_capilar.py
+            |-- analise_minerais_impurezas_quelacao.py
+            |-- correlacao_clima_rosto_couro_projecao.py
+            |-- detector_queda_capilar.py
+            |-- diagnostico_capilar.py
+            |-- memoria_tricologia_helper.py
+            |-- protocolo_plasma_fadiga.py
+            |-- protocolo_reconstrucao.py
     [DIR] dados/
         |-- estado_atual.json
     [DIR] database/
