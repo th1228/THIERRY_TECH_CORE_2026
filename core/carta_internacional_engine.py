@@ -227,6 +227,19 @@ def _sanitizar_chancela(valor: Optional[str]) -> str:
     return texto_limpo
 
 
+def _limpar_texto_carta(texto: str) -> str:
+    """Remove qualquer menção indesejada caso algum texto externo chegue à carta."""
+    if not texto:
+        return ""
+    limpo = re.sub(
+        r"[^.\n\r;]*\b(?:herpes|simplex)\b[^.\n\r;]*\.?",
+        "",
+        texto,
+        flags=re.IGNORECASE,
+    )
+    return limpo.strip()
+
+
 class CartaInternacionalEngine:
     def __init__(
         self,
@@ -242,20 +255,21 @@ class CartaInternacionalEngine:
         if self.lang not in TEXTOS_CARTA:
             self.lang = "PT"
 
+        # Busca apenas conteúdo específico da carta; nunca puxa análise geral de outros módulos
         raw_analise = self.telemetria.get("analise_gemini_carta", "") or self.telemetria.get("parecer_carta", "")
         if not raw_analise and hasattr(memoria, 'ler_dados'):
             raw_analise = (
                 memoria.ler_dados("analise_gemini_carta")
                 or memoria.ler_dados("parecer_carta")
-                or memoria.ler_dados("analise_gemini")
                 or ""
             )
 
+        raw_analise = str(raw_analise or "").strip()
         if raw_analise.startswith("```"):
             linhas_analise = raw_analise.split("\n")
             if len(linhas_analise) > 2:
                 raw_analise = "\n".join(linhas_analise[1:-1] if linhas_analise[-1].strip() == "```" else linhas_analise[1:])
-        self.analise_llm = raw_analise.strip()
+        self.analise_llm = _limpar_texto_carta(raw_analise)
 
     def _carregar_estado_sistema(self) -> Dict[str, Any]:
         caminho = os.path.join(ROOT_DIR, "estado_sistema.json")
@@ -462,7 +476,7 @@ class CartaInternacionalEngine:
         bloco_unico_conteudo.append(Spacer(1, 1))
         bloco_unico_conteudo.append(Paragraph(txt["sec4_corpo"], style_cell_text))
 
-        # 6. Laudo / Anexo (se houver)
+        # 6. Laudo / Anexo (se houver conteúdo exclusivo da carta)
         if self.analise_llm:
             bloco_unico_conteudo.append(Spacer(1, 3))
             bloco_unico_conteudo.append(Paragraph(txt["anexo_titulo"], style_section_title))

@@ -1,5 +1,5 @@
 ARVORE DO PROJETO: THIERRY_TECH_CORE_2026
-Gerado em: 2026-11-25 08:07:55
+Gerado em: 2026-11-26 20:21:55
 ============================================================================
 
 [DIR] THIERRY_TECH_CORE_2026/
@@ -24,6 +24,7 @@ Gerado em: 2026-11-25 08:07:55
     |-- aplicar_patch_auditor.py
     |-- aplicar_patch_c2.py
     |-- atualizar_tricologia_ultra.py
+    |-- atualizar_tricologia_ultra.py.bak_20261126_185659
     |-- auditar_pdfs_condicao.py
     |-- auditor_conteudo_profundidade.py
     |-- auditor_conteudo_profundidade.py.bak
@@ -54,11 +55,13 @@ Gerado em: 2026-11-25 08:07:55
     |-- certificacao_soberana.py.bak
     |-- checklist_15_dias.json
     |-- config_pagamentos.py
+    |-- contexto_biometrico.py
     |-- converter_prints_logging
     |-- corrigir_import_visagismo_roi.py
     |-- corrigir_roi_programatico.py
     |-- dados_biometricos.json
     |-- diagnostico_modulos_ttc.json
+    |-- diagnostico_pdfs_alvo.py
     |-- dossie_arquitetura.md
     |-- dossie_final.json
     |-- dossie_pitch_completo_global.txt
@@ -80,6 +83,7 @@ Gerado em: 2026-11-25 08:07:55
     |-- index.html.bak
     |-- index_otimizado.html
     |-- index_otimizado.html.bak
+    |-- ingestao_motor.py
     |-- iniciar.bat
     |-- investigar_zerados.py
     |-- investigar_zerados.py.bak
@@ -108,7 +112,9 @@ Gerado em: 2026-11-25 08:07:55
     |-- organizador_biogemios.py
     |-- organizador_classe_aa.py
     |-- organizador_mestre.py
+    |-- orquestrador_json.py
     |-- parecer_avalista_mercado.json
+    |-- patch_tricologia_ultra.py
     |-- predictive_engine.js
     |-- protocolo_monaco_log.txt
     |-- pyproject.toml
@@ -706,16 +712,12 @@ Gerado em: 2026-11-25 08:07:55
         |-- neural_visage_engine.py
     [DIR] pdfs_finais/
         |-- 01_Dossie_Sovereign_Intelligence.pdf
-        |-- 02_Dossie_Tricologia_PrivateBanking_CheckmateComplete.pdf
         |-- 02_Super_Retorno_Financeiro.pdf
         |-- 03_Dossie_Tricologia_Avancada.pdf
         |-- 04_Carta_Internacional_UHNW.pdf
         |-- 05_Dossie_Modelagem_Computacional.pdf
         |-- 06_Contrato_Licenciamento_Global.pdf
-        |-- 07_Varredura_Geral_Sistema.pdf
         |-- check_rapido_tricologia.pdf
-        |-- teste_trico_en.pdf
-        |-- teste_trico_pt.pdf
         [DIR] Genilson_Rodrigues/
             [DIR] 01_Mensal/
                 |-- Dossie_Sovereign_01_Mensal_20261021_230031.pdf
