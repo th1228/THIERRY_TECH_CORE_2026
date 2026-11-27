@@ -735,6 +735,26 @@ def avaliar_escala_padronizacao(
     }
 
 
+def imprimir_bloco_arquitetura_e_automacao(lang: str = "pt") -> None:
+    """
+    Exibe um guia final claro sobre automação, integração nas próximas fases
+    e onde expandir este script sem se perder no futuro.
+    """
+    idioma = (lang or "pt").strip().lower()
+    if idioma == "en":
+        print(verde("\n5. AUTOMATION, INTEGRATION & EXPANSION GUIDE (NEXT PHASES)"))
+        print(verde("  * Automation : run syntax checks, critical module checks, and snapshots before commits or CI pipelines."))
+        print(verde("  * Integration: connect core engines, AI services, and HTML panels via stable contracts/routes without breaking flows."))
+        print(verde("  * Expansion  : to grow this script safely, edit MODULOS_CRITICOS, folder sets, or this final guide block."))
+        print(amarelo("  * Safety Net : use --simular, --desfazer, .guardiao_historico.json, and Git so every change stays reversible."))
+    else:
+        print(verde("\n5. AUTOMACAO, INTEGRACAO E GUIA DE EXPANSAO (PROXIMAS FASES)"))
+        print(verde("  * Automacao : rode sintaxe, modulos criticos e snapshot antes de commits, rotinas CI ou novas entregas."))
+        print(verde("  * Integracao: conecte motores centrais, IA e painel HTML por rotas/contratos estaveis sem quebrar o que funciona."))
+        print(verde("  * Expansao  : para aumentar este script sem se perder, mexa apenas em MODULOS_CRITICOS, pastas-alvo ou neste bloco 5."))
+        print(amarelo("  * Seguranca : use --simular, --desfazer, .guardiao_historico.json e Git para evoluir com reversao garantida."))
+
+
 def barra_nivel(nivel: int, maximo: int = 5) -> str:
     cheios = verde("■" * max(0, min(nivel, maximo)))
     vazios = "□" * max(0, maximo - nivel)
@@ -751,6 +771,7 @@ def executar_guardiao(
     aplicar_n4: bool,
     aplicar_n5: bool,
     simular: bool,
+    lang: str = "pt",
 ) -> bool:
     _ativar_cores_windows()
     caminho_snap = os.path.join(raiz, ARQUIVO_SNAPSHOT)
@@ -817,6 +838,9 @@ def executar_guardiao(
         print(verde(f"    * {item}"))
     print(verde(f"  Próximo passo : {avaliacao['acao_pratica']}"))
 
+    if not erros_sintaxe:
+        imprimir_bloco_arquitetura_e_automacao(lang=lang)
+
     print(verde("-" * 72))
     if not erros_sintaxe:
         print(verde("STATUS DO GUARDIAO: SEGURO (NENHUMA QUEBRA DE SINTAXE DETECTADA)."))
@@ -840,6 +864,14 @@ def main() -> None:
     parser.add_argument("--aplicar-nivel4", action="store_true", help="Organiza CSS/JS mantendo o painel HTML separado e intacto.")
     parser.add_argument("--aplicar-nivel5", action="store_true", help="Mapeia arquivos gigantes (>=2000 linhas) em _archive.")
     parser.add_argument("--simular", action="store_true", help="Mostra o que seria feito/desfeito sem alterar arquivos.")
+    parser.add_argument(
+        "--lang",
+        "--idioma",
+        dest="lang",
+        choices=["pt", "en"],
+        default="pt",
+        help="Idioma do bloco final de automação e arquitetura (pt ou en).",
+    )
     args = parser.parse_args()
 
     raiz = descobrir_raiz()
@@ -853,6 +885,7 @@ def main() -> None:
         aplicar_n4=args.aplicar_nivel4,
         aplicar_n5=args.aplicar_nivel5,
         simular=args.simular,
+        lang=args.lang,
     )
     sys.exit(0 if ok else 1)
 
