@@ -54,6 +54,29 @@ BASE_DIR = Path(__file__).resolve().parent
 if str(BASE_DIR) not in sys.path:
     sys.path.append(str(BASE_DIR))
 
+
+def assegurar_protocolo_388(caminho_json: Optional[Path] = None) -> Dict[str, Any]:
+    candidatos = [
+        caminho_json,
+        BASE_DIR / "protocolo_388.json",
+        BASE_DIR / "config" / "protocolo_388.json",
+    ]
+    alvo = next((p for p in candidatos if p is not None and p.exists()), None)
+
+    if alvo is None:
+        raise RuntimeError("Protocolo 388 não encontrado: protocolo_388.json ausente na raiz ou em config/.")
+
+    dados = json.loads(alvo.read_text(encoding="utf-8"))
+    protocolo = dados.get("protocol", {})
+
+    if protocolo.get("id") != "P388" or protocolo.get("status") != "active":
+        raise RuntimeError("Validação do Protocolo 388 falhou: identificador ou status inválido.")
+
+    return dados
+
+
+PROTOCOLO_388 = assegurar_protocolo_388()
+
 try:
     from security.sentinel import TTCSentinel
 except ImportError:
@@ -532,8 +555,10 @@ class BiogemeoOrquestradorMaster:
         }
 
     def inicializar_sistema(self) -> None:
+        assegurar_protocolo_388()
         GREEN = "\033[92m"
         RESET = "\033[0m"
+        print(f"{GREEN}[ OK ] [PROTOCOLO 388] Especificação P388 assegurada e ativa.{RESET}")
         print(f"{GREEN}[ OK ] [TERMINAL DE RASTREIO] Inicializando subsistema de orquestração por Gateways...{RESET}")
         try:
             ativar_infraestrutura_vault(pasta_raiz="vault_uhnw_storage")
@@ -646,6 +671,19 @@ def favicon():
 
 
 @app.get("/", response_class=HTMLResponse)
+def servir_abertura_html() -> HTMLResponse:
+    abertura_path = BASE_DIR / "abertura_index.html"
+    if abertura_path.exists():
+        return HTMLResponse(content=abertura_path.read_text(encoding="utf-8"))
+
+    painel_path = BASE_DIR / "index.html"
+    if painel_path.exists():
+        return HTMLResponse(content=painel_path.read_text(encoding="utf-8"))
+
+    return HTMLResponse(content="<h1>Erro: abertura_index.html e index.html não encontrados na raiz.</h1>", status_code=404)
+
+
+@app.get("/painel", response_class=HTMLResponse)
 def servir_painel_html() -> HTMLResponse:
     html_path = BASE_DIR / "index.html"
     if html_path.exists():

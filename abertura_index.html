@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thierry Technology Concept Global</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #020403;
+      --emerald-glow: rgba(16, 185, 129, 0.18);
+      --emerald-accent: #34D399;
+      --silver-muted: #B4C2BE;
+      --chrome-white: #FFFFFF;
+      --font-display: 'Cinzel', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: var(--font-sans);
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      background-image: radial-gradient(circle at 50% 45%, var(--emerald-glow) 0%, #020403 65%);
+      color: var(--chrome-white);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* Topo limpo, sem bordas */
+    header {
+      width: 100%;
+      max-width: 1240px;
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.74rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--silver-muted);
+      opacity: 0;
+      animation: fadeIn 1s ease 0.1s forwards;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      color: var(--silver-muted);
+      font-size: 0.74rem;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      padding: 4px 2px;
+      transition: color 0.3s ease;
+    }
+
+    .lang-switch button.active,
+    .lang-switch button:hover {
+      color: var(--emerald-accent);
+    }
+
+    .lang-switch button:focus-visible,
+    .enter-link:focus-visible {
+      outline: 1px solid var(--emerald-accent);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* Centro Minimalista */
+    main {
+      text-align: center;
+      max-width: 980px;
+      padding: 0 24px;
+    }
+
+    .greeting {
+      font-size: 0.76rem;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--emerald-accent);
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeIn 0.9s ease 0.2s forwards;
+    }
+
+    /* TÍTULO ESMERALDA SÓLIDO, ESPELHADO E BRILHANTE */
+    .hero-title {
+      opacity: 0;
+      transform: translateY(14px);
+      animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+      margin-bottom: 28px;
+    }
+
+    .emerald-jewel-text {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: clamp(3.6rem, 8vw, 6.8rem);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      line-height: 1;
+      background-image: linear-gradient(
+        180deg,
+        #FFFFFF 0%,
+        #ECFDF5 22%,
+        #A7F3D0 44%,
+        #34D399 64%,
+        #10B981 84%,
+        #A7F3D0 100%
+      );
+      color: #34D399;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: emeraldPulse 3.8s ease-in-out infinite;
+    }
+
+    .brand-subtitle {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: clamp(0.95rem, 1.7vw, 1.3rem);
+      font-weight: 400;
+      letter-spacing: 0.48em;
+      text-transform: uppercase;
+      margin-top: 18px;
+      background: linear-gradient(180deg, #F8FAFC 0%, #94A3B8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Descrição limpa */
+    .description {
+      font-size: clamp(0.95rem, 1.3vw, 1.12rem);
+      font-weight: 300;
+      color: var(--silver-muted);
+      line-height: 1.75;
+      max-width: 660px;
+      margin: 0 auto 32px auto;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.6s forwards;
+    }
+
+    .description strong {
+      color: var(--chrome-white);
+      font-weight: 400;
+    }
+
+    /* Metadados flutuantes */
+    .meta-specs {
+      font-size: 0.78rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #6EE7B7;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.8s forwards;
+    }
+
+    .meta-specs span {
+      color: rgba(255, 255, 255, 0.28);
+      margin: 0 14px;
+    }
+
+    /* Botão Minimalista */
+    .enter-link {
+      display: inline-block;
+      background: none;
+      border: none;
+      color: var(--chrome-white);
+      font-size: 0.86rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      padding: 10px 4px;
+      position: relative;
+      transition: color 0.3s ease, letter-spacing 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 1s ease 1s forwards;
+    }
+
+    .enter-link::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 40px;
+      height: 1px;
+      background: var(--emerald-accent);
+      transform: translateX(-50%);
+      transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 0 10px var(--emerald-accent);
+    }
+
+    .enter-link:hover:not(:disabled) {
+      color: var(--emerald-accent);
+      letter-spacing: 0.36em;
+    }
+
+    .enter-link:hover:not(:disabled)::after {
+      width: 100%;
+    }
+
+    .enter-link:disabled {
+      opacity: 0.75;
+      cursor: wait;
+    }
+
+    /* Rodapé discreto */
+    footer {
+      width: 100%;
+      padding: 28px;
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: rgba(180, 194, 190, 0.55);
+      opacity: 0;
+      animation: fadeIn 1s ease 1.1s forwards;
+    }
+
+    @keyframes emeraldPulse {
+      0%, 100% {
+        filter:
+          drop-shadow(0 2px 0 #065F46)
+          drop-shadow(0 4px 0 #022C22)
+          drop-shadow(0 10px 20px rgba(0, 0, 0, 0.9))
+          drop-shadow(0 0 22px rgba(110, 231, 183, 0.55));
+      }
+      50% {
+        filter:
+          drop-shadow(0 2px 0 #065F46)
+          drop-shadow(0 4px 0 #022C22)
+          drop-shadow(0 10px 20px rgba(0, 0, 0, 0.9))
+          drop-shadow(0 0 42px rgba(236, 253, 245, 0.95));
+      }
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding: 24px 20px;
+        letter-spacing: 0.18em;
+        font-size: 0.68rem;
+      }
+
+      .brand-subtitle {
+        letter-spacing: 0.26em;
+      }
+
+      .meta-specs span {
+        margin: 0 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div id="headerPlaces">Monaco • Dubai • United States</div>
+    <div class="lang-switch" role="group" aria-label="Language selector">
+      <button type="button" id="btnPt" aria-pressed="false" onclick="setLang('pt', this)">PT</button>
+      <span style="opacity: 0.25; margin: 0 6px;">/</span>
+      <button type="button" id="btnEn" class="active" aria-pressed="true" onclick="setLang('en', this)">EN</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="greeting" id="greetingText">Welcome to</div>
+
+    <h1 class="hero-title">
+      <span class="emerald-jewel-text">Thierry</span>
+      <span class="brand-subtitle">Technology Concept Global</span>
+    </h1>
+
+    <p class="description" id="subText">
+      Private ecosystem of <strong>telemedicine</strong>, <strong>strategic visagism</strong>, and image value engineering for intangible assets.
+    </p>
+
+    <div class="meta-specs" id="specsText">
+      Protocol 388 <span>•</span> 10 Global Allocations <span>•</span> Curated Jurisdictions
+    </div>
+
+    <div>
+      <button type="button" class="enter-link" id="ctaBtn" onclick="enterSystem()">Enter Ecosystem</button>
+    </div>
+  </main>
+
+  <footer id="footerText">
+    By Invitation Only • End-to-End Encrypted
+  </footer>
+
+  <script>
+    let currentLang = 'en';
+
+    const i18n = {
+      en: {
+        htmlLang: 'en',
+        places: 'Monaco • Dubai • United States',
+        greeting: (h) => h < 12
+          ? 'Good Morning • Welcome to'
+          : h < 18
+            ? 'Good Afternoon • Welcome to'
+            : 'Good Evening • Welcome to',
+        subText: 'Private ecosystem of <strong>telemedicine</strong>, <strong>strategic visagism</strong>, and image value engineering for intangible assets.',
+        specsText: 'Protocol 388 <span>•</span> 10 Global Allocations <span>•</span> Curated Jurisdictions',
+        ctaIdle: 'Enter Ecosystem',
+        ctaLoading: 'Authenticating...',
+        footerText: 'By Invitation Only • End-to-End Encrypted'
+      },
+      pt: {
+        htmlLang: 'pt-BR',
+        places: 'Mônaco • Dubai • Estados Unidos',
+        greeting: (h) => h < 12
+          ? 'Bom dia • Bem-vindo ao'
+          : h < 18
+            ? 'Boa tarde • Bem-vindo ao'
+            : 'Boa noite • Bem-vindo ao',
+        subText: 'Ecossistema privado de <strong>telemedicina</strong>, <strong>visagismo estratégico</strong> e engenharia de valor de imagem para ativos intangíveis.',
+        specsText: 'Protocolo 388 <span>•</span> 10 Alocações Globais <span>•</span> Jurisdições Curadas',
+        ctaIdle: 'Acessar Ecossistema',
+        ctaLoading: 'Autenticando...',
+        footerText: 'Acesso Exclusivo por Convite • Criptografia Ponta a Ponta'
+      }
+    };
+
+    function updateGreeting() {
+      const h = new Date().getHours();
+      const el = document.getElementById('greetingText');
+      if (el) {
+        el.innerText = i18n[currentLang].greeting(h);
+      }
+    }
+
+    function setLang(lang, btn) {
+      if (!i18n[lang]) return;
+      currentLang = lang;
+      const dict = i18n[lang];
+
+      document.documentElement.lang = dict.htmlLang;
+
+      const btnPt = document.getElementById('btnPt');
+      const btnEn = document.getElementById('btnEn');
+      [btnPt, btnEn].forEach((b) => {
+        if (!b) return;
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+      });
+
+      const activeBtn = btn || (lang === 'pt' ? btnPt : btnEn);
+      if (activeBtn) {
+        activeBtn.classList.add('active');
+        activeBtn.setAttribute('aria-pressed', 'true');
+      }
+
+      document.getElementById('headerPlaces').innerText = dict.places;
+      document.getElementById('subText').innerHTML = dict.subText;
+      document.getElementById('specsText').innerHTML = dict.specsText;
+      document.getElementById('footerText').innerText = dict.footerText;
+
+      const ctaBtn = document.getElementById('ctaBtn');
+      if (ctaBtn && !ctaBtn.disabled) {
+        ctaBtn.innerText = dict.ctaIdle;
+      }
+
+      updateGreeting();
+    }
+
+    function enterSystem() {
+      const btn = document.getElementById('ctaBtn');
+      if (!btn || btn.disabled) return;
+
+      btn.disabled = true;
+      btn.innerText = i18n[currentLang].ctaLoading;
+
+      setTimeout(() => {
+        window.location.href = '/painel';
+      }, 600);
+    }
+
+    updateGreeting();
+  </script>
+</body>
+</html>
