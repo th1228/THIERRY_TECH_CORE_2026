@@ -1,0 +1,50 @@
+{
+  "gerado_em": "2026-11-26T22:24:45.366572",
+  "total": 11,
+  "arquivos": [
+    {
+      "arquivo": "core/storage/juridico/evidencias_contrato_juridico_20261119_224118Z.txt",
+      "linhas": 25014
+    },
+    {
+      "arquivo": "auditoria_avalista/mapa_avalista_20261124_181120.json",
+      "linhas": 16269
+    },
+    {
+      "arquivo": "core/storage/juridico/evidencias_contrato_juridico_20261119_223740Z.txt",
+      "linhas": 10640
+    },
+    {
+      "arquivo": "diagnostico_modulos_ttc.json",
+      "linhas": 5790
+    },
+    {
+      "arquivo": "core/storage/juridico/evidencias_contrato_juridico_20261119_223602Z.txt",
+      "linhas": 5340
+    },
+    {
+      "arquivo": "index.html",
+      "linhas": 4198
+    },
+    {
+      "arquivo": "tools/relatorio_auditoria.txt",
+      "linhas": 4015
+    },
+    {
+      "arquivo": "tools/dossie_audit_history.json",
+      "linhas": 3948
+    },
+    {
+      "arquivo": ".guardiao_snapshot.json",
+      "linhas": 3563
+    },
+    {
+      "arquivo": "index_otimizado.html",
+      "linhas": 3539
+    },
+    {
+      "arquivo": "tools/relatorio_compliance.txt",
+      "linhas": 2387
+    }
+  ]
+}
