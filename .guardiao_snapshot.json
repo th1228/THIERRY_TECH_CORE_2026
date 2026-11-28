@@ -1,7 +1,7 @@
 {
-  "criado_em": "2026-11-26T22:24:45.366572",
+  "criado_em": "2026-11-27T23:37:29.634946",
   "raiz": "C:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026",
-  "total_arquivos": 889,
+  "total_arquivos": 896,
   "arquivos": {
     ".auditoria_integridade.json": {
       "tamanho": 86614,
@@ -28,8 +28,8 @@
       "sha256": "15ec8e5fa31ae5df24a0f0f09b1e10eb85f6e9d7d44c0589ecfd23b4fba5f6ca"
     },
     "ARVORE_ESTRUTURAL_PROJETO.txt": {
-      "tamanho": 37461,
-      "sha256": "cc6f5417efaad8c542fab7f1e23dce896f9d49ea7fa0210b5e36a8932b1cae13"
+      "tamanho": 39243,
+      "sha256": "21e9361aefaefc3a36ae4a61f256eee19b5746f98167a14f472192a4b8895308"
     },
     "Certificado_Master_Conformidade_Global.txt": {
       "tamanho": 1558,
@@ -40,8 +40,8 @@
       "sha256": "236cf8ee5466ab7f10a1221dbc8f6061c614c989ab7dfdd1ec20da7c25bab1b5"
     },
     "PARECER_ENGENHARIA_SENIOR.json": {
-      "tamanho": 2715,
-      "sha256": "07f813d77e20682ceda1fa3c6931c15c6c7809759a10a584a6a499199f2f7ba3"
+      "tamanho": 2716,
+      "sha256": "9c79dd7d2af6926172c7228be9d534cef9643224b7385dc3174c739b2fd790ab"
     },
     "README.md": {
       "tamanho": 818,
@@ -51,6 +51,10 @@
       "tamanho": 2553,
       "sha256": "587117fba6cc47616fe726db571db63247eb5e5737c3e345e0be31a91f1890cb"
     },
+    "REGISTRO_P388.md": {
+      "tamanho": 646,
+      "sha256": "c3b5b3eef87fec3ec5239c0c0eb219e0233c81adbd52ecda296b7b168392af6b"
+    },
     "RELATORIO_ESTRATEGICO_7_PONTOS.md": {
       "tamanho": 3292,
       "sha256": "b6aba1be7cc94cfab078770bc7f80ba51ca8ecf324c15e7f863fa2b641c56923"
@@ -58,6 +62,10 @@
     "Relatorio_Master_TCC.md": {
       "tamanho": 2177,
       "sha256": "935998b174abf56ec01610fea14530fd55c319a03ff155d68d81beadb2377c84"
+    },
+    "abertura_index.html": {
+      "tamanho": 11961,
+      "sha256": "b1b052362a989cb05d2f5386397776882dbf6b6587af2de8856bda4acfede4a6"
     },
     "apicar_memoria_mock.py": {
       "tamanho": 3317,
@@ -157,7 +165,7 @@
     },
     "estado_sistema.json": {
       "tamanho": 48902,
-      "sha256": "f51be588d6f02a6cf87675947f8d461ed458f055110f711e83da3ac48251fae0"
+      "sha256": "d7cb65ff8823af0a55de4acbbef0c7af030e1fa98a97b49c219d1a548fbc0700"
     },
     "estilo_silicio-exato.py": {
       "tamanho": 4803,
@@ -184,8 +192,8 @@
       "sha256": "df01e650ceab32650f281705a9d76fe64ba7f82402aa9e745b77ae2079ce7b35"
     },
     "guardiao_organizador.py": {
-      "tamanho": 32285,
-      "sha256": "7ae5520b72e5e75fa8bed66c730a669eeae20c01ec18db98e89688ae24c78527"
+      "tamanho": 49084,
+      "sha256": "fd54b7adcbb3cd0a18a315c467ce4838949e6143451cb1a0cfcbf7fb86cff36d"
     },
     "historico_analises.csv": {
       "tamanho": 473,
@@ -200,12 +208,12 @@
       "sha256": "cb4b74421f8691c001a5746144f41beb71e57c70d35708a6975548c1977275c2"
     },
     "index.html": {
-      "tamanho": 251364,
-      "sha256": "da222996c986559f8de7c24e89523ee15106f29c5a61fab3a754a6477cb7e14a"
+      "tamanho": 251511,
+      "sha256": "11e52d757d2a192d79620b14fee0ad451e09c4ad04df2d0f34018cd40fc4a9f8"
     },
     "index_otimizado.html": {
-      "tamanho": 226260,
-      "sha256": "fcf4c2bfe9ac771ea40b8041a39b6d7ac1a7ab87b6125126db7dc4797e52b013"
+      "tamanho": 226407,
+      "sha256": "48b461a78110f8cd8cb6e76b13c92b8fb839fc42fd305fa5d15cedf07c3cc592"
     },
     "ingestao_motor.py": {
       "tamanho": 1801,
@@ -231,6 +239,10 @@
       "tamanho": 184,
       "sha256": "dcc6aebf0ec054232001837e8574cc1071fc341e8d8ba091cb99ec3d73e53909"
     },
+    "listar_nivel3_pendente.py": {
+      "tamanho": 2729,
+      "sha256": "a4f9931dd4846b838fd3f368cdaab602b0dece34bc795399756fe61d0c6c0a0d"
+    },
     "listar_stubs.py": {
       "tamanho": 983,
       "sha256": "2cef7b913466b365c3488af7614e6bdb9b5c2c17045808bd3b58f29a46271382"
@@ -244,8 +256,8 @@
       "sha256": "c4aea5a0c8bcde92a1e987c3e132fdcfbeb9d4af25235b4968161bd8afb24b84"
     },
     "main.py": {
-      "tamanho": 52241,
-      "sha256": "75ea20e85b8a926d0097e60e5362eb14fb505b07881da686a658604cac1664a6"
+      "tamanho": 68668,
+      "sha256": "61372fb2534d2817dc09c7996b5488ab997819abbe42bb0c6deef1bd606fc692"
     },
     "manifest.json": {
       "tamanho": 416,
@@ -311,6 +323,10 @@
       "tamanho": 5574,
       "sha256": "afb38a27636632b8d0e2d993b229b9a1bce4737c40d3974f8b4822ef9a356cf5"
     },
+    "protocolo_388.json": {
+      "tamanho": 1107,
+      "sha256": "bd283c74207ce9046f98e4abbbbf640760be44ea1b2e532a726b5795658c2507"
+    },
     "protocolo_monaco_log.txt": {
       "tamanho": 20024,
       "sha256": "2c0a76f7d028ef67121161661ea44c922a3af9b41fc541e0ddbdc8a602ff69f0"
@@ -326,6 +342,10 @@
     "refinamento_executivo_final.py": {
       "tamanho": 2845,
       "sha256": "1a2913918cfe3a016233221ee2bc353bc481b71c27c55fc5bf5505a4798de3ff"
+    },
+    "relatorio_auditoria.txt": {
+      "tamanho": 13726,
+      "sha256": "b7568315978b86ba6ff8e5c3cb409936be0bbe8638ef0850aeca82ac6f5b4885"
     },
     "relatorio_i18n_cards.txt": {
       "tamanho": 4781,
@@ -530,6 +550,10 @@
     "ajustes_auditoria/auditoria_sistema_auditoria_global.py": {
       "tamanho": 7281,
       "sha256": "1b6b25e09b16d77a9c5478b1a707f05f9e7453faa30c5d0b15de2c97a75ee961"
+    },
+    "ajustes_auditoria/auditoria_temp.py": {
+      "tamanho": 17523,
+      "sha256": "91d658122a49f4c821807c774962f9ca363b251e9d7ee66998ae30700326fafd"
     },
     "ajustes_auditoria/auditoria_total.py": {
       "tamanho": 2376,
@@ -2164,8 +2188,8 @@
       "sha256": "50e21698c81632e3c6eea06cd813932088169856748243e1cf0e046c559fe319"
     },
     "monaco_security_vault/compliance_ledger_tier1.sec": {
-      "tamanho": 442418,
-      "sha256": "9472b75e674d01a72ad7707141c46170e87e47b4348daa7a3fd56d07445660d6"
+      "tamanho": 462493,
+      "sha256": "b3137743d1a72b61b5333d9e02f9ac820dcf58c8aab79dab1d55f7478f87b59f"
     },
     "monaco_security_vault/node_private_key.pem": {
       "tamanho": 241,
@@ -2188,28 +2212,28 @@
       "sha256": "fc249316122e91b87212080d49fec88147ea1b252de2cdc1a0a3f81c8ec4485a"
     },
     "pdfs_finais/01_Dossie_Sovereign_Intelligence.pdf": {
-      "tamanho": 74697,
-      "sha256": "df8da9e12c3483e9985bde7d06d0ae1beb5811a689482eafd75188cd0f3aec4c"
+      "tamanho": 74374,
+      "sha256": "adb24e16904568873728ab30ba827b4945c936dd677d0f3f5f182f08e6cf23b8"
     },
     "pdfs_finais/02_Super_Retorno_Financeiro.pdf": {
-      "tamanho": 6387,
-      "sha256": "72b53fa9afc74329fde5b2c4424ffe15a60e767b7f9e040eb71347fe6824adfb"
+      "tamanho": 6571,
+      "sha256": "f917e11946465ee84947dbaf5b2e769c58b783a3dfcc97b91317fe82946c4a30"
     },
     "pdfs_finais/03_Dossie_Tricologia_Avancada.pdf": {
-      "tamanho": 10964,
-      "sha256": "28cb61cd475bbbc6dd36dc6b5c8e528cee3a362e916c4143c028052f9340cd9f"
+      "tamanho": 11226,
+      "sha256": "2ab8a85ec0c62a2684b3c15fa5751944c99374b4db717c00c5dbeb280e9354dc"
     },
     "pdfs_finais/04_Carta_Internacional_UHNW.pdf": {
-      "tamanho": 5381,
-      "sha256": "f58e4df3299250704220578d885ca8437a96773de981531325220307bd64c097"
+      "tamanho": 5608,
+      "sha256": "e0b60f1b33d7c4a50210745982799b0ab1139d83c16d2094ddb41b02d854dca3"
     },
     "pdfs_finais/05_Dossie_Modelagem_Computacional.pdf": {
-      "tamanho": 8942,
-      "sha256": "6d612d9b71c48c0087a3bb3e6a8cd9f8f969ce4cefe41b8b735e797798513948"
+      "tamanho": 9149,
+      "sha256": "84002712f5b5f7eea5c77058220c5bcdc2e5ebe9f96a02d7678e95e51bc97975"
     },
     "pdfs_finais/06_Contrato_Licenciamento_Global.pdf": {
-      "tamanho": 32806,
-      "sha256": "9d039f85a0fbd0f86f280c49d107f1d8b0876c529ab08f11169b1d600d233409"
+      "tamanho": 31194,
+      "sha256": "f5e7814274007948dbb36703ec2557e51fcf56026b064205538bc7eef35f0db7"
     },
     "pdfs_finais/check_rapido_tricologia.pdf": {
       "tamanho": 9929,
@@ -2500,8 +2524,8 @@
       "sha256": "d56662b5f22c84fc8073c0e97cc075e1092ee752fa0b30cd43eb655938366eef"
     },
     "security/vault_internal_audit.log": {
-      "tamanho": 228250,
-      "sha256": "de4d046f812b34cf578ab0e0ce5b242ec44b5a9202c601b1368e64f49cd2b39f"
+      "tamanho": 233575,
+      "sha256": "00898ff621768c2afb978e4d6955fb15837f6fd7599bf939ad9c0abe0a73bacb"
     },
     "security/vault_manager.py": {
       "tamanho": 8079,
@@ -3105,7 +3129,15 @@
     },
     "_archive/nivel5_arquivos_gigantes.json": {
       "tamanho": 1176,
-      "sha256": "47a62ad4df8d65e9f2dbce67e0d769877c25f58245d6ec186e0203ec0b9b12d4"
+      "sha256": "f318b80121d5501af66cdba62393c76bb09b1524e90b2272eb175c3628b1713d"
+    },
+    "_archive/alertas_backup/index.html": {
+      "tamanho": 251364,
+      "sha256": "da222996c986559f8de7c24e89523ee15106f29c5a61fab3a754a6477cb7e14a"
+    },
+    "_archive/alertas_backup/index_otimizado.html": {
+      "tamanho": 226260,
+      "sha256": "fcf4c2bfe9ac771ea40b8041a39b6d7ac1a7ab87b6125126db7dc4797e52b013"
     },
     "_archive/nivel2_backups_testes/atualizar_tricologia_ultra.py.bak_20261126_185659": {
       "tamanho": 66616,
@@ -3540,10 +3572,6 @@
       "sha256": "2e4070dbc290090622d3309ad546b41504ebe772eb38d151a9850f4fbd4323db"
     },
     "_cofre_recuperacao_zerados/snapshot_20261119_220936/arquivos/Documentos/th.prn": {
-      "tamanho": 0,
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
-    },
-    "_cofre_recuperacao_zerados/snapshot_20261119_220936/arquivos/security/core/ultimo_motodiagnostico.json": {
       "tamanho": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },

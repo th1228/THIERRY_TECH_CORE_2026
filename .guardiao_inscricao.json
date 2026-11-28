@@ -1,0 +1,35 @@
+{
+  "inscrito_em": "2026-11-27T23:37:24.894080",
+  "codigo_inscricao": "42285c03bd3e2e31",
+  "hash_ledger": "2c942a86305d4b186a8b8f3a60af0f08c9df73af717ab3e7610f5ed866c9d5f7",
+  "git": {
+    "disponivel": "sim",
+    "branch": "main",
+    "commit_curto": "affb0c8",
+    "commit_hash": "affb0c856cb5e0cb9c8144e887294fb80c046a69",
+    "mensagem": "docs: registra abertura P388 e rota /painel",
+    "limpo": "nao"
+  },
+  "artefatos_chave": {
+    "abertura_index.html": {
+      "presente": true,
+      "sha256": "b1b052362a989cb05d2f5386397776882dbf6b6587af2de8856bda4acfede4a6",
+      "linhas": 412
+    },
+    "main.py": {
+      "presente": true,
+      "sha256": "61372fb2534d2817dc09c7996b5488ab997819abbe42bb0c6deef1bd606fc692",
+      "linhas": 1545
+    },
+    "protocolo_388.json": {
+      "presente": true,
+      "sha256": "bd283c74207ce9046f98e4abbbbf640760be44ea1b2e532a726b5795658c2507",
+      "linhas": 39
+    },
+    "index.html": {
+      "presente": true,
+      "sha256": "11e52d757d2a192d79620b14fee0ad451e09c4ad04df2d0f34018cd40fc4a9f8",
+      "linhas": 4198
+    }
+  }
+}

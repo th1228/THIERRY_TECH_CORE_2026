@@ -1,16 +1,16 @@
 {
-  "gerado_em": "2026-11-26T20:21:55.982965",
+  "gerado_em": "2026-11-27T23:18:46.066908",
   "raiz": "C:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026",
-  "total_arquivos_py": 411,
-  "total_linhas": 56447,
+  "total_arquivos_py": 416,
+  "total_linhas": 58766,
   "nota_media_1_a_10": 10.0,
   "pilares_concluidos": "8/8",
   "conclusao": "PRONTO PARA ENCERRAR SEM PENDENCIAS",
   "pilares": {
     "Nucleo & Memoria": {
-      "arquivos": 127,
-      "linhas": 17815,
-      "com_libs_reais": 48,
+      "arquivos": 125,
+      "linhas": 18068,
+      "com_libs_reais": 47,
       "arquivos_teste": 1,
       "stubs": 0,
       "erros_sintaxe": 0,
@@ -30,9 +30,9 @@
       "o_que_falta": "Nada pendente"
     },
     "Biogemeos & IA": {
-      "arquivos": 74,
-      "linhas": 8696,
-      "com_libs_reais": 23,
+      "arquivos": 102,
+      "linhas": 15177,
+      "com_libs_reais": 32,
       "arquivos_teste": 5,
       "stubs": 0,
       "erros_sintaxe": 0,
@@ -63,9 +63,9 @@
       "o_que_falta": "Nada pendente"
     },
     "Relatorios & Auditoria": {
-      "arquivos": 29,
-      "linhas": 5284,
-      "com_libs_reais": 11,
+      "arquivos": 14,
+      "linhas": 1875,
+      "com_libs_reais": 4,
       "arquivos_teste": 3,
       "stubs": 0,
       "erros_sintaxe": 0,
@@ -74,8 +74,8 @@
       "o_que_falta": "Nada pendente"
     },
     "Comercial & Vendas": {
-      "arquivos": 7,
-      "linhas": 895,
+      "arquivos": 6,
+      "linhas": 808,
       "com_libs_reais": 2,
       "arquivos_teste": 1,
       "stubs": 0,
@@ -85,10 +85,10 @@
       "o_que_falta": "Nada pendente"
     },
     "Utilidades & Testes": {
-      "arquivos": 72,
-      "linhas": 9140,
+      "arquivos": 67,
+      "linhas": 8221,
       "com_libs_reais": 18,
-      "arquivos_teste": 18,
+      "arquivos_teste": 20,
       "stubs": 0,
       "erros_sintaxe": 0,
       "nota_1_a_10": 10.0,

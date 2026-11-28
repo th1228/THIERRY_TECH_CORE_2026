@@ -1,0 +1,33 @@
+{
+  "atualizado_em": "27/11/2026 23:49:02",
+  "raiz": "C:\\projetos python\\THIERRY_TECHNOLOGY_CORE\\THIERRY_TECH_CORE_2026",
+  "paineis": {
+    "abertura_index.html": {
+      "sha256": "7274c2216eed6e16e052a52dd77f3c1cdf858dc77e8b953fb88fe66aa2ad890a",
+      "linhas": 412,
+      "mtime": "27/11/2026 07:28:50",
+      "alerts_ativos": 0,
+      "alerts_brutos": 0,
+      "botoes": 3,
+      "inputs": 0
+    },
+    "index.html": {
+      "sha256": "94244ca83b6ebb592e701eaee665f476a6a71f6a12332122f769c8954410d4ca",
+      "linhas": 4198,
+      "mtime": "27/11/2026 23:37:24",
+      "alerts_ativos": 0,
+      "alerts_brutos": 0,
+      "botoes": 99,
+      "inputs": 42
+    },
+    "index_otimizado.html": {
+      "sha256": "321d4d75ea7f761c41e97bce7a1ed5f7a92422e3153a65496cfa5decd32cb1ed",
+      "linhas": 3539,
+      "mtime": "27/11/2026 23:37:24",
+      "alerts_ativos": 0,
+      "alerts_brutos": 0,
+      "botoes": 99,
+      "inputs": 42
+    }
+  }
+}

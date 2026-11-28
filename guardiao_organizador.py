@@ -18,9 +18,11 @@ import hashlib
 import importlib
 import json
 import os
+import re
 import shutil
+import subprocess
 import sys
-from typing import Any, Dict, List, Tuple
+from typing import Any, Dict, List, Optional, Tuple
 
 PASTAS_IGNORADAS = {
     ".git",
@@ -71,13 +73,24 @@ MODULOS_CRITICOS: List[Tuple[str, List[str]]] = [
     ),
 ]
 
+ARQUIVOS_CHAVE_INSCRICAO = [
+    "abertura_index.html",
+    "main.py",
+    "protocolo_388.json",
+    "index.html",
+]
+
 VERDE_ANSI = "\033[92m"
 AMARELO_ANSI = "\033[93m"
 RESET_ANSI = "\033[0m"
 
 ARQUIVO_SNAPSHOT = ".guardiao_snapshot.json"
 ARQUIVO_HISTORICO = ".guardiao_historico.json"
+ARQUIVO_INSCRICAO = ".guardiao_inscricao.json"
+ARQUIVO_REGISTRO_MD = "REGISTRO_P388.md"
 RELATORIO_GIGANTES = "_archive/nivel5_arquivos_gigantes.json"
+
+_ULTIMA_INSCRICAO_MEMORIA: Optional[str] = None
 
 
 def _ativar_cores_windows() -> None:
@@ -168,7 +181,7 @@ def mapear_arquivos(raiz: str) -> Dict[str, Dict[str, Any]]:
         for nome in sorted(arquivos):
             caminho = os.path.join(pasta_atual, nome)
             rel = os.path.relpath(caminho, raiz).replace("\\", "/")
-            if rel in {ARQUIVO_SNAPSHOT, ARQUIVO_HISTORICO}:
+            if rel in {ARQUIVO_SNAPSHOT, ARQUIVO_HISTORICO, ARQUIVO_INSCRICAO}:
                 continue
             try:
                 tamanho = os.path.getsize(caminho)
@@ -179,6 +192,324 @@ def mapear_arquivos(raiz: str) -> Dict[str, Dict[str, Any]]:
                 "sha256": sha256_arquivo(caminho),
             }
     return mapa
+
+
+def obter_estado_git(raiz: str) -> Dict[str, str]:
+    info = {
+        "disponivel": "nao",
+        "branch": "",
+        "commit_curto": "",
+        "commit_hash": "",
+        "mensagem": "",
+        "limpo": "desconhecido",
+    }
+    try:
+        inside = subprocess.run(
+            ["git", "rev-parse", "--is-inside-work-tree"],
+            cwd=raiz,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if inside.returncode != 0 or inside.stdout.strip().lower() != "true":
+            return info
+
+        info["disponivel"] = "sim"
+
+        branch = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            cwd=raiz,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if branch.returncode == 0:
+            info["branch"] = branch.stdout.strip()
+
+        commit_full = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            cwd=raiz,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if commit_full.returncode == 0:
+            h_full = commit_full.stdout.strip()
+            info["commit_hash"] = h_full
+            info["commit_curto"] = h_full[:7]
+
+        msg = subprocess.run(
+            ["git", "log", "-1", "--pretty=%s"],
+            cwd=raiz,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if msg.returncode == 0:
+            info["mensagem"] = msg.stdout.strip()
+
+        status = subprocess.run(
+            ["git", "status", "--porcelain"],
+            cwd=raiz,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if status.returncode == 0:
+            info["limpo"] = "sim" if not status.stdout.strip() else "nao"
+    except Exception:
+        pass
+    return info
+
+
+def _garantir_raiz_no_sys_path(raiz: str) -> None:
+    if raiz and raiz not in sys.path:
+        sys.path.insert(0, raiz)
+
+
+def _registrar_no_ledger_se_disponivel(raiz: str, resumo_inscricao: str) -> Optional[str]:
+    global _ULTIMA_INSCRICAO_MEMORIA
+    if _ULTIMA_INSCRICAO_MEMORIA == resumo_inscricao:
+        return None
+
+    _garantir_raiz_no_sys_path(raiz)
+    try:
+        mod_main = importlib.import_module("main")
+        auditor = getattr(mod_main, "auditor_ledger", None)
+        if auditor is not None and hasattr(auditor, "gerar_bloco_auditado"):
+            hash_bloco = auditor.gerar_bloco_auditado(
+                "GUARDIAO_ORGANIZADOR",
+                "INSCRICAO_ESTADO_E_HISTORICO",
+                resumo_inscricao,
+            )
+            _ULTIMA_INSCRICAO_MEMORIA = resumo_inscricao
+            return str(hash_bloco)
+    except Exception:
+        pass
+    return None
+
+
+def inscrever_estado_guardiao(raiz: str, simular: bool = False) -> Dict[str, Any]:
+    """
+    Inscreve o estado atual do repositório, artefatos-chave (abertura em /,
+    painel em /painel e Protocolo 388) e referência do Git em
+    .guardiao_inscricao.json e REGISTRO_P388.md de forma limpa e auditável.
+    """
+    agora_iso = datetime.datetime.now().isoformat()
+    agora_legivel = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    git_info = obter_estado_git(raiz)
+
+    artefatos: Dict[str, Dict[str, Any]] = {}
+    for rel in ARQUIVOS_CHAVE_INSCRICAO:
+        caminho = os.path.join(raiz, rel)
+        existe = os.path.isfile(caminho)
+        artefatos[rel] = {
+            "presente": existe,
+            "sha256": sha256_arquivo(caminho) if existe else "",
+            "linhas": contar_linhas(caminho) if existe else 0,
+        }
+
+    base_assinatura = json.dumps(
+        {
+            "git_commit": git_info.get("commit_hash", ""),
+            "artefatos": artefatos,
+        },
+        sort_keys=True,
+        ensure_ascii=False,
+    )
+    digest_inscricao = hashlib.sha256(base_assinatura.encode("utf-8")).hexdigest()[:16]
+
+    resumo_ledger = (
+        f"INSCRICAO:{digest_inscricao}|GIT:{git_info.get('commit_curto') or 'SEM_GIT'}"
+        f"|ABERTURA:{'OK' if artefatos.get('abertura_index.html', {}).get('presente') else 'AUSENTE'}"
+        f"|PAINEL:{'OK' if artefatos.get('index.html', {}).get('presente') else 'AUSENTE'}"
+        f"|P388:{'OK' if artefatos.get('protocolo_388.json', {}).get('presente') else 'AUSENTE'}"
+    )
+
+    hash_ledger = None if simular else _registrar_no_ledger_se_disponivel(raiz, resumo_ledger)
+
+    payload: Dict[str, Any] = {
+        "inscrito_em": agora_iso,
+        "codigo_inscricao": digest_inscricao,
+        "hash_ledger": hash_ledger or "",
+        "git": git_info,
+        "artefatos_chave": artefatos,
+    }
+
+    caminho_inscricao = os.path.join(raiz, ARQUIVO_INSCRICAO)
+    caminho_md = os.path.join(raiz, ARQUIVO_REGISTRO_MD)
+
+    linhas_md = [
+        "# Registro de Inscricao — Protocolo 388 e Guardiao",
+        "",
+        f"- Atualizado em: {agora_legivel}",
+        f"- Codigo de inscricao: `{digest_inscricao}`",
+        f"- Git branch/commit: `{git_info.get('branch') or 'N/A'}` @ `{git_info.get('commit_curto') or 'N/A'}`",
+        f"- Mensagem do commit: {git_info.get('mensagem') or 'N/A'}",
+        f"- Working tree limpo: `{git_info.get('limpo')}`",
+        f"- Hash Ledger: `{hash_ledger or 'registrado/nao-aplicavel'}`",
+        "",
+        "## Artefatos Verificados",
+        "",
+    ]
+    for rel, info_arq in artefatos.items():
+        status_arq = "OK" if info_arq["presente"] else "AUSENTE"
+        sha_curto = info_arq["sha256"][:12] if info_arq["sha256"] else "-"
+        linhas_md.append(f"- `{rel}`: **{status_arq}** ({info_arq['linhas']} linhas | sha256 `{sha_curto}`)")
+    linhas_md.append("")
+
+    if not simular:
+        with open(caminho_inscricao, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+        with open(caminho_md, "w", encoding="utf-8") as f:
+            f.write("\n".join(linhas_md))
+
+    return payload
+
+
+def _listar_htmls_ativos(raiz: str) -> List[Tuple[str, str]]:
+    encontrados: List[Tuple[str, str]] = []
+    for pasta_atual, subdirs, arquivos in os.walk(raiz):
+        subdirs[:] = [d for d in subdirs if d not in PASTAS_IGNORADAS]
+        rel_dir = os.path.relpath(pasta_atual, raiz).replace("\\", "/").lower()
+        partes_dir = set() if rel_dir == "." else set(rel_dir.split("/"))
+        if partes_dir & PASTAS_ARQUIVO:
+            continue
+        for nome in sorted(arquivos):
+            if os.path.splitext(nome)[1].lower() in {".html", ".htm"}:
+                caminho = os.path.join(pasta_atual, nome)
+                rel = os.path.relpath(caminho, raiz).replace("\\", "/")
+                encontrados.append((rel, caminho))
+    return encontrados
+
+
+def preparar_e_simular_alertas_html(raiz: str) -> Dict[str, Any]:
+    """
+    Lê os HTMLs ativos, conta quantos alert(...) existem, avalia compatibilidade
+    para modificação segura e executa a simulação da troca por console.warn(...).
+    Retorna um dicionário com o veredito claro se VAI MEXER ou NAO VAI MEXER.
+    """
+    print(verde("\n--- GUARDIAO: LEITURA, COMPATIBILIDADE E SIMULACAO DE alert() (HTML) ---"))
+    padrao_chamada = re.compile(r"\b(?:window\.)?alert\s*\(")
+
+    detalhes_por_arquivo: List[Dict[str, Any]] = []
+    total_alertas = 0
+    erros_leitura: List[str] = []
+
+    for rel, caminho in _listar_htmls_ativos(raiz):
+        try:
+            with open(caminho, "r", encoding="utf-8", errors="strict") as f:
+                conteudo = f.read()
+        except Exception as exc:
+            erros_leitura.append(f"{rel}: {exc}")
+            continue
+
+        matches = list(padrao_chamada.finditer(conteudo))
+        qtd = len(matches)
+        if qtd > 0:
+            linhas_afetadas: List[int] = []
+            for m in matches:
+                num_linha = conteudo.count("\n", 0, m.start()) + 1
+                if num_linha not in linhas_afetadas:
+                    linhas_afetadas.append(num_linha)
+            total_alertas += qtd
+            backup_rel = os.path.join("_archive", "alertas_backup", rel).replace("\\", "/")
+            detalhes_por_arquivo.append(
+                {
+                    "arquivo": rel,
+                    "caminho": caminho,
+                    "conteudo": conteudo,
+                    "quantidade": qtd,
+                    "linhas": linhas_afetadas,
+                    "backup_rel": backup_rel,
+                }
+            )
+            print(
+                f"  * {rel}: {qtd} alert(...) nas linhas {linhas_afetadas} -> [SIMULAR] trocar por console.warn(...)"
+            )
+
+    compativel = len(erros_leitura) == 0
+    vai_mexer = compativel and (total_alertas > 0)
+
+    if erros_leitura:
+        motivo = f"Incompatibilidade de leitura detectada: {'; '.join(erros_leitura)}"
+    elif total_alertas == 0:
+        motivo = "Nenhum alert() encontrado nos arquivos HTML ativos."
+    else:
+        motivo = (
+            f"{total_alertas} alert(...) encontrado(s) em {len(detalhes_por_arquivo)} arquivo(s) HTML; "
+            f"compatível e pronto para substituição segura com backup em _archive/alertas_backup/."
+        )
+
+    veredito = "VAI MEXER" if vai_mexer else "NAO VAI MEXER"
+    print(verde(f"  Quantidade total de alert() lidos : {total_alertas}"))
+    print(verde(f"  Compatibilidade para mudança       : {'SIM' if compativel else 'NAO'}"))
+    print(amarelo(f"  VEREDICTO DO GUARDIAO              : {veredito} — {motivo}"))
+
+    return {
+        "vai_mexer": vai_mexer,
+        "veredito": veredito,
+        "compativel": compativel,
+        "total_alertas": total_alertas,
+        "motivo": motivo,
+        "arquivos": detalhes_por_arquivo,
+    }
+
+
+def aplicar_limpeza_alertas_html(
+    raiz: str,
+    caminho_hist: str,
+    plano: Optional[Dict[str, Any]] = None,
+    simular: bool = False,
+) -> bool:
+    """
+    Executa a modificação preparada nos HTMLs (alert(...) -> console.warn(...)),
+    salva backup em _archive/alertas_backup/ e registra lote em .guardiao_historico.json.
+    """
+    if plano is None:
+        plano = preparar_e_simular_alertas_html(raiz)
+
+    if not plano.get("vai_mexer"):
+        print(amarelo(f"  [GUARDIAO - NAO VAI MEXER] {plano.get('motivo')}"))
+        return False
+
+    if simular:
+        print(verde("  [SIMULACAO CONCLUIDA] Nenhuma alteração gravada no disco."))
+        return True
+
+    padrao_chamada = re.compile(r"\b(?:window\.)?alert\s*\(")
+    movimentos_hist: List[Dict[str, str]] = []
+    alterados = 0
+
+    for item in plano.get("arquivos", []):
+        rel = item["arquivo"]
+        caminho = item["caminho"]
+        conteudo = item["conteudo"]
+        backup_rel = item["backup_rel"]
+        backup_abs = os.path.join(raiz, backup_rel)
+
+        os.makedirs(os.path.dirname(backup_abs), exist_ok=True)
+        shutil.copy2(caminho, backup_abs)
+        sha_backup = sha256_arquivo(backup_abs)
+
+        novo_conteudo = padrao_chamada.sub("console.warn(", conteudo)
+        with open(caminho, "w", encoding="utf-8") as f:
+            f.write(novo_conteudo)
+
+        movimentos_hist.append(
+            {
+                "origem": f"__ALERT_PATCH__:{rel}",
+                "destino": backup_rel,
+                "sha256": sha_backup,
+            }
+        )
+        alterados += 1
+        print(verde(f"  [APLICADO] {rel}: {item['quantidade']} alert(...) -> console.warn(...)"))
+
+    if movimentos_hist:
+        registrar_lote(caminho_hist, "Substituir alert() por console.warn() em HTMLs", movimentos_hist)
+        print(verde(f"  [HISTORICO] Lote registrado ({alterados} arquivo(s) HTML alterado(s))."))
+    return True
 
 
 def salvar_snapshot(raiz: str, caminho_snap: str) -> None:
@@ -281,6 +612,23 @@ def desfazer_ultimo_lote(raiz: str, caminho_hist: str, simular: bool = False) ->
         origem_rel = mov.get("origem", "")
         destino_rel = mov.get("destino", "")
         sha_esperado = mov.get("sha256", "")
+
+        if origem_rel.startswith("__ALERT_PATCH__:"):
+            alvo_rel = origem_rel.split(":", 1)[1]
+            caminho_backup = os.path.join(raiz, destino_rel)
+            caminho_alvo = os.path.join(raiz, alvo_rel)
+            if not os.path.isfile(caminho_backup):
+                print(f"  [IGNORADO] Backup de alerta não encontrado: {destino_rel}")
+                ignorados += 1
+                continue
+            if simular:
+                print(verde(f"  [SIMULAR] Restaurar {destino_rel} -> {alvo_rel}"))
+                restaurados += 1
+                continue
+            shutil.copy2(caminho_backup, caminho_alvo)
+            print(verde(f"  [RESTAURADO] {destino_rel} -> {alvo_rel}"))
+            restaurados += 1
+            continue
 
         caminho_atual = os.path.join(raiz, destino_rel)
         caminho_original = os.path.join(raiz, origem_rel)
@@ -654,12 +1002,10 @@ def avaliar_escala_padronizacao(
                 if linhas >= 2000:
                     arquivos_gigantes.append((rel, linhas))
 
-    # Avaliação independente por nível para refletir o estado real do repositório
     n1 = (qtd_erros_sintaxe == 0) and tem_snapshot
     n2 = (len(backups_fora) == 0)
     pasta_auditoria_ok = os.path.isdir(os.path.join(raiz, PASTA_DEDICADA_AUDITORIA))
     n3 = (len(auditorias_fora) == 0) or pasta_auditoria_ok
-    # Painel HTML separado e mantido intocado por segurança
     n4 = True
     mapa_n5_existe = os.path.isfile(os.path.join(raiz, RELATORIO_GIGANTES))
     n5 = (len(arquivos_gigantes) == 0) or mapa_n5_existe
@@ -771,6 +1117,8 @@ def executar_guardiao(
     aplicar_n4: bool,
     aplicar_n5: bool,
     simular: bool,
+    inscrever: bool = False,
+    organizar_tudo: bool = False,
     lang: str = "pt",
 ) -> bool:
     _ativar_cores_windows()
@@ -785,20 +1133,48 @@ def executar_guardiao(
     if desfazer:
         desfazer_ultimo_lote(raiz, caminho_hist, simular=simular)
 
-    if aplicar_n2:
-        aplicar_nivel_2(raiz, caminho_hist, simular=simular)
+    # Leitura, compatibilidade e simulação automática dos alertas nos HTMLs
+    plano_alertas = preparar_e_simular_alertas_html(raiz)
 
-    if aplicar_n3:
-        aplicar_nivel_3(raiz, caminho_hist, simular=simular)
+    if organizar_tudo:
+        if not simular:
+            aplicar_limpeza_alertas_html(raiz, caminho_hist, plano=plano_alertas, simular=False)
+            aplicar_nivel_2(raiz, caminho_hist, simular=False)
+            aplicar_nivel_3(raiz, caminho_hist, simular=False)
+            aplicar_nivel_4(raiz, caminho_hist, simular=False)
+            aplicar_nivel_5(raiz, simular=False)
+            inscrever_estado_guardiao(raiz, simular=False)
+            salvar_snapshot(raiz, caminho_snap)
+        else:
+            aplicar_nivel_2(raiz, caminho_hist, simular=True)
+            aplicar_nivel_3(raiz, caminho_hist, simular=True)
+            aplicar_nivel_4(raiz, caminho_hist, simular=True)
+            aplicar_nivel_5(raiz, simular=True)
+    else:
+        if aplicar_n2:
+            aplicar_nivel_2(raiz, caminho_hist, simular=simular)
 
-    if aplicar_n4:
-        aplicar_nivel_4(raiz, caminho_hist, simular=simular)
+        if aplicar_n3:
+            aplicar_nivel_3(raiz, caminho_hist, simular=simular)
 
-    if aplicar_n5:
-        aplicar_nivel_5(raiz, simular=simular)
+        if aplicar_n4:
+            aplicar_nivel_4(raiz, caminho_hist, simular=simular)
 
-    if criar_snap and not simular:
-        salvar_snapshot(raiz, caminho_snap)
+        if aplicar_n5:
+            aplicar_nivel_5(raiz, simular=simular)
+
+        if inscrever or not simular:
+            insc = inscrever_estado_guardiao(raiz, simular=simular)
+            git_c = insc.get("git", {}).get("commit_curto") or "N/A"
+            rotulo_sim = " (SIMULAR)" if simular else ""
+            print(
+                verde(
+                    f"[INSCRICAO{rotulo_sim}] Codigo {insc.get('codigo_inscricao')} | Git {git_c} -> {ARQUIVO_REGISTRO_MD}"
+                )
+            )
+
+        if criar_snap and not simular:
+            salvar_snapshot(raiz, caminho_snap)
 
     if comparar:
         comparar_snapshot(raiz, caminho_snap)
@@ -842,6 +1218,7 @@ def executar_guardiao(
         imprimir_bloco_arquitetura_e_automacao(lang=lang)
 
     print(verde("-" * 72))
+    print(amarelo(f"VEREDICTO FINAL DO GUARDIAO: {plano_alertas['veredito']} — {plano_alertas['motivo']}"))
     if not erros_sintaxe:
         print(verde("STATUS DO GUARDIAO: SEGURO (NENHUMA QUEBRA DE SINTAXE DETECTADA)."))
         print(verde("=" * 72))
@@ -854,11 +1231,17 @@ def executar_guardiao(
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Guardião com escala de 1 a 5, pasta dedicada de auditoria/ajuste e desfazer."
+        description="Guardião com escala de 1 a 5, leitura/simulação de alertas, pasta dedicada de auditoria/ajuste e desfazer."
     )
     parser.add_argument("--snapshot", action="store_true", help="Salva fotografia atual do repositório.")
     parser.add_argument("--comparar", action="store_true", help="Compara o estado atual com o snapshot salvo.")
     parser.add_argument("--desfazer", action="store_true", help="Desfaz o último lote de movimentações registrado.")
+    parser.add_argument("--inscrever", action="store_true", help="Atualiza a inscrição do estado, Git e registro documental.")
+    parser.add_argument(
+        "--organizar-tudo",
+        action="store_true",
+        help="Executa a limpeza preparada dos alertas nos HTMLs, níveis 2 a 5, inscrição e snapshot de uma só vez.",
+    )
     parser.add_argument("--aplicar-nivel2", action="store_true", help="Isola backups e testes registrando o lote.")
     parser.add_argument("--aplicar-nivel3", action="store_true", help="Centraliza scripts de auditoria/ajuste registrando o lote.")
     parser.add_argument("--aplicar-nivel4", action="store_true", help="Organiza CSS/JS mantendo o painel HTML separado e intacto.")
@@ -885,6 +1268,8 @@ def main() -> None:
         aplicar_n4=args.aplicar_nivel4,
         aplicar_n5=args.aplicar_nivel5,
         simular=args.simular,
+        inscrever=args.inscrever,
+        organizar_tudo=args.organizar_tudo,
         lang=args.lang,
     )
     sys.exit(0 if ok else 1)

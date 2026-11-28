@@ -1,5 +1,5 @@
 ARVORE DO PROJETO: THIERRY_TECH_CORE_2026
-Gerado em: 2026-11-26 20:21:55
+Gerado em: 2026-11-27 23:18:44
 ============================================================================
 
 [DIR] THIERRY_TECH_CORE_2026/
@@ -8,40 +8,22 @@ Gerado em: 2026-11-26 20:21:55
     |-- .env
     |-- .env.example
     |-- .gitignore
+    |-- .guardiao_historico.json
+    |-- .guardiao_inscricao.json
+    |-- .guardiao_snapshot.json
     |-- .mibo_progress.json
     |-- Certificado_Master_Conformidade_Global.txt
     |-- DOSSIE_VALUATION_TCC_GLOBAL.md
     |-- PARECER_ENGENHARIA_SENIOR.json
     |-- README.md
     |-- README_ARCHITECTURE.md
+    |-- REGISTRO_P388.md
     |-- RELATORIO_ESTRATEGICO_7_PONTOS.md
     |-- Relatorio_Master_TCC.md
-    |-- ajustar_4_fallbacks.py
+    |-- abertura_index.html
     |-- apicar_memoria_mock.py
-    |-- aplicar_global_mercado.py
-    |-- aplicar_i18n_cards.py
-    |-- aplicar_memoria_tricologia.py
-    |-- aplicar_patch_auditor.py
-    |-- aplicar_patch_c2.py
-    |-- atualizar_tricologia_ultra.py
-    |-- atualizar_tricologia_ultra.py.bak_20261126_185659
     |-- auditar_pdfs_condicao.py
-    |-- auditor_conteudo_profundidade.py
-    |-- auditor_conteudo_profundidade.py.bak
-    |-- auditor_documentacao_mibo.py
-    |-- auditor_estrutura.py
-    |-- auditor_estrutura.py.bak
-    |-- auditor_global_mercado.py
-    |-- auditor_global_mercado.py.bak
-    |-- auditor_html_tcc.py
-    |-- auditor_i18n_cards.py
-    |-- auditor_prontidao_vendas.py
-    |-- auditor_prontidao_vendas.py.bak
-    |-- auditor_sistema.py
-    |-- auditor_verdade_mercado.py
-    |-- auditoria_juridica_evidencias.py
-    |-- auditoria_seguranca_security.py
-    |-- auditoria_seguranca_security.py.bak
+    |-- auditoria_temp.py
     |-- biometria_resultado.json
     |-- blindagem_global.py
     |-- c2_async_wal_core.db
@@ -52,16 +34,12 @@ Gerado em: 2026-11-26 20:21:55
     |-- c2_predictive_result.json
     |-- camera_click.wav
     |-- certificacao_soberana.py
-    |-- certificacao_soberana.py.bak
     |-- checklist_15_dias.json
     |-- config_pagamentos.py
     |-- contexto_biometrico.py
     |-- converter_prints_logging
-    |-- corrigir_import_visagismo_roi.py
-    |-- corrigir_roi_programatico.py
     |-- dados_biometricos.json
     |-- diagnostico_modulos_ttc.json
-    |-- diagnostico_pdfs_alvo.py
     |-- dossie_arquitetura.md
     |-- dossie_final.json
     |-- dossie_pitch_completo_global.txt
@@ -73,27 +51,21 @@ Gerado em: 2026-11-26 20:21:55
     |-- fechar_p2p_roi.py
     |-- fechar_p2p_tricologia.py
     |-- gerar_dossie_advogado.py
-    |-- gerar_dossie_advogado.py.bak
     |-- gerar_env_exemple.py
     |-- glossario_tecnico.md
+    |-- guardiao_organizador.py
     |-- historico_analises.csv
     |-- historico_clientes.json
     |-- historico_licenciamento_monaco.json
     |-- index.html
-    |-- index.html.bak
     |-- index_otimizado.html
-    |-- index_otimizado.html.bak
     |-- ingestao_motor.py
     |-- iniciar.bat
     |-- investigar_zerados.py
-    |-- investigar_zerados.py.bak
     |-- joia_tecnologica.py
     |-- laudo_Paciente_Padrao.json
     |-- laudo_Thierry_Cliente.json
-    |-- limpar_backups_seguros.py
-    |-- limpar_texto_entre_tags.py.py
-    |-- limpeza_segura_zerados.py
-    |-- limpeza_segura_zerados.py.bak
+    |-- listar_nivel3_pendente.py
     |-- listar_stubs.py
     |-- log_hub.txt
     |-- log_performance.txt
@@ -114,12 +86,12 @@ Gerado em: 2026-11-26 20:21:55
     |-- organizador_mestre.py
     |-- orquestrador_json.py
     |-- parecer_avalista_mercado.json
-    |-- patch_tricologia_ultra.py
-    |-- predictive_engine.js
+    |-- protocolo_388.json
     |-- protocolo_monaco_log.txt
     |-- pyproject.toml
     |-- pyrightconfig.json
     |-- refinamento_executivo_final.py
+    |-- relatorio_auditoria.txt
     |-- relatorio_i18n_cards.txt
     |-- relatorio_radar_completo.txt
     |-- reparador_pdf-iso.py
@@ -127,23 +99,15 @@ Gerado em: 2026-11-26 20:21:55
     |-- reparar_painel_visual.py
     |-- reparar_tricologia_ultra_avancada.py
     |-- requirements.txt
-    |-- reverter_backup.py
     |-- sessao.json
     |-- sintese_executiva_mibo.json
     |-- sistema_en.mp3
     |-- sistema_pt.mp3
-    |-- sovereign-elite.css
     |-- super_retorno_financeiro_clean.pdf
-    |-- sw.js
-    |-- test_biometria_visao_3d.py
-    |-- test_comercial_vendas.py
-    |-- test_relatorios_auditoria.py
-    |-- teste_p2p_tricologia_ultra.py
-    |-- teste_seguro_zerados.py
-    |-- teste_seguro_zerados.py.bak
     |-- thierry_tech_core.db
     |-- trocar nome.py
     |-- varredura_sistema_pdf.py
+    |-- verificacao_final_programa.py
     |-- verificar_tudo.py
     |-- visagismo_estetica_roi.pdf
     [DIR] Arquivos_TTC/
@@ -156,7 +120,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- @echo off.txt
         |-- Biometria Facial DOURADA Sci-Fi.png
         |-- DASH BOARD.pbix
-        |-- backup_iara_funcional.txt
         |-- desktop.ini
         |-- tggg.pbix
         |-- trabalho 02.xlsx
@@ -189,6 +152,127 @@ Gerado em: 2026-11-26 20:21:55
     [DIR] STORAGE_DATA/
         |-- config_sistema.json
         |-- ttc_biometrics.sqbpro
+    [DIR] _archive/
+        |-- nivel5_arquivos_gigantes.json
+        [DIR] nivel2_backups_testes/
+            |-- atualizar_tricologia_ultra.py.bak_20261126_185659
+            |-- auditor_conteudo_profundidade.py.bak
+            |-- auditor_estrutura.py.bak
+            |-- auditor_global_mercado.py.bak
+            |-- auditor_prontidao_vendas.py.bak
+            |-- auditoria_seguranca_security.py.bak
+            |-- certificacao_soberana.py.bak
+            |-- gerar_dossie_advogado.py.bak
+            |-- index.html.bak
+            |-- index_otimizado.html.bak
+            |-- investigar_zerados.py.bak
+            |-- limpar_backups_seguros.py
+            |-- limpeza_segura_zerados.py.bak
+            |-- reverter_backup.py
+            |-- test_biometria_visao_3d.py
+            |-- test_comercial_vendas.py
+            |-- test_relatorios_auditoria.py
+            |-- teste_p2p_tricologia_ultra.py
+            |-- teste_seguro_zerados.py
+            |-- teste_seguro_zerados.py.bak
+            [DIR] Documentos/
+                |-- backup_iara_funcional.txt
+            [DIR] audit/
+                [DIR] diagnostico_evolucao/
+                    |-- teste_terminal.json
+            [DIR] auditorias_anteriores/
+                |-- auditoria_prontidao.py.bak
+            [DIR] core/
+                |-- analise.py.bak
+                |-- analise_cabelo.py.bak
+                |-- analise_colorimetria.py.bak
+                |-- analise_rosto.py.bak
+                |-- app.py.bak
+                |-- app_executivo.py.bak
+                |-- banco_dados.py.bak
+                |-- biblioteca_estilo.py.bak
+                |-- biogemio_orquestrador.py.bak
+                |-- biometria.py.bak
+                |-- c2_sovereign_intelligence.py.bak
+                |-- c2_sovereign_intelligence.py.bak_roi
+                |-- camera_hub.py.bak
+                |-- carta_internacional_engine.py.bak
+                |-- check_prontidao_comercial.py.bak
+                |-- core_reconstrucao.py.bak
+                |-- coreia_engine.py.bak
+                |-- dashboard_global.py.bak
+                |-- detector_erros.py.bak
+                |-- engine.py.bak
+                |-- engine_scanner.py.bak
+                |-- generator.py.bak
+                |-- gerador_dossies_master.py.bak
+                |-- gerador_faturamento.py.bak
+                |-- gerenciador_geografico.py.bak
+                |-- gerenciador_global.py.bak
+                |-- gerenciador_hardware.py.bak
+                |-- integracao_google.py.bak
+                |-- metrics.py.bak
+                |-- midi_listener.py.bak
+                |-- modulo_psiquico.py.bak
+                |-- monaco_modelagem_engine.py.bak
+                |-- motor_ambiental.py.bak
+                |-- motor_dados.py.bak
+                |-- motor_performance.py.bak
+                |-- motor_prognostico.py.bak
+                |-- motor_regeneracao.py.bak
+                |-- motor_sincronia.py.bak
+                |-- oratoria_soberana_engine.py.bak
+                |-- scanner_integrado.py.bak
+                |-- sentinela_fisio.py.bak
+                |-- stress_core_engine.py.bak
+                |-- super_retorno_financeiro.py.bak
+                |-- super_retorno_financeiro.py.bak_roi
+                |-- synapse_core.py.bak
+                |-- tradutor.py.bak
+                |-- tricologia_disruptiva_engine.py.bak
+                |-- tricologia_ultra_avancada.py.bak
+                |-- validador_sistema.py.bak
+                |-- viasualizador_visagista.py.bak
+                |-- visagismo_estetica_roi.py.bak
+                |-- visagismo_estetica_roi.py.bak_roi
+                |-- visualizador_relatorios.py.bak
+                |-- voz_motor.py.bak
+            [DIR] legal/
+                |-- validador_licenca.py.bak
+            [DIR] security/
+                |-- test_autoreparacao.py
+                |-- test_concorrencia.py
+                |-- test_condicao_corrida.py
+                |-- test_desligamento_abrupto.py
+                |-- test_handle_leaks.py
+                |-- test_integridade_auditoria.py
+            [DIR] storage/
+                |-- backup_auditoria.txt
+                |-- backup_historico.txt
+            [DIR] testes_temp/
+                |-- teste_cameras.py
+                |-- teste_sistema.py
+            [DIR] tests/
+                |-- stress_teste.py.bak
+                |-- test_auditoria_completa.py
+                |-- test_bridge.py
+                |-- test_consciencia.py
+                |-- test_integrado.py
+                |-- test_modulos.py
+                |-- testae_portas.py.bak
+                |-- testar_motor.py.bak
+                |-- testar_payload.py.bak
+                |-- teste_camera.py
+                |-- teste_integrado_global.py
+                |-- teste_inteligencia.py
+                |-- teste_orquestracao.py
+                |-- teste_seguranca.py
+            [DIR] tools/
+                |-- diagnostico_ante_gravidade_neural.py.bak
+                |-- diagnostico_geracao.py.bak
+                |-- diagnostico_seguranca.py.bak
+                |-- verificar_banco.py.bak
+                |-- verificar_prontidao.py.bak
     [DIR] _cofre_recuperacao_zerados/
         [DIR] snapshot_20261119_220936/
             |-- manifesto_alvos.txt
@@ -199,11 +283,56 @@ Gerado em: 2026-11-26 20:21:55
                     |-- thierry_tech_biogenio.db
                 [DIR] security/
                     [DIR] core/
-                        |-- ultimo_motodiagnostico.json
                 [DIR] tools/
                     |-- vault_internal_audit.log
         [DIR] snapshot_20261119_221123/
             |-- manifesto_alvos.txt
+    [DIR] ajustes_auditoria/
+        |-- ajustar_4_fallbacks.py
+        |-- aplicar_global_mercado.py
+        |-- aplicar_i18n_cards.py
+        |-- aplicar_memoria_tricologia.py
+        |-- aplicar_patch_auditor.py
+        |-- aplicar_patch_c2.py
+        |-- atualizar_tricologia_ultra.py
+        |-- auditor__monaco_ master.py
+        |-- auditor_conteudo_profundidade.py
+        |-- auditor_documentacao_mibo.py
+        |-- auditor_estrutura.py
+        |-- auditor_geral_ttc.py
+        |-- auditor_global_master.py
+        |-- auditor_global_mercado.py
+        |-- auditor_html_tcc.py
+        |-- auditor_i18n_cards.py
+        |-- auditor_integridade_global.py
+        |-- auditor_interface_1_bi.py
+        |-- auditor_mibo_master.py
+        |-- auditor_organizacao_modulos.py
+        |-- auditor_prontidao_vendas.py
+        |-- auditor_sistema.py
+        |-- auditor_soberano_v3.py
+        |-- auditor_terminal.py
+        |-- auditor_verdade_mercado.py
+        |-- auditoria_juridica_evidencias.py
+        |-- auditoria_master.py
+        |-- auditoria_mibo.py
+        |-- auditoria_profunda.py
+        |-- auditoria_prontidao.py
+        |-- auditoria_seguranca_security.py
+        |-- auditoria_sistema.py
+        |-- auditoria_sistema_auditoria_global.py
+        |-- auditoria_total.py
+        |-- auditoria_total_profundo.py
+        |-- corrigir_import_visagismo_roi.py
+        |-- corrigir_roi_programatico.py
+        |-- diagnostico_capilar.py
+        |-- diagnostico_evolucao.py
+        |-- diagnostico_pdfs_alvo.py
+        |-- limpar_texto_entre_tags.py.py
+        |-- limpeza_profissional.py
+        |-- limpeza_segura_zerados.py
+        |-- patch_tricologia_ultra.py
+        |-- verificador_nuvem.py
     [DIR] assets/
         |-- apresentacao.mp4
         |-- apresentacao_en.mp4
@@ -211,7 +340,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- scan_ping.wav
     [DIR] audit/
         |-- architecture_auditor.py
-        |-- auditor_geral_ttc.py
         |-- dependency_sbom.json
         |-- develops_readiness.py
         |-- dossie_audit_history.json
@@ -226,7 +354,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- verificar_integridade.py
         [DIR] diagnostico_evolucao/
             |-- genilson_rodrigues.json
-            |-- teste_terminal.json
             |-- thi_rry_rodrigues.json
         [DIR] evolucao_pacientes/
             |-- cliente_uhnw_01_sovereign_intelligence_pt.json
@@ -250,15 +377,7 @@ Gerado em: 2026-11-26 20:21:55
         |-- auditar_geradores_pdf.py
         |-- auditar_logica.py
         |-- auditar_sistema_tcc.py
-        |-- auditor__monaco_ master.py
         |-- auditor_geral_ttc.py
-        |-- auditor_integridade_global.py
-        |-- auditoria_master.py
-        |-- auditoria_profunda.py
-        |-- auditoria_prontidao.py
-        |-- auditoria_prontidao.py.bak
-        |-- auditoria_sistema.py
-        |-- auditoria_total.py
     [DIR] config/
         [DIR] paises/
             |-- AE.json
@@ -285,41 +404,24 @@ Gerado em: 2026-11-26 20:21:55
         |-- acao_mestre.py
         |-- analisador_MIBO_inovação.py
         |-- analise.py
-        |-- analise.py.bak
         |-- analise_cabelo.py
-        |-- analise_cabelo.py.bak
         |-- analise_colorimetria.py
-        |-- analise_colorimetria.py.bak
         |-- analise_rosto.py
-        |-- analise_rosto.py.bak
         |-- analizador_conectividade.py
         |-- analizar_fluxo.py
         |-- api_server.py
         |-- aplicador_correcao.py
         |-- app.py
-        |-- app.py.bak
         |-- app_executivo.py
-        |-- app_executivo.py.bak
         |-- apresentacao_ecossistema.py
         |-- arduino_bridge.py
         |-- atelie.py
-        |-- auditor_global_master.py
-        |-- auditor_interface_1_bi.py
-        |-- auditor_mibo_master.py
         |-- auditor_sistema.py
-        |-- auditor_soberano_v3.py
-        |-- auditor_terminal.py
-        |-- auditoria_mibo.py
-        |-- auditoria_sistema_auditoria_global.py
         |-- auto_reparador.py
         |-- banco_dados.py
-        |-- banco_dados.py.bak
         |-- biblioteca_estilo.py
-        |-- biblioteca_estilo.py.bak
         |-- biogemio_orquestrador.py
-        |-- biogemio_orquestrador.py.bak
         |-- biometria.py
-        |-- biometria.py.bak
         |-- blindar_codigo.py
         |-- c2_async_wal_queue.py
         |-- c2_audit_inspector.py
@@ -335,42 +437,30 @@ Gerado em: 2026-11-26 20:21:55
         |-- c2_reality_engine_validator.py
         |-- c2_solver_preditivo.py
         |-- c2_sovereign_intelligence.py
-        |-- c2_sovereign_intelligence.py.bak
-        |-- c2_sovereign_intelligence.py.bak_roi
         |-- c2_ui_silicon_valley_inspectron.py
         |-- camera_engine.py
         |-- camera_hub.py
-        |-- camera_hub.py.bak
         |-- carregador_automatico.py
         |-- carta_internacional_engine.py
-        |-- carta_internacional_engine.py.bak
         |-- checar_arquivos.py
         |-- check_docker_php.py
         |-- check_php.py
         |-- check_prontidao_comercial.py
-        |-- check_prontidao_comercial.py.bak
         |-- checkout_ui.py
         |-- compliance_global.py
         |-- core_reconstrucao.py
-        |-- core_reconstrucao.py.bak
         |-- coreia_engine.py
-        |-- coreia_engine.py.bak
         |-- dashboard_global.py
-        |-- dashboard_global.py.bak
         |-- db.manager.py
         |-- db_config.py
         |-- db_init.py
         |-- debug_dossie.py
         |-- detector_erros.py
-        |-- detector_erros.py.bak
         |-- diagnosticar_footer.py
-        |-- diagnostico_evolucao.py
         |-- encontrar _origem_nome.py
         |-- encontrar_data_inicio.py
         |-- engine.py
-        |-- engine.py.bak
         |-- engine_scanner.py
-        |-- engine_scanner.py.bak
         |-- error_guard.py
         |-- estado_sistema.json
         |-- evaluate.py
@@ -380,21 +470,15 @@ Gerado em: 2026-11-26 20:21:55
         |-- faxina_ttc.py
         |-- fix_imports.py
         |-- generator.py
-        |-- generator.py.bak
         |-- geodefense.py
         |-- gerador_dossies_master.py
-        |-- gerador_dossies_master.py.bak
         |-- gerador_faturamento.py
-        |-- gerador_faturamento.py.bak
         |-- gerar_one_pager.py
         |-- gerar_son.py
         |-- gerenciador_central_mibo.py
         |-- gerenciador_geografico.py
-        |-- gerenciador_geografico.py.bak
         |-- gerenciador_global.py
-        |-- gerenciador_global.py.bak
         |-- gerenciador_hardware.py
-        |-- gerenciador_hardware.py.bak
         |-- gerenciador_vult.py
         |-- global_state.py
         |-- gui_main.py
@@ -404,12 +488,10 @@ Gerado em: 2026-11-26 20:21:55
         |-- iniciar_sistema.py
         |-- inspecionar_e_popular_memoria.py
         |-- integracao_google.py
-        |-- integracao_google.py.bak
         |-- interface_dashboard.py
         |-- inventario_global.py
         |-- inventario_sistema_executivo.py
         |-- joia_tecnologica_real.py
-        |-- limpeza_profissional.py
         |-- manifesto_mibo.py
         |-- mapa_de_correcao.py
         |-- mapeador_de_dependecias.py
@@ -418,7 +500,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- mapeamento_soberano.py
         |-- memoria_comum.py
         |-- metrics.py
-        |-- metrics.py.bak
         |-- mibo_adaptive_neural_core.py
         |-- mibo_auto_optimizer.py
         |-- mibo_deep_valuation_engine.py
@@ -430,9 +511,7 @@ Gerado em: 2026-11-26 20:21:55
         |-- mibo_status_geral.py
         |-- mibo_structure_auditor.py
         |-- midi_listener.py
-        |-- midi_listener.py.bak
         |-- modulo_psiquico.py
-        |-- modulo_psiquico.py.bak
         |-- monaco_ambiente.py
         |-- monaco_blindagem.py
         |-- monaco_comunicacao.py
@@ -441,32 +520,24 @@ Gerado em: 2026-11-26 20:21:55
         |-- monaco_eminencia.py
         |-- monaco_integrador.py
         |-- monaco_modelagem_engine.py
-        |-- monaco_modelagem_engine.py.bak
         |-- monaco_nucleo_acesso.py
         |-- monaco_plan.py
         |-- monaco_ressonancia.py
         |-- monitor_maestro.py
         |-- motor_ambiental.py
-        |-- motor_ambiental.py.bak
         |-- motor_ao_ vivo.py
         |-- motor_biogemeos_neuro.py
         |-- motor_biometrico.py
         |-- motor_dados.py
-        |-- motor_dados.py.bak
         |-- motor_olhar_store.py
         |-- motor_performance.py
-        |-- motor_performance.py.bak
         |-- motor_prognostico.py
-        |-- motor_prognostico.py.bak
         |-- motor_regeneracao.py
-        |-- motor_regeneracao.py.bak
         |-- motor_sincronia.py
-        |-- motor_sincronia.py.bak
         |-- neuro_gravidade.py
         |-- neuro_protocolos.py
         |-- omni_watcher.py
         |-- oratoria_soberana_engine.py
-        |-- oratoria_soberana_engine.py.bak
         |-- organizador_arquivos.py
         |-- organizador_sistema.py
         |-- orquestrador_llm.py
@@ -485,47 +556,31 @@ Gerado em: 2026-11-26 20:21:55
         |-- scanner.txt
         |-- scanner_busca.py
         |-- scanner_integrado.py
-        |-- scanner_integrado.py.bak
         |-- script_clima.py
         |-- sensor_fadiga.py
         |-- sentinela_fisio.py
-        |-- sentinela_fisio.py.bak
         |-- servidor_local.py
         |-- setup_seguranca.py
         |-- sovereign_due-diligence_simulator.py.py
         |-- sovereign_gate.py
         |-- stress_core_engine.py
-        |-- stress_core_engine.py.bak
         |-- stripe_service.py
         |-- super_retorno_financeiro.py
-        |-- super_retorno_financeiro.py.bak
-        |-- super_retorno_financeiro.py.bak_roi
         |-- synapse_core.py
-        |-- synapse_core.py.bak
         |-- traducoes_ttc.py
         |-- tradutor.py
-        |-- tradutor.py.bak
         |-- tricologia_disruptiva_engine.py
-        |-- tricologia_disruptiva_engine.py.bak
         |-- tricologia_ultra_avancada.py
-        |-- tricologia_ultra_avancada.py.bak
         |-- validador_internacional.py
         |-- validador_monaco.py
         |-- validador_sistema.py
-        |-- validador_sistema.py.bak
         |-- validador_valuation_tcc.py
         |-- validar_maestro.py
         |-- ver_memoria.py
-        |-- verificador_nuvem.py
         |-- viasualizador_visagista.py
-        |-- viasualizador_visagista.py.bak
         |-- visagismo_estetica_roi.py
-        |-- visagismo_estetica_roi.py.bak
-        |-- visagismo_estetica_roi.py.bak_roi
         |-- visualizador_relatorios.py
-        |-- visualizador_relatorios.py.bak
         |-- voz_motor.py
-        |-- voz_motor.py.bak
         [DIR] capturas/
             |-- FOTO_BIOGEME_20260901_001356.png
             |-- FOTO_BIOGEME_20260901_001359.png
@@ -633,7 +688,6 @@ Gerado em: 2026-11-26 20:21:55
             |-- analise_minerais_impurezas_quelacao.py
             |-- correlacao_clima_rosto_couro_projecao.py
             |-- detector_queda_capilar.py
-            |-- diagnostico_capilar.py
             |-- memoria_tricologia_helper.py
             |-- protocolo_plasma_fadiga.py
             |-- protocolo_reconstrucao.py
@@ -694,7 +748,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- licenca.py
         |-- licenca_ativa.json
         |-- validador_licenca.py
-        |-- validador_licenca.py.bak
     [DIR] modulos_organizados/
         |-- documentacao_tecnica.md
         |-- gerador_relatorios.py
@@ -747,7 +800,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- audit_ledger.py
         |-- audit_logger.py
         |-- audit_reporter.py
-        |-- auditoria_total_profundo.py
         |-- autodestruicao.py
         |-- biometric_validator.py
         |-- confidential_compute.py
@@ -784,12 +836,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- session_manager.py
         |-- system.lock
         |-- system_shield.py
-        |-- test_autoreparacao.py
-        |-- test_concorrencia.py
-        |-- test_condicao_corrida.py
-        |-- test_desligamento_abrupto.py
-        |-- test_handle_leaks.py
-        |-- test_integridade_auditoria.py
         |-- threat_intel.py
         |-- token_blacklist.py
         |-- token_manager.py
@@ -837,8 +883,6 @@ Gerado em: 2026-11-26 20:21:55
         |-- Relatorio_Simetria_20260623_212220.txt
         |-- Relatorio_Simetria_20260623_212225.txt
         |-- TCC_global_forense.db
-        |-- backup_auditoria.txt
-        |-- backup_historico.txt
         |-- biogenio.db
         |-- bip_final.wav
         |-- camera_click.wav
@@ -866,19 +910,10 @@ Gerado em: 2026-11-26 20:21:55
         |-- pericia_Teste_Usuario_1782694856.jpg
         |-- pericia_Teste_Usuario_1782694916.jpg
         |-- pericia_Teste_Usuario_1782695004.jpg
-        |-- teste_cameras.py
-        |-- teste_sistema.py
     [DIR] tests/
         |-- pericia_Teste_1783350176.png
         |-- stress_teste.py
-        |-- stress_teste.py.bak
-        |-- test_auditoria_completa.py
-        |-- test_bridge.py
-        |-- test_consciencia.py
-        |-- test_integrado.py
-        |-- test_modulos.py
         |-- testae_portas.py
-        |-- testae_portas.py.bak
         |-- testar_ataque.py
         |-- testar_envios.py
         |-- testar_integracao_memoria.py
@@ -886,17 +921,10 @@ Gerado em: 2026-11-26 20:21:55
         |-- testar_master.py
         |-- testar_memoria.py
         |-- testar_motor.py
-        |-- testar_motor.py.bak
         |-- testar_payload.py
-        |-- testar_payload.py.bak
         |-- testar_sanitizer.py
         |-- testar_seguranca.py
         |-- testar_vozes.py
-        |-- teste_camera.py
-        |-- teste_integrado_global.py
-        |-- teste_inteligencia.py
-        |-- teste_orquestracao.py
-        |-- teste_seguranca.py
     [DIR] tools/
         |-- audit_engine.py
         |-- audit_global_financeiro.py
@@ -928,16 +956,13 @@ Gerado em: 2026-11-26 20:21:55
         |-- diagnostico_Thierry_1783480020.png
         |-- diagnostico_UsuÃ¡rio Thierry.jpg
         |-- diagnostico_ante_gravidade_neural.py
-        |-- diagnostico_ante_gravidade_neural.py.bak
         |-- diagnostico_backend.py
         |-- diagnostico_conexao.py
         |-- diagnostico_geracao.py
-        |-- diagnostico_geracao.py.bak
         |-- diagnostico_html.py
         |-- diagnostico_painel.py
         |-- diagnostico_pdf.py
         |-- diagnostico_seguranca.py
-        |-- diagnostico_seguranca.py.bak
         |-- diagnostico_sistema_master.py
         |-- dossie_audit_history.json
         |-- global_audit_report.json
@@ -965,13 +990,15 @@ Gerado em: 2026-11-26 20:21:55
         |-- relatorio_valuation_monaco_evolutivo.txt
         |-- ultimo_motodiagnostico.json
         |-- verificar_banco.py
-        |-- verificar_banco.py.bak
         |-- verificar_camera.py
         |-- verificar_caminhos.py
         |-- verificar_dependencias.py
         |-- verificar_integracao.py
         |-- verificar_prontidao.py
-        |-- verificar_prontidao.py.bak
         |-- verificar_sintaxe.py
         |-- verificar_sistema.py
         |-- verificar_status_final.py
+    [DIR] web/
+        |-- predictive_engine.js
+        |-- sovereign-elite.css
+        |-- sw.js

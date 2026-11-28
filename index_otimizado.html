@@ -1762,7 +1762,7 @@
     function exibirStatusSegurancaUHNW() {
         if (typeof playLuxuryAcousticChime === 'function') playLuxuryAcousticChime();
         const t = traducoesUHNW[idiomaAtualUHNW];
-        alert(t.alertSecurity);
+        console.warn(t.alertSecurity);
     }
 
     function mudarIdiomaModalUHNW(lang) {
@@ -1829,7 +1829,7 @@
             let msgVoz = (idiomaAtualUHNW === 'EN') ? "[🎙️ Voice Transcribed]: Executive Global anchor protocol & bioregulation applied successfully." : "[🎙️ Voz Transcrita]: Protocolo de ancoragem e biorregulação Executive Global aplicado com sucesso.";
             textarea.value += (textarea.value ? "\n" : "") + msgVoz;
         }
-        alert(t.alertVoice);
+        console.warn(t.alertVoice);
     }
 
     function gerarPdfComHistorico() {
@@ -1840,7 +1840,7 @@
         if (typeof openPdfModal === 'function') {
             openPdfModal();
         } else {
-            alert(t.alertPdf + clientName + " (HIPAA & GDPR Compliant).");
+            console.warn(t.alertPdf + clientName + " (HIPAA & GDPR Compliant).");
         }
     }
 
@@ -1851,13 +1851,13 @@
         const t = traducoesUHNW[idiomaAtualUHNW];
 
         if (!medico) {
-            alert(t.alertDoctorEmpty);
+            console.warn(t.alertDoctorEmpty);
             document.getElementById('uhnw-doctor-input').focus();
             return;
         }
 
         if (!nota) {
-            alert(t.alertEmpty);
+            console.warn(t.alertEmpty);
             document.getElementById('uhnw-new-clinical-note').focus();
             return;
         }
@@ -1873,7 +1873,7 @@
             nota: nota
         });
 
-        alert(t.alertSaved);
+        console.warn(t.alertSaved);
         document.getElementById('uhnw-new-clinical-note').value = '';
         renderizarHistoricoUHNW();
         fecharModalHistoricoUHNW();
@@ -1894,7 +1894,7 @@
 
     function processarPagamentoLicenciamento ExecutivoReal() {
         if (typeof playLuxuryAcousticChime === 'function') playLuxuryAcousticChime();
-        alert("💳 Pagamento processado com sucesso via Licenciamento Executivo Secure API!\nLicença Tier-1 Executive Global ativada e enclaves liberados.");
+        console.warn("💳 Pagamento processado com sucesso via Licenciamento Executivo Secure API!\nLicença Tier-1 Executive Global ativada e enclaves liberados.");
         closeLicenciamento ExecutivoModal();
     }
 </script><div class="modal-overlay" id="apex-protocol-modal">
@@ -2473,7 +2473,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             return data;
         } catch (error) {
             console.error("[Mibo Erro de Despacho]:", error);
-            alert("Erro ao comunicar com o Gerenciador Central Mibo. Verifique o terminal.");
+            console.warn("Erro ao comunicar com o Gerenciador Central Mibo. Verifique o terminal.");
             return null;
         }
     }
@@ -2518,7 +2518,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             link.click();
             document.body.removeChild(link);
         } else if (result && result.message) {
-            alert(result.message);
+            console.warn(result.message);
         }
     }
 
@@ -2543,7 +2543,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         const emailTarget = document.getElementById('dispatch-email-target').value;
         const result = await dispararGerenciadorMibo(currentModuleId, 'email');
         if (result) {
-            alert(`Relatório enviado com sucesso para: ${emailTarget}`);
+            console.warn(`Relatório enviado com sucesso para: ${emailTarget}`);
         }
     }
 
@@ -3086,7 +3086,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         }
 
         async function dispararVarreduraComGateway(ecosystemTipo) {
-            if (!consentimentoBiometricoAtivo) { alert("⚠️ Aceite o termo biométrico ou o Apex Protocol primeiro!"); return; }
+            if (!consentimentoBiometricoAtivo) { console.warn("⚠️ Aceite o termo biométrico ou o Apex Protocol primeiro!"); return; }
             selectArchetypeProfile(ecosystemTipo);
             startCinematicScan();
         }
@@ -3128,14 +3128,14 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
             if (document.getElementById('admin-master-pwd').value === '124577') {
                 document.getElementById('admin-auth-screen').style.display = 'none';
                 document.getElementById('admin-dashboard-screen').style.display = 'flex';
-            } else { alert('[ERRO] Senha incorreta.'); }
+            } else { console.warn('[ERRO] Senha incorreta.'); }
         }
         function lockAdminSystem() {
             document.getElementById('admin-dashboard-screen').style.display = 'none';
             document.getElementById('admin-auth-screen').style.display = 'flex';
             document.getElementById('admin-master-pwd').value = '';
         }
-        function updateCompanyLicenseStatus() { alert('[ADMIN] Licença salva com sucesso.'); closeAdminPanelModal(); }
+        function updateCompanyLicenseStatus() { console.warn('[ADMIN] Licença salva com sucesso.'); closeAdminPanelModal(); }
 
         function openWealthFilterModal() { document.getElementById('geo-filter-modal').classList.add('active-modal'); }
         function closeGeoFilterModal() { document.getElementById('geo-filter-modal').classList.remove('active-modal'); salvarEstadoNoNavegador(); }
@@ -3152,7 +3152,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                 const response = await fetch('http://127.0.0.1:801/obter-link-licenciamento_executivo', { method: 'POST', body: formData });
                 const data = await response.json();
                 if (data.url_checkout) { window.location.href = data.url_checkout; }
-            } catch (error) { alert('Erro ao carregar checkout.'); }
+            } catch (error) { console.warn('Erro ao carregar checkout.'); }
         }
 
         function openPdfModal() { if(!scanCompletedFlag) return; document.getElementById('pdf-report-modal').classList.add('active-modal'); }
@@ -3212,13 +3212,13 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
                     document.body.appendChild(a);
                     a.click();
                     a.remove();
-                } else { alert('Erro ao gerar PDF no backend.'); }
-            } catch(e) { alert('Servidor FastAPI indisponível na porta 801.'); }
+                } else { console.warn('Erro ao gerar PDF no backend.'); }
+            } catch(e) { console.warn('Servidor FastAPI indisponível na porta 801.'); }
         }
 
         async function enviarRelatorioPorCanal(tipoRelatorio, canal) {
             const emailDestino = document.getElementById('dispatch-email-target').value;
-            if(!emailDestino) { alert('⚠️ Insira um e-mail válido!'); return; }
+            if(!emailDestino) { console.warn('⚠️ Insira um e-mail válido!'); return; }
             closePdfModal();
             
             const formData = new FormData();
@@ -3231,9 +3231,9 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
 
             try {
                 const res = await fetch('http://127.0.0.1:801/enviar-relatorio-canal', { method: 'POST', body: formData });
-                if(res.ok) { alert(`✔ Dossiê ${tipoRelatorio.toUpperCase()} (${pdfLang}) enviado com sucesso para ${emailDestino}!`); }
-                else { alert(`✔ [Simulação] Dossiê ${tipoRelatorio.toUpperCase()} enviado com sucesso para ${emailDestino}.`); }
-            } catch(e) { alert(`✔ [Simulação] Dossiê ${tipoRelatorio.toUpperCase()} despachado para ${emailDestino}.`); }
+                if(res.ok) { console.warn(`✔ Dossiê ${tipoRelatorio.toUpperCase()} (${pdfLang}) enviado com sucesso para ${emailDestino}!`); }
+                else { console.warn(`✔ [Simulação] Dossiê ${tipoRelatorio.toUpperCase()} enviado com sucesso para ${emailDestino}.`); }
+            } catch(e) { console.warn(`✔ [Simulação] Dossiê ${tipoRelatorio.toUpperCase()} despachado para ${emailDestino}.`); }
         }
 
         function switchStage(targetStage) {
@@ -3495,7 +3495,7 @@ Nenhum dado sensível ou imagem facial bruta é armazenada permanentemente em se
         });
 
         function startCinematicScan() {
-            if (!consentimentoBiometricoAtivo || !cameraActive) { alert("⚠️ Ative o Apex Protocol e a câmera primeiro!"); return; }
+            if (!consentimentoBiometricoAtivo || !cameraActive) { console.warn("⚠️ Ative o Apex Protocol e a câmera primeiro!"); return; }
             captureBiogensFromWebcam();
             setupTickerCanvasItems();
 

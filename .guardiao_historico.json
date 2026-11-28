@@ -794,5 +794,34 @@
         "sha256": "5965e7294d723db2240f263b6cc22ae05673a98c78f969ef22f2e6a6473c1311"
       }
     ]
+  },
+  {
+    "id": 4,
+    "data_hora": "2026-11-27T23:37:24.385424",
+    "descricao": "Substituir alert() por console.warn() em HTMLs",
+    "movimentos": [
+      {
+        "origem": "__ALERT_PATCH__:index.html",
+        "destino": "_archive/alertas_backup/index.html",
+        "sha256": "da222996c986559f8de7c24e89523ee15106f29c5a61fab3a754a6477cb7e14a"
+      },
+      {
+        "origem": "__ALERT_PATCH__:index_otimizado.html",
+        "destino": "_archive/alertas_backup/index_otimizado.html",
+        "sha256": "fcf4c2bfe9ac771ea40b8041a39b6d7ac1a7ab87b6125126db7dc4797e52b013"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "data_hora": "2026-11-27T23:37:24.431934",
+    "descricao": "Centralizar auditorias e ajustes em ajustes_auditoria/ (Nível 3)",
+    "movimentos": [
+      {
+        "origem": "auditoria_temp.py",
+        "destino": "ajustes_auditoria/auditoria_temp.py",
+        "sha256": "91d658122a49f4c821807c774962f9ca363b251e9d7ee66998ae30700326fafd"
+      }
+    ]
   }
 ]
